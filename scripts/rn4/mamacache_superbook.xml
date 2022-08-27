@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Parameter Groups for Specific MamaSenderIds -->
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSbABrP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>520</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSbABrS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>5200</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSbBsDsP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>521</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSbBsDsS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>5210</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSbDtGpP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>522</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSbDtGpS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>5220</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSbGqLlP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>523</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSbGqLlS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>5230</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSbLmOqP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>524</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSbLmOqS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>5240</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSbOrSmP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>525</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSbOrSmS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>5250</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSbSnUpP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>526</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSbSnUpS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>5260</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSbUqZP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>527</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSbUqZS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>5270</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <!-- END - Parameter Groups for Specific MamaSenderIds -->
+
+   <!-- These Mamacache_Superbooks will run as a individual feeds (i.e. there are no subfeeds) -->
+
+   <Feed>
+      <Name>mamacache_superbook_ABr</Name>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>MamdaBookIsPapaBook</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>SUPERBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>SUPERBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_mamacache_superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_superbook</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_superbook_ABr</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_superbook_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>7</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(A\|B$\|B[^S-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(A\|B$\|B[^S-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(A\|B$\|B[^S-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(A\|B$\|B[^S-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct01a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSbABrP"/>
+      </pny2sfmct01a>
+      <pny2sfmct01b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSbABrS"/>
+      </pny2sfmct01b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_superbook_BsDs</Name>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>MamdaBookIsPapaBook</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>SUPERBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>SUPERBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_mamacache_superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_superbook</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_superbook_BsDs</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_superbook_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>7</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(B[S-Z]\|C\|D$\|D[^T-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(B[S-Z]\|C\|D$\|D[^T-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(B[S-Z]\|C\|D$\|D[^T-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(B[S-Z]\|C\|D$\|D[^T-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct01a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSbBsDsP"/>
+      </pny2sfmct01a>
+      <pny2sfmct01b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSbBsDsS"/>
+      </pny2sfmct01b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_superbook_DtGp</Name>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>MamdaBookIsPapaBook</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>SUPERBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>SUPERBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_mamacache_superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_superbook</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_superbook_DtGp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_superbook_feeds1</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>7</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(D[T-Z]\|[E-F]\|G$\|G[^Q-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(D[T-Z]\|[E-F]\|G$\|G[^Q-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(D[T-Z]\|[E-F]\|G$\|G[^Q-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(D[T-Z]\|[E-F]\|G$\|G[^Q-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct01a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSbDtGpP"/>
+      </pny2sfmct01a>
+      <pny2sfmct01b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSbDtGpS"/>
+      </pny2sfmct01b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_superbook_GqLl</Name>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>MamdaBookIsPapaBook</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>SUPERBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>SUPERBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_mamacache_superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_superbook</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_superbook_GqLl</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_superbook_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>7</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(G[Q-Z]\|[H-K]\|L$\|L[^M-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(G[Q-Z]\|[H-K]\|L$\|L[^M-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(G[Q-Z]\|[H-K]\|L$\|L[^M-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(G[Q-Z]\|[H-K]\|L$\|L[^M-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct02a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSbGqLlP"/>
+      </pny2sfmct02a>
+      <pny2sfmct02b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSbGqLlS"/>
+      </pny2sfmct02b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_superbook_LmOq</Name>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>MamdaBookIsPapaBook</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>SUPERBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>SUPERBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_mamacache_superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_superbook</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_superbook_LmOq</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_superbook_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>7</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(L[M-Z]\|[M-N]\|O$\|O[^R-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(L[M-Z]\|[M-N]\|O$\|O[^R-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(L[M-Z]\|[M-N]\|O$\|O[^R-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(L[M-Z]\|[M-N]\|O$\|O[^R-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct02a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSbLmOqP"/>
+      </pny2sfmct02a>
+      <pny2sfmct02b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSbLmOqS"/>
+      </pny2sfmct02b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_superbook_OrSm</Name>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>MamdaBookIsPapaBook</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>SUPERBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>SUPERBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_mamacache_superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_superbook</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_superbook_OrSm</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_superbook_feeds1</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>7</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(O[R-Z]\|[P-R]\|S$\|S[^N-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(O[R-Z]\|[P-R]\|S$\|S[^N-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(O[R-Z]\|[P-R]\|S$\|S[^N-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(O[R-Z]\|[P-R]\|S$\|S[^N-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct02a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSbOrSmP"/>
+      </pny2sfmct02a>
+      <pny2sfmct02b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSbOrSmS"/>
+      </pny2sfmct02b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_superbook_SnUp</Name>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>MamdaBookIsPapaBook</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>SUPERBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>SUPERBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_mamacache_superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_superbook</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_superbook_SnUp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_superbook_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>7</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(S[N-Z]\|T\|U$\|U[^Q-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(S[N-Z]\|T\|U$\|U[^Q-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(S[N-Z]\|T\|U$\|U[^Q-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(S[N-Z]\|T\|U$\|U[^Q-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct03a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSbSnUpP"/>
+      </pny2sfmct03a>
+      <pny2sfmct03b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSbSnUpS"/>
+      </pny2sfmct03b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_superbook_UqZ</Name>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>MamdaBookIsPapaBook</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>SUPERBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>SUPERBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_mamacache_superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_superbook</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_superbook_UqZ</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_superbook_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>7</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(U[Q-Z]\|[^A-U]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(U[Q-Z]\|[^A-U]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(U[Q-Z]\|[^A-U]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(U[Q-Z]\|[^A-U]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct03a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSbUqZP"/>
+      </pny2sfmct03a>
+      <pny2sfmct03b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSbUqZS"/>
+      </pny2sfmct03b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+</config>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <MamaClientProfiles>
+
+        <MamaClientProfile>
+            <ProfileName>OTAMGT001</ProfileName>
+            <HostName>OTAMGT001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>SUSQUEO001</ProfileName>
+            <HostName>SUSQUE001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+		
+        <MamaClientProfile>
+            <ProfileName>SUSQUEO002</ProfileName>
+            <HostName>SUSQUE002-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>MURANO001</ProfileName>
+            <HostName>MURANO001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>LARVIA001</ProfileName>
+            <HostName>LARVIA001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>HRDEGT001</ProfileName>
+            <HostName>HRDEGT001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>OTCMKT001</ProfileName>
+            <HostName>OTCMKT001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>OTCMKT002</ProfileName>
+            <HostName>OTCMKT002-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>OTCMKT002_UAT</ProfileName>
+            <HostName>OTCMKT002-NY2UAT</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>FIXNET001</ProfileName>
+            <HostName>FIXNET001-CIBC-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>FIXNET002</ProfileName>
+            <HostName>FIXNET002-STRDBANK-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>FIXNET003</ProfileName>
+            <HostName>FIXNET003-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>ALAPAX001</ProfileName>
+            <HostName>ALAPAX001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>DELBOR001</ProfileName>
+            <HostName>DELBOR001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+	
+        <MamaClientProfile>
+            <ProfileName>MNYNET001</ProfileName>
+            <HostName>MNYNET001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>AEROCR001</ProfileName>
+            <HostName>AEROCR001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>XIGNITE001</ProfileName>
+            <HostName>XIGNITE001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>HOURLY001</ProfileName>
+            <HostName>HOURLY001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>ETRADE001</ProfileName>
+            <HostName>ETRADE001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>ETRADE002</ProfileName>
+            <HostName>ETRADE002-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>ETRADE003</ProfileName>
+            <HostName>ETRADE003-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>STIFEL001</ProfileName>
+            <HostName>STIFEL001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>ECKTT001</ProfileName>
+            <HostName>ECKTT001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>STRIKE001</ProfileName>
+            <HostName>STRIKE001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>LCMLP001</ProfileName>
+            <HostName>LCMLP001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>QUOTE001</ProfileName>
+            <HostName>QUOTE001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>STATE001</ProfileName>
+            <HostName>STATE001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+         <MamaClientProfile>
+             <ProfileName>TDSEC001NY2</ProfileName>
+             <HostName>TDSEC001-NY2</HostName>
+             <Weight>20</Weight>
+         </MamaClientProfile>
+
+         <MamaClientProfile>
+             <ProfileName>NUMER001NY2</ProfileName>
+             <HostName>NUMER001-NY2</HostName>
+             <Weight>20</Weight>
+         </MamaClientProfile>
+
+         <MamaClientProfile>
+             <ProfileName>SCHWAB001NY2</ProfileName>
+             <HostName>SCHWAB001-NY2</HostName>
+             <Weight>20</Weight>
+         </MamaClientProfile>
+
+         <MamaClientProfile>
+             <ProfileName>GLOBSVS001NY2</ProfileName>
+             <HostName>GLOBSVS001-NY2</HostName>
+             <Weight>20</Weight>
+         </MamaClientProfile>
+
+         <MamaClientProfile>
+             <ProfileName>TDAME001NY2</ProfileName>
+             <HostName>TDAME001-NY2</HostName>
+             <Weight>20</Weight>
+         </MamaClientProfile>
+
+         <MamaClientProfile>
+             <ProfileName>INTRI001NY2</ProfileName>
+             <HostName>INTRI001-NY2</HostName>
+             <Weight>20</Weight>
+         </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>FXCMG001NY2</ProfileName>
+            <HostName>FXCMG001-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>SBEREU002NY2</ProfileName>
+            <HostName>SBEREU002-NY2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+   </MamaClientProfiles>
+</config>

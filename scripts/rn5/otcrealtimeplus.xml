@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      
+<IncludeFile>otcrealtimeplus_tport.xml</IncludeFile>
+<IncludeFile>otcrealtimeplus_hosts.xml</IncludeFile>
+<IncludeFile>papastats.2.17.xml</IncludeFile>
+    <Parameter>
+        <Name>UdpBufferSize</Name>
+        <!-- <Value>16777216</Value> -->
+        <Value>67108864</Value>
+    </Parameter>
+
+    <!-- SFDCR-1424 -->
+    <Parameter>
+       <Name>RecordHandlerCreateBookWhenCreateRecord</Name>
+       <Value>true</Value>
+    </Parameter>
+
+    <Parameter>
+       <Name>OtcMaxRefreshSpoolSize</Name>
+       <Value>1000000</Value>
+    </Parameter>
+
+   <Parameter>
+      <Name>OtcHandleSpecialQuotes</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>StatusSymbolFormat</Name>
+      <Value>ADMIN.OTC.$f.$h.$t</Value>
+   </Parameter>
+
+   <Parameter>                                                
+      <Name>RetransRequestTime</Name>                         
+      <Value>1000</Value>                                     
+   </Parameter>                                               
+                                                              
+   <Parameter>                                                
+      <Name>MessageRecoveryFile</Name>                        
+      <Value></Value>                                        
+   </Parameter> 
+
+   <Parameter>
+      <Name>FtService</Name>
+      <Value>7741</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>OTCMKTSRT</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ParticipantQuoteCount</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>OrderBookSymbolFile</Name>
+      <Value>otcrealtimeplus.orderbook.sym</Value>
+   </Parameter>
+
+   <!--added as per DFH-19265-->                              
+   <Parameter>                                                
+      <Name>TopOfBookDecimals</Name>                          
+      <Value>4</Value>                                        
+   </Parameter> 
+
+   <Parameter>
+      <Name>OtcMpidSeparator</Name>
+      <Value>.</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>OtcRealTimePlusExtendedSecurityFields</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>RecordHandlerSymbolAnnounce</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishSymbolAnnounceRecords</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SymbolAnnounceRecord</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SubFeedGroupManagerCheckInterval</Name>
+      <Value>60000</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OtcRealTimePlusRefreshTimeOut</Name>
+      <Value>600000</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OtcRealTimePlusEnableRefresh</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OtcRealTimePlusLogRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+   
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+ 
+   <Parameter>
+      <Name>MdrvPrefix</Name>
+      <Value>ORDER</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MamaDataDictResponder</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FtRvService</Name>
+      <Value>7731</Value>
+   </Parameter>
+    
+   <!--Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_otcrealtimeplus</Value>
+   </Parameter-->
+    
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value>otcrealtimeplus.sym</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NativeTimeZone</Name>
+      <Value>UTC</Value><!-- SFD-1396 -->
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <!--Parameter>
+      <Name>OtcRealTimePlusProductName</Name>
+      <Value>OtcRealTimePlus</Value>
+   </Parameter-->
+   
+   <Parameter>                                                
+      <Name>OtcRealTimePlusProductNameInside</Name>           
+      <Value>OtcRealTimePlusInside</Value>                   
+   </Parameter>                                            
+                                                            
+   <Parameter>                                               
+      <Name>OtcRealTimePlusProductNameBook</Name>             
+      <Value>OtcRealTimePlusBook</Value>                      
+   </Parameter>                                               
+                                                              
+   <Parameter>                                              
+      <Name>OtcRealTimePlusProductNameTop</Name>             
+      <Value>OtcRealTimePlusTop</Value>                       
+   </Parameter> 
+ 
+<!-- EDCP-8507 Additional Consolidated Data Channels - Global OTC Start -->
+   <!--Parameter>
+      <Name>OtcRealTimePlusProductNameGlobalOtc</Name>
+      <Value>OtcRealTimePlusGlobalOtc</Value>
+   </Parameter-->
+
+   <Parameter>
+      <Name>OtcRealTimePlusProductNameInsideGlobalOtc</Name>
+      <Value>OtcRealTimePlusInsideGlobalOtc</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>OtcRealTimePlusProductNameBookGlobalOtc</Name>
+      <Value>OtcRealTimePlusBookGlobalOtc</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>OtcRealTimePlusProductNameTopGlobalOtc</Name>
+      <Value>OtcRealTimePlusTopGlobalOtc</Value>
+   </Parameter>
+<!-- EDCP-8507 Additional Consolidated Data Channels - Global OTC End -->
+
+   <Parameter>
+      <Name>LineFilterRetransMaxGapSize</Name>
+      <Value>0</Value>
+   </Parameter>
+  <!-- Expert Tier - DFH-31040  -->
+        <Parameter>
+           <Name>OtcRealTimePlusProductNameExpertTier</Name>
+           <Value>OtcRealTimePlusExpertTier</Value>
+        </Parameter>
+        <Parameter>
+           <Name>OtcRealTimePlusProductNameInsideExpertTier</Name>
+           <Value>OtcRealTimePlusInsideExpertTier</Value>
+        </Parameter>
+        <Parameter>
+           <Name>OtcRealTimePlusProductNameBookExpertTier</Name>
+           <Value>OtcRealTimePlusBookExpertTier</Value>
+        </Parameter>
+        <Parameter>
+           <Name>OtcRealTimePlusProductNameTopExpertTier</Name>
+           <Value>OtcRealTimePlusTopExpertTier</Value>
+        </Parameter>
+  
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsBloomberg</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsQdist</Value>
+      <Value>FieldAttrsReferential</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>OtcRealTimePlusLiveParameter</Name>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterCheckEveryMessageInBlock</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>5000</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>OtcRealTimePlusReferenceParameter</Name>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>0</Value>
+         <Comment>No gap limit</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>1800</Value>
+         <Comment>30 minutes</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransMaxGapSize</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>OtcRealTimePlusRetransParameter</Name>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpConnectOnStartUp</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseLineFilter</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpQuickAck</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpDisableNagles</Name>
+         <Value>true</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>OtcRealTimePlusRefreshParameter</Name>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MulticastConnectOnInit</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterCheckEveryMessageInBlock</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <IncludeFile>otcrealtimeplus_prod.xml</IncludeFile>
+   <IncludeFile>otcrealtimeplus_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>otcrealtimeplus_primary_market_mapping.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

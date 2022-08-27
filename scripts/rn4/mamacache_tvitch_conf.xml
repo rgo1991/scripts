@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Parameter Groups for Specific MamaSenderIds -->
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchAfProdP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>811</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchAfProdS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>8011</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchGoProdP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>812</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchGoProdS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>8012</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchPzProdP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>813</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchPzProdS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>8013</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <!-- END - Parameter Groups for Specific MamaSenderIds -->
+
+   <!-- Parameter Groups for Specific MamaSenderIds -->
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchABrP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>814</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchABrS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>8014</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchBsDsP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>815</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchBsDsS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>8015</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchDtGpP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>816</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchDtGpS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>8016</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchGqLlP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>817</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchGqLlS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>8017</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchLmOqP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>818</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchLmOqS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>8018</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchOrSmP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>819</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchOrSmS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>8019</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchSnUpP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>820</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchSnUpS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>8020</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchUqZP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>821</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTvItchUqZS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>8021</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <!-- END - Parameter Groups for Specific MamaSenderIds -->
+
+   <Feed>
+      <Name>mamacache_tvitch_ABr_conf</Name>
+      <UseParameterGroup name="L2ConflationParams"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_tvitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_tvitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>ORDER</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_tvitch_ABr_conf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_tvitch_conf_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>8</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(A\|B$\|B[^S-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(A\|B$\|B[^S-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(A\|B$\|B[^S-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(A\|B$\|B[^S-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <njwamstc46>
+         <UseParameterGroup name="MamaSenderIdTvItchABrP"/>
+      </njwamstc46>
+      <njwammcp44a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdTvItchABrP"/>
+      </njwammcp44a>
+      <njwammcp44b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdTvItchABrS"/>
+      </njwammcp44b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_tvitch_BsDs_conf</Name>
+      <UseParameterGroup name="L2ConflationParams"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_tvitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_tvitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>ORDER</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_tvitch_BsDs_conf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_tvitch_conf_feeds1</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>8</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(B[S-Z]\|C\|D$\|D[^T-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(B[S-Z]\|C\|D$\|D[^T-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(B[S-Z]\|C\|D$\|D[^T-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(B[S-Z]\|C\|D$\|D[^T-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+       <njwamstc46>
+         <UseParameterGroup name="MamaSenderIdTvItchBsDsP"/>
+      </njwamstc46>
+     <njwammcp44a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdTvItchBsDsP"/>
+      </njwammcp44a>
+      <njwammcp44b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdTvItchBsDsS"/>
+      </njwammcp44b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_tvitch_DtGp_conf</Name>
+      <UseParameterGroup name="L2ConflationParams"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_tvitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_tvitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>ORDER</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_tvitch_DtGp_conf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_tvitch_conf_feeds2</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>8</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(D[T-Z]\|[E-F]\|G$\|G[^Q-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(D[T-Z]\|[E-F]\|G$\|G[^Q-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(D[T-Z]\|[E-F]\|G$\|G[^Q-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(D[T-Z]\|[E-F]\|G$\|G[^Q-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <njwamstc46>
+         <UseParameterGroup name="MamaSenderIdTvItchDtGpP"/>
+      </njwamstc46>
+     <njwammcp44a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdTvItchDtGpP"/>
+      </njwammcp44a>
+      <njwammcp44b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdTvItchDtGpS"/>
+      </njwammcp44b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_tvitch_GqLl_conf</Name>
+      <UseParameterGroup name="L2ConflationParams"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_tvitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_tvitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>ORDER</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_tvitch_GqLl_conf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_tvitch_conf_feeds3</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>8</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(G[Q-Z]\|[H-K]\|L$\|L[^M-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(G[Q-Z]\|[H-K]\|L$\|L[^M-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(G[Q-Z]\|[H-K]\|L$\|L[^M-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(G[Q-Z]\|[H-K]\|L$\|L[^M-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <njwamstc46>
+         <UseParameterGroup name="MamaSenderIdTvItchGqLlP"/>
+      </njwamstc46>
+     <njwammcp44a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdTvItchGqLlP"/>
+      </njwammcp44a>
+      <njwammcp44b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdTvItchGqLlS"/>
+      </njwammcp44b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_tvitch_LmOq_conf</Name>
+      <UseParameterGroup name="L2ConflationParams"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_tvitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_tvitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>ORDER</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_tvitch_LmOq_conf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_tvitch_conf_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>8</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(L[M-Z]\|[M-N]\|O$\|O[^R-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(L[M-Z]\|[M-N]\|O$\|O[^R-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(L[M-Z]\|[M-N]\|O$\|O[^R-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(L[M-Z]\|[M-N]\|O$\|O[^R-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <njwamstc46>
+         <UseParameterGroup name="MamaSenderIdTvItchLmOqP"/>
+      </njwamstc46>
+     <njwammcp44a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdTvItchLmOqP"/>
+      </njwammcp44a>
+      <njwammcp44b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdTvItchLmOqS"/>
+      </njwammcp44b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_tvitch_OrSm_conf</Name>
+      <UseParameterGroup name="L2ConflationParams"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_tvitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_tvitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>ORDER</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_tvitch_OrSm_conf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_tvitch_conf_feeds1</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>8</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(O[R-Z]\|[P-R]\|S$\|S[^N-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(O[R-Z]\|[P-R]\|S$\|S[^N-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(O[R-Z]\|[P-R]\|S$\|S[^N-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(O[R-Z]\|[P-R]\|S$\|S[^N-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <njwamstc46>
+         <UseParameterGroup name="MamaSenderIdTvItchOrSmP"/>
+      </njwamstc46>
+     <njwammcp44a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdTvItchOrSmP"/>
+      </njwammcp44a>
+      <njwammcp44b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdTvItchOrSmS"/>
+      </njwammcp44b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_tvitch_SnUp_conf</Name>
+      <UseParameterGroup name="L2ConflationParams"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_tvitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_tvitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>ORDER</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_tvitch_SnUp_conf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_tvitch_conf_feeds2</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>8</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(S[N-Z]\|T\|U$\|U[^Q-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(S[N-Z]\|T\|U$\|U[^Q-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(S[N-Z]\|T\|U$\|U[^Q-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(S[N-Z]\|T\|U$\|U[^Q-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <njwamstc46>
+         <UseParameterGroup name="MamaSenderIdTvItchSnUpP"/>
+      </njwamstc46>
+     <njwammcp44a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdTvItchSnUpP"/>
+      </njwammcp44a>
+      <njwammcp44b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdTvItchSnUpS"/>
+      </njwammcp44b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_tvitch_UqZ_conf</Name>
+      <UseParameterGroup name="L2ConflationParams"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_tvitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_tvitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>ORDER</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_tvitch_UqZ_conf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_tvitch_conf_feeds3</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>8</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(U[Q-Z]\|[^A-U]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(U[Q-Z]\|[^A-U]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(U[Q-Z]\|[^A-U]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(U[Q-Z]\|[^A-U]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <njwamstc46>
+         <UseParameterGroup name="MamaSenderIdTvItchUqZP"/>
+      </njwamstc46>
+     <njwammcp44a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdTvItchUqZP"/>
+      </njwammcp44a>
+      <njwammcp44b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdTvItchUqZS"/>
+      </njwammcp44b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+</config>

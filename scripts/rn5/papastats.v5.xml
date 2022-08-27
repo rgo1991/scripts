@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+  <Parameter>
+    <Name>UsePapaStatsTransport</Name>
+    <Value>true</Value>
+    <Comment>
+        Whether papastats should be published over a separate transport.
+        Please, make sure that you don't subscribe to non papastats symbols over a papastats
+        transport and vice versa.
+    </Comment>
+  </Parameter>
+
+  <PapaStatsTransport>
+      <WmwSource>PapaStats</WmwSource>
+
+      <Parameter>
+          <Name>WmwType</Name>
+          <Value>tcp</Value>
+      </Parameter>
+
+      <Parameter>
+          <Name>WmwTransportProperties</Name>
+          <Value>wmw.type=tcp</Value>
+          <Value>wmw.is_naming=1</Value>
+          <Value>wmw.publish_address=10.225.69.0</Value>
+          <Value>wmw.tcp.publish_port_min=7437</Value>
+          <Value>wmw.tcp.publish_port_max=7837</Value>
+          <!--Value>wmw.request_reply.publish_port_min=8437</Value>
+          <Value>wmw.request_reply.publish_port_max=8837</Value>
+          <Value>wmw.incoming_back_log=100</Value-->
+          <Value>wmw.naming.subscribe_address_0=10.225.69.27</Value>
+          <Value>wmw.naming.subscribe_port_0=5678</Value>
+          <Value>wmw.naming.subscribe_address_1=10.225.69.28</Value>
+          <Value>wmw.naming.subscribe_port_1=5678</Value>
+          <Value>wmw.naming.retry_connects=1</Value>
+      </Parameter>
+
+      <Parameter>
+        <Name>MamaDataDictResponder</Name>
+        <Value>false</Value>
+      </Parameter>
+
+  </PapaStatsTransport>
+
+  <Parameter>
+    <Name>PapaStats</Name>
+    <Value>true</Value>
+    <Comment>Required to enable papastats</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsPublishInterval</Name>
+    <Value>10</Value>
+    <Comment>How often to publish stats</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsUseFilteredLineData</Name>
+    <Value>false</Value>
+    <Comment>Count only those messages which are actually processed by a message handler.</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsUseLineDataMessageCounts</Name>
+    <Value>true</Value>
+    <Comment>Use message counts from LineData and LineDataBlock or use internal metrics messaging for counting messages received</Comment>
+  </Parameter>
+
+  <!-- Output controls -->
+
+  <Parameter>
+    <Name>PapaStatsMessagesReceivedDisplay</Name>
+    <Value>true</Value>
+    <Comment>Display number of messages received per interval</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsMaxMessagesReceivedDisplay</Name>
+    <Value>true</Value>
+    <Comment>
+      Display max number of messages received during any interval.
+    </Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsTotalMessagesReceivedDisplay</Name>
+    <Value>true</Value>
+    <Comment>
+      Display total number of messages received since starting.
+    </Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsMessagesSentDisplay</Name>
+    <Value>true</Value>
+    <Comment>Display number of messages sent per interval.</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsMaxMessagesSentDisplay</Name>
+    <Value>true</Value>
+    <Comment>Display max number of messages sent during any interval.</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsTotalMessagesSentDisplay</Name>
+    <Value>true</Value>
+    <Comment>Display total number of messages sent since starting.</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsBytesReceivedDisplay</Name>
+    <Value>true</Value>
+    <Comment>Display number of bytes received per interval.</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsMaxBytesReceivedDisplay</Name>
+    <Value>true</Value>
+    <Comment>
+      Display max number of bytes received during any interval.
+    </Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsTotalBytesReceivedDisplay</Name>
+    <Value>true</Value>
+    <Comment>Display total number of bytes received since starting.</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsBytesSentDisplay</Name>
+    <Value>true</Value>
+    <Comment>Display number of bytes sent per interval.</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsMaxBytesSentDisplay</Name>
+    <Value>true</Value>
+    <Comment>Display max number of byte sent during any interval.</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsTotalBytesSentDisplay</Name>
+    <Value>true</Value>
+    <Comment>Display total number of bytes sent since starting.</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsRecordUpdatesDisplay</Name>
+    <Value>true</Value>
+    <Comment>Display number of record updates per interval.</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsOrderBookUpdatesDisplay</Name>
+    <Value>true</Value>
+    <Comment>Display number of order book updates per interval.</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsDroppedMessagesDisplay</Name>
+    <Value>true</Value>
+    <Comment>Display number of dropped messages detected.</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsSubscriptionRequestsDisplay</Name>
+    <Value>true</Value>
+    <Comment>Display number of subscription requests received.</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsGroupRequestsDisplay</Name>
+    <Value>true</Value>
+    <Comment>Report on group subscription requests.</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsBookRequestsDisplay</Name>
+    <Value>true</Value>
+    <Comment>Report on orderbook subscription requests.</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsRecapsDisplay</Name>
+    <Value>true</Value>
+    <Comment>Display number of recaps sent.</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsInitialsDisplay</Name>
+    <Value>true</Value>
+    <Comment>Display number of initial images sent.</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsDisplayInterval</Name>
+    <Value>false</Value>
+    <Comment>Display the interval being used.</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsActiveSymbolsDisplay</Name>
+    <Value>true</Value>
+    <Comment>Display the number of symbols currently subscribed.</Comment>
+  </Parameter>
+
+  <Parameter>
+    <Name>PapaStatsPeakInterval</Name>
+    <Value>0</Value>
+    <Comment>Display the peak messages and CPU usage for every PapaStatsPeakInterval interval during each reporting interval. Value is in seconds.</Comment>
+  </Parameter>
+
+   <!-- Publishing-specific parameters -->
+
+  <Parameter>
+    <Name>PapaStatsPublishTopic</Name>
+    <Value>ADMIN.$c.$f.$h.$t</Value>
+    <Comment>The symbol used to publish papastats information</Comment>
+  </Parameter>
+
+</config>

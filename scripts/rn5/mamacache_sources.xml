@@ -1,0 +1,1444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <MamaSources>
+
+      <MamaSource>
+         <Name>ABM</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>ARCA</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_abm</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>ARCA.ADMIN.abmxdp.abmxdp_live_1.pny2sffhr12a.HB</Value>
+             <Value>ARCA.ADMIN.abmxdp.abmxdp_live_1.pny2sffhr12b.HB</Value>
+         </Parameter>
+
+      </MamaSource>
+
+      <MamaSource>
+         <Name>BXITCH</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>BXITCH</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_bxtvitch</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>BXITCH.ADMIN.bxtotalviewmc.bxtotalviewmc.pny2sffhr14a.HB</Value>
+             <Value>BXITCH.ADMIN.bxtotalviewmc.bxtotalviewmc.pny2sffhr14b.HB</Value>
+         </Parameter>
+
+      </MamaSource>
+
+      <MamaSource>
+         <Name>OTCMKTSRT</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>OTCMKTSRT</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_otcrealtimeplus</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>OTCMKTSRT.ADMIN.OTC.otcrealtimeplus_quote_inside.pny2sffhr07a.HB</Value>
+             <Value>OTCMKTSRT.ADMIN.OTC.otcrealtimeplus_quote_inside.pny2sffhr07b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>OTCMKTSRTCAN</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>OTCMKTSRTCAN</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_otcrealtimeplus_can</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>OTCMKTSRTCAN.ADMIN.OTC.otcrealtimeplus_quote_inside.pny2sffhr05a.HB</Value>
+             <Value>OTCMKTSRTCAN.ADMIN.OTC.otcrealtimeplus_quote_inside.pny2sffhr05b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+<!-- SFD-1665 -->
+      <MamaSource>
+         <Name>OTCMKTSG</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>OTCMKTSG</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_otcrealtimeplus_global</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>ADMIN.OTC.otcrealtimeplus_quote_inside_globalotc.pny2sffhr12a.HB</Value>
+             <Value>ADMIN.OTC.otcrealtimeplus_quote_inside_globalotc.pny2sffhr12b.HB</Value>
+         </Parameter>
+      </MamaSource>
+<!-- SFD-1665 End -->
+      <MamaSource>
+         <Name>OTCMKTEX</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>OTCMKTEX</SubscSourceName>
+         <Transport>feeds</Transport>
+         <!--
+              <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>ADMIN.OTC.otcrealtimeplus_quote_inside_globalotc.pny2sffhr12a.HB</Value>
+             <Value>ADMIN.OTC.otcrealtimeplus_quote_inside_globalotc.pny2sffhr12b.HB</Value>
+         </Parameter>
+         -->
+      </MamaSource>
+
+      <MamaSource>
+         <Name>UTP</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>NASDAQ</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_utp</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>NASDAQ.ADMIN.utp.uqdf_AaCd.pny2sffhr11a.HB</Value>
+             <Value>NASDAQ.ADMIN.utp.uqdf_AaCd.pny2sffhr11b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+	 <Name>CTA</Name>
+	 <Type>Main</Type>
+	 <InitState>OK</InitState>
+	 <OutboundThrottleRate>200</OutboundThrottleRate>
+	 <SubscSourceName>NYSE</SubscSourceName>
+	 <Transport>feeds</Transport>
+         <SubFeedName>mamacache_cta</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>NYSE.ADMIN.cta.cqs_e_1.pny2sffhr04a.HB</Value>
+             <Value>NYSE.ADMIN.cta.cqs_e_1.pny2sffhr04b.HB</Value>
+         </Parameter>
+
+      </MamaSource>
+
+      <MamaSource>
+	 <Name>CTAV5</Name>
+	 <Type>Main</Type>
+	 <InitState>OK</InitState>
+	 <OutboundThrottleRate>200</OutboundThrottleRate>
+	 <SubscSourceName>NYSE</SubscSourceName>
+	 <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>AMEX</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>500</OutboundThrottleRate>
+         <SubscSourceName>AMEX</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_amex</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>AMEX.ADMIN.cta.cqs_f_1.pny2sffhr08a.HB</Value>
+             <Value>AMEX.ADMIN.cta.cqs_f_1.pny2sffhr08b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>INDEXCTA</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>INDEXCTA</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_indexcta</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>INDEXCTA.ADMIN.cta.cts_idx_ab_1.pny2sffhr03a.HB</Value>
+             <Value>INDEXCTA.ADMIN.cta.cts_idx_ab_1.pny2sffhr03b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>GIF</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>GIF</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_gif</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>GIF.ADMIN.arcagixdp.arcagixdp.pny2sffhr06a.HB</Value>
+             <Value>GIF.ADMIN.arcagixdp.arcagixdp.pny2sffhr06b.HB</Value>
+         </Parameter>
+      </MamaSource>
+<!-- SFDCR-1852 -->
+
+      <MamaSource>
+         <Name>CTF</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>CTF</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_ctf</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>admin.ctf.ctf_nysegif.pny2sffhr06a.HB</Value>
+             <Value>admin.ctf.ctf_nysegif.pny2sffhr06b.HB</Value>
+         </Parameter>
+      </MamaSource>
+<!-- SFDCR-1852 -->
+      <MamaSource>
+         <Name>TVITCH</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>ORDER</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_tvitch</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>ORDER.ADMIN.totalview.totalview_ab.pny2sffhr09a.HB</Value>
+             <Value>ORDER.ADMIN.totalview.totalview_ab.pny2sffhr09b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>PSXITCH</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>PSXITCH</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_psxtvitch</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>PSXITCH.ADMIN.psxtotalviewmc.psxtotalviewmc.pny2sffhr14a.HB</Value>
+             <Value>PSXITCH.ADMIN.psxtotalviewmc.psxtotalviewmc.pny2sffhr14b.HB</Value>
+         </Parameter>
+
+      </MamaSource>
+
+      <MamaSource>
+         <Name>PXITCH</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>PXITCH</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>BATS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>BATS</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_bats</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>BATS.ADMIN.batsmc.batsmc_bzx_gg_1_data.pny2sffhr10a.HB</Value>
+             <Value>BATS.ADMIN.batsmc.batsmc_bzx_gg_1_data.pny2sffhr10b.HB</Value>
+         </Parameter>
+
+      </MamaSource>
+      
+      <MamaSource>
+         <Name>BATSY</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>BATSY</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_batsy</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>BATSY.ADMIN.batsmc.batsmc_byx_gg_1.pny2sffhr10a.HB</Value>
+             <Value>BATSY.ADMIN.batsmc.batsmc_byx_gg_1.pny2sffhr10b.HB</Value>
+         </Parameter>
+
+      </MamaSource>
+
+      <MamaSource>
+         <Name>OPENBOOK</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>OPENBOOK</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_openbook</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>OPENBOOK.ADMIN.obu.obu_aa.pny2sffhr05a.HB</Value>
+             <Value>OPENBOOK.ADMIN.obu.obu_aa.pny2sffhr05b.HB</Value>
+         </Parameter>
+
+      </MamaSource>
+
+      <MamaSource>
+         <Name>OPENBOOKV5</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>OPENBOOKV5</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>AMEXDOB</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>AMEXDOB</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_amexdob</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>AMEXDOB.ADMIN.aobu.aobu_az.pny2sffhr05a.HB</Value>
+             <Value>AMEXDOB.ADMIN.aobu.aobu_az.pny2sffhr05b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>DEDGE</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>DEDGE</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>DEDGEMC</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>DEDGEMC</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_directedgemc</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>DEDGEMC.ADMIN.batsmc.batsmc_edga_gg_1_data.pny2sffhr14a.HB</Value>
+             <Value>DEDGEMC.ADMIN.batsmc.batsmc_edga_gg_1_data.pny2sffhr14b.HB</Value>
+             <Value>DEDGEMC.ADMIN.batsmc.batsmc_edgx_gg_1_data.pny2sffhr14a.HB</Value>
+             <Value>DEDGEMC.ADMIN.batsmc.batsmc_edgx_gg_1_data.pny2sffhr14b.HB</Value>
+         </Parameter>
+
+      </MamaSource>
+
+      <MamaSource>
+         <Name>SUPERBOOK</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>750</OutboundThrottleRate>
+         <SubscSourceName>SB</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>SUPERBOOK299</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>SUPERBOOK</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>AMEXRTRP</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>AMEXRTRP</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_nysertrp_amex</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>AMEXRTRP.ADMIN.amexrtrpxdp.amexrtrpxdp_live.pny2sffhr06a.HB</Value>
+             <Value>AMEXRTRP.ADMIN.amexrtrpxdp.amexrtrpxdp_live.pny2sffhr06b.HB</Value>
+             <Value>AMEXRTRP.ADMIN.amextradesxdp.amextradesxdp_live.pny2sffhr03a.HB</Value>
+             <Value>AMEXRTRP.ADMIN.amextradesxdp.amextradesxdp_live.pny2sffhr03b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>NYSERTRP</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>NYSERTRP</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_nysertrp_nyse</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>NYSERTRP.ADMIN.nysertrpxdp.nysertrpxdp_live.pny2sffhr06a.HB</Value>
+             <Value>NYSERTRP.ADMIN.nysertrpxdp.nysertrpxdp_live.pny2sffhr06b.HB</Value>
+             <Value>NYSERTRP.ADMIN.nysetradesxdp.nysetradesxdp_live.pny2sffhr03a.HB</Value>
+             <Value>NYSERTRP.ADMIN.nysetradesxdp.nysetradesxdp_live.pny2sffhr03b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>ARCARTRP</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>ARCARTRP</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_arcartrp</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>ARCARTRP.ADMIN.arcatradesxdp.arcatradesxdp_live.pny2sffhr03a.HB</Value>
+             <Value>ARCARTRP.ADMIN.arcatradesxdp.arcatradesxdp_live.pny2sffhr03b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>AMEXTS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>AMEXTS</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_nysets_amex</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>AMEXTS.ADMIN.amextradesxdp.amextradesxdp_live.pny2sffhr06a.HB</Value>
+             <Value>AMEXTS.ADMIN.amextradesxdp.amextradesxdp_live.pny2sffhr06b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>NYSETS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>NYSETS</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_nysets_nyse</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>NYSETS.ADMIN.nysetradesxdp.nysetradesxdp_live.pny2sffhr06a.HB</Value>
+             <Value>NYSETS.ADMIN.nysetradesxdp.nysetradesxdp_live.pny2sffhr06b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>ARCATS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>ARCATS</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_arcats</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>ARCATS.ADMIN.arcatradesxdp.arcatradesxdp_live.pny2sffhr06a.HB</Value>
+             <Value>ARCATS.ADMIN.arcatradesxdp.arcatradesxdp_live.pny2sffhr06b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>NASDAQLS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>NASDAQLS</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_nasdaqls</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>NASDAQLS.ADMIN.nasdaqls.nasdaqls.pny2sffhr11a.HB</Value>
+             <Value>NASDAQLS.ADMIN.nasdaqls.nasdaqls.pny2sffhr11b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>NYSEALERTS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>NYSEALERTS</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_nysealerts</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>NYSEALERTS.ADMIN.nysealerts.nysealerts_nyse.pny2sffhr06a.HB</Value>
+             <Value>NYSEALERTS.ADMIN.nysealerts.nysealerts_nyse.pny2sffhr06b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>AMEXALERTS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>AMEXALERTS</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_amexalerts</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>AMEXALERTS.ADMIN.nysealerts.nysealerts_amex.pny2sffhr06a.HB</Value>
+             <Value>AMEXALERTS.ADMIN.nysealerts.nysealerts_amex.pny2sffhr06b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>NYSEOI</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>NYSEOI</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_nyseoi</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>NYSEOI.ADMIN.nyseoi.nyseoi_nyse.pny2sffhr06a.HB</Value>
+             <Value>NYSEOI.ADMIN.nyseoi.nyseoi_nyse.pny2sffhr06b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>SMART_NYSE_XDP_IMBALANCE</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>SMART_NYSE_XDP_IMBALANCE</SubscSourceName>
+         <Transport>smart</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>IEXTOPS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>IEXTOPS</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>AMEXOI</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>AMEXOI</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_amexoi</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>AMEXOI.ADMIN.nyseoi.nyseoi_amex.pny2sffhr06a.HB</Value>
+             <Value>AMEXOI.ADMIN.nyseoi.nyseoi_amex.pny2sffhr06b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>NYSEBBO</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>NYSEBBOXDP</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_nysebq</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>NYSEBBOXDP.ADMIN.nysebboxdp.nysebboxdp_prod_live_1.pny2sffhr05a.HB</Value>
+             <Value>NYSEBBOXDP.ADMIN.nysebboxdp.nysebboxdp_prod_live_1.pny2sffhr05b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>AMEXBBO</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>AMEXBBOXDP</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_nysebq_amex</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>AMEXBBOXDP.ADMIN.nysebboxdp.nysemktbboxdp_prod_live.pny2sffhr05a.HB</Value>
+             <Value>AMEXBBOXDP.ADMIN.nysebboxdp.nysemktbboxdp_prod_live.pny2sffhr05b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>ARCABBO</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>ARCABBO</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_arcaquotes</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>ARCABBO.ADMIN.arcabboxdp.arcabboxdp_live_1.pny2sffhr06a.HB</Value>
+             <Value>ARCABBO.ADMIN.arcabboxdp.arcabboxdp_live_1.pny2sffhr06b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>NASDAQBBO</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>NASDAQBBO</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_nasdaqqbbo</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>NASDAQBBO.ADMIN.nasdaqqbbo.nasdaqqbbo_tapeA.pny2sffhr11a.HB</Value>
+             <Value>NASDAQBBO.ADMIN.nasdaqqbbo.nasdaqqbbo_tapeA.pny2sffhr11b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>NASDAQL2</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>NASDAQL2</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_nasdaqlevel2</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>NASDAQL2.ADMIN.nasdaqlevel2mc.nasdaqlevel2mc_ae.pny2sffhr11a.HB</Value>
+             <Value>NASDAQL2.ADMIN.nasdaqlevel2mc.nasdaqlevel2mc_ae.pny2sffhr11b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>CMEMDP</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>2000</OutboundThrottleRate>
+         <SubscSourceName>CMEMDP</SubscSourceName>
+         <Transport>feeds</Transport>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>ADMIN.cmesbefix.cmesbefix_def_0314.pny2sffhr07a.HB</Value>
+             <Value>ADMIN.cmesbefix.cmesbefix_def_0314.pny2sffhr07b.HB</Value>
+         </Parameter>
+
+      </MamaSource>
+
+      <MamaSource>
+         <Name>CMEMDPL2</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>2000</OutboundThrottleRate>
+         <SubscSourceName>CMEMDP</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+<!-- TEMPORARY: SFDCR-435 -->
+      <MamaSource>
+         <Name>CMEMDPFAST</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>CMEMDPFAST</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+<!-- TEMPORARY: SFDCR-435 -->
+
+      <MamaSource>
+         <Name>CMEMDPDOW</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>CMEMDPDOW</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>GIDS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>GIDS</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>NASDAQGIDS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>NASDAQGIDS</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_nasdaqgids</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>NASDAQGIDS.ADMIN.nasdaqgids.nasdaqgids.pny2sffhr11a.HB</Value>
+             <Value>NASDAQGIDS.ADMIN.nasdaqgids.nasdaqgids.pny2sffhr11b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>OPRAV5</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>3000</OutboundThrottleRate>
+         <SubscSourceName>OPRAV5</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_v5_opra</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>OPRAV5.ADMIN.opra.opra_7.pny2sffhr15a.HB</Value>
+             <Value>OPRAV5.ADMIN.opra.opra_7.pny2sffhr15b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>OPRAV5CF</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>3000</OutboundThrottleRate>
+         <SubscSourceName>OPRAV5CF</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_v5_opracf</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>OPRAV5CF.ADMIN.opracf.opracf_19.pny2sffhr13a.HB</Value>
+             <Value>OPRAV5CF.ADMIN.opracf.opracf_19.pny2sffhr13b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>AMEXOPTIONS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>AMEXOPTIONS</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>ARCAOPTIONS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>ARCAOPTIONS</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>UTPEURO</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>UTP</SubscSourceName>
+         <Transport>sfd_europe_utpcasheuro</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>OPTIQ</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>OPTIQ</SubscSourceName>
+         <Transport>sfd_europe_utpcasheuro</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>UTPEURO_BAS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>UTP</SubscSourceName>
+         <Transport>sfd_europe_basildon_utpcasheuro</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>CHIX</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>BATSCHIXEU</SubscSourceName>
+         <Transport>sfdeu_chix</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>TURQ</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>TURQ</SubscSourceName>
+         <Transport>sfdeu_turquoise</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>BATSEU</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>BATSEU</SubscSourceName>
+         <Transport>sfdeu_batseurope</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>LIFFE</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>LIFFE</SubscSourceName>
+         <Transport>sfd_europe_euronextliffe</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>XDPLIFFEEURO</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>XDPLIFFEEURO</SubscSourceName>
+         <Transport>sfd_europe_xdpliffe</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>XDPLIFFEEURO_BAS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>XDPLIFFEEURO</SubscSourceName>
+         <Transport>sfd_europe_basildon_xdpliffe</Transport>
+      </MamaSource>
+
+      <!-- SuperFeed Europe Sources -->
+      <!--MamaSource>
+         <Name>XDPLIFFEEURO</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>XLIF</SubscSourceName>
+         <Transport>sfdeu_xdpliffeeuro</Transport>
+      </MamaSource!-->
+
+      <MamaSource>
+         <Name>TRADESCTA</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>TRADESCTA</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_trades_cta</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>TRADESCTA.ADMIN.cta.cts_a_1.pny2sffhr03a.HB</Value>
+             <Value>TRADESCTA.ADMIN.cta.cts_a_1.pny2sffhr03b.HB</Value>
+         </Parameter>
+
+      </MamaSource>
+
+      <MamaSource>
+         <Name>TRADESUTP</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>TRADESUTP</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_trades_utp</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>TRADESUTP.ADMIN.utp.utdf_AaCd.pny2sffhr11a.HB</Value>
+             <Value>TRADESUTP.ADMIN.utp.utdf_AaCd.pny2sffhr11b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>UTPLIFFE</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>UTPLIFFE</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>XDPLIFFEUS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>XDPLIFFEUS</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>NOTCBB</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>NOTCBB</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_notcbb</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>NOTCBB.ADMIN.finra.tdds.pny2sffhr11a.HB</Value>
+             <Value>NOTCBB.ADMIN.finra.tdds.pny2sffhr11b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>CBOEMDE</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>CBOEMDE</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>RUSSELLTICK</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>RUSSELLTICK</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>RUSSELLTICKXDP</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>FTSEGDS</SubscSourceName>
+         <Transport>sfdeu_ftsegds</Transport>
+         <!--SubFeedName>mamacache_russelltickxdp</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>FTSEGDS.ADMIN.ftsegds.ftsegds_prod_cmc_a.pld1sffdh02a.HB</Value>
+             <Value>FTSEGDS.ADMIN.ftsegds.ftsegds_prod_cmc_a.pld1sffdh02b.HB</Value>
+         </Parameter-->
+      </MamaSource>
+
+      <MamaSource>
+         <Name>OMDF</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>OMDF</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>MFDS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>MFDS</SubscSourceName>
+         <Transport>feeds</Transport>
+         <!--SubFeedName>mamacache_mfds</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>ADMIN.mfds.mfds.pny2sffhr14a.HB</Value>
+             <Value>ADMIN.mfds.mfds.pny2sffhr14b.HB</Value>
+         </Parameter-->
+      </MamaSource>
+
+      <MamaSource>
+         <Name>OTCMKTS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>OTCMKTS</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>TSXL1</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>TSXL1</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_tsxl1</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>TSXL1.ADMIN.tsxl1.ql1_t_2.pny2sffhr07a.HB</Value>
+             <Value>TSXL1.ADMIN.tsxl1.ql1_t_2.pny2sffhr07b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>TSXL2</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>TSXL2</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_tsxl2</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>TSXL2.ADMIN.tsxl2.tl2_1qp.pny2sffhr07a.HB</Value>
+             <Value>TSXL2.ADMIN.tsxl2.tl2_1qp.pny2sffhr07b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>CITADELGS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <Comment>The source name of the upstream feed</Comment>
+         <SubscSourceName>CITADELGS</SubscSourceName>
+         <Comment>Mama defined transport settings in mama.properties.papa</Comment>
+         <Transport>citadelgssubpri</Transport>
+      </MamaSource>
+ 
+      <MamaSource>
+         <Name>CITADELGS2</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <Comment>The source name of the upstream feed</Comment>
+         <SubscSourceName>CITADELGS</SubscSourceName>
+         <Comment>Mama defined transport settings in mama.properties.papa</Comment>
+         <Transport>citadelgssubsec</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>CITADELGSVMS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>CITADELGS</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>TRACE</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>TRACE</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_btds</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>TRACE.ADMIN.btds.btds.pny2sffhr11a.HB</Value>
+             <Value>TRACE.ADMIN.btds.btds.pny2sffhr11b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>BTDS144A</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>BTDS144A</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_btds_144A</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>ADMIN.btds.btds_144A.pny2sffhr14a.HB</Value>
+             <Value>ADMIN.btds.btds_144A.pny2sffhr14b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>TMXCDF</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>TMXCDF</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_cdf</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>TMXCDF.ADMIN.cdf.tl2_cdf_alp.pny2sffhr07a.HB</Value>
+             <Value>TMXCDF.ADMIN.cdf.tl2_cdf_alp.pny2sffhr07b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>TMXCLS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>TMXCLS</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_cdfcls</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>TMXCLS.ADMIN.cdfcls.tl2_CLS.pny2sffhr07a.HB</Value>
+             <Value>TMXCLS.ADMIN.cdfcls.tl2_CLS.pny2sffhr07b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>TMXCBBO</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>TMXCBBO</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_cdfcbbo</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>TMXCBBO.ADMIN.cdfcbbo.tl2_2CBBO.pny2sffhr07a.HB</Value>
+             <Value>TMXCBBO.ADMIN.cdfcbbo.tl2_2CBBO.pny2sffhr07b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>WARSAWUTP</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>WSE</SubscSourceName>
+         <Transport>sfdeu_warsaw</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>ATHEX</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>ATHEX</SubscSourceName>
+         <Transport>sfdeu_athens</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>MICEX</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>MICEX</SubscSourceName>
+         <Transport>sfdeu_micex</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>OSLOITCH</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>OSLOITCH</SubscSourceName>
+         <Transport>sfdeu_oslo</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>SAXESSITCH</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>SAXESSITCH</SubscSourceName>
+         <Transport>sfdeu_saxessitch</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>BME</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>BME</SubscSourceName>
+         <Transport>sfdeu_bme</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>XLON</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>LSEGTP</SubscSourceName>
+         <Transport>sfdeu_lseitch</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>ISE</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <!--SubscSourceName>ISE</SubscSourceName>
+         <Transport>sfdeu_xetraultra_dublin</Transport SFDCR-1503-->
+         <SubscSourceName>OPTIQ</SubscSourceName>
+         <Transport>sfdeu_optiq</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>XIST</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>XIST</SubscSourceName>
+         <Transport>sfdeu_istanbul</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>CEFEUREX</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <SubscSourceName>CEFEUREX</SubscSourceName>
+         <Transport>sfdeu_cefeurex</Transport>
+      </MamaSource>
+
+     <MamaSource>
+         <Name>CEF</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <SubscSourceName>CEF</SubscSourceName>
+         <Transport>sfdeu_cef</Transport>
+      </MamaSource>
+
+     <MamaSource>
+         <Name>ASXITCH</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <SubscSourceName>ASXITCH</SubscSourceName>
+         <Transport>sfdeu_asx</Transport>
+      </MamaSource>
+
+     <MamaSource>
+         <Name>AQXE</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <SubscSourceName>AQXE</SubscSourceName>
+         <Transport>sfdeu_aquis</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>VIENNA</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>VIENNA</SubscSourceName>
+         <Transport>sfdeu_vienna</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>XETRAULTRA</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>XETRAEMDI</SubscSourceName>
+         <Transport>sfdeu_xetraultra</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>BITMTA</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>MTAA</SubscSourceName>
+         <Transport>sfdeu_bitmta</Transport>
+      </MamaSource>
+
+<!-- SFDCR-1660 start -->
+      <MamaSource>
+         <Name>BITGTP</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>BITGTP</SubscSourceName>
+         <Transport>sfdeu_bitgtp</Transport>
+      </MamaSource>
+<!-- SFDCR-1660 end -->
+
+      <MamaSource>
+         <Name>JSE</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>JSEITCH</SubscSourceName>
+         <Transport>sfdeu_jse</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>NBQT</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>NBQT</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_nysecbboxdp</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>NBQT.ADMIN.nysecbboxdp.nysecbboxdp_quotes_ac.pny2sffhr05a.HB</Value>
+             <Value>NBQT.ADMIN.nysecbboxdp.nysecbboxdp_quotes_ac.pny2sffhr05b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>HSVF</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>2000</OutboundThrottleRate>
+         <SubscSourceName>HSVF</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>ARCABOND</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>ARCABOND</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_arcabond</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>ARCABOND.ADMIN.arcabond.arcabond_quotes.pny2sffhr03a.HB</Value>
+             <Value>ARCABOND.ADMIN.arcabond.arcabond_quotes.pny2sffhr03b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>SWXMDI</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>SWXMDDX</SubscSourceName>
+         <Transport>sfdeu_swx</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>ICEMDFMC</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>ICEMDFMC</SubscSourceName>
+         <Transport>feeds</Transport>
+         <SubFeedName>mamacache_icemdfmc</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>ICEMDFMC.ADMIN.icemdfmc.tcp_feed.pny2sffhr03a.HB</Value>
+             <Value>ICEMDFMC.ADMIN.icemdfmc.tcp_feed.pny2sffhr03b.HB</Value>
+         </Parameter>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>ICEMDFMCEU</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>ICEMDFMCEU</SubscSourceName>
+         <Transport>sfdeu_icemdfmceu</Transport>
+         <!--SubFeedName>mamacache_icemdfmceu</SubFeedName>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>ICEMDFMCEU.ADMIN.icemdfmc.ice_liffe_equity_options_top10_live.pld1sffdh02a.HB</Value>
+             <Value>ICEMDFMCEU.ADMIN.icemdfmc.ice_liffe_equity_options_top10_live.pld1sffdh02b.HB</Value>
+         </Parameter-->
+      </MamaSource>
+
+      <MamaSource>
+         <Name>CBOECSM</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>CBOECSM</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>CBOEEUTRFMC</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>CBOEEUTRFMC</SubscSourceName>
+         <Transport>sfdeu_cboeeutrfmc</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>NORDICDERIVITCH</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>NORDICDERIVITCH</SubscSourceName>
+         <Transport>sfdeu_nordicderivitch</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>OPTIQDERIV</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>OPTIQDERIV</SubscSourceName>
+         <Transport>sfdeu_xlif</Transport>
+      </MamaSource>
+<!-- SFD-1826 START -->
+      <MamaSource>
+         <Name>SMART_NYSE</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>SMART_NYSE</SubscSourceName>
+         <Transport>smart</Transport>
+      </MamaSource>
+      
+      <MamaSource>
+         <Name>SMART_AMEX</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>SMART_AMEX</SubscSourceName>
+         <Transport>smart</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>SMART_INDEXCTA</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>SMART_INDEXCTA</SubscSourceName>
+         <Transport>smart</Transport>
+      </MamaSource>
+<!-- SFD-1826 END -->
+
+<!-- SFD-2087 START -->
+      <MamaSource>
+         <Name>SMART_UTP</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>SMART_UTP</SubscSourceName>
+         <Transport>smart</Transport>
+      </MamaSource>
+<!-- SFD-2087 END-->
+
+<!-- SFDCR-1994 Start -->
+      <MamaSource>
+         <Name>IEXDEEP</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>IEXDEEP</SubscSourceName>
+         <Transport>smart</Transport>
+      </MamaSource>
+<!-- SFDCR-1994 End -->
+<!-- SFDCR-2006 Start -->
+
+     <MamaSource>
+         <Name>HKFEOMD</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <SubscSourceName>HKFEOMD</SubscSourceName>
+         <Transport>sfdeu_hk</Transport>
+      </MamaSource>
+<!-- SFDCR-2006 End -->
+
+<!-- SFDCR-1968 Start -->
+      <MamaSource>
+         <Name>CBOEONE</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>CBOEONE</SubscSourceName>
+         <Transport>feeds</Transport>
+         <Parameter>
+             <Name>HeartBeatSymbol</Name>
+             <Value>CBOEONE.ADMIN.cboeonetcp.cboeonetcp.pny2sffhr03a.HB</Value>
+             <Value>CBOEONE.ADMIN.cboeonetcp.cboeonetcp.pny2sffhr03b.HB</Value>
+         </Parameter>
+      </MamaSource>
+<!-- SFDCR-1968 End -->
+   </MamaSources>
+
+</config>

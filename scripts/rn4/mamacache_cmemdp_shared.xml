@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Parameter Groups for Specific MamaSenderIds -->
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCmemdpSharedProdP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>165</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCmemdpSharedProdS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>1065</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCmemdpProd1P</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>108</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCmemdpProd1S</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>1085</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCmemdpProd2P</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>109</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCmemdpProd2S</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>1095</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCmemdpProd3P</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>113</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCmemdpProd3S</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>1135</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <!-- END - Parameter Groups for Specific MamaSenderIds -->
+
+   <Feed>
+      <Name>mamacache_cmemdp_shared_prod</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cmemdp</Value>
+         <Value>mamacache_cmemdp_dow</Value>
+         <!--Value>mamacache_utpnyseliffe</Value-->
+         <Value>mamacache_cboemde</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cmemdp</Value>
+         <Value>thread_mamacache_cmemdp_dow</Value>
+         <!--Value>thread_mamacache_utpnyseliffe</Value-->
+         <Value>thread_mamacache_cboemde</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cmemdp_shared_prod</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.shared</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct05a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCmemdpSharedProdP"/>
+      </pny2sfmct05a>
+      <pny2sfmct05b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCmemdpSharedProdS"/>
+      </pny2sfmct05b>
+      <!-- END - Host-Specific Settings -->
+      <!-- CHG174425: Add MamaPublishOrderBookSrcTime to enable wSrcTime on all BOOK_UPDATES -->
+      <Parameter>
+         <Name>MamaPublishOrderBookSrcTime</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- CHG174425 -->
+   </Feed>
+
+<!-- CMEMDP cache 3 way split START -->
+
+   <Feed>
+      <Name>mamacache_cmemdp_AE_prod</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cmemdp</Value>
+         <Value>mamacache_cmemdp_dow</Value>
+         <Value>mamacache_cboemde</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cmemdp</Value>
+         <Value>thread_mamacache_cmemdp_dow</Value>
+         <Value>thread_mamacache_cboemde</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cmemdp_AE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cmemdp_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct05a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCmemdpProd1P"/>
+      </pny2sfmct05a>
+      <pny2sfmct05b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCmemdpProd1S"/>
+      </pny2sfmct05b>
+      <!-- END - Host-Specific Settings -->
+      <!-- CHG174425: Add MamaPublishOrderBookSrcTime to enable wSrcTime on all BOOK_UPDATES -->
+      <Parameter>
+         <Name>MamaPublishOrderBookSrcTime</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- CHG174425 -->
+      <Parameter>
+          <Name>RecordRegExpFilter</Name>
+          <Value>^\(CMEMDP\|CMEMDPDOW\|CBOEMDE\)\.[A-E].*</Value>
+     </Parameter>
+     <Parameter>
+          <Name>OrderBookRegExpFilter</Name>
+          <Value>^\(CMEMDP\|CMEMDPDOW\|CBOEMDE\)\.[A-E].*</Value>
+     </Parameter>
+        <Parameter>
+          <Name>MamaSubscriberRegExpFilter</Name>
+          <Value>^\(CMEMDP\|CMEMDPDOW\|CBOEMDE\)\.[A-E].*</Value>
+     </Parameter>
+     <Parameter>
+          <Name>MamdaSubscriberRegExpFilter</Name>
+          <Value>^\(CMEMDP\|CMEMDPDOW\|CBOEMDE\)\.[A-E].*</Value>
+     </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cmemdp_FP_prod</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cmemdp</Value>
+         <Value>mamacache_cmemdp_dow</Value>
+         <Value>mamacache_cboemde</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cmemdp</Value>
+         <Value>thread_mamacache_cmemdp_dow</Value>
+         <Value>thread_mamacache_cboemde</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cmemdp_FP</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cmemdp_feeds1</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct05a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCmemdpProd2P"/>
+      </pny2sfmct05a>
+      <pny2sfmct05b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCmemdpProd2S"/>
+      </pny2sfmct05b>
+      <!-- END - Host-Specific Settings -->
+      <!-- CHG174425: Add MamaPublishOrderBookSrcTime to enable wSrcTime on all BOOK_UPDATES -->
+      <Parameter>
+         <Name>MamaPublishOrderBookSrcTime</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- CHG174425 -->
+      <Parameter>
+          <Name>RecordRegExpFilter</Name>
+          <Value>^\(CMEMDP\|CMEMDPDOW\|CBOEMDE\)\.[F-P].*</Value>
+     </Parameter>
+     <Parameter>
+          <Name>OrderBookRegExpFilter</Name>
+          <Value>^\(CMEMDP\|CMEMDPDOW\|CBOEMDE\)\.[F-P].*</Value>
+     </Parameter>
+        <Parameter>
+          <Name>MamaSubscriberRegExpFilter</Name>
+          <Value>^\(CMEMDP\|CMEMDPDOW\|CBOEMDE\)\.[F-P].*</Value>
+     </Parameter>
+     <Parameter>
+          <Name>MamdaSubscriberRegExpFilter</Name>
+          <Value>^\(CMEMDP\|CMEMDPDOW\|CBOEMDE\)\.[F-P].*</Value>
+     </Parameter>
+   </Feed>   
+
+   <Feed>
+      <Name>mamacache_cmemdp_QZ_prod</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cmemdp</Value>
+         <Value>mamacache_cmemdp_dow</Value>
+         <Value>mamacache_cboemde</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cmemdp</Value>
+         <Value>thread_mamacache_cmemdp_dow</Value>
+         <Value>thread_mamacache_cboemde</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cmemdp_QZ</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cmemdp_feeds2</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct05a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCmemdpProd3P"/>
+      </pny2sfmct05a>
+      <pny2sfmct05b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCmemdpProd3S"/>
+      </pny2sfmct05b>
+      <!-- END - Host-Specific Settings -->
+      <!-- CHG174425: Add MamaPublishOrderBookSrcTime to enable wSrcTime on all BOOK_UPDATES -->
+      <Parameter>
+         <Name>MamaPublishOrderBookSrcTime</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- CHG174425 -->
+      <Parameter>
+          <Name>RecordRegExpFilter</Name>
+          <Value>^\(CMEMDP\|CMEMDPDOW\|CBOEMDE\)\.[0-9Q-Z].*</Value>
+     </Parameter>
+     <Parameter>
+          <Name>OrderBookRegExpFilter</Name>
+          <Value>^\(CMEMDP\|CMEMDPDOW\|CBOEMDE\)\.[0-9Q-Z].*</Value>
+     </Parameter>
+        <Parameter>
+          <Name>MamaSubscriberRegExpFilter</Name>
+          <Value>^\(CMEMDP\|CMEMDPDOW\|CBOEMDE\)\.[0-9Q-Z].*</Value>
+     </Parameter>
+     <Parameter>
+          <Name>MamdaSubscriberRegExpFilter</Name>
+          <Value>^\(CMEMDP\|CMEMDPDOW\|CBOEMDE\)\.[0-9Q-Z].*</Value>
+     </Parameter>
+   </Feed>
+
+<!-- CMEMDP cache 3 way split END -->
+
+</config>

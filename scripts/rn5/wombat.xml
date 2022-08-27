@@ -1,0 +1,1020 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+<!-- Fault tolerance settings for 2.16/2.17 components -->
+<!--
+   <Parameter>
+      <Name>MamaPublisherType</Name>
+      <Value>broadcast</Value>
+   </Parameter>
+-->
+
+   <Parameter>
+      <Name>FtInterface</Name>
+      <Value>ib0</Value>
+   </Parameter>
+<!-- SFDCR-1765 Start -->
+   <DefineParameterGroup>
+       <Name>DisableFast</Name>
+        <Parameter>
+           <Name>MamaBookPassThruCompatibility</Name>
+           <Value>true</Value>
+        </Parameter>
+        <Parameter>
+           <Name>MamaPublishOrderBookSrcTime</Name>
+           <Value>true</Value>
+        </Parameter>
+        <Parameter>
+           <Name>MamaUseFastForRecords</Name>
+           <Value>false</Value>
+        </Parameter>
+        <Parameter>
+           <Name>MamaUseFastForSimpleDeltas</Name>
+           <Value>false</Value>
+        </Parameter>
+   </DefineParameterGroup>
+
+<!-- SFDCR-1765 End -->
+   <DefineParameterGroup>
+       <Name>FtPrimaryWeights</Name>
+        <Parameter>
+           <Name>FtWeightHigh</Name>
+           <Value>70</Value>
+        </Parameter>
+        <Parameter>
+           <Name>FtWeightMedium</Name>
+           <Value>50</Value>
+        </Parameter>
+        <Parameter>
+           <Name>FtWeightLow</Name>
+           <Value>30</Value>
+        </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+       <Name>FtSecondaryWeights</Name>
+        <Parameter>
+           <Name>FtWeightHigh</Name>
+           <Value>60</Value>
+        </Parameter>
+        <Parameter>
+           <Name>FtWeightMedium</Name>
+           <Value>40</Value>
+        </Parameter>
+        <Parameter>
+           <Name>FtWeightLow</Name>
+           <Value>20</Value>
+        </Parameter>
+   </DefineParameterGroup>
+
+   <!-- ParameterGroups for FT Settings -->
+   <DefineParameterGroup>
+      <Name>MamaCacheFtPrimary</Name>
+      <Parameter>
+         <Name>FtWeightHigh</Name>
+         <Value>70</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtWeightMedium</Name>
+         <Value>50</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtWeightLow</Name>
+         <Value>30</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaCacheFtSecondary</Name>
+      <Parameter>
+         <Name>FtWeightHigh</Name>
+         <Value>60</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtWeightMedium</Name>
+         <Value>40</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtWeightLow</Name>
+         <Value>20</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <!-- END - ParameterGroups for FT Settings -->
+
+   <DefineParameterGroup>
+       <Name>FHFtInterface</Name>
+       <Parameter>
+          <Name>FtInterface</Name>
+          <Value>eth5</Value>
+        </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+       <Name>MCPriFtInterface</Name>
+       <Parameter>
+          <Name>FtInterface</Name>
+          <Value>eth5.471</Value>
+        </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+       <Name>MCSecFtInterface</Name>
+       <Parameter>
+          <Name>FtInterface</Name>
+          <Value>eth5.478</Value>
+        </Parameter>
+   </DefineParameterGroup>
+
+<!-- Keep Subscriptions from expiring - used in conjunction with diable_refresh - SFDCR-153 -->
+   <Parameter>
+      <Name>MamaSubscExpire</Name>
+      <Value>0.0</Value>
+   </Parameter>
+
+<!-- Entitlement code publishing -->
+      <Parameter>
+        <Name>UseEntitleCodes</Name>
+        <Value>true</Value>
+      </Parameter>
+
+      <Parameter>
+        <Name>UseReutersPeCodes</Name>
+        <Value>false</Value>
+      </Parameter>
+
+<!-- WmwCreateSources should be set to false based on DOCS-229 -->
+      <Parameter>
+        <Name>WmwCreateSources</Name>
+        <Value>false</Value>
+      </Parameter>
+
+<!-- Summary/Top/Full publishing -->
+      <Parameter>
+        <Name>CalculateTopOfBook</Name>
+        <Value>false</Value>
+      </Parameter>
+
+      <Parameter>
+        <Name>PublishTopOfBook</Name>
+        <Value>false</Value>
+      </Parameter>
+
+      <Parameter>
+        <Name>PublishSummaryOrderBook</Name>
+        <Value>false</Value>
+      </Parameter>
+
+      <Parameter>
+        <Name>PublishFullOrderBook</Name>
+        <Value>false</Value>
+      </Parameter>
+
+<!-- FH delta publishing -->
+      <Parameter>
+        <Name>AlwaysCheckModified</Name>
+        <Value>true</Value>
+      </Parameter>
+      <Parameter>
+        <Name>QuoteHardUpdates</Name>
+        <Value>false</Value>
+      </Parameter>
+      <Parameter>
+        <Name>MamaQuoteHardUpdates</Name>
+        <Value>false</Value>
+      </Parameter>
+      <Parameter>
+        <Name>TradeHardUpdates</Name>
+        <Value>false</Value>
+      </Parameter>
+      <!--Parameter>
+        <Name>MamaTradeHardUpdates</Name>
+        <Value>false</Value>
+      </Parameter-->
+
+<!-- MAMA 4.0 client optimizations -->
+      <Parameter>
+        <Name>MamaTimeFieldFormat</Name>
+        <Value>time</Value>
+      </Parameter>
+      <Parameter>
+        <Name>MamaPriceFieldFormat</Name>
+        <Value>price</Value>
+      </Parameter>
+      <Parameter>
+        <Name>MamaFlattenSingleBookSubMessages</Name>
+        <Value>true</Value>
+      </Parameter>
+      <Parameter>
+        <Name>MamaOptimizeOrderBookMsgs</Name>
+        <Value>true</Value>
+      </Parameter>
+
+<!-- Disable additional fields published with every message -->
+
+      <Parameter>
+        <Name>PublishPubHost</Name>
+        <Value>false</Value>
+      </Parameter>
+      <Parameter>
+        <Name>PublishPubName</Name>
+        <Value>false</Value>
+      </Parameter>
+      <Parameter>
+        <Name>LineTimeStamps</Name>
+        <Value>true</Value>
+      </Parameter>
+     <Parameter>
+        <Name>MamaPublishLineTime</Name>
+        <Value>true</Value>
+      </Parameter>
+      <Parameter>
+        <Name>MamaPublishSendTime</Name>
+        <Value>true</Value>
+      </Parameter>
+      <Parameter>
+        <Name>HandlerTimeStamps</Name>
+        <Value>false</Value>
+      </Parameter>
+      <Parameter>
+        <Name>ActivityTimeStamps</Name>
+        <Value>false</Value>
+      </Parameter>
+
+     <!-- Disable trade value added fields added by Wombat -->
+
+      <Parameter>
+        <Name>TradeCalculateBlocks</Name>
+        <Value>false</Value>
+      </Parameter>
+      <Parameter>
+        <Name>TradeCalculateNetChange</Name>
+        <Value>false</Value>
+      </Parameter>
+      <Parameter>
+        <Name>TradeCalculatePctChange</Name>
+        <Value>false</Value>
+      </Parameter>
+      <Parameter>
+        <Name>TradeCalculateTick</Name>
+        <Value>false</Value>
+      </Parameter>
+      <Parameter>
+        <Name>TradeCalculateVwap</Name>
+        <Value>false</Value>
+      </Parameter>
+        <Parameter>
+        <Name>UseExpandedTradeDirection</Name>
+        <Value>false</Value>
+      </Parameter>
+
+<!-- Turn off global security status publishing -->
+
+      <Parameter>
+        <Name>PublishSecurityStatusGlobal</Name>
+        <Value>false</Value>
+      </Parameter>
+
+      <Parameter>
+        <Name>PublishOrderImbalanceGlobal</Name>
+        <Value>false</Value>
+      </Parameter>
+
+<!-- Global Security Status Parammeters -->
+   <DefineParameterGroup>
+      <Name>GlobalSecStatusParams</Name>
+      <Parameter>
+         <Name>PublishSecurityStatusGlobal</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PublishSeparateSecurityStatus</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>CheckSecurityStatusModified</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusAppendSuffix</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookUpdateImpliesNormalStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SessionStatusDoNotModifyHaltedSymbols</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SessionStatusOverrideHalted</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+<!--END-->
+
+<!-- Tvitch Security Status Parameters -->
+   <DefineParameterGroup>
+      <Name>TvitchSecStatusParams</Name>
+      <Parameter>
+         <Name>PublishSecurityStatusGlobal</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PublishSeparateSecurityStatus</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>CheckSecurityStatusModified</Name>
+         <Value>false</Value><!--DFH-23596-->
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusAppendSuffix</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookUpdateImpliesNormalStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SessionStatusDoNotModifyHaltedSymbols</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SessionStatusOverrideHalted</Name>
+         <Value>false</Value>
+      </Parameter>
+     <!-- Feed Specific -->
+      <!-- TVITCH -->
+      <Parameter>
+         <Name>ItchQuoteResumeChangesStatus</Name>
+         <Value>true</Value> <!-- default is true -->
+      </Parameter>
+      <Parameter>
+          <Name>NasdaqQuoteResumeChangesStatus</Name>
+          <Value>true</Value> <!-- default is true -->
+     </Parameter>
+     <!-- END TVITCH -->
+   </DefineParameterGroup>
+<!-- TotalView Security Status Parameters -->
+   <DefineParameterGroup>
+      <Name>TotalViewSecStatusParams</Name>
+      <Parameter>
+         <Name>PublishSecurityStatusGlobal</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PublishSeparateSecurityStatus</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>CheckSecurityStatusModified</Name>
+         <Value>false</Value><!--DFH-23596-->
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusAppendSuffix</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookUpdateImpliesNormalStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SessionStatusDoNotModifyHaltedSymbols</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SessionStatusOverrideHalted</Name>
+         <Value>false</Value>
+      </Parameter>
+     <!-- Feed Specific -->
+      <!-- TVITCH -->
+      <Parameter>
+         <Name>NasdaqQuoteResumeChangesStatus</Name>
+         <Value>true</Value> <!-- default is true -->
+      </Parameter>
+     <!-- END TVITCH -->
+   </DefineParameterGroup>
+
+<!-- Global Order Imbalance Parammeters -->
+   <DefineParameterGroup>
+      <Name>GlobalOrderImbalanceStatusParams</Name>
+      <Parameter>
+         <Name>PublishOrderImbalanceGlobal</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PublishOrderImbAuctionSecStatus</Name>
+         <Value>false</Value> <!-- Defaults to false -->
+      </Parameter>
+   </DefineParameterGroup>
+
+
+     <Parameter>
+        <Name>LogMaxSize</Name>
+        <Value>10000</Value>
+     </Parameter>
+     <Parameter>
+        <Name>LogNumFiles</Name>
+        <Value>10</Value>
+     </Parameter>
+     <Parameter>
+        <Name>LogTimestamps</Name>
+        <Value>true</Value>
+     </Parameter>
+     <Parameter>
+        <Name>NativeTimeZone</Name>
+        <Value>US/Eastern</Value>
+     </Parameter>
+     <Parameter>
+        <Name>SecurityStatusAppendSuffix</Name>
+        <Value>true</Value>
+     </Parameter>
+
+<!-- Symbol Announce Parameters -->
+   <DefineParameterGroup>
+      <Name>SymbolAnnounceParams</Name>
+      <Parameter>
+         <Name>RecordHandlerSymbolAnnounce</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PublishSymbolAnnounce</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PublishSymbolAnnounceRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WimpSymbolAnnounce</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SymbolAnnounceRecord</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SymbolAnnounceAddBookPrefix</Name>
+         <Value>true</Value>
+      </Parameter>
+   </DefineParameterGroup>
+<!-- END - Symbol Announce Parameters -->
+
+   <DefineParameterGroup>
+      <Name>PlaybackFiles</Name>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>SLEEP</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseFtRv</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtMuted</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordSymbolFile</Name>
+         <Value/>
+      </Parameter>
+      <Parameter>
+         <Name>UseWadmin</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseLbt</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseWmw</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FieldAttrs</Name>
+         <Value/>
+      </Parameter>
+   </DefineParameterGroup>
+   <ConfigFile>
+      <ExeName>abm</ExeName>
+      <ConfigName>abm</ConfigName>
+      <FeedName>ARCABook Multicast for Equities</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>abmff</ExeName>
+      <ConfigName>abmff</ConfigName>
+      <FeedName>ARCABook Multicast for Equities FAST FIX</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>arcabook</ExeName>
+      <ConfigName>arcabook</ConfigName>
+      <FeedName>ARCABook</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>arcabookfix</ExeName>
+      <ConfigName>arcabook</ConfigName>
+      <FeedName>ARCABook (FIX)</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>arcabookproxy</ExeName>
+      <ConfigName>arcabook</ConfigName>
+      <Show>false</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>arcabond</ExeName>
+      <ConfigName>arcabond</ConfigName>
+      <FeedName>ARCABond</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>arcabnb</ExeName>
+      <ConfigName>arcabnb</ConfigName>
+      <FeedName>ARCABookandBond</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>arcatb</ExeName>
+      <ConfigName>arcatb</ConfigName>
+      <FeedName>ARCATradeForBonds</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>arcabondproxy</ExeName>
+      <ConfigName>arcabond</ConfigName>
+      <Show>false</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>arcabnbproxy</ExeName>
+      <ConfigName>arcabnb</ConfigName>
+      <Show>false</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>bookstream</ExeName>
+      <ConfigName>bookstream</ConfigName>
+      <FeedName>Instinet BookStream</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>bfpcertifier</ExeName>
+      <ConfigName>bookstream</ConfigName>
+      <FeedName>Instinet BookStream</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>bridge</ExeName>
+      <ConfigName>bridge</ConfigName>
+      <FeedName>Bridge</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>btrd</ExeName>
+      <ConfigName>btrd</ConfigName>
+      <FeedName>Bloomberg TradeBook</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>cme</ExeName>
+      <ConfigName>cme</ConfigName>
+      <FeedName>CME iLink</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>cmeitc</ExeName>
+      <ConfigName>cme</ConfigName>
+      <FeedName>CME ITC format feed</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>cmerlc</ExeName>
+      <ConfigName>cme</ConfigName>
+      <FeedName>CME RLC format feed</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>cqs</ExeName>
+      <ConfigName>cta</ConfigName>
+      <FeedName>CQS</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>cts</ExeName>
+      <ConfigName>cta</ConfigName>
+      <FeedName>CTS</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>cta</ExeName>
+      <Comment>cta is intended as a combined feed handler for all CTA subfeeds: cqs_1, cqs_2, cqs_3, cqs_4, cqs_5, cts_1, cts_2, cts_3, cts_4. You can create your own combinations of CQS/CTS feed handlers by simply copying/renaming this definition and the corresponding configuration in the "cta" config file. See the "cta" config file for more information.</Comment>
+      <ConfigName>cta</ConfigName>
+      <FeedName>CTA</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>cqs12345</ExeName>
+      <Comment>cqs12345 is intended as a combined feed handler for cqs_1, cqs_2, cqs_3, cqs_4, cqs_5.</Comment>
+      <ConfigName>cta</ConfigName>
+      <FeedName>CTA</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>cts1234</ExeName>
+      <Comment>cts1234 is intended as a combined feed handler for cts_1, cts_2, cts_3, cts_4.</Comment>
+      <ConfigName>cta</ConfigName>
+      <FeedName>CTA</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>ctatcp</ExeName>
+      <Comment>ctatcp is intended as a combined feed handler for all CTA subfeeds when routed via TCP: cqs_1, cqs_2, cqs_3, cqs_4, cqs_5, cts_1, cts_2, cts_3, cts_4. You can create your own combinations of CQS/CTS feed handlers by simply copying/renaming this definition and the corresponding configuration in the "cta" config file. See the "cta" config file for more information.</Comment>
+      <ConfigName>ctatcp</ConfigName>
+      <FeedName>CTATCP</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>directedge</ExeName>
+      <ConfigName>directedge</ConfigName>
+      <FeedName>DirectEdge</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>ebsati</ExeName>
+      <ConfigName>ebsati</ConfigName>
+      <FeedName>EBS ATI (XML)</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>liffeconnect</ExeName>
+      <ConfigName>liffeconnect</ConfigName>
+      <FeedName>LIFFE CONNECT Gateway Feed Handler</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>nasdaql1</ExeName>
+      <ConfigName>nasdaq</ConfigName>
+      <FeedName>Nasdaq Level 1</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>nids</ExeName>
+      <ConfigName>nasdaq</ConfigName>
+      <FeedName>NIDS</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>bbds</ExeName>
+      <ConfigName>nasdaq</ConfigName>
+      <FeedName>BBDS</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>nqds2</ExeName>
+      <ConfigName>nasdaq</ConfigName>
+      <FeedName>NQDS2</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>tdds</ExeName>
+      <ConfigName>nasdaq</ConfigName>
+      <FeedName>TDDS</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>uqdf</ExeName>
+      <ConfigName>nasdaqinet</ConfigName>
+      <FeedName>UQDF</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>utdf</ExeName>
+      <ConfigName>nasdaqinet</ConfigName>
+      <FeedName>UTDF</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>utp</ExeName>
+      <ConfigName>nasdaqinet</ConfigName>
+      <FeedName>TCP-based UTP</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>utptcp</ExeName>
+      <ConfigName>nasdaq</ConfigName>
+      <FeedName>TCP-based OPRA</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>imquotes</ExeName>
+      <ConfigName>nasdaq</ConfigName>
+      <FeedName>iM Quotes</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>openview</ExeName>
+      <ConfigName>nasdaq</ConfigName>
+      <FeedName>OpenView</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>prime</ExeName>
+      <ConfigName>nasdaq</ConfigName>
+      <FeedName>Nasdaq Prime</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>totalview</ExeName>
+      <!--ConfigName>nasdaq</ConfigName-->
+      <ConfigName>totalview</ConfigName>
+      <FeedName>Nasdaq TotalView</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>nois</ExeName>
+      <ConfigName>nasdaq</ConfigName>
+      <FeedName>Net Order Imbalance SnapShot</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>notcbb</ExeName>
+      <Comment>notcbb is intended as a combined feed for bbds and tdds . See the "nasdaq" config file for more information.</Comment>
+      <ConfigName>notcbb</ConfigName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>nlevel2</ExeName>
+      <Comment>nlevel2 is an obsolete combined feed name.  See nqds.</Comment>
+      <ConfigName>nasdaq</ConfigName>
+      <Show>false</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>nqds2</ExeName>
+      <Comment>nqds2 is intended as a combined feed for nqds2_ae, nqds2_fn and nqds2_oz. See the "nasdaq" config file for more information.</Comment>
+      <ConfigName>nasdaq</ConfigName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>opra</ExeName>
+      <ConfigName>opra</ConfigName>
+      <FeedName>OPRA</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>opra_2345</ExeName>
+      <Comment>opra_2345 is intended as a combined feed handler for opra_2, opra_3, opra_4 and opra_5. You can create your own combinations of opra feed handler by simply copying/renaming this definition and the corresponding configuration in the "opra" config file. See the "opra" config file for more information.</Comment>
+      <ConfigName>opra</ConfigName>
+      <FeedName>OPRA</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>opra_6789</ExeName>
+      <Comment>opra_6789 is intended as a combined feed handler for opra_6, opra_7, opra_8 and opra_9. You can create your own combinations of opra feed handler by simply copying/renaming this definition and the corresponding configuration in the "opra" config file. See the "opra" config file for more information.</Comment>
+      <ConfigName>opra</ConfigName>
+      <FeedName>OPRA</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>opratcp</ExeName>
+      <ConfigName>opratcp</ConfigName>
+      <FeedName>TCP-based OPRA</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>brut</ExeName>
+      <ConfigName>brut</ConfigName>
+      <FeedName>BRUT</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>brutproxy</ExeName>
+      <ConfigName>brut</ConfigName>
+      <Show>false</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>hsfxitch</ExeName>
+      <ConfigName>hsfxitch</ConfigName>
+      <FeedName>HotspotFX ECN ITCH Data Feed</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>hsfxitchproxy</ExeName>
+      <ConfigName>hsfxitch</ConfigName>
+      <Show>false</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>itch</ExeName>
+      <ConfigName>itch</ConfigName>
+      <FeedName>NASDAQ ITCH (TCP-based)</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>itchproxy</ExeName>
+      <ConfigName>itch</ConfigName>
+      <Show>false</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>itchmc</ExeName>
+      <ConfigName>itchmc</ConfigName>
+      <FeedName>NASDAQ ITCH (Multicast)</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>itcha</ExeName>
+      <ConfigName>itcha</ConfigName>
+      <FeedName>NASDAQ ITCH 2.0A (TCP-based)</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>itchaproxy</ExeName>
+      <ConfigName>itcha</ConfigName>
+      <Show>false</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>itchamc</ExeName>
+      <ConfigName>itchamc</ConfigName>
+      <FeedName>NASDAQ ITCH 2.0A (Multicast)</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>openbook</ExeName>
+      <ConfigName>openbook</ConfigName>
+      <FeedName>NYSE OpenBook</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>openbooktcp</ExeName>
+      <ConfigName>openbooktcp</ConfigName>
+      <FeedName>TCP based NYSE OpenBook</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>phlx</ExeName>
+      <ConfigName>phlx</ConfigName>
+      <FeedName>Philadelphia Stock Exchange - Depth of Book feed</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>tvitch</ExeName>
+      <ConfigName>tvitch</ConfigName>
+      <FeedName>NASDAQ TotalView ITCH format 3.0 and greater (TCP)</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>tvitchproxy</ExeName>
+      <ConfigName>tvitch</ConfigName>
+      <Show>false</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>tvitchmc</ExeName>
+      <ConfigName>tvitchmc</ConfigName>
+      <FeedName>NASDAQ TotalView ITCH format 3.0 and greater (Multicast)</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+       <ExeName>obu</ExeName>
+       <ConfigName>obu</ConfigName>
+       <FeedName>NYSE OpenBook Ultra</FeedName>
+       <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>hsfx</ExeName>
+      <ConfigName>hsfx</ConfigName>
+      <FeedName>HotSpot FX</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>xpressfeedmc</ExeName>
+      <ConfigName>xpressfeed</ConfigName>
+      <FeedName>Standard and Poors Comstock XpressFeed (multicast version)</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>mcpub</ExeName>
+      <ConfigName>mcutils</ConfigName>
+      <FeedName>Multicast Replay Publisher</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>mc2tcp</ExeName>
+      <ConfigName>mcutils</ConfigName>
+      <FeedName>Multicast to TCP Proxy</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>wommark</ExeName>
+      <ConfigName>wommark</ConfigName>
+      <FeedName>Wommark (Wombat Benchmarking) Publisher</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>wommarkcl</ExeName>
+      <ConfigName>wommark</ConfigName>
+      <FeedName>Wommark (Wombat Benchmarking) Client</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>ssl2mdrv</ExeName>
+      <ConfigName>ssl2mdrv</ConfigName>
+      <FeedName>SSL to MDRV Gateway</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>tcppub</ExeName>
+      <ConfigName>mcutils</ConfigName>
+      <FeedName>Pure TCP based simulation</FeedName>
+      <Show>false</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>loginpub</ExeName>
+      <ConfigName>mcutils</ConfigName>
+      <FeedName>Basic login TCP based proxy</FeedName>
+      <Show>false</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>tl1</ExeName>
+      <ConfigName>tsx</ConfigName>
+      <FeedName>TSX Tl1</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>tl2</ExeName>
+      <ConfigName>tsx</ConfigName>
+      <FeedName>TSX Tl2</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>cl1</ExeName>
+      <ConfigName>tsx</ConfigName>
+      <FeedName>TSX Cl1</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>cl2</ExeName>
+      <ConfigName>tsx</ConfigName>
+      <FeedName>TSX Cl2</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>lrp</ExeName>
+      <ConfigName>lrp</ConfigName>
+      <FeedName>NYSE Liquidity Replenishment Points</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>chix</ExeName>
+      <ConfigName>chix</ConfigName>
+      <FeedName>Instinet Chi-X data feed (TCP-based)</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>chixproxy</ExeName>
+      <ConfigName>chix</ConfigName>
+      <Show>false</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>nsxdob</ExeName>
+      <ConfigName>nsxdob</ConfigName>
+      <FeedName>NSX depth of book feed (TCP-based)</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>fds</ExeName>
+      <ConfigName>fds</ConfigName>
+      <FeedName>Tullet Liberty FDS Protocol (serial based)</FeedName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>nasdaqlevel2tcp</ExeName>
+      <ConfigName>nasdaqlevel2tcp</ConfigName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>nasdaqlevel2mc</ExeName>
+      <ConfigName>nasdaqlevel2mc</ConfigName>
+      <Show>true</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>nasdaqlevel2tcpproxy</ExeName>
+      <ConfigName>nasdaqlevel2tcp</ConfigName>
+      <Show>false</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>batsproxy</ExeName>
+      <ConfigName>bats</ConfigName>
+      <Show>false</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>batsfast</ExeName>
+      <ConfigName>bats</ConfigName>
+      <Show>false</Show>
+   </ConfigFile>
+   <ConfigFile>
+      <ExeName>lavaflowproxy</ExeName>
+      <ConfigName>lavaflow</ConfigName>
+      <Show>false</Show>
+   </ConfigFile>
+</config>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Parameter Groups for Specific MamaSenderIds -->
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTradesRtrpProdP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>260</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdTradesRtrpProdS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>2600</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <!-- END - Parameter Groups for Specific MamaSenderIds -->
+
+   <Feed>
+      <Name>mamacache_arca_trades_rtrp</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_arcartrp</Value>
+         <Value>mamacache_arcats</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_arcartrp</Value>
+         <Value>thread_mamacache_arcats</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_arca_trades_rtrp_prod</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_trades_rtrp_feeds2</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>7</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct23a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdTradesRtrpProdP"/>
+      </pny2sfmct23a>
+      <pny2sfmct23b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdTradesRtrpProdS"/>
+      </pny2sfmct23b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_amex_nyse_trades_rtrp</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_nysertrp_amex</Value>
+         <Value>mamacache_nysertrp_nyse</Value>
+         <Value>mamacache_nysets_amex</Value>
+         <Value>mamacache_nysets_nyse</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_nysertrp_amex</Value>
+         <Value>thread_mamacache_nysertrp_nyse</Value>
+         <Value>thread_mamacache_nysets_amex</Value>
+         <Value>thread_mamacache_nysets_nyse</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_amex_nyse_trades_rtrp_prod</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_trades_rtrp_feeds3</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>7</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct23a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdTradesRtrpProdP"/>
+      </pny2sfmct23a>
+      <pny2sfmct23b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdTradesRtrpProdS"/>
+      </pny2sfmct23b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+</config>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <MamaClientProfiles>       
+        
+        <MamaClientProfile>
+            <ProfileName>Hard8</ProfileName>
+            <HostName>HRDEGT201-CHI</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>DEBANK901</ProfileName>
+            <HostName>DEBANK901-WHK-PROD</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>OTCMKT</ProfileName>
+            <HostName>OTCMKT901-WHK-PROD</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>OTCMKT2</ProfileName>
+            <HostName>OTCMKT902-WHK-PROD</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>LEKSEC</ProfileName>
+            <HostName>LEKSEC902</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>LECSECURITIES</ProfileName>
+            <HostName>LEKSEC902-WHK</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>SUSQUE-LASALLE</ProfileName>
+            <HostName>SUSQUE301-WHK-PROD</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>SUSQUE-NY4</ProfileName>
+            <HostName>SUSQUE302-WHK-PROD</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>FIXNET102</ProfileName>
+            <HostName>FIXNET102-WHK-PROD</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>ALAPAX101</ProfileName>
+            <HostName>ALAPAX101-WHK-PROD</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+<!-- Transferred Mahwah Clients START -->
+
+        <MamaClientProfile>
+            <ProfileName>ALAPAX</ProfileName>
+            <HostName>ALAPAX-MAH-PROD2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>Hard8M</ProfileName>
+            <HostName>HRDEGT201-CHI</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>HRDEGT201</ProfileName>
+            <HostName>HRDEGT201-MWH2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>LARVIA901</ProfileName>
+            <HostName>LARVIA901-MWH2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>JEFFCOMAH</ProfileName>
+            <HostName>JEFFCO-MWH2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>OTCMarkets_NJ</ProfileName>
+            <HostName>OTCMKT901-MAH2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>OTCMarkets_PA</ProfileName>
+            <HostName>OTCMKT902-MAH2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>FRANKRUSSELL</ProfileName>
+            <HostName>FRARUS300-MAH2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>LEKSECURITIESM</ProfileName>
+            <HostName>LEKSEC901-MAH2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>MURANO</ProfileName>
+            <HostName>MURANO901-MAHWAH2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>COHEN</ProfileName>
+            <HostName>COHCAP2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>FIXNETIX</ProfileName>
+            <HostName>FIXNET101-MAH-PROD2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>GLOBAL301</ProfileName>
+            <HostName>GLOBAL301-MAH-PROD2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>SUSQUE302</ProfileName>
+            <HostName>SUSQUE302-MAH-PROD2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>SUSQUE301</ProfileName>
+            <HostName>SUSQUE301-MAH-PROD2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>DEEPVALUE</ProfileName>
+            <HostName>DEEP-VALUE-MAHWAH2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>OTAMGT-MAH</ProfileName>
+            <HostName>OTAMGT-MAH2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>OTAMGT301</ProfileName>
+            <HostName>OTAMGT301-2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>FIXCIBC</ProfileName>
+            <HostName>FIXCIBC-MAH-PROD2</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+<!-- Mahwah Clients END-->
+
+        <MamaClientProfile>
+            <ProfileName>OTAMGT901</ProfileName>
+            <HostName>OTAMGT901-WHK</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>OTAMGT301</ProfileName>
+            <HostName>OTAMGT301-WHK</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+
+        <MamaClientProfile>
+            <ProfileName>ETRADE905</ProfileName>
+            <HostName>ETRADE905</HostName>
+            <Weight>20</Weight>
+        </MamaClientProfile>
+   </MamaClientProfiles> 
+</config>

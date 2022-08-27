@@ -1,0 +1,42 @@
+#!/bin/bash
+
+LASTRUN=/var/run/web.lastrun
+WEBROOT=/var/www
+
+START_TIME=`date`
+
+function reindex(){
+
+add_to_database "$@"
+}
+
+if [ ! -f "$LASTRUN" ]; then
+	echo "ERROR: $LASTRUN not found. Will reindex  everything"
+	touch -d "1 Jan 1970" $LASTRUN
+	if [ "$?" -ne "0" ];then
+		echo ERROR: cannot update $LASTRUN
+		exit 1;fi
+fi
+
+cd $WEBROOT
+find . -type f -newer $LASTRUN -print | while read filename;do
+	reindex "$filename";done
+
+echo Run complete at `date`
+echo    subsequent runs will pick up only files updated since this reindexing \
+	which was started at $START_TIME
+touch -d "$START_TIME" $LASTRUN
+
+if [ "$?" -ne "0" ];then
+	echo ERROR: cannot update $LASTRUN
+	exit 1
+fi
+
+ls -ld $LASTRUN
+
+
+
+
+
+
+

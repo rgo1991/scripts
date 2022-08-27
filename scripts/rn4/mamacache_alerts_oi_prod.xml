@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Parameter Groups for Specific MamaSenderIds -->
+   <DefineParameterGroup>
+      <Name>MamaSenderIdAlertsOiProdP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>250</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdAlertsOiProdS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>2500</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <!-- END - Parameter Groups for Specific MamaSenderIds -->
+
+   <Feed>
+      <!--Name>mamacache_alerts_oi_prod</Name-->
+      <Name>mamacache_alerts_oi</Name>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_amexalerts</Value>
+         <Value>mamacache_nysealerts</Value>
+         <Value>mamacache_amexoi</Value>
+         <Value>mamacache_nyseoi</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_amexalerts</Value>
+         <Value>thread_mamacache_nysealerts</Value>
+         <Value>thread_mamacache_amexoi</Value>
+         <Value>thread_mamacache_nyseoi</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_alerts_oi_prod</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_alerts_oi_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>7</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct23a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdAlertsOiProdP"/>
+      </pny2sfmct23a>
+      <pny2sfmct23b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdAlertsOiProdS"/>
+      </pny2sfmct23b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+</config>

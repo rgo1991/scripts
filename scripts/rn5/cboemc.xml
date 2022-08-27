@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for the cboemc feed handler. See the Administrators Guide for more information:  http://wombatconsulting.com/feedhandlers/admin-guide.html-->
+    
+   <!-- Site specific includes -->
+
+   <IncludeFile>cboemc_tport.xml</IncludeFile>
+   <IncludeFile>cboemc_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+<!-- SFDCR-1860 -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFDCR-1860 -->
+	<Parameter> 
+		<Name>AlwaysCheckModified</Name> 
+		<Value>false</Value> 
+	</Parameter>
+
+      <Parameter>
+              <Name>AlwaysPublishFieldList</Name>
+              <Value>wExchangeId</Value>
+      </Parameter>
+
+	<Parameter>
+          <Name>WmwSource</Name>
+          <Value>CBOECSM</Value>
+   	</Parameter>
+<!-- SFD-1758 -->
+   <Parameter>
+      <Name>CboemcStoreTrades</Name>
+      <Value>true</Value>
+   </Parameter>      
+<!-- -->    
+
+<!-- GRP and Proxy Login -->
+   <Parameter>
+      <Name>Level1ProductName</Name>
+      <Value>CboeCsmCfeL1</Value>
+   </Parameter>
+   <Parameter>
+      <Name>Level2ProductName</Name>
+      <Value>CboeCsmCfeL2</Value>
+   </Parameter>
+
+<!-- UAT -->
+    <DefineParameterGroup>
+       <Name>CboeBatsLoginNy2UatSpin1</Name>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>74.115.133.69</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpIpAddress</Name>
+            <Value>170.137.16.69</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17251</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpPort</Name>
+            <Value>17251</Value>
+        </Parameter>	   
+        <Parameter>
+            <Name>CboemcSpinSubSessionId</Name>
+            <Value>0001</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>SRLA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>wf1srla</Value>
+        </Parameter>
+    </DefineParameterGroup>
+	
+    <DefineParameterGroup>
+       <Name>CboeBatsLoginNy2UatSpin2</Name>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>74.115.133.85</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpIpAddress</Name>
+            <Value>170.137.16.69</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17252</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpPort</Name>
+            <Value>17252</Value>
+        </Parameter>	   
+        <Parameter>
+            <Name>CboemcSpinSubSessionId</Name>
+            <Value>0002</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>SRLA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>wfd1srla</Value>
+        </Parameter>
+    </DefineParameterGroup>
+
+<!-- Prod NY2 Primary server -->
+
+    <DefineParameterGroup>
+       <Name>CboeBatsLoginNy2PriSpin1</Name>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>74.115.133.68</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpIpAddress</Name>
+            <Value>170.137.16.68</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17251</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpPort</Name>
+            <Value>17251</Value>
+        </Parameter>	   
+        <Parameter>
+            <Name>CboemcSpinSubSessionId</Name>
+            <Value>0003</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>SRLA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>wf2srla</Value>
+        </Parameter>
+    </DefineParameterGroup>
+
+    <DefineParameterGroup>
+       <Name>CboeBatsLoginNy2PriSpin2</Name>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>74.115.133.84</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpIpAddress</Name>
+            <Value>170.137.16.68</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17252</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpPort</Name>
+            <Value>17252</Value>
+        </Parameter>	   
+        <Parameter>
+            <Name>CboemcSpinSubSessionId</Name>
+            <Value>0004</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>SRLA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>wfd2srla</Value>
+        </Parameter>
+    </DefineParameterGroup>
+
+<!-- Prod Secondary NY2 -->
+
+    <DefineParameterGroup>
+       <Name>CboeBatsLoginNy2SecSpin1</Name>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>74.115.133.69</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpIpAddress</Name>
+            <Value>170.137.16.69</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17251</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpPort</Name>
+            <Value>17251</Value>
+        </Parameter>	   
+        <Parameter>
+            <Name>CboemcSpinSubSessionId</Name>
+            <Value>0005</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>SRLA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>wf3srla</Value>
+        </Parameter>
+    </DefineParameterGroup>
+
+    <DefineParameterGroup>
+       <Name>CboeBatsLoginNy2SecSpin2</Name>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>74.115.133.85</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpIpAddress</Name>
+            <Value>170.137.16.69</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17252</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpPort</Name>
+            <Value>17252</Value>
+        </Parameter>	   
+        <Parameter>
+            <Name>CboemcSpinSubSessionId</Name>
+            <Value>0006</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>SRLA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>wfd3srla</Value>
+        </Parameter>
+    </DefineParameterGroup>
+
+<!-- Proxy Login -->
+
+    <DefineParameterGroup>
+       <Name>CboeBatsLoginNy2UatProxy</Name>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>74.115.133.68</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpIpAddress</Name>
+            <Value>170.137.16.68</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17251</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpPort</Name>
+            <Value>17252</Value>
+        </Parameter>	   
+        <Parameter>
+            <Name>CboemcProxySubSessionId</Name>
+            <Value>0007</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>SRLA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>wf4srla</Value>
+        </Parameter>
+    </DefineParameterGroup>
+	
+    <DefineParameterGroup>
+       <Name>CboeBatsLoginNy2PriProxy</Name>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>74.115.133.69</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpIpAddress</Name>
+            <Value>170.137.16.69</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17251</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpPort</Name>
+            <Value>17252</Value>
+        </Parameter>	   
+        <Parameter>
+            <Name>CboemcProxySubSessionId</Name>
+            <Value>0009</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>SRLA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>wf5srla</Value>
+        </Parameter>
+    </DefineParameterGroup>
+
+    <DefineParameterGroup>
+       <Name>CboeBatsLoginNy2SecProxy</Name>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>74.115.133.85</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpIpAddress</Name>
+            <Value>170.137.16.69</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17252</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpPort</Name>
+            <Value>17252</Value>
+        </Parameter>	   
+        <Parameter>
+            <Name>CboemcProxySubSessionId</Name>
+            <Value>0010</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>SRLA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>wfd5srla</Value>
+        </Parameter>
+    </DefineParameterGroup>
+<!-- GRP and Proxy Login END -->
+
+   <Parameter>
+      <Name>CboemcSetSecurityStatusNormal</Name>
+      <Comment>Set to true to allow trades to set wSecurityStatus to normal.</Comment>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OrderBookUpdateImpliesNormalStatus</Name>
+      <Comment>
+            This is set to false by default to stop order book updates
+            from changing the security status to Normal when the instruments
+            real state is not actually Normal.
+          </Comment>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoAddPrefixOnSecurityStatusOrig</Name>
+      <Comment>Setting this to false by default should produce correct output as per current values in sec status config.
+                   If this is to be set to True, we would need to add "I" prefix in the concerned places in sec status config file.
+          </Comment>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FuturePublishSymbologyFormat</Name>
+      <Value>%u%m%Y</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>StrategyLegPublishSymbologyFormat</Name>
+      <Value>%r%b%t</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>StrategyPublishSymbologyFormat</Name>
+      <!--Value>%n_%l</Value-->
+      <Value>%g_%n_%l%e</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>StrategyPublishSymbology</Name>
+      <Value>normalize</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>OptionPublishSymbologyFormat</Name>
+      <Value>%u%p%Y%d%s%e</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>HandleSymbolAdmin</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PopulateInstrumentInfoFromSymbolCache</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbolPrefixTopOfBook</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookDecimals</Name>
+      <Value>7</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookUseUndecoratedSymbolName</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UseRawOrderBookClear</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>DerivPrefixBookProductSuffixToExplicitImpliedBookSuffixes</Name>
+      <Value>true</Value>
+   </Parameter>
+
+<!-- SFDCR-1365
+   <Parameter>
+      <Name>SymbolSuffixTopOfBook</Name>
+      <Value>.BBO</Value>
+   </Parameter>
+-->    
+
+   <Parameter>
+      <Name>RecordHandlerAlwaysAppendProductSuffix</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value/>
+   </Parameter>
+
+<!--    
+   <Parameter>
+      <Name>CboemcUseVenueAsMicCode</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CboemcUseVenueForSymbology</Name>
+      <Value>false</Value>
+   </Parameter>
+-->    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+<!-- SFDCR-1383 start -->
+   <Parameter>
+      <Name>DefaultTimeZone</Name>
+      <Value>UTC</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>NativeTimeZone</Name>
+      <Value>US/Central</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishTimeZone</Name>
+      <Value>UTC</Value> <!--US/Eastern</Value-->
+   </Parameter>
+
+<!-- SFDCR-1383 End -->
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+<!--    
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value>cboemc_cfe.sym</Value>
+   </Parameter>
+-->    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>cboemc</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CboemcTrackMatchNumbers</Name>
+      <Value>false</Value>
+      <Comment>Enables the 'Broken Trade' message to be processed, but may use significant amounts of memory</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CboemcMatchNumberBuckets</Name>
+      <Value>10000</Value>
+      <Comment>Set the buckets for the MatchNumber hash-map; each day has one unique match number per trade
+or order execution</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CboemcCapturePlayback</Name>
+      <Value>false</Value>
+      <Comment>Enabled when record a playback file</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CboemcProcessVisibleTrades</Name>
+      <Value>true</Value>
+      <Comment>Set false to suppress the visible trades</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CboemcProcessHiddenTrades</Name>
+      <Value>true</Value>
+      <Comment>Set false to suppress the hidden trades</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CboemcUnitManagerExtraLogging</Name>
+      <Value>true</Value>
+      <Comment>Set to true to get more logging (useful during testing and debugging)</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CboemcUnitManagerStartRecovery</Name>
+      <Value>false</Value>
+      <Comment>Set to true when the feedhandler starts up with recovery.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MulticastMonitorOffEqualDownOnInit</Name>
+      <Value>true</Value>
+      <Comment>When true, all multicast adresses which is not monitored will not be connected at starting up</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterHeartbeatsHavePrevSeqNum</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterCheckEveryMessageInBlock</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterInitialSeqNum</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterDiscardForwardRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CboemcAlwaysConnectToRetransLines</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UseIndividualLineMap</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoUseCurrentTimeAsLineTimeAndSrcTime</Name>
+      <Value>true</Value>
+      <Comment>Enables population of wLineTime and wSrcTime when publishing reference data that is generated from a file.</Comment>
+   </Parameter>
+
+<!--    
+   <Parameter>
+      <Name>UseFeedTags</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FeedTags</Name>
+      <Value/>
+   </Parameter>
+-->    
+   <Parameter>
+      <Name>CboemcEnableIntradaySpin</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsReferential</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsOrder</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsFuture</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsStrategy</Value>
+      <Value>FieldAttrsOption</Value>
+   </Parameter>
+
+
+   <Parameter>
+      <Name>CboemcCapturePlayback</Name>
+      <Value>false</Value>
+      <Comment>Enabled when record a playback file. During recording, feed handler is not able to process messages and fast packets are not decoded or published.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CboemcMatchNumberBuckets</Name>
+      <Value>10000</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CboemcProcessHiddenTrades</Name>
+      <Value>True</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CboemcMessageHandlerName</Name>
+      <Value>cboemc</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PitchVersion</Name>
+      <Value>2.00</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>CboemcRetransParams</Name>
+      <Parameter>
+         <Name>UseLineFilter</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FeedType</Name>
+         <Value>redirect</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>CboemcSpinParams</Name>
+      <Comment>Common params used the uat spin lines.</Comment>
+      <Parameter>
+         <Name>TcpConnectDelay</Name>
+         <Value>100</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpConnectDelayMax</Name>
+         <Value>100</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FeedType</Name>
+         <Value>spin</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseLineFilter</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>IgnoreWimpLineDataBlock</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpUseLineDataBlock</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpConnectOnStartUp</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpServerDisconnectIsError</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpSendHeartbeats</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpHeartbeatInterval</Name>
+         <Value>3</Value>
+         <Comment>CBOEMC expects heartbeat messages to be
+ seno the GRP on live connections no less than every 5 seconds.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MessageRecoveryFile</Name>
+         <Value/>
+      </Parameter>
+      <Parameter>
+         <Name>CboemcSpinMaxReconnectCount</Name>
+         <Value>5</Value>
+         <Comment>The maximal number of reconnecting to Spin server. Every try will be delayed
+ "TcnnectDelay" millseconds. </Comment>
+      </Parameter>
+      <Parameter>
+         <Name>CboemcSpinExtraLogging</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>CboemcSpinHeartbeatLogInterval</Name>
+         <Value>1</Value>
+         <Comment>Specifies the interval at which heartbeats will be logged.
+                   A value of 0 or less will disable heartbeat logging.
+                   CboemcSpinExtraLogging must be true for this value to take effect.
+          </Comment>
+      </Parameter>
+      <Parameter>
+         <Name>CboemcSpinContinuousSwitch</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <IncludeFile>cboemc_uat.xml</IncludeFile>
+   <IncludeFile>cboemc_prod.xml</IncludeFile>
+   <IncludeFile>cboemc_security_status_mapping.xml</IncludeFile>
+   <IncludeFile>cboemc_product_map.xml</IncludeFile>
+   <IncludeFile>cboemc_trade_condition_venue_mapping.xml</IncludeFile>
+   <!--IncludeFile>productdefs.xml</IncludeFile-->
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+
+
+</config>

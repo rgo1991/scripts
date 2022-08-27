@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ "$1" = "$2" ];
+then
+	echo "$1 is equal to $2"
+elif [[ "$1" < "$2" ]];
+then
+	echo "$1 comes before $2 alphabetically"
+else 
+	echo "$1 comes after $2 alphabetically"
+fi

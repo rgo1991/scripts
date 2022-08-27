@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#nesting a for look inside a while loop. 
+
+
+myfruit=""
+
+while [ "$myfruit" != "quit" ];do #loop until user types in quit or script is canceled.
+	for fruit in banana apple pear $myfruit;do #loop foor all fruits
+	echo I like $fruit;done
+read -p "What is your favorite fruit? " myfruit #set $myfruit to user input.so the first time the script looks the variable is "" as specified at the start. 
+done
+
+

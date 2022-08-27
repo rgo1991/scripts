@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <Feed>
+         <Name>cboemc</Name>
+         <Comment> Production lines</Comment>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>cboemc_w_cfe_unit_1</Value>
+            <Value>cboemc_w_cfe_unit_1_retrans</Value>
+            <Value>cboemc_w_cfe_unit_2</Value>
+            <Value>cboemc_w_cfe_unit_2_retrans</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>cboemc_cfe</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>         
+         <UseParameterGroup name="GlobalSecStatusParams"/>
+         <UseParameterGroup name="GlobalOrderImbalanceStatusParams"/>
+
+         <Comment>This is an example of configuring all feeds (including live/spin/grp feeds) for prod lines.</Comment>
+    <tny2sffhr05>
+         <UseParameterGroup name="CboeBatsLoginNy2UatProxy"/>		 
+         <UseParameterGroup name="CboeExchangeIdMapping"/>
+    </tny2sffhr05>
+    <pny2sffhr12a>
+         <UseParameterGroup name="CboeBatsLoginNy2PriProxy"/>		 
+    </pny2sffhr12a>
+    <pny2sffhr12b>
+         <UseParameterGroup name="CboeBatsLoginNy2SecProxy"/>		 
+    </pny2sffhr12b>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>cboemc_w_cfe_unit_1</Value>
+            <Value>cboemc_w_cfe_unit_1_retrans</Value>
+            <Value>cboemc_w_spin_cfe_unit_1</Value>
+            <Value>cboemc_w_cfe_unit_2</Value>
+            <Value>cboemc_w_cfe_unit_2_retrans</Value>
+            <Value>cboemc_w_spin_cfe_unit_2</Value>
+            <Value>cboemc_proxy</Value>
+      	 </Parameter>
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value>cboemc_cfe.sym</Value>
+   </Parameter>      	
+        <Parameter>
+            <Name>OrderBookSymbolFile</Name>
+            <Value>cboecsm_cfe.orderbook.sym</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecurityStatusGlobalSymbolFormat</Name>
+            <Value>CBOECSM_CFE_SECSTATUS</Value>
+        </Parameter>
+        <Parameter>
+            <Name>OrderImbalanceGlobalSymbolFormat</Name>
+            <Value>CBOECSM_CFE_IMBALANCE</Value>
+        </Parameter>
+<!-- DFH-28731-->
+        <Parameter>
+            <Name>StartOfDayRollIndex</Name>
+            <Value>true</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RollFieldsAtStartOfDay</Name>
+            <Value>true</Value>
+        </Parameter>
+        <Parameter>
+            <Name>UpdatePrevCloseFieldsInRolling</Name>
+            <Value>true</Value>
+        </Parameter>        
+<!-- DFH-28731-->        
+      </Feed>
+
+      <Feed>
+        <Name>cboemc_w_cfe_unit_1</Name>
+            <Comment>cboemc prod XLON (0-H) </Comment>
+        <Parameter>
+            <Name>FeedId</Name> 
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FeedType</Name> 
+            <Value>data</Value>
+        </Parameter> 
+        <Parameter>
+            <Name>UnitId</Name> 
+            <Value>1</Value>
+        </Parameter>  
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.131.132/30001</Value>
+            <Value>default2/233.130.124.132/30001</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.131.132/30001</Value>
+            <Value>233.130.124.132/30001</Value>
+        </Parameter>
+      </Feed>
+
+      <Feed>
+        <Name>cboemc_w_cfe_unit_1_retrans</Name>
+        <Comment>cboemc prod XLON (0-H) - Retrans</Comment>
+        <Parameter>
+            <Name>RedirectToSubfeed</Name> 
+            <Value>cboemc_w_cfe_unit_1</Value>
+        </Parameter>  
+        <Parameter>
+            <Name>UnitId</Name> 
+            <Value>1</Value>
+        </Parameter>  
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.131.133/30001</Value>           
+            <Value>default1/233.130.124.133/30001</Value>           
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.131.133/30001</Value>
+            <Value>233.130.124.133/30001</Value>            
+        </Parameter>
+        <UseParameterGroup name="CboemcRetransParams"/>
+      </Feed>
+
+      <Feed>
+        <Name>cboemc_w_cfe_unit_2</Name>
+            <Comment>cboemc prod XLON (0-H) </Comment>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FeedType</Name>
+            <Value>data</Value>
+        </Parameter>
+        <Parameter>
+            <Name>UnitId</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.131.132/30002</Value>
+            <Value>default2/233.130.124.132/30002</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.131.132/30002</Value>
+            <Value>233.130.124.132/30002</Value>
+        </Parameter>
+      </Feed>
+
+      <Feed>
+        <Name>cboemc_w_cfe_unit_2_retrans</Name>
+        <Comment>cboemc prod XLON (0-H) - Retrans</Comment>
+        <Parameter>
+            <Name>RedirectToSubfeed</Name>
+            <Value>cboemc_w_cfe_unit_2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>UnitId</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.131.133/30002</Value>
+            <Value>default1/233.130.124.133/30002</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.131.133/30002</Value>
+            <Value>233.130.124.133/30002</Value>
+        </Parameter>
+        <UseParameterGroup name="CboemcRetransParams"/>
+      </Feed>
+
+      <Feed>
+        <Name>cboemc_proxy</Name>
+        <Parameter>
+            <Name>TcpConnectDelay</Name>
+            <Value>100</Value>
+        </Parameter>    
+        <Parameter>
+            <Name>TcpConnectDelayMax</Name>
+            <Value>100</Value>
+        </Parameter> 
+        <Parameter>
+            <Name>FeedType</Name>
+            <Value>grp</Value>
+        </Parameter>
+<!--
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>74.115.133.85</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpIpAddress</Name>
+            <Value>170.137.16.69</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17252</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpPort</Name>
+            <Value>17252</Value>
+        </Parameter>
+--> 
+        <Parameter>
+            <Name>FtSubFeedProcessLineStatus</Name>
+            <Value>false</Value>
+        </Parameter>
+        <Parameter>
+            <Name>UseLineFilter</Name>
+            <Value>false</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpConnectOnStartUp</Name>
+            <Value>false</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpServerDisconnectIsError</Name>
+            <Value>false</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpSendHeartbeats</Name>
+            <Value>true</Value>
+        </Parameter> 
+        <Parameter>
+            <Name>TcpHeartbeatInterval</Name>
+            <Value>3</Value>
+            <Comment>CBOEMC expects heartbeat messages to be 
+sent to the GRP on live connections no less than every 5 seconds.</Comment>  
+        </Parameter>              
+        <Parameter>
+            <Name>MessageRecoveryFile</Name>
+            <Value/>
+        </Parameter>
+        <Parameter>
+            <Name>CboemcProxyMaxQueuedRequests</Name>
+            <Value>1</Value>
+            <Comment>The maximal number of the retrans requests staying in the queue. Once the queue is longer than 
+this value (mostly because of too many retrans requests in a short time frame), the queue will be cleared for 
+responding to the most lastest requests</Comment>  
+        </Parameter>
+        <Parameter>
+            <Name>CboemcProxyMaxReconnectCount</Name>
+            <Value>5</Value>
+            <Comment>The maximal number of reconnecting to GRP server. Every try will be delayed 
+"TcpConnectDelay" millseconds. </Comment>
+        </Parameter> 
+        <Parameter>
+            <Name>CboemcProxyRequestGapLimit</Name>
+            <Value>100</Value>
+            <Comment>The maximal number of gap for each retrans request. Not like LineFilterGapLimit, any gap request over this number will be splitted to a group of requests.</Comment>
+        </Parameter>  
+        <Parameter>
+            <Name>CboemcProxyExtraLogging</Name>
+            <Value>true</Value>
+            <Comment>Set to true to get more logging on GR Proxy line (useful during testing and debugging)</Comment>
+        </Parameter>  
+<!--
+        <Parameter>
+            <Name>CboemcProxySubSessionId</Name>
+            <Value>0002</Value>
+        </Parameter> 
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>SRLA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>wfd1srla</Value>
+        </Parameter>
+-->       
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value/>
+        </Parameter>
+      </Feed>        
+
+      <Feed>
+        <Name>cboemc_w_spin_cfe_unit_1</Name>
+    <tny2sffhr05>
+         <UseParameterGroup name="CboeBatsLoginNy2UatSpin1"/>	 
+    </tny2sffhr05>
+    <pny2sffhr12a>
+         <UseParameterGroup name="CboeBatsLoginNy2PriSpin1"/>
+    </pny2sffhr12a>
+    <pny2sffhr12b>
+         <UseParameterGroup name="CboeBatsLoginNy2SecSpin1"/>
+    </pny2sffhr12b>
+        <Parameter>
+            <Name>UnitId</Name> 
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RedirectToSubfeed</Name>
+            <Value>cboemc_w_cfe_unit_1</Value>
+        </Parameter>
+<!--
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>74.115.133.69</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpIpAddress</Name>
+            <Value>170.137.16.69</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17251</Value>
+        </Parameter>        
+        <Parameter>
+            <Name>SecondaryTcpPort</Name>
+            <Value>17251</Value>
+        </Parameter>
+-->
+        <Parameter>
+            <Name>FtSubFeedProcessLineStatus</Name>
+            <Value>false</Value>
+        </Parameter>
+<!--
+        <Parameter>
+            <Name>CboemcSpinSubSessionId</Name>
+            <Value>0001</Value>
+        </Parameter>     
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>SRLA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>wf1srla</Value>
+        </Parameter>     
+-->
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value/>
+        </Parameter>
+        <UseParameterGroup name="CboemcSpinParams"/>   
+      </Feed>      
+
+      <Feed>
+        <Name>cboemc_w_spin_cfe_unit_2</Name>
+    <tny2sffhr05>
+        <UseParameterGroup name="CboeBatsLoginNy2UatSpin2"/>		 
+    </tny2sffhr05>
+    <pny2sffhr12a>
+	<UseParameterGroup name="CboeBatsLoginNy2PriSpin2"/>
+    </pny2sffhr12a>
+    <pny2sffhr12b>
+        <UseParameterGroup name="CboeBatsLoginNy2SecSpin2"/>		 
+    </pny2sffhr12b>
+        <Parameter>
+            <Name>UnitId</Name> 
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RedirectToSubfeed</Name>
+            <Value>cboemc_w_cfe_unit_2</Value>
+        </Parameter>
+<!--
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>74.115.133.85</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SecondaryTcpIpAddress</Name>
+            <Value>170.137.16.69</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17252</Value>
+        </Parameter>        
+        <Parameter>
+            <Name>SecondaryTcpPort</Name>
+            <Value>17252</Value>
+        </Parameter>
+-->
+        <Parameter>
+            <Name>FtSubFeedProcessLineStatus</Name>
+            <Value>false</Value>
+        </Parameter>
+<!--
+        <Parameter>
+            <Name>CboemcSpinSubSessionId</Name>
+            <Value>0002</Value>
+        </Parameter>     
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>SRLA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>wfd1srla</Value>
+        </Parameter>
+-->
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value/>
+        </Parameter>
+        <UseParameterGroup name="CboemcSpinParams"/>   
+      </Feed>
+
+      <Feed>
+         <Name>cboemc_dr</Name>
+         <Comment> Production lines</Comment>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>cboemc_w_cfe_unit_1_dr</Value>
+            <Value>cboemc_w_cfe_unit_1_retrans_dr</Value>
+            <Value>cboemc_w_cfe_unit_2_dr</Value>
+            <Value>cboemc_w_cfe_unit_2_retrans_dr</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+        <Name>cboemc_w_cfe_unit_1_dr</Name>
+        <Comment>cboemc prod XLON (0-H)</Comment>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FeedType</Name>
+            <Value>data</Value>
+        </Parameter>
+        <Parameter>
+            <Name>UnitId</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.182.199.0/31001</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.182.199.0/31001</Value>
+        </Parameter>
+      </Feed>
+
+      <Feed>
+        <Name>cboemc_w_cfe_unit_1_retrans_dr</Name>
+        <Comment>cboemc prod XLON (0-H) - Retrans</Comment>
+        <Parameter>
+            <Name>RedirectToSubfeed</Name>
+            <Value>cboemc_w_cfe_unit_1_dr</Value>
+        </Parameter>
+        <Parameter>
+            <Name>UnitId</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.182.199.1/31001</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.182.199.1/31001</Value>
+        </Parameter>
+        <UseParameterGroup name="CboemcRetransParams"/>
+      </Feed>
+
+      <Feed>
+        <Name>cboemc_w_cfe_unit_2_dr</Name>
+            <Comment>cboemc prod XLON (I-R) </Comment>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FeedType</Name>
+            <Value>data</Value>
+        </Parameter>
+        <Parameter>
+            <Name>UnitId</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.182.199.0/31002</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.182.199.0/31002</Value>
+        </Parameter>
+      </Feed>
+
+      <Feed>
+        <Name>cboemc_w_cfe_unit_2_retrans_dr</Name>
+        <Comment>cboemc prod XLON (I-R) - Retrans</Comment>
+        <Parameter>
+            <Name>RedirectToSubfeed</Name>
+            <Value>cboemc_w_cfe_unit_2_dr</Value>
+        </Parameter>
+        <Parameter>
+            <Name>UnitId</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.182.199.1/31002</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.182.199.1/31002</Value>
+        </Parameter>
+        <UseParameterGroup name="CboemcRetransParams"/>
+      </Feed>
+</config>

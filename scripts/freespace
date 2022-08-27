@@ -1,0 +1,24 @@
+#!/bin/bash
+
+required=${1:-2131042}
+preferred=${2:-/var}
+available=`df -k /var | awk '{print $4}' | tail -1`
+
+if [ ${available} -gt ${required} ];then
+	echo Good news, there is sufficient space in ${preferred}
+	df -h ${preferred};else
+	echo bad news, there is not enough space in ${preferred}
+	df -h $preferred
+	echo looking for other filesystems...
+	fs=`mktemp`
+	df -k -x nfs | sort -k4 -n | awk '{print $4, $6}' | grep -v "Available" | \
+	while read available filesystem;do
+		if [ ${available} -gt ${required} ];then
+		echo good news, ${filesystem} has $available kb | tee $fs;fi
+	done
+	if [ ! -s $fs ]; then
+	echo no filesystems were found with sufficient space
+	exit 1;fi
+	rm -f $fs;fi
+
+

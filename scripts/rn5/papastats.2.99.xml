@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+  <Comment>Make sure shared object is defined in the SharedObjects tag</Comment>
+  <Comment>Make sure shared object is part of the LD_LIBRARY_PATH</Comment>
+  <Comment>Use the IncludeFile to add this config file to the app in which it is used</Comment>
+  <Comment>This is the papastats for 2.99 processes</Comment>
+
+      <Parameter>
+         <Name>PapaStats</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <!--Parameter>
+         <Name>SharedObjects</Name>
+         <Value>papastats_2_99.so</Value>
+         <Comment></Comment>
+      </Parameter-->
+
+      <Parameter>
+         <Name>PapaStatsPublish</Name>
+         <Value>false</Value>
+         <Comment>Whether to publish papastats to client</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsPublishTopic</Name>
+         <Value>ADMIN.$c.$f.$h.$t</Value>
+         <Comment>The symbol used to publish papastats information</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsUseMamaPublisher</Name>
+         <Value>false</Value>
+         <Comment>Wether to use a seperate publisher to publish basic messages</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsMamaTransport</Name>
+         <Value>papastats</Value>
+         <Comment>The transport used when PapaStatsUseMamaPublisher set to true</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsMamaTopic</Name>
+         <Value>PAPA_STATS</Value>
+         <Comment>The topic to access papastats messages when PapaStatsUseMamaPublisher set to true</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsUseLwp</Name>
+         <Value>true</Value>
+         <Comment>Total all lwp used by process.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsLatencyFrequency</Name>
+         <Value>100</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsMamaMsgUpdatesBytesDisplay</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsOrderBookComplexUpdateDisplay</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsOrderBookSimpleUpdateDisplay</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsInterval</Name>
+         <Value>10</Value>
+         <Comment>How often to log stats</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsPublishInterval</Name>
+         <Value>10</Value>
+         <Comment>How often to publish stats</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsFileRollRows</Name>
+         <Value>8640</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsMessagesReceivedDisplay</Name>
+         <Value>false</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsTotalMessagesReceivedDisplay</Name>
+         <Value>false</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsMessagesSentDisplay</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsBytesReceivedDisplay</Name>
+         <Value>false</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsBytesSentDisplay</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsCpuTimeDisplay</Name>
+         <Value>false</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsPercentageCpuDisplay</Name>
+         <Value>false</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsSystemIdleDisplay</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsMemoryDisplay</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsVsizeDisplay</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsSystemMemoryDisplay</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsSystemSwapDisplay</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsAverageLatencyDisplay</Name>
+         <Value>false</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsMaxLatencyDisplay</Name>
+         <Value>false</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsDroppedMessagesDisplay</Name>
+         <Value>false</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsSubscriptionRequestsDisplay</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsRecapsDisplay</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsInitialsDisplay</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsMamdaTotalsDisplay</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsMamaMsgUpdatesDisplay</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsMamdaTotalsDisplay</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsMamaMsgUpdatesDisplay</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsMamaMsgUpdatesBytesDisplay</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsMamaQueueName</Name>
+         <Value>default</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsPublishClientInfo</Name>
+         <Value>false</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsTimeZone</Name>
+         <Value>US/Eastern</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsLogClientInfo</Name>
+         <Value>true</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsDisplayInterval</Name>
+         <Value>false</Value>
+         <Comment></Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsPeakInterval</Name>
+         <Value>0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>PapaStatsLogTimeInMilliseconds</Name>
+         <Value>false</Value>
+         <Comment>Display timestamps in papastats log file with milliseconds.</Comment>
+      </Parameter>
+
+</config>

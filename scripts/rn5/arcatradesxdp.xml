@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Site specific includes -->
+   <IncludeFile>arcatradesxdp_tport.xml</IncludeFile>
+   <IncludeFile>arcatradesxdp_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>ARCATS</Value>
+   </Parameter>
+
+<!-- Superfeed Pillar XDP Login SFD-2337 ECC-284 START -->
+<!-- UAT -->
+        <DefineParameterGroup>
+          <Name>UseATsXdpU</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>PVLATXDP07</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.139.250</Value><!-- Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35336</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.143.251/35336</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+<!-- Prod -->
+        <DefineParameterGroup>
+          <Name>UseATsXdpP</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>PVLATXDP08</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.143.250</Value><!-- Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35337</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.139.251/35337</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+
+        <DefineParameterGroup>
+          <Name>UseATsXdpS</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>PVLATXDP09</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.139.250</Value><!-- Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35338</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.143.251/35338</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+<!-- Superfeed Pillar XDP Login SFD-2337 ECC-284 END -->
+
+   <Parameter>
+      <Name>XdpMaxRefreshSpoolSize</Name>
+      <Value>1000000</Value>
+   </Parameter>
+
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+<!--CHG236403 -->
+   <Parameter>
+      <Name>PacketUnavailableErrorAsInfo</Name>
+      <Value>true</Value>
+   </Parameter>
+<!--CHG236403 -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpMessageHandlerName</Name>
+      <Value>arcatradesxdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ArcaTradesXdpMessageHandlerName</Name>
+      <Value>arcatradesxdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>xdp</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpProductName</Name>
+      <!-- <Value>ArcaRtrp</Value> -->
+      <Value>ArcaTradesXdp</Value> 
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpProductNameBook</Name>
+      <!-- <Value>ArcaRtrp</Value>-->
+      <Value>ArcaTradesXdp</Value> 
+   </Parameter>
+    
+   <Parameter>
+      <Name>ArcaTradesXdpProductName</Name>
+      <!-- <Value>ArcaRtrp</Value> -->
+      <Value>ArcaTradesXdp</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpLogRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FtRvService</Name>
+      <Value>7731</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_arcatrades</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value>/opt/wombat/log/arcatradesxdp.sym</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpProductId</Name>
+      <Value>153</Value>
+   </Parameter>
+    
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>nyse2streetMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoUseCurrentTimeAsLineTimeAndSrcTime</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoAddPrefixOnSecurityStatusOrig</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterDiscardForwardRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MessageRecoveryFile</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookUseUndecoratedSymbolName</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordHandlerAlwaysAppendProductSuffix</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpApplyLotsToSize</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpReferenceFiles</Name>
+      <Value>/opt/wombat/feeds/data/ARCASymbolMapping.txt</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpRefreshType</Name>
+      <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpRequestMarketDataRefresh</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsBloomberg</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsTrade</Value>
+   </Parameter>
+    
+   <Feed>
+      <Name>arcatradesxdp</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD2"/>
+      <tny2sffhr19>
+            <UseParameterGroup name="UseATsXdpU"/>
+      </tny2sffhr19>
+      <pny2sffhr06a>
+            <UseParameterGroup name="UseATsXdpP"/>
+      </pny2sffhr06a>
+      <pny2sffhr06b>
+            <UseParameterGroup name="UseATsXdpS"/>
+      </pny2sffhr06b>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>arcatradesxdp_live</Value>
+         <Value>arcatradesxdp_request</Value>
+         <Value>arcatradesxdp_refresh</Value>
+      </Parameter>
+   </Feed>
+
+
+   <Feed>
+      <Name>arcatradesxdp_gwo</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD2"/>
+      <Parameter>
+          <Name>WmwSource</Name>
+          <Value>ARCARTRP</Value>
+      </Parameter>
+   <Parameter>
+      <Name>XdpProductName</Name>
+      <Value>ArcaRtrp</Value>
+      <!-- <Value>ArcaTradesXdp</Value>  -->
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpProductNameBook</Name>
+      <Value>ArcaRtrp</Value>
+      <!-- <Value>ArcaTradesXdp</Value>  -->
+   </Parameter>
+    
+   <Parameter>
+      <Name>ArcaTradesXdpProductName</Name>
+      <Value>ArcaRtrp</Value>
+      <!-- <Value>ArcaTradesXdp</Value> -->
+   </Parameter>
+
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_arcatrades_gwo</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value>/opt/wombat/log/arcatradesxdp_gwo.sym</Value>
+   </Parameter>
+
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>arcatradesxdp_live</Value>
+         <Value>arcatradesxdp_request</Value>
+         <Value>arcatradesxdp_refresh</Value>
+      </Parameter>
+   </Feed>
+
+    
+   <Feed>
+      <Name>arcatradesxdp_cert</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>arcatradesxdp_cert_live</Value>
+         <Value>arcatradesxdp_request</Value>
+         <Value>arcatradesxdp_cert_refresh</Value>
+      </Parameter>
+   </Feed>
+    
+   <DefineParameterGroup>
+      <Name>ArcaTradesXdpLiveParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>LIVE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>1.5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRequestRetransTime</Name>
+         <Value>0.25</Value>
+         <Comment>1/4 second</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>1000</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>ArcaTradesXdpRefreshParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>REFRESH</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MulticastConnectOnInit</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>0.5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>100</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>ArcaTradesXdpRequestReqParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>REFRESH_REQ</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+<!-- SFDCR-2013 -->
+
+   <Feed>
+      <Name>arcatradesxdp_live</Name>
+      <UseParameterGroup name="ArcaTradesXdpLiveParameter"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RefreshReqFeedId</Name>
+         <Value>request</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RefreshFeedId</Name>
+         <Value>3</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.59.44/11247</Value>
+         <Value>default2/224.0.59.172/11311</Value>
+         <Value>default1/224.0.59.45/11248/monitorOff</Value>
+         <Value>default2/224.0.59.173/11312/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.59.44/11247</Value>
+         <Value>224.0.59.172/11311</Value>
+         <Value>224.0.59.45/11248</Value>
+         <Value>224.0.59.173/11312</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>arcatradesxdp_refresh</Name>
+      <UseParameterGroup name="ArcaTradesXdpRefreshParameter"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>3</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.59.46/11249</Value>
+         <Value>default2/224.0.59.174/11313</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.59.46/11249</Value>
+         <Value>224.0.59.174/11313</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>arcatradesxdp_request</Name>
+      <UseParameterGroup name="ArcaTradesXdpRequestReqParameter"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>159.125.67.1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>1069</Value>
+      </Parameter>
+      <Parameter>
+         <Name>AlternativeConnection</Name>
+         <Value>159.125.67.12/1069</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value/>
+      </Parameter-->
+   </Feed>
+<!-- SFDCR-2013 End -->
+    
+   <Feed>
+      <Name>arcatradesxdp_cert_live</Name>
+      <UseParameterGroup name="ArcaTradesXdpLiveParameter"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RefreshReqFeedId</Name>
+         <Value>request</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RefreshFeedId</Name>
+         <Value>3</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.1.2.252/29100</Value>
+         <Value>default2/224.1.2.255/30100</Value>
+         <Value>default1/224.1.2.252/29120/monitorOff</Value>
+         <Value>default2/224.1.2.255/30120/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.1.2.252/29100</Value>
+         <Value>224.1.2.255/30100</Value>
+         <Value>224.1.2.252/29120</Value>
+         <Value>224.1.2.255/30120</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>arcatradesxdp_cert_refresh</Name>
+      <UseParameterGroup name="ArcaTradesXdpRefreshParameter"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>3</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.61.11/22512</Value>
+         <Value>default2/224.0.61.139/22712</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.61.11/22512</Value>
+         <Value>224.0.61.139/22712</Value>
+      </Parameter>
+   </Feed>
+   <IncludeFile>arcatradesxdp_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>arcatradesxdp_trade_condition_mapping.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

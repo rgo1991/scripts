@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for the TotalView ITCH 3.0 Format multicast feed. See the Administrators Guide for more information:  http://wombatconsulting.com/feedhandlers/admin-guide.html-->
+
+   <!-- Site specific includes -->
+   <IncludeFile>bxtotalviewmc_tport.xml</IncludeFile>
+   <IncludeFile>bxtotalviewmc_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>BXITCH</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>67108864</Value>
+   </Parameter>
+
+<!-- SFDCR-1423 Start -->
+      <Parameter>
+         <Name>MamaUseDictionaryType</Name>
+         <Value>true</Value>
+      </Parameter>
+<!--SFDCR-1423 End -->
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+    
+   <DefineParameterGroup>
+      <Name>BxTotalviewMcConfig</Name>
+      <Comment>Common line-related configuration information.  Some feeds override these.</Comment>
+      <Parameter>
+         <Name>FeedVersion</Name>
+         <Value>5.0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>MoldUdp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MulticastProtocol</Name>
+         <Value>moldudp64</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NasdaqFeedFormat</Name>
+         <Value>totalview</Value>
+         <Comment>Please do not change this without consulting Wombat Support</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterCheckEveryMessageInBlock</Name>
+         <Value>true</Value>
+         <Comment>Required to ensure the Start of Day message is searched for within the MoldUdp blocks and never spooled.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>SleepAtEndOfTransmission</Name>
+         <Value>false</Value>
+         <Comment>The INET Feed does not send overnight test data</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.54.12.40/25475</Value>
+         <Value>default2/233.187.20.32/18070</Value><!-- EDCP-7256 DR Data Center Migration to Chicago -->
+         <!--Value>default2/233.86.230.40/25475</Value-->
+      </Parameter>
+
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.54.12.40</Value>
+         <Value>233.187.20.32</Value><!-- EDCP-7256 DR Data Center Migration to Chicago -->
+         <!--Value>233.86.230.40</Value-->
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>BxTotalviewMcRetransmission</Name>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterLogRetrans</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>15000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitStartOfDay</Name>
+         <Value>1000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>1.5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MoldRetransRetryCount</Name>
+         <Value>5</Value>
+         <Comment>Number of times to attempt a retry.  Zero disables this functionality.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MoldRetransIntervalMsec</Name>
+         <Value>100</Value>
+         <Comment>Milliseconds to wait after first request before sending a subsequent request.  If multiple responses occur, these are correctly handled (the first is processed, the rest are dropped)</Comment>
+      </Parameter>
+      <ParamGroup>
+         <Name>RetransRequestor</Name>
+         <Comment>Details for the remote MoldUDP BxTotalviewMcRetransmission Server, and the local connection used to communicate with the server</Comment>
+         <Parameter>
+            <Name>DestinationHost</Name><!-- New York -->
+            <Value>206.200.240.37</Value><!--New York Metro Area "A"-->
+            <Comment>Retrans server IP Address, specified by NASDAQ.</Comment>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>18170</Value>
+            <Comment>UDP Port to send to, specified by NASDAQ.</Comment>
+         </Parameter>
+         <Parameter>
+            <Name>LocalHost</Name>
+            <Value/>
+            <Comment>Unicast IP Address to send Requests from.  The retransmission will be sent back to this address.  If blank, the default interface will be used.</Comment>
+         </Parameter>
+         <Parameter>
+            <Name>LocalService</Name>
+            <Value>50011</Value>
+            <Comment>UDP Port to send Requests from.  The retransmission will be sent back to this port</Comment>
+         </Parameter>
+      </ParamGroup>
+   </DefineParameterGroup>
+    
+   <Parameter>
+      <Name>ItchMessageHandlerName</Name>
+      <Value>bxtotalviewmc</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchLineAdminViaMulticast</Name>
+      <Value>true</Value>
+      <Comment>Set true for Multicast.  When the feed handler resets the next-expected sequence number at start of day, use the internal sequence number for TCP and the embedded packet sequence number for multicast.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbolPrefixTopOfBook</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookDecimals</Name>
+      <Value>4</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqQuoteResumeChangesStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>MdrvPrefix</Name>
+      <Value>ORDER</Value>
+      <Comment>For RV6 publishing interface</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>TibSource</Name>
+      <Value>ORDER</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TibSector</Name>
+      <Value>REC</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TibExchange</Name>
+      <Value>NaE</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>itch2streetFullMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>offline</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>FtRvService</Name>
+      <Value>7732</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_bxtotalviewmc</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value>bxtotalviewmc.sym</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>OrderBookSymbolFile</Name>
+      <Value>bxtotalviewmc.orderbook.sym</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>OrderBookSymbolFileContainsPartIds</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqUseParticipantBooks</Name>
+      <Value>false</Value>
+      <Comment>Generate a separate book per participant per symbol</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqTvbinProductNameOrderBook</Name>
+      <Value>NasdaqBxPlusBook</Value>
+      <Comment>Set to NasdaqBxPlusPartBook when NasdaqUseParticipantBooks is set to true.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqTvbinProductNameTop</Name>
+      <Value>NasdaqBxPlusTop</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqTvbinProductNameImbalance</Name>
+      <Value>NasdaqBxOrderImbalance</Value>
+      <!--Value>ProductDisabled</Value-->
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchProductNameTrade</Name>
+      <Value>NasdaqBxPlusTrade</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OrderBookUpdateImpliesNormalStatus</Name>
+      <Value>false</Value>
+      <Comment>Needs to be false for EMC processing</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchTrackMatchNumbers</Name>
+      <Value>false</Value>
+      <Comment>Enables the 'Broken Trade' message to be processed, but may use significant amounts of memory</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchProcessNonPrintableAsRegular</Name>
+      <Value>true</Value>
+      <Comment>On the Order Executed with Price Message there is a field called Printable that takes on the value of Y or N. The executions flagged with an N are typically published later as part of a bulk print. So volume can end up being double counted. However these messages come sooner so they can be useful trading information!
+
+This parameter controls whether to include the non-printables as part of the regular trade volume. The default value is true which has been our behaviour for quite some time.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchProcessNonPrintableAsIrregular</Name>
+      <Value>false</Value>
+      <Comment>This parameter controls whether to include publish the non-printables as as irregular trade. The default value is false as it is a newly added feature.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchPublishTradeOrderRefAsNumber</Name>
+      <Value>false</Value>
+      <Comment>Should the order reference (for a trade) be published as wOrderRef (string) or wOrderId64 (numeric).</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>SymbolSuffixTopOfBook</Name>
+      <Value>BBO</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>AggregateOrderBooks</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchAttributedOrderIds</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchAnonymousParticipantId</Name>
+      <Value>NSBX</Value>
+      <Comment>If using attributed orders, this participant identifier is used for the anonymous orders within the Single Book.  NASDAQ recommend using a value 'NSDQ'.  An otherwise unattributed order would then appear to be from an MPID of 'NSDQ'.  Within NASDAQ, all participant identifiers should be four characters.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>IncludeGroupSymbol</Name>
+      <Value>false</Value>
+      <Comment>Set to true if publishing Link Records</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchActiveOrderTuning</Name>
+      <Value>2097152</Value>
+      <Comment>This is a 'per message handler' parameter.  Set to a power of two (recommended) greater than the maximum expected number of active OrderIds from the ITCH feed that the message handler needs to process. As of June 2007 the peak active Orders was approx 1.3 million.  Remember to reduce this number if splitting the
+ feed via either multithreading, ITCH Splitter or otherwise.  Too high will consume unnecessary memory.  Too low will (slightly) reduce performance for the first day of operation.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NativeTimeZone</Name>
+      <Value>US/Eastern</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ReadsPerIoEvent</Name>
+      <Value>20</Value>
+      <Comment>Default is 20, this gives more bias to reading from the exchange</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>QueueSenderQueueSize</Name>
+      <Value>4000</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>QueueSenderBufferingMode</Name>
+      <Value>expanding</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>QueueSenderBufferSize</Name>
+      <Value>134217728</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>QueueSenderLogNotMatched</Name>
+      <Value>true</Value>
+      <Comment>Additional diagnostics on retrans message being received</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsOrder</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsChain</Value>
+      <Value>FieldAttrsNasdaq</Value>
+      <Value>FieldAttrsReferential</Value>
+      <Value>FieldAttrsOrderImbalance</Value>
+   </Parameter>
+    
+   <Feed>
+      <Name>bxtotalviewmc</Name>
+      <Comment>Use this feedname for a handler that accepts all symbols on the multicast line</Comment>
+      <UseParameterGroup name="BxTotalviewMcRetransmission"/>
+      <UseParameterGroup name="BxTotalviewMcConfig"/>
+         <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+   </Feed><!--Use these next two feednames to process only symbols starting with A-M inclusive, or only symbols starting N-Z inclusive.  This is used when loadsharing over multiple processes.  Copy and update these feed parameters as required.-->
+    
+   <Feed>
+      <Name>bxtotalviewmc_am</Name>
+      <UseParameterGroup name="BxTotalviewMcRetransmission"/>
+      <UseParameterGroup name="BxTotalviewMcConfig"/>
+      <Parameter>
+         <Name>MessageHandlerRegExpFilter</Name>
+         <Value>^[A-M]</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>bxtotalviewmc_nz</Name>
+      <UseParameterGroup name="BxTotalviewMcRetransmission"/>
+      <UseParameterGroup name="BxTotalviewMcConfig"/>
+      <Parameter>
+         <Name>MessageHandlerRegExpFilter</Name>
+         <Value>^[N-Z]</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>bxtotalviewmc_p</Name>
+      <Comment>Record a playback file</Comment>
+      <UseParameterGroup name="BxTotalviewMcRetransmission"/>
+      <UseParameterGroup name="BxTotalviewMcConfig"/>
+      <Parameter>
+         <Name>ExtractFile</Name>
+         <Value>bxtotalviewmc.play</Value>
+         <Comment>Messages will be extracted to this file</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Mode</Name>
+         <Value>Sleep</Value>
+         <Comment>Prevents the Message Handler processing the multicast data whilst recording playback.</Comment>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>bxtotalviewmc_replay</Name>
+      <Comment>Some defaults for replaying a file.  Update as necessary, or override on the command line</Comment>
+      <UseParameterGroup name="BxTotalviewMcRetransmission"/>
+      <UseParameterGroup name="BxTotalviewMcConfig"/>
+      <Parameter>
+         <Name>InputFile</Name>
+         <Value/>
+      </Parameter>
+      <Parameter>
+         <Name>InputRate</Name>
+         <Value>100</Value>
+         <Comment>Messages per second</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>RewindPlayback</Name>
+         <Value>true</Value>
+         <Comment>Repeatedly loop through the playback file</Comment>
+      </Parameter>
+   </Feed>
+
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

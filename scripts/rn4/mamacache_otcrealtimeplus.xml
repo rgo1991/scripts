@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Parameter Groups for Specific MamaSenderIds -->
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOtcRealtimePlusP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>620</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOtcRealtimePlusS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6200</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <!-- END - Parameter Groups for Specific MamaSenderIds -->
+
+   <Feed>
+      <Name>mamacache_otcrealtimeplus_prod</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_otcrealtimeplus</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_otcrealtimeplus</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OTCMKTS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaBookPriceFieldFormat</Name>
+         <Value>price</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_otcrealtimeplus_prod</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_otcrealtimeplus_feeds1</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct23a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdOtcRealtimePlusP"/>
+      </pny2sfmct23a>
+      <pny2sfmct23b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdOtcRealtimePlusS"/>
+      </pny2sfmct23b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_otcrealtimeplus_can_prod</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_otcrealtimeplus_can</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_otcrealtimeplus</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OTCMKTS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaBookPriceFieldFormat</Name>
+         <Value>price</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_otcrealtimeplus_prod</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_otcrealtimeplus_cantor_feeds1</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>false</Value>
+      </Parameter>
+<!--
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>pass_thru</Value>
+      </Parameter>
+-->
+      <Parameter>
+         <Name>MamdaSubscriberHandlerType</Name>
+         <Value>pass_thru</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- QAP Configs -->
+      <Parameter>
+         <Name>MamaPublishOrderBookProperties</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaEntryPropertyFids</Name>
+         <Value>5664</Value>
+         <Value>5665</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberProcessProperties</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Host-Specific Settings -->
+      <tny2sfmct16>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdOtcRealtimePlusP"/>
+      </tny2sfmct16>
+      <pny2sfmct29a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdOtcRealtimePlusP"/>
+      </pny2sfmct29a>
+      <pny2sfmct29b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdOtcRealtimePlusS"/>
+      </pny2sfmct29b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+</config>
+

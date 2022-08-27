@@ -1,0 +1,161 @@
+#!/bin/bash
+
+
+
+#Delete/take the shortest match of string in $var from the beginning:
+${var#string}
+
+#Delete/take the longest match of string in $var from the beginning:
+${var##string}
+
+#Delete/take the shortest match of string in $var from the end:
+${var%string}
+
+#Delete/take the longest match of string in $var from the end:
+${var%%string}
+
+
+#--------comparisons for loops, if/case statements etc. 
+
+#file comparisons#
+
+-a file
+#True if file exists.
+
+-b file
+#True if file exists and is a block special file.
+
+-c file
+#True if file exists and is a character special file.
+
+-d file
+#True if file exists and is a directory.
+
+-e file
+#True if file exists.
+
+-f file
+#True if file exists and is a regular file.
+
+-g file
+#True if file exists and its set-group-id bit is set.
+
+-h file
+#True if file exists and is a symbolic link.
+
+-k file
+#True if file exists and its "sticky" bit is set.
+
+-p file
+#True if file exists and is a named pipe (FIFO).
+
+-r file
+#True if file exists and is readable.
+
+-s file
+#True if file exists and has a size greater than zero.
+
+-t fd
+#True if file descriptor fd is open and refers to a terminal.
+
+-u file
+#True if file exists and its set-user-id bit is set.
+
+-w file
+#True if file exists and is writable.
+
+-x file
+#True if file exists and is executable.
+
+-G file
+#True if file exists and is owned by the effective group id.
+
+-L file
+#True if file exists and is a symbolic link.
+
+-N file
+#True if file exists and has been modified since it was last read.
+
+-O file
+#True if file exists and is owned by the effective user id.
+
+-S file
+#True if file exists and is a socket.
+
+file1 -ef file2
+#True if file1 and file2 refer to the same device and inode numbers.
+
+file1 -nt file2
+#True if file1 is newer (according to modification date) than file2, or if file1 exists and file2 does not.
+
+file1 -ot file2
+#True if file1 is older than file2, or if file2 exists and file1 does not.
+
+#variable and shell option comparisons#
+
+-o optname
+#True if the shell option optname is enabled. The list of options appears in the description of the -o option to the set builtin (see The Set Builtin).
+
+-v varname
+#True if the shell variable varname is set (has been assigned a value).
+
+-R varname
+#True if the shell variable varname is set and is a name reference.
+
+#string comparisons#
+
+-z string
+#True if the length of string is zero. when using this method with a variable, the variable must be in quotes eg: [ -z "$string" ] 
+
+-n string
+string
+#True if the length of string is non-zero. when using this method with a variable, the variable must be in quotes eg: [ -z "$string" ]
+
+string1 == string2
+string1 = string2
+#True if the strings are equal. When used with the [[ command, this performs pattern matching as described above (see Conditional Constructs).
+
+‘=’ should be used with the test command for POSIX conformance.
+
+string1 != string2
+#True if the strings are not equal.
+
+string1 < string2
+#True if string1 sorts before string2 lexicographically.
+
+string1 > string2
+#True if string1 sorts after string2 lexicographically.
+
+arg1 OP arg2
+OP is one of ‘-eq’, ‘-ne’, ‘-lt’, ‘-le’, ‘-gt’, or ‘-ge’. These arithmetic binary operators return true if arg1 is equal to, not equal to, less than, less than or equal to, greater than, or greater than or equal to arg2, respectively. Arg1 and arg2 may be positive or negative integers. When used with the [[ command, Arg1 and Arg2 are evaluated as arithmetic expressions (see Shell Arithmetic) ]]
+
+
+##------------------------------ end of comparisons list
+
+
+
+##------------------------------ filename expansion
+
+
+#'*' obviously means everything. '?' means one single character (ll config.?ml). {} can be used to specify specific characters to look for and [] can be used to specify a range of characters to look for:
+
+ls -ltr config.?ml
+
+ls -ltr /etc/rc{1,2,3,4,5}.xml
+mkdir /myfiles/myfiles{1,2,3}.txt
+
+ls -ltr /etc/rc[a-z].d
+
+ls -ltr [aeiou]* #list files that start with a lowercase vowel
+
+ls -ltr [!aeiou*] #list files that dont with a lowercase vowel
+
+
+##---------------------------  some uses for && (and) and ||(or) operators. you can use these in your if statesments but can also use the following way. 
+
+wc -l /etc/hosts || echo "wc failed to read /etc/hosts" #perform wc and if it fails do the echo. 
+wc -l /etc/hosts.bak || echo "wc failed to read /etc/hosts.bak" #this will echo the statment because wc command failed.
+
+
+
+

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Parameter Groups for Specific MamaSenderIds -->
+   <DefineParameterGroup>
+      <Name>MamaSenderIdObuAfP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>800</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdObuAfS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>8000</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdObuGoP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>801</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdObuGoS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>8001</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdObuPzP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>802</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdObuPzS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>8002</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <!-- END - Parameter Groups for Specific MamaSenderIds -->
+
+   <Feed>
+      <Name>mamacache_openbook_af_conf</Name>
+      <UseParameterGroup name="L2ConflationParams"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_openbook</Value>
+         <Value>mamacache_amexdob</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_openbook</Value>
+         <Value>thread_mamacache_amexdob</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_openbook_af_conf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_openbook_conf_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+<!-- Disabled fast compression for conflated caches -->
+      <!-- FAST Publishing -->
+<!--
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+-->
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(AMEXDOB\|OPENBOOK\)\.[A-F]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(AMEXDOB\|OPENBOOK\)\.[A-F]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(AMEXDOB\|OPENBOOK\)\.[A-F]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(AMEXDOB\|OPENBOOK\)\.[A-F]</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <njwamstc46>
+         <UseParameterGroup name="MamaSenderIdObuAfP"/>
+      </njwamstc46>
+      <njwammcp44a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdObuAfP"/>
+      </njwammcp44a>
+      <njwammcp44b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdObuAfS"/>
+      </njwammcp44b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_openbook_go_conf</Name>
+      <UseParameterGroup name="L2ConflationParams"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_openbook</Value>
+         <Value>mamacache_amexdob</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_openbook</Value>
+         <Value>thread_mamacache_amexdob</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_openbook_go_conf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_openbook_conf_feeds1</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+<!-- Disabling fast for conflated  mamacaches -->
+<!--
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+-->
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(AMEXDOB\|OPENBOOK\)\.[G-O]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(AMEXDOB\|OPENBOOK\)\.[G-O]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(AMEXDOB\|OPENBOOK\)\.[G-O]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(AMEXDOB\|OPENBOOK\)\.[G-O]</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <njwamstc46>
+         <UseParameterGroup name="MamaSenderIdObuGoP"/>
+      </njwamstc46>
+     <njwammcp44a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdObuGoP"/>
+      </njwammcp44a>
+      <njwammcp44b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdObuGoS"/>
+      </njwammcp44b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_openbook_pz_conf</Name>
+      <UseParameterGroup name="L2ConflationParams"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_openbook</Value>
+         <Value>mamacache_amexdob</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_openbook</Value>
+         <Value>thread_mamacache_amexdob</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_openbook_pz_conf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_openbook_conf_feeds2</Value>
+      </Parameter>
+     <!-- END - Publishing Parameters -->
+<!-- Disabling fast for conflated  mamacaches -->
+      <!-- FAST Publishing -->
+<!--
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+-->
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(AMEXDOB\|OPENBOOK\)\.[^A-O]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(AMEXDOB\|OPENBOOK\)\.[^A-O]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(AMEXDOB\|OPENBOOK\)\.[^A-O]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(AMEXDOB\|OPENBOOK\)\.[^A-O]</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <njwamstc46>
+         <UseParameterGroup name="MamaSenderIdObuPzP"/>
+      </njwamstc46>
+     <njwammcp18a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdObuPzP"/>
+      </njwammcp18a>
+      <njwammcp18b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdObuPzS"/>
+      </njwammcp18b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+</config>

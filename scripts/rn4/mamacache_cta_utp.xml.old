@@ -1,0 +1,3239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+<!-- Parameter Groups for Specific MamaSenderIds -->
+  <DefineParameterGroup>
+      <Name>MamaSenderIdCtaIndexP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6492</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaIndexS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>64902</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseAAnP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>630</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseAAnS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6300</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseAoBxP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>631</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseAoBxS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6310</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseByCrP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>632</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseByCrS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6320</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseCsElP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>633</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseCsElS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6330</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseEmGlP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>634</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseEmGlS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6340</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseGmIqP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>635</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseGmIqS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6350</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseIrLvP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>636</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseIrLvS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6360</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseLwNoP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>637</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseLwNoS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6370</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseNpPrP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>638</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseNpPrS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6380</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNysePsStP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>639</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNysePsStS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6390</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseSuUsP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>640</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseSuUsS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6400</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseUtZP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>641</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaNyseUtZS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6410</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexADzP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>651</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexADzS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6510</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexEEwP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>652</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexEEwS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6520</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexExGzP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>653</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexExGzS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6530</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexHIweP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>654</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexHIweS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6540</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexIwfKiP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>655</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexIwfKiS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6550</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexKjRmP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>656</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexKjRmS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6560</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexRnSkP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>657</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexRnSkS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6570</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexSlSpP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>658</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexSlSpS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6580</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexSqUmP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>659</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexSqUmS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6590</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexUnVnP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>660</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexUnVnS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6600</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexVoXleP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>661</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexVoXleS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6610</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexXlfZP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>662</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaAmexXlfZS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6620</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdUtpAaFdP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>645</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdUtpAaFdS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6450</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdUtpFePbP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>646</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdUtpFePbS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6460</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdUtpAaCdP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>649</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdUtpAaCdS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6490</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdUtpCeFdP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>650</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdUtpCeFdS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6500</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdUtpLlPbP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>651</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdUtpLlPbS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6510</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdUtpFeLkP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>652</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdUtpFeLkS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6520</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdUtpPcSpP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>647</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdUtpPcSpS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6470</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdUtpSqZzP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>648</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdUtpSqZzS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6480</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <!-- END - Parameter Groups for Specific MamaSenderIds -->
+
+   <Feed>
+      <Name>mamacache_cta_index</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_indexcta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_indexcta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_index</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <!--<Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(S[Q-Z]\|[P-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(S[Q-Z]\|[P-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(S[Q-Z]\|[P-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(S[Q-Z]\|[P-Z]\)</Value>
+      </Parameter>-->
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+<!-- Parameter Groups for Specific MamaSenderIds -->
+  <DefineParameterGroup>
+      <Name>MamaSenderIdCtaIndexP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>6492</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaIndexS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>64902</Value>
+      </Parameter>
+   </DefineParameterGroup>
+      <pny2sfmct31a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaIndexP"/>
+      </pny2sfmct31a>
+      <pny2sfmct31b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaIndexS"/>
+      </pny2sfmct31b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_nyse_AAn</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_nyse_AAn</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+     <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(A$\|A[^O-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(A$\|A[^O-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NYSE\.\(A$\|A[^O-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NYSE\.\(A$\|A[^O-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr05>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseAAnP"/>
+      </tnjsfmcr05>
+      <pm3sfmci01a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseAAnP"/>
+      </pm3sfmci01a>
+      <pm3sfmci01b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseAAnS"/>
+      </pm3sfmci01b>
+      <njwammcp43a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseAAnP"/>
+      </njwammcp43a>
+      <njwammcp43b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseAAnS"/>
+      </njwammcp43b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_nyse_AoBx</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_nyse_AoBx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+       <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(A[O-Z]\|B$\|B[^Y-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(A[O-Z]\|B$\|B[^Y-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NYSE\.\(A[O-Z]\|B$\|B[^Y-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NYSE\.\(A[O-Z]\|B$\|B[^Y-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr05>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseAoBxP"/>
+      </tnjsfmcr05>
+      <pm3sfmci01a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseAoBxP"/>
+      </pm3sfmci01a>
+      <pm3sfmci01b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseAoBxS"/>
+      </pm3sfmci01b>
+      <njwammcp43a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseAoBxP"/>
+      </njwammcp43a>
+      <njwammcp43b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseAoBxS"/>
+      </njwammcp43b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_nyse_ByCr</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_nyse_ByCr</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+     <Parameter>
+     <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(B[Y-Z]\|C$\|C[^S-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(B[Y-Z]\|C$\|C[^S-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NYSE\.\(B[Y-Z]\|C$\|C[^S-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NYSE\.\(B[Y-Z]\|C$\|C[^S-Z]\)</Value>
+      </Parameter>
+
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr05>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseByCrP"/>
+      </tnjsfmcr05>
+
+      <pm3sfmci01a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseByCrP"/>
+      </pm3sfmci01a>
+      <pm3sfmci01b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseByCrS"/>
+      </pm3sfmci01b>
+      <njwammcp43a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseByCrP"/>
+      </njwammcp43a>
+      <njwammcp43b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseByCrS"/>
+      </njwammcp43b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_nyse_CsEl</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_nyse_CsEl</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp_feeds1</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+     <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(C[S-Z]\|D\|E$\|E[^M-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(C[S-Z]\|D\|E$\|E[^M-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NYSE\.\(C[S-Z]\|D\|E$\|E[^M-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NYSE\.\(C[S-Z]\|D\|E$\|E[^M-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr05>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseCsElP"/>
+      </tnjsfmcr05>
+
+      <pm3sfmci01a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseCsElP"/>
+      </pm3sfmci01a>
+      <pm3sfmci01b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseCsElS"/>
+      </pm3sfmci01b>
+      <njwammcp42a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseCsElP"/>
+      </njwammcp42a>
+      <njwammcp42b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseCsElS"/>
+      </njwammcp42b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_nyse_EmGl</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_nyse_EmGl</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp_feeds1</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+     <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(E[M-Z]\|F\|G$\|G[^M-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(E[M-Z]\|F\|G$\|G[^M-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NYSE\.\(E[M-Z]\|F\|G$\|G[^M-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NYSE\.\(E[M-Z]\|F\|G$\|G[^M-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr05>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseEmGlP"/>
+      </tnjsfmcr05>
+
+      <pm3sfmci01a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseEmGlP"/>
+      </pm3sfmci01a>
+      <pm3sfmci01b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseEmGlS"/>
+      </pm3sfmci01b>
+      <njwammcp42a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseEmGlP"/>
+      </njwammcp42a>
+      <njwammcp42b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseEmGlS"/>
+      </njwammcp42b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_nyse_GmIq</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_nyse_GmIq</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp_feeds1</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+     <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(G[M-Z]\|H\|I$\|I[^R-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(G[M-Z]\|H\|I$\|I[^R-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NYSE\.\(G[M-Z]\|H\|I$\|I[^R-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NYSE\.\(G[M-Z]\|H\|I$\|I[^R-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr05>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseGmIqP"/>
+      </tnjsfmcr05>
+
+      <pm3sfmci02a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseGmIqP"/>
+      </pm3sfmci02a>
+      <pm3sfmci02b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseGmIqS"/>
+      </pm3sfmci02b>
+      <njwammcp42a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseGmIqP"/>
+      </njwammcp42a>
+      <njwammcp42b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseGmIqS"/>
+      </njwammcp42b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_nyse_IrLv</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_nyse_IrLv</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp_feeds2</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+     <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(I[R-Z]\|[J-K]\|L$\|L[^W-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(I[R-Z]\|[J-K]\|L$\|L[^W-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NYSE\.\(I[R-Z]\|[J-K]\|L$\|L[^W-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NYSE\.\(I[R-Z]\|[J-K]\|L$\|L[^W-Z]\)</Value>
+      </Parameter> 
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr05>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseIrLvP"/>
+      </tnjsfmcr05>
+
+      <pm3sfmci02a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseIrLvP"/>
+      </pm3sfmci02a>
+      <pm3sfmci02b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseIrLvS"/>
+      </pm3sfmci02b>
+      <njwammcp42a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseIrLvP"/>
+      </njwammcp42a>
+      <njwammcp42b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseIrLvS"/>
+      </njwammcp42b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_nyse_LwNo</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_nyse_LwNo</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp_feeds2</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+     <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(L[W-Z]\|M\|N$\|N[^P-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(L[W-Z]\|M\|N$\|N[^P-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NYSE\.\(L[W-Z]\|M\|N$\|N[^P-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NYSE\.\(L[W-Z]\|M\|N$\|N[^P-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr05>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseLwNoP"/>
+      </tnjsfmcr05>
+
+      <pm3sfmci02a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseLwNoP"/>
+      </pm3sfmci02a>
+      <pm3sfmci02b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseLwNoS"/>
+      </pm3sfmci02b>
+      <njwammcp42a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseLwNoP"/>
+      </njwammcp42a>
+      <njwammcp42b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseLwNoS"/>
+      </njwammcp42b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_nyse_NpPr</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_nyse_NpPr</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp_feeds2</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+     <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(N[P-Z]\|O\|P$\|P[^S-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(N[P-Z]\|O\|P$\|P[^S-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NYSE\.\(N[P-Z]\|O\|P$\|P[^S-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NYSE\.\(N[P-Z]\|O\|P$\|P[^S-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr05>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseNpPrP"/>
+      </tnjsfmcr05>
+
+      <pm3sfmci02a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseNpPrP"/>
+      </pm3sfmci02a>
+      <pm3sfmci02b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseNpPrS"/>
+      </pm3sfmci02b>
+      <njwammcp42a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseNpPrP"/>
+      </njwammcp42a>
+      <njwammcp42b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseNpPrS"/>
+      </njwammcp42b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_nyse_PsSt</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_nyse_PsSt</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp_feeds3</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+     <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(P[S-Z]\|[Q-R]\|S$\|S[^U-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(P[S-Z]\|[Q-R]\|S$\|S[^U-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NYSE\.\(P[S-Z]\|[Q-R]\|S$\|S[^U-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NYSE\.\(P[S-Z]\|[Q-R]\|S$\|S[^U-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr05>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNysePsStP"/>
+      </tnjsfmcr05>
+
+      <pm3sfmci02a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNysePsStP"/>
+      </pm3sfmci02a>
+      <pm3sfmci02b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNysePsStS"/>
+      </pm3sfmci02b>
+      <njwammcp42a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNysePsStP"/>
+      </njwammcp42a>
+      <njwammcp42b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNysePsStS"/>
+      </njwammcp42b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_nyse_SuUs</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_nyse_SuUs</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp_feeds3</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+     <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(S[U-Z]\|T\|U$\|U[^T-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(S[U-Z]\|T\|U$\|U[^T-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NYSE\.\(S[U-Z]\|T\|U$\|U[^T-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NYSE\.\(S[U-Z]\|T\|U$\|U[^T-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr05>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseSuUsP"/>
+      </tnjsfmcr05>
+
+      <pny2sfmct31a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseSuUsP"/>
+      </pny2sfmct31a>
+      <pny2sfmct31b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseSuUsS"/>
+      </pny2sfmct31b>
+      <njwammcp42a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseSuUsP"/>
+      </njwammcp42a>
+      <njwammcp42b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseSuUsS"/>
+      </njwammcp42b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_nyse_UtZ</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_nyse_UtZ</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp_feeds3</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(U[T-Z]\|[V-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NYSE\.\(U[T-Z]\|[V-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NYSE\.\(U[T-Z]\|[V-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NYSE\.\(U[T-Z]\|[V-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr05>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseUtZP"/>
+      </tnjsfmcr05>
+
+      <pny2sfmct31a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseUtZP"/>
+      </pny2sfmct31a>
+      <pny2sfmct31b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseUtZS"/>
+      </pny2sfmct31b>
+      <njwammcp42a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseUtZP"/>
+      </njwammcp42a>
+      <njwammcp42b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaNyseUtZS"/>
+      </njwammcp42b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+<!-- START old utp conf cache splits -->
+   <Feed>
+      <Name>mamacache_utp_AaFd</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_utp_AaFd</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbols -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- Enable Group Symbols -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NASDAQ\.\([A-E]\|F$\|F[^E-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NASDAQ\.\([A-E]\|F$\|F[^E-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NASDAQ\.\([A-E]\|F$\|F[^E-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NASDAQ\.\([A-E]\|F$\|F[^E-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr08>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpAaFdP"/>
+      </tnjsfmcr08>
+
+      <pny2sfmct31a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpAaFdP"/>
+      </pny2sfmct31a>
+      <pny2sfmct31b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdUtpAaFdS"/>
+      </pny2sfmct31b>
+      <njwammcp43a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpAaFdP"/>
+      </njwammcp43a>
+      <njwammcp43b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdUtpAaFdS"/>
+      </njwammcp43b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_utp_FePb</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_utp_FePb</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbols -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- Enable Group Symbols -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NASDAQ\.\(F[E-Z]\|[G-O]\|P$\|P[^C-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NASDAQ\.\(F[E-Z]\|[G-O]\|P$\|P[^C-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NASDAQ\.\(F[E-Z]\|[G-O]\|P$\|P[^C-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NASDAQ\.\(F[E-Z]\|[G-O]\|P$\|P[^C-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr08>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpFePbP"/>
+      </tnjsfmcr08>
+
+      <pny2sfmct31a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpFePbP"/>
+      </pny2sfmct31a>
+      <pny2sfmct31b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdUtpFePbS"/>
+      </pny2sfmct31b>
+      <njwammcp43a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpFePbP"/>
+      </njwammcp43a>
+      <njwammcp43b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdUtpFePbS"/>
+      </njwammcp43b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+<!-- END old utp conf splits-->
+
+   <Feed>
+      <Name>mamacache_utp_PcSp</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_utp_PcSp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbols -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- Enable Group Symbols -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NASDAQ\.\(P[C-Z]\|[Q-R]\|S$\|S[^Q-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NASDAQ\.\(P[C-Z]\|[Q-R]\|S$\|S[^Q-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NASDAQ\.\(P[C-Z]\|[Q-R]\|S$\|S[^Q-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NASDAQ\.\(P[C-Z]\|[Q-R]\|S$\|S[^Q-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr08>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpPcSpP"/>
+      </tnjsfmcr08>
+
+      <pm3sfmci04a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpPcSpP"/>
+      </pm3sfmci04a>
+      <pm3sfmci04b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdUtpPcSpS"/>
+      </pm3sfmci04b>
+      <njwammcp43a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpPcSpP"/>
+      </njwammcp43a>
+      <njwammcp43b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdUtpPcSpS"/>
+      </njwammcp43b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_utp_SqZz</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_utp_SqZz</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbols -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- Enable Group Symbols -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NASDAQ\.\(S[Q-Z]\|[T-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NASDAQ\.\(S[Q-Z]\|[T-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NASDAQ\.\(S[Q-Z]\|[T-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NASDAQ\.\(S[Q-Z]\|[T-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr07>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpSqZzP"/>
+      </tnjsfmcr07>
+
+      <pm3sfmci04a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpSqZzP"/>
+      </pm3sfmci04a>
+      <pm3sfmci04b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdUtpSqZzS"/>
+      </pm3sfmci04b>
+      <njwammcp43a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpSqZzP"/>
+      </njwammcp43a>
+      <njwammcp43b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdUtpSqZzS"/>
+      </njwammcp43b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+<!-- New UTP cache splits START -->   
+   <Feed>
+      <Name>mamacache_utp_AaCd</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_utp_AaCd</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbols -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- Enable Group Symbols -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NASDAQ\.\([A-B]\|C$\|C[^E-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NASDAQ\.\([A-B]\|C$\|C[^E-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NASDAQ\.\([A-B]\|C$\|C[^E-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NASDAQ\.\([A-B]\|C$\|C[^E-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr08>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpAaCdP"/>
+      </tnjsfmcr08>
+
+      <pny2sfmct31a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpAaCdP"/>
+      </pny2sfmct31a>
+      <pny2sfmct31b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdUtpAaCdS"/>
+      </pny2sfmct31b>
+      <njwammcp43a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpAaCdP"/>
+      </njwammcp43a>
+      <njwammcp43b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdUtpAaCdS"/>
+      </njwammcp43b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_utp_CeFd</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_utp_CeFd</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbols -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- Enable Group Symbols -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NASDAQ\.\(C[E-Z]\|[D-E]\|F$\|F[^E-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NASDAQ\.\(C[E-Z]\|[D-E]\|F$\|F[^E-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NASDAQ\.\(C[E-Z]\|[D-E]\|F$\|F[^E-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NASDAQ\.\(C[E-Z]\|[D-E]\|F$\|F[^E-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr08>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpCeFdP"/>
+      </tnjsfmcr08>
+
+      <pny2sfmct31a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpCeFdP"/>
+      </pny2sfmct31a>
+      <pny2sfmct31b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdUtpCeFdS"/>
+      </pny2sfmct31b>
+      <njwammcp43a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpCeFdP"/>
+      </njwammcp43a>
+      <njwammcp43b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdUtpCeFdS"/>
+      </njwammcp43b>
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_utp_FeLk</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_utp_FeLk</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbols -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- Enable Group Symbols -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NASDAQ\.\(F[E-Z]\|[G-K]\|L$\|L[^L-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NASDAQ\.\(F[E-Z]\|[G-K]\|L$\|L[^L-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NASDAQ\.\(F[E-Z]\|[G-K]\|L$\|L[^L-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NASDAQ\.\(F[E-Z]\|[G-K]\|L$\|L[^L-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr07>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpFeLkP"/>
+      </tnjsfmcr07>
+
+      <pm3sfdmc23a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpFeLkP"/>
+      </pm3sfdmc23a>
+      <pm3sfdmc23b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdUtpFeLkS"/>
+      </pm3sfdmc23b>
+      <njwammcp42a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpFeLkP"/>
+      </njwammcp42a>
+      <njwammcp42b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdUtpFeLkS"/>
+      </njwammcp42b>
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_utp_LlPb</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_utp_LlPb</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbols -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- Enable Group Symbols -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^NASDAQ\.\(L[L-Z]\|[M-O]\|P$\|P[^C-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^NASDAQ\.\(L[L-Z]\|[M-O]\|P$\|P[^C-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^NASDAQ\.\(L[L-Z]\|[M-O]\|P$\|P[^C-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^NASDAQ\.\(L[L-Z]\|[M-O]\|P$\|P[^C-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr08>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpLlPbP"/>
+      </tnjsfmcr08>
+
+      <pm3sfdmc23a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpLlPbP"/>
+      </pm3sfdmc23a>
+      <pm3sfdmc23b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdUtpLlPbS"/>
+      </pm3sfdmc23b>
+      <njwammcp42a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdUtpLlPbP"/>
+      </njwammcp42a>
+      <njwammcp42b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdUtpLlPbS"/>
+      </njwammcp42b>
+   </Feed>
+<!-- New UTP cache splits END -->
+
+   <Feed>
+      <Name>mamacache_cta_amex_ADz</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_amex_ADz</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^AMEX\.\([A-D]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^AMEX\.\([A-D]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\([A-D]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\([A-D]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr07>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexADzP"/>
+      </tnjsfmcr07>
+
+      <pm3sfdmc16a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexADzP"/>
+      </pm3sfdmc16a>
+      <pm3sfdmc16b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexADzS"/>
+      </pm3sfdmc16b>
+      <njwammcp43a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexADzP"/>
+      </njwammcp43a>
+      <njwammcp43b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexADzS"/>
+      </njwammcp43b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_amex_EEw</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_amex_EEw</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^AMEX\.\(E$\|E[^X-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^AMEX\.\(E$\|E[^X-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(E$\|E[^X-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(E$\|E[^X-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr07>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexEEwP"/>
+      </tnjsfmcr07>
+
+      <pm3sfdmc16a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexEEwP"/>
+      </pm3sfdmc16a>
+      <pm3sfdmc16b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexEEwS"/>
+      </pm3sfdmc16b>
+      <njwammcp43a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexEEwP"/>
+      </njwammcp43a>
+      <njwammcp43b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexEEwS"/>
+      </njwammcp43b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_amex_ExGz</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_amex_ExGz</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^AMEX\.\(E[X-Z]\|[F-G]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^AMEX\.\(E[X-Z]\|[F-G]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(E[X-Z]\|[F-G]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(E[X-Z]\|[F-G]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr07>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexExGzP"/>
+      </tnjsfmcr07>
+
+      <pm3sfdmc16a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexExGzP"/>
+      </pm3sfdmc16a>
+      <pm3sfdmc16b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexExGzS"/>
+      </pm3sfdmc16b>
+      <njwammcp43a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexExGzP"/>
+      </njwammcp43a>
+      <njwammcp43b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexExGzS"/>
+      </njwammcp43b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_amex_HIwe</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_amex_HIwe</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^AMEX\.\(H\|I$\|I[^W-Z]\|IW$\|IW[^F-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^AMEX\.\(H\|I$\|I[^W-Z]\|IW$\|IW[^F-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(H\|I$\|I[^W-Z]\|IW$\|IW[^F-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(H\|I$\|I[^W-Z]\|IW$\|IW[^F-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr07>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexHIweP"/>
+      </tnjsfmcr07>
+
+      <pm3sfdmc16a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexHIweP"/>
+      </pm3sfdmc16a>
+      <pm3sfdmc16b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexHIweS"/>
+      </pm3sfdmc16b>
+      <njwammcp39a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexHIweP"/>
+      </njwammcp39a>
+      <njwammcp39b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexHIweS"/>
+      </njwammcp39b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_amex_IwfKi</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_amex_IwfKi</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^AMEX\.\(IW[F-Z]\|I[X-Z]\|J\|K$\|K[^J-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^AMEX\.\(IW[F-Z]\|I[X-Z]\|J\|K$\|K[^J-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(IW[F-Z]\|I[X-Z]\|J\|K$\|K[^J-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(IW[F-Z]\|I[X-Z]\|J\|K$\|K[^J-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr07>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexIwfKiP"/>
+      </tnjsfmcr07>
+
+      <pm3sfdmc17a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexIwfKiP"/>
+      </pm3sfdmc17a>
+      <pm3sfdmc17b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexIwfKiS"/>
+      </pm3sfdmc17b>
+      <njwammcp39a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexIwfKiP"/>
+      </njwammcp39a>
+      <njwammcp39b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexIwfKiS"/>
+      </njwammcp39b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_amex_KjRm</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_amex_KjRm</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^AMEX\.\(K[J-Z]\|[L-Q]\|R$\|R[^N-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^AMEX\.\(K[J-Z]\|[L-Q]\|R$\|R[^N-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(K[J-Z]\|[L-Q]\|R$\|R[^N-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(K[J-Z]\|[L-Q]\|R$\|R[^N-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr07>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexKjRmP"/>
+      </tnjsfmcr07>
+
+      <pm3sfdmc17a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexKjRmP"/>
+      </pm3sfdmc17a>
+      <pm3sfdmc17b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexKjRmS"/>
+      </pm3sfdmc17b>
+      <njwammcp39a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexKjRmP"/>
+      </njwammcp39a>
+      <njwammcp39b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexKjRmS"/>
+      </njwammcp39b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_amex_RnSk</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_amex_RnSk</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^AMEX\.\(R[N-Z]\|S$\|S[^L-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^AMEX\.\(R[N-Z]\|S$\|S[^L-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(R[N-Z]\|S$\|S[^L-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(R[N-Z]\|S$\|S[^L-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr07>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexRnSkP"/>
+      </tnjsfmcr07>
+
+      <pm3sfdmc17a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexRnSkP"/>
+      </pm3sfdmc17a>
+      <pm3sfdmc17b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexRnSkS"/>
+      </pm3sfdmc17b>
+      <njwammcp40a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexRnSkP"/>
+      </njwammcp40a>
+      <njwammcp40b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexRnSkS"/>
+      </njwammcp40b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_amex_SlSp</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_amex_SlSp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^AMEX\.\(S[L-P]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^AMEX\.\(S[L-P]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(S[L-P]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(S[L-P]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr07>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexSlSpP"/>
+      </tnjsfmcr07>
+
+      <pm3sfdmc17a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexSlSpP"/>
+      </pm3sfdmc17a>
+      <pm3sfdmc17b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexSlSpS"/>
+      </pm3sfdmc17b>
+      <njwammcp40a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexSlSpP"/>
+      </njwammcp40a>
+      <njwammcp40b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexSlSpS"/>
+      </njwammcp40b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_amex_SqUm</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_amex_SqUm</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^AMEX\.\(S[Q-Z]\|T\|U$\|U[^N-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^AMEX\.\(S[Q-Z]\|T\|U$\|U[^N-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(S[Q-Z]\|T\|U$\|U[^N-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(S[Q-Z]\|T\|U$\|U[^N-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr07>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexSqUmP"/>
+      </tnjsfmcr07>
+
+      <pm3sfdmc17a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexSqUmP"/>
+      </pm3sfdmc17a>
+      <pm3sfdmc17b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexSqUmS"/>
+      </pm3sfdmc17b>
+      <njwammcp40a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexSqUmP"/>
+      </njwammcp40a>
+      <njwammcp40b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexSqUmS"/>
+      </njwammcp40b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_amex_UnVn</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_amex_UnVn</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^AMEX\.\(U[N-Z]\|V$\|V[^O-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^AMEX\.\(U[N-Z]\|V$\|V[^O-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(U[N-Z]\|V$\|V[^O-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(U[N-Z]\|V$\|V[^O-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr07>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexUnVnP"/>
+      </tnjsfmcr07>
+
+      <pm3sfmci04a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexUnVnP"/>
+      </pm3sfmci04a>
+      <pm3sfmci04b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexUnVnS"/>
+      </pm3sfmci04b>
+      <njwammcp43a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexUnVnP"/>
+      </njwammcp43a>
+      <njwammcp43b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexUnVnS"/>
+      </njwammcp43b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_amex_VoXle</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_amex_VoXle</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^AMEX\.\(V[O-Z]\|W\|X$\|X[^L-Z]\|XL$\|XL[^F-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^AMEX\.\(V[O-Z]\|W\|X$\|X[^L-Z]\|XL$\|XL[^F-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(V[O-Z]\|W\|X$\|X[^L-Z]\|XL$\|XL[^F-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(V[O-Z]\|W\|X$\|X[^L-Z]\|XL$\|XL[^F-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr07>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexVoXleP"/>
+      </tnjsfmcr07>
+
+      <pm3sfmci04a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexVoXleP"/>
+      </pm3sfmci04a>
+      <pm3sfmci04b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexVoXleS"/>
+      </pm3sfmci04b>
+      <njwammcp43a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexVoXleP"/>
+      </njwammcp43a>
+      <njwammcp43b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexVoXleS"/>
+      </njwammcp43b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_cta_amex_XlfZ</Name>
+      <UseParameterGroup name="SetFastOn"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <UseParameterGroup name="ExtraTimeFields"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_amex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberBasicSymbolFields</Name>
+         <Value>wIssueSymbol</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_amex_XlfZ</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^AMEX\.\(XL[F-Z]\|X[M-Z]\|[Y-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^AMEX\.\(XL[F-Z]\|X[M-Z]\|[Y-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(XL[F-Z]\|X[M-Z]\|[Y-Z]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^AMEX\.\(XL[F-Z]\|X[M-Z]\|[Y-Z]\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <tnjsfmcr07>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexXlfZP"/>
+      </tnjsfmcr07>
+
+      <pm3sfmci04a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexXlfZP"/>
+      </pm3sfmci04a>
+      <pm3sfmci04b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexXlfZS"/>
+      </pm3sfmci04b>
+      <njwammcp43a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexXlfZP"/>
+      </njwammcp43a>
+      <njwammcp43b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaAmexXlfZS"/>
+      </njwammcp43b>
+
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+</config>

@@ -1,0 +1,1386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+   
+   <!-- Site specific includes -->
+   <IncludeFile>tsxl1_tport.xml</IncludeFile>
+   <IncludeFile>tsxl1_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+      <Parameter>
+        <Name>AlwaysPublishFieldList</Name>
+        <Value>wPrimExch</Value>
+        <Value>wTradeId</Value>
+      </Parameter>
+
+   <Parameter>
+     <Name>PublishNanoSecondFieldAsStr</Name>
+     <Value>true</Value>
+   </Parameter>
+
+
+   <Parameter> 
+      <Name>TsxUsePartIdAsSuffix</Name> 
+      <Value>false</Value> 
+   </Parameter> 
+
+   <Parameter>
+      <Name>FtInterface</Name>
+      <Value>bond0</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>67108864</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>TSXL1</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>Tl1ConvertShareSize</Name>
+      <Value>true</Value>
+   </Parameter>
+
+    <Parameter>
+      <Name>PublishCloseVolumeUniquely</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_tsxl1</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value>tsxl1.sym</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>DefaultMulticastInterface1</Name>
+      <Value>127.0.0.1</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>DefaultMulticastInterface2</Name>
+      <Value>127.0.0.1</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TibSource</Name>
+      <Value>TSXL1</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TibSector</Name>
+      <Value>REC</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TibExchange</Name>
+      <Value>NaE</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>MdrvPrefix</Name>
+      <Value>TSXL1</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>MamaDataDictResponder</Name>
+      <Value>false</Value>
+   </Parameter>
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+ 
+   <!-- See note in wombat.xml for FT details -->
+   <Parameter>
+      <Name>FtService</Name>
+      <Value>7734</Value>
+   </Parameter>
+
+   <!-- LineHandler Parameters -->
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+   <!-- END - LineHandler Parameters -->
+
+   <Parameter>
+      <Name>FtRvService</Name>
+      <Value>7731</Value>
+   </Parameter>
+
+<!--Make sure the following paramenter TradeCalculateNetChange is set to false as the TSX sends a value for wNetChange. We don't want RecordHandlerTrade calculating it as well!-->
+
+   <Parameter>
+      <Name>TradeCalculateNetChange</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <!-- Retransmission Parameters -->
+   <Parameter>
+      <Name>CheckForClassD</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>LineFilterRetransActive</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>LineFilterRetransMaxGapSize</Name>
+      <Value>20000</Value>
+   </Parameter>
+   <Parameter>
+      <Name>LineFilterGapLimitSize</Name>
+      <Value>15000</Value>
+   </Parameter>
+   <Parameter>
+      <Name>LineFilterMaxValidGapSize</Name>
+      <Value>0</Value>
+   </Parameter>
+   <Parameter>
+      <Name>LineFilterGapLimitTime</Name>
+      <Value>5</Value>
+   </Parameter>
+   <Parameter>
+      <Name>LineFilterGapLimitStartOfDay</Name>
+      <Value>1000</Value>
+   </Parameter>
+   <Parameter>
+      <Name>LogRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>TsxRetransMaxQueueSize</Name>
+      <Value>25</Value>
+   </Parameter>
+   <Parameter>
+      <Name>TcpConnectDelay</Name>
+      <Value>500</Value>
+   </Parameter>
+   <Parameter>
+      <Name>TcpConnectDelayMax</Name>
+      <Value>500</Value>
+   </Parameter>
+   <!-- END - Retransmission Parameters -->
+
+   <!-- Symbology Parameters -->
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>dotReplacementMap</Value>
+   </Parameter>
+   <!-- END - Symbology Parameters -->
+   
+   <Parameter>
+      <Name>PublishOrderBooks</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <!-- Use this parameter to map participant Id T to TO
+   <Parameter> 
+      <Name>ParticipantIdMapFuncName<Name>
+      <Value>tsxPartIdMap<Value>
+   <Parameter>
+   -->
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsIndex</Value>
+      <Value>FieldAttrsFundamental</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsFixedIncome</Value>
+      <Value>FieldAttrsTsx</Value>
+      <Value>FieldAttrsItc</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrder</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>TsxLineFormat</Name>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>tsx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumOffset</Name>
+         <Value>4</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumLength</Name>
+         <Value>9</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryOffset</Name>
+         <Value>5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryControl</Name>
+         <Value> </Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeOffset</Name>
+         <Value>19</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeSeqNumReset</Name>
+         <Value> </Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransOffset</Name>
+         <Value>16</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransLength</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransOrig</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeHeartbeat</Name>
+         <Value> </Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <!--Feed>
+      <Name>tsxl1</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tl1_1</Value>
+         <Value>tl1_2</Value>
+         <Value>cl1</Value>      
+  </Parameter>
+   <IncludeFile>papastats.2.16.xml</IncludeFile>
+   </Feed-->
+   
+   <Feed>
+      <!--Name>tsxl1_quantum</Name-->
+      <Name>tsxl1</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>ql1_t_1</Value>
+         <Value>ql1_t_2</Value>
+         <Value>ql1_c</Value>
+         <Value>ql1_x</Value>
+         <Value>ql1_trd_1</Value>
+         <Value>ql1_trd_2</Value>
+         <Value>ql1_vrd</Value>
+      </Parameter>
+<!--SFDCR-1401 Start-->
+      <Parameter>
+         <Name>TradeCalculateVwap</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TradeCalculateStdDev</Name>
+         <Value>true</Value>
+      </Parameter>
+<!--SFDCR-1401 END -->
+   </Feed>
+
+   <Feed>
+      <!--Name>tsxl1_t_quantum</Name-->
+      <Name>tsxl1_t</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>ql1_t_1_t</Value>
+         <Value>ql1_t_2_t</Value>
+         <Value>ql1_c_t</Value>
+         <Value>ql1_x_t</Value>
+         <Value>ql1_trd_1_t</Value>
+         <Value>ql1_trd_2_t</Value>
+         <Value>ql1_vrd_t</Value>
+      </Parameter>
+  </Feed> 
+   <Feed>
+      <Name>tl1_1</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-74</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.129/17503/on</Value>
+         <Value>default2/233.102.209.1/17500/on</Value>
+         <Value>default1/0.0.0.0/17004/off</Value>
+         <Value>default2/0.0.0.0/17002/off</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.129</Value>
+         <Value>233.102.209.1</Value>
+         <Comment>239.142.2.1 and 239.142.1.1 are the old private IPs, here
+            for compatibility with older playback files.</Comment>
+         <Value>239.142.2.1</Value>
+         <Value>239.142.1.1</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.219.10</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17001</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.220.11</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17001</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+  <Feed>
+      <Name>tl1_2</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-74</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.208/18503/on</Value>
+         <Value>default2/233.102.209.80/18500/on</Value>
+         <Value>default1/0.0.0.0/18004/off</Value>
+         <Value>default2/0.0.0.0/18002/off</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.208</Value>
+         <Value>233.102.209.80</Value>
+         <Comment>239.142.2.1 and 239.142.1.1 are the old private IPs, here
+            for compatibility with older playback files.</Comment>
+         <Value>239.142.2.1</Value>
+         <Value>239.142.1.1</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.219.25</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>18001</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.220.25</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>18001</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed> 
+
+   <Feed>
+      <Name>cl1</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-76</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.130/17513/on</Value>
+         <Value>default2/233.102.209.2/17510/on</Value>
+         <Value>default1/0.0.0.0/17014/off</Value>
+         <Value>default2/0.0.0.0/17012/off</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.130</Value>
+         <Value>233.102.209.2</Value>
+         <Comment>239.142.2.2 and 239.142.1.2 are the old private IPs, here
+            for compatibility with older playback files.</Comment>
+         <Value>239.142.2.2</Value>
+         <Value>239.142.1.2</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.219.10</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17011</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.220.11</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17011</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+   <Feed>
+      <Name>ql1_t_1</Name>
+      <Comment>Quantum RTMD TL1_11</Comment>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.72.13/30680</Value>
+         <Value>default2/224.0.72.77/30685</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.72.13</Value>
+         <Value>224.0.72.77</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Comment>TL1-11A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.3</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TL1-11B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.131</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+
+   <Feed>
+      <Name>ql1_t_2</Name>
+      <Comment>Quantum RTMD TL1_21</Comment>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.72.29/30681</Value>
+         <Value>default2/224.0.72.93/30686</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.72.29</Value>
+         <Value>224.0.72.93</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Comment>TL1-21A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.67</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TL1-21B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.195</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+ 
+   <Feed>
+      <Name>ql1_trd_1</Name>
+      <Comment>Quantum RTMD TRD_11</Comment>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.72.40/30730</Value>
+         <Value>default2/224.0.72.64/30735</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.72.40</Value>
+         <Value>224.0.72.64</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Comment>TRD-11A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.25</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TRD-11B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.145</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+   <Feed>
+      <Name>ql1_trd_2</Name>
+      <Comment>Quantum RTMD TRD_21</Comment>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.72.42/30906</Value>
+         <Value>default2/224.0.72.61/31081</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.72.42</Value>
+         <Value>224.0.72.61</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Comment>TRD-21A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.71</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TRD-21B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.192</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+
+   <Feed>
+      <Name>ql1_c</Name>
+      <Comment>Quantum RTMD CL1_11</Comment>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.72.15/30700</Value>
+         <Value>default2/224.0.72.79/30705</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.72.15</Value>
+         <Value>224.0.72.79</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Comment>CL1-11A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.5</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>CL1-11B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.133</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+   <Feed>
+      <Name>ql1_vrd</Name>
+      <Comment>Quantum RTMD VRD_11</Comment>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.72.41/30740</Value>
+         <Value>default2/224.0.72.63/30745</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.72.41</Value>
+         <Value>224.0.72.63</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Comment>VRD-11A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.26</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>VRD-11B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.146</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+
+   <Feed>
+      <Name>ql1_x</Name>
+      <Comment>Quantum RTMD TX1_11</Comment>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.72.12/30720</Value>
+         <Value>default2/224.0.72.76/30725</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.72.12</Value>
+         <Value>224.0.72.76</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Comment>TL1-11A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.8</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TL1-11B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.136</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+   <Feed>
+      <Name>ql1_t_1_t</Name>
+      <Comment>GTE Quantum RTMD TL1_11</Comment>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.12/37710</Value>
+         <Value>default2/233.102.209.14/37711</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.12</Value>
+         <Value>233.102.209.14</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Comment>TL1-11A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.120</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TL1-11B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.125</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+   <Feed>
+      <Name>ql1_t_2_t</Name>
+      <Comment>GTE Quantum RTMD TL1_21</Comment>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.67/37712</Value>
+         <Value>default2/233.102.209.90/37713</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.67</Value>
+         <Value>233.102.209.90</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Comment>TL1-21A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.130</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TL1-21B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.135</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+   <Feed>
+      <Name>ql1_trd_1_t</Name>
+      <Comment>GTE Quantum RTMD TRD_11</Comment>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.170/37760</Value>
+         <Value>default2/233.102.209.172/37761</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.170</Value>
+         <Value>233.102.209.172</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Comment>TRD-11A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.234</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TRD-11B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.236</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+   <Feed>
+      <Name>ql1_trd_2_t</Name>
+      <Comment>GTE Quantum RTMD TRD_21</Comment>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.174/37782</Value>
+         <Value>default2/233.102.209.175/37783</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.174</Value>
+         <Value>233.102.209.175</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Comment>TRD-21A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.147</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TRD-21B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.148</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+   <Feed>
+      <Name>ql1_c_t</Name>
+      <Comment>GTE Quantum RTMD CL1_11</Comment>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.53/37730</Value>
+         <Value>default2/233.102.209.93/37731</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.53</Value>
+         <Value>233.102.209.93</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Comment>CL1-11A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.122</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>CL1-11B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.127</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+   <Feed>
+      <Name>ql1_vrd_t</Name>
+      <Comment>GTE Quantum RTMD VRD_11</Comment>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.171/37770</Value>
+         <Value>default2/233.102.209.173/37771</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.171</Value>
+         <Value>233.102.209.173</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Comment>VRD-11A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.235</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>VRD-11B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.237</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+   <Feed>
+      <Name>ql1_x_t</Name>
+      <Comment>GTE Quantum RTMD TX1_11</Comment>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.22/37750</Value>
+         <Value>default2/233.102.209.41/37751</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.22</Value>
+         <Value>233.102.209.41</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Comment>CL1-11A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.133</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>CL1-11B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.134</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+   <IncludeFile>tsxl1_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>tsxl1_trade_condition_mapping.xml</IncludeFile>
+</config>

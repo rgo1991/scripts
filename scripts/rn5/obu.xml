@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for NYSE Euronext OpenBook Ultra (obu) feed handler. See the Administrators Guide for more information:  http://wombatconsulting.com/feedhandlers/admin-guide.html--><!--The following configuration clauses are common to all OpenBook Ultra feedhandlers.-->
+  
+   <!-- Site specific includes -->
+   <IncludeFile>obu_tport.xml</IncludeFile>
+   <IncludeFile>obu_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+<!-- SFDCR-1423 Start -->
+      <Parameter>
+         <Name>MamaUseDictionaryType</Name>
+         <Value>true</Value>
+      </Parameter>
+<!--SFDCR-1423 End -->
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+   <!-- Add logging of OBU Retransmission - January 22, 2009 -->
+   <Parameter>
+      <Name>LineFilterLogRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+   <!-- END - Add logging of OBU Retransmission -->
+
+   <Parameter>
+      <Name>PacketUnavailableErrorAsInfo</Name>
+      <Value>true</Value>
+   </Parameter>
+<!-- SFDCR-1895 Start -->
+   <Parameter>
+      <Name>PublishMicrosecondTimestamps</Name>
+      <Value>true</Value>
+   </Parameter>
+<!-- SFDCR-1895 End -->
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>OPENBOOK</Value>
+   </Parameter>
+ 
+   <Parameter>
+      <Name>ObuPdp3RetransProductId</Name>
+      <Value>12</Value>
+      <Comment>ProductId for OpenBook Ultra is either 12/62 for American OpenBook Ultra</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterInitialSeqNum</Name>
+      <Value>0</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterRetransActive</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterDiscardForwardRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>67108864</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterGapLimitSize</Name>
+      <Value>10000</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterRetransMaxGapSize</Name>
+      <Value>999</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterGapLimitTime</Name>
+      <Value>2.5</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterRequestRetransTime</Name>
+      <Value>0</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RefreshTimerInterval</Name>
+      <Value>500</Value>
+      <Comment>Timer interval in milliseconds</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>IncompleteRefreshDelay</Name>
+      <Value>2</Value>
+      <Comment>Delay before resending initial refresh request in seconds</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RefreshRetryDelay</Name>
+      <Value>900</Value>
+      <Comment>Delay before resending refresh request if initial attempts fail (in seconds)</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>pdp3</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Comment>For getting data into Superbook we need to publish a book update.</Comment>
+      <Name>PublishOrderBooks</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookDecimals</Name>
+      <Value>4</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>nyse2streetMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ParticipantIdMapFuncName</Name>
+      <Value>obuPartIdMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ParticipantQuoteCount</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ObuNormalQuoteChangesStatus</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>QuoteSizeMultiplier</Name>
+      <Value>1</Value>
+   </Parameter><!--Pdp3ActivateIndexMaps must be true for obu. It activates the Index to Symbol mapping features neccessary for obu to function properly.-->
+    
+   <Parameter>
+      <Name>Pdp3ActivateIndexMaps</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>Pdp3MessageHandlerName</Name>
+      <Value>obu</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UseRawOrderBookClear</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ObuProductNameOrderBook</Name>
+      <Value>NyseOpenBookOrderBook</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ObuProductNameTop</Name>
+      <Value>NyseOpenBookTop</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ObuProductNameTrade</Name>
+      <Value>NyseOpenBookTrade</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>AllowPartialBooks</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>Pdp3IndexSymbolRecoveryFileName</Name>
+      <Value>mysymbolindexmapfile</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ProcessMissingSymbolAsUnknown</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>Pdp3IndexSymbolLogAllAdds</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UpdateParticipantQuoteQualifier</Name>
+      <Value>false</Value>
+      <Comment>Should be set to false for OBU feed handler.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ObuPublishReasonCodeOnTrades</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ObuPublishNonTradeUpdates</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsOrder</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>ObuTcpConfig</Name>
+      <Parameter>
+         <Name>TcpConnectedMeansLineUp</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MessageRecoveryFile</Name>
+         <Value/>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <Feed>
+      <Name>obu_tcp</Name>
+      <Comment>NYSE OpenBook Ultra</Comment>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>obu_ab_tcp</Value>
+         <Value>obu_cc_tcp</Value>
+         <Value>obu_df_tcp</Value>
+         <Value>obu_gj_tcp</Value>
+         <Value>obu_km_tcp</Value>
+         <Value>obu_nr_tcp</Value>
+         <Value>obu_st_tcp</Value>
+         <Value>obu_uz_tcp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>162.69.161.17</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseLineFilter</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseLineHandlerPdp3</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>pdp3</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>obu_ab_tcp</Name>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>1061</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>obu_cc_tcp</Name>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>1062</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>obu_df_tcp</Name>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>1063</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>obu_gj_tcp</Name>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>1064</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>obu_km_tcp</Name>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>1065</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>obu_nr_tcp</Name>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>1066</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>obu_st_tcp</Name>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>1067</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>obu_uz_tcp</Name>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>1068</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>obu_ab</Name>
+      <Comment>NYSE OpenBook Ultra Equities Symbols A through B</Comment>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.64/51001</Value>
+         <Value>default1/233.75.215.72/51017/monitorOff</Value>
+         <Value>default1/233.75.215.80/51033/monitorOff</Value>
+         <Value>default2/233.75.215.192/51009</Value>
+         <Value>default1/233.75.215.200/51025/monitorOff</Value>
+         <Value>default1/233.75.215.208/51041/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.64</Value>
+         <Value>233.75.215.72</Value>
+         <Value>233.75.215.80</Value>
+         <Value>233.75.215.192</Value>
+         <Value>233.75.215.200</Value>
+         <Value>233.75.215.208</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.161.17</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1061</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.161.18</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1061</Value>
+         </Parameter>
+      </ParamGroup>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/obu_ab.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>obu_cc</Name>
+      <Comment>NYSE OpenBook Ultra Equities Symbols C</Comment>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.65/51002</Value>
+         <Value>default1/233.75.215.73/51018/monitorOff</Value>
+         <Value>default1/233.75.215.81/51034/monitorOff</Value>
+         <Value>default2/233.75.215.193/51010</Value>
+         <Value>default1/233.75.215.201/51026/monitorOff</Value>
+         <Value>default1/233.75.215.209/51042/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.65</Value>
+         <Value>233.75.215.73</Value>
+         <Value>233.75.215.81</Value>
+         <Value>233.75.215.193</Value>
+         <Value>233.75.215.201</Value>
+         <Value>233.75.215.209</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.161.17</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1062</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.161.18</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1062</Value>
+         </Parameter>
+      </ParamGroup>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/obu_cc.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>obu_df</Name>
+      <Comment>NYSE OpenBook Ultra Equities Symbols D through F</Comment>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.66/51003</Value>
+         <Value>default1/233.75.215.74/51019/monitorOff</Value>
+         <Value>default1/233.75.215.82/51035/monitorOff</Value>
+         <Value>default2/233.75.215.194/51011</Value>
+         <Value>default1/233.75.215.202/51027/monitorOff</Value>
+         <Value>default1/233.75.215.210/51043/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.66</Value>
+         <Value>233.75.215.74</Value>
+         <Value>233.75.215.82</Value>
+         <Value>233.75.215.194</Value>
+         <Value>233.75.215.202</Value>
+         <Value>233.75.215.210</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.161.17</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1063</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.161.18</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1063</Value>
+         </Parameter>
+      </ParamGroup>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/obu_df.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>obu_gj</Name>
+      <Comment>NYSE OpenBook Ultra Equities Symbols G through J</Comment>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.67/51004</Value>
+         <Value>default1/233.75.215.75/51020/monitorOff</Value>
+         <Value>default1/233.75.215.83/51036/monitorOff</Value>
+         <Value>default2/233.75.215.195/51012</Value>
+         <Value>default1/233.75.215.203/51028/monitorOff</Value>
+         <Value>default1/233.75.215.211/51044/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.67</Value>
+         <Value>233.75.215.75</Value>
+         <Value>233.75.215.83</Value>
+         <Value>233.75.215.195</Value>
+         <Value>233.75.215.203</Value>
+         <Value>233.75.215.211</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.161.17</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1064</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.161.18</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1064</Value>
+         </Parameter>
+      </ParamGroup>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/obu_gj.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>obu_km</Name>
+      <Comment>NYSE OpenBook Ultra Equities Symbols K through M</Comment>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.68/51005</Value>
+         <Value>default1/233.75.215.76/51021/monitorOff</Value>
+         <Value>default1/233.75.215.86/51037/monitorOff</Value>
+         <Value>default2/233.75.215.196/51013</Value>
+         <Value>default1/233.75.215.204/51029/monitorOff</Value>
+         <Value>default1/233.75.215.214/51045/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.68</Value>
+         <Value>233.75.215.76</Value>
+         <Value>233.75.215.86</Value>
+         <Value>233.75.215.196</Value>
+         <Value>233.75.215.204</Value>
+         <Value>233.75.215.214</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.161.17</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1065</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.161.18</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1065</Value>
+         </Parameter>
+      </ParamGroup>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/obu_km.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>obu_nr</Name>
+      <Comment>NYSE OpenBook Ultra Equities Symbols N through R</Comment>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.69/51006</Value>
+         <Value>default1/233.75.215.77/51022/monitorOff</Value>
+         <Value>default1/233.75.215.87/51038/monitorOff</Value>
+         <Value>default2/233.75.215.197/51014</Value>
+         <Value>default1/233.75.215.205/51030/monitorOff</Value>
+         <Value>default1/233.75.215.215/51046/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.69</Value>
+         <Value>233.75.215.77</Value>
+         <Value>233.75.215.87</Value>
+         <Value>233.75.215.197</Value>
+         <Value>233.75.215.205</Value>
+         <Value>233.75.215.215</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.161.17</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1066</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.161.18</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1066</Value>
+         </Parameter>
+      </ParamGroup>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/obu_nr.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>obu_st</Name>
+      <Comment>NYSE OpenBook Ultra Equities Symbols S through T</Comment>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.70/51007</Value>
+         <Value>default1/233.75.215.78/51023/monitorOff</Value>
+         <Value>default1/233.75.215.88/51039/monitorOff</Value>
+         <Value>default2/233.75.215.198/51015</Value>
+         <Value>default1/233.75.215.206/51031/monitorOff</Value>
+         <Value>default1/233.75.215.216/51047/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.70</Value>
+         <Value>233.75.215.78</Value>
+         <Value>233.75.215.88</Value>
+         <Value>233.75.215.198</Value>
+         <Value>233.75.215.206</Value>
+         <Value>233.75.215.216</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.161.17</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1067</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.161.18</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1067</Value>
+         </Parameter>
+      </ParamGroup>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/obu_st.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>obu_uz</Name>
+      <Comment>NYSE OpenBook Ultra Equities Symbols U through Z</Comment>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.71/51008</Value>
+         <Value>default1/233.75.215.79/51024/monitorOff</Value>
+         <Value>default1/233.75.215.89/51040/monitorOff</Value>
+         <Value>default2/233.75.215.199/51016</Value>
+         <Value>default1/233.75.215.207/51032/monitorOff</Value>
+         <Value>default1/233.75.215.217/51048/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.71</Value>
+         <Value>233.75.215.79</Value>
+         <Value>233.75.215.89</Value>
+         <Value>233.75.215.199</Value>
+         <Value>233.75.215.207</Value>
+         <Value>233.75.215.217</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.161.17</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1068</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.161.18</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1068</Value>
+         </Parameter>
+      </ParamGroup>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/obu_uz.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>obu_p</Name>
+      <UseParameterGroup name="PlaybackFiles"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>obu</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractFile</Name>
+         <Value>obu.play.%Y%m%d</Value>
+      </Parameter>
+   </Feed>
+
+   <IncludeFile>obu_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

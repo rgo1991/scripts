@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+<ProductDefinitionMap>
+    <!-- The following mapping are only examples, the clients need to replace the products 
+         with their own customerized products, and add/remove the channelId based on their application-->
+    <Map>
+        <Comment>ICE_EU</Comment>
+        <Level1ProductName>IcemdfRecord</Level1ProductName>
+        <Level2ProductName>IcemdfBook</Level2ProductName>
+        <Parameter>
+            <Name>ChannelIds</Name>
+            <Value>ice_fut_eu_options_tob_live</Value>
+            <Value>ice_fut_eu_oil_fod_live</Value>
+            <Value>ice_fut_eu_oil_top5_live</Value>
+            <Value>ice_fut_eu_n_oil_fod_live</Value>
+            <Value>ice_fut_eu_n_oil_top5_live</Value>
+            <Value>full_impl_ice_eu_non_oil_fut_fod_live</Value>
+            <Value>full_impl_eu_oil_fut_top5_live</Value>
+            <Value>ice_fut_eu_oil_others_fod_live</Value>
+            <Value>full_impl_eu_oil_others_fut_fod_live</Value>
+            <Value>ice_fut_eu_oil_others_top5_live</Value>
+            <Value>full_impl_eu_oil_others_fut_top5_live</Value>
+        </Parameter>
+    </Map>
+    <Map>
+        <Comment>ICE_CA</Comment>
+        <Level1ProductName>IcemdfRecord</Level1ProductName>
+        <Level2ProductName>IcemdfBook</Level2ProductName>
+        <Parameter>
+            <Name>ChannelIds</Name>
+            <Value>ice_fut_can_options_tob_live</Value>
+        </Parameter>
+    </Map>
+    <Map>
+        <Comment>ICE_US</Comment>
+        <Level1ProductName>IcemdfRecord</Level1ProductName>
+        <Level2ProductName>IcemdfBook</Level2ProductName>
+        <Parameter>
+            <Name>ChannelIds</Name>
+            <Value>full_impl_ice_fut_us_agri_fod_live</Value>
+            <Value>full_impl_ice_fut_us_agri_top5_live</Value>
+        </Parameter>
+    </Map>
+<!-- SFDCR-2099 Start -->
+    <Map>
+        <Comment>ICE_ENDEX</Comment>
+        <Level1ProductName>IcemdfEndexRecord</Level1ProductName>
+        <Level2ProductName>IcemdfEndexBook</Level2ProductName>
+        <Parameter>
+            <Name>ChannelIds</Name>
+        </Parameter>
+        <Parameter>
+            <Name>MarketIds</Name>
+            <Value>226</Value>
+            <Value>227</Value>
+        </Parameter>
+    </Map>
+<!-- SFDCR-2099 End -->
+</ProductDefinitionMap>
+</config>

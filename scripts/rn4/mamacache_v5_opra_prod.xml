@@ -1,0 +1,1192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Parameter Groups for Specific MamaSenderIds -->
+   <!-- END - Parameter Groups for Specific MamaSenderIds -->
+
+<!--Start of New 12 Splits-->
+   <!-- 12-way split, V5 passthru - Added August 23, 2012 -->
+   <!-- Change in splits: symbol redistribution - Updated November 20, 2013-->
+   <!-- AApc ApdCmf CmgEdm EdnGd GeGz HKo KpNflx/c Nflx/pQqq/c Qqq/pSpx SpyTlt TluVx VyZ -->
+   <!-- Parameter Groups for Specific MamaSenderIds -->
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_1_4_P</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>701</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_1_4_S</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>7701</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_5_8_P</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>702</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_5_8_S</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>7702</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_9_12_P</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>703</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_9_12_S</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>7703</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_13_16_P</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>704</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_13_16_S</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>7704</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_17_20_P</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>705</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_17_20_S</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>7705</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_21_24_P</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>706</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_21_24_S</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>7706</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_25_28_P</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>707</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_25_28_S</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>7707</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_29_32_P</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>708</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_29_32_S</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>7708</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_33_36_P</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>709</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_33_36_S</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>7709</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_37_40_P</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>710</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_37_40_S</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>7710</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_41_44_P</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>711</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_41_44_S</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>7711</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_45_48_P</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>712</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdOpra_45_48_S</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>7712</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <!-- END - Parameter Groups for Specific MamaSenderIds -->
+
+
+   <Feed>
+      <Name>mamacache_v5_opra_1_4</Name>
+
+      <Parameter>
+         <Name>MamaSubscriberRetries</Name>
+         <Value>3</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_v5_opra_1_4</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_v5_opra_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Set WombatMsg Publisher -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>passthru</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderIdField</Name>
+         <Value>mixed</Value>
+      </Parameter>
+      <!-- END - Set WombatMsg Publisher -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(\([0-9]\)\|\(A[\._0-9A-P]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(\([0-9]\)\|\(A[\._0-9A-P]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(\([0-9]\)\|\(A[\._0-9A-P]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(\([0-9]\)\|\(A[\._0-9A-P]\)\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct24a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_1_4_P"/>
+      </pny2sfmct24a>
+      <pny2sfmct24b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_1_4_S"/>
+      </pny2sfmct24b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_v5_opra_5_8</Name>
+
+      <Parameter>
+         <Name>MamaSubscriberRetries</Name>
+         <Value>3</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_v5_opra_5_8</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_v5_opra_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Set WombatMsg Publisher -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>passthru</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderIdField</Name>
+         <Value>mixed</Value>
+      </Parameter>
+      <!-- END - Set WombatMsg Publisher -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(\(A[Q-Z]\)\|\(B\)\|\(C[\._0-9A-L]\)\|\(CM[\._0-9A-F]\)\|\(CMG[\._0-9][_]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(\(A[Q-Z]\)\|\(B\)\|\(C[\._0-9A-L]\)\|\(CM[\._0-9A-F]\)\|\(CMG[\._0-9][_]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(\(A[Q-Z]\)\|\(B\)\|\(C[\._0-9A-L]\)\|\(CM[\._0-9A-F]\)\|\(CMG[\._0-9][_]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(\(A[Q-Z]\)\|\(B\)\|\(C[\._0-9A-L]\)\|\(CM[\._0-9A-F]\)\|\(CMG[\._0-9][_]_......C\)\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct24a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_5_8_P"/>
+      </pny2sfmct24a>
+      <pny2sfmct24b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_5_8_S"/>
+      </pny2sfmct24b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_v5_opra_9_12</Name>
+
+      <Parameter>
+         <Name>MamaSubscriberRetries</Name>
+         <Value>3</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_v5_opra_9_12</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_v5_opra_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Set WombatMsg Publisher -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>passthru</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderIdField</Name>
+         <Value>mixed</Value>
+      </Parameter>
+      <!-- END - Set WombatMsg Publisher -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(\(CMG[\._0-9][_]_......P\)\|\(CMG[A-Z]\)\|\(CM[H-Z]\)\|\(C[N-Z]\)\|\(D\)\|\(E[\._0-9A-C]\)\|\(ED[\._0-9A-M]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(\(CMG[\._0-9][_]_......P\)\|\(CMG[A-Z]\)\|\(CM[H-Z]\)\|\(C[N-Z]\)\|\(D\)\|\(E[\._0-9A-C]\)\|\(ED[\._0-9A-M]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(\(CMG[\._0-9][_]_......P\)\|\(CMG[A-Z]\)\|\(CM[H-Z]\)\|\(C[N-Z]\)\|\(D\)\|\(E[\._0-9A-C]\)\|\(ED[\._0-9A-M]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(\(CMG[\._0-9][_]_......P\)\|\(CMG[A-Z]\)\|\(CM[H-Z]\)\|\(C[N-Z]\)\|\(D\)\|\(E[\._0-9A-C]\)\|\(ED[\._0-9A-M]\)\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct24a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_9_12_P"/>
+      </pny2sfmct24a>
+      <pny2sfmct24b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_9_12_S"/>
+      </pny2sfmct24b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_v5_opra_13_16</Name>
+
+      <Parameter>
+         <Name>MamaSubscriberRetries</Name>
+         <Value>3</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_v5_opra_13_16</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_v5_opra_feeds1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Set WombatMsg Publisher -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>passthru</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderIdField</Name>
+         <Value>mixed</Value>
+      </Parameter>
+      <!-- END - Set WombatMsg Publisher -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(\(ED[N-Z]\)\|\(E[E-Z]\)\|\(F\)\|\(G[\._0-9A-D]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(\(ED[N-Z]\)\|\(E[E-Z]\)\|\(F\)\|\(G[\._0-9A-D]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(\(ED[N-Z]\)\|\(E[E-Z]\)\|\(F\)\|\(G[\._0-9A-D]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(\(ED[N-Z]\)\|\(E[E-Z]\)\|\(F\)\|\(G[\._0-9A-D]\)\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct24a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_13_16_P"/>
+      </pny2sfmct24a>
+      <pny2sfmct24b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_13_16_S"/>
+      </pny2sfmct24b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_v5_opra_17_20</Name>
+
+      <Parameter>
+         <Name>MamaSubscriberRetries</Name>
+         <Value>3</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_v5_opra_17_20</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_v5_opra_feeds1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Set WombatMsg Publisher -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>passthru</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderIdField</Name>
+         <Value>mixed</Value>
+      </Parameter>
+      <!-- END - Set WombatMsg Publisher -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(\(G[E-Z]\)\|\(H[\._0-9A]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(\(G[E-Z]\)\|\(H[\._0-9A]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(\(G[E-Z]\)\|\(H[\._0-9A]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(\(G[E-Z]\)\|\(H[\._0-9A]\)\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct24a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_17_20_P"/>
+      </pny2sfmct24a>
+      <pny2sfmct24b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_17_20_S"/>
+      </pny2sfmct24b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_v5_opra_21_24</Name>
+
+      <Parameter>
+         <Name>MamaSubscriberRetries</Name>
+         <Value>3</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_v5_opra_21_24</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_v5_opra_feeds1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Set WombatMsg Publisher -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>passthru</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderIdField</Name>
+         <Value>mixed</Value>
+      </Parameter>
+      <!-- END - Set WombatMsg Publisher -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(\(H[B-Z]\)\|\([I-K]\)\|\(L[\._0-9A-D]\)\|\(LE[\._0-9A-K]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(\(H[B-Z]\)\|\([I-K]\)\|\(L[\._0-9A-D]\)\|\(LE[\._0-9A-K]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(\(H[B-Z]\)\|\([I-K]\)\|\(L[\._0-9A-D]\)\|\(LE[\._0-9A-K]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(\(H[B-Z]\)\|\([I-K]\)\|\(L[\._0-9A-D]\)\|\(LE[\._0-9A-K]\)\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct24a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_21_24_P"/>
+      </pny2sfmct24a>
+      <pny2sfmct24b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_21_24_S"/>
+      </pny2sfmct24b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_v5_opra_25_28</Name>
+
+      <Parameter>
+         <Name>MamaSubscriberRetries</Name>
+         <Value>3</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_v5_opra_25_28</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_v5_opra_feeds2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Set WombatMsg Publisher -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>passthru</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderIdField</Name>
+         <Value>mixed</Value>
+      </Parameter>
+      <!-- END - Set WombatMsg Publisher -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(\(LE[L-Z]\)\|\(L[F-Z]\)\|M\|\(N[\._0-9A-E]\)\|\(NF[\._0-9A-K]\)\|\(NFL[\._0-9A-W]\)\|\(NFLX[\._0-9]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(\(LE[L-Z]\)\|\(L[F-Z]\)\|M\|\(N[\._0-9A-E]\)\|\(NF[\._0-9A-K]\)\|\(NFL[\._0-9A-W]\)\|\(NFLX[\._0-9]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(\(LE[L-Z]\)\|\(L[F-Z]\)\|M\|\(N[\._0-9A-E]\)\|\(NF[\._0-9A-K]\)\|\(NFL[\._0-9A-W]\)\|\(NFLX[\._0-9]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(\(LE[L-Z]\)\|\(L[F-Z]\)\|M\|\(N[\._0-9A-E]\)\|\(NF[\._0-9A-K]\)\|\(NFL[\._0-9A-W]\)\|\(NFLX[\._0-9]_......C\)\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct24a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_25_28_P"/>
+      </pny2sfmct24a>
+      <pny2sfmct24b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_25_28_S"/>
+      </pny2sfmct24b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_v5_opra_29_32</Name>
+
+      <Parameter>
+         <Name>MamaSubscriberRetries</Name>
+         <Value>3</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_v5_opra_29_32</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_v5_opra_feeds2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Set WombatMsg Publisher -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>passthru</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderIdField</Name>
+         <Value>mixed</Value>
+      </Parameter>
+      <!-- END - Set WombatMsg Publisher -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(\(NFLX[\._0-9]_......P\)\|\(NFLX[A-Z]\)\|\(NFL[Y-Z]\)\|\(NF[M-Z]\)\|\(N[G-Z]\)\|\([O-P]\)\|\(Q[\._0-9A-P]\)\|\(QQ[\._0-9A-P]\)\|\(QQQ[\._0-9][_]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(\(NFLX[\._0-9]_......P\)\|\(NFLX[A-Z]\)\|\(NFL[Y-Z]\)\|\(NF[M-Z]\)\|\(N[G-Z]\)\|\([O-P]\)\|\(Q[\._0-9A-P]\)\|\(QQ[\._0-9A-P]\)\|\(QQQ[\._0-9][_]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(\(NFLX[\._0-9]_......P\)\|\(NFLX[A-Z]\)\|\(NFL[Y-Z]\)\|\(NF[M-Z]\)\|\(N[G-Z]\)\|\([O-P]\)\|\(Q[\._0-9A-P]\)\|\(QQ[\._0-9A-P]\)\|\(QQQ[\._0-9][_]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(\(NFLX[\._0-9]_......P\)\|\(NFLX[A-Z]\)\|\(NFL[Y-Z]\)\|\(NF[M-Z]\)\|\(N[G-Z]\)\|\([O-P]\)\|\(Q[\._0-9A-P]\)\|\(QQ[\._0-9A-P]\)\|\(QQQ[\._0-9][_]_......C\)\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct24a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_29_32_P"/>
+      </pny2sfmct24a>
+      <pny2sfmct24b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_29_32_S"/>
+      </pny2sfmct24b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_v5_opra_33_36</Name>
+
+      <Parameter>
+         <Name>MamaSubscriberRetries</Name>
+         <Value>3</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_v5_opra_33_36</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_v5_opra_feeds2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Set WombatMsg Publisher -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>passthru</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderIdField</Name>
+         <Value>mixed</Value>
+      </Parameter>
+      <!-- END - Set WombatMsg Publisher -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(\(QQQ[\._0-9][_]_......P\)\|\(QQQ[A-Z]\)\|\(QQ[R-Z]\)\|\(Q[R-Z]\)\|\(R\)\|\(S[\._0-9A-O]\)\|\(SP[\._0-9A-X]\)\|\(SPY[\._0-9][_]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(\(QQQ[\._0-9][_]_......P\)\|\(QQQ[A-Z]\)\|\(QQ[R-Z]\)\|\(Q[R-Z]\)\|\(R\)\|\(S[\._0-9A-O]\)\|\(SP[\._0-9A-X]\)\|\(SPY[\._0-9][_]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(\(QQQ[\._0-9][_]_......P\)\|\(QQQ[A-Z]\)\|\(QQ[R-Z]\)\|\(Q[R-Z]\)\|\(R\)\|\(S[\._0-9A-O]\)\|\(SP[\._0-9A-X]\)\|\(SPY[\._0-9][_]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(\(QQQ[\._0-9][_]_......P\)\|\(QQQ[A-Z]\)\|\(QQ[R-Z]\)\|\(Q[R-Z]\)\|\(R\)\|\(S[\._0-9A-O]\)\|\(SP[\._0-9A-X]\)\|\(SPY[\._0-9][_]_......C\)\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct24a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_33_36_P"/>
+      </pny2sfmct24a>
+      <pny2sfmct24b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_33_36_S"/>
+      </pny2sfmct24b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_v5_opra_37_40</Name>
+
+      <Parameter>
+         <Name>MamaSubscriberRetries</Name>
+         <Value>3</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_v5_opra_37_40</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_v5_opra_feeds3</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Set WombatMsg Publisher -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>passthru</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderIdField</Name>
+         <Value>mixed</Value>
+      </Parameter>
+      <!-- END - Set WombatMsg Publisher -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(\(SPY[\._0-9][_]_......P\)\|\(SPY[A-Z]\)\|\(SP[Z]\)\|\(S[Q-Z]\)\|\(T[\._0-9A-R]\)\|\(TS[\._0-9A-K]\)\|\(TSL[\._0-9]\)\|\(TSLA[\._0-9]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(\(SPY[\._0-9][_]_......P\)\|\(SPY[A-Z]\)\|\(SP[Z]\)\|\(S[Q-Z]\)\|\(T[\._0-9A-R]\)\|\(TS[\._0-9A-K]\)\|\(TSL[\._0-9]\)\|\(TSLA[\._0-9]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(\(SPY[\._0-9][_]_......P\)\|\(SPY[A-Z]\)\|\(SP[Z]\)\|\(S[Q-Z]\)\|\(T[\._0-9A-R]\)\|\(TS[\._0-9A-K]\)\|\(TSL[\._0-9]\)\|\(TSLA[\._0-9]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(\(SPY[\._0-9][_]_......P\)\|\(SPY[A-Z]\)\|\(SP[Z]\)\|\(S[Q-Z]\)\|\(T[\._0-9A-R]\)\|\(TS[\._0-9A-K]\)\|\(TSL[\._0-9]\)\|\(TSLA[\._0-9]_......C\)\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct24a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_37_40_P"/>
+      </pny2sfmct24a>
+      <pny2sfmct24b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_37_40_S"/>
+      </pny2sfmct24b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_v5_opra_41_44</Name>
+
+      <Parameter>
+         <Name>MamaSubscriberRetries</Name>
+         <Value>3</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_v5_opra_41_44</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_v5_opra_feeds3</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Set WombatMsg Publisher -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>passthru</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderIdField</Name>
+         <Value>mixed</Value>
+      </Parameter>
+      <!-- END - Set WombatMsg Publisher -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(\(TSLA[\._0-9]_......P\)\|\(TSLA[A-Z]\)\|\(TSL[B-Z]\)\|\(TS[M-Z]\)\|\(T[T-Z]\)\|\([U-V]\)\|\(W[\._0-9A-F]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(\(TSLA[\._0-9]_......P\)\|\(TSLA[A-Z]\)\|\(TSL[B-Z]\)\|\(TS[M-Z]\)\|\(T[T-Z]\)\|\([U-V]\)\|\(W[\._0-9A-F]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(\(TSLA[\._0-9]_......P\)\|\(TSLA[A-Z]\)\|\(TSL[B-Z]\)\|\(TS[M-Z]\)\|\(T[T-Z]\)\|\([U-V]\)\|\(W[\._0-9A-F]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(\(TSLA[\._0-9]_......P\)\|\(TSLA[A-Z]\)\|\(TSL[B-Z]\)\|\(TS[M-Z]\)\|\(T[T-Z]\)\|\([U-V]\)\|\(W[\._0-9A-F]\)\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct24a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_41_44_P"/>
+      </pny2sfmct24a>
+      <pny2sfmct24b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_41_44_S"/>
+      </pny2sfmct24b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_v5_opra_45_48</Name>
+
+      <Parameter>
+         <Name>MamaSubscriberRetries</Name>
+         <Value>3</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_v5_opra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_v5_opra_45_48</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_v5_opra_feeds3</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Set WombatMsg Publisher -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>passthru</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderIdField</Name>
+         <Value>mixed</Value>
+      </Parameter>
+      <!-- END - Set WombatMsg Publisher -->
+      <!-- Enable Group Symbol -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbol -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(\(W[G-Z]\)\|\([X-Z]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(\(W[G-Z]\)\|\([X-Z]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(\(W[G-Z]\)\|\([X-Z]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(\(W[G-Z]\)\|\([X-Z]\)\)</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct24a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_45_48_P"/>
+      </pny2sfmct24a>
+      <pny2sfmct24b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdOpra_45_48_S"/>
+      </pny2sfmct24b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+<!--End of New 12 Splits-->
+</config>

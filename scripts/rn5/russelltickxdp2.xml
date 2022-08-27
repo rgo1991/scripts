@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+   <!-- Site specific includes -->
+   <IncludeFile>russelltickxdp2_tport.xml</IncludeFile>
+   <IncludeFile>russelltickxdp2_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+      
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+    
+   <Parameter>
+      <Name>XdpWarnIfUOTUnavailable</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpProductId</Name>
+      <Value>156</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UseUnitOfTrade</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RussellTickXdpMessageHandlerName</Name>
+      <Value>russelltickxdp2</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpMessageHandlerName</Name>
+      <Value>russelltickxdp2</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>xdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MamaDataDictResponder</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoUseCurrentTimeAsLineTimeAndSrcTime</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NativeTimeZone</Name>
+      <Value>UTC</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpProductName</Name>
+      <Value>RussellTickXdp2</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpProductNameBook</Name>
+      <Value>RussellTickXdp2</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>nyse2streetMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MessageRecoveryFile</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordHandlerAlwaysAppendProductSuffix</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpRefreshType</Name>
+      <Value>0</Value><!-- XDP_REFRESH_TYPE_FULL -->
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpRequestMarketDataRefresh</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpRequestReferenceDataRefresh</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsIndex</Value>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsBloomberg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>RussellTickXdp2LiveParameters</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>LIVE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>RussellTickXdp2RetransParameters</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>RETRANS</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>RussellTickXdp2RefreshParameters</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>REFRESH</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <IncludeFile>russelltickxdp2_prod.xml</IncludeFile>
+   <IncludeFile>russelltickxdp2_uat.xml</IncludeFile>
+   <IncludeFile>russelltickxdp2_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>productdefs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

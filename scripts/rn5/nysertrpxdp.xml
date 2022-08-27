@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+   
+   <!-- Site specific includes -->
+   <IncludeFile>nysertrp_tport.xml</IncludeFile>
+   <IncludeFile>nysertrp_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>NYSERTRP</Value>
+   </Parameter>
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+   <Parameter>
+      <Name>NyseRtrpXdpSymbolInfoFile</Name>
+      <Value>/opt/wombat/feeds/data/nysertrpxdp_reference.txt</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpExchangeCode</Name>
+      <Value>N</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>NyseRtrpXdpEnableRefresh</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SubFeedGroupManagerCheckInterval</Name>
+      <Value>300000</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>NyseRtrpXdpRefreshTimeOut</Name>
+      <Value>240</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpRequestMarketDataRefresh</Name>
+      <Value>false</Value>
+      <Comment>The RTRP feed provides a refresh service only for the reference data.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpSpoolOnPartialRefresh</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+ 
+   <Parameter>
+      <Name>XdpMessageHandlerName</Name>
+      <Value>nysertrpxdp</Value>
+   </Parameter>
+   <Parameter>
+      <Name>NyseRtrpXdpMessageHandlerName</Name>
+      <Value>nysertrpxdp</Value>
+   </Parameter>
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>xdp</Value>
+   </Parameter>
+   <Parameter>
+      <Name>XdpProductId</Name>
+      <Value>9</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpLogRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>LineFilterDiscardForwardRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpLogSymbolIndexInitial</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>XdpLogAllSymbolIndexUpdates</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UseUnitOfTrade</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>cms2streetMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoUseCurrentTimeAsLineTimeAndSrcTime</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookUseUndecoratedSymbolName</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoAddPrefixOnSecurityStatusOrig</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordHandlerAlwaysAppendProductSuffix</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NyseRtrpXdpProductName</Name>
+      <Value>NyseRtrp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MessageRecoveryFile</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsBloomberg</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsTrade</Value>
+   </Parameter>
+    
+   <Feed>
+      <Name>nysertrpxdp</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD2"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <!-- PROD Lines -->
+         <Value>nysertrpxdp_live</Value>
+         <!--Value>nysertrpxdp_refresh</Value-->
+         <Value>nysertrpxdp_stock_summary</Value>
+	 <Value>nysertrpxdp_request</Value>
+         <!-- TEST Lines -->
+         <!--Value>nysertrpxdp_test_live</Value>
+         <Value>nysertrpxdp_test_request</Value>
+         <Value>nysertrpxdp_test_stock_summary</Value-->
+      </Parameter>
+   </Feed>
+    
+   <DefineParameterGroup>
+      <Name>NyseRtrpXdpLiveParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>LIVE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>NyseRtrpXdpRequestReqParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>REFRESH_REQ</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>NyseRtrpXdpStockSummaryParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>STOCK_SUMMARY</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LiveFeedId</Name>
+         <Value>live_001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>0.5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>1</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>NyseRtrpXdp_prod_001_group</Name>
+      <Parameter>
+         <Name>RefreshReqFeedId</Name>
+         <Value>request_001</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>NyseRtrpXdpRefreshParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>REFRESH</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MulticastConnectOnInit</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>0.5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>100</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterLogMissedMessages</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   
+   <Feed>
+      <Name>nysertrpxdp_live</Name>
+      <UseParameterGroup name="NyseRtrpXdpLiveParameter"/>
+      <UseParameterGroup name="NyseRtrpXdp_prod_001_group"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>live_001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.170/8170</Value>
+         <Value>default1/233.75.215.171/8171/monitorOff</Value>
+         <Value>default2/233.75.215.42/8042</Value>
+         <Value>default2/233.75.215.43/8043/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.170</Value>
+         <Value>233.75.215.171</Value>
+         <Value>233.75.215.42</Value>
+         <Value>233.75.215.43</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysertrpxdp_request</Name>
+      <UseParameterGroup name="NyseRtrpXdpRequestReqParameter"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>request_001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>159.125.76.1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>20300</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>AlternativeConnection</Name>
+         <Value>159.125.76.161</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value/>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysertrpxdp_stock_summary</Name>
+      <UseParameterGroup name="NyseRtrpXdpStockSummaryParameter"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.118/14466</Value>
+         <Value>default2/233.75.215.246/14467</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.154</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>nysertrpxdp_refresh</Name>
+      <UseParameterGroup name="NyseRtrpXdpRefreshParameter"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>refresh_001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.43/14480</Value>
+         <Value>default2/233.75.215.171/14482</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.43/14480</Value>
+         <Value>233.75.215.171/14482</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>nysertrpxdp_test_live</Name>
+      <UseParameterGroup name="NyseRtrpXdpLiveParameter"/>
+      <UseParameterGroup name="NyseRtrpXdp_prod_001_group"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>live_001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.138/8138</Value>
+         <Value>default1/233.75.215.139/8139/monitorOff</Value>
+         <Value>default2/233.75.215.10/8010</Value>
+         <Value>default2/233.75.215.11/8011/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.138</Value>
+         <Value>233.75.215.139</Value>
+         <Value>233.75.215.10</Value>
+         <Value>233.75.215.11</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysertrpxdp_test_request</Name>
+      <UseParameterGroup name="NyseRtrpXdpRequestReqParameter"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>request_001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>159.125.76.1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>20400</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>AlternativeConnection</Name>
+         <Value>159.125.76.161</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value/>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysertrpxdp_test_stock_summary</Name>
+      <UseParameterGroup name="NyseRtrpXdpStockSummaryParameter"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.154/80006</Value>
+         <Value>default2/233.75.215.154/80007</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.154</Value>
+      </Parameter>
+   </Feed>
+
+   <IncludeFile>nysertrpxdp_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>nysertrpxdp_trade_condition_mapping.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

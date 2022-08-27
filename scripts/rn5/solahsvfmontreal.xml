@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      
+    
+<IncludeFile>solahsvfmontreal_tport.xml</IncludeFile>
+<IncludeFile>solahsvfmontreal_hosts.xml</IncludeFile>
+<IncludeFile>productdefs_superfeed.xml</IncludeFile>
+<IncludeFile>papastats.superfeed.xml</IncludeFile>
+
+   
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>HSVF</Value>
+   </Parameter> 
+    
+   <Parameter>
+      <Name>SolaHsvfProtocolVersion</Name>
+      <Value>D5</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>solahsvfmontreal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>Normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>DefaultTimeZone</Name>
+      <Value>UTC</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>NativeTimeZone</Name>
+      <Value>US/Eastern</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishTimeZone</Name>
+      <Value>UTC</Value> <!--US/Eastern</Value-->
+   </Parameter>
+    
+   <Parameter>
+      <Name>FuturePublishSymbology</Name>
+      <Value>normalize</Value>
+      <Comment>Set to "native" to use symbologies provided through PublishSymbology parameter.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OptionPublishSymbology</Name>
+      <Value>normalize</Value>
+      <Comment>Set to "native" to use symbologies provided through PublishSymbology parameter.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OptionPublishSymbologyFormat</Name>
+      <Value>%u%p%y%d%s%D%e</Value>
+      <Comment>Symbology Format Specifiers: %u:Underlying, %p:Put/Call, %y:year, %d:StrikrDenom, %s:StrikePrice, %e:ExtraInfo, %D:ExpiryDay</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>StrategyPublishSymbology</Name>
+      <Value>normalize</Value>
+      <Comment>Set to "native" to use symbologies provided through PublishSymbology parameter.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishSymbology</Name>
+      <Value>MNEMONIC</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TcpReadsPerIoEvent</Name>
+      <Value>500</Value>
+   </Parameter>    
+
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+      <Comment>Invoke SymbologyMapFuncName.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>dotReplacementMap</Value>
+      <Comment>Replace "." in the symbol name with "/"(configurable).</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>EnableTickSizeUpdater</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SolaUseSymbolRootAsGroupKey</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>false</Value>
+      <Comment>Enable this to normalize the symbol. Useful with CUSTOM symbology.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>dotReplacementMap</Value>
+      <Comment>Used with CUSTOM symbology to replace all '.' with '/' in the symbol.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>InstrumentInfoReferenceDataFileName</Name>
+      <Value>/opt/wombat/feeds/data/solahsvfmontreal_prod.map</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>InstrumentInfoPopulateSymbolItem</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>InstrumentInfoGroupSeparateRejoin</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>GroupSymbology</Name>
+      <Value>UNDERLYING</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>AggregateOrderBooks</Name>
+      <Value>false</Value>
+      <Comment>Enable this when you subscribe to implied order books with the exchange.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishSummaryOrderBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishFullOrderBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookDecimals</Name>
+      <Value>4</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OrderBookUpdateImpliesNormalStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoAddPrefixOnSecurityStatusOrig</Name>
+      <Value>false</Value>
+   </Parameter>
+<!--    
+   <Parameter>
+      <Name>RecordHandlerAlwaysAppendProductSuffix</Name>
+      <Value>true</Value>
+   </Parameter>
+-->    
+   <Parameter>
+      <Name>CalculateOnOffExchange</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>KeepHighLowCount</Name>
+      <Value>5</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>KeepOpenCount</Name>
+      <Value>5</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ApplyIrregularTrades</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ApplyIrregularTradesOnlyForVolume</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ApplySyntheticTrades</Name>
+      <Value>false</Value>
+   </Parameter>
+<!-- D3 configs Start -->
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <!--Value>16777216</Value SFDCR-1618 -->
+      <Value>134217728</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PopulateInstrumentInfoFromSymbolCache</Name>
+      <Value>false</Value>
+   </Parameter>
+   <Parameter>
+      <Name>SolaExplicitOrderBookPartId</Name>
+      <Value>EX</Value>
+   </Parameter>
+
+      <Parameter>
+      <Name>SolaImpliedOrderBookPartId</Name>
+      <Value>IM</Value>
+   </Parameter>
+
+      <Parameter>
+      <Name>FutureDerivativePrefix</Name>
+      <Value>FUT</Value>
+  </Parameter>
+
+      <Parameter>
+      <Name>OptionDerivativePrefix</Name>
+      <Value>OPT</Value>
+   </Parameter>
+
+              <Parameter>
+      <Name>SolaBulletinSymbol</Name>
+      <Value>BULLETIN</Value>
+   </Parameter>
+
+              <Parameter>
+      <Name>StrategyDerivativePrefix</Name>
+      <Value>STR</Value>
+   </Parameter>
+
+    <Parameter>
+      <Name>SymbolMapDotReplacement</Name>
+      <Value>/</Value>
+   </Parameter>
+
+       <Parameter>
+             <Name>RecordSymbolFileLoadType</Name>
+             <Value>normal</Value>
+       </Parameter>
+
+<!-- D3 configs End -->    
+   <Parameter>
+      <Name>SymbolPlusFields</Name>
+      <Comment>Minimal set of fields that constitute reference data for this feed handler.</Comment>
+      <Value>wInstrumentType</Value>
+      <Value>wMnemonic</Value>
+      <Value>wInstrumentGroup</Value>
+      <Value>wOfficialCode</Value>
+      <Value>wInstrumentClass</Value>
+      <Value>wExpirationDate</Value>
+      <Value>wPutCall</Value>
+      <Value>wUnderlyingSymbol</Value>
+      <Value>wStrikePrice</Value>
+      <Value>wLegNum</Value>
+      <Value>wLegSymbols</Value>
+      <Value>wLegSides</Value>
+      <Value>wLegRatios</Value>
+      <Value>wCorpActType</Value>
+      <Value>wIsinCode</Value>
+      <Value>wMicCode</Value>
+      <Value>wCurrency</Value>
+      <Value>wPrevSettlePrice</Value>
+      <Value>wPrevSettleDate</Value>
+      <Value>wTickSizeBoundary</Value>
+      <Value>wTickSizeValue</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>SolaHsvfMontrealLiveParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>LIVE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+<!--      
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+-->      
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <!--Value>1000</Value-->
+         <Value>0</Value>
+      </Parameter>
+<!--
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>1000000</Value>
+      </Parameter>
+-->
+
+      <Parameter>
+         <Name>LineFilterGapLimitStartOfDay</Name>
+         <Value>0</Value>
+      </Parameter>
+<!--
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>3600</Value>
+      </Parameter>
+-->
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>360</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransMaxGapSize</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterHeartbeatsHavePrevSeqNum</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterCheckEveryMessageInBlock</Name>
+         <Value>true</Value>
+      </Parameter>
+      
+      <Parameter>
+         <Name>LineFilterLogRetrans</Name>
+         <Value>false</Value>
+      </Parameter>     
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>SolaHsvfMontrealRetransParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>RETRANS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseLineFilter</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpConnectOnStartUp</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginTimeoutInterval</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginHeartbeatInterval</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpConnectDelayMax</Name>
+         <Value>86400000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpConnectDelay</Name>
+         <Value>86400000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpTryReconnect</Name>
+         <Value>true</Value><!-- default true -->
+      </Parameter>
+      <Parameter>
+         <Name>TcpConnectedMeansLineUp</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpSendHeartbeats</Name>
+         <Value>true</Value><!-- default false -->
+      </Parameter>
+      <Parameter>
+         <Name>TcpSendKeepAlive</Name>
+         <Value>true</Value>
+      </Parameter>
+<!--
+      <Parameter>
+         <Name>TcpMaxConnectAttempts</Name>
+         <Value>5</Value>
+      </Parameter>
+-->      
+      <Parameter>
+         <Name>LineFilterLogRetrans</Name>
+         <Value>true</Value>
+      </Parameter>     
+<!--
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>1000000</Value>
+      </Parameter>
+-->
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitStartOfDay</Name>
+         <Value>0</Value>
+      </Parameter>
+
+<!--
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>3600</Value>
+      </Parameter>
+-->
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>LineFilterRetransMaxGapSize</Name>
+         <Value>0</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+      <Value>RecordAttrsOption</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsIndex</Value>
+      <Value>FieldAttrsFundamental</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderListPart</Value>
+      <Value>FieldAttrsOption</Value>
+      <Value>FieldAttrsFuture</Value>
+      <Value>FieldAttrsStrategy</Value>
+      <Value>FieldAttrsCme</Value>
+      <Value>FieldAttrsSse</Value>
+      <Value>FieldAttrsFund</Value>
+      <Value>FieldAttrsTradeWeb</Value>
+   </Parameter>
+   <IncludeFile>solahsvfmontreal_prod.xml</IncludeFile>
+   <IncludeFile>solahsvfmontreal_gte.xml</IncludeFile>
+   <IncludeFile>solahsvfmontreal_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>solahsvfmontreal_trade_condition_mapping.xml</IncludeFile>
+   <IncludeFile>solahsvfmontreal_trade_exec_venue_mapping.xml</IncludeFile>
+   <IncludeFile>solahsvfmontreal_product_mapping.xml</IncludeFile>
+   <IncludeFile>solahsvfmontreal_tick_size_map.xml</IncludeFile>
+   <IncludeFile>productdefs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

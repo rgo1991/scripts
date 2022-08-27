@@ -1,0 +1,15 @@
+#!/bin/bash
+
+while read -p "Host to check:" hostname;do
+	if [ -z $hostname ];then
+	"Please enter a hostname to ping; quiting script"
+	break;fi
+
+	ping=`ping -c1 -w1 $hostname`
+	if [ "$?" -eq 0 ];then
+	echo Host successfully pinged. Output: 
+	echo
+	echo $ping;else
+	echo
+	echo Host $hostname unreachable;fi
+done

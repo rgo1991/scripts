@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Parameter Groups for Specific MamaSenderIds -->
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaUtpTradesP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>270</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaUtpTradesS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>2700</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaUtpTradesPri</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>271</Value>
+      </Parameter>
+        <Parameter>
+           <Name>FtGroupName</Name>
+           <Value>FT_mamacache_cta_utp_trades_Frankrussell</Value>
+        </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdCtaUtpTradesSec</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>2710</Value>
+      </Parameter>
+        <Parameter>
+           <Name>FtGroupName</Name>
+           <Value>FT_mamacache_cta_utp_trades_Frankrussell</Value>
+        </Parameter>
+   </DefineParameterGroup>
+   <!-- END - Parameter Groups for Specific MamaSenderIds -->
+
+   <Feed>
+      <Name>mamacache_cta_utp_trades</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_trades_cta</Value>
+         <Value>mamacache_trades_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_trades_cta</Value>
+         <Value>thread_mamacache_trades_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>SUPERTRADE</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_utp_trades</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cta_utp_trades_feeds3</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>7</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Enable Group Symbols -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- Enable Group Symbols -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct23a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaUtpTradesP"/>
+      </pny2sfmct23a>
+      <pny2sfmct23b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaUtpTradesS"/>
+      </pny2sfmct23b>
+      <pny2sfmct28a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdCtaUtpTradesPri"/>
+      </pny2sfmct28a>
+      <pny2sfmct28b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdCtaUtpTradesSec"/>
+      </pny2sfmct28b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+</config>

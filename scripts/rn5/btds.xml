@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for NASDAQ BTDS feed. See the Administrators Guide for more information:  http://wombatconsulting.com/feedhandlers/admin-guide.html-->
+<!-- SF Additions as per DP -->
+   <!-- Site specific includes -->
+   <IncludeFile>btds_tport.xml</IncludeFile>
+   <IncludeFile>btds_hosts.xml</IncludeFile>
+   <IncludeFile>papastats.superfeed.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>TRACE</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- End SF Additions -->    
+
+   <Parameter>
+      <Name>MdrvPrefix</Name>
+      <Value>BTDS</Value>
+      <Comment>MDRV publishing interface</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TibSource</Name>
+      <Value>BTDS</Value>
+      <Comment>TIB/SASS publishing interface</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LbtSource</Name>
+      <Value>BTDS</Value>
+      <Comment>TIB/SASS publishing interface</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishGroupRecords</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordPublisherUseSentinel</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishIndividualRecords</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TibSector</Name>
+      <Value>REC</Value>
+      <Comment>TIB/SASS publishing interface</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TibExchange</Name>
+      <Value>NaE</Value>
+      <Comment>TIB/SASS publishing interface</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ParticipantIdMapFuncName</Name>
+      <Value>nasdaqPartIdMap</Value>
+      <Comment>Participant ID mapping function. 
+                  nasdaqPartIdMap is default.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>BtdsVersion</Name>
+      <Value>3,1</Value>
+      <Comment>BtdsVersion &gt;= 3.0 will support the message format of the new TRACE platform due to go live in February 2012.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>BtdsAppendPartId</Name>
+      <Value>false</Value>
+      <Comment>Enable / disable appending the participant Id (normalized).
+         BTDS only uses one participant Id, so appending it is not normally
+         needed.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Comment>so that test data is ignored</Comment>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OrderBookData</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqQuoteResumeChangesStatus</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishAllRate</Name>
+      <Value>1000</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FtRvService</Name>
+      <Value>7701</Value>
+      <Comment>All FHs use same FT port by default but are distinguished by the unique value FtGroupName (automatically set to FT_`binaryname` unless explicitly provided in configuration).</Comment>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>NasdaqLineFormat</Name>
+      <Comment>Common line-related configuration information.  Some feeds override these.</Comment>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>block</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryOffset</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryControl</Name>
+         <Value>C</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeOffset</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumOffset</Name>
+         <Value>5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumLength</Name>
+         <Value>8</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeSeqNumReset</Name>
+         <Value>ILM</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeHeartbeat</Name>
+         <Value>T</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransOffset</Name>
+         <Value>3</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransLength</Name>
+         <Value>2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransOrig</Name>
+         <Value>O </Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransAll</Name>
+         <Value>V </Value>
+         <Comment>Internal; some feeds override</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransTest</Name>
+         <Value>A </Value>
+         <Comment>Internal (future). Test cycle transmission.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterCheckEveryMessageInBlock</Name>
+         <Value>true</Value>
+         <Comment>Set to true as workaround to Nasdaq feed bug.</Comment>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>BtdsConfig</Name>
+      <Parameter>
+         <Name>LineDataSeqNumLength</Name>
+         <Value>7</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FieldAttrs</Name>
+         <Value>FieldAttrsCommon</Value>
+         <Value>FieldAttrsQuote</Value>
+         <Value>FieldAttrsTrade</Value>
+         <Value>FieldAttrsChain</Value>
+         <Value>FieldAttrsOrderBookMsg</Value>
+         <Value>FieldAttrsOrderBookWombatMsg</Value>
+         <Value>FieldAttrsOrderListPart</Value>
+         <Value>FieldAttrsFundamental</Value>
+         <Value>FieldAttrsSecurityStatus</Value>
+         <Value>FieldAttrsStatus</Value>
+         <Value>FieldAttrsFixedIncome</Value>
+         <Value>FieldAttrsBloomberg</Value>
+      </Parameter>
+      <UseParameterGroup name="NasdaqLineFormat"/>
+   </DefineParameterGroup>
+    
+   <Feed>
+      <Name>btds</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector2NSD1"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.17.33/55264</Value>
+         <Value>default2/224.0.17.34/55265</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.17.33</Value>
+         <Value>224.0.17.34</Value>
+      </Parameter>
+      <UseParameterGroup name="BtdsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>btds_144A</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector2NSD1"/>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>BTDS144A</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.3.0.11/55266</Value>
+         <Value>default2/224.3.0.21/55267</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.3.0.11</Value>
+         <Value>224.3.0.21</Value>
+      </Parameter>
+      <UseParameterGroup name="BtdsConfig"/>
+   </Feed>
+
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

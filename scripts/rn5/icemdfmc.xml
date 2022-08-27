@@ -1,0 +1,3019 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for the ICE iMpact Multicast feed handler. See the Administrators Guide for more information:  http://wombatconsulting.com/feedhandlers/admin-guide.html-->
+
+   <!-- SF Additions as per DP START-->
+   <!-- Site specific includes -->
+   <IncludeFile>icemdfmc_tport.xml</IncludeFile>
+   <IncludeFile>icemdfmc_hosts.xml</IncludeFile>
+   <IncludeFile>papastats.superfeed.xml</IncludeFile>
+   <!-- END Site specific includes -->
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>ICEMDFMC</Value>
+   </Parameter>
+   <!-- SF Additions as per DP END -->
+
+   <Parameter>
+      <Name>PublishNanoSecondFieldAsStr</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishTimeFormat</Name>
+      <Value>%T.%u</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>IcemdfPublishSystemPricedLegsAsIrregular</Name>
+      <Value>true</Value>
+      <Comment>DFH-31086</Comment>
+   </Parameter>
+
+    <Parameter>
+      <Name>IcemdfStartOfDayOnLogin</Name>
+      <Value>true</Value>
+      <Comment>DFH-26375</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>IcemdfUseMessageBundleMarkerMessages</Name>
+      <Value>true</Value>
+      <Comment>SFDCR-1673 DFH-27003</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>IcemdfUseContractCodeAsUnderlyingSym</Name>
+      <Value>true</Value>
+      <Comment>DFH-30624</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishQuoteBidAskTimes</Name>
+      <Value>true</Value>
+      <Comment>XIGNITE-36</Comment>
+   </Parameter>
+
+<!-- ICE Login START     
+   <DefineParameterGroup>
+      <Name>IcemdfmcLoginPri</Name>
+        <Parameter>
+           <Name>LoginUsername</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nysesupps3</Value>
+        </Parameter>
+
+        <Parameter>
+           <Name>LoginPassword</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nyseIce03</Value>
+        </Parameter>
+   </DefineParameterGroup>
+   
+   <DefineParameterGroup>
+      <Name>IcemdfmcLoginSec</Name>
+        <Parameter>
+           <Name>LoginUsername</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nysesupps4</Value>
+        </Parameter>
+
+        <Parameter>
+           <Name>LoginPassword</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nyseIce04</Value>
+        </Parameter>
+   </DefineParameterGroup>
+   
+   <DefineParameterGroup>
+      <Name>IcemdfmcLiffeLoginPri</Name>
+        <Parameter>
+           <Name>LoginUsername</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nysesupps9</Value>
+        </Parameter>
+
+        <Parameter>
+           <Name>LoginPassword</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nyseIce09</Value>
+        </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>IcemdfmcLiffeLoginSec</Name>
+        <Parameter>
+           <Name>LoginUsername</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nysesupps6</Value>
+        </Parameter>
+
+        <Parameter>
+           <Name>LoginPassword</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nyseIce06</Value>
+        </Parameter>
+   </DefineParameterGroup>
+ ICE Login END -->
+
+<!-- SFDCR-950 2way split START -->
+
+   <DefineParameterGroup>
+      <Name>IcemdfmcLoginSplit1P</Name>
+        <Parameter>
+           <Name>LoginUsername</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nysesupps7</Value>
+        </Parameter>
+
+        <Parameter>
+           <Name>LoginPassword</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nyseIce07</Value>
+        </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>IcemdfmcLoginSplit2P</Name>
+        <Parameter>
+           <Name>LoginUsername</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nysesupps8</Value>
+        </Parameter>
+
+        <Parameter>
+           <Name>LoginPassword</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nyseIce08</Value>
+        </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>IcemdfmcLiffeLoginP</Name>
+        <Parameter>
+           <Name>LoginUsername</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nysesupps</Value>
+        </Parameter>
+
+        <Parameter>
+           <Name>LoginPassword</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nyseIce00</Value>
+        </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>IcemdfmcLoginSplit1S</Name>
+        <Parameter>
+           <Name>LoginUsername</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nysesupps11</Value>
+        </Parameter>
+
+        <Parameter>
+           <Name>LoginPassword</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nyseIce11</Value>
+        </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>IcemdfmcLoginSplit2S</Name>
+        <Parameter>
+           <Name>LoginUsername</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nysesupps12</Value>
+        </Parameter>
+
+        <Parameter>
+           <Name>LoginPassword</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nyseIce12</Value>
+        </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>IcemdfmcLiffeLoginS</Name>
+        <Parameter>
+           <Name>LoginUsername</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nysesupps10</Value>
+        </Parameter>
+
+        <Parameter>
+           <Name>LoginPassword</Name>
+           <Comment>Should be supplied by ICE, max 30 char long</Comment>
+           <Value>nyseIce10</Value>
+        </Parameter>
+   </DefineParameterGroup>
+
+   <!--DefineParameterGroup>
+      <Name>IcemdfmcMarketTypes</Name>
+      <Parameter>
+         <Name>MarketTypeIds</Name>
+         <Value>3</Value>
+         <Value>4</Value>
+         <Value>5</Value>
+         <Value>6</Value>
+         <Value>7</Value>
+         <Value>8</Value>
+         <Value>9</Value>
+         <Value>10</Value>
+         <Value>11</Value>
+         <Value>12</Value>
+         <Value>13</Value>
+         <Value>14</Value>
+         <Value>15</Value>
+         <Value>16</Value>
+         <Value>17</Value>
+         <Value>18</Value>
+         <Value>19</Value>
+         <Value>20</Value>
+         <Value>21</Value>
+         <Value>22</Value>
+         <Value>23</Value>
+         <Value>24</Value>
+         <Value>26</Value>
+         <Value>27</Value>
+         <Value>28</Value>
+         <Value>29</Value>
+         <Value>31</Value>
+         <Value>32</Value>
+         <Value>33</Value>
+         <Value>36</Value>
+         <Value>41</Value>
+         <Value>48</Value>
+         <Value>49</Value>
+         <Value>50</Value>
+         <Value>51</Value>
+         <Value>53</Value>
+         <Value>54</Value>
+         <Value>55</Value>
+         <Value>57</Value>
+         <Value>58</Value>
+         <Value>59</Value>
+         <Value>66</Value>
+         <Value>69</Value>
+         <Value>70</Value>
+         <Value>71</Value>
+         <Value>72</Value>
+         <Value>73</Value>
+         <Value>75</Value>
+         <Value>76</Value>
+         <Value>77</Value>
+         <Value>78</Value>
+         <Value>79</Value>
+         <Value>80</Value>
+         <Value>81</Value>
+         <Value>82</Value>
+         <Value>84</Value>
+         <Value>85</Value>
+         <Value>86</Value>
+         <Value>89</Value>
+         <Value>90</Value>
+         <Value>91</Value>
+         <Value>97</Value>
+         <Value>98</Value>
+         <Value>99</Value>
+         <Value>100</Value>
+         <Value>101</Value>
+         <Value>104</Value>
+         <Value>109</Value>
+         <Value>111</Value>
+         <Value>128</Value>  US Russell Cash Index Multicast Groups 
+         <Value>314</Value>
+         <Value>315</Value>
+         <Value>317</Value>
+         <Comment>Liffe</Comment>
+         <Value>200</Value>
+         <Value>202</Value>
+         <Value>203</Value>
+         <Value>205</Value>
+         <Value>206</Value>
+         <Value>207</Value>
+         <Value>208</Value>
+         <Value>209</Value>
+         <Value>210</Value>
+         <Value>211</Value>
+         <Value>212</Value>
+         <Value>213</Value>
+         <Value>214</Value>
+         <Value>215</Value>
+         <Comment>Liffe - to be deprecated and replaced with 211-215</Comment>
+         <Value>201</Value>
+         <Value>204</Value>
+      </Parameter>
+   </DefineParameterGroup-->
+
+<!-- SFDCR-1578 Start -->
+   <DefineParameterGroup>
+      <Name>IcemdfmcMarketTypesSplit1</Name>
+      <Parameter>
+         <Name>MarketTypeIds</Name>
+          <Value>24</Value><!-- Sugar No 11 IFUS -->
+          <Value>23</Value><!-- FCOJ A  IFUS -->
+          <Value>22</Value><!-- Cotton No 2 IFUS -->
+          <Value>21</Value><!-- Coffee C IFUS -->
+          <Value>20</Value><!-- Cocoa IFUS -->
+          <Value>41</Value><!-- Sugar No 16 IFUS -->
+          <Value>102</Value><!-- FCOJ A Mini IFUS not permissioned -->	
+          <Value>26</Value><!-- US Dollar Index -->		  
+          <Value>39</Value><!-- Foreign Exchange -->
+          <Value>40</Value><!-- Financial Index not permissioned -->		  
+          <Value>157</Value><!-- Financial US LNG not permissioned -->
+          <Value>172</Value><!-- XIG-59 IFUS ICE Indices -->
+          <Value>36</Value><!-- Canadian Oilseeds -->
+          <Value>226</Value><!-- EU Emissions Allowances EDCP-11991 -->
+          <Value>227</Value><!-- EU Aviation Emissions Allowances EDCP-11991 -->
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>IcemdfmcMarketTypesSplit2</Name>
+      <Parameter>
+         <Name>MarketTypeIds</Name>
+          <Value>3</Value><!-- IPE Natural Gas Futures -->
+          <Value>4</Value><!-- IPE Gas Oil Futures -->
+          <Value>5</Value><!-- IPE Brent Futures -->
+          <Value>9</Value><!-- ICE WTI Crude Futures -->
+          <Value>10</Value><!-- gC Newcastle Coal Futures -->		  
+          <!-- Value>12</Value --><!-- IPE-ECX European Emissions - removed EDCP-11991 -->		  
+          <Value>13</Value><!-- ICE Heating Oil Futures -->
+          <Value>15</Value><!-- ICE NYH (RBOB) Gasoline Futures -->		  
+          <Value>17</Value><!-- ICE Rotterdam Coal Futures -->
+          <Value>18</Value><!-- ICE Richards Bay Coal Futures -->
+          <Value>38</Value><!-- ECX CER Futures -->
+          <Value>55</Value><!-- US Coal Futures -->		  
+          <Value>168</Value><!-- Permian WTI Futures -->
+          <Value>184</Value><!-- Dubai Crude Futures -->
+          <Value>7</Value><!-- IPE UK Electricity Futures Peak -->
+          <Value>8</Value><!-- IPE UK Electricity Futures Base -->
+          <Value>16</Value><!-- ICE NYH (RBOB) Gasoline/WTI Futures Crack -->		  
+          <Value>19</Value><!-- ICE Rotterdam/Richards Bay Coal Futures Spread -->
+          <Value>42</Value><!-- ECX EUA/CER Futures Spread -->		  
+          <Value>57</Value><!-- FOB Indo sub-bit Coal Futures -->
+          <Value>66</Value><!-- NYH (RBOB) Gasoline/Heating Oil Spread -->		  
+          <!-- Value>84</Value --><!-- ECX EUAA Futures - removed EDCP-11991 -->
+          <!-- Value>85</Value --><!-- ECX CER/EUAA Futures Spread - removed EDCP-11991 -->		  
+          <!-- Value>86</Value --><!-- ECX EUAA/EUA Futures Spread - removed EDCP-11991 -->
+          <Value>97</Value><!-- CFR South China Coal Futures -->		  
+          <Value>100</Value><!-- gC Newcastle/FOB Indo sub-bit Coal Futures Spread -->
+          <Value>101</Value><!-- Richards Bay/gC Newcastle Coal Futures Spread -->
+          <Value>149</Value><!-- UK Spark Spread -->
+          <Value>160</Value><!-- ICE Rotterdam/Newcastle Coal Futures Spread -->
+          <Value>190</Value><!-- NYH (RBOB) Gasoline/Permian WTI Futures Crack -->		  
+          <Value>11</Value><!-- ICE Brent-WTI Futures Spread -->		  
+          <Value>14</Value><!-- ICE Heating Oil/WTI Futures Crack -->		  
+          <Value>58</Value><!-- Heating Oil/Brent Futures Crack -->
+          <Value>59</Value><!-- NYH (RBOB) Gasoline/Brent Futures Crack -->
+          <Value>72</Value><!-- NYH (RBOB) Gasoline/LS Gasoil Futures -->
+          <Value>71</Value><!-- LS Gasoil/Brent Futures Crack -->
+          <Value>70</Value><!-- Heating Oil/LS Gasoil Futures Spread -->
+          <Value>179</Value><!-- Permian/Brent Futures Spread -->
+          <Value>180</Value><!-- Permian/WTI Futures Spread -->
+          <Value>188</Value><!-- LS Gasoil/Permian WTI Futures Crack -->
+          <Value>189</Value><!-- Heating Oil/Permian WTI Futures Crack -->
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>IcemdfmcMarketTypesLiffe</Name>
+      <Parameter>
+         <Name>MarketTypeIds</Name>
+          <!--Value>205</Value--><!-- Liffe Commodities -->
+          <Value>208</Value><!-- GCF Repo -->
+          <Value>185</Value><!-- US STIRs Spreads -->
+          <Value>210</Value><!-- Eurodollar -->	
+          <Value>154</Value><!-- Daily Metals IFUS (Liffe) -->
+          <Value>206</Value><!-- Metals IFUS (Liffe) -->
+          <Value>207</Value><!-- IFUS Equity Indices IFUS (Liffe)-->
+          <Value>177</Value><!-- SOFR Futures -->
+      </Parameter>
+   </DefineParameterGroup>
+
+<!-- SFDCR-1578 End -->
+
+   <DefineParameterGroup>
+      <Name>IcemdfmcMarketTypes</Name>
+      <Parameter>
+         <Name>MarketTypeIds</Name>
+          <Value>91</Value>
+          <Value>90</Value>
+          <Value>89</Value>
+          <Value>86</Value>
+          <Value>85</Value>
+          <Value>84</Value>
+          <Value>72</Value>
+          <Value>71</Value>
+          <Value>70</Value>
+          <Value>66</Value>
+          <Value>59</Value>
+          <Value>58</Value>
+          <Value>57</Value>
+          <Value>55</Value>
+          <Value>42</Value>
+          <Value>41</Value>
+          <Value>39</Value>
+          <Value>38</Value>
+          <Value>37</Value>
+          <Value>36</Value>
+          <Value>33</Value>
+          <Value>32</Value>
+          <Value>31</Value>
+          <Value>28</Value>
+          <Value>26</Value>
+          <Value>24</Value>
+          <Value>23</Value>
+          <Value>22</Value>
+          <Value>21</Value>
+          <Value>20</Value>
+          <Value>210</Value>
+          <Value>19</Value>
+          <Value>18</Value>
+          <Value>208</Value>
+          <Value>207</Value>
+          <Value>17</Value>
+          <Value>16</Value>
+          <Value>206</Value>
+          <Value>15</Value>
+          <Value>14</Value>
+          <Value>13</Value>
+          <Value>12</Value>
+          <Value>11</Value>
+          <Value>10</Value>
+          <Value>9</Value>
+          <Value>8</Value>
+          <Value>7</Value>
+          <Value>101</Value>
+          <Value>100</Value>
+          <Value>5</Value>
+          <Value>4</Value>
+          <Value>3</Value>
+          <Value>97</Value>
+          <Value>172</Value><!-- XIG-59 IFUS ICE Indices -->
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <Parameter>
+      <Name>ExtractHint</Name>
+      <Value>-110</Value>
+      <Comment>Used to identify the feed in the metadata</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+      <Comment>Initial startup mode</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LoginWhenToStartHeartBeats</Name>
+      <Value>never</Value>
+      <Comment>Do not change this if you don't know what you are doing</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>basic</Value>
+      <Comment>Do not change this if you don't know what you are doing</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LoginTimeoutInterval</Name>
+      <Value>30</Value>
+      <Comment>If no data was received for longer than 30 secs the fh will disconnect. Do not change this if you don't know what you are doing.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LoginSendLogoutAtTermination</Name>
+      <Value>true</Value>
+      <Comment>Do not change this if you don't know what you are doing</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MessageRecoveryFile</Name>
+      <Value/>
+      <Comment>Do not change this if you don't know what you are doing</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineQualityInterval</Name>
+      <Value>5000</Value>
+      <Comment>Increasing to 5000 - CHG245743. Heartbeats are sent every seconds, so if nothing was gotten in 2 secs, the line might have gone down. Do not change this if you don't know what you are doing.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>IcemdfContractSymbolSpaceReplacementChar</Name>
+      <Value/>
+      <Comment>Leave this empty (will produce NULL character) if you DO NOT WANT to replace spaces in ContractSymbol with some other character. This might be used when using ContractSymbol as issue symbol. Recommended value is ^.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>IcemdfUseContractSymAsIssueSym</Name>
+      <Value>true</Value>
+      <Comment>Default symbology is the MarketId (ex. 123456).</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>IcemdfSaveLastTrades</Name>
+      <Value>true</Value>
+      <Comment>In order to conform ICE regulations this fh saves 50 last trades for every symbol and in case if a trade is cancelled it will correct the last price and quantity (if the cancelled trade was the last trade). However the customer may wish to turn it off for performance and memory reasons, but one has to understand that in this case the fh won't correct the last trade and quantity if it's cancelled. This comment must stay here.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>IcemdfIgnoreBlockTrades</Name>
+      <Value>false</Value>
+      <Comment>whether to ignore block trades</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>IcemdfIgnoreSystemPricedLegs</Name>
+      <Value>false</Value>
+      <Comment>whether to ignore system priced legs</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>IcemdfPublishMarkerIndexSymbol</Name>
+      <Value>false</Value>
+      <Comment>This turns on publishing of Marker/Index msgs (type z) on a separate symbol as a trade msg, symbol will be concatenated like this: issueSymbol + _ + ShortName, i.e. 217599_BWAVE. The product for IcemdfRecord will apply.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>IcemdfUseInternalSequenceNumber</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>IcemdfmcNumOfLiveMessagesToSpool</Name>
+      <Value>100</Value>
+      <Comment>When synchronizing between snapshot and live channels we are spooling live messages.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>IcemdfLogSecDefWarnings</Name>
+      <Value>false</Value>
+      <Comment>
+            Whenever we get messages that we didn't get SecurityDefinitions for (see ICE spec)
+            we can't process these messages as security definitions contain the information how
+            to parse them. This parameter controls whether we should log the warnings complaining
+            about absent security definition data.
+        </Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>IcemdfUseSourceTimeForOrderTime</Name>
+      <Value>false</Value>
+      <Comment>Use the order source time, not the order entry time, as the book-update time for add / modify order updates.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>IcemdfIndexZeroHighLowAllowed</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsOrder</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsForex</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsIce</Value>
+      <Value>FieldAttrsFuture</Value>
+      <Value>FieldAttrsIndex</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsChain</Value>
+      <Value>FieldAttrsRfq</Value>
+      <Value>FieldAttrsOption</Value>
+      <Value>FieldAttrsTradeOptional</Value>
+      <Value>FieldAttrsStrategy</Value>
+      <Value>FieldAttrsCme</Value><!-- EDCP-6761 -->
+      <Value>FieldAttrsReferential</Value><!-- EDCP-6761 -->
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+    
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>true</Value>
+      <Comment>temporary parameter, feel free to modify it</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>true</Value>
+      <Comment>temporary parameter, feel free to modify it</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+      <Comment>If more than 1, TopOfBookHandler will set to zero all quotes with size less than TopOfBookLotSize, and the quote's bid/ask size will be the result of the actual size division by TopOfBookLotSize.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishGroupRecords</Name>
+      <Value>true</Value>
+      <Comment>Group symbols look like 123456, where 123456 is the underlying. Group symbols exist only for options and its' underlying.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishLinkRecords</Name>
+      <Value>true</Value>
+      <Comment>Link records of a type 0#123456 would contain the info about options for an underlying 123456. For more info about link records see Admin Guide.</Comment>
+   </Parameter>
+   
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value></Value>
+      <!-- <Value>/opt/wombat/log/icemdfmc.sym</Value> -->
+      <Comment>temporary parameter, feel free to modify it</Comment>
+   </Parameter>
+   
+    
+   <Parameter>
+      <Name>IcemdfProductNameBook</Name>
+      <Value>IcemdfBook</Value>
+      <Comment/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>IcemdfProductNameTop</Name>
+      <Value>IcemdfRecord</Value>
+      <Comment/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>IcemdfProductNameRecord</Name>
+      <Value>IcemdfRecord</Value>
+      <Comment/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>IcemdfProductNameRfq</Name>
+      <Value>IcemdfRfq</Value>
+      <Comment/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>IncludeGroupSymbol</Name>
+      <Value>true</Value>
+      <Comment>whether to include the group symbol</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookDecimals</Name>
+      <Value>6</Value>
+      <Comment>ICE is known to send orders with 3 decimal places; by setting this value equal or greater to the max num of decimal places sent by ICE, we ensure that TopOfBookHandler won't group adjacent price levels into one when generating a top of book quote. Value 6 is taken from ICE FIX config file.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TradeCalculateVwap</Name>
+      <Value>false</Value>
+      <Comment>ICE sends VWAP, so no need to calculate it</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RollRate</Name>
+      <Value>0</Value>
+      <Comment>Roll the start of day records syncronously so that the start of day wouldn't wipe out the freshly received data.</Comment>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>IcemdfmcLineFormat</Name><!--line filter stuff goes here-->
+      <Parameter>
+         <Name>LineFilterCheckEveryMessageInBlock</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>icemdfmc</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineQualityInterval</Name>
+         <Value>5000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterHeartbeatsHavePrevSeqNum</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>10000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransMaxGapSize</Name>
+         <Value>10000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookForceUncrossTopOfBook</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookForceUnlockTopOfBook</Name>
+         <Value>true</Value>
+      </Parameter>
+<!--
+        Defaults: LineFilterRetransActive = false; LineFilterGapLimitSize = 1000; LineFilterGapLimitTime = 0.5 (half a second);
+        LineFilterGapLimitStartOfDay = 1000
+        I am happy with these defaults, so I leave them as they are
+    -->
+
+<!-- Enabling retrans tracker -->
+      <Parameter>
+         <Name>UseRetransTracker</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RetransTrackerInitialLogInterval</Name>
+         <Value>2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RetransTrackerDailyLimit</Name>
+         <Value>500</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RetransTrackerLogInterval</Name>
+         <Value>4</Value>
+      </Parameter>
+<!-- END retrans tracker -->
+   </DefineParameterGroup>
+    
+   <!--Parameter>
+      <Name>DefaultMulticastInterface1</Name>
+      <Value>192.168.187</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>DefaultMulticastInterface2</Name>
+      <Value>192.168.187</Value>
+   </Parameter-->
+   <!-- 
+        IcemdfmcImpliedSuffix will set the suffix that the implied books
+        will use if IcemdfmcSeparateImpliedExplicitOrderBooks is set to true.
+    -->
+    
+   <Parameter>
+      <Name>IcemdfmcImpliedSuffix</Name>
+      <Value>IMP</Value>
+   </Parameter><!-- 
+        IcemdfmcExplicitSuffix will set the suffix that the Explicit books
+        will use if IcemdfmcSeparateImpliedExplicitOrderBooks is set to true.
+    -->
+    
+   <Parameter>
+      <Name>IcemdfmcExplicitSuffix</Name>
+      <Value>EXP</Value>
+   </Parameter><!-- 
+        IcemdfmcSeparateImpliedExplicitOrderBooks controls if the orderbooks
+        are split into Implied and Explicit books
+    -->
+    
+   <Parameter>
+      <Name>IcemdfmcSeparateImpliedExplicitOrderBooks</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Feed>
+      <Name>icemdfmc_split1</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <UseParameterGroup name="IcemdfmcMarketTypesSplit1"/><!-- SFDCR-1578 -->
+      <pny2sffhr03a>
+         <UseParameterGroup name="IcemdfmcLoginSplit1P"/>
+      </pny2sffhr03a>
+      <pny2sffhr03b>
+         <UseParameterGroup name="IcemdfmcLoginSplit1S"/>
+      </pny2sffhr03b> 
+      <!--UseParameterGroup name="IcemdfmcMarketTypes"/-->
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>SupportOptions</Name>
+         <Value>true</Value>
+         <Comment>switch for Options support, if this is turned on, icemdfmc will request for options product defintions</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>SupportOptionsStrategies</Name>
+         <Value>true</Value>
+         <Comment>switch for Options support, if this is turned on, icemdfmc will request for options product defintions</Comment>
+      </Parameter>
+      <Parameter>
+        <Name>SupportFutures</Name>
+        <Value>true</Value>
+      </Parameter>
+      <Parameter>
+        <Name>SupportFuturesStrategies</Name>
+        <Value>true</Value>
+      </Parameter>      
+   <Parameter>
+      <Name>AlwaysUpdateTradeDate</Name>
+      <Value>true</Value>
+   </Parameter>
+      <Parameter>
+        <Name>SubFeeds</Name>
+        <Comment>All valid sub feeds are included below for ICE iMpact 1.0.0.9. When choosing which subfeeds to include ensure that full order deapth (fod) and top5 are not present in the same feed handler instance. For example, do not use ice_fut_agri_fod_live and ice_fut_agri_top5_live in the same instance.</Comment>
+        <Value>tcp_feed</Value>
+        <!--Value>ice_fut_russ_cash_ind_fod_live</Value>
+        <Value>ice_fut_russ_cash_ind_fod_snap</Value SFDCR-1443 -->
+        <Value>ice_fut_agri_options_tob_live</Value>
+        <Value>ice_fut_agri_options_tob_snap</Value>
+        <Value>ice_fut_finc_options_tob_live</Value>
+        <Value>ice_fut_finc_options_tob_snap</Value>
+        <Value>ice_fut_finc_fod_live</Value>
+        <Value>ice_fut_finc_fod_snap</Value>
+        <!--Value>full_impl_ice_fut_us_agri_fod_live</Value-->
+        <!--Value>full_impl_ice_fut_us_agri_fod_snap</Value-->
+        <Value>full_impl_ice_fut_us_agri_fod_live</Value>
+        <Value>full_impl_ice_fut_us_agri_fod_snap</Value>
+        <Value>ice_fut_can_options_tob_live</Value><!-- moved as part SFDCR-1578 -->
+        <Value>ice_fut_can_options_tob_snap</Value>
+        <Value>ice_fut_ca_fod_live</Value>
+        <Value>ice_fut_ca_fod_snap</Value>
+<!-- SFDCR-2099 Start -->
+        <Value>ice_endex_options_tob_live</Value>
+        <Value>ice_endex_options_tob_snap</Value>
+        <Value>ice_endex_fod_live</Value>
+        <Value>ice_endex_fod_snap</Value>
+<!-- SFDCR-2099 End -->
+    </Parameter>
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value>/opt/wombat/log/icemdfmc_split1.sym</Value>
+   </Parameter>
+   <Parameter>
+      <Name>OrderBookSymbolFile</Name>
+      <Value>/opt/wombat/log/icemdfmc_split1.orderbook.sym</Value>
+   </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>icemdfmc_split2</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <UseParameterGroup name="IcemdfmcMarketTypesSplit2"/><!-- SFDCR-1578 -->
+      <pny2sffhr03a>
+         <UseParameterGroup name="IcemdfmcLoginSplit2P"/>
+      </pny2sffhr03a>
+      <pny2sffhr03b>
+         <UseParameterGroup name="IcemdfmcLoginSplit2S"/>
+      </pny2sffhr03b>
+      <!--UseParameterGroup name="IcemdfmcMarketTypes"/-->
+      <UseParameterGroup name="WmwTransportPropertiesVector1NSD1"/>
+      <Parameter>
+         <Name>SupportOptions</Name>
+         <Value>true</Value>
+         <Comment>switch for Options support, if this is turned on, icemdfmc will request for options product defintions</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>SupportOptionsStrategies</Name>
+         <Value>true</Value>
+         <Comment>switch for Options support, if this is turned on, icemdfmc will request for options product defintions</Comment>
+      </Parameter>
+      <Parameter>
+        <Name>SupportFutures</Name>
+        <Value>true</Value>
+      </Parameter>
+      <Parameter>
+        <Name>SupportFuturesStrategies</Name>
+        <Value>true</Value>
+      </Parameter>
+   <Parameter>
+      <Name>AlwaysUpdateTradeDate</Name>
+      <Value>true</Value>
+   </Parameter>
+      <Parameter>
+        <Name>SubFeeds</Name>
+        <Comment>All valid sub feeds are included below for ICE iMpact 1.0.0.9. When choosing which subfeeds to include ensure that full order deapth (fod) and top5 are not present in the same feed handler instance. For example, do not use ice_fut_agri_fod_live and ice_fut_agri_top5_live in the same instance.</Comment>
+        <Value>tcp_feed</Value>
+        <Value>ice_fut_eu_options_tob_live</Value>
+        <Value>ice_fut_eu_options_tob_snap</Value>
+        <Value>full_impl_ice_eu_non_oil_fut_fod_live</Value>
+        <Value>full_impl_ice_eu_non_oil_fut_fod_snap</Value>
+        <Value>full_impl_brent_fut_fod_live</Value>
+        <Value>full_impl_brent_fut_fod_snap</Value>
+        <Value>full_impl_eu_oil_others_fut_fod_live</Value>
+        <Value>full_impl_eu_oil_others_fut_fod_snap</Value>
+        <Value>full_impl_wti_fut_fod_live</Value><!-- moved as part of SFDCR-1578 -->
+        <Value>full_impl_wti_fut_fod_snap</Value>
+    </Parameter>
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value>/opt/wombat/log/icemdfmc_split2.sym</Value>
+   </Parameter>
+   <Parameter>
+      <Name>OrderBookSymbolFile</Name>
+      <Value>/opt/wombat/log/icemdfmc_split2.orderbook.sym</Value>
+   </Parameter>
+   </Feed>    
+   <Feed>
+      <Name>icemdfmc</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <!-- Host-Specific Settings -->
+      <pny2sffhr03a>
+         <UseParameterGroup name="IcemdfmcLoginPri"/>
+      </pny2sffhr03a>
+      <pny2sffhr03b>
+         <UseParameterGroup name="IcemdfmcLoginSec"/>
+      </pny2sffhr03b>
+      <!-- END - Host-Specific Settings -->
+      <Parameter>
+         <Name>SupportOptions</Name>
+         <Value>true</Value>
+         <Comment>switch for Options support, if this is turned on, icemdfmc will request for options product defintions</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MarketTypeIds</Name><!--Value>0</Value--><!--Value>1</Value--><!--Value>2</Value>-->
+         <Value>3</Value>
+         <Value>4</Value>
+         <Value>5</Value>
+         <Value>6</Value>
+         <Value>7</Value>
+         <Value>8</Value>
+         <Value>9</Value>
+         <Value>10</Value>
+         <Value>11</Value>
+         <Value>12</Value>
+         <Value>13</Value>
+         <Value>14</Value>
+         <Value>15</Value>
+         <Value>16</Value>
+         <Value>17</Value>
+         <Value>18</Value>
+         <Value>19</Value>
+         <Value>20</Value>
+         <Value>21</Value>
+         <Value>22</Value>
+         <Value>23</Value>
+         <Value>24</Value>
+         <Value>26</Value>
+         <Value>27</Value>
+         <Value>28</Value>
+         <Value>29</Value>
+         <Value>31</Value>
+         <Value>32</Value>
+         <Value>33</Value>
+         <Value>36</Value>
+         <Value>41</Value>
+         <Value>48</Value>
+      <Value>49</Value><!-- EDCP-6761 -->
+      <Value>50</Value>
+      <Value>51</Value>
+      <Value>53</Value>
+      <Value>54</Value>
+      <Value>55</Value>
+      <Value>57</Value>
+      <Value>58</Value>
+      <Value>59</Value>
+      <Value>66</Value>
+      <Value>69</Value>
+      <Value>70</Value>
+      <Value>71</Value>
+      <Value>72</Value>
+      <Value>73</Value>
+      <Value>75</Value>
+      <Value>76</Value>
+      <Value>77</Value>
+      <Value>78</Value>
+      <Value>79</Value>
+      <Value>80</Value>
+      <Value>81</Value>
+      <Value>82</Value>
+      <Value>84</Value>
+      <Value>85</Value>
+      <Value>86</Value>
+      <Value>89</Value>
+      <Value>90</Value>
+      <Value>91</Value>
+      <Value>97</Value>
+      <Value>98</Value>
+      <Value>99</Value>
+      <Value>100</Value>
+      <Value>101</Value>
+      <Value>104</Value>
+      <Value>109</Value>
+      <Value>111</Value>
+      <Value>128</Value> <!-- US Russell Cash Index Multicast Groups -->
+      <Value>314</Value>
+      <Value>315</Value>
+      <Value>317</Value>
+      <Comment>Liffe</Comment>
+      <Value>200</Value>
+      <Value>202</Value>
+      <Value>203</Value>
+      <Value>205</Value>
+      <Value>206</Value>
+      <Value>207</Value>
+      <Value>208</Value>
+      <Value>209</Value>
+      <Value>210</Value>
+      <Value>211</Value>
+      <Value>212</Value>
+      <Value>213</Value>
+      <Value>214</Value>
+      <Value>215</Value>
+      <Comment>Liffe - to be deprecated and replaced with 211-215</Comment>
+      <Value>201</Value>
+      <Value>204</Value><!-- EDCP-6761 -->
+      </Parameter>
+
+      <Parameter>
+        <Name>SubFeeds</Name>
+        <Comment>All valid sub feeds are included below for ICE iMpact 1.0.0.9. When choosing which subfeeds to include ensure that full order deapth (fod) and top5 are not present in the same feed handler instance. For example, do not use ice_fut_agri_fod_live and ice_fut_agri_top5_live in the same instance.</Comment>
+        <Value>tcp_feed</Value>
+        <Value>ice_fut_russ_cash_ind_fod_live</Value>
+        <Value>ice_fut_russ_cash_ind_fod_snap</Value>
+
+        <Value>ice_fut_agri_options_tob_live</Value>
+        <Value>ice_fut_agri_options_tob_snap</Value>
+        <Value>ice_fut_finc_options_tob_live</Value>
+        <Value>ice_fut_finc_options_tob_snap</Value>
+        <Value>ice_fut_eu_options_tob_live</Value>
+        <Value>ice_fut_eu_options_tob_snap</Value>
+        <Value>ice_fut_can_options_tob_live</Value>
+        <Value>ice_fut_can_options_tob_snap</Value>
+	<!--Value>ice_endex_options_tob_live</Value>
+	<Value>ice_endex_options_tob_snap</Value-->		
+		
+        <!--Value>ice_fut_agri_fod_live</Value>
+        <Value>ice_fut_agri_fod_snap</Value-->
+        <Value>ice_fut_finc_fod_live</Value>
+        <Value>ice_fut_finc_fod_snap</Value>
+        <!--Value>ice_fut_eu_oil_fod_live</Value>
+        <Value>ice_fut_eu_oil_fod_snap</Value-->
+	<!--Value>ice_fut_eu_n_oil_fod_live</Value>
+	<Value>ice_fut_eu_n_oil_fod_snap</Value-->
+	<!--Value>ice_otc_fod_live</Value>
+	<Value>ice_otc_fod_snap</Value-->
+	<Value>ice_fut_ca_fod_live</Value>
+	<Value>ice_fut_ca_fod_snap</Value>
+	<!--Value>ccx_fut_fod_live</Value>
+	<Value>ccx_fut_fod_snap</Value-->
+	<Value>full_impl_ice_eu_non_oil_fut_fod_live</Value>
+	<Value>full_impl_ice_eu_non_oil_fut_fod_snap</Value>
+	<!--Value>full_impl_ice_otc_fod_live</Value>
+	<Value>full_impl_ice_otc_fod_snap</Value-->
+	<Value>full_impl_ice_fut_us_agri_fod_live</Value>
+	<Value>full_impl_ice_fut_us_agri_fod_snap</Value>
+	<!--Value>ice_fut_brent_fod_live</Value>
+	<Value>ice_fut_brent_fod_snap</Value-->
+	<!--Value>ice_fut_wti_fod_live</Value>
+	<Value>ice_fut_wti_fod_snap</Value-->
+	<!--Value>ice_fut_eu_oil_others_fod_live</Value>
+	<Value>ice_fut_eu_oil_others_fod_snap</Value-->
+	<Value>full_impl_brent_fut_fod_live</Value>
+	<Value>full_impl_brent_fut_fod_snap</Value>
+	<Value>full_impl_wti_fut_fod_live</Value>
+	<Value>full_impl_wti_fut_fod_snap</Value>
+	<Value>full_impl_eu_oil_others_fut_fod_live</Value>
+	<Value>full_impl_eu_oil_others_fut_fod_snap</Value>
+	<!--Value>ice_endex_fod_live</Value>
+	<Value>ice_endex_fod_snap</Value-->
+
+	<!--Value>ice_fut_agri_top5_live</Value>
+        <Value>ice_fut_agri_top5_snap</Value>		
+        <Value>ice_fut_finc_top5_live</Value>
+        <Value>ice_fut_finc_top5_snap</Value>		
+	<Value>ice_fut_eu_oil_top5_live</Value>
+	<Value>ice_fut_eu_oil_top5_snap</Value>		
+	<Value>ice_fut_eu_n_oil_top5_live</Value>
+	<Value>ice_fut_eu_n_oil_top5_snap</Value>		
+	<Value>ice_otc_top5_live</Value>
+	<Value>ice_otc_top5_snap</Value>		
+	<Value>ice_fut_ca_top5_live</Value>
+	<Value>ice_fut_ca_top5_snap</Value>		
+	<Value>ccx_fut_top5_live</Value>
+	<Value>ccx_fut_top5_snap</Value>		
+	<Value>full_impl_eu_oil_fut_top5_live</Value>
+	<Value>full_impl_eu_oil_fut_top5_snap</Value>		
+	<Value>full_impl_ice_otc_top5_live</Value>
+	<Value>full_impl_ice_otc_top5_snap</Value>		
+	<Value>full_impl_ice_fut_us_agri_top5_live</Value>
+	<Value>full_impl_ice_fut_us_agri_top5_snap</Value>
+	<Value>ice_fut_brent_top5_live</Value>
+	<Value>ice_fut_brent_top5_snap</Value>
+	<Value>ice_fut_wti_top5_live</Value>
+	<Value>ice_fut_wti_top5_snap</Value>
+	<Value>ice_fut_eu_oil_others_top5_live</Value>
+	<Value>ice_fut_eu_oil_others_top5_snap</Value>
+	<Value>full_impl_brent_fut_top5_live</Value>
+	<Value>full_impl_brent_fut_top5_snap</Value>
+	<Value>full_impl_wti_fut_top5_live</Value>
+	<Value>full_impl_wti_fut_top5_snap</Value>
+	<Value>full_impl_eu_oil_others_fut_top5_live</Value>
+	<Value>full_impl_eu_oil_others_fut_top5_snap</Value>	
+	<Value>ice_endex_top5_live</Value>
+	<Value>ice_endex_top5_snap</Value-->		
+      </Parameter>
+   </Feed>
+   <Feed>
+      <Name>icemdfmc_liffe</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <UseParameterGroup name="IcemdfmcMarketTypesLiffe"/><!-- SFDCR-1578 -->
+      <!-- Host-Specific Settings -->
+      <pny2sffhr03a>
+         <UseParameterGroup name="IcemdfmcLiffeLoginP"/>
+      </pny2sffhr03a>
+      <pny2sffhr03b>
+         <UseParameterGroup name="IcemdfmcLiffeLoginS"/>
+      </pny2sffhr03b>
+      <!-- END - Host-Specific Settings -->
+      <UseParameterGroup name="WmwTransportPropertiesVector2NSD1"/>
+      <Parameter>
+         <Name>SupportOptions</Name>
+         <Value>false</Value>
+         <Comment>switch for Options support, if this is turned on, icemdfmc will request for options product defintions</Comment>
+      </Parameter>
+   <Parameter>
+      <Name>AlwaysUpdateTradeDate</Name>
+      <Value>true</Value>
+   </Parameter>
+<!--
+      <Parameter>
+         <Name>MarketTypeIds</Name>
+         <Value>206</Value>
+         <Value>207</Value>
+         <Value>208</Value>
+         <Value>209</Value> 
+         <Value>210</Value>
+      <Value>211</Value><- EDCP-6761 >
+      <Value>212</Value>
+      <Value>213</Value>
+      <Value>214</Value>
+      <Value>215</Value>
+      <Comment>Liffe - to be deprecated and replaced with 211-215</Comment>
+      <Value>201</Value>
+      <Value>204</Value>< EDCP-6761 >
+      </Parameter>
+--><!-- removed as part of SFDCR-1578 -->
+
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tcp_feed</Value>
+         <!--Value>full_impl_ice_liffe_agri_fod_live</Value-->
+         <!--Value>full_impl_ice_liffe_agri_fod_snap</Value-->
+         <Value>full_impl_ice_liffe_gcf_fod_live</Value>
+         <Value>full_impl_ice_liffe_gcf_fod_snap</Value>
+         <Value>full_impl_ice_liffe_metals_fod_live</Value>
+         <Value>full_impl_ice_liffe_metals_fod_snap</Value>
+         <Value>ice_liffe_indices_fod_live</Value>
+         <Value>ice_liffe_indices_fod_snap</Value>
+      </Parameter>
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value>/opt/wombat/log/icemdfmc_liffe.sym</Value>
+      <Comment>temporary parameter, feel free to modify it</Comment>
+   </Parameter>
+   <Parameter>
+      <Name>OrderBookSymbolFile</Name>
+      <Value>/opt/wombat/log/icemdfmc_liffe.orderbook.sym</Value>
+   </Parameter>
+   </Feed>
+
+   <Feed>
+       <Name>ice_fut_russ_cash_ind_fod_live</Name>
+        <Comment>ICE Futures Russell Cash Indices FOD Live Updates</Comment>
+        <UseParameterGroup name="IcemdfmcLineFormat"/>
+        <Parameter>
+           <Name>Listen</Name>
+           <Value>default1/233.156.208.8/20008</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>233.156.208.8</Value>
+         </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>ice_fut_russ_cash_ind_fod_snap</Name>
+        <Comment>ICE Futures Russell Cash Indices FOD Snapshots</Comment>
+        <UseParameterGroup name="IcemdfmcLineFormatSnap"/>
+        <Parameter>
+           <Name>Listen</Name>
+           <Value>default1/233.156.208.9/20009/monitorOff</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>233.156.208.9</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>ice_fut_russ_cash_ind_top5_live</Name>
+        <Comment>ICE Futures Russell Cash Indices Top5PL Live Updates</Comment>
+        <UseParameterGroup name="IcemdfmcLineFormat"/>
+        <Parameter>
+           <Name>Listen</Name>
+           <Value>default1/233.156.208.10/20010</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>233.156.208.10</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>ice_fut_russ_cash_ind_top5_snap</Name>
+        <Comment>ICE Futures Russell Cash Indices Top5PL Snapshots</Comment>
+        <UseParameterGroup name="IcemdfmcLineFormatSnap"/>
+        <Parameter>
+           <Name>Listen</Name>
+           <Value>default1/233.156.208.11/20011/monitorOff</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>233.156.208.11</Value>
+        </Parameter>
+    </Feed>
+
+   <Feed>
+      <Name>icemdfmc_liffe_top5</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tcp_feed</Value>
+         <Value>ice_liffe_agri_top5_live</Value>
+         <Value>ice_liffe_agri_top5_snap</Value>
+         <Value>ice_liffe_gcf_top5_live</Value>
+         <Value>ice_liffe_gcf_top5_snap</Value>
+         <Value>ice_liffe_metals_top5_live</Value>
+         <Value>ice_liffe_metals_top5_snap</Value>
+         <Value>ice_liffe_indices_top5_live</Value>
+         <Value>ice_liffe_indices_top5_snap</Value>
+      </Parameter>
+   </Feed>
+   <Feed>
+      <Name>icemdfmc_liffe_full_impl</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tcp_feed</Value>
+         <Value>full_impl_ice_liffe_agri_fod_live</Value>
+         <Value>full_impl_ice_liffe_agri_fod_snap</Value>
+         <Value>full_impl_ice_liffe_gcf_fod_live</Value>
+         <Value>full_impl_ice_liffe_gcf_fod_snap</Value>
+         <Value>full_impl_ice_liffe_metals_fod_live</Value>
+         <Value>full_impl_ice_liffe_metals_fod_snap</Value>
+         <Value>full_impl_ice_liffe_indices_fod_live</Value>
+         <Value>full_impl_ice_liffe_indices_fod_snap</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>icemdfmc_liffe_full_impl_top5</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tcp_feed</Value>
+         <Value>full_impl_ice_liffe_agri_top5_live</Value>
+         <Value>full_impl_ice_liffe_agri_top5_snap</Value>
+         <Value>full_impl_ice_liffe_gcf_top5_live</Value>
+         <Value>full_impl_ice_liffe_gcf_top5_snap</Value>
+         <Value>full_impl_ice_liffe_metals_top5_live</Value>
+         <Value>full_impl_ice_liffe_metals_top5_snap</Value>
+         <Value>full_impl_ice_liffe_indices_top5_live</Value>
+         <Value>full_impl_ice_liffe_indices_top5_snap</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>icemdfmc_liffe_options</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tcp_feed</Value>
+         <Value>ice_liffe_us_options_tob_live</Value>
+         <Value>ice_liffe_us_options_tob_snap</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>icemdfmc_liffe_options_top10</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tcp_feed</Value>
+         <Value>ice_liffe_us_options_top10_live</Value>
+         <Value>ice_liffe_us_options_top10_snap</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>icemdfmc_apitest</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tcp_feed</Value>
+         <Value>icemdfmc_feeds_api_01_live</Value>
+         <Value>icemdfmc_feeds_api_01_snap</Value>
+         <Value>icemdfmc_feeds_api_02_live</Value>
+         <Value>icemdfmc_feeds_api_02_snap</Value>
+         <Value>icemdfmc_feeds_api_03_live</Value>
+         <Value>icemdfmc_feeds_api_03_snap</Value>
+         <Value>icemdfmc_feeds_api_04_live</Value>
+         <Value>icemdfmc_feeds_api_04_snap</Value>
+         <Value>icemdfmc_feeds_api_05_live</Value>
+         <Value>icemdfmc_feeds_api_05_snap</Value>
+         <Value>icemdfmc_feeds_api_06_live</Value>
+         <Value>icemdfmc_feeds_api_06_snap</Value>
+         <Value>icemdfmc_feeds_api_07_live</Value>
+         <Value>icemdfmc_feeds_api_07_snap</Value>
+         <Value>icemdfmc_feeds_api_08_live</Value>
+         <Value>icemdfmc_feeds_api_08_snap</Value>
+         <Value>icemdfmc_feeds_api_09_live</Value>
+         <Value>icemdfmc_feeds_api_09_snap</Value>
+         <Value>icemdfmc_feeds_api_10_live</Value>
+         <Value>icemdfmc_feeds_api_10_snap</Value>
+         <Value>icemdfmc_feeds_api_11_live</Value>
+         <Value>icemdfmc_feeds_api_11_snap</Value>
+         <Value>icemdfmc_feeds_api_12_live</Value>
+         <Value>icemdfmc_feeds_api_12_snap</Value>
+         <Value>icemdfmc_feeds_api_13_live</Value>
+         <Value>icemdfmc_feeds_api_13_snap</Value>
+         <Value>icemdfmc_feeds_api_14_live</Value>
+         <Value>icemdfmc_feeds_api_14_snap</Value>
+         <Value>icemdfmc_feeds_api_15_live</Value>
+         <Value>icemdfmc_feeds_api_15_snap</Value>
+         <Value>icemdfmc_feeds_api_16_live</Value>
+         <Value>icemdfmc_feeds_api_16_snap</Value>
+         <Value>icemdfmc_feeds_api_17_live</Value>
+         <Value>icemdfmc_feeds_api_17_snap</Value>
+         <Value>icemdfmc_feeds_api_18_live</Value>
+         <Value>icemdfmc_feeds_api_18_snap</Value>
+         <Value>icemdfmc_feeds_api_19_live</Value>
+         <Value>icemdfmc_feeds_api_19_snap</Value>
+         <Value>icemdfmc_feeds_api_20_live</Value>
+         <Value>icemdfmc_feeds_api_20_snap</Value>
+         <Value>icemdfmc_feeds_api_21_live</Value>
+         <Value>icemdfmc_feeds_api_21_snap</Value>
+         <Value>icemdfmc_feeds_api_22_live</Value>
+         <Value>icemdfmc_feeds_api_22_snap</Value>
+         <Value>icemdfmc_feeds_api_23_live</Value>
+         <Value>icemdfmc_feeds_api_23_snap</Value>
+         <Value>icemdfmc_feeds_api_24_live</Value>
+         <Value>icemdfmc_feeds_api_24_snap</Value>
+         <Value>icemdfmc_feeds_api_25_live</Value>
+         <Value>icemdfmc_feeds_api_25_snap</Value>
+         <Value>icemdfmc_feeds_api_26_live</Value>
+         <Value>icemdfmc_feeds_api_26_snap</Value>
+         <Value>icemdfmc_feeds_api_27_live</Value>
+         <Value>icemdfmc_feeds_api_27_snap</Value>
+         <Value>icemdfmc_feeds_api_28_live</Value>
+         <Value>icemdfmc_feeds_api_28_snap</Value>
+         <Value>icemdfmc_feeds_api_29_live</Value>
+         <Value>icemdfmc_feeds_api_29_snap</Value>
+         <Value>icemdfmc_feeds_api_30_live</Value>
+         <Value>icemdfmc_feeds_api_30_snap</Value>
+         <Value>icemdfmc_feeds_api_31_live</Value>
+         <Value>icemdfmc_feeds_api_31_snap</Value>
+         <Value>icemdfmc_feeds_api_32_live</Value>
+         <Value>icemdfmc_feeds_api_32_snap</Value>
+         <Value>icemdfmc_feeds_api_33_live</Value>
+         <Value>icemdfmc_feeds_api_33_snap</Value>
+         <Value>icemdfmc_feeds_api_34_live</Value>
+         <Value>icemdfmc_feeds_api_34_snap</Value>
+         <Value>icemdfmc_feeds_api_35_live</Value>
+         <Value>icemdfmc_feeds_api_35_snap</Value>
+         <Value>icemdfmc_feeds_api_endex_fod_live</Value>
+         <Value>icemdfmc_feeds_api_endex_fod_snap</Value>
+         <Value>icemdfmc_feeds_api_endex_top5_live</Value>
+         <Value>icemdfmc_feeds_api_endex_top5_snap</Value>
+         <Value>icemdfmc_feeds_api_endex_options_live</Value>
+         <Value>icemdfmc_feeds_api_endex_options_snap</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>icemdfmc_perftest</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tcp_feed</Value>
+         <Value>icemdfmc_feeds_perf_01_live</Value>
+         <Value>icemdfmc_feeds_perf_01_snap</Value>
+         <Value>icemdfmc_feeds_perf_02_live</Value>
+         <Value>icemdfmc_feeds_perf_02_snap</Value>
+         <Value>icemdfmc_feeds_perf_03_live</Value>
+         <Value>icemdfmc_feeds_perf_03_snap</Value>
+         <Value>icemdfmc_feeds_perf_04_live</Value>
+         <Value>icemdfmc_feeds_perf_04_snap</Value>
+         <Value>icemdfmc_feeds_perf_05_live</Value>
+         <Value>icemdfmc_feeds_perf_05_snap</Value>
+         <Value>icemdfmc_feeds_perf_06_live</Value>
+         <Value>icemdfmc_feeds_perf_06_snap</Value>
+         <Value>icemdfmc_feeds_perf_07_live</Value>
+         <Value>icemdfmc_feeds_perf_07_snap</Value>
+         <Value>icemdfmc_feeds_perf_08_live</Value>
+         <Value>icemdfmc_feeds_perf_08_snap</Value>
+         <Value>icemdfmc_feeds_perf_09_live</Value>
+         <Value>icemdfmc_feeds_perf_09_snap</Value>
+         <Value>icemdfmc_feeds_perf_10_live</Value>
+         <Value>icemdfmc_feeds_perf_10_snap</Value>
+         <Value>icemdfmc_feeds_perf_11_live</Value>
+         <Value>icemdfmc_feeds_perf_11_snap</Value>
+         <Value>icemdfmc_feeds_perf_12_live</Value>
+         <Value>icemdfmc_feeds_perf_12_snap</Value>
+         <Value>icemdfmc_feeds_perf_13_live</Value>
+         <Value>icemdfmc_feeds_perf_13_snap</Value>
+         <Value>icemdfmc_feeds_perf_14_live</Value>
+         <Value>icemdfmc_feeds_perf_14_snap</Value>
+         <Value>icemdfmc_feeds_perf_15_live</Value>
+         <Value>icemdfmc_feeds_perf_15_snap</Value>
+         <Value>icemdfmc_feeds_perf_16_live</Value>
+         <Value>icemdfmc_feeds_perf_16_snap</Value>
+         <Value>icemdfmc_feeds_perf_17_live</Value>
+         <Value>icemdfmc_feeds_perf_17_snap</Value>
+         <Value>icemdfmc_feeds_perf_18_live</Value>
+         <Value>icemdfmc_feeds_perf_18_snap</Value>
+         <Value>icemdfmc_feeds_perf_19_live</Value>
+         <Value>icemdfmc_feeds_perf_19_snap</Value>
+         <Value>icemdfmc_feeds_perf_20_live</Value>
+         <Value>icemdfmc_feeds_perf_20_snap</Value>
+         <Value>icemdfmc_feeds_perf_21_live</Value>
+         <Value>icemdfmc_feeds_perf_21_snap</Value>
+         <Value>icemdfmc_feeds_perf_22_live</Value>
+         <Value>icemdfmc_feeds_perf_22_snap</Value>
+         <Value>icemdfmc_feeds_perf_23_live</Value>
+         <Value>icemdfmc_feeds_perf_23_snap</Value>
+         <Value>icemdfmc_feeds_perf_24_live</Value>
+         <Value>icemdfmc_feeds_perf_24_snap</Value>
+         <Value>icemdfmc_feeds_perf_25_live</Value>
+         <Value>icemdfmc_feeds_perf_25_snap</Value>
+         <Value>icemdfmc_feeds_perf_26_live</Value>
+         <Value>icemdfmc_feeds_perf_26_snap</Value>
+         <Value>icemdfmc_feeds_perf_27_live</Value>
+         <Value>icemdfmc_feeds_perf_27_snap</Value>
+         <Value>icemdfmc_feeds_perf_28_live</Value>
+         <Value>icemdfmc_feeds_perf_28_snap</Value>
+         <Value>icemdfmc_feeds_perf_29_live</Value>
+         <Value>icemdfmc_feeds_perf_29_snap</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>tcp_feed</Name>
+      <Parameter>
+         <Name>UseLineFilter</Name>
+         <Value>false</Value>
+         <Comment>This prevents LineFilter from being initialized on this subfeed</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>basic</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpUseLineDataBlock</Name>
+         <Value>true</Value>
+         <Comment>This is necessary to be able to extract the playback</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>12.129.93.133</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_agri_fod_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.0/20000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.0</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_agri_fod_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.1/20001/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.1</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_agri_top5_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.2/20002</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.2</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_agri_top5_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.3/20003/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.3</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_finc_fod_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.4/20004</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.4</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_finc_fod_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.5/20005/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.5</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_finc_top5_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.6/20006</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.6</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_finc_top5_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.7/20007/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.7</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_eu_oil_fod_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.8/20008</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.8</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_eu_oil_fod_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.9/20009/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.9</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_eu_oil_top5_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.10/20010</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.10</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_eu_oil_top5_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.11/20011/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.11</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_eu_n_oil_fod_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.12/20012</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.12</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_eu_n_oil_fod_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.13/20013/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.13</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_eu_n_oil_top5_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.14/20014</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.14</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_eu_n_oil_top5_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.15/20015/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.15</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_otc_fod_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.16/20016</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.16</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_otc_fod_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.17/20017/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.17</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_otc_top5_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.18/20018</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.18</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_otc_top5_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.19/20019/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.19</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_ca_fod_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.20/20020</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.20</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_ca_fod_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.21/20021/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.21</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_ca_top5_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.22/20022</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.22</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_ca_top5_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.23/20023/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.23</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ccx_fut_fod_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.24/20024</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.24</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ccx_fut_fod_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.25/20025/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.25</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ccx_fut_top5_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.26/20026</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.26</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ccx_fut_top5_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.27/20027/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.27</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_ice_eu_non_oil_fut_fod_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.28/20028</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.28</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_ice_eu_non_oil_fut_fod_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.29/20029/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.29</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_eu_oil_fut_top5_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.30/20030</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.30</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_eu_oil_fut_top5_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.31/20031/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.31</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_ice_otc_fod_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.32/20032</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.32</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_ice_otc_fod_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.33/20033/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.33</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_ice_otc_top5_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.34/20034</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.34</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_ice_otc_top5_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.35/20035/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.35</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_ice_fut_us_agri_fod_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.36/20036</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.36</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_ice_fut_us_agri_fod_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.37/20037/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.37</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_ice_fut_us_agri_top5_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.38/20038</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.38</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_ice_fut_us_agri_top5_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.39/20039/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.39</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_agri_options_tob_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.42/20042</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.42</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_agri_options_tob_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.43/20043/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.43</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_finc_options_tob_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.44/20044</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.44</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_finc_options_tob_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.45/20045/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.45</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_eu_options_tob_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.40/20040</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.40</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_eu_options_tob_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.41/20041/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.41</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_can_options_tob_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.46/20046</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.46</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_can_options_tob_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.47/20047/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.47</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_endex_options_tob_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.104/20104</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.104</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_endex_options_tob_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.105/20105/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.105</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_brent_fod_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.52/20052</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.52</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_brent_fod_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.53/20053/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.53</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_wti_fod_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.56/20056</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.56</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_wti_fod_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.57/20057/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.57</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_eu_oil_others_fod_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.60/20060</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.60</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_eu_oil_others_fod_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.61/20061/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.61</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_brent_fut_fod_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.64/20064</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.64</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_brent_fut_fod_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.65/20065/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.65</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_wti_fut_fod_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.68/20068</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.68</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_wti_fut_fod_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.69/20069/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.69</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_eu_oil_others_fut_fod_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.72/20072</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.72</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_eu_oil_others_fut_fod_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.73/20073/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.73</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_endex_fod_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.100/20100</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.100</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_endex_fod_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.101/20101/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.101</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_brent_top5_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.54/20054</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.54</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_brent_top5_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.55/20055/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.55</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_wti_top5_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.58/20058</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.58</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_wti_top5_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.59/20059/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.59</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_eu_oil_others_top5_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.62/20062</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.62</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_fut_eu_oil_others_top5_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.63/20063/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.63</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_brent_fut_top5_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.66/20066</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.66</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_brent_fut_top5_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.67/20067/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.67</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_wti_fut_top5_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.70/20070</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.70</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_wti_fut_top5_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.71/20071/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.71</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_eu_oil_others_fut_top5_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.74/20074</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.74</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>full_impl_eu_oil_others_fut_top5_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.75/20075/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.75</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_endex_top5_live</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.102/20102</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.102</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ice_endex_top5_snap</Name>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.103/20103/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.103</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_agri_fod_live</Name>
+      <Comment>ICE Liffe Agriculture FOD Live</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.138/20138</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.138/20138</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_agri_fod_snap</Name>
+      <Comment>ICE Liffe Agriculture FOD Snapshots</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.139/20139/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.139/20139</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_agri_top5_live</Name>
+      <Comment>ICE Liffe Agriculture Top5 Live</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.140/20140</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.140/20140</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_agri_top5_snap</Name>
+      <Comment>ICE Liffe Agriculture Top5 Snapshots</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.141/20141/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.141/20141</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_gcf_fod_live</Name>
+      <Comment>ICE Liffe GCF and Eurodollar FOD Live</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.142/20142</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.142/20142</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_gcf_fod_snap</Name>
+      <Comment>ICE Liffe GCF and Eurodollar FOD Snapshots</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.143/20143/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.143/20143</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_gcf_top5_live</Name>
+      <Comment>ICE Liffe GCF and Eurodollar Top5 Live</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.144/20144</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.144/20144</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_gcf_top5_snap</Name>
+      <Comment>ICE Liffe GCF and Eurodollar Top5 Snapshots</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.145/20145/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.145/20145</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_metals_fod_live</Name>
+      <Comment>ICE Liffe Metals FOD Live</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.118/20118</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.118/20118</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_metals_fod_snap</Name>
+      <Comment>ICE Liffe Metals FOD Snapshots</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.119/20119/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.119/20119</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_metals_top5_live</Name>
+      <Comment>ICE Liffe Metals Top5 Live</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.128/20128</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.128/20128</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_metals_top5_snap</Name>
+      <Comment>ICE Liffe Metals Top5 Snapshots</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.129/20129/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.129/20129</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_indices_fod_live</Name>
+      <Comment>ICE Liffe Equity Indices FOD Live</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.122/20122</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.122/20122</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_indices_fod_snap</Name>
+      <Comment>ICE Liffe Equity Indices FOD Snapshots</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.123/20123/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.123/20123</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_indices_top5_live</Name>
+      <Comment>ICE Liffe Equity Indices Top5 Live</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.132/20132</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.132/20132</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_indices_top5_snap</Name>
+      <Comment>ICE Liffe Equity Indices Top5 Snapshots</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.133/20133/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.133/20133</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>full_impl_ice_liffe_agri_fod_live</Name>
+      <Comment>ICE Liffe Agriculture FOD Full Implied Live</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.146/20146</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.146/20146</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>full_impl_ice_liffe_agri_fod_snap</Name>
+      <Comment>ICE Liffe Agriculture FOD Full Implied Snapshots</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.147/20147/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.147/20147</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>full_impl_ice_liffe_agri_top5_live</Name>
+      <Comment>ICE Liffe Agriculture Top5 Live</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.140/20140</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.140/20140</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>full_impl_ice_liffe_agri_top5_snap</Name>
+      <Comment>ICE Liffe Agriculture Top5 Snapshots</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.141/20141/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.141/20141</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>full_impl_ice_liffe_gcf_fod_live</Name>
+      <Comment>ICE Liffe GCF and Eurodollar FOD Full Implied Live</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.150/20150</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.150/20150</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>full_impl_ice_liffe_gcf_fod_snap</Name>
+      <Comment>ICE Liffe GCF and Eurodollar FOD Full Implied Snapshots</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.151/20151/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.151/20151</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>full_impl_ice_liffe_gcf_top5_live</Name>
+      <Comment>ICE Liffe GCF and Eurodollar Top5 Live</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.144/20144</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.144/20144</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>full_impl_ice_liffe_gcf_top5_snap</Name>
+      <Comment>ICE Liffe GCF and Eurodollar Top5 Snapshots</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.145/20145/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.145/20145</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>full_impl_ice_liffe_metals_fod_live</Name>
+      <Comment>ICE Liffe Metals FOD Full Implied Live</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.126/20126</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.126/20126</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>full_impl_ice_liffe_metals_fod_snap</Name>
+      <Comment>ICE Liffe Metals FOD Full Implied Snapshots</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.127/20127/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.127/20127</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>full_impl_ice_liffe_metals_top5_live</Name>
+      <Comment>ICE Liffe Metals Top5 Live</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.128/20128</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.128/20128</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>full_impl_ice_liffe_metals_top5_snap</Name>
+      <Comment>ICE Liffe Metals Top5 Snapshots</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.129/20129/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.129/20129</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>full_impl_ice_liffe_indices_fod_live</Name>
+      <Comment>ICE Liffe Equity Indices FOD Full Implied Live</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.130/20130</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.130/20130</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>full_impl_ice_liffe_indices_fod_snap</Name>
+      <Comment>ICE Liffe Equity Indices FOD Full Implied Snapshots</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.131/20131/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.131/20131</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>full_impl_ice_liffe_indices_top5_live</Name>
+      <Comment>ICE Liffe Equity Indices Top5 Live</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.132/20132</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.132/20132</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>full_impl_ice_liffe_indices_top5_snap</Name>
+      <Comment>ICE Liffe Equity Indices Top5 Snapshots</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.133/20133/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.133/20133</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_us_options_top10_live</Name>
+      <Comment>ICE Liffe US Options Top 10 Live</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.134/20134</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.134/20134</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_us_options_top10_snap</Name>
+      <Comment>ICE Liffe US Options Top 10 Snapshots</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.135/20135/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.135/20135</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_us_options_tob_live</Name>
+      <Comment>ICE Liffe US Options Top of Book Live</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.136/20136</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.136/20136</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ice_liffe_us_options_tob_snap</Name>
+      <Comment>ICE Liffe US Options Top of Book Snapshots</Comment>
+      <UseParameterGroup name="IcemdfmcLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.156.208.137/20137/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.156.208.137/20137</Value>
+      </Parameter>
+   </Feed>
+
+   <IncludeFile>icemdfmc_trade_exec_venue_mapping.xml</IncludeFile>
+   <IncludeFile>icemdfmc_feeds_api.xml</IncludeFile>
+   <IncludeFile>icemdfmc_feeds_perf.xml</IncludeFile>
+   <IncludeFile>icemdfmc_product_mapping.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+   
+   <!-- Site specific includes -->
+   <IncludeFile>nasdaqlevel2mc_tport.xml</IncludeFile>
+   <IncludeFile>nasdaqlevel2mc_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>NASDAQL2</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <!-- <Value>16777216</Value> -->
+      <Value>67108864</Value>
+   </Parameter>
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+ 
+   <DefineParameterGroup>
+      <Name>NasdaqL2MulticastConfig</Name>
+      <Comment>Common Multicast-related configuration information.</Comment>
+      <Parameter><!-- EDCP-5601 -->
+         <Name>MulticastProtocol</Name>
+         <Value>moldudp64</Value>
+      </Parameter>
+      <Parameter><!-- EDCP-5601 -->
+         <Name>NasdaqFeedFormat</Name>
+         <Value>nl2</Value>
+         <Comment>Please do not change this without consulting Wombat Support</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>MoldUdp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterCheckEveryMessageInBlock</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SleepAtEndOfTransmission</Name>
+         <Value>false</Value>
+         <Comment>The TotalView Feed does not send overnight test data</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>1000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>1</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <Parameter>
+      <Name>NasdaqQuoteResumeChangesStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>NativeTimeZone</Name>
+      <Value>US/Eastern</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FeedVersion</Name>
+      <Value>2.0</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbolPrefixTopOfBook</Name>
+      <Value/>
+   </Parameter>
+
+   <Parameter>
+      <Name>SymbolSuffixTopOfBook</Name>
+      <Value>.BBO</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookDecimals</Name>
+      <Value>4</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishSummaryOrderBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>comstock2streetMap</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>NasdaqQuoteResumeChangesStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <!-- Publish the Short Sale indicator on the .Q participant - SFD-602 / EDCP-2041 -->
+   <Parameter>
+      <Name>NasdaqPublishRegShoOnPart</Name>
+      <Value>true</Value>
+   </Parameter>
+   <!-- END -->
+    
+   <Parameter>
+      <Name>NasdaqLevel2ProductNameOrderBook</Name>
+      <Value>NasdaqL2OrderBook</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqLevel2ProductNameQuote</Name>
+      <Value>ProductDisabled</Value>
+   </Parameter>
+    
+   <!--Parameter>
+      <Name>NasdaqSingleBookProductNameTop</Name>
+      <Value>NasdaqL2Quote</Value>
+   </Parameter- replaced by NasdaqTvbinProductNameTop -->
+
+   <Parameter>
+      <Name>NasdaqTvbinProductNameTop</Name>
+      <Value>NasdaqL2Quote</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsOrder</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsChain</Value>
+      <Value>FieldAttrsNasdaq</Value><!-- EDCP-5601 -->
+      <Value>FieldAttrsReferential</Value><!-- EDCP-5601 -->
+   </Parameter>
+    
+   <Feed>
+      <Name>nasdaqlevel2mc</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>nasdaql2_ae</Value>
+         <Value>nasdaql2_fn</Value>
+         <Value>nasdaql2_oz</Value>
+      </Parameter>
+      <UseParameterGroup name="NasdaqL2MulticastConfig"/>
+   </Feed>
+    
+   <Feed>
+      <Name>nasdaqlevel2mc_ae</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-33</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <!--Value>default1/233.54.12.160/26481</Value>
+         <Value>default2/233.54.12.60/26480</Value - EDCP-5601 nasdaqLevel2-->
+         <Value>default1/233.54.12.242/26480</Value>
+         <!--Value>default2/233.86.230.242/26481</Value Decom EDCP-7256 DR Data Center Migration to Chicago -->
+         <Value>default2/233.187.20.2/18004</Value><!-- EDCP-7256 DR Data Center Migration to Chicago -->
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <!--Value>233.54.12.238</Value>
+         <Value>233.54.12.30</Value - EDCP-5601 nasdaqLevel-->
+         <Value>233.54.12.242</Value>
+         <!--Value>233.86.230.242</Value Decom EDCP-7256 DR Data Center Migration to Chicago -->
+         <Value>233.187.20.2</Value><!-- EDCP-7256 DR Data Center Migration to Chicago -->
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/nasdaqlevel2mc_ae.orderbook.sym</Value>
+      </Parameter>
+      <UseParameterGroup name="NasdaqL2MulticastConfig"/>
+   </Feed>
+    
+   <Feed>
+      <Name>nasdaqlevel2mc_fn</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector1NSD1"/>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-33</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <!--Value>default1/233.54.12.161/26483</Value>
+         <Value>default2/233.54.12.61/26482</Value - EDCP-5601 nasdaqLevel-->
+         <Value>default1/233.54.12.243/26482</Value>
+         <!--Value>default2/233.86.230.243/26483</Value Decom EDCP-7256 DR Data Center Migration to Chicago -->
+         <Value>default2/233.187.20.2/18005</Value><!-- EDCP-7256 DR Data Center Migration to Chicago -->
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <!--Value>233.54.12.239</Value>
+         <Value>233.54.12.31</Value - EDCP-5601 nasdaqLevel-->
+         <Value>233.54.12.243</Value>
+         <!--Value>233.86.230.243</Value Decom EDCP-7256 DR Data Center Migration to Chicago -->
+         <Value>233.187.20.2</Value><!-- EDCP-7256 DR Data Center Migration to Chicago -->
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/nasdaqlevel2mc_fn.orderbook.sym</Value>
+      </Parameter>
+      <UseParameterGroup name="NasdaqL2MulticastConfig"/>
+   </Feed>
+    
+   <Feed>
+      <Name>nasdaqlevel2mc_oz</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector2NSD1"/>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-33</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <!--Value>default1/233.54.12.162/26485</Value>
+         <Value>default2/233.54.12.62/26484</Value - EDCP-5601 nasdaqLevel-->
+         <Value>default1/233.54.12.244/26484</Value>
+         <!--Value>default2/233.86.230.244/26485</Value Decom EDCP-7256 DR Data Center Migration to Chicago -->
+         <Value>default2/233.187.20.2/18006</Value><!-- EDCP-7256 DR Data Center Migration to Chicago -->
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <!--Value>233.54.12.240</Value>
+         <Value>233.54.12.32</Value - EDCP-5601 nasdaqLevel-->
+         <Value>233.54.12.244</Value>
+         <!--Value>233.86.230.244</Value Decom EDCP-7256 DR Data Center Migration to Chicago -->
+         <Value>233.187.20.2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/nasdaqlevel2mc_oz.orderbook.sym</Value>
+      </Parameter>
+      <UseParameterGroup name="NasdaqL2MulticastConfig"/>
+   </Feed>
+
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

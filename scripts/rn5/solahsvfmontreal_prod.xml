@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+<!-- SFDCR-1616 Start -->
+
+    <Feed>
+        <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+        <Name>solahsvfmontreal_prod_futL1</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+        <Comment>Best limits, including trades</Comment>
+            <Value>solahsvfmontreal_prod_Futures_L1</Value>
+            <Value>solahsvfmontreal_prod_retrans_futL1</Value>
+        </Parameter>            
+        <Parameter>
+           <Name>RecordSymbolFile</Name>
+           <Value>solahsvfmontreal_prod_futL1.sym</Value>
+        </Parameter>
+        <Parameter>
+           <Name>SolaPublishInstrumentLevelSecurityUpdates</Name>
+           <Value>true</Value>
+        </Parameter>
+<pny2sffhr06b>
+        <Parameter>
+           <Name>ExtractFile</Name>
+           <Value>/tmp/solahsvfmontreal_prod_futL1.%Y%m%d%.gz</Value>
+        </Parameter>
+</pny2sffhr06b>
+    </Feed>
+
+    <Feed>
+        <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+        <Name>solahsvfmontreal_prod_futL2</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+        <Comment>Best limits, including trades</Comment>
+            <Value>solahsvfmontreal_prod_Futures_L2</Value>
+            <Value>solahsvfmontreal_prod_retrans_futL2</Value>
+        </Parameter>            
+        <Parameter>
+           <Name>RecordSymbolFile</Name>
+           <Value>solahsvfmontreal_prod_futL2.sym</Value>
+        </Parameter>        
+        <Parameter>
+           <Name>OrderBookSymbolFile</Name>
+           <Value>solahsvfmontreal_prod_futL2.orderbook.sym</Value>
+        </Parameter>
+        <Parameter>
+           <Name>SolaPublishInstrumentLevelSecurityUpdates</Name>
+           <Value>true</Value>
+        </Parameter>
+<pny2sffhr03b>
+        <Parameter>
+           <Name>ExtractFile</Name>
+           <Value>/tmp/solahsvfmontreal_prod_futL2.%Y%m%d%.gz</Value>
+        </Parameter>
+</pny2sffhr03b>
+    </Feed>
+
+    <Feed>
+        <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+        <Name>solahsvfmontreal_prod_optL1</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+        <Comment>Full Order depth, including trades</Comment>
+            <Value>solahsvfmontreal_prod_Options_L1</Value>
+            <Value>solahsvfmontreal_prod_retrans_optL1</Value>
+        </Parameter>           
+        <Parameter>
+           <Name>RecordSymbolFile</Name>
+           <Value>solahsvfmontreal_prod_optL1.sym</Value>
+        </Parameter>
+        <Parameter>
+           <Name>SolaPublishInstrumentLevelSecurityUpdates</Name>
+           <Value>true</Value>
+        </Parameter>
+<pny2sffhr06b>
+        <Parameter>
+           <Name>ExtractFile</Name>
+           <Value>/tmp/solahsvfmontreal_prod_optL1.%Y%m%d%.gz</Value>
+        </Parameter>
+</pny2sffhr06b>
+    </Feed>
+
+    <Feed>
+        <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+        <Name>solahsvfmontreal_prod_optL2</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+        <Comment>Full Order depth, including trades</Comment>
+            <Value>solahsvfmontreal_prod_Options_L2</Value>
+            <Value>solahsvfmontreal_prod_retrans_optL2</Value>
+        </Parameter>           
+        <Parameter>
+           <Name>RecordSymbolFile</Name>
+           <Value>solahsvfmontreal_prod_optL2.sym</Value>
+        </Parameter>
+        <Parameter>
+           <Name>OrderBookSymbolFile</Name>
+           <Value>solahsvfmontreal_prod_optL2.orderbook.sym</Value>
+        </Parameter>
+        <Parameter>
+           <Name>SolaPublishInstrumentLevelSecurityUpdates</Name>
+           <Value>true</Value>
+        </Parameter>
+<pny2sffhr03b>
+        <Parameter>
+           <Name>ExtractFile</Name>
+           <Value>/tmp/solahsvfmontreal_prod_optL2.%Y%m%d%.gz</Value>
+        </Parameter>
+</pny2sffhr03b>
+    </Feed>
+
+    <Feed>
+        <Name>solahsvfmontreal_prod_retrans_futL1</Name>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>vela123</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>vela123</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>Prod_Retrans</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>198.235.29.183</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>28340</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>198.235.29.183/28340</Value>
+        </Parameter>
+        <UseParameterGroup name="SolaHsvfMontrealRetransParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>solahsvfmontreal_prod_retrans_optL1</Name>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>vela124</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>vela124</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>Prod_Retrans</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>198.235.29.183</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>28340</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>198.235.29.183/28340</Value>
+        </Parameter>
+        <UseParameterGroup name="SolaHsvfMontrealRetransParameter"/>
+    </Feed>
+    <Feed>
+        <Name>solahsvfmontreal_prod_retrans_futL2</Name>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>vela125</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>vela125</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>Prod_Retrans</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>198.235.29.193</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>28340</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>198.235.29.193/28340</Value>
+        </Parameter>
+        <UseParameterGroup name="SolaHsvfMontrealRetransParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>solahsvfmontreal_prod_retrans_optL2</Name>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>vela126</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>vela126</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>Prod_Retrans</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>198.235.29.193</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>28340</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>198.235.29.193/28340</Value>
+        </Parameter>
+        <UseParameterGroup name="SolaHsvfMontrealRetransParameter"/>
+    </Feed>
+<!-- SFDCR-1616 End -->
+
+    <Feed>
+        <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+        <Name>solahsvfmontreal_prod</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Comment>Best limits, including trades</Comment>
+            <Value>solahsvfmontreal_prod_Futures_L1</Value>
+            <Value>solahsvfmontreal_prod_Futures_L2</Value>
+            <Comment>Full Order depth, including trades</Comment>
+            <Value>solahsvfmontreal_prod_Options_L1</Value>
+            <Value>solahsvfmontreal_prod_Options_L2</Value>
+            <Value>solahsvfmontreal_prod_retrans</Value>
+<!-- SFDCR-1373
+            <Value>solahsvfmontreal_prod_F1_retrans</Value>
+            <Value>solahsvfmontreal_prod_F2_retrans</Value>
+            <Value>solahsvfmontreal_prod_O1_retrans</Value>
+            <Value>solahsvfmontreal_prod_O2_retrans</Value>
+-->
+
+        </Parameter>            
+        <Parameter>
+           <Name>RecordSymbolFile</Name>
+           <Value>solahsvfmontreal_prod.sym</Value>
+        </Parameter>
+        <Parameter>
+           <Name>OrderBookSymbolFile</Name>
+           <Value>solahsvfmontreal_prod.orderbook.sym</Value>
+        </Parameter>
+        <Parameter>
+           <Name>ExtractFile</Name>
+           <Value>/opt/wombat/log/solahsvfmontreal_prod.play.%Y%m%d%H%M%S.gz</Value>
+        </Parameter>           
+        <Parameter>
+           <Name>SolaPublishInstrumentLevelSecurityUpdates</Name>
+           <Value>true</Value>
+        </Parameter>
+    </Feed>
+<!-- SFDCR-1430 Start -->
+    <Feed>
+        <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+        <Name>solahsvfmontreal_prod_fut</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+        <Comment>Best limits, including trades</Comment>
+            <Value>solahsvfmontreal_prod_Futures_L1</Value>
+            <Value>solahsvfmontreal_prod_Futures_L2</Value>
+            <Value>solahsvfmontreal_prod_retrans</Value>
+        </Parameter>
+        <Parameter>
+           <Name>RecordSymbolFile</Name>
+           <Value>solahsvfmontreal_prod_fut.sym</Value>
+        </Parameter>
+        <Parameter>
+           <Name>OrderBookSymbolFile</Name>
+           <Value>solahsvfmontreal_prod_fut.orderbook.sym</Value>
+        </Parameter>
+<pny2sffhr06b>
+        <Parameter>
+           <Name>ExtractFile</Name>
+           <Value>/opt/wombat/log/solahsvfmontreal_prod_fut.play.%Y%m%d%H%M%S.gz</Value>
+        </Parameter>
+</pny2sffhr06b>
+        <Parameter>
+           <Name>SolaPublishInstrumentLevelSecurityUpdates</Name>
+           <Value>true</Value>
+        </Parameter>
+        <Parameter>
+           <Name>FtGroupName</Name>
+           <Value>FT_solahsvfmontreal_prod_fut</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+        <Name>solahsvfmontreal_prod_opt</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+        <Comment>Full Order depth, including trades</Comment>
+            <Value>solahsvfmontreal_prod_Options_L1</Value>
+            <Value>solahsvfmontreal_prod_Options_L2</Value>
+            <Value>solahsvfmontreal_prod_retrans</Value>
+        </Parameter>
+        <Parameter>
+           <Name>RecordSymbolFile</Name>
+           <Value>solahsvfmontreal_prod_opt.sym</Value>
+        </Parameter>
+        <Parameter>
+           <Name>OrderBookSymbolFile</Name>
+           <Value>solahsvfmontreal_prod_opt.orderbook.sym</Value>
+        </Parameter>
+<pny2sffhr06b>
+        <Parameter>
+           <Name>ExtractFile</Name>
+           <Value>/opt/wombat/log/solahsvfmontreal_prod_opt.play.%Y%m%d%H%M%S.gz</Value>
+        </Parameter>
+</pny2sffhr06b>
+        <Parameter>
+           <Name>SolaPublishInstrumentLevelSecurityUpdates</Name>
+           <Value>true</Value>
+        </Parameter>
+        <Parameter>
+           <Name>FtGroupName</Name>
+           <Value>FT_solahsvfmontreal_prod_opt</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>solahsvfmontreal_prod_retrans_fut</Name>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>vela123</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>vela123</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>Prod_Retrans</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>198.235.29.183</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>28340</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>198.235.29.183/28340</Value>
+        </Parameter>
+        <UseParameterGroup name="SolaHsvfMontrealRetransParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>solahsvfmontreal_prod_retrans</Name>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>vela256</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>vela456</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>Prod_Retrans</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>198.235.29.193</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>28340</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>198.235.29.183/28340</Value>
+        </Parameter>
+        <UseParameterGroup name="SolaHsvfMontrealRetransParameter"/>
+    </Feed>
+
+<!-- SFDCR-1430 End -->
+
+    <Feed>
+        <Name>solahsvfmontreal_prod_retrans</Name>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>vela123</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>vela123</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>Prod_Retrans</Value>
+        </Parameter>
+<pny2sffhr06a>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>198.235.29.183</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>198.235.29.183/28340</Value>
+        </Parameter>
+</pny2sffhr06a>
+<pny2sffhr06b>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>198.235.29.193</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>198.235.29.193/28340</Value>
+        </Parameter>
+</pny2sffhr06b>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>28340</Value>
+        </Parameter>
+        <UseParameterGroup name="SolaHsvfMontrealRetransParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>solahsvfmontreal_prod_Futures_L1</Name>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>F1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RetransFeedId</Name>
+            <Value>Prod_Retrans</Value><!-- DFH-30146 -->
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.157.140.11/28395</Value>
+            <Value>default2/233.157.140.75/28395</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.157.140.11/28395</Value>
+            <Value>233.157.140.75/28395</Value>
+        </Parameter>
+        <UseParameterGroup name="SolaHsvfMontrealLiveParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>solahsvfmontreal_prod_Futures_L2</Name>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>F2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RetransFeedId</Name>
+            <Value>Prod_Retrans</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.157.140.12/28396</Value>
+            <Value>default2/233.157.140.76/28396</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.157.140.12/28236</Value>
+            <Value>233.157.140.76/28396</Value>
+        </Parameter>
+        <UseParameterGroup name="SolaHsvfMontrealLiveParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>solahsvfmontreal_prod_Options_L1</Name>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>O1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RetransFeedId</Name>
+            <Value>Prod_Retrans</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.157.140.13/28397</Value>
+            <Value>default2/233.157.140.77/28397</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.157.140.13/28397</Value>
+            <Value>233.157.140.77/28397</Value>
+        </Parameter>
+        <UseParameterGroup name="SolaHsvfMontrealLiveParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>solahsvfmontreal_prod_Options_L2</Name>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>O2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RetransFeedId</Name>
+            <Value>Prod_Retrans</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.157.140.14/28398</Value>
+            <Value>default2/233.157.140.78/28398</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.157.140.14/28398</Value>
+            <Value>233.157.140.78/28398</Value>
+        </Parameter>
+        <UseParameterGroup name="SolaHsvfMontrealLiveParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>solahsvfmontreal_prod_F1_retrans</Name>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>vela123</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>vela123</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>Prod_F1_Retrans</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>198.235.29.183</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>28340</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>198.235.29.183/28340</Value>
+        </Parameter>
+        <UseParameterGroup name="SolaHsvfMontrealRetransParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>solahsvfmontreal_prod_F2_retrans</Name>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>vela456</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>vela456</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>Prod_F2_Retrans</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>198.235.29.183</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>28340</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>198.235.29.183/28340</Value>
+        </Parameter>
+        <UseParameterGroup name="SolaHsvfMontrealRetransParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>solahsvfmontreal_prod_O1_retrans</Name>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>vela789</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>vela789</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>Prod_O1_Retrans</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>198.235.29.193</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>28340</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>198.235.29.193/28340</Value>
+        </Parameter>
+        <UseParameterGroup name="SolaHsvfMontrealRetransParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>solahsvfmontreal_prod_O2_retrans</Name>
+        <Parameter>
+            <Name>LoginUsername</Name>
+            <Value>vela012</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LoginPassword</Name>
+            <Value>vela012</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>Prod_O2_Retrans</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>198.235.29.193</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>28340</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>198.235.29.193/28340</Value>
+        </Parameter>
+        <UseParameterGroup name="SolaHsvfMontrealRetransParameter"/>
+    </Feed>
+
+</config>

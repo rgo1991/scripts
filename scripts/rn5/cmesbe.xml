@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for the CMESBEFIX feed handler. See Wombat Technologies Market Data Platform Feed Handler Suite – Common Docs Set for more information.-->
+    
+   <!-- Site specific includes -->
+   <IncludeFile>cmestream_tport.xml</IncludeFile>
+   <IncludeFile>cmestream_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+<!-- SFD-1592 Start -->
+
+   <Parameter>
+      <Name>StartOfDayRollIndex</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>CMEMDPDOW</Value>
+   </Parameter>
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+   <Parameter>
+      <Name>LoadAliasSymbolFile</Name>
+      <Value>cmestream.alias</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishAliasRecords</Name>
+      <Value>true</Value>
+   </Parameter>
+
+<!-- SFDCR-499: START: Publish ALL incoming messages -->
+    <Parameter>
+      <Name>MamaPublisherType</Name>
+      <Value>broadcast</Value>
+    </Parameter>
+<!-- SFDCR-499: STOP -->
+
+   <Parameter>
+      <Name>HandleSymbolAlias</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>RecordPublisherUseSentinel</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>PublishSymbolAnnounceRecords</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>ApplyAliasOnSymbolAnnounce</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>DefaultTimeZone</Name>
+      <Value>UTC</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>NativeTimeZone</Name>
+      <Value>UTC</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>RecordHandlerIndexUseIssueSymbol</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>RecordHandlerIndexCalculateHighLow</Name>
+      <Value>false</Value>
+      <Comment>Uses exchange provided values.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>CmemdpFixTemplateFile</Name>
+      <Value>cmestream_templates.xml</Value>
+   </Parameter>
+
+<!-- SFD-1592 End -->    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MaxFieldLen</Name>
+      <Value>1000</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OrderBookUpdateImpliesNormalStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>HandleSymbolAdmin</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookDecimals</Name>
+      <Value>7</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OrderBookCheckDuplicateEntries</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineControllerUseOverridesExisting</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoAddPrefixOnSecurityStatusOrig</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CmesbefixUseTotalVolumeFromExchange</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CmesbefixBatchSecurityStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CmesbefixBatchSecurityStatusRate</Name>
+      <Value>2000</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CmesbefixBatchSecurityStatusInterval</Name>
+      <Value>5000</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>cmesbe_format</Name>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>cmesbefix</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>cmesbe_live</Name>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>2000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransMaxGapSize</Name>
+         <Value>2000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>1.0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>cmesbe_reference</Name>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseLineFilter</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MulticastConnectOnInit</Name>
+         <Value>true</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>cmesbe_refresh</Name>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MulticastConnectOnInit</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseLineFilter</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>cmesbe_retrans</Name>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginTimeoutInterval</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MessageRecoveryFile</Name>
+         <Value/>
+      </Parameter>
+      <Parameter>
+         <Name>TcpConnectDelay</Name>
+         <Value>100</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpConnectDelayMax</Name>
+         <Value>100</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpConnectOnStartUp</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseLineFilter</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsTradeWeb</Value>
+      <Value>FieldAttrsFuture</Value>
+      <Value>FieldAttrsOption</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsItc</Value>
+      <Value>FieldAttrsCme</Value>
+      <Value>FieldAttrsNews</Value>
+      <Value>FieldAttrsIndex</Value>
+      <Value>FieldAttrsStrategy</Value>
+      <Value>FieldAttrsReferential</Value>
+      <Value>FieldAttrsFixedIncome</Value>
+      <Value>FieldAttrsTradeOptional</Value>
+      <Value>FieldAttrsBloomberg</Value>
+      <Value>FieldAttrsOrder</Value>      
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+   <IncludeFile>cmesbe_product_mapping.xml</IncludeFile>
+   <IncludeFile>cmesbe_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>cmesbe_nrcert_channels.xml</IncludeFile>
+   <IncludeFile>cmesbe_channels.xml</IncludeFile>
+   <IncludeFile>wombat_trade_exec_venue_mapping.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

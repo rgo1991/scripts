@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Site specific includes -->
+   <IncludeFile>cboeonetcp_tport.xml</IncludeFile>
+   <IncludeFile>cboeonetcp_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+
+<!-- ECC-272 Start -->
+   <DefineParameterGroup>
+      <Name>CboeOneTcpLoginUat</Name>
+      <Comment>Production connectivity</Comment>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>174.136.169.5</Value>
+         <Comment>IP assigned for each customer might differ; please contact the exchange</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>10201</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginUsername</Name>
+         <Value>WBAT</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginPassword</Name>
+         <Value>otc1wbat</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginSession</Name>
+         <Value>0001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>174.136.169.5/10201</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>CboeOneTcpLoginProdPri</Name>
+      <Comment>Production connectivity</Comment>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>174.136.169.5</Value>
+         <Comment>IP assigned for each customer might differ; please contact the exchange</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>10201</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginUsername</Name>
+         <Value>WBAT</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginPassword</Name>
+         <Value>otc2wbat</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginSession</Name>
+         <Value>0002</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>174.136.169.5/10201</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>CboeOneTcpLoginProdSec</Name>
+      <Comment>Production connectivity</Comment>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>174.136.169.5</Value>
+         <Comment>IP assigned for each customer might differ; please contact the exchange</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>10201</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginUsername</Name>
+         <Value>WBAT</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginPassword</Name>
+         <Value>otc3wbat</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginSession</Name>
+         <Value>0003</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>174.136.169.5/10201</Value>
+      </Parameter>
+   </DefineParameterGroup>
+<!-- ECC-272 End -->
+   <Parameter>
+      <Name>LoginResetTimeBegin</Name>
+      <Value>23:00:00</Value>
+   </Parameter>
+   <Parameter>
+      <Name>LoginResetTimeEnd</Name>
+      <Value>23:59:00</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LogVerbose</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>67108864</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>CBOEONE</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>cboeonetcp</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TcpSendHeartbeats</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TcpHeartbeatInterval</Name>
+      <Value>5</Value>
+   </Parameter>    
+
+   <Parameter>
+      <Name>TcpSendKeepAlive</Name>
+      <Value>true</Value>
+   </Parameter>
+<!-- DFH-30802 -->
+   <Parameter>
+      <Name>TcpMaxConnectAttempts</Name>
+      <Value>20</Value>
+   </Parameter>
+<!-- DFH-30802 -->
+   <Parameter>
+      <Name>LocalTcpIpAddress</Name>
+      <Value>eth4.401</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LocalTcpPort</Name>
+      <Value>12344</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LoginHeartbeatInterval</Name>
+      <Value>5</Value>
+      <Comment>In seconds</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LoginTimeoutInterval</Name>
+      <Value>0</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterCheckEveryMessageInBlock</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CboeonetcpProductName</Name>
+      <Value>CboeOneSummary</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CboeonetcpStoreTrades</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CboeonetcpIgnoreSIPVolumeStatusFlag</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordHandlerAlwaysAppendProductSuffix</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterGapLimitTime</Name>
+      <Value>0</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterGapLimitSize</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsTrade</Value>
+   </Parameter>
+
+   <Feed>
+     <Name>cboeonetcp</Name>
+      <Comment>Production connectivity</Comment>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+     <tny2sffhr08>
+      <UseParameterGroup name="CboeOneTcpLoginUat"/>
+     <Parameter>
+        <Name>ExtractFile</Name>
+        <Value>/opt/wombat/log/cboeonetcp.%Y%m%d.gz</Value>
+     </Parameter>
+     </tny2sffhr08>
+     <pny2sffhr03a>
+      <UseParameterGroup name="CboeOneTcpLoginProdPri"/>
+     </pny2sffhr03a>
+     <pny2sffhr03b>
+      <UseParameterGroup name="CboeOneTcpLoginProdSec"/>
+     </pny2sffhr03b>
+        <Parameter>
+            <Name>RecordSymbolFile</Name>
+            <Value>cboeonetcp.sym</Value>
+        </Parameter>
+      <!--Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>174.136.169.5</Value>
+         <Comment>IP assigned for each customer might differ; please contact the exchange</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>10201</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginUsername</Name>
+         <Value>WBAT</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginPassword</Name>
+         <Value>otc1wbat</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginSession</Name>
+         <Value>0001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>174.136.169.5/10201</Value>
+      </Parameter-->
+   </Feed>
+    
+   <Feed>
+      <Name>cboeonetcp_cert</Name>
+      <Comment>Certification connectivity</Comment>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>174.136.174.253</Value>
+         <Comment>IP assigned for each customer might differ; please contact the exchange</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>10201</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginUsername</Name>
+         <Value>WBAT</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginPassword</Name>
+         <Value>otc1wbat</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginSession</Name>
+         <Value>0001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>174.136.174.253/10201</Value>
+      </Parameter>
+   </Feed>
+
+   <IncludeFile>cboeonetcp_sec_status_mappings.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

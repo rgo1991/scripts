@@ -1,0 +1,854 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Site specific includes -->
+   <IncludeFile>utp_tport.xml</IncludeFile>
+   <IncludeFile>utp_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.superfeed.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <UseParameterGroup name="WHK_DEFAULT_TPORT"/>
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>NASDAQ</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <!-- <Value>16777216</Value> -->
+      <Value>67108864</Value>
+   </Parameter>
+
+<!-- SFDCR-966 - enable trade direction -->
+      <Parameter>
+         <Name>TradeCalculateTick</Name>
+         <Value>true</Value>
+      </Parameter>
+<!-- SFDCR-966 END -->
+
+ <!-- EDCP-5550 - When enabled a trade message with the trade condition of 9 will be published as a trade. When disabled a trade message with the trade condition of 9 will be published as an update.Default is false -->
+   <Parameter>
+      <Name>UtdfPublishCorrectedConsolidatedCloseAsTrade</Name>
+      <Value>true</Value>
+   </Parameter>
+   <!-- END -->
+<!-- EDCP 5684 - Added March 25, 2014 -->
+     <Parameter>
+         <Name>NormalizeSymbology</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SymbologyMapFuncName</Name>
+         <Value>dotReplacementMap</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SymbolMapDotReplacement</Name>
+         <Value>/</Value>
+      </Parameter>
+<!-- END -->
+
+<!-- 27-Jul-2015 SFDCR-954 - EDCP - 7134 (New Sale Condition) / EDCP - 6967 UTP Msg Header format -->
+      <Parameter>
+         <Name>NasdaqHandleContingentTrades</Name>
+         <Value>true</Value>
+      </Parameter>
+<!-- SFDCR-1566/LCAP-6 enable for CTA/UTP -->
+      <Parameter>
+         <Name>NasdaqUseParticipantTimestamp</Name>
+         <Value>true</Value>
+      </Parameter>
+<!-- END -->
+
+<!--- artifact48652- Added May 2, 2013 -->
+   <Parameter>
+      <Name>ExtendedDuplicateChecks</Name>
+      <Value>true</Value>
+   </Parameter>
+<!--- END -->
+
+   <!-- Correct wQuoteSize to match other feeds - Added Jan 12, 2009 -->
+   <Parameter>
+      <Name>QuoteSizeMultiplier</Name>
+      <Value>100</Value>
+   </Parameter>
+   <!-- END - Correct wQuoteSize to match other feeds -->
+
+   <!-- Publish calculated and exchange-sent TotalVolume on separate fields - SFDCR-101 -->
+   <Parameter>
+      <Name>PublishCloseVolumeUniquely</Name>
+      <Value>true</Value>
+   </Parameter>
+   <!-- End -->
+
+   <!-- Publish the Short Sale indicator on the .Q participant - SFD-602 / EDCP-2041 -->
+   <Parameter>
+      <Name>NasdaqPublishRegShoOnPart</Name>
+      <Value>true</Value>
+   </Parameter>
+   <!-- END -->
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+   <Parameter> 
+      <Name>NasdaqHandleEmergencySessionStatus</Name> 
+      <Value>true</Value> 
+   </Parameter> 
+
+   <Parameter> 
+      <Name>SessionStatusCreateField</Name> 
+      <Value>true</Value> 
+   </Parameter> 
+
+   <Parameter> 
+      <Name>CheckSecurityStatusModified</Name> 
+      <Value>true</Value> 
+   </Parameter> 
+
+   <Parameter> 
+      <Name>UtpMapBookConditionCodes</Name> 
+      <Value>true</Value> 
+   </Parameter> 
+
+   <Parameter> 
+      <Name>PublishSecurityStatusIndividual</Name> 
+      <Value>true</Value> 
+   </Parameter> 
+
+   <Parameter> 
+      <Name>NasdaqTradingActionOrigOnParticipants</Name> 
+      <Value>true</Value> 
+   </Parameter> 
+     
+   <Parameter> 
+      <Name>NasdaqTradingActionUpdatesSecurityStatusOnParticipants</Name> 
+      <Value>true</Value> 
+   </Parameter> 
+
+   <Parameter> 
+      <Name>UqdfSessionClosedQuoteQualifierNormal</Name> 
+      <Value>false</Value> 
+   </Parameter>
+
+   <Parameter>
+      <Name>GenerateGroupSymbol</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishGroupRecords</Name>
+      <Value>true</Value>
+   </Parameter>
+   
+   <Parameter>
+      <Name>IncludeGroupSymbol</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>RecordPublisherUseSentinel</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishIndividualRecords</Name>
+      <Value>true</Value>
+   </Parameter>
+   
+   <Parameter>
+      <Name>ParticipantIdMapFuncName</Name>
+      <Value>nasdaqPartIdMap</Value>
+      <Comment>Participant ID mapping function. 
+                  nasdaqPartIdMap is default.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OrderBookData</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishOrderBooks</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UqdfNormalQuoteChangesStatus</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UqdfOpeningQuoteChangesStatus</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UtdfSubMarketCenterIdAction</Name>
+      <Value>ignore</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqQuoteResumeChangesStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UqdfZeroQuoteChangesSecurityStatus</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UqdfClosedQuoteChangesSecurityStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UqdfPublishMarketMakerIds</Name>
+      <Comment>Use the bid and ask part ids in the exchange message Bbo appendage(s), when present, to set the bid and ask partId fields of the participant record.</Comment>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>HandleSessionStatus</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UtpSessionOpenMarketCenters</Name>
+      <Comment>List of UTP Market Centers from which Session Open Control Message should be processed. By default the FH will only process Session Close Control Messages from the Securities Information Processor (SIP) (market center code "E"). Add entries below to override the default market center selection if required.</Comment><!--Value>Q</Value-->
+   </Parameter>
+    
+   <Parameter>
+      <Name>UtpSessionCloseMarketCenters</Name>
+      <Comment>List of UTP Market Centers from which Session Close Control Message should be processed. By default the FH will only process Session Close Control Messages from the Securities Information Processor (SIP) (market center code "E"). Add entries below to override the default market center selection if required.</Comment><!--Value>Q</Value-->
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqEnhancedIpoHaltOpening</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishGeneralAdmin</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>GeneralAdminSymbol</Name>
+      <Value>NASDAQADMIN</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>NasdaqLineFormat</Name>
+      <Comment>Common line-related configuration information.  Some feeds override these.</Comment>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>block</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryOffset</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryControl</Name>
+         <Value>C</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeOffset</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumOffset</Name>
+         <Value>5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumLength</Name>
+         <Value>8</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeSeqNumReset</Name>
+         <Value>ILM</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeHeartbeat</Name>
+         <Value>T</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransOffset</Name>
+         <Value>3</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransLength</Name>
+         <Value>2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransOrig</Name>
+         <Value>O </Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransAll</Name>
+         <Value>V </Value>
+         <Comment>Internal; some feeds override</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransTest</Name>
+         <Value>A </Value>
+         <Comment>Internal (future). Test cycle transmission.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterCheckEveryMessageInBlock</Name>
+         <Value>true</Value>
+         <Comment>Set to true as workaround to Nasdaq feed bug.</Comment>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>UtpConfig</Name>
+      <Parameter>
+         <Name>NasdaqSipVersion</Name>
+         <Value>10.0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransAll</Name>
+         <Value>R </Value>
+      </Parameter>
+      <Parameter>
+         <Name>UtpParticipants</Name>
+         <Comment>List of all UTP Participants.</Comment>
+         <Value>Q</Value>
+         <Value>A</Value>
+         <Value>B</Value>
+         <Value>C</Value>
+         <Value>D</Value>
+         <Value>I</Value>
+         <Value>E</Value>
+         <Value>M</Value>
+         <Value>N</Value>
+         <Value>P</Value>
+         <Value>W</Value>
+         <Value>X</Value>
+         <Value>J</Value>
+         <Value>K</Value>
+         <Value>Y</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupSymbolAll</Name><!--Value>UTP</Value-->
+      </Parameter>
+      <Parameter>
+         <Name>NasdaqClearBooksOnWipeout</Name>
+         <Value>false</Value>
+         <Comment>UTP sends zero quotes for securities affected by a quote 
+                     wipeout and this allows us to remove the necessary price 
+                     levels. Books should not be cleared or marked stale.
+            </Comment>
+      </Parameter>
+      <Parameter>
+         <Name>FieldAttrs</Name>
+         <Value>FieldAttrsCommon</Value>
+         <Value>FieldAttrsQuote</Value>
+         <Value>FieldAttrsTrade</Value>
+         <Value>FieldAttrsChain</Value>
+         <Value>FieldAttrsOrderBookMsg</Value>
+         <Value>FieldAttrsOrderBookWombatMsg</Value>
+         <Value>FieldAttrsOrderListPart</Value>
+         <Value>FieldAttrsFundamental</Value>
+         <Value>FieldAttrsSecurityStatus</Value>
+         <Value>FieldAttrsStatus</Value>
+      </Parameter>
+      <UseParameterGroup name="NasdaqLineFormat"/>
+   </DefineParameterGroup>
+
+   <!-- 3-way split -->
+   <Feed>
+      <Name>utp_AaFd</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>uqdf_AaCd</Value>
+         <Value>uqdf_CeFd</Value>
+         <Value>utdf_AaCd</Value>
+         <Value>utdf_CeFd</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NASDAQOLD</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/utp_AaFd.orderbook.sym</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+   </Feed>
+    
+   <Feed>
+      <Name>utp_FePb</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>uqdf_FeLk</Value>
+         <Value>uqdf_LlPb</Value>
+         <Value>utdf_FeLk</Value>
+         <Value>utdf_LlPb</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NASDAQOLD</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/utp_FePb.orderbook.sym</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+   </Feed>
+    
+   <Feed>
+      <Name>utp_PcZz</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>uqdf_PcSp</Value>
+         <Value>uqdf_SqZz</Value>
+         <Value>utdf_PcSp</Value>
+         <Value>utdf_SqZz</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NASDAQOLD</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/utp_PcZz.orderbook.sym</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+   </Feed>
+   <!-- 3-way split -->
+   
+   <!-- 6-way split -->
+   <Feed>
+      <Name>utp_AaCd</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>uqdf_AaCd</Value>
+         <Value>utdf_AaCd</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/utp_AaCd.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>AA_CD_UTP_SECSTATUS</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <Feed>
+      <Name>utp_CeFd</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector1NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>uqdf_CeFd</Value>
+         <Value>utdf_CeFd</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/utp_CeFd.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>CE_FD_UTP_SECSTATUS</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <Feed>
+      <Name>utp_FeLk</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector2NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>uqdf_FeLk</Value>
+         <Value>utdf_FeLk</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/utp_FeLk.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>FE_LK_UTP_SECSTATUS</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <Feed>
+      <Name>utp_LlPb</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>uqdf_LlPb</Value>
+         <Value>utdf_LlPb</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/utp_LlPb.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>LL_PB_UTP_SECSTATUS</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <Feed>
+      <Name>utp_PcSp</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>uqdf_PcSp</Value>
+         <Value>utdf_PcSp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/utp_PcSp.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>PC_SP_UTP_SECSTATUS</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <Feed>
+      <Name>utp_SqZz</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector1NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>uqdf_SqZz</Value>
+         <Value>utdf_SqZz</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/utp_SqZz.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>SQ_ZZ_UTP_SECSTATUS</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+   <!-- END - 6-way split -->
+
+   <Feed>
+      <Name>utp_trades</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>utdf_AaCd</Value>
+         <Value>utdf_CeFd</Value>
+         <Value>utdf_FeLk</Value>
+         <Value>utdf_LlPb</Value>
+         <Value>utdf_PcSp</Value>
+         <Value>utdf_SqZz</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>TRADESUTP</Value>
+      </Parameter>
+      <!-- SuperTrade Derived Value Add Fields -->
+      <Parameter>
+         <Name>TradeCalculateNetChange</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TradeCalculatePctChange</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>TradeCalculateTick</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TradeCalculateBlocks</Name>
+         <Value>true</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>TradeCalculateVwap</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>TradeCalculateStdDev</Name>
+         <Value>true</Value>
+      </Parameter-->
+      <!-- SuperTrade Derived Value Add Fields -->
+      <UseParameterGroup name="UtpConfig"/>
+   </Feed>
+ 
+   <Feed>
+      <Name>uqdf_AaCd</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-47</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.17.48/55530</Value>
+         <Value>default2/224.0.17.49/55531</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.17.48</Value>
+         <Value>224.0.17.49</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>uqdf_CeFd</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-47</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.17.50/55532</Value>
+         <Value>default2/224.0.17.51/55533</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.17.50</Value>
+         <Value>224.0.17.51</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>uqdf_FeLk</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-47</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.17.52/55534</Value>
+         <Value>default2/224.0.17.53/55535</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.17.52</Value>
+         <Value>224.0.17.53</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>uqdf_LlPb</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-47</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.17.54/55536</Value>
+         <Value>default2/224.0.17.55/55537</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.17.54</Value>
+         <Value>224.0.17.55</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>uqdf_PcSp</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-47</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.17.56/55538</Value>
+         <Value>default2/224.0.17.57/55539</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.17.56</Value>
+         <Value>224.0.17.57</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>uqdf_SqZz</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-47</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.17.58/55540</Value>
+         <Value>default2/224.0.17.59/55541</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.17.58</Value>
+         <Value>224.0.17.59</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>utdf_AaCd</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-50</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.1.92/55542</Value>
+         <Value>default2/224.0.1.93/55543</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.1.92</Value>
+         <Value>224.0.1.93</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>utdf_CeFd</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-50</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.1.94/55544</Value>
+         <Value>default2/224.0.1.95/55545</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.1.94</Value>
+         <Value>224.0.1.95</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>utdf_FeLk</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-50</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.1.96/55546</Value>
+         <Value>default2/224.0.1.97/55547</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.1.96</Value>
+         <Value>224.0.1.97</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>utdf_LlPb</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-50</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.1.98/55548</Value>
+         <Value>default2/224.0.1.99/55549</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.1.98</Value>
+         <Value>224.0.1.99</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>utdf_PcSp</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-50</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.1.100/55550</Value>
+         <Value>default2/224.0.1.101/55551</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.1.100</Value>
+         <Value>224.0.1.101</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>utdf_SqZz</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-50</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.1.102/55552</Value>
+         <Value>default2/224.0.1.103/55553</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.1.102</Value>
+         <Value>224.0.1.103</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+   </Feed>
+
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

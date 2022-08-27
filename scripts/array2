@@ -1,0 +1,27 @@
+#!/bin/bash
+
+
+oIFS=$IFS
+
+#sets IFS to be new line
+IFS="
+"
+
+hosts=( `cat /etc/hosts` )
+for hostline in "${hosts[@]}";do
+	echo line: $hostline;done
+echo
+echo
+echo "${hosts[4]}"
+
+#always restore IFS
+
+IFS=$oIFS
+
+
+#populating an array through filename expansion:
+
+mp3s=( *.mp3 )
+for mp3 in "${mp3s[@]}";do
+	echo "MP3 File: $mp3";done
+

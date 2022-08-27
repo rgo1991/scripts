@@ -1,0 +1,13 @@
+#!/bin/bash
+
+sed "s/#.*//g" < sedexamples.txt #take all the lines that start with a # and replace the full line with a blank. and print the result to stdout. if you want to modify the file as well add the -i flag to sed (sed -i ***) 
+
+sed "s/\s*#.*//g" < sedexamples.txt #the \s means white spaces. so this takes any whitespace and then everything before the # and everything after it. \n means new line \t means tab.
+
+sed "s/^#.*//g;s/\s/whitespace/g" < sedexamples.txt #chaining sed commands.
+
+sed "/True/ d" < sedexamples.txt #delete all lines that have the word True in them. 'd' command means delete. 'p' would be print. 'q' would mean quit, as in quit the operation when you find the first instance of True. or '11 q' would quit after the 11th line with True in it
+
+sed "/^$/ d" < sedexamples.txt #delete all blank lines. ^ refers to the beggining of the line while $ refers to theend of the line. so this syntax refers to blank lines.
+
+sed s/"\/etc\/hostnames"/"\/etc\/hosts"/g < file.txt #when referring to directories in sed you need to use double quotes and escape slash for sed to know you are talking about directories. 

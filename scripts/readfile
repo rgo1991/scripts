@@ -1,0 +1,21 @@
+#!/bin/bash
+
+filename=$1
+if [ ! -r $filename ];then
+	echo "Error $filename is not readable"
+	exit 1
+fi
+
+if [ $# -eq 0 ];then
+	echo "Please provide a file"
+	exit 1
+fi
+
+echo Contents of file $filename:
+
+while read myfile;do
+	echo $myfile
+done < $filename 
+
+echo End of $filename
+echo Checksum: `md5sum $filename`

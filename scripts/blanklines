@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+blanklines=`cat /home/renatas/scripts/blanklines.txt`
+
+echo "$blanklines"
+
+function blank {
+	echo
+	echo
+}
+
+
+echo "$blanklines" blank

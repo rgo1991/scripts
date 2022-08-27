@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Parameter Groups for Specific MamaSenderIds -->
+   <DefineParameterGroup>
+      <Name>MamaSenderIdBxTvItchP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>870</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdBxTvItchS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>8070</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <!-- END - Parameter Groups for Specific MamaSenderIds -->
+
+   <Feed>
+      <Name>mamacache_bx_conf</Name>
+      <UseParameterGroup name="L2ConflationParams"/>
+      <UseParameterGroup name="HBFeedSubFeedDB"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_bxtvitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_bxtvitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>BXITCH</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_bx_conf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_bx_conf_feeds1</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>8</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Host-Specific Settings -->
+      <njwamstc46>
+         <UseParameterGroup name="MamaSenderIdBxTvItchP"/>
+      </njwamstc46>
+     <pny2sfmct29a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdBxTvItchP"/>
+      </pny2sfmct29a>
+      <pny2sfmct29b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdBxTvItchS"/>
+      </pny2sfmct29b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+</config>

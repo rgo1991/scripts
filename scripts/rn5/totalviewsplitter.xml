@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--Details for a multicast republisher to separate the ITCH5 feed over a configurable number of multicast groups. See the Administrators Guide for more information:  http://wombatconsulting.com/feedhandlers/admin-guide.html--><!--Configuration information for the incoming data from the exchange.-->
+    
+   <!-- Site specific includes -->
+   <IncludeFile>totalview_tport.xml</IncludeFile>
+   <IncludeFile>totalviewsplitter_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+        <!--Parameter> defined in totalviewplitter_hosts.xml
+           <Name>DefaultMulticastInterface1</Name>
+           <Value>eth0.460</Value>
+        </Parameter>
+        <Parameter>
+           <Name>DefaultMulticastInterface2</Name>
+           <Value>eth0.461</Value>
+        </Parameter-->
+
+   <!-- Unix Domain Sockets - January 30, 2008 -->
+   <Parameter>
+      <Name>MasqUseUnixDomainSocket</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UnixDomainSocketPathName</Name>
+      <Value>/tmp/wombatsocket</Value>
+   </Parameter>
+   <!-- END - Unix Domain Sockets -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <!-- <Value>16777216</Value> -->
+      <!-- <Value>33554432</Value> -->
+      <!-- <Value>49571904</Value> -->
+      <!--Value>67108864</Value SFDCR-1542-->
+      <Value>134217728</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>Listen</Name>
+      <Value>default1/233.54.12.111/26477</Value>
+      <Value>default2/233.49.196.111/26477</Value><!-- SFDCR-1033 -->
+      <!--Value>default2/233.86.230.111/26477</Value--><!-- decom EDCP-7256 Mid–Atlantic Region – U.S-->
+      <!--Value>default2/233.187.20.0/18070</Value EDCP-7256 DR migration to Chicago Metro Area "A" – U.S. -->
+   </Parameter>
+    
+   <Parameter>
+      <Name>PlaybackSourceId</Name>
+      <Value>233.54.12.111</Value>
+      <Value>233.49.196.111</Value>
+      <!--Value>233.86.230.111</Value--><!-- decom EDCP-7256 Mid–Atlantic Region – U.S-->
+      <!--Value>233.187.20.0</Value EDCP-7256 DR migration to Chicago Metro Area "A" – U.S. -->
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>MoldUdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MulticastProtocol</Name>
+      <Value>moldudp64</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterLogRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SoupMasqShadowSeqNumVersion</Name>
+      <Value>false</Value>
+      <Comment>Convey the MoldUDP sequence number and linetime to the splits or not</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchLineAdminViaMulticast</Name>
+      <Value>true</Value>
+      <Comment>Set true for Multicast.  When the feed handler resets the next-expected sequence number at start of day, use the internal sequence number for TCP and the embedded packet sequence number for multicast.</Comment>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>TotalviewMcRetransmission</Name>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MoldRetransRetryCount</Name>
+         <Value>10</Value>
+         <Comment>Number of times to attempt a retry.  Zero disables this functionality.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MoldRetransIntervalMsec</Name>
+         <Value>100</Value>
+         <Comment>Milliseconds to wait after first request before sending a subsequent request.  If multiple responses occur, these are correctly handled (the first is processed, the rest are dropped)</Comment>
+      </Parameter>
+      <ParamGroup>
+         <Name>RetransRequestor</Name>
+         <Comment>Details for the remote MoldUDP TotalviewMcRetransmission Server, and the local connection used to communicate with the server</Comment>
+         <Parameter>
+            <Name>DestinationHost</Name><!-- New York -->
+            <Value>206.200.127.37</Value><!-- --><!-- Mid-Atlantic <Value>206.200.246.59</Value> -->
+            <Comment>Retrans server IP Address, specified by NASDAQ.</Comment>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>18170</Value>
+            <Comment>UDP Port to send to, specified by NASDAQ.</Comment>
+         </Parameter>
+         <Parameter>
+            <Name>LocalHost</Name>
+            <Value/>
+            <Comment>Unicast IP Address to send Requests from.  The retransmission will be sent back to this address.  If blank, the default interface will be used.</Comment>
+         </Parameter>
+         <Parameter>
+            <Name>LocalService</Name>
+            <Value>50000</Value>
+            <Comment>UDP Port to send Requests from.  The retransmission will be sent back to this port</Comment>
+         </Parameter>
+      </ParamGroup>
+   </DefineParameterGroup><!--Configuration information for the data splitting and republishing.-->
+    
+   <DefineParameterGroup>
+      <Name>SplitterDefinitions</Name>
+      <Parameter>
+         <Name>SplitterDefaultInterface</Name>
+         <Value>127.0.0.1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SplitterDefaultAddress</Name>
+         <Value>127.0.0.1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SplitterDefaultPublish</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SplitterDefaultFormat</Name>
+         <Value>souptcp</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>SplitterGroup1</Name>
+      <ParamGroup>
+         <Name>DefineSplitter</Name>
+         <Parameter>
+            <Name>Label</Name>
+            <Value>ab</Value>
+         </Parameter>
+         <Parameter>
+            <Name>FirstLetters</Name>
+            <Value>AB</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Port</Name>
+            <Value>29001</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Address</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DataFormat</Name>
+            <Value>souptcp</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>DefineSplitter</Name>
+         <Parameter>
+            <Name>Label</Name>
+            <Value>cd</Value>
+         </Parameter>
+         <Parameter>
+            <Name>FirstLetters</Name>
+            <Value>CD</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Port</Name>
+            <Value>29002</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Address</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DataFormat</Name>
+            <Value>souptcp</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>DefineSplitter</Name>
+         <Parameter>
+            <Name>Label</Name>
+            <Value>ef</Value>
+         </Parameter>
+         <Parameter>
+            <Name>FirstLetters</Name>
+            <Value>EF</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Port</Name>
+            <Value>29003</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Address</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DataFormat</Name>
+            <Value>souptcp</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>DefineSplitter</Name>
+         <Parameter>
+            <Name>Label</Name>
+            <Value>hi</Value>
+         </Parameter>
+         <Parameter>
+            <Name>FirstLetters</Name>
+            <Value>HI</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Port</Name>
+            <Value>29004</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Address</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DataFormat</Name>
+            <Value>souptcp</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>DefineSplitter</Name>
+         <Parameter>
+            <Name>Label</Name>
+            <Value>gjkl</Value>
+         </Parameter>
+         <Parameter>
+            <Name>FirstLetters</Name>
+            <Value>GJKL</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Port</Name>
+            <Value>29005</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Address</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DataFormat</Name>
+            <Value>souptcp</Value>
+         </Parameter>
+      </ParamGroup>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>SplitterGroup2</Name>
+      <ParamGroup>
+         <Name>DefineSplitter</Name>
+         <Parameter>
+            <Name>Label</Name>
+            <Value>mno</Value>
+         </Parameter>
+         <Parameter>
+            <Name>FirstLetters</Name>
+            <Value>MNO</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Port</Name>
+            <Value>29006</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Address</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DataFormat</Name>
+            <Value>souptcp</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>DefineSplitter</Name>
+         <Parameter>
+            <Name>Label</Name>
+            <Value>pqv</Value>
+         </Parameter>
+         <Parameter>
+            <Name>FirstLetters</Name>
+            <Value>PQV</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Port</Name>
+            <Value>29007</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Address</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DataFormat</Name>
+            <Value>souptcp</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>DefineSplitter</Name>
+         <Parameter>
+            <Name>Label</Name>
+            <Value>s</Value>
+         </Parameter>
+         <Parameter>
+            <Name>FirstLetters</Name>
+            <Value>S</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Port</Name>
+            <Value>29008</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Address</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DataFormat</Name>
+            <Value>souptcp</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>DefineSplitter</Name>
+         <Parameter>
+            <Name>Label</Name>
+            <Value>tu</Value>
+         </Parameter>
+         <Parameter>
+            <Name>FirstLetters</Name>
+            <Value>TU</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Port</Name>
+            <Value>29009</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Address</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DataFormat</Name>
+            <Value>souptcp</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>DefineSplitter</Name>
+         <Parameter>
+            <Name>Label</Name>
+            <Value>rwxyz</Value>
+         </Parameter>
+         <Parameter>
+            <Name>FirstLetters</Name>
+            <Value>RWXYZ</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Port</Name>
+            <Value>29010</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Address</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>127.0.0.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DataFormat</Name>
+            <Value>souptcp</Value>
+         </Parameter>
+      </ParamGroup>
+   </DefineParameterGroup>
+    
+   <Parameter>
+      <Name>TotalviewSplitterFilteredSymbolFile</Name>
+      <Value>/opt/wombat/feeds/data/tvitch_block_list.sym</Value>
+      <Comment>This optional parameter can be set to the name of a file containing symbols to filter from the normal processing.  Each line of the file should contain exactly one symbol name.  The parameter "CatchFiltered" can be set true on exactly one split definition if these filtered symbols are to be sent to any downstream feed handler.  This parameter was previously termed "TotalviewSplitterInActiveSymbolSetFile".</Comment>
+   </Parameter><!--Common feed-handler configuration information.-->
+    
+   <Parameter>
+      <Name>LineFilterCheckEveryMessageInBlock</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterPublishWholeBlocks</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterGapLimitSize</Name>
+      <Value>300000</Value>
+      <Comment>Currently 4000 packets; NB if this becomes 4000 messages this is short</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterRequestRetransTime</Name>
+      <Value>0.5</Value>
+      <Comment>1/4 second</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterGapLimitStartOfDay</Name>
+      <Value>50000</Value>
+      <Comment>Wait for up to 1000 missed messages at the start of day</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterGapLimitTime</Name>
+      <Value>1.5</Value>
+      <Comment>One Second</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TotalviewSplitterDiscardUnknownOrders</Name>
+      <Value>false</Value>
+      <Comment>Details if unknown orderids (after a gap or intra-day restart) should be sent to all connected feed handlers (default) or discarded.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SplitterLogDiscarded</Name>
+      <Value>false</Value>
+      <Comment>Whether or not discarded messages are recorded within the log file</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+      <Comment>The INET Feed does not send overnight test data</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ReadsPerIoEvent</Name>
+      <Value>40</Value>
+      <Comment>Default is 20</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UseFt</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MessageRecoveryFile</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbolFile</Name>
+      <Value/>
+   </Parameter>
+   
+
+   <Feed>
+      <Name>totalviewsplitter_1</Name>
+      <UseParameterGroup name="TotalviewMcRetransmission"/>
+      <UseParameterGroup name="SplitterGroup1"/>
+      <UseParameterGroup name="SplitterGroup2"/>
+   </Feed>
+
+   <Feed>
+      <Name>totalviewsplitter_2</Name>
+      <UseParameterGroup name="TotalviewMcRetransmission"/>
+      <UseParameterGroup name="SplitterGroup2"/>
+   </Feed>
+
+ 
+   <Feed>
+      <Name>totalviewsplitter</Name>
+      <Comment>Use this feedname for a handler that accepts all symbols on the multicast line</Comment>
+      <UseParameterGroup name="TotalviewMcRetransmission"/>
+      <UseParameterGroup name="SplitterDefinitions"/>
+   </Feed>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

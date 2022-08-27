@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      
+   <IncludeFile>abmxdp_tport.xml</IncludeFile>
+   <IncludeFile>abmxdp_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.superfeed.xml</IncludeFile>
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>ARCA</Value>
+   </Parameter>
+<!-- SFDCR-1423 Start -->
+      <Parameter>
+         <Name>MamaUseDictionaryType</Name>
+         <Value>true</Value>
+      </Parameter>
+<!--SFDCR-1423 End -->
+<!-- SFDCR-1424 -->
+      <Parameter>
+         <Name>RecordHandlerCreateBookWhenCreateRecord</Name>
+         <Value>true</Value>
+      </Parameter>
+<!-- SFDCR-1424 -->
+   <!-- DFH-26453 -->
+   <Parameter>
+      <Name>UseRawOrderBookClear</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+   <!-- SFD-1113: Symbol Announce -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <!-- <Value>16777216</Value> -->
+      <Value>67108864</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishOrderImbalanceGlobal</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishOrderImbalanceIndividual</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpMaxRefreshSpoolSize</Name>
+      <Value>1000000</Value>
+   </Parameter>
+
+<!-- STAGING ONLY -->
+<!--
+   <Parameter>
+      <Name>TopOfBookCheck</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>XdpLogRefresh</Name>
+      <Value>true</Value>
+   </Parameter>
+-->
+<!-- STAGING ONLY -->
+   <Parameter>
+      <Name>XdpLogRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <!-- Requested SFD-537 - August 25th, 2010 -->
+   <Parameter>
+      <Name>PublishSeparateImbalance</Name>
+      <Value>true</Value>
+   </Parameter>
+   <!-- END -->
+
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TopOfBookDecimals</Name>
+      <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpMessageHandlerName</Name>
+      <Value>abmxdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>AbmXdpMessageHandlerName</Name>
+      <Value>abmxdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>xdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpProductName</Name>
+      <!-- <Value>AbmXdpL1</Value> -->
+      <Value>EcnArcaTop</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpProductNameBook</Name>
+      <!-- <Value>AbmXdpL2</Value> -->
+      <Value>EcnArcaOrderBook</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpLogRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpRefreshType</Name>
+      <Value>0</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FtRvService</Name>
+      <Value>7731</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value/>
+   </Parameter>
+<!--
+    <Parameter>
+      <Name>OrderBookSymbolFile</Name>
+      <Value/>
+   </Parameter>
+-->
+   
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpProductId</Name>
+      <!-- <Value>153</Value> -->
+      <Value>151</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>AbmXdpProductName</Name>
+      <Value>AbmXdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>nyse2streetMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoUseCurrentTimeAsLineTimeAndSrcTime</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoAddPrefixOnSecurityStatusOrig</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterDiscardForwardRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MessageRecoveryFile</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookUseUndecoratedSymbolName</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordHandlerAlwaysAppendProductSuffix</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpApplyLotsToSize</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpPublishExecutionAsTrade</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpPublishExecutionAsGeneric</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpClearOrdersOnTradingSessionChange</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsBloomberg</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsOrderListPart</Value>
+      <Value>FieldAttrsOrderImbalance</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsReferential</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>AbmXdpLiveParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>LIVE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>2.5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRequestRetransTime</Name>
+         <Value>0.1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>125000</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>AbmXdpRefreshParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>REFRESH</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MulticastConnectOnInit</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>1.5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>1000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>AbmXdpRequestReqParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>REFRESH_REQ</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <IncludeFile>abmxdp_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>abmxdp_cert.xml</IncludeFile>
+   <IncludeFile>abmxdp_prod.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#test/[/read  are the most common while loop inputs
+
+while read ip name aliases;do
+
+echo $read $ip $name
+
+done < sample.txt
+
+
+#the while loop can use any command that returns different values at different circumstances
+
+while date | grep 15:14;do #this will loop as long as its 15.14 but will stop at 15.15
+sleep 5
+done

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Site specific includes -->
+   <IncludeFile>mamadict_tport.xml</IncludeFile>
+   <IncludeFile>mamadict_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>MamaDataDictResponder</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value/>
+   </Parameter>
+
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsAsianFeeds</Value>
+      <Value>FieldAttrsBloomberg</Value>
+      <Value>FieldAttrsChain</Value>
+      <Value>FieldAttrsCme</Value>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsComstock</Value>
+      <Value>FieldAttrsCorpAct</Value>
+      <Value>FieldAttrsFds</Value>
+      <Value>FieldAttrsFixedIncome</Value>
+      <Value>FieldAttrsFixMisc</Value>
+      <Value>FieldAttrsFix</Value>
+      <Value>FieldAttrsFixOrderBook</Value>
+      <Value>FieldAttrsForex</Value>
+      <Value>FieldAttrsFundamentalExt</Value>
+      <Value>FieldAttrsFundamental</Value>
+      <Value>FieldAttrsFund</Value>
+      <Value>FieldAttrsFuture</Value>
+      <Value>FieldAttrsGenericStrings</Value>
+      <Value>FieldAttrsHistorical</Value>
+      <Value>FieldAttrsHkse</Value>
+      <Value>FieldAttrsIce</Value>
+      <Value>FieldAttrsIndex</Value>
+      <Value>FieldAttrsItc</Value>
+      <Value>FieldAttrsLastTrades</Value>
+      <Value>FieldAttrsMdx</Value>
+      <Value>FieldAttrsNasdaq</Value>
+      <Value>FieldAttrsNetworkMonitor</Value>
+      <Value>FieldAttrsNews</Value>
+      <Value>FieldAttrsOm</Value>
+      <Value>FieldAttrsOption</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderImbalance</Value>
+      <Value>FieldAttrsOrderListLong</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsOrderListPartLong</Value>
+      <Value>FieldAttrsOrderListPart</Value>
+      <Value>FieldAttrsOrder</Value>
+      <Value>FieldAttrsPage</Value>
+      <Value>FieldAttrsPrevCloseQuote</Value>
+      <Value>FieldAttrsPure</Value>
+      <Value>FieldAttrsQdist</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsRequest</Value>
+      <Value>FieldAttrsReutersCommon</Value>
+      <Value>FieldAttrsReuters</Value>
+      <Value>FieldAttrsReutEspeed</Value>
+      <Value>FieldAttrsRfq</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsSgx</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsStrategy</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsTradeWeb</Value>
+      <Value>FieldAttrsTsx</Value>
+      <Value>FieldAttrsWepUtp</Value>
+      <Value>FieldAttrsWommark</Value>
+      <Value>FieldAttrsXdpLiffeEuro</Value>
+      <Value>FieldAttrsFlexTrade</Value>
+      <Value>FieldAttrsCboecmi</Value>
+      <Value>FieldAttrsBme</Value>
+      <Value>FieldAttrsReferential</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>FtInitActive</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FtProcessMhModes</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

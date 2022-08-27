@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+<!-- ================================================================= -->
+<!--                        F E E D S                                  -->
+<!-- ================================================================= -->
+<!-- Superfeed Pillar XDP Login SFD-2259 START -->
+<!-- UAT -->
+        <DefineParameterGroup>
+          <Name>UseAmexbboXdp1</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>AVLATXDP01</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.159.250</Value><!-- Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35129</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.155.251/35129</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+
+        <DefineParameterGroup>
+          <Name>UseAmexbboXdp2</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>AVLATXDP02</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.155.250</Value><!-- Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35130</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.159.251/35130</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+
+        <DefineParameterGroup>
+          <Name>UseAmexbboXdpDr1</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>AVLATXDP01</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.68.159.250</Value><!-- DR Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35129</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.68.179.251/35129</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+
+        <DefineParameterGroup>
+          <Name>UseAmexbboXdpDr2</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>AVLATXDP02</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.68.155.250</Value><!-- DR Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35130</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.68.159.251/35130</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+<!-- Prod A -->
+
+        <DefineParameterGroup>
+          <Name>UseAmexbboXdp3</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>AVLATXDP03</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.159.250</Value><!-- Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35131</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.155.251/35131</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+
+        <DefineParameterGroup>
+          <Name>UseAmexbboXdp4</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>AVLATXDP04</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.155.250</Value><!-- Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35132</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.159.251/35132</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+
+        <DefineParameterGroup>
+          <Name>UseAmexbboXdpDr3</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>AVLATXDP03</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.68.159.250</Value><!-- DR Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35131</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.68.155.251/35131</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+
+        <DefineParameterGroup>
+          <Name>UseAmexbboXdpDr4</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>AVLATXDP04</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.68.155.250</Value><!-- DR Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35132</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.68.159.251/35132</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+
+<!-- Prod B -->
+
+        <DefineParameterGroup>
+          <Name>UseAmexbboXdp5</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>AVLATXDP05</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.159.250</Value><!-- Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35133</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.155.251/35133</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+
+        <DefineParameterGroup>
+          <Name>UseAmexbboXdp6</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>AVLATXDP06</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.155.250</Value><!-- Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35134</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.159.251/35158</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+
+        <DefineParameterGroup>
+          <Name>UseAmexbboXdpDr5</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>AVLATXDP05</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.68.159.250</Value><!-- DR Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35157</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.68.179.251/35157</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+
+        <DefineParameterGroup>
+          <Name>UseAmexbboXdpDr6</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>AVLATXDP06</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.68.179.250</Value><!-- DR Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35158</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.68.155.251/35158</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+<!-- Superfeed XDP ID END -->    
+
+<!-- SFD 1754 - NyseMkt migration to NyseAmerican START -->
+
+
+    <Feed>
+        <Name>nysemktbboxdp_1</Name>
+        <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>
+        <UseParameterGroup name="GlobalSecStatusParams"/>
+<tny2sffhr21>
+        <UseParameterGroup name="UseAmexbboXdp1"/>
+        <UseParameterGroup name="UseAmexbboXdpDr1"/>
+</tny2sffhr21>
+<pny2sffhr05a>
+        <UseParameterGroup name="UseAmexbboXdp3"/>
+        <UseParameterGroup name="UseAmexbboXdpDr3"/>
+</pny2sffhr05a>
+<pny2sffhr05b>
+        <UseParameterGroup name="UseAmexbboXdp5"/>
+        <UseParameterGroup name="UseAmexbboXdpDr5"/>
+</pny2sffhr05b>
+            <UseParameterGroup name="MamaSend43"/>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>nysemktbboxdp_request_aj</Value>
+            <Value>nysemktbboxdp_aj</Value>
+            <Value>nysemktbboxdp_refresh_aj</Value>
+        </Parameter>
+        <Parameter>
+           <Name>WmwSource</Name>
+           <Value>AMEXBBOXDP</Value>
+        </Parameter>
+        <Parameter>
+           <Name>XdpProductName</Name>
+           <Value>AmexBboXdp</Value>
+        </Parameter>
+        <Parameter>
+           <Name>XdpProductNameBook</Name>
+           <Value>AmexBboXdpBook</Value>
+        </Parameter>
+        <Parameter>
+             <Name>XdpLogRetrans</Name>
+             <Value>true</Value>
+          </Parameter>
+          <Parameter>
+             <Name>FtGroupName</Name>
+             <Value>FT_nysemktbboxdp_1</Value>
+          </Parameter>
+        <Parameter>
+           <Name>OrderBookSymbolFile</Name>
+           <Value>/opt/wombat/log/nysemktbboxdp_1.orderbook.sym</Value>
+        </Parameter>
+        <Parameter>
+           <Name>RecordSymbolFile</Name>
+           <Value>/opt/wombat/log/nysemktbboxdp_1.sym</Value>
+        </Parameter>
+        <Parameter>
+           <Name>XdpReferenceFiles</Name>
+           <Value>/opt/wombat/feeds/data/AmericanSymbolMapping.txt</Value>
+        </Parameter>      
+    </Feed>
+
+    <Feed>
+        <Name>nysemktbboxdp_request_aj</Name>
+        <UseParameterGroup name="NyseMktBboXdpRequestReqParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpChannelId</Name>
+            <Value>1</Value>
+        </Parameter>
+        <!--Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.145.17</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1061</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.145.18/1061</Value>
+        </Parameter-->
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value></Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>nysemktbboxdp_2</Name>
+        <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>
+        <UseParameterGroup name="GlobalSecStatusParams"/>
+<tny2sffhr21>
+        <UseParameterGroup name="UseAmexbboXdp2"/>
+        <UseParameterGroup name="UseAmexbboXdpDr2"/>
+</tny2sffhr21>
+<pny2sffhr05a>
+        <UseParameterGroup name="UseAmexbboXdp4"/>
+        <UseParameterGroup name="UseAmexbboXdpDr4"/>
+</pny2sffhr05a>
+<pny2sffhr05b>
+        <UseParameterGroup name="UseAmexbboXdp6"/>
+        <UseParameterGroup name="UseAmexbboXdpDr6"/>
+</pny2sffhr05b>
+        <UseParameterGroup name="MamaSend431"/>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>nysemktbboxdp_request_kz</Value>
+            <Value>nysemktbboxdp_kz</Value>
+            <Value>nysemktbboxdp_refresh_kz</Value>
+        </Parameter>
+        <Parameter>
+           <Name>WmwSource</Name>
+           <Value>AMEXBBOXDP</Value>
+        </Parameter>
+        <Parameter>
+           <Name>XdpProductName</Name>
+           <Value>AmexBboXdp</Value>
+        </Parameter>
+        <Parameter>
+           <Name>XdpProductNameBook</Name>
+           <Value>AmexBboXdpBook</Value>
+        </Parameter>
+        <Parameter>
+             <Name>XdpLogRetrans</Name>
+             <Value>true</Value>
+          </Parameter>
+          <Parameter>
+             <Name>FtGroupName</Name>
+             <Value>FT_nysemktbboxdp_2</Value>
+          </Parameter>
+        <Parameter>
+           <Name>OrderBookSymbolFile</Name>
+           <Value>/opt/wombat/log/nysemktbboxdp_2.orderbook.sym</Value>
+        </Parameter>
+        <Parameter>
+           <Name>RecordSymbolFile</Name>
+           <Value>/opt/wombat/log/nysemktbboxdp_1.sym</Value>
+        </Parameter>
+        <Parameter>
+           <Name>XdpReferenceFiles</Name>
+           <Value>/opt/wombat/feeds/data/AmericanSymbolMapping.txt</Value>
+        </Parameter>      
+    </Feed>
+
+    <Feed>
+        <Name>nysemktbboxdp_request_kz</Name>
+        <UseParameterGroup name="NyseMktBboXdpRequestReqParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpChannelId</Name>
+            <Value>2</Value>
+        </Parameter>
+        <!--Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.145.17</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1061</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.145.18/1061</Value>
+        </Parameter-->
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value></Value>
+        </Parameter>
+    </Feed>
+    <Feed>
+        <Name>nysemktbboxdp_aj</Name>
+        <UseParameterGroup name="NyseMktBboXdpLiveParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>live</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpChannelId</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>7</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.76.18/23121</Value><!-- SFD-2259 -->
+            <Value>default2/224.0.76.146/23621</Value>
+            <Value>default1/224.0.76.20/23123/monitorOff</Value>
+            <Value>default2/224.0.76.148/23623/monitorOff</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.76.18/23121</Value>
+            <Value>224.0.76.146/23621</Value>
+            <Value>224.0.76.20/23123</Value>
+            <Value>224.0.76.148/23623</Value>
+            <Value>233.125.89.96/61111</Value>
+            <Value>233.125.89.224/61141</Value>
+            <Value>233.125.89.97/61112</Value>
+            <Value>233.125.89.225/61142</Value>
+       </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>nysemktbboxdp_kz</Name>
+        <UseParameterGroup name="NyseMktBboXdpLiveParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>live</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpChannelId</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>7</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.76.19/23122</Value><!-- SFD-2259 -->
+            <Value>default2/224.0.76.147/23622</Value>
+            <Value>default1/224.0.76.21/23124/monitorOff</Value>
+            <Value>default2/224.0.76.149/23624/monitorOff</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.76.19/23122</Value>
+            <Value>224.0.76.147/23622</Value>
+            <Value>224.0.76.21/23124</Value>
+            <Value>224.0.76.149/23624</Value>
+       </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>nysemktbboxdp_refresh_aj</Name>
+        <UseParameterGroup name="NyseMktBboXdpRefreshParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>7</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpChannelId</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.76.22/23125</Value><!-- SFD-2259 -->
+            <Value>default2/224.0.76.150/23625</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.76.22/23125</Value>
+            <Value>224.0.76.150/23625</Value>
+            <Value>233.125.89.98/61113</Value>
+            <Value>233.125.89.226/61143</Value>
+       </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>nysemktbboxdp_refresh_kz</Name>
+        <UseParameterGroup name="NyseMktBboXdpRefreshParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>7</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpChannelId</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.76.23/23126</Value><!-- SFD-2259 -->
+            <Value>default2/224.0.76.151/23626</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.76.23/23126</Value>
+            <Value>224.0.76.151/23626</Value>
+       </Parameter>
+    </Feed>
+
+<!-- SFD 1754 END -->
+    <Feed>
+        <Name>nysemktbboxdp</Name>
+        <Comment>AMEX Best Quotes - nysebq_amex replacement </Comment>
+        <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>
+        <UseParameterGroup name="GlobalSecStatusParams"/>
+        <UseParameterGroup name="UseAmexBboXdp1"/>
+        <UseParameterGroup name="MamaSend43"/>
+<pny2sffhr05a>
+        <UseParameterGroup name="UseAmexBboXdp2"/>
+</pny2sffhr05a>
+<pny2sffhr05b>
+        <UseParameterGroup name="UseAmexBboXdp3"/>
+</pny2sffhr05b>
+        <Parameter>
+            <Name>SubFeeds</Name>
+<!--            <Value>nysemktbboxdp_prod_request</Value>
+	    <Value>nysemktbboxdp_prod_live</Value>
+            <Value>nysemktbboxdp_prod_refresh</Value-->
+            <Value>nysemktbboxdp_prod_request1</Value>
+	    <Value>nysemktbboxdp_prod_live_1</Value>
+            <Value>nysemktbboxdp_prod_refresh_1</Value>
+        </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>AMEXBBOXDP</Value>
+      </Parameter>
+   <Parameter>
+      <Name>XdpProductName</Name>
+      <Value>AmexBboXdp</Value>
+   </Parameter>
+   <Parameter>
+      <Name>XdpProductNameBook</Name>
+      <Value>AmexBboXdpBook</Value>
+   </Parameter>
+        <Parameter>
+           <Name>XdpLogRetrans</Name>
+           <Value>true</Value>
+        </Parameter>
+        <Parameter>
+           <Name>FtGroupName</Name>
+           <Value>FT_nysemktbboxdp</Value>
+        </Parameter>
+<!--
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/nysemktbboxdp.orderbook.sym</Value>
+      </Parameter>
+-->
+      
+   <Parameter>
+      <Name>XdpReferenceFiles</Name>
+      <Value>/opt/wombat/feeds/data/NYSESymbolMapping.txt</Value>
+   </Parameter>      
+    </Feed>
+    <Feed>
+        <Name>nysebboxdp_3</Name>
+        <Comment>AMEX Best Quotes - nysebq_amex replacement </Comment>
+        <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>
+        <UseParameterGroup name="GlobalSecStatusParams"/>
+        <UseParameterGroup name="UseAmexBboXdp3"/>
+        <UseParameterGroup name="MamaSend43"/>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>nysemktbboxdp_prod_request1</Value>
+	    <Value>nysemktbboxdp_prod_live_1</Value>
+            <Value>nysemktbboxdp_prod_refresh_1</Value>
+        </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>AMEXBBOXDP_TEST</Value>
+      </Parameter>
+   <Parameter>
+      <Name>XdpProductName</Name>
+      <Value>AmexBboXdp</Value>
+   </Parameter>
+   <Parameter>
+      <Name>XdpProductNameBook</Name>
+      <Value>AmexBboXdpBook</Value>
+   </Parameter>
+        <Parameter>
+           <Name>XdpLogRetrans</Name>
+           <Value>true</Value>
+        </Parameter>
+        <Parameter>
+           <Name>FtGroupName</Name>
+           <Value>FT_nysebboxdp_3</Value>
+        </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/nysebboxdp_3.orderbook.sym</Value>
+      </Parameter>
+   <Parameter>
+      <Name>XdpReferenceFiles</Name>
+      <Value>/opt/wombat/feeds/data/NYSESymbolMapping.txt</Value>
+   </Parameter>      
+    </Feed>
+<!-- -->
+
+    <Feed>
+        <Name>nysemktbboxdp_prod_request1</Name>
+        <UseParameterGroup name="NyseMktBboXdpRequestReqParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>request1</Value>
+        </Parameter>
+        <!--Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.65.151</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1069</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>159.125.64.153/1069</Value>
+        </Parameter-->
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value></Value>
+        </Parameter>
+    </Feed>
+    
+    <Feed>
+        <Name>nysemktbboxdp_prod_live_1</Name>
+        <UseParameterGroup name="NyseMktBboXdpLiveParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>live</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpChannelId</Name>
+            <Value>1</Value>
+        </Parameter>        
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>7</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshReqFeedId</Name>
+            <Value>request1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.125.89.96/61111</Value>
+            <Value>default2/233.125.89.224/61141</Value>
+            <Value>default1/233.125.89.97/61112/monitorOff</Value>
+            <Value>default2/233.125.89.225/61142/monitorOff</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.125.89.96/61111</Value>
+            <Value>233.125.89.224/61141</Value>
+            <Value>233.125.89.97/61112</Value>
+            <Value>233.125.89.225/61142</Value>
+       </Parameter>
+    </Feed>
+    
+    <Feed>
+        <Name>nysemktbboxdp_prod_refresh_1</Name>
+        <UseParameterGroup name="NyseMktBboXdpRefreshParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>7</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.125.89.98/61113</Value>
+            <Value>default2/233.125.89.226/61143</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.125.89.98/61113</Value>
+            <Value>233.125.89.226/61143</Value>
+       </Parameter>
+    </Feed>
+<!-- -->    
+    <Feed>
+        <Name>nysemktbboxdp_prod_request</Name>
+        <UseParameterGroup name="NyseMktBboXdpRequestReqParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <!--Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.65.151</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1069</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>159.125.64.153/1069</Value>
+        </Parameter-->
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value></Value>
+        </Parameter>
+    </Feed>
+    
+    <Feed>
+        <Name>nysemktbboxdp_prod_live</Name>
+        <UseParameterGroup name="NyseMktBboXdpLiveParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>live</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpChannelId</Name>
+            <Value>1</Value>
+        </Parameter>        
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>7</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshReqFeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.125.89.96/61111</Value>
+            <Value>default2/233.125.89.224/61141</Value>
+            <Value>default1/233.125.89.97/61112/monitorOff</Value>
+            <Value>default2/233.125.89.225/61142/monitorOff</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.125.89.96/61111</Value>
+            <Value>233.125.89.224/61141</Value>
+            <Value>233.125.89.97/61112</Value>
+            <Value>233.125.89.225/61142</Value>
+       </Parameter>
+    </Feed>
+    
+    <Feed>
+        <Name>nysemktbboxdp_prod_refresh</Name>
+        <UseParameterGroup name="NyseMktBboXdpRefreshParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>7</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.125.89.98/61113</Value>
+            <Value>default2/233.125.89.226/61143</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.125.89.98/61113</Value>
+            <Value>233.125.89.226/61143</Value>
+       </Parameter>
+    </Feed>
+
+</config>

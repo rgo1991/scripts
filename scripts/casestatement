@@ -1,0 +1,12 @@
+#!/bin/bash
+
+read -p "give me a word: " input
+
+echo -en "You gave me some "
+
+case $input in
+*[[:lower:]]*) echo -en "Lowercase " ;;& #usually you would just end the line with ;; but if you do that the case will stop after finding the first match. with ;;& it will run through all of the cases and try to match all of them.
+*[[:upper:]]*) echo -en "Uppercase " ;;&
+*[[:digit:]]*) echo -en "Numerical " ;;&
+*) echo "input" ;;
+esac

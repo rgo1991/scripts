@@ -1,0 +1,40 @@
+#!/bin/bash
+#break and continue commands are issues with the if statement within your loops.
+#when the if condition is met then the for loop will end.
+
+for (( i=0; i<=10; i++ ));do
+	if [ $i == 6 ];then
+	break;fi
+	echo $i
+done
+
+echo
+echo
+
+
+#when the if condition is met then the for loop will skip action for that particular loop cycle
+
+for (( i=0; i<=10; i++ ));do
+	if [ $i == 3 ];then
+	continue;fi
+	echo $i
+done
+
+
+#'break' breaks out of the current loop but will keep running the loop that contains you (if nested).'break 2' will break out of the current loop and the one above it.
+
+for number in 1 2 3 4 5 ;do
+	echo In the number loop - $number;echo
+	read -n1 -p "Press b to break out of this loop: " x
+	if [ $x == "b" ];then
+	break;fi;echo
+	for letter in a b c d e f;do
+		echo
+		echo Now in the letter loop... $number $letter; echo
+		read -n1 -p "Press 1 to break out of this loop, 2 to break out totally: " x
+		if [ $x == "1" ];then
+		break;elif [ $x == "2" ];then
+		break 2;fi
+	done
+done
+		

@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for Consolidated data feed - Canadian Best Bid and Offer feed handler. See the Administrators Guide for more information:    http://wombatconsulting.com/feedhandlers/admin-guide.html--><!--The following configuration clauses are common to all cdfcbbo feed handlers-->
+
+   <IncludeFile>cdfcbbo_tport.xml</IncludeFile>
+   <IncludeFile>cdfcbbo_hosts.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+
+   <UseParameterGroup name="WHK_DEFAULT_TPORT"/>
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>TMXCBBO</Value>
+   </Parameter>
+
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>cdfcbbo.orderbook.sym</Value>
+      </Parameter>
+
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value>cdfcbbo.sym</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>FtService</Name>
+      <Value>7746</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>RecordHandlerSymbolAnnounce</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishSymbolAnnounceRecords</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SymbolAnnounceRecord</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_cdfcbbo</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>tsx</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>CheckForClassD</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UnicastListenOnAllInterfaces</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterRetransMaxGapSize</Name>
+      <Value>500</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterGapLimitSize</Name>
+      <!--Value>2000</Value - increasing gaplimitsize sfdcr-916-->
+      <Value>4000</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterMaxValidGapSize</Name>
+      <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterGapLimitTime</Name>
+      <Value>0.5</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterGapLimitStartOfDay</Name>
+      <Value>1000</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterRetransActive</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LogRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TsxRetransMaxQueueSize</Name>
+      <Value>500</Value>
+      <Comment>Maximum retrans queue size to keep. Older retrans request will be discarded if this limit is reached. Set to 0 to have no limit.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>dotReplacementMap</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishDuplicates</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TsxL2ProductNameBBO</Name>
+      <Value>TSXLevel2CBBO</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsIndex</Value>
+      <Value>FieldAttrsFundamental</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsFixedIncome</Value>
+      <Value>FieldAttrsTsx</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsNetworkMonitor</Value>
+      <Value>FieldAttrsOrder</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+   </Parameter>
+
+   <DefineParameterGroup>
+      <Name>TsxLineFormat</Name>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>tsx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumOffset</Name>
+         <Value>4</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumLength</Name>
+         <Value>9</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryOffset</Name>
+         <Value>5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryControl</Name>
+         <Value> </Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeOffset</Name>
+         <Value>19</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeSeqNumReset</Name>
+         <Value> </Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransOffset</Name>
+         <Value>16</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransLength</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransOrig</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeHeartbeat</Name>
+         <Value> </Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <Feed>
+      <Name>cdfcbbo</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <!--Value>tl2_CBBO</Value> - split to 2 as part of EDCP-6381-->
+         <Value>tl2_1CBBO</Value>
+         <Value>tl2_2CBBO</Value>
+         <Value>cl2_CBBO</Value>
+      </Parameter>
+   </Feed>
+<!-- SFDCR-1432 Start -->
+
+   <Feed>
+      <Name>cdfcbbo_al</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <!--Value>tl2_CBBO</Value> - split to 2 as part of EDCP-6381-->
+         <Value>tl2_1CBBO</Value>
+         <Value>tl2_2CBBO</Value>
+         <Value>cl2_CBBO</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MessageHandlerRegExpFilter</Name>
+         <Value>^[A-L]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>cdfcbbo_al.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordSymbolFile</Name>
+         <Value>cdfcbbo_al.sym</Value>
+      </Parameter>
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_cdfcbbo_al</Value>
+   </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>cdfcbbo_mz</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <!--Value>tl2_CBBO</Value> - split to 2 as part of EDCP-6381-->
+         <Value>tl2_1CBBO</Value>
+         <Value>tl2_2CBBO</Value>
+         <Value>cl2_CBBO</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MessageHandlerRegExpFilter</Name>
+         <Value>^[M-Z]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>cdfcbbo_mz.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordSymbolFile</Name>
+         <Value>cdfcbbo_mz.sym</Value>
+      </Parameter>
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_cdfcbbo_mz</Value>
+   </Parameter>
+   </Feed>
+<!-- SFDCR-1432 End -->
+<!-- EDCP-8224 CBBO Unprotected Markets -->
+   <Feed>
+      <Name>cdfcbbo_prot</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tl2_1CBBOP</Value>
+         <Value>tl2_2CBBOP</Value>
+         <Value>cl2_CBBOP</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>tl2_1CBBOP</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-75</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.238/61075</Value>
+         <Value>default1/0.0.0.0/60073/monitorOff</Value>
+         <Value>default2/233.102.209.110/61076</Value>
+         <Value>default2/0.0.0.0/60074/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.238/61075</Value>
+         <Value>233.102.209.238/60073</Value>
+         <Value>233.102.209.100/61076</Value>
+         <Value>233.102.209.100/60074</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60031</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60031</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+   <Feed>
+      <Name>tl2_2CBBOP</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-75</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.242/61077</Value>
+         <Value>default1/0.0.0.0/60075/monitorOff</Value>
+         <Value>default2/233.102.209.114/61078</Value>
+         <Value>default2/0.0.0.0/60076/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.242/61077</Value>
+         <Value>233.102.209.242/60075</Value>
+         <Value>233.102.209.114/61078</Value>
+         <Value>233.102.209.114/60076</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60032</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60032</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+   <Feed>
+      <Name>cl2_CBBOP</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-75</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.248/61008</Value>
+         <Value>default1/0.0.0.0/61056/monitorOff</Value>
+         <Value>default2/233.102.209.119/61009</Value>
+         <Value>default2/0.0.0.0/61057/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.248/61008</Value>
+         <Value>233.102.209.248/61056</Value>
+         <Value>233.102.209.119/61009</Value>
+         <Value>233.102.209.119/61057</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61023</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61023</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+<!-- EDCP-8224 END -->
+
+<!--  SFDCR-1540 start -->
+
+
+   <Feed>
+      <!--Name>tl2_CBBO</Name> renaming tl2_CBBO to tl2_1CBBO EDCP-6381 -->
+      <Name>tl2_1CBBO</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-75</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <tny2sffhr05>
+      <Parameter>
+         <Name>Listen</Name>
+	<!-- MCC and TCF source -->
+         <Value>default1/233.102.209.228/60008</Value>
+         <Value>default1/0.0.0.0/60058/monitorOff</Value>
+         <Value>default2/233.102.209.100/60009</Value>
+         <Value>default2/0.0.0.0/60059/monitorOff</Value>
+      </Parameter>
+      </tny2sffhr05>
+      <pny2sffhr07a>
+      <Parameter>
+        <Name>Listen</Name>      
+	<Comment> MCC source</Comment>
+         <Value>default1/233.102.209.228/60008</Value>
+         <Value>default1/0.0.0.0/60058/monitorOff</Value>
+      </Parameter>
+      </pny2sffhr07a>
+      <pny2sffhr07b>
+      <Parameter>
+        <Name>Listen</Name>      
+	<Comment> MCC and TCF source</Comment>
+         <Value>default1/233.102.209.100/60009</Value>
+         <Value>default1/0.0.0.0/60059/monitorOff</Value>
+      </Parameter>
+      </pny2sffhr07b>
+
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+        <!--MCC and TCF source -->
+        <tny2sffhr05>
+         <Value>233.102.209.228/60008</Value>
+         <Value>233.102.209.228/60058</Value>
+         <Value>233.102.209.100/60009</Value>
+         <Value>233.102.209.100/60059</Value>
+        </tny2sffhr05>
+        <Comment> MCC source</Comment>
+        <pny2sffhr07a>
+         <Value>233.102.209.228/60008</Value>
+         <Value>233.102.209.228/60058</Value>
+       </pny2sffhr07a>
+        <Comment> MCC and TCF source</Comment>
+        <pny2sffhr07b>
+         <Value>233.102.209.100/60009</Value>
+         <Value>233.102.209.100/60059</Value>
+        </pny2sffhr07b>
+      </Parameter>
+
+	<tny2sffhr05>
+	<ParamGroup>
+         <Comment>TSX Markham site retransmission server</Comment>
+            <Name>RefreshRequest</Name>
+            <Parameter>
+               <Name>TcpIpAddress</Name>
+               <Value>142.201.149.36</Value>
+            </Parameter>
+            <Parameter>
+               <Name>TcpPort</Name>
+               <Value>60024</Value>
+            </Parameter>
+         <Comment>TSX Toronto site retransmission server</Comment>
+            <Name>RefreshRequest</Name>
+            <Parameter>
+               <Name>TcpIpAddress</Name>
+               <Value>142.201.157.36</Value>
+            </Parameter>
+            <Parameter>
+               <Name>TcpPort</Name>
+               <Value>60024</Value>
+            </Parameter>
+        </ParamGroup>
+	</tny2sffhr05>
+
+        <pny2sffhr07a>
+        <ParamGroup>
+         <Comment>TSX Markham site retransmission server</Comment>
+            <Name>RefreshRequest</Name>
+            <Parameter>
+               <Name>TcpIpAddress</Name>
+               <Value>142.201.149.36</Value>
+            </Parameter>
+            <Parameter>
+               <Name>TcpPort</Name>
+               <Value>60024</Value>
+            </Parameter>
+        </ParamGroup>
+        </pny2sffhr07a>
+
+        <pny2sffhr07b>
+        <ParamGroup>
+         <Comment>TSX Toronto site retransmission server</Comment>
+            <Name>RefreshRequest</Name>
+            <Parameter>
+               <Name>TcpIpAddress</Name>
+               <Value>142.201.157.36</Value>
+            </Parameter>
+            <Parameter>
+               <Name>TcpPort</Name>
+               <Value>60024</Value>
+            </Parameter>
+        </ParamGroup>
+        </pny2sffhr07b>
+
+   </Feed>
+
+   <Feed>
+      <Name>tl2_2CBBO</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-75</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <tny2sffhr05>
+      <Parameter>
+         <Name>Listen</Name>
+	<Comment> MCC and TCF source</Comment>
+         <Value>default1/233.102.209.246/61070</Value>
+         <Value>default1/0.0.0.0/61073/monitorOff</Value>
+         <Value>default2/233.102.209.117/61071</Value>
+         <Value>default2/0.0.0.0/61074/monitorOff</Value>
+      </Parameter>
+      </tny2sffhr05>
+
+      <pny2sffhr07a>
+      <Parameter>
+        <Name>Listen</Name>
+	<Comment> MCC source</Comment>
+         <Value>default1/233.102.209.246/61070</Value>
+         <Value>default1/0.0.0.0/61073/monitorOff</Value>
+      </Parameter>
+      </pny2sffhr07a>
+
+      <pny2sffhr07b>
+      <Parameter>
+        <Name>Listen</Name>
+	<Comment> TCF source</Comment>
+         <Value>default1/233.102.209.117/61071</Value>
+         <Value>default1/0.0.0.0/61074/monitorOff</Value>
+      </Parameter>
+      </pny2sffhr07b>
+
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+        <tny2sffhr05>
+         <Value>233.102.209.246/61070</Value>
+         <Value>233.102.209.246/61073</Value>
+         <Value>233.102.209.117/61071</Value>
+         <Value>233.102.209.117/61074</Value>
+        </tny2sffhr05>
+
+        <pny2sffhr07a>
+         <Value>233.102.209.246/61070</Value>
+         <Value>233.102.209.246/61073</Value>
+        </pny2sffhr07a>
+
+        <pny2sffhr07b>
+         <Value>233.102.209.117/61071</Value>
+         <Value>233.102.209.117/61074</Value>
+        </pny2sffhr07b>
+      </Parameter>
+
+        <tny2sffhr05>
+        <ParamGroup>
+        <Comment>TSX Markham site retransmission server</Comment>
+           <Name>RefreshRequest</Name>
+           <Parameter>
+              <Name>TcpIpAddress</Name>
+              <Value>142.201.149.36</Value>
+           </Parameter>
+           <Parameter>
+              <Name>TcpPort</Name>
+              <Value>61072</Value>
+           </Parameter>
+        <Comment>TSX Toronto site retransmission server</Comment>
+           <Name>RefreshRequest</Name>
+           <Parameter>
+              <Name>TcpIpAddress</Name>
+              <Value>142.201.157.36</Value>
+           </Parameter>
+           <Parameter>
+              <Name>TcpPort</Name>
+              <Value>61072</Value>
+           </Parameter>
+        </ParamGroup>
+        </tny2sffhr05>
+
+        <pny2sffhr07a>
+        <ParamGroup>
+        <Comment>TSX Markham site retransmission server</Comment>
+           <Name>RefreshRequest</Name>
+           <Parameter>
+              <Name>TcpIpAddress</Name>
+              <Value>142.201.149.36</Value>
+           </Parameter>
+           <Parameter>
+              <Name>TcpPort</Name>
+              <Value>61072</Value>
+           </Parameter>
+        </ParamGroup>
+        </pny2sffhr07a>
+
+        <pny2sffhr07b>
+        <ParamGroup>
+        <Comment>TSX Toronto site retransmission server</Comment>
+           <Name>RefreshRequest</Name>
+           <Parameter>
+              <Name>TcpIpAddress</Name>
+              <Value>142.201.157.36</Value>
+           </Parameter>
+           <Parameter>
+              <Name>TcpPort</Name>
+              <Value>61072</Value>
+           </Parameter>
+        </ParamGroup>
+        </pny2sffhr07b>
+
+   </Feed>
+
+<Feed>
+      <Name>cl2_CBBO</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-76</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <tny2sffhr05>
+      <Parameter>
+         <Name>Listen</Name>
+        <Comment> MCC and TCF source</Comment>
+         <Value>default1/233.102.209.235/61002</Value>
+         <Value>default1/0.0.0.0/61050/monitorOff</Value>
+         <Value>default2/233.102.209.107/61003</Value>
+         <Value>default2/0.0.0.0/61051/monitorOff</Value>
+      </Parameter>
+      </tny2sffhr05>
+
+      <pny2sffhr07a>
+      <Parameter>
+         <Name>Listen</Name>
+        <Comment> MCC source</Comment>
+         <Value>default1/233.102.209.235/61002</Value>
+         <Value>default1/0.0.0.0/61050/monitorOff</Value>
+      </Parameter>
+      </pny2sffhr07a>
+
+      <pny2sffhr07b>
+      <Parameter>
+         <Name>Listen</Name>
+        <Comment> TCF source</Comment>
+         <Value>default1/233.102.209.107/61003</Value>
+         <Value>default1/0.0.0.0/61051/monitorOff</Value>
+      </Parameter>
+      </pny2sffhr07b>
+
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+        <tny2sffhr05>
+         <Value>233.102.209.235/61002</Value>
+         <Value>233.102.209.235/61050</Value>
+         <Value>233.102.209.107/61003</Value>
+         <Value>233.102.209.107/61051</Value>
+        </tny2sffhr05>
+
+        <pny2sffhr07a>
+         <Value>233.102.209.235/61002</Value>
+         <Value>233.102.209.235/61050</Value>
+        </pny2sffhr07a>
+
+        <pny2sffhr07b>
+         <Value>233.102.209.107/61003</Value>
+         <Value>233.102.209.107/61051</Value>
+        </pny2sffhr07b>
+      </Parameter>
+
+        <tny2sffhr05>
+        <ParamGroup>
+        <Comment>TSX Markham site retransmission server</Comment>
+           <Name>RefreshRequest</Name>
+           <Parameter>
+              <Name>TcpIpAddress</Name>
+              <Value>142.201.149.36</Value>
+           </Parameter>
+           <Parameter>
+              <Name>TcpPort</Name>
+              <Value>61020</Value>
+           </Parameter>
+        <Comment>TSX Toronto site retransmission server</Comment>
+           <Name>RefreshRequest</Name>
+           <Parameter>
+              <Name>TcpIpAddress</Name>
+              <Value>142.201.157.36</Value>
+           </Parameter>
+           <Parameter>
+              <Name>TcpPort</Name>
+              <Value>61020</Value>
+           </Parameter>
+        </ParamGroup>
+        </tny2sffhr05>
+
+        <pny2sffhr07a>
+        <ParamGroup>
+        <Comment>TSX Markham site retransmission server</Comment>
+           <Name>RefreshRequest</Name>
+           <Parameter>
+              <Name>TcpIpAddress</Name>
+              <Value>142.201.149.36</Value>
+           </Parameter>
+           <Parameter>
+              <Name>TcpPort</Name>
+              <Value>61020</Value>
+           </Parameter>
+        </ParamGroup>
+        </pny2sffhr07a>
+
+        <pny2sffhr07b>
+        <ParamGroup>
+        <Comment>TSX Toronto site retransmission server</Comment>
+           <Name>RefreshRequest</Name>
+           <Parameter>
+              <Name>TcpIpAddress</Name>
+              <Value>142.201.157.36</Value>
+           </Parameter>
+           <Parameter>
+              <Name>TcpPort</Name>
+              <Value>61020</Value>
+           </Parameter>
+        </ParamGroup>
+        </pny2sffhr07b>
+
+ </Feed>
+<!-- SFDCR-1540 end-->
+   <Feed>
+      <Name>cdfcbbo_p</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <UseParameterGroup name="PlaybackFiles"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tl2_CBBO_p</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractFile</Name>
+         <Value>cdfcbbo.play.%Y%m%d</Value>
+      </Parameter>
+   </Feed>
+<!--
+   <Feed>
+      <Name>tl2_CBBO</Name> renaming tl2_CBBO to tl2_1CBBO EDCP-6381 >
+      <Name>tl2_1CBBO</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-75</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.228/60008</Value>
+         <Value>default1/0.0.0.0/60058/monitorOff</Value>
+         <Value>default2/233.102.209.100/60009</Value>
+         <Value>default2/0.0.0.0/60059/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.228/60008</Value>
+         <Value>233.102.209.228/60058</Value>
+         <Value>233.102.209.100/60009</Value>
+         <Value>233.102.209.100/60059</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60024</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60024</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+< EDCP-6381 START >
+   <Feed>
+      <Name>tl2_2CBBO</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-75</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.246/61070</Value>
+         <Value>default1/0.0.0.0/61073/monitorOff</Value>
+         <Value>default2/233.102.209.117/61071</Value>
+         <Value>default2/0.0.0.0/61074/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.246/61070</Value>
+         <Value>233.102.209.246/61073</Value>
+         <Value>233.102.209.117/61071</Value>
+         <Value>233.102.209.117/61074</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61072</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61072</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+-->
+<!-- EDCP-6381 END-->
+
+   <Feed>
+      <Name>tl2_CBBO_p</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <UseParameterGroup name="PlaybackFiles"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tl2_CBBO</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractFile</Name>
+         <Value>tl2_CBBO.play.%Y%m%d</Value>
+      </Parameter>
+   </Feed>
+<!--Feed>
+      <Name>cl2_CBBO</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-76</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.235/61002</Value>
+         <Value>default1/0.0.0.0/61050/monitorOff</Value>
+         <Value>default2/233.102.209.107/61003</Value>
+         <Value>default2/0.0.0.0/61051/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.235/61002</Value>
+         <Value>233.102.209.235/61050</Value>
+         <Value>233.102.209.107/61003</Value>
+         <Value>233.102.209.107/61051</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61020</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61020</Value>
+         </Parameter>
+      </ParamGroup>
+ </Feed-->
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

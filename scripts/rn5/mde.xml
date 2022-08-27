@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+   
+   <!-- Site specific includes -->
+   <IncludeFile>mde_tport.xml</IncludeFile>
+   <IncludeFile>mde_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>CBOEMDE</Value>
+   </Parameter>
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>offline</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>MdeProductName</Name>
+      <Value>CboeIndices</Value>
+   </Parameter>
+
+   <DefineParameterGroup>
+      <Name>MdeLineFormat</Name>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>block</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumOffset</Name>
+         <Value>4</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumLength</Name>
+         <Value>8</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryOffset</Name>
+         <Value>2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryControl</Name>
+         <Value>H</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeOffset</Name>
+         <Value>3</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeSeqNumReset</Name>
+         <Value>K</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransLength</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransOrig</Name>
+         <Value/>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransAll</Name>
+         <Value/>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsIndex</Value>
+   </Parameter>
+
+   <Feed>
+      <Name>mde</Name>
+      <UseParameterGroup name="MdeLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+	 <Value>default1/233.103.126.104/52132</Value>
+	 <Value>default2/233.103.126.232/52133</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.65.120.32</Value>
+         <Value>233.65.120.33</Value>
+      </Parameter>
+   </Feed>
+
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

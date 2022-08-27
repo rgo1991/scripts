@@ -1,0 +1,10 @@
+#!/bin/bash
+
+myvar=
+
+if [ -z "${myvar}" ]
+then
+	echo "myvar is empty"
+else 
+	echo "myvar is $myvar"
+fi

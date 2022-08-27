@@ -1,0 +1,2419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- 
+      Revised Networks 'A/E' (NYSE) Symbol Distribution
+      Effective 09/20/10
+
+      A   AWZZZZ
+      AX  CAZZZZ
+      CB  CZZZZZ
+      D   FDZZZZ
+      FE  HKZZZZ
+      HL  KDZZZZ
+      KE  MJZZZZ
+      MK  OMZZZZ
+      ON  RPZZZZ
+      RQ  SXZZZZ
+      SY  UYZZZZ
+      UZ  ZZZZZZ
+
+      Revised Networks 'B/F' (AMEX) Symbol Distribution
+      Effective 09/20/10
+
+      A   DOZZZZ
+      DP  EFPZZZ
+      EFQ EWZZZZ
+      EX  IDZZZZ
+      IE  IWCZZZ
+      IWD KZZZZZ
+      L   QLZZZZ
+      QM  SPXZZZ
+      SPY SRZZZZ
+      SS  USDZZZ
+      USE XLBZZZ
+      XLC ZZZZZZ
+   -->
+
+   <!-- Site specific includes -->
+   <IncludeFile>cta_v5_tport.xml</IncludeFile>
+   <IncludeFile>cta_v5_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.v5.xml</IncludeFile>
+   <!-- END Site specific includes -->
+   <Parameter>
+      <Name>WireCacheTemplateFile</Name>
+      <Value>/opt/wombat/feeds/config/include-files/wcache/wcache_templates.xml</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+<!-- Added LineFilterGapLimitTime (CHG191822) -->
+   <Parameter>
+       <Name>LineFilterGapLimitTime</Name>
+       <Value>0.8</Value>
+   </Parameter>
+
+   <Parameter>
+       <Name>LineFilterGapLimitSize</Name>
+       <Value>2000</Value>
+   </Parameter>
+
+<!-- END of CHG191822 -->
+
+   <Parameter>
+       <Name>LineHandlerDisableLineTime</Name>
+       <Value>false</Value>
+   </Parameter>
+
+   <!-- Correct wQuoteSize to match other feeds - Added Jan 12, 2009 -->
+   <Parameter>
+      <Name>QuoteSizeMultiplier</Name>
+      <Value>100</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LotSizeMapFileName</Name>
+      <Value>/opt/wombat/feeds/config/lot_size_map.txt</Value>
+   </Parameter>
+   <!-- End - Correct wQuoteSize -->
+
+   <!-- Publish calculated and exchange-sent TotalVolume on separate fields - SFDCR-101 -->
+   <Parameter>
+      <Name>PublishCloseVolumeUniquely</Name>
+      <Value>true</Value>
+   </Parameter>
+   <!-- End -->
+
+   <!-- SFD-602 / EDCP-2041 -->
+   <Parameter>
+      <Name>CtaHasShortSaleIndicators</Name>
+      <Value>true</Value>
+   </Parameter>
+   <!-- END -->
+
+<!-- 03-Aug-2015 CTA - EDCP-6968 (New message header format) and EDCP-7136 (Redefined / New Sale Condition modifiers)-->
+       <Parameter>
+          <Name>CtaHandleContingentTrades</Name>
+          <Value>true</Value>
+       </Parameter>
+
+       <Parameter>
+          <Name>CtaUseParticipantTimestamp</Name>
+          <Value>false</Value>
+       </Parameter>
+<!-- END -->
+
+   <!-- Ignore new CTA test symbols - SFD-708 / EDCP-2533 -->
+   <Parameter>
+      <Name>CtaFilteredSymbolFile</Name>
+      <Value>/opt/wombat/feeds/data/cta_block_list.sym</Value>
+   </Parameter>
+   <!-- END -->
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+   <Parameter> 
+      <Name>HandleSessionStatus</Name> 
+      <Value>true</Value> 
+   </Parameter> 
+
+   <Parameter> 
+      <Name>CtaCloseAtEnd</Name> 
+      <Value>true</Value> 
+   </Parameter> 
+
+   <Parameter> 
+      <Name>CtaZeroBookPriceIfClosed</Name> 
+      <Value>true</Value> 
+   </Parameter> 
+
+   <Parameter> 
+      <Name>CheckSecurityStatusModified</Name> 
+      <Value>true</Value> 
+   </Parameter> 
+
+   <Parameter> 
+      <Name>CtsNegativeIndexIndicator</Name> 
+      <Value>true</Value> 
+   </Parameter> 
+
+   <Parameter> 
+      <Name>CtaMapBookConditionCodes</Name> 
+      <Value>true</Value> 
+   </Parameter> 
+
+   <Parameter> 
+     <Name>PublishCtsPrimaryExchange</Name> 
+     <Value>true</Value> 
+   </Parameter> 
+   
+   <Parameter> 
+     <Name>CtaUpdateConsolidatedSecurityStatus</Name> 
+     <Value>true</Value> 
+   </Parameter> 
+
+   <Parameter> 
+     <Name>CtaUpdateConsolidatedForSubPennyHalt</Name> 
+     <Value>false</Value> 
+   </Parameter> 
+
+   <Parameter> 
+     <Name>CqsNormalQuoteClearsHalt</Name> 
+     <Value>true</Value> 
+   </Parameter> 
+
+   <Parameter> 
+     <Name>CtsCommonRelatedSecondaryStatus</Name> 
+     <Value>true</Value> 
+   </Parameter> 
+
+   <Parameter> 
+     <Name>PublishSecurityStatusIndividual</Name> 
+     <Value>true</Value> 
+   </Parameter>
+ 
+   <Parameter>
+      <Name>CtsTradeReportingFacilityIdAction</Name>
+      <Value>newfield</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>GenerateGroupSymbol</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishGroupRecords</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>IncludeGroupSymbol</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordPublisherUseSentinel</Name>
+      <Value>true</Value>
+   </Parameter>
+
+<!-- EDCP 5582 -->
+
+   <Parameter>
+      <Name>CqsIncludeFinraPartQuotesInGroup</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>CqsIncludeFinraMpidQuotesInGroup</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>CqsUseFinraAsPartId</Name>
+      <Value>true</Value>
+   </Parameter>
+
+<!-- EDCP 5582 end -->
+
+   <Parameter>
+      <Name>PublishIndividualRecords</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishMarketMakerQuotes</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishMarketMakerIds</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterIgnoreAllDataInSleepMode</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishOrderBooks</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OrderBookData</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtaProductNameNyseParticipant</Name>
+      <Value>NyseParticipant</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtaProductNameNyseConsolidated</Name>
+      <Value>NyseConsolidated</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtaProductNameNyseOrderBook</Name>
+      <Value>NyseCtaOrderBook</Value>`
+   </Parameter>
+    
+ <!-- EDCP 5582 -->
+   <Parameter>
+      <Name>CtaProductNameNyseMktParticipant</Name>
+      <Value>NyseMktParticipant</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>CtaProductNameNyseMktConsolidated</Name>
+      <Value>NyseMktConsolidated</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>CtaProductNameNyseMktOrderBook</Name>
+      <Value>NyseMktCtaOrderBook</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>CtsPublishConsolidatedCloseAsTrade</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>CtaProductNameNyseMktIndex</Name>
+      <Value>NyseMktIndices</Value>
+   </Parameter>
+<!-- EDCP 5582 end -->
+  
+   <Parameter>
+      <Name>CtaProductNameNyseIndex</Name>
+      <Value>NyseIndices</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>ParticipantIdMapFuncName</Name>
+      <Value>ctaPartIdMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ReutersCompatQuoteCondFunc</Name>
+      <Value>cqsReutQuoteCond</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ReutersCompatTradeCondFunc</Name>
+      <Value>ctsReutTradeCond</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ReutersCompatIrregCondFunc</Name>
+      <Value>ctsReutIrregCond</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CqsUseAugust2006SlowQuoteConditions</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>CtaLineFormat</Name>
+      <Comment>Common line-related configuration information.</Comment>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>cta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumOffset</Name>
+         <Value>5</Value>
+         <Comment>Internal</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumLength</Name>
+         <Value>7</Value>
+         <Comment>Internal</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransOffset</Name>
+         <Value>3</Value>
+         <Comment>Internal</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransLength</Name>
+         <Value>2</Value>
+         <Comment>Internal</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransOrig</Name>
+         <Value>O </Value>
+         <Comment>Internal</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryOffset</Name>
+         <Value>0</Value>
+         <Comment>Internal</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryControl</Name>
+         <Value>C</Value>
+         <Comment>Internal</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeOffset</Name>
+         <Value>1</Value>
+         <Comment>Internal</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeHeartbeat</Name>
+         <Value>T</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeSeqNumReset</Name>
+         <Value>ILM</Value>
+         <Comment>Internal</Comment>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>CtaConfig</Name>
+      <Parameter>
+         <Name>FieldAttrs</Name>
+         <Value>FieldAttrsCommon</Value>
+         <Value>FieldAttrsQuote</Value>
+         <Value>FieldAttrsChain</Value>
+         <Value>FieldAttrsTrade</Value>
+         <Value>FieldAttrsIndex</Value>
+         <Value>FieldAttrsOrderBookMsg</Value>
+         <Value>FieldAttrsOrderBookWombatMsg</Value>
+         <Value>FieldAttrsOrderListPart</Value>
+         <Value>FieldAttrsFundamental</Value>
+         <Value>FieldAttrsSecurityStatus</Value>
+         <Value>FieldAttrsStatus</Value>
+         <Value>FieldAttrsReuters</Value>
+      </Parameter>
+      <UseParameterGroup name="CtaLineFormat"/>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>CqsConfig</Name>
+      <Parameter>
+         <Name>ReutersCompatExchIdFunc</Name>
+         <Value>cqsReutExchId</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FieldAttrs</Name>
+         <Value>FieldAttrsCommon</Value>
+         <Value>FieldAttrsQuote</Value>
+         <Value>FieldAttrsChain</Value>
+         <Value>FieldAttrsOrderBookMsg</Value>
+         <Value>FieldAttrsOrderBookWombatMsg</Value>
+         <Value>FieldAttrsOrderListPart</Value>
+         <Value>FieldAttrsSecurityStatus</Value>
+         <Value>FieldAttrsStatus</Value>
+         <Value>FieldAttrsReuters</Value>
+      </Parameter>
+      <UseParameterGroup name="CtaLineFormat"/>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>CtsConfig</Name>
+      <Parameter>
+         <Name>ReutersCompatExchIdFunc</Name>
+         <Value>ctsReutExchId</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookData</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>CtsTradeReportingFacilityIdAction</Name>
+         <Value>ignore</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FieldAttrs</Name>
+         <Value>FieldAttrsCommon</Value>
+         <Value>FieldAttrsQuote</Value>
+         <Value>FieldAttrsTrade</Value>
+         <Value>FieldAttrsIndex</Value>
+         <Value>FieldAttrsFundamental</Value>
+         <Value>FieldAttrsSecurityStatus</Value>
+         <Value>FieldAttrsStatus</Value>
+         <Value>FieldAttrsReuters</Value>
+      </Parameter>
+      <UseParameterGroup name="CtaLineFormat"/>
+   </DefineParameterGroup>
+    
+   <Feed>
+      <Name>cqs_e_1</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.0/61000</Value>
+         <Value>default2/233.200.79.32/61032</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.0/61000</Value>
+         <Value>233.200.79.32/61032</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_e_2</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.1/61001</Value>
+         <Value>default2/233.200.79.33/61033</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.1/61001</Value>
+         <Value>233.200.79.33/61033</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_e_3</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.2/61002</Value>
+         <Value>default2/233.200.79.34/61034</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.2/61002</Value>
+         <Value>233.200.79.34/61034</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_e_4</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.3/61003</Value>
+         <Value>default2/233.200.79.35/61035</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.3/61003</Value>
+         <Value>233.200.79.35/61035</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_e_5</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.4/61004</Value>
+         <Value>default2/233.200.79.36/61036</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.4/61004</Value>
+         <Value>233.200.79.36/61036</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_e_6</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.5/61005</Value>
+         <Value>default2/233.200.79.37/61037</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.5/61005</Value>
+         <Value>233.200.79.37/61037</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_e_7</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.6/61006</Value>
+         <Value>default2/233.200.79.38/61038</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.6/61006</Value>
+         <Value>233.200.79.38/61038</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_e_8</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.7/61007</Value>
+         <Value>default2/233.200.79.39/61039</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.7/61007</Value>
+         <Value>233.200.79.39/61039</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_e_9</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.8/61008</Value>
+         <Value>default2/233.200.79.40/61040</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.8/61008</Value>
+         <Value>233.200.79.40/61040</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_e_10</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.9/61009</Value>
+         <Value>default2/233.200.79.41/61041</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.9/61009</Value>
+         <Value>233.200.79.41/61041</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_e_11</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.10/61010</Value>
+         <Value>default2/233.200.79.42/61042</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.10/61010</Value>
+         <Value>233.200.79.42/61042</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_e_12</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.11/61011</Value>
+         <Value>default2/233.200.79.43/61043</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.11/61011</Value>
+         <Value>233.200.79.43/61043</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_f_1</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.16/61016</Value>
+         <Value>default2/233.200.79.48/61048</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.16/61016</Value>
+         <Value>233.200.79.48/61048</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_f_2</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.17/61017</Value>
+         <Value>default2/233.200.79.49/61049</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.17/61017</Value>
+         <Value>233.200.79.49/61049</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_f_3</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.18/61018</Value>
+         <Value>default2/233.200.79.50/61050</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.18/61018</Value>
+         <Value>233.200.79.50/61050</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_f_4</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.19/61019</Value>
+         <Value>default2/233.200.79.51/61051</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.19/61019</Value>
+         <Value>233.200.79.51/61051</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_f_5</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.20/61020</Value>
+         <Value>default2/233.200.79.52/61052</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.20/61020</Value>
+         <Value>233.200.79.52/61052</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_f_6</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.21/61021</Value>
+         <Value>default2/233.200.79.53/61053</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.21/61021</Value>
+         <Value>233.200.79.53/61053</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_f_7</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.22/61022</Value>
+         <Value>default2/233.200.79.54/61054</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.22/61022</Value>
+         <Value>233.200.79.54/61054</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_f_8</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.23/61023</Value>
+         <Value>default2/233.200.79.55/61055</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.23/61023</Value>
+         <Value>233.200.79.55/61055</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_f_9</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.24/61024</Value>
+         <Value>default2/233.200.79.56/61056</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.24/61024</Value>
+         <Value>233.200.79.56/61056</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_f_10</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.25/61025</Value>
+         <Value>default2/233.200.79.57/61057</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.25/61025</Value>
+         <Value>233.200.79.57/61057</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_f_11</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.26/61026</Value>
+         <Value>default2/233.200.79.58/61058</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.26/61026</Value>
+         <Value>233.200.79.58/61058</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_f_12</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.27/61027</Value>
+         <Value>default2/233.200.79.59/61059</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.27/61027</Value>
+         <Value>233.200.79.59/61059</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_a_1</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.128/62128</Value>
+         <Value>default2/233.200.79.160/62160</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.128/62128</Value>
+         <Value>233.200.79.160/62160</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+      <!-- CTS Administrative messages added Dec 01, 2010 - SFD-682 -->
+      <Parameter>
+         <Name>PublishGeneralAdmin</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GeneralAdminSymbol</Name>
+         <Value>ADMIN/CTS/NYSE</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>cts_a_2</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.129/62129</Value>
+         <Value>default2/233.200.79.161/62161</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.129/62129</Value>
+         <Value>233.200.79.161/62161</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_a_3</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.130/62130</Value>
+         <Value>default2/233.200.79.162/62162</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.130/62130</Value>
+         <Value>233.200.79.162/62162</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_a_4</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.131/62131</Value>
+         <Value>default2/233.200.79.163/62163</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.131/62131</Value>
+         <Value>233.200.79.163/62163</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_a_5</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.132/62132</Value>
+         <Value>default2/233.200.79.164/62164</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.132/62132</Value>
+         <Value>233.200.79.164/62164</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_a_6</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.133/62133</Value>
+         <Value>default2/233.200.79.165/62165</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.133/62133</Value>
+         <Value>233.200.79.165/62165</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_a_7</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.134/62134</Value>
+         <Value>default2/233.200.79.166/62166</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.134/62134</Value>
+         <Value>233.200.79.166/62166</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_a_8</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.135/62135</Value>
+         <Value>default2/233.200.79.167/62167</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.135/62135</Value>
+         <Value>233.200.79.167/62167</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_a_9</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.136/62136</Value>
+         <Value>default2/233.200.79.168/62168</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.136/62136</Value>
+         <Value>233.200.79.168/62168</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_a_10</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.137/62137</Value>
+         <Value>default2/233.200.79.169/62169</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.137/62137</Value>
+         <Value>233.200.79.169/62169</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_a_11</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.138/62138</Value>
+         <Value>default2/233.200.79.170/62170</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.138/62138</Value>
+         <Value>233.200.79.170/62170</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_a_12</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.139/62139</Value>
+         <Value>default2/233.200.79.171/62171</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.139/62139</Value>
+         <Value>233.200.79.171/62171</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_b_1</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.144/62144</Value>
+         <Value>default2/233.200.79.176/62176</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.144/62144</Value>
+         <Value>233.200.79.176/62176</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+      <!-- CTS Administrative messages added Dec 01, 2010 - SFD-682 -->
+      <Parameter>
+         <Name>PublishGeneralAdmin</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GeneralAdminSymbol</Name>
+         <Value>ADMIN/CTS/AMEX</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>cts_b_2</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.145/62145</Value>
+         <Value>default2/233.200.79.177/62177</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.145/62145</Value>
+         <Value>233.200.79.177/62177</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_b_3</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.146/62146</Value>
+         <Value>default2/233.200.79.178/62178</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.146/62146</Value>
+         <Value>233.200.79.178/62178</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_b_4</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.147/62147</Value>
+         <Value>default2/233.200.79.179/62179</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.147/62147</Value>
+         <Value>233.200.79.179/62179</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_b_5</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.148/62148</Value>
+         <Value>default2/233.200.79.180/62180</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.148/62148</Value>
+         <Value>233.200.79.180/62180</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_b_6</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.149/62149</Value>
+         <Value>default2/233.200.79.181/62181</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.149/62149</Value>
+         <Value>233.200.79.181/62181</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_b_7</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.150/62150</Value>
+         <Value>default2/233.200.79.182/62182</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.150/62150</Value>
+         <Value>233.200.79.182/62182</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_b_8</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.151/62151</Value>
+         <Value>default2/233.200.79.183/62183</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.151/62151</Value>
+         <Value>233.200.79.183/62183</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_b_9</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.152/62152</Value>
+         <Value>default2/233.200.79.184/62184</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.152/62152</Value>
+         <Value>233.200.79.184/62184</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_b_10</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.153/62153</Value>
+         <Value>default2/233.200.79.185/62185</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.153/62153</Value>
+         <Value>233.200.79.185/62185</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_b_11</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.154/62154</Value>
+         <Value>default2/233.200.79.186/62186</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.154/62154</Value>
+         <Value>233.200.79.186/62186</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_b_12</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.155/62155</Value>
+         <Value>default2/233.200.79.187/62187</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.155/62155</Value>
+         <Value>233.200.79.187/62187</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_idx_ab_1</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.158/62158</Value>
+         <Value>default2/233.200.79.190/62190</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.158/62158</Value>
+         <Value>233.200.79.190/62190</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_idx_ab_2</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.159/62159</Value>
+         <Value>default2/233.200.79.191/62191</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.159/62159</Value>
+         <Value>233.200.79.191/62191</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_e_1</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.64/61064</Value>
+         <Value>default2/233.200.79.96/61096</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.64/61064</Value>
+         <Value>233.200.79.96/61096</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_e_2</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.65/61065</Value>
+         <Value>default2/233.200.79.97/61097</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.65/61065</Value>
+         <Value>233.200.79.97/61097</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_e_3</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.66/61066</Value>
+         <Value>default2/233.200.79.98/61098</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.66/61066</Value>
+         <Value>233.200.79.98/61098</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_e_4</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.67/61067</Value>
+         <Value>default2/233.200.79.99/61099</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.67/61067</Value>
+         <Value>233.200.79.99/61099</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_e_5</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.68/61068</Value>
+         <Value>default2/233.200.79.100/61100</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.68/61068</Value>
+         <Value>233.200.79.100/61100</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_e_6</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.69/61069</Value>
+         <Value>default2/233.200.79.101/61101</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.69/61069</Value>
+         <Value>233.200.79.101/61101</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_e_7</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.70/61070</Value>
+         <Value>default2/233.200.79.102/61102</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.70/61070</Value>
+         <Value>233.200.79.102/61102</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_e_8</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.71/61071</Value>
+         <Value>default2/233.200.79.103/61103</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.71/61071</Value>
+         <Value>233.200.79.103/61103</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_e_9</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.72/61072</Value>
+         <Value>default2/233.200.79.104/61104</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.72/61072</Value>
+         <Value>233.200.79.104/61104</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_e_10</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.73/61073</Value>
+         <Value>default2/233.200.79.105/61105</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.73/61073</Value>
+         <Value>233.200.79.105/61105</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_e_11</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.74/61074</Value>
+         <Value>default2/233.200.79.106/61106</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.74/61074</Value>
+         <Value>233.200.79.106/61106</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_e_12</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.75/61075</Value>
+         <Value>default2/233.200.79.107/61107</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.75/61075</Value>
+         <Value>233.200.79.107/61107</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_f_1</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.80/61080</Value>
+         <Value>default2/233.200.79.112/61112</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.80/61080</Value>
+         <Value>233.200.79.112/61112</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_f_2</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.81/61081</Value>
+         <Value>default2/233.200.79.113/61113</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.81/61081</Value>
+         <Value>233.200.79.113/61113</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_f_3</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.82/61082</Value>
+         <Value>default2/233.200.79.114/61114</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.82/61082</Value>
+         <Value>233.200.79.114/61114</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_f_4</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.83/61083</Value>
+         <Value>default2/233.200.79.115/61115</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.83/61083</Value>
+         <Value>233.200.79.115/61115</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_f_5</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.84/61084</Value>
+         <Value>default2/233.200.79.116/61116</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.84/61084</Value>
+         <Value>233.200.79.116/61116</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_f_6</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.85/61085</Value>
+         <Value>default2/233.200.79.117/61117</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.85/61085</Value>
+         <Value>233.200.79.117/61117</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_f_7</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.86/61086</Value>
+         <Value>default2/233.200.79.118/61118</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.86/61086</Value>
+         <Value>233.200.79.118/61118</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_f_8</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.87/61087</Value>
+         <Value>default2/233.200.79.119/61119</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.87/61087</Value>
+         <Value>233.200.79.119/61119</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_f_9</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.88/61088</Value>
+         <Value>default2/233.200.79.120/61120</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.88/61088</Value>
+         <Value>233.200.79.120/61120</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_f_10</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.89/61089</Value>
+         <Value>default2/233.200.79.121/61121</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.89/61089</Value>
+         <Value>233.200.79.121/61121</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_f_11</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.90/61090</Value>
+         <Value>default2/233.200.79.122/61122</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.90/61090</Value>
+         <Value>233.200.79.122/61122</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cqs_rt_f_12</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.91/61091</Value>
+         <Value>default2/233.200.79.123/61123</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.91/61091</Value>
+         <Value>233.200.79.123/61123</Value>
+      </Parameter>
+      <UseParameterGroup name="CqsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_a_1</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.192/62192</Value>
+         <Value>default2/233.200.79.224/62224</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.192/62192</Value>
+         <Value>233.200.79.224/62224</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_a_2</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.193/62193</Value>
+         <Value>default2/233.200.79.225/62225</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.193/62193</Value>
+         <Value>233.200.79.225/62225</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_a_3</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.194/62194</Value>
+         <Value>default2/233.200.79.226/62226</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.194/62194</Value>
+         <Value>233.200.79.226/62226</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_a_4</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.195/62195</Value>
+         <Value>default2/233.200.79.227/62227</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.195/62195</Value>
+         <Value>233.200.79.227/62227</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_a_5</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.196/62196</Value>
+         <Value>default2/233.200.79.228/62228</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.196/62196</Value>
+         <Value>233.200.79.228/62228</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_a_6</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.197/62197</Value>
+         <Value>default2/233.200.79.229/62229</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.197/62197</Value>
+         <Value>233.200.79.229/62229</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_a_7</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.198/62198</Value>
+         <Value>default2/233.200.79.230/62230</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.198/62198</Value>
+         <Value>233.200.79.230/62230</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_a_8</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.199/62199</Value>
+         <Value>default2/233.200.79.231/62231</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.199/62199</Value>
+         <Value>233.200.79.231/62231</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_a_9</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.200/62200</Value>
+         <Value>default2/233.200.79.232/62232</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.200/62200</Value>
+         <Value>233.200.79.232/62232</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_a_10</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.201/62201</Value>
+         <Value>default2/233.200.79.233/62233</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.201/62201</Value>
+         <Value>233.200.79.233/62233</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_a_11</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.202/62202</Value>
+         <Value>default2/233.200.79.234/62234</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.202/62202</Value>
+         <Value>233.200.79.234/62234</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_a_12</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.203/62203</Value>
+         <Value>default2/233.200.79.235/62235</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.203/62203</Value>
+         <Value>233.200.79.235/62235</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_b_1</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.208/62208</Value>
+         <Value>default2/233.200.79.240/62240</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.208/62208</Value>
+         <Value>233.200.79.240/62240</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_b_2</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.209/62209</Value>
+         <Value>default2/233.200.79.241/62241</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.209/62209</Value>
+         <Value>233.200.79.241/62241</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_b_3</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.210/62210</Value>
+         <Value>default2/233.200.79.242/62242</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.210/62210</Value>
+         <Value>233.200.79.242/62242</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_b_4</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.211/62211</Value>
+         <Value>default2/233.200.79.243/62243</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.211/62211</Value>
+         <Value>233.200.79.243/62243</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_b_5</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.212/62212</Value>
+         <Value>default2/233.200.79.244/62244</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.212/62212</Value>
+         <Value>233.200.79.244/62244</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_b_6</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.213/62213</Value>
+         <Value>default2/233.200.79.245/62245</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.213/62213</Value>
+         <Value>233.200.79.245/62245</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_b_7</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.214/62214</Value>
+         <Value>default2/233.200.79.246/62246</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.214/62214</Value>
+         <Value>233.200.79.246/62246</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_b_8</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.215/62215</Value>
+         <Value>default2/233.200.79.247/62247</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.215/62215</Value>
+         <Value>233.200.79.247/62247</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_b_9</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.216/62216</Value>
+         <Value>default2/233.200.79.248/62248</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.216/62216</Value>
+         <Value>233.200.79.248/62248</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_b_10</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.217/62217</Value>
+         <Value>default2/233.200.79.249/62249</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.217/62217</Value>
+         <Value>233.200.79.249/62249</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_b_11</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.218/62218</Value>
+         <Value>default2/233.200.79.250/62250</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.218/62218</Value>
+         <Value>233.200.79.250/62250</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_b_12</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.219/62219</Value>
+         <Value>default2/233.200.79.251/62251</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.219/62219</Value>
+         <Value>233.200.79.251/62251</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_idx_ab_1</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.222/62222</Value>
+         <Value>default2/233.200.79.254/62254</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.222/62222</Value>
+         <Value>233.200.79.254/62254</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cts_rt_idx_ab_2</Name>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.200.79.223/62223</Value>
+         <Value>default2/233.200.79.255/62255</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.200.79.223/62223</Value>
+         <Value>233.200.79.255/62255</Value>
+      </Parameter>
+      <UseParameterGroup name="CtsConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cta_p</Name>
+      <UseParameterGroup name="PlaybackFiles"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>cts_1</Value>
+         <Value>cts_2</Value>
+         <Value>cts_3</Value>
+         <Value>cts_4</Value>
+         <Value>cqs_1</Value>
+         <Value>cqs_2</Value>
+         <Value>cqs_3</Value>
+         <Value>cqs_4</Value>
+         <Value>cqs_5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractFile</Name>
+         <Value>cta.play.%Y%m%d</Value>
+      </Parameter>
+   </Feed>
+
+   <!-- 4WAY SPLIT CTA NYSE V5 -->
+   <Feed>
+      <Name>cta_v5_nyse_ACz</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>cqs_e_1</Value>
+         <Value>cqs_e_2</Value>
+         <Value>cqs_e_3</Value>
+         <Value>cts_a_1</Value>
+         <Value>cts_a_2</Value>
+         <Value>cts_a_3</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NYSEV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/cta_v5_nyse_ACz.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>A_CZ_NYSEV5_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>1101</Value>
+      </Parameter>
+      <UseParameterGroup name="CtaConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <Feed>
+      <Name>cta_v5_nyse_DKd</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>cqs_e_4</Value>
+         <Value>cqs_e_5</Value>
+         <Value>cqs_e_6</Value>
+         <Value>cts_a_4</Value>
+         <Value>cts_a_5</Value>
+         <Value>cts_a_6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NYSEV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/cta_v5_nyse_DKd.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>D_KD_NYSEV5_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>1102</Value>
+      </Parameter>
+      <UseParameterGroup name="CtaConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <Feed>
+      <Name>cta_v5_nyse_KeRp</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>cqs_e_7</Value>
+         <Value>cqs_e_8</Value>
+         <Value>cqs_e_9</Value>
+         <Value>cts_a_7</Value>
+         <Value>cts_a_8</Value>
+         <Value>cts_a_9</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NYSEV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/cta_v5_nyse_KeRp.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>KE_RP_NYSEV5_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>1103</Value>
+      </Parameter>
+      <UseParameterGroup name="CtaConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <Feed>
+      <Name>cta_v5_nyse_RqZ</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>cqs_e_10</Value>
+         <Value>cqs_e_11</Value>
+         <Value>cqs_e_12</Value>
+         <Value>cts_a_10</Value>
+         <Value>cts_a_11</Value>
+         <Value>cts_a_12</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NYSEV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/cta_v5_nyse_RqZ.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>RQ_Z_NYSEV5_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>1104</Value>
+      </Parameter>
+      <UseParameterGroup name="CtaConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <!-- 6WAY SPLIT CTA NYSE V5 -->
+   <Feed>
+      <Name>cta_v5_nyse_ABx</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>cqs_e_1</Value>
+         <Value>cqs_e_2</Value>
+         <Value>cts_a_1</Value>
+         <Value>cts_a_2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NYSEV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/cta_v5_nyse_ABx.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>A_BX_NYSEV5_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>1111</Value>
+      </Parameter>
+      <UseParameterGroup name="CtaConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <Feed>
+      <Name>cta_v5_nyse_ByEl</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>cqs_e_3</Value>
+         <Value>cqs_e_4</Value>
+         <Value>cts_a_3</Value>
+         <Value>cts_a_4</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NYSEV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/cta_v5_nyse_ByEl.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>BY_EL_NYSEV5_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>1112</Value>
+      </Parameter>
+      <UseParameterGroup name="CtaConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <Feed>
+      <Name>cta_v5_nyse_EmIq</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector1NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>cqs_e_5</Value>
+         <Value>cqs_e_6</Value>
+         <Value>cts_a_5</Value>
+         <Value>cts_a_6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NYSEV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/cta_v5_nyse_EmIq.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>EM_IQ_NYSEV5_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>1113</Value>
+      </Parameter>
+      <UseParameterGroup name="CtaConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <Feed>
+      <Name>cta_v5_nyse_IrNo</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector1NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>cqs_e_7</Value>
+         <Value>cqs_e_8</Value>
+         <Value>cts_a_7</Value>
+         <Value>cts_a_8</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NYSEV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/cta_v5_nyse_IrNo.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>IR_NO_NYSEV5_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>1114</Value>
+      </Parameter>
+      <UseParameterGroup name="CtaConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <Feed>
+      <Name>cta_v5_nyse_NpSt</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector2NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>cqs_e_9</Value>
+         <Value>cqs_e_10</Value>
+         <Value>cts_a_9</Value>
+         <Value>cts_a_10</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NYSEV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/cta_v5_nyse_NpSt.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>NP_ST_NYSEV5_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>1115</Value>
+      </Parameter>
+      <UseParameterGroup name="CtaConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <Feed>
+      <Name>cta_v5_nyse_SuZ</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector2NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>cqs_e_11</Value>
+         <Value>cqs_e_12</Value>
+         <Value>cts_a_11</Value>
+         <Value>cts_a_12</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NYSEV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/cta_v5_nyse_SuZ.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>SU_Z_NYSEV5_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>1116</Value>
+      </Parameter>
+      <UseParameterGroup name="CtaConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <!-- 3WAY SPLIT CTA AMEX V5 -->
+   <Feed>
+      <Name>cta_v5_amex_AIwe</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>cqs_f_1</Value>
+         <Value>cqs_f_2</Value>
+         <Value>cqs_f_3</Value>
+         <Value>cqs_f_4</Value>
+         <Value>cts_b_1</Value>
+         <Value>cts_b_2</Value>
+         <Value>cts_b_3</Value>
+         <Value>cts_b_4</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>AMEXV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/cta_v5_amex_AIwe.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>A_IWE_AMEXV5_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>1105</Value>
+      </Parameter>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+      <UseParameterGroup name="CtaConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cta_v5_amex_IwfSp</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>cqs_f_5</Value>
+         <Value>cqs_f_6</Value>
+         <Value>cqs_f_7</Value>
+         <Value>cqs_f_8</Value>
+         <Value>cts_b_5</Value>
+         <Value>cts_b_6</Value>
+         <Value>cts_b_7</Value>
+         <Value>cts_b_8</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>AMEXV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/cta_v5_amex_IwfSp.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>IWF_SP_AMEXV5_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>1106</Value>
+      </Parameter>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+      <UseParameterGroup name="CtaConfig"/>
+   </Feed>
+
+   <Feed>
+      <Name>cta_v5_amex_SqZ</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>cqs_f_9</Value>
+         <Value>cqs_f_10</Value>
+         <Value>cqs_f_11</Value>
+         <Value>cqs_f_12</Value>
+         <Value>cts_b_9</Value>
+         <Value>cts_b_10</Value>
+         <Value>cts_b_11</Value>
+         <Value>cts_b_12</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>AMEXV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/cta_v5_amex_SqZ.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>SQ_Z_AMEXV5_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>1107</Value>
+      </Parameter>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+      <UseParameterGroup name="CtaConfig"/>
+   </Feed>
+   <!-- END - 10-way split -->
+
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

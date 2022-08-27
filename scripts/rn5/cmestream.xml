@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Site specific includes -->
+   <IncludeFile>cmestream_tport.xml</IncludeFile>
+   <IncludeFile>cmestream_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>CMEMDPDOW</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LoadAliasSymbolFile</Name>
+      <Value>cmestream.alias</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishAliasRecords</Name>
+      <Value>true</Value>
+   </Parameter>
+
+<!-- SFDCR-499: START: Publish ALL incoming messages -->
+    <Parameter>
+      <Name>MamaPublisherType</Name>
+      <Value>broadcast</Value>
+    </Parameter>
+<!-- SFDCR-499: STOP -->
+<!-- SFDCR-1135 Start -->
+   <Parameter>
+      <Name>StartOfDayRollIndex</Name>
+      <Value>true</Value>
+   </Parameter>
+<!-- SFDCR-1135 End-->
+   <Parameter>
+      <Name>HandleSymbolAlias</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>RecordPublisherUseSentinel</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishSymbolAnnounceRecords</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>ApplyAliasOnSymbolAnnounce</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>DefaultTimeZone</Name>
+      <Value>UTC</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NativeTimeZone</Name>
+      <Value>UTC</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TcpConnectDelay</Name>
+      <Value>100</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TcpConnectDelayMax</Name>
+      <Value>100</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordHandlerIndexUseIssueSymbol</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordHandlerIndexCalculateHighLow</Name>
+      <Value>false</Value>
+      <Comment>Uses exchange provided values.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CmemdpFixTemplateFile</Name>
+      <Value>cmestream_templates.xml</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>CmeStreamLineFormat</Name>
+      <Comment>Common line-related configuration information.</Comment>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>cmestream</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>CmeStreamLiveParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>LIVE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>2500</Value>
+         <Comment>As adviced by the exchange.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitStartOfDay</Name>
+         <Value>0</Value>
+         <Comment>No limit</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>30</Value>
+         <Comment>30 seconds!</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransMaxGapSize</Name>
+         <Value>2500</Value>
+         <Comment>Adviced by the exchange.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterHeartbeatsHavePrevSeqNum</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>CmeStreamRetransParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>RETRANS</Value>
+      </Parameter>
+      <Parameter>
+         <Comment>This is used to request the security definitions.
+             Format - FeedId_ExchangeId</Comment>
+         <Name>MarketId</Name>
+         <Value>150_SPI</Value>
+         <Value>151_DJI</Value>
+         <Value>152_BBGI</Value><!-- EDCP-6508 -->
+      </Parameter>
+      <Parameter>
+         <Name>CmeStreamRequestSecurityDefinitions</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpConnectOnStartUp</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginTimeoutInterval</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginHeartbeatInterval</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpTempFailOk</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MessageRecoveryFile</Name>
+         <Value/>
+      </Parameter>
+   </DefineParameterGroup>
+ 
+   <Feed>
+      <Name>cmestream</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <!--Value>cmestream_live_150</Value-->
+         <Value>cmestream_live_151</Value>
+         <Value>cmestream_live_152</Value><!-- EDCP-6508 -->
+         <Value>cmestream_retrans</Value>
+      </Parameter>
+   </Feed>
+ 
+   <Feed>
+      <Name>cmespindices_cert</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>cmespindices_cert_live</Value>
+         <Value>cmespindices_cert_retrans</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>cmespindices_live</Name>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.26.126/10052</Value>
+         <Value>default2/224.0.27.126/10052</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.26.126/10052</Value>
+         <Value>224.0.27.126/10052</Value>
+      </Parameter>
+      <UseParameterGroup name="CmeSpIndicesLiveParameter"/>
+      <UseParameterGroup name="CmeSpIndicesLineFormat"/>
+   </Feed>
+   
+   <Feed>
+      <Name>cmestream_live_150</Name>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>150</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RetransFeedId</Name>
+         <Value>Replay</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.26.126/10052</Value>
+         <Value>default2/224.0.27.126/10052</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.26.126/10052</Value>
+         <Value>224.0.27.126/10052</Value>
+      </Parameter>
+      <UseParameterGroup name="CmeStreamLiveParameter"/>
+      <UseParameterGroup name="CmeStreamLineFormat"/>
+   </Feed>
+
+   <Feed>
+      <Name>cmestream_live_151</Name>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>151</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RetransFeedId</Name>
+         <Value>Replay</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.26.151/10151</Value>
+         <Value>default2/224.0.27.151/10151</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.26.151/10151</Value>
+         <Value>224.0.27.151/10151</Value>
+      </Parameter>
+      <UseParameterGroup name="CmeStreamLiveParameter"/>
+      <UseParameterGroup name="CmeStreamLineFormat"/>
+   </Feed>
+
+<!-- START EDCP-6508 -->
+   <Feed>
+      <Name>cmestream_live_152</Name>
+      <Comment>Bloomberg Indexes</Comment>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>152</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RetransFeedId</Name>
+         <Value>Replay</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.26.152/10152</Value>
+         <Value>default2/224.0.27.152/11152</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.26.152/10152</Value>
+         <Value>224.0.27.152/11152</Value>
+      </Parameter>
+      <UseParameterGroup name="CmeStreamLiveParameter"/>
+      <UseParameterGroup name="CmeStreamLineFormat"/>
+   </Feed>
+
+   <Feed>
+      <Name>cmebbg_cert</Name>
+      <Parameter>
+      <Name>SubFeeds</Name>
+         <Value>cmestream_cert_live_152</Value>
+         <Value>cmestream_cert_retrans</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>cmebbg</Name>
+      <Parameter>
+      <Name>SubFeeds</Name>
+         <Value>cmestream_live_152</Value>
+         <Value>cmestream_retrans</Value>
+      </Parameter>
+   </Feed>
+
+<!-- EDCP-6508 END -->
+
+   <Feed>
+      <Name>cmestream_retrans</Name>
+      <Parameter>
+         <Name>LoginUsername</Name>
+         <Value/>
+      </Parameter>
+      <Parameter>
+         <Name>LoginPassword</Name>
+         <Value/>
+      </Parameter>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>Replay</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>205.209.220.61</Value>
+         <Comment>Old TcpIpAdress: 205.209.222.43</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>SecondaryTcpIpAddress</Name>
+         <Value>205.209.222.61</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>10000</Value>
+         <Comment>Old port: 10001</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>SecondaryTcpPort</Name>
+         <Value>10000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>205.209.220.61/10000</Value>
+         <Value>205.209.222.61/10000</Value>
+      </Parameter>
+      <UseParameterGroup name="CmeStreamRetransParameter"/>
+      <UseParameterGroup name="CmeStreamLineFormat"/>
+   </Feed>
+
+ 
+   <Feed>
+      <Name>cmespindices_retrans</Name>
+      <Parameter>
+         <Name>LoginUsername</Name>
+         <Value/>
+      </Parameter>
+      <Parameter>
+         <Name>LoginPassword</Name>
+         <Value/>
+      </Parameter>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>1_Replay</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>205.209.220.61</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>10000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>205.209.220.61/10000</Value>
+      </Parameter>
+      <UseParameterGroup name="CmeSpIndicesRetransParameter"/>
+      <UseParameterGroup name="CmeSpIndicesLineFormat"/>
+   </Feed>
+    
+   <Feed>
+      <Name>cmespindices_cert_live</Name>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.119.149.57/12023</Value>
+         <Value>default2/233.119.149.182/12023</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.119.149.57/12023</Value>
+         <Value>233.119.149.182/12023</Value>
+      </Parameter>
+      <UseParameterGroup name="CmeSpIndicesLiveParameter"/>
+      <UseParameterGroup name="CmeSpIndicesLineFormat"/>
+   </Feed>
+
+   <Feed>
+      <Name>cmespindices_cert_retrans</Name>
+      <Parameter>
+         <Name>LoginUsername</Name>
+         <Value/>
+      </Parameter>
+      <Parameter>
+         <Name>LoginPassword</Name>
+         <Value/>
+      </Parameter>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>2_Replay</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>10.140.120.71</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>10001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>10.140.120.71/10001</Value>
+      </Parameter>
+      <UseParameterGroup name="CmeSpIndicesRetransParameter"/>
+      <UseParameterGroup name="CmeSpIndicesLineFormat"/>
+   </Feed>
+
+   <Feed>
+      <Name>cmestream_cert_live_150</Name>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>150</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RetransFeedId</Name>
+         <Value>Replay</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.119.149.57/12023</Value>
+         <Value>default2/233.119.149.182/12023</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.119.149.57/12023</Value>
+         <Value>233.119.149.182/12023</Value>
+      </Parameter>
+      <UseParameterGroup name="CmeStreamLiveParameter"/>
+      <UseParameterGroup name="CmeStreamLineFormat"/>
+   </Feed>
+
+   <Feed>
+      <Name>cmestream_cert_live_151</Name>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>151</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RetransFeedId</Name>
+         <Value>Replay</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.119.149.151/12026</Value>
+         <Value>default2/233.119.149.251/12026</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.119.149.151/12026</Value>
+         <Value>233.119.149.251/12026</Value>
+      </Parameter>
+      <UseParameterGroup name="CmeStreamLiveParameter"/>
+      <UseParameterGroup name="CmeStreamLineFormat"/>
+   </Feed>
+
+<!-- START EDCP-6508 -->
+   <Feed>
+      <Name>cmestream_cert_live_152</Name>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>152</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RetransFeedId</Name>
+         <Value>Replay</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.119.149.58/10152</Value>
+         <Value>default2/233.119.149.59/11152</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.119.149.58/10152</Value>
+         <Value>233.119.149.59/11152</Value>
+      </Parameter>
+      <UseParameterGroup name="CmeStreamLiveParameter"/>
+      <UseParameterGroup name="CmeStreamLineFormat"/>
+   </Feed>
+<!-- EDCP-6508 END -->
+
+   <Feed>
+      <Name>cmestream_cert_retrans</Name>
+      <Parameter>
+         <Name>LoginUsername</Name>
+         <Value/>
+      </Parameter>
+      <Parameter>
+         <Name>LoginPassword</Name>
+         <Value/>
+      </Parameter>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>Replay</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>10.135.192.105</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>10002</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>10.135.192.105/10002</Value>
+      </Parameter>
+      <UseParameterGroup name="CmeStreamRetransParameter"/>
+      <UseParameterGroup name="CmeStreamLineFormat"/>
+   </Feed>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsIndex</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsItc</Value>
+      <Value>FieldAttrsCme</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+
+   <IncludeFile>cmestream_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

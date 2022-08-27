@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Site specific includes -->
+   <IncludeFile>cmespindices_tport.xml</IncludeFile>
+   <IncludeFile>cmespindices_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>CMEMDP</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LoadAliasSymbolFile</Name>
+      <Value>cmespindices.alias</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishAliasRecords</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>HandleSymbolAlias</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>RecordPublisherUseSentinel</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishSymbolAnnounceRecords</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>ApplyAliasOnSymbolAnnounce</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>DefaultTimeZone</Name>
+      <Value>UTC</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NativeTimeZone</Name>
+      <Value>UTC</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TcpConnectDelay</Name>
+      <Value>100</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TcpConnectDelayMax</Name>
+      <Value>100</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordHandlerIndexUseIssueSymbol</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordHandlerIndexCalculateHighLow</Name>
+      <Value>false</Value>
+      <Comment>Uses exchange provided values.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CmemdpFixTemplateFile</Name>
+      <Value>cmespindices_templates.xml</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>CmeSpIndicesLineFormat</Name>
+      <Comment>Common line-related configuration information.</Comment>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>cmespindices</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>CmeSpIndicesLiveParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>LIVE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>2500</Value>
+         <Comment>As adviced by the exchange.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitStartOfDay</Name>
+         <Value>0</Value>
+         <Comment>No limit</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>30</Value>
+         <Comment>30 seconds!</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransMaxGapSize</Name>
+         <Value>2500</Value>
+         <Comment>Adviced by the exchange.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterHeartbeatsHavePrevSeqNum</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>CmeSpIndicesRetransParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>RETRANS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpConnectOnStartUp</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginTimeoutInterval</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginHeartbeatInterval</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpTempFailOk</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MessageRecoveryFile</Name>
+         <Value/>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <Feed>
+      <Name>cmespindices</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>cmespindices_live</Value>
+         <Value>cmespindices_retrans</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>cmespindices_cert</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>cmespindices_cert_live</Value>
+         <Value>cmespindices_cert_retrans</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>cmespindices_live</Name>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.26.126/10052</Value>
+         <Value>default2/224.0.27.126/10052</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.26.126/10052</Value>
+         <Value>224.0.27.126/10052</Value>
+      </Parameter>
+      <UseParameterGroup name="CmeSpIndicesLiveParameter"/>
+      <UseParameterGroup name="CmeSpIndicesLineFormat"/>
+   </Feed>
+    
+   <Feed>
+      <Name>cmespindices_retrans</Name>
+      <Parameter>
+         <Name>LoginUsername</Name>
+         <Value/>
+      </Parameter>
+      <Parameter>
+         <Name>LoginPassword</Name>
+         <Value/>
+      </Parameter>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>1_Replay</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>205.209.220.61</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>10000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>205.209.220.61/10000</Value>
+      </Parameter>
+      <UseParameterGroup name="CmeSpIndicesRetransParameter"/>
+      <UseParameterGroup name="CmeSpIndicesLineFormat"/>
+   </Feed>
+    
+   <Feed>
+      <Name>cmespindices_cert_live</Name>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.119.149.57/12023</Value>
+         <Value>default2/233.119.149.182/12023</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.119.149.57/12023</Value>
+         <Value>233.119.149.182/12023</Value>
+      </Parameter>
+      <UseParameterGroup name="CmeSpIndicesLiveParameter"/>
+      <UseParameterGroup name="CmeSpIndicesLineFormat"/>
+   </Feed>
+    
+   <Feed>
+      <Name>cmespindices_cert_retrans</Name>
+      <Parameter>
+         <Name>LoginUsername</Name>
+         <Value/>
+      </Parameter>
+      <Parameter>
+         <Name>LoginPassword</Name>
+         <Value/>
+      </Parameter>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>2_Replay</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>10.140.120.71</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>10001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>10.140.120.71/10001</Value>
+      </Parameter>
+      <UseParameterGroup name="CmeSpIndicesRetransParameter"/>
+      <UseParameterGroup name="CmeSpIndicesLineFormat"/>
+   </Feed>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsIndex</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsItc</Value>
+      <Value>FieldAttrsCme</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+
+   <IncludeFile>cmespindices_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

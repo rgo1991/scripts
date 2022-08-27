@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for the Nasdaq GIDS Format Multicast feed. See the Administrators Guide for more information.-->
+
+   <!-- Site specific includes -->
+   <IncludeFile>nasdaqgids_tport.xml</IncludeFile>
+   <IncludeFile>nasdaqgids_hosts.xml</IncludeFile>
+   <IncludeFile>nasdaqgids_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.superfeed.xml</IncludeFile>
+   <!-- END Site specific includes -->
+   
+   <Parameter>
+      <Name>SharedObjects</Name>
+      <Value>papastats.so.2_16_51_RH5</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>NASDAQGIDS</Value>
+   </Parameter> 
+
+<!-- SFDCR-1161 -->
+   <Parameter>
+      <Name>StartOfDayRollIndex</Name>
+      <Value>true</Value>
+   </Parameter>
+<!-- SFDCR-1161 -->
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>NasdaqGidsProductName</Name>
+      <Value>NasdaqGids</Value>
+   </Parameter>
+
+   <DefineParameterGroup>
+      <Name>NasdaqGidsMulticastConfig</Name>
+      <Comment>Common Multicast-related configuration information.</Comment>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>Gids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordHandlerAlwaysAppendProductSuffix</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>StartOfDayRollIndex</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>DelayPublishInstrumentInfo</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>MoldUdp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MulticastProtocol</Name>
+         <Value>moldudp64</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterCheckEveryMessageInBlock</Name>
+         <Value>true</Value>
+         <Comment>Required to ensure the Start of Day message is searched for within the MoldUdp blocks and never spooled.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>1000</Value>
+         <Comment>The maximum number of messages to spool awaiting a missed or out-of-sequence packet.  Once this limit is reached any missed messages are classed as permanently missed and the feed handler continues without them.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>1</Value>
+         <Comment>The maximum time to wait for missed or out-of-sequence messages, after which the missed messages are classed as "permanently missed" and the feed handler continues without them. Any missed messages may arrive on either of the main transmission lines or via the retransmission server, but must arrive before this timeout.  This can be increased if gaps are rare and it is preferable to receive all messages with a rare latency spike.</Comment>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>NasdaqGidsMulticastRetransmission</Name>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MoldRetransRetryCount</Name>
+         <Value>10</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MoldRetransIntervalMsec</Name>
+         <Value>10</Value>
+      </Parameter>
+      <ParamGroup>
+         <Name>RetransRequestor</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>206.200.107.226</Value><!-- SFDCR-1843 -->
+            <!--Value>206.200.245.35</Value-->
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>55070</Value>
+         </Parameter>
+         <Parameter>
+            <Name>LocalHost</Name>
+            <Value/>
+         </Parameter>
+         <Parameter>
+            <Name>LocalService</Name>
+            <Value>50013</Value>
+         </Parameter>
+      </ParamGroup>
+   </DefineParameterGroup>
+    
+   <Parameter>
+      <Name>NativeTimeZone</Name>
+      <Value>US/Eastern</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PlaybackSourceId</Name>
+      <Value>192.168.187.1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbolMapDotReplacement</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FtRvService</Name>
+      <Value>7701</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_nasdaqgids</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value>nasdaqgids.sym</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsReferential</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsChain</Value>
+      <Value>FieldAttrsIndex</Value>
+      <Value>FieldAttrsFund</Value>
+      <Value>FieldAttrsFundamental</Value>
+      <Value>FieldAttrsFixedIncome</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsNasdaq</Value>
+   </Parameter>
+    
+   <Feed>
+      <Name>nasdaqgids</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector2NSD1"/>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-33</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.54.12.132/55370</Value><!-- SFDCR-1843 NY Metro A -->
+         <Value>default2/233.49.196.132/55371</Value><!-- SFDCR-1843 NY Metro B -->
+         <!-- Value>default1/233.54.12.32/55370</Value SFDCR-1843 -->
+         <!--Value>default2/233.79.85.32/55371</Value SFDCR-1073 -->
+         <!--Value>default2/233.54.12.31/55372</Value SFDCR-1843 -->
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.54.12.132</Value><!-- SFDCR-1843 NY Metro A -->
+         <Value>233.49.196.132</Value><!-- SFDCR-1843 NY Metro B -->
+         <!--Value>233.54.12.32</Value-->
+         <!--Value>233.79.85.32</Value SFDCR-1073 -->
+         <!--Value>233.54.12.31</Value-->
+      </Parameter>
+      <UseParameterGroup name="NasdaqGidsMulticastConfig"/>
+      <UseParameterGroup name="NasdaqGidsMulticastRetransmission"/>
+   </Feed>
+
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

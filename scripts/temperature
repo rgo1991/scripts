@@ -1,0 +1,97 @@
+#!/bin/bash
+
+
+convert(){
+
+quiet=0
+scale=0
+error=0
+
+sourcee=centigrade
+#resets OPTIND to 1 everytime the function is called. this isnt needed if the function gets called only once, but in this case it gets called multipled times, so OPTIND needs to be manually reset to 1.
+OPTIND=1
+
+
+while getopts 'c:f:s:q?' opt;do
+	case "$opt" in
+		"c")  centigrade=$OPTARG
+		    sourcee=centigrade ;;
+		"f")  fahrenheit=$OPTARG
+		    sourcee=fahrenheit ;;
+		"s")  scale=$OPTARG ;;
+		"q")  quiet=1 ;;	
+		*) echo "Usage: convert [ -c | -f ] temperature [ -s scale | -q ]"
+		   error=1
+		   return 0 ;;
+	esac
+done
+
+
+if [ "$quiet" -eq "1" ] && [ "$scale" != "0" ];then
+	echo "ERROR: Quiet and Scale are mutually exclussive"
+	echo "Quiet can only return whole numbers between 0 and 255"
+	exit 1;fi
+
+
+
+case $sourcee in 
+	centigrade)
+		fahrenheit=`echo scale=$scale \; $centigrade \* 9 / 5 + 32 | bc`
+		answer="$centigrade degrees Centrigrade is $fahrenheit degrees Fahrenheit"
+		result=$fahrenheit;;
+	fahrenheit)
+		centigrade=`echo scale=$scale \; \($fahrenheit - 32\) \* 5 / 9 | bc`
+		answer="$fahrenheit degrees Fahrenheit is $centigrade degrees Centigrade"
+		result=$centigrade;;
+	*) 
+		echo "An ERROR has occured 1"
+		exit 0 ;;
+esac
+
+if [ "$quiet" -eq "1" ];then
+	if [ "$result" -gt "255" ] || [ "$result" -lt "0" ];then
+		echo An ERROR has occured 2
+		echo Cant return values outside of the range 0-255 when quiet
+		error=1
+		return=0;fi
+		return=$result
+	else
+		echo $answer;fi
+}
+
+
+echo "First by return code.... "
+convert -q -c $1
+result=$?
+
+if [ "$error" -eq "0" ];then
+	echo "${1}C is ${result}F";fi
+
+convert -f $1 -q
+result=$?
+
+if [ "$error" -eq "0" ];then
+	echo "${1}F is ${result}C";fi
+
+echo
+echo "Then withing the function..."
+
+convert -f $1
+convert -c $1
+
+echo
+
+echo "And now with more precision"
+
+convert -f $1 -s 2
+convert -s 3 -c $1
+
+
+
+
+
+
+
+
+
+

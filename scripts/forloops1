@@ -1,0 +1,28 @@
+#!/bin/bash
+
+
+#grep command as input for a for loop.
+
+loop_function(){
+
+for host in `grep 192\.168\.1\. downhosts.with* | awk '{print $2}'`
+do
+	ping -c1 -w1 $host > /dev/null
+	if [ $? != 0 ];then
+	echo $host is not up;else
+	echo $host is up
+	fi
+done
+
+}
+
+#loop_function
+
+
+
+#C-style for loop.
+
+for ((i=1,j=100; i<=10; i++,j-=5));do #can set multiple variables, conditions and operations.
+	printf "i=$i j=$j\n" 
+	printf "i=%03d j=%03d\n\n" $i $j #syntax for writing numbers as 3 digit integers
+done

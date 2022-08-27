@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# associative arrays and referencing them with eachother using ${!array[@]}
+
+declare -A beatles
+beatles=( [singer]=John [bassist]=Paul [drummer]=Ringo [guitarist]=George )
+for i in ${!beatles[@]};do
+	echo "The $i is ${beatles[$i]}"
+done
+
+
+#copying an array. always use the "" around the arrays so the whitespace where required will be preserved. also always use @ when copying.
+
+singers=( "${beatles[@]}" )
+
+for i in "${singers[@]}";do
+	echo "Singers are: $i";done
+echo
+
+#appending to an arrayy is much the same as coppying. just extend the syntax
+
+singers[${#singers[@]}]=michael
+
+echo ${singers[@]}
+echo
+
+#combining arrays
+
+moresingers=( a b c )
+singers+=("${moresingers[@]}")
+echo
+echo "${singers[@]}"
+
+
+#deleting from an array
+
+unset singers
+unset singers[3]

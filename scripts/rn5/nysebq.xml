@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Site specific includes -->
+   <IncludeFile>nysebq_tport.xml</IncludeFile>
+   <IncludeFile>nysebq_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+ 
+   <Parameter>
+      <Name>Pdp2RetransProductId</Name>
+      <Value>107</Value>
+      <Comment>Product Id for Nyse Quote is always 107</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterRetransActive</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterInitialSeqNum</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterRetransMaxGapSize</Name>
+      <Value>500</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterGapLimitSize</Name>
+      <Value>5000</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>QuoteSizeMultiplier</Name>
+      <Value>100</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LotSizeMapFileName</Name>
+      <Value>/opt/wombat/feeds/config/lot_size_map.txt</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PacketUnavailableErrorAsInfo</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NyseBqZeroBookPriceIfClosed</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>pdp2</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Comment>For getting data into Superbook we need to publish a book update.</Comment>
+      <Name>PublishOrderBooks</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+   
+   <Parameter>
+      <Name>PublishSummaryOrderBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>cms2streetMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ParticipantIdMapFuncName</Name>
+      <Value>nyseBqPartIdMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NyseBqNormalQuoteChangesStatus</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NyseBqMapBookConditionCodes</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>QuoteSizeMultiplier</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsOrder</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderListPartLong</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>NyseBqTcpConfig</Name>
+      <Parameter>
+         <Name>TcpConnectedMeansLineUp</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MessageRecoveryFile</Name>
+         <Value/>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <Feed>
+      <Name>nysebq_nyse</Name>
+      <Comment>NYSE Best Quotes</Comment>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>nysebq_nyse_ac</Value>
+         <Value>nysebq_nyse_dj</Value>
+         <Value>nysebq_nyse_kq</Value>
+         <Value>nysebq_nyse_rz</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/nysebq_nyse.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysebq_nyse_aj</Name>
+      <Comment>NYSE Best Quotes - A-J</Comment>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>nysebq_nyse_ac</Value>
+         <Value>nysebq_nyse_dj</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NYSEBBO</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NyseBqProductName</Name>
+         <Value>NyseBq</Value>
+      </Parameter>
+      <Parameter>
+        <Name>NyseBqBookProductName</Name>
+        <Value>NyseBqBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/nysebq_nyse_aj.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysebq_nyse_kz</Name>
+      <Comment>NYSE Best Quotes - K-Z</Comment>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>nysebq_nyse_kq</Value>
+         <Value>nysebq_nyse_rz</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NYSEBBO</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NyseBqProductName</Name>
+         <Value>NyseBq</Value>
+      </Parameter>
+      <Parameter>
+        <Name>NyseBqBookProductName</Name>
+        <Value>NyseBqBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/nysebq_nyse_kz.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>nysebq_amex</Name>
+      <Comment>AMEX Best Quotes</Comment>
+      <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>nysebq_amex_az</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>AMEXBBO</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NyseBqProductName</Name>
+         <Value>NyseBqAmex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NyseBqBookProductName</Name>
+         <Value>NyseBqAmexBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/nysebq_amex.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>nysebq_test</Name>
+      <Comment>NYSE Best Quotes</Comment>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>nysebq_ac_test</Value>
+         <Value>nysebq_dj_test</Value>
+         <Value>nysebq_kq_test</Value>
+         <Value>nysebq_rz_test</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysebq_tcp</Name>
+      <Comment>NYSE Best Quotes</Comment>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>nysebq_ac_tcp</Value>
+         <Value>nysebq_dj_tcp</Value>
+         <Value>nysebq_kq_tcp</Value>
+         <Value>nysebq_rz_tcp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>192.168.187.5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseLineFilter</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseLineHandlerPdp2</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>pdp2</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysebq_ac_tcp</Name>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>8220</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysebq_dj_tcp</Name>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>9220</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysebq_kq_tcp</Name>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>10220</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysebq_rz_tcp</Name>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>11220</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysebq_nyse_ac</Name>
+      <Comment>NYSE Best Quotes Symbols A through C</Comment>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.5.220/8220</Value>
+         <Value>default2/224.0.5.222/8222/monitorOff</Value>
+         <Value>default1/224.0.5.221/8221</Value>
+         <Value>default2/224.0.5.223/8223/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.5.220</Value>
+         <Value>224.0.5.222</Value>
+         <Value>224.0.5.221</Value>
+         <Value>224.0.5.223</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Type</Name>
+         <Value>PDP</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>20100</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>20100</Value>
+         </Parameter>
+      </ParamGroup>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NYSEBBO</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NyseBqProductName</Name>
+         <Value>NyseBq</Value>
+      </Parameter>
+      <Parameter>
+        <Name>NyseBqBookProductName</Name>
+        <Value>NyseBqBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/nysebq_nyse_ac.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysebq_nyse_dj</Name>
+      <Comment>NYSE Best Quotes Symbols D through J</Comment>
+      <UseParameterGroup name="WmwTransportPropertiesVector1NSD1"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.5.220/9220</Value>
+         <Value>default2/224.0.5.222/9222/monitorOff</Value>
+         <Value>default1/224.0.5.221/9221</Value>
+         <Value>default2/224.0.5.223/9223/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.5.220</Value>
+         <Value>224.0.5.222</Value>
+         <Value>224.0.5.221</Value>
+         <Value>224.0.5.223</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Type</Name>
+         <Value>PDP</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>21100</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>21100</Value>
+         </Parameter>
+      </ParamGroup>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NYSEBBO</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NyseBqProductName</Name>
+         <Value>NyseBq</Value>
+      </Parameter>
+      <Parameter>
+        <Name>NyseBqBookProductName</Name>
+        <Value>NyseBqBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/nysebq_nyse_dj.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysebq_nyse_kq</Name>
+      <Comment>NYSE Best Quotes Symbols K through Q</Comment>
+      <UseParameterGroup name="WmwTransportPropertiesVector2NSD1"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.5.220/10220</Value>
+         <Value>default2/224.0.5.222/10222/monitorOff</Value>
+         <Value>default1/224.0.5.221/10221</Value>
+         <Value>default2/224.0.5.223/10223/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.5.220</Value>
+         <Value>224.0.5.222</Value>
+         <Value>224.0.5.221</Value>
+         <Value>224.0.5.223</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Type</Name>
+         <Value>PDP</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>22100</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>22100</Value>
+         </Parameter>
+      </ParamGroup>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NYSEBBO</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NyseBqProductName</Name>
+         <Value>NyseBq</Value>
+      </Parameter>
+      <Parameter>
+        <Name>NyseBqBookProductName</Name>
+        <Value>NyseBqBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/nysebq_nyse_kq.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysebq_nyse_rz</Name>
+      <Comment>NYSE Best Quotes Symbols R through Z</Comment>
+      <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.5.220/11220</Value>
+         <Value>default2/224.0.5.222/11222/monitorOff</Value>
+         <Value>default1/224.0.5.221/11221</Value>
+         <Value>default2/224.0.5.223/11223/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.5.220</Value>
+         <Value>224.0.5.222</Value>
+         <Value>224.0.5.221</Value>
+         <Value>224.0.5.223</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Type</Name>
+         <Value>PDP</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>23100</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>23100</Value>
+         </Parameter>
+      </ParamGroup>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NYSEBBO</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NyseBqProductName</Name>
+         <Value>NyseBq</Value>
+      </Parameter>
+      <Parameter>
+        <Name>NyseBqBookProductName</Name>
+        <Value>NyseBqBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/nysebq_nyse_rz.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysebq_ac_test</Name>
+      <Comment>NYSE Best Quotes Symbols A through C Test Line</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.5.224/8224</Value>
+         <Value>default2/224.0.5.226/8226/monitorOff</Value>
+         <Value>default1/224.0.5.225/8225</Value>
+         <Value>default2/224.0.5.227/8227/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.5.224</Value>
+         <Value>224.0.5.225</Value>
+         <Value>224.0.5.226</Value>
+         <Value>224.0.5.227</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Type</Name>
+         <Value>PDP</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Test Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>20200</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Test Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>20200</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>nysebq_dj_test</Name>
+      <Comment>NYSE Best Quotes Symbols D through J Test Line</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.5.224/9224</Value>
+         <Value>default2/224.0.5.226/9226/monitorOff</Value>
+         <Value>default1/224.0.5.225/9225</Value>
+         <Value>default2/224.0.5.227/9227/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.5.224</Value>
+         <Value>224.0.5.225</Value>
+         <Value>224.0.5.226</Value>
+         <Value>224.0.5.227</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Type</Name>
+         <Value>PDP</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Test Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>21200</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Test Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>21200</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>nysebq_kq_test</Name>
+      <Comment>NYSE Best Quotes Symbols K through Q Test Line</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.5.224/10224</Value>
+         <Value>default2/224.0.5.226/10226/monitorOff</Value>
+         <Value>default1/224.0.5.225/10225</Value>
+         <Value>default2/224.0.5.227/10227/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.5.224</Value>
+         <Value>224.0.5.225</Value>
+         <Value>224.0.5.226</Value>
+         <Value>224.0.5.227</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Type</Name>
+         <Value>PDP</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Test Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>22200</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Test Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>22200</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>nysebq_rz_test</Name>
+      <Comment>NYSE Best Quotes Symbols R through Z Test Line</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.5.224/11224</Value>
+         <Value>default2/224.0.5.226/11226/monitorOff</Value>
+         <Value>default1/224.0.5.225/11225</Value>
+         <Value>default2/224.0.5.227/11227/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.5.224</Value>
+         <Value>224.0.5.225</Value>
+         <Value>224.0.5.226</Value>
+         <Value>224.0.5.227</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Type</Name>
+         <Value>PDP</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Test Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>23200</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Test Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>23200</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>nysebq_p</Name>
+      <UseParameterGroup name="PlaybackFiles"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>nysebq</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractFile</Name>
+         <Value>nysebq.play.%Y%m%d</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysebq_test_p</Name>
+      <UseParameterGroup name="PlaybackFiles"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>nysebq_test</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractFile</Name>
+         <Value>nysebq_test.play.%Y%m%d</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>nysebq_amex_az</Name>
+      <Comment>NYSE AMEX Best Quotes Symbols A through Z</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.57/62057</Value>
+         <Value>default2/233.75.215.57/63057/monitorOff</Value>
+         <Value>default1/233.75.215.185/62185</Value>
+         <Value>default2/233.75.215.185/63185/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.57/62057</Value>
+         <Value>233.75.215.57/63057</Value>
+         <Value>233.75.215.185/62185</Value>
+         <Value>233.75.215.185/63185</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>30001</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>30001</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

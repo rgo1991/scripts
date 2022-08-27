@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#assinning to an array from a source:
+
+cat websites
+stat=( $(cat websites) )
+echo
+echo
+
+echo ${stat[0]}
+echo ${stat[1]}
+echo ${stat[2]}
+echo ${stat[3]}

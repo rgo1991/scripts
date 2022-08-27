@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+   
+   <!-- Site specific includes -->
+   <IncludeFile>amexrtrp_tport.xml</IncludeFile>
+   <IncludeFile>amexrtrp_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>AMEXRTRP</Value>
+   </Parameter>
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+ 
+   <Parameter>
+      <Name>XdpMessageHandlerName</Name>
+      <Value>amexrtrpxdp</Value>
+   </Parameter>
+   <Parameter>
+      <Name>AmexRtrpXdpMessageHandlerName</Name>
+      <Value>amexrtrpxdp</Value>
+   </Parameter>
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>xdp</Value>
+   </Parameter>
+   <Parameter>
+      <Name>XdpProductId</Name>
+      <Value>57</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UseUnitOfTrade</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpLogRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>XdpRetransmissionMethod</Name>
+      <Value>1</Value>
+   </Parameter>
+   <Parameter>
+      <Name>LineFilterDiscardForwardRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpLogSymbolIndexInitial</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>XdpLogAllSymbolIndexUpdates</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>cms2streetMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoUseCurrentTimeAsLineTimeAndSrcTime</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookUseUndecoratedSymbolName</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoAddPrefixOnSecurityStatusOrig</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordHandlerAlwaysAppendProductSuffix</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>AmexRtrpXdpProductName</Name>
+      <Value>NyseRtrpAmex</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MessageRecoveryFile</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsBloomberg</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsTrade</Value>
+   </Parameter>
+    
+   <Feed>
+      <Name>amexrtrpxdp</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD2"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <!-- PROD Lines -->
+         <Value>amexrtrpxdp_live</Value>
+         <Value>amexrtrpxdp_request</Value>
+         <!--Value>amexrtrpxdp_stock_summary</Value-->
+         <!-- TEST Lines -->
+         <!--Value>amexrtrpxdp_test_live</Value>
+         <Value>amexrtrpxdp_test_request</Value>
+         <Value>amexrtrpxdp_test_stock_summary</Value-->
+      </Parameter>
+   </Feed>
+    
+   <DefineParameterGroup>
+      <Name>AmexRtrpXdpLiveParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>LIVE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>AmexRtrpXdpRequestReqParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>REFRESH_REQ</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>AmexRtrpXdpStockSummaryParameter</Name>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>0.5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LiveFeedId</Name>
+         <Value>live_001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>STOCK_SUMMARY</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>AmexRtrpXdp_prod_001_group</Name>
+      <Parameter>
+         <Name>RefreshReqFeedId</Name>
+         <Value>request_001</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <Feed>
+      <Name>amexrtrpxdp_live</Name>
+      <UseParameterGroup name="AmexRtrpXdpLiveParameter"/>
+      <UseParameterGroup name="AmexRtrpXdp_prod_001_group"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>live_001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.59/62059</Value>
+         <Value>default1/233.75.215.59/63059/monitorOff</Value>
+         <Value>default2/233.75.215.187/62187</Value>
+         <Value>default2/233.75.215.187/63187/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.59/62059</Value>
+         <Value>233.75.215.59/63059</Value>
+         <Value>233.75.215.187/62187</Value>
+         <Value>233.75.215.187/63187</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>amexrtrpxdp_request</Name>
+      <UseParameterGroup name="AmexRtrpXdpRequestReqParameter"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>request_001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>159.125.76.1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>30015</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>AlternativeConnection</Name>
+         <Value>159.125.76.161</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value/>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>amexrtrpxdp_stock_summary</Name>
+      <UseParameterGroup name="AmexRtrpXdpStockSummaryParameter"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.154/80000</Value>
+         <Value>default2/233.75.215.154/80001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.154</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>amexrtrpxdp_test_live</Name>
+      <UseParameterGroup name="AmexRtrpXdpLiveParameter"/>
+      <UseParameterGroup name="AmexRtrpXdp_prod_001_group"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>live_001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.27/62027</Value>
+         <Value>default1/233.75.215.27/63027/monitorOff</Value>
+         <Value>default2/233.75.215.155/62155</Value>
+         <Value>default2/233.75.215.155/63155/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.27/62027</Value>
+         <Value>233.75.215.27/63027</Value>
+         <Value>233.75.215.155/62155</Value>
+         <Value>233.75.215.155/63155</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>amexrtrpxdp_test_request</Name>
+      <UseParameterGroup name="AmexRtrpXdpRequestReqParameter"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>request_001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>159.125.76.1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>30016</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>AlternativeConnection</Name>
+         <Value>159.125.76.161</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value/>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>amexrtrpxdp_test_stock_summary</Name>
+      <UseParameterGroup name="AmexRtrpXdpStockSummaryParameter"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.154/80004</Value>
+         <Value>default2/233.75.215.154/80005</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.154</Value>
+      </Parameter>
+   </Feed>
+
+   <IncludeFile>amexrtrpxdp_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>amexrtrpxdp_trade_condition_mapping.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

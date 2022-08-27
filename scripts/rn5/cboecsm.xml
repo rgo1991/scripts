@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for the CBOECSM  Multicast feed. See the Administrators Guide for more information:  http://wombatconsulting.com/feedhandlers/admin-guide.html-->
+
+ <IncludeFile>papastats.2.17.xml</IncludeFile>
+<!--    
+   <Parameter>
+      <Name>DefaultMulticastInterface1</Name>
+      <Value>192.168.187</Value>
+   </Parameter>
+-->    
+   <Parameter>
+      <Name>DefaultMulticastInterface2</Name>
+      <Value>10.225.68.15</Value>
+   </Parameter>
+ 
+   <!-- Site specific includes -->
+   <IncludeFile>cboecsm_tport.xml</IncludeFile>
+   <IncludeFile>cboecsm_hosts.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>CBOECSM</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TopOfBookDecimals</Name>
+      <Value>7</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SymbolSuffixTopOfBook</Name>
+      <Value>.BBO</Value>
+   </Parameter>
+
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <!--Value>16777216</Value-->
+      <Value>33554432</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterGapLimitTime</Name>
+      <Value>1800</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterGapLimitSize</Name>
+      <Value>15000</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>cboecsm</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NativeTimeZone</Name>
+      <Value>UTC</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+      <Value>RecordAttrsOption</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>StrategyPublishSymbology</Name>
+      <Value>normalize</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordHandlerDerivAggregateOrderBooks</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CboeCsmReversePriceOnStrategyBid</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FuturePublishSymbologyFormat</Name>
+      <Value>%e%m%Y</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OptionPublishSymbologyFormat</Name>
+      <Value>%u%p%Y%d%s%e</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>StrategyPublishSymbologyFormat</Name>
+      <Value>%g_%n_%l%e</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>StrategyLegPublishSymbologyFormat</Name>
+      <Value>%r%b%t</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ExtraInfoPublishSymbologySeparator</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookUseUndecoratedSymbolName</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UseRawOrderBookClear</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>DerivPrefixBookProductSuffixToExplicitImpliedBookSuffixes</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OrderBookUpdateImpliesNormalStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CboeCsmPublishLevel1Quotes</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterAutoDetectSeqNumberReset</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterSeqNumberResetHighWater</Name>
+      <Value>50000</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterSeqNumberResetLowWater</Name>
+      <Value>5000</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CboeCsmProductNameIndex</Name>
+      <Value>CboeIndices</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderListPart</Value>
+      <Value>FieldAttrsOption</Value>
+      <Value>FieldAttrsFuture</Value>
+      <Value>FieldAttrsStrategy</Value>
+      <Value>FieldAttrsCboecmi</Value>
+      <Value>FieldAttrsItc</Value>
+      <Value>FieldAttrsReferential</Value>
+      <Value>FieldAttrsOrderImbalance</Value>
+      <Value>FieldAttrsIndex</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>CboeCsmLiveParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>LIVE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MulticastConnectOnInit</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterHeartbeatsHavePrevSeqNum</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterCheckEveryMessageInBlock</Name>
+         <Value>true</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>CboeCsmReferenceParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>REFERENCE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterHeartbeatsHavePrevSeqNum</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterCheckEveryMessageInBlock</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <IncludeFile>cboecsm_prod.xml</IncludeFile>
+   <!-- <IncludeFile>cboecsm_uat.xml</IncludeFile> -->
+   <IncludeFile>cboecsm_trade_condition_mapping.xml</IncludeFile>
+   <IncludeFile>cboecsm_product_mapping.xml</IncludeFile>
+   <IncludeFile>cboecsm_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

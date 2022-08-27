@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#a common use of the case statement is to place it inside a while loop as in example below.
+
+
+
+quit=0
+while read command data;do
+	case $command in
+	echo) echo "Found an echo command: $data" ;;
+	upper) echo -en "Found an upper command "; echo $data | tr '[:lower:]' '[:upper:]' ;;
+	lower) echo -en "Found a lower command"; echo $data | tr '[:upper:]' '[:lower:]' ;;
+	quit) echo "Quiting as requested"; quit=1; break ;;
+	*) echo "read $command which is not valid input"; echo "valid commands are echo upper lower and quit";;
+	esac
+done
+	if [ $quit -eq 1 ];then
+	echo "Broke out of the loop as directed";else
+	echo "Got to the end of the loop without being told to quit";fi
+
+
+
+
+

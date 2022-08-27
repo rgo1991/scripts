@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for Consolidated data feed - Canadian Best Bid and Offer feed handler. See the Administrators Guide for more information:    http://wombatconsulting.com/feedhandlers/admin-guide.html--><!--The following configuration clauses are common to all cdfcls feed handlers-->
+
+   <IncludeFile>cdfcls_tport.xml</IncludeFile>
+   <IncludeFile>cdfcls_hosts.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>TMXCLS</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value>cdfcls.sym</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>FtService</Name>
+      <Value>7745</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>RecordHandlerSymbolAnnounce</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishSymbolAnnounceRecords</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SymbolAnnounceRecord</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_cdfcls</Value>
+   </Parameter>
+   <Parameter>
+      <Name>OrderBookSymbolFile</Name>
+      <Value>cdfcls.orderbook.sym</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>tsx</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>CheckForClassD</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UnicastListenOnAllInterfaces</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterRetransMaxGapSize</Name>
+      <Value>500</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterGapLimitSize</Name>
+      <!--Value>2000</Value - increasing gaplimitsize sfdcr-916-->
+      <Value>4000</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterMaxValidGapSize</Name>
+      <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterGapLimitTime</Name>
+      <Value>0.5</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterGapLimitStartOfDay</Name>
+      <Value>1000</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterRetransActive</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LogRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TsxRetransMaxQueueSize</Name>
+      <Value>500</Value>
+      <Comment>Maximum retrans queue size to keep. Older retrans request will be discarded if this limit is reached. Set to 0 to have no limit.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>dotReplacementMap</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TsxL2ProductNameCLS</Name>
+      <Value>TSXLevel2CLS</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>CdfRegularTrades</Name>
+      <Value>Normal</Value>
+      <Value>MarketOnClose</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsIndex</Value>
+      <Value>FieldAttrsFundamental</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsFixedIncome</Value>
+      <Value>FieldAttrsTsx</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsNetworkMonitor</Value>
+      <Value>FieldAttrsOrder</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+   </Parameter>
+
+   <DefineParameterGroup>
+      <Name>TsxLineFormat</Name>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>tsx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumOffset</Name>
+         <Value>4</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumLength</Name>
+         <Value>9</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryOffset</Name>
+         <Value>5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryControl</Name>
+         <Value> </Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeOffset</Name>
+         <Value>19</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeSeqNumReset</Name>
+         <Value> </Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransOffset</Name>
+         <Value>16</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransLength</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransOrig</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeHeartbeat</Name>
+         <Value> </Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <Feed>
+      <Name>cdfcls</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tl2_CLS</Value>
+         <!--Value>cl2_CLS</Valuei EDCP-8406 -->
+         <Value>tl2_CLSp1</Value>
+         <Value>tl2_CLSp2</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>cdfcls_p</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <UseParameterGroup name="PlaybackFiles"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tl2_CLS_p</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractFile</Name>
+         <Value>cdfcls.play.%Y%m%d</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>tl2_CLS</Name>
+      <Parameter>
+         <Name>Tl2IsCls</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-75</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.232/60016</Value>
+         <Value>default1/0.0.0.0/60068/monitorOff</Value>
+         <Value>default2/233.102.209.104/60017</Value>
+         <Value>default2/0.0.0.0/60067/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.232/60016</Value>
+         <Value>233.102.209.232/60068</Value>
+         <Value>233.102.209.104/60017</Value>
+         <Value>233.102.209.104/60067</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60028</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60028</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+<!-- SFD-1617 Start -->
+
+   <Feed>
+      <Name>tl2_CLSp1</Name>
+      <Parameter>
+         <Name>Tl2IsCls</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-75</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.232/60016</Value>
+         <Value>default1/0.0.0.0/60068/monitorOff</Value>
+         <Value>default2/233.102.209.104/60017</Value>
+         <Value>default2/0.0.0.0/60067/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.232/60016</Value>
+         <Value>233.102.209.232/60068</Value>
+         <Value>233.102.209.104/60017</Value>
+         <Value>233.102.209.104/60067</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60028</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60028</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_CLSp2</Name>
+      <Parameter>
+         <Name>Tl2IsCls</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-75</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.221/61110</Value>
+         <Value>default1/0.0.0.0/61113/monitorOff</Value>
+         <Value>default2/233.102.209.88/61111</Value>
+         <Value>default2/0.0.0.0/61114/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.221/61110</Value>
+         <Value>233.102.209.221/61113</Value>
+         <Value>233.102.209.88/61111</Value>
+         <Value>233.102.209.88/61114</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61112</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61112</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+<!-- SFD-1617 End -->
+   <Feed>
+      <Name>tl2_CLS_p</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <UseParameterGroup name="PlaybackFiles"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tl2_CLS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractFile</Name>
+         <Value>tl2_CLS.play.%Y%m%d</Value>
+      </Parameter>
+   </Feed>
+   <Feed>
+      <Name>cl2_CLS</Name>
+      <Parameter>
+         <Name>Tl2IsCls</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-76</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.236/61004</Value>
+         <Value>default1/0.0.0.0/61052/monitorOff</Value>
+         <Value>default2/233.102.209.108/61005</Value>
+         <Value>default2/0.0.0.0/61053/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.236/61004</Value>
+         <Value>233.102.209.236/61052</Value>
+         <Value>233.102.209.108/61005</Value>
+         <Value>233.102.209.108/61053</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61021</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61021</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>cdfcls_trade_condition_mapping.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

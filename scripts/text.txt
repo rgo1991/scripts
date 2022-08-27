@@ -1,0 +1,119 @@
+------ Mamacaches and their hostnames associated with source AMEX from rn4/mamacache_cta_utp.xml ------
+mamacache_cta_amex_ADz is on hosts pny2sfmct10a and pny2sfmct10b
+mamacache_cta_amex_EEw is on hosts pny2sfmct10a and pny2sfmct10b
+mamacache_cta_amex_ExGz is on hosts pny2sfmct10a and pny2sfmct10b
+mamacache_cta_amex_HIwe is on hosts pny2sfmct10a and pny2sfmct10b
+mamacache_cta_amex_IwfKi is on hosts pny2sfmct11a and pny2sfmct11b
+mamacache_cta_amex_KjRm is on hosts pny2sfmct11a and pny2sfmct11b
+mamacache_cta_amex_RnSk is on hosts pny2sfmct11a and pny2sfmct11b
+mamacache_cta_amex_SlSp is on hosts pny2sfmct11a and pny2sfmct11b
+mamacache_cta_amex_SqUm is on hosts pny2sfmct12a and pny2sfmct12b
+mamacache_cta_amex_UnVn is on hosts pny2sfmct12a and pny2sfmct12b
+mamacache_cta_amex_VoXle is on hosts pny2sfmct12a and pny2sfmct12b
+mamacache_cta_amex_XlfZ is on hosts pny2sfmct12a and pny2sfmct12b
+------ Mamacaches and their hostnames associated with source AMEX from rn4/mamacache_cta_utp.xml.old ------
+mamacache_cta_amex_ADz is on hosts pny2sfmct10a and pny2sfmct10b
+mamacache_cta_amex_EEw is on hosts pny2sfmct10a and pny2sfmct10b
+mamacache_cta_amex_ExGz is on hosts pny2sfmct10a and pny2sfmct10b
+mamacache_cta_amex_HIwe is on hosts pny2sfmct10a and pny2sfmct10b
+mamacache_cta_amex_IwfKi is on hosts pny2sfmct11a and pny2sfmct11b
+mamacache_cta_amex_KjRm is on hosts pny2sfmct11a and pny2sfmct11b
+mamacache_cta_amex_RnSk is on hosts pny2sfmct11a and pny2sfmct11b
+mamacache_cta_amex_SlSp is on hosts pny2sfmct11a and pny2sfmct11b
+mamacache_cta_amex_SqUm is on hosts pny2sfmct12a and pny2sfmct12b
+mamacache_cta_amex_UnVn is on hosts pny2sfmct12a and pny2sfmct12b
+mamacache_cta_amex_VoXle is on hosts pny2sfmct12a and pny2sfmct12b
+mamacache_cta_amex_XlfZ is on hosts pny2sfmct12a and pny2sfmct12b
+------ Mamacaches and their hostnames associated with source AMEX from rn4/mamacache_cta_utp_conf.xml ------
+mamacache_cta_amex_ADz_conf is on hosts pny2sfmct06a and pny2sfmct06b
+mamacache_cta_amex_EEw_conf is on hosts pny2sfmct06a and pny2sfmct06b
+mamacache_cta_amex_ExGz_conf is on hosts pny2sfmct06a and pny2sfmct06b
+mamacache_cta_amex_HIwe_conf is on hosts pny2sfmct06a and pny2sfmct06b
+mamacache_cta_amex_IwfKi_conf is on hosts pny2sfmct26a and pny2sfmct26b
+mamacache_cta_amex_KjRm_conf is on hosts pny2sfmct26a and pny2sfmct26b
+mamacache_cta_amex_RnSk_conf is on hosts pny2sfmct26a and pny2sfmct26b
+mamacache_cta_amex_SlSp_conf is on hosts pny2sfmct26a and pny2sfmct26b
+mamacache_cta_amex_SqUm_conf is on hosts pny2sfmct26a and pny2sfmct26b
+mamacache_cta_amex_UnVn_conf is on hosts pny2sfmct26a and pny2sfmct26b
+mamacache_cta_amex_VoXle_conf is on hosts pny2sfmct26a and pny2sfmct26b
+mamacache_cta_amex_XlfZ_conf is on hosts pny2sfmct26a and pny2sfmct26b
+------ Mamacaches and their hostnames associated with source AMEX from rn4/mamacache_openbook_conf.xml ------
+------ Mamacaches and their hostnames associated with source AMEX from rn4/mamacache_openbook_prod.xml ------
+------ Mamacaches and their hostnames associated with source AMEX from rn4/mamacache_v5_openbook_prod.xml ------
+------ Feeds and their hostnames associated with source AMEX -----
+pny2sffhr02a
+cta-binary-nyse-aa-iq
+cta-binary-nyse-ir-zz
+cta-binary-amex-aa-rm
+cta-binary-amex-rn-zz
+pny2sffhr02b
+cta-binary-nyse-aa-iq
+cta-binary-nyse-ir-zz
+cta-binary-amex-aa-rm
+cta-binary-amex-rn-zz
+pny2sffhr03a
+cta_trades_al
+cta_trades_mz
+cta_index
+pny2sffhr03b
+cta_trades_al
+cta_trades_mz
+cta_index
+pny2sffhr04a
+cta_nyse_AAn
+cta_nyse_AoBx
+cta_nyse_ByCr
+cta_nyse_CsEl
+cta_nyse_EmGl
+cta_nyse_GmIq
+cta_nyse_IrLv
+cta_nyse_LwNo
+cta_nyse_NpPr
+cta_nyse_PsSt
+cta_nyse_SuUs
+cta_nyse_UtZ
+pny2sffhr04b
+cta_nyse_AAn
+cta_nyse_AoBx
+cta_nyse_ByCr
+cta_nyse_CsEl
+cta_nyse_EmGl
+cta_nyse_GmIq
+cta_nyse_IrLv
+cta_nyse_LwNo
+cta_nyse_NpPr
+cta_nyse_PsSt
+cta_nyse_SuUs
+cta_nyse_UtZ
+pny2sffhr08a
+cta_amex_ADz
+cta_amex_EEw
+cta_amex_ExGz
+cta_amex_HIwe
+cta_amex_IwfKi
+cta_amex_KjRm
+cta_amex_RnSk
+cta_amex_SlSp
+cta_amex_SqUm
+cta_amex_UnVn
+cta_amex_VoXle
+cta_amex_XlfZ
+pny2sffhr08b
+cta_amex_ADz
+cta_amex_EEw
+cta_amex_ExGz
+cta_amex_HIwe
+cta_amex_IwfKi
+cta_amex_KjRm
+cta_amex_RnSk
+cta_amex_SlSp
+cta_amex_SqUm
+cta_amex_UnVn
+cta_amex_VoXle
+cta_amex_XlfZ
+pny2sffhr16a
+cta-binary-index
+pny2sffhr16b
+cta-binary-index
+------ Feeds and their hostnames associated with source AMEX -----
+------ Feeds and their hostnames associated with source AMEX -----

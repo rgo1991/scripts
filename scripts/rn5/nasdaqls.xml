@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for the Nasdaq Last Sale Multicast feed. See the Administrators Guide for more information:  http://wombatconsulting.com/feedhandlers/admin-guide.html-->
+
+
+   <!-- Site specific includes -->
+   <IncludeFile>nasdaqls_tport.xml</IncludeFile>
+   <IncludeFile>nasdaqls_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>NASDAQLS</Value>
+   </Parameter>
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+   <DefineParameterGroup>
+      <Name>NasdaqlsConfig</Name>
+      <Parameter>
+         <Name>FeedVersion</Name>
+         <Value>2.0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>MoldUdp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MulticastProtocol</Name>
+         <Value>moldudp64</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NasdaqFeedFormat</Name>
+         <Value>nls</Value>
+         <Comment>Please do not change this without consulting Wombat Support</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterCheckEveryMessageInBlock</Name>
+         <Value>true</Value>
+         <Comment>Required as NASDAQ package data differently from their two data centres.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>SleepAtEndOfTransmission</Name>
+         <Value>false</Value>
+         <Comment>The TotalView Feed does not send overnight test data</Comment>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <!-- Publish the Short Sale indicator on the .Q participant - SFD-602 / EDCP-2041 -->
+   <Parameter>
+      <Name>NasdaqPublishRegShoOnPart</Name>
+      <Value>true</Value>
+   </Parameter>
+   <!-- END -->
+
+   <Parameter>
+      <Name>LineFilterGapLimitSize</Name>
+      <Value>1000</Value>
+      <Comment>The maximum number of messages to spool awaiting a missed or out-of-sequence packet.  Once this limit is reached any missed messages are classed as permanently missed and the feed handler continues without them.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterGapLimitTime</Name>
+      <Value>1.5</Value>
+      <Comment>The maximum time to wait for missed or out-of-sequence messages, after which the missed messages are classed as "permanently missed" and the feed handler continues without them. Any missed messages may arrive on either of the main transmission lines or via the retransmission server, but must arrive before this timeout.  This can be increased if gaps are rare and it is preferable to receive all messages with a rare latency spike.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NativeTimeZone</Name>
+      <Value>US/Eastern</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PlaybackSourceId</Name>
+      <Value>192.168.187.1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>itch2streetFullMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_nasdaqls</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value>nasdaqls.sym</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqLastSaleProductName</Name>
+      <Value>NasdaqLastSale</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqTvbinProductNameTop</Name>
+      <Value>NasdaqLastSale</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqProcessAdjustedClose</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqQuoteResumeChangesStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>HandleSessionStatus</Name>
+      <Value>false</Value>
+      <Comment>Set to true to update security status for all symbols for
+        start of system hours and market open and close</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SessionStatusOverrideHalted</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Comment>so that test data is ignored</Comment>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsNasdaq</Value>
+      <Value>FieldAttrsReferential</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>NLSRetransmission</Name>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MoldRetransRetryCount</Name>
+         <Value>5</Value>
+         <Comment>Number of times to attempt a retry.  Zero disables this functionality.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MoldRetransIntervalMsec</Name>
+         <Value>50</Value>
+         <Comment>Milliseconds to wait after first request before sending a subsequent request.  If multiple responses occur, these are correctly handled (the first is processed, the rest are dropped)</Comment>
+      </Parameter>
+      <ParamGroup>
+         <Name>RetransRequestor</Name>
+         <Comment>Details for the remote MoldUDP Retransmission Server, and the local connection used to communicate with the server</Comment>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>206.200.112.22</Value>
+            <Comment>Retrans server IP Address, specified by NASDAQ</Comment>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>18131</Value>
+            <Comment>UDP Port to send to, specified by NASDAQ.</Comment>
+         </Parameter>
+         <Parameter>
+            <Name>LocalHost</Name>
+            <Value/>
+            <Comment>Unicast IP Address to send Requests from.  The retransmission will be sent back to this address.  If blank, the default interface will be used.</Comment>
+         </Parameter>
+         <Parameter>
+            <Name>LocalService</Name>
+            <Value>50014</Value>
+            <Comment>UDP Port to send Requests from.  The retransmission will be sent back to this port</Comment>
+         </Parameter>
+      </ParamGroup>
+   </DefineParameterGroup>
+    
+   <Feed>
+      <Name>nasdaqls</Name>
+      <UseParameterGroup name="NLSRetransmission"/>
+      <UseParameterGroup name="NasdaqlsConfig"/>
+         <UseParameterGroup name="WmwTransportPropertiesVector2NSD1"/>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-33</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <!--Value>default1/233.187.20.68/18130</Value> EDCP-9584 Chicago Metro Area A -->
+         <!--Value>default2/233.211.120.68/18130</Value> EDCP-9584 Chicago Metro Area B -->
+         <Value>default1/233.54.12.18/18130</Value><!-- EDCP-9584 New York Metro Area A -->
+         <Value>default2/233.49.196.18/18130</Value><!-- EDCP-9584 New York Metro Area B -->
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.54.12.18</Value>
+         <Value>233.49.196.18</Value>
+         <Value>233.187.20.68</Value>
+         <Value>233.211.120.68</Value>
+      </Parameter>
+   </Feed>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

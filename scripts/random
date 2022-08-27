@@ -1,0 +1,13 @@
+#!/bin/bash
+
+MIN=200
+MAX=500
+
+scope=$((MAX - $MIN))
+echo $scope
+
+for i in {1..10}
+do
+result=$((RANDOM % $scope + $MIN))
+echo "A $RANDOM number between $MIN and $MAX is $result"
+done

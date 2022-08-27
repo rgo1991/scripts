@@ -1,0 +1,127 @@
+#!/bin/bash
+
+CHECK_SUCCEEDED=true
+
+if [ `hostname -s` == "pny2mamgt01v" ];then
+	wombatpath="/opt/wombat/fof-ol/current";else
+	wombatpath="/opt/wombat/fof-ol/current";fi
+
+PROC_CONF=$wombatpath/scripts/config/proc.conf
+
+HOSTS="pny2foffp01a pny2foffp02a pny2foffp03a pny2foffp04a pny2foffp05a pny2foffp06a pny2foffp07a"
+
+LOCAL_HOST=`hostname -s`
+
+OLD_IFS="${IFS}"
+
+function pad(){
+
+j=$1
+i=`expr length $j`
+while [ $i -lt 50 ];do
+	j=$j"-"
+	let i++
+	if [ $i -eq 50 ];then
+		j=$j[$2];fi
+done
+
+echo " "$j
+
+}
+
+
+echo " "
+echo "      ###################################################"
+echo "                         Primary Servers                 "
+echo "      ###################################################"
+echo " "
+
+
+for hostname in $HOSTS;do
+
+	PROCS=`ssh -q $hostname "grep $hostname $PROC_CONF | grep -v \"^#\"" | awk -F':' '{print $2}'`
+
+	if [ "$PROCS" != "" ];then
+		echo "Checking proccesses on ${hostname}"
+
+		IFS="|"
+		
+		for i in $PROCS;do
+			IFS="${OLD_IFS}"
+			
+			process=`echo $i | awk -F'@' '{print $1}'`
+			
+			if [ $process == "nsd_v5" ];then
+				process="nsd";fi
+		
+			if [ $process == "$hostname:nrpe" ];then
+				process="nrpe";fi
+
+			case $process in
+				*"siteserver"*)
+					echo cant check for siteserver with this script ;;
+				*)
+					if [ $hostname == "$LOCAL_HOST" ];then
+						PID=`/sbin/pidof $process`;else
+						PID=`ssh $hostname "/sbin/pidof $process" 2> /dev/null`;fi
+					if [ "$PID" != "" ];then
+						pad $process running;else
+						pad $process missing
+						CHECK_SUCCEEDED=false;fi ;;
+			esac
+
+		IFS="|"
+		done
+	IFS="$OLD_IFS"
+	echo "";fi
+done
+
+
+if [ $CHECK_SUCCEEDED == "false" ];then
+    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    echo "!!!!!!!    Some Processes not running     !!!!!!!!"
+    echo "!!!!!!! Check carefully the output above  !!!!!!!!"
+    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+else
+    echo ""
+    echo " All Good!"
+    echo "";fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
