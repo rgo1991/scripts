@@ -1,0 +1,101 @@
+#!/bin/bash
+
+function usage(){
+
+	echo "Usage: mkfile [ -i infile ] [ -q ] [ -b blocksize ] size[k|m|g] filename "
+	echo "Blocksize is 512 bytes by default"
+	exit 2
+}
+
+function human_readable(){
+	#multiplier value gets changed depending on what letter comes after. eg 10k will change multiplier to 1024 etc.
+	multiplier=1
+	case $1 in
+		*b) multiplier=1;;
+		*k) multiplier=1024;;
+		*m) multiplier=1048576;;
+		*g) multiplier=1073741824;;
+	esac
+	#takes the input and strips the letter
+	numeric=`echo $1 | tr -d 'k' | tr -d 'm' | tr -d 'g' | tr -d 'b'`
+	#multiplies the input (without the letter) and the new multiplier value.:
+	expr $numeric \* $multiplier
+	
+#	final=$(($1 * $multiplier))
+#	echo $final
+
+}
+
+bs=512
+quiet=0
+INFILE=/dev/zero
+
+while getopts ':i:b:q?' argv;do
+	case $argv in
+	i) INFILE=$OPTARG	;;
+	b) bs=$OPTARG		;;
+ 	q) quiet=1 		;;
+	"?") usage		;;
+	":") # incase the user specifies the i or the b option but doesnt provide a further value as is required, the script will give these errors depending on which flag it failed.
+		case $OPTARG in
+		i) echo "input file not specified"
+		   echo "specify the input file whe using the -i option"
+		   echo;;
+		b) echo "block size not specified"
+		   echo "please specify the block size when using the -b option"
+		   echo;;
+		*) echo "an unexpected parsis error occurre"
+		   echo
+		   usage;;
+		esac
+		exit 2
+	esac
+done
+
+
+#---------------------- these two accomplish the exact same thing. they tell the scrpt to ignore the getopts options and the option values as input variables. This means that anything you pass into the script after the getopts options will be read as $1 $2 etc. 
+shift $((OPTIND-1))
+#for i in `seq 2 ${OPTIND}`;do
+#	shift;done
+#----------------------
+
+
+if [ -z "$1" ]; then
+	echo "ERROR: No size specified";fi
+if [ -z "$2" ]; then
+	echo "ERROR: No filename specified";fi
+if [ "$#" -ne "2" ]; then
+	usage;fi
+
+SIZE=`human_readable $1`
+FILENAME="$2"
+BS=`human_readable $bs`
+COUNT=`expr $SIZE / $BS`
+CHECK=`expr $COUNT \* $BS`
+
+if [ "$CHECK" -ne "$SIZE" ];then
+	echo "Warning: Due to the blocksize requested, the file created will be $(($COUNT * $BS)) bytes and not $SIZE bytes";fi
+
+echo SIZE is $SIZE
+echo FILENAME is $FILENAME
+echo BS is $BS
+echo COUNT is $COUNT
+echo CHECK is $CHECK
+echo bs is $bs
+
+
+echo -en Creating $SIZE byte file $FILENAME..... 
+
+dd if="$INFILE" bs=$BS count=$COUNT of="$FILENAME" 2>/dev/null
+ddresult=$?
+
+if [ "$quiet" -ne "1" ];then
+	if [ "$ddresult" -eq "0" ];then
+		echo Finished:
+	else
+		echo "An error has occured. dd returned code $ddresult"
+	fi
+	ls -l $FILENAME && ls -lh $FILENAME
+fi
+
+exit $ddresult

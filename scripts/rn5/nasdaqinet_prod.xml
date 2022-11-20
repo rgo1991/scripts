@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+   <Feed>
+      <Name>utp_AaCd</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>uqdf_1</Value>
+         <Value>utdf_1</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/utp_AaCd.orderbook.sym</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>AA_CD_UTP_SECSTATUS</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <Feed>
+      <Name>utp_CeFd</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector1NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>uqdf_2</Value>
+         <Value>utdf_2</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/utp_CeFd.orderbook.sym</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>CE_FD_UTP_SECSTATUS</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <Feed>
+      <Name>utp_FeLk</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector2NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>uqdf_3</Value>
+         <Value>utdf_3</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/utp_FeLk.orderbook.sym</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>FE_LK_UTP_SECSTATUS</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <Feed>
+      <Name>utp_LlPb</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>uqdf_4</Value>
+         <Value>utdf_4</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/utp_LlPb.orderbook.sym</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>LL_PB_UTP_SECSTATUS</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <Feed>
+      <Name>utp_PcSp</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>uqdf_5</Value>
+         <Value>utdf_5</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/utp_PcSp.orderbook.sym</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>PC_SP_UTP_SECSTATUS</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+
+   <Feed>
+      <Name>utp_SqZz</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector1NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>uqdf_6</Value>
+         <Value>utdf_6</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/utp_SqZz.orderbook.sym</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>SQ_ZZ_UTP_SECSTATUS</Value>
+      </Parameter>
+      <UseParameterGroup name="UtpConfig"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+   <!-- END - 6-way split -->
+
+<!-- UTP Trades only Start -->
+
+   <Feed>
+      <Name>utp_trades</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>utdf_1</Value>
+         <Value>utdf_2</Value>
+         <Value>utdf_3</Value>
+         <Value>utdf_4</Value>
+         <Value>utdf_5</Value>
+         <Value>utdf_6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>TRADESUTP</Value>
+      </Parameter>
+      <!-- SuperTrade Derived Value Add Fields -->
+      <Parameter>
+         <Name>TradeCalculateNetChange</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TradeCalculatePctChange</Name>
+         <Value>true</Value>
+      </Parameter>
+<!-- SFDCR-966 - enable trade direction -->
+      <Parameter>
+         <Name>TradeCalculateTick</Name>
+         <Value>true</Value>
+      </Parameter>
+<!-- SFDCR-966 END -->
+      <!--Parameter>
+         <Name>TradeCalculateTick</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TradeCalculateBlocks</Name>
+         <Value>true</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>TradeCalculateVwap</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>TradeCalculateStdDev</Name>
+         <Value>true</Value>
+      </Parameter-->
+      <!-- SuperTrade Derived Value Add Fields -->
+      <UseParameterGroup name="UtpConfig"/>
+   </Feed>
+<!-- UTP Trades only  END -->
+    <Feed>
+        <Name>utp</Name>
+        <UseParameterGroup name="UtpConfig"/>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>uqdf_1</Value>
+            <Value>uqdf_2</Value>
+            <Value>uqdf_3</Value>
+            <Value>uqdf_4</Value>
+            <Value>uqdf_5</Value>
+            <Value>uqdf_6</Value>
+            <Value>utdf_1</Value>
+            <Value>utdf_2</Value>
+            <Value>utdf_3</Value>
+            <Value>utdf_4</Value>
+            <Value>utdf_5</Value>
+            <Value>utdf_6</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>uqdf</Name>
+        <UseParameterGroup name="UtpConfig"/>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>uqdf_1</Value>
+            <Value>uqdf_2</Value>
+            <Value>uqdf_3</Value>
+            <Value>uqdf_4</Value>
+            <Value>uqdf_5</Value>
+            <Value>uqdf_6</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>utdf</Name>
+        <UseParameterGroup name="UtpConfig"/>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>utdf_1</Value>
+            <Value>utdf_2</Value>
+            <Value>utdf_3</Value>
+            <Value>utdf_4</Value>
+            <Value>utdf_5</Value>
+            <Value>utdf_6</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>utp_1</Name>
+        <UseParameterGroup name="UtpConfig"/>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>uqdf_1</Value>
+            <Value>utdf_1</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>utp_2</Name>
+        <UseParameterGroup name="UtpConfig"/>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>uqdf_2</Value>
+            <Value>utdf_2</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>utp_3</Name>
+        <UseParameterGroup name="UtpConfig"/>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>uqdf_3</Value>
+            <Value>utdf_3</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>utp_4</Name>
+        <UseParameterGroup name="UtpConfig"/>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>uqdf_4</Value>
+            <Value>utdf_4</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>utp_5</Name>
+        <UseParameterGroup name="UtpConfig"/>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>uqdf_5</Value>
+            <Value>utdf_5</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>utp_6</Name>
+        <UseParameterGroup name="UtpConfig"/>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>uqdf_6</Value>
+            <Value>utdf_6</Value>
+        </Parameter>
+    </Feed>
+
+    <Comment>---------- uqdf feeds ----------</Comment>
+
+    <Feed>
+        <Name>uqdf_1</Name>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.46.176.0/55630</Value>
+            <Value>default2/233.46.176.16/55630</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.46.176.0/55630</Value>
+            <Value>233.46.176.16/55630</Value>
+        </Parameter>
+        <UseParameterGroup name="UtpConfig"/>
+        <UseParameterGroup name="nasdaqinet_live"/>
+        <ParamGroup>
+            <Name>RetransRequestor</Name>
+            <Parameter>
+                <Name>DestinationHost</Name>
+                <Value>69.10.248.192</Value>
+            </Parameter>
+            <Parameter>
+                <Name>DestinationService</Name>
+                <Value>55730</Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalHost</Name>
+                <Value></Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalService</Name>
+                <Value>55730</Value>
+            </Parameter>
+        </ParamGroup>
+    </Feed>
+
+    <Feed>
+        <Name>uqdf_2</Name>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.46.176.1/55631</Value>
+            <Value>default2/233.46.176.17/55631</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.46.176.1/55631</Value>
+            <Value>233.46.176.17/55631</Value>
+        </Parameter>
+        <UseParameterGroup name="UtpConfig"/>
+        <UseParameterGroup name="nasdaqinet_live"/>
+        <ParamGroup>
+            <Name>RetransRequestor</Name>
+            <Parameter>
+                <Name>DestinationHost</Name>
+                <Value>69.10.248.193</Value>
+            </Parameter>
+            <Parameter>
+                <Name>DestinationService</Name>
+                <Value>55731</Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalHost</Name>
+                <Value></Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalService</Name>
+                <Value>55731</Value>
+            </Parameter>
+        </ParamGroup>
+    </Feed>
+
+    <Feed>
+        <Name>uqdf_3</Name>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.46.176.2/55632</Value>
+            <Value>default2/233.46.176.18/55632</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.46.176.2/55632</Value>
+            <Value>233.46.176.18/55632</Value>
+        </Parameter>
+        <UseParameterGroup name="UtpConfig"/>
+        <UseParameterGroup name="nasdaqinet_live"/>
+        <ParamGroup>
+            <Name>RetransRequestor</Name>
+            <Parameter>
+                <Name>DestinationHost</Name>
+                <Value>69.10.248.194</Value>
+            </Parameter>
+            <Parameter>
+                <Name>DestinationService</Name>
+                <Value>55732</Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalHost</Name>
+                <Value></Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalService</Name>
+                <Value>55732</Value>
+            </Parameter>
+        </ParamGroup>
+    </Feed>
+
+    <Feed>
+        <Name>uqdf_4</Name>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.46.176.3/55633</Value>
+            <Value>default2/233.46.176.19/55633</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.46.176.3/55633</Value>
+            <Value>233.46.176.19/55633</Value>
+        </Parameter>
+        <UseParameterGroup name="UtpConfig"/>
+        <UseParameterGroup name="nasdaqinet_live"/>
+        <ParamGroup>
+            <Name>RetransRequestor</Name>
+            <Parameter>
+                <Name>DestinationHost</Name>
+                <Value>69.10.248.195</Value>
+            </Parameter>
+            <Parameter>
+                <Name>DestinationService</Name>
+                <Value>55733</Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalHost</Name>
+                <Value></Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalService</Name>
+                <Value>55733</Value>
+            </Parameter>
+        </ParamGroup>
+    </Feed>
+
+    <Feed>
+        <Name>uqdf_5</Name>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.46.176.4/55634</Value>
+            <Value>default2/233.46.176.20/55634</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.46.176.4/55634</Value>
+            <Value>233.46.176.20/55634</Value>
+        </Parameter>
+        <UseParameterGroup name="UtpConfig"/>
+        <UseParameterGroup name="nasdaqinet_live"/>
+        <ParamGroup>
+            <Name>RetransRequestor</Name>
+            <Parameter>
+                <Name>DestinationHost</Name>
+                <Value>69.10.248.196</Value>
+            </Parameter>
+            <Parameter>
+                <Name>DestinationService</Name>
+                <Value>55734</Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalHost</Name>
+                <Value></Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalService</Name>
+                <Value>55734</Value>
+            </Parameter>
+        </ParamGroup>
+    </Feed>
+
+    <Feed>
+        <Name>uqdf_6</Name>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.46.176.5/55635</Value>
+            <Value>default2/233.46.176.21/55635</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.46.176.5/55635</Value>
+            <Value>233.46.176.21/55635</Value>
+        </Parameter>
+        <UseParameterGroup name="UtpConfig"/>
+        <UseParameterGroup name="nasdaqinet_live"/>
+        <ParamGroup>
+            <Name>RetransRequestor</Name>
+            <Parameter>
+                <Name>DestinationHost</Name>
+                <Value>69.10.248.197</Value>
+            </Parameter>
+            <Parameter>
+                <Name>DestinationService</Name>
+                <Value>55735</Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalHost</Name>
+                <Value></Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalService</Name>
+                <Value>55735</Value>
+            </Parameter>
+        </ParamGroup>
+    </Feed>
+
+    <Comment>---------- utdf feeds ----------</Comment>
+
+    <Feed>
+        <Name>utdf_1</Name>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.46.176.8/55640</Value>
+            <Value>default2/233.46.176.24/55640</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.46.176.8/55640</Value>
+            <Value>233.46.176.24/55640</Value>
+        </Parameter>
+        <UseParameterGroup name="UtpConfig"/>
+        <UseParameterGroup name="nasdaqinet_live"/>
+        <ParamGroup>
+            <Name>RetransRequestor</Name>
+            <Parameter>
+                <Name>DestinationHost</Name>
+                <Value>69.10.248.208</Value>
+            </Parameter>
+            <Parameter>
+                <Name>DestinationService</Name>
+                <Value>55740</Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalHost</Name>
+                <Value></Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalService</Name>
+                <Value>55740</Value>
+            </Parameter>
+        </ParamGroup>
+    </Feed>
+
+    <Feed>
+        <Name>utdf_2</Name>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.46.176.9/55641</Value>
+            <Value>default2/233.46.176.25/55641</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.46.176.9/55641</Value>
+            <Value>233.46.176.25/55641</Value>
+        </Parameter>
+        <UseParameterGroup name="UtpConfig"/>
+        <UseParameterGroup name="nasdaqinet_live"/>
+        <ParamGroup>
+            <Name>RetransRequestor</Name>
+            <Parameter>
+                <Name>DestinationHost</Name>
+                <Value>69.10.248.209</Value>
+            </Parameter>
+            <Parameter>
+                <Name>DestinationService</Name>
+                <Value>55741</Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalHost</Name>
+                <Value></Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalService</Name>
+                <Value>55741</Value>
+            </Parameter>
+        </ParamGroup>
+    </Feed>
+
+    <Feed>
+        <Name>utdf_3</Name>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.46.176.10/55642</Value>
+            <Value>default2/233.46.176.26/55642</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.46.176.10/55642</Value>
+            <Value>233.46.176.26/55642</Value>
+        </Parameter>
+        <UseParameterGroup name="UtpConfig"/>
+        <UseParameterGroup name="nasdaqinet_live"/>
+        <ParamGroup>
+            <Name>RetransRequestor</Name>
+            <Parameter>
+                <Name>DestinationHost</Name>
+                <Value>69.10.248.210</Value>
+            </Parameter>
+            <Parameter>
+                <Name>DestinationService</Name>
+                <Value>55742</Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalHost</Name>
+                <Value></Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalService</Name>
+                <Value>55742</Value>
+            </Parameter>
+        </ParamGroup>
+    </Feed>
+
+    <Feed>
+        <Name>utdf_4</Name>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.46.176.11/55643</Value>
+            <Value>default2/233.46.176.27/55643</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.46.176.11/55643</Value>
+            <Value>233.46.176.27/55643</Value>
+        </Parameter>
+        <UseParameterGroup name="UtpConfig"/>
+        <UseParameterGroup name="nasdaqinet_live"/>
+        <ParamGroup>
+            <Name>RetransRequestor</Name>
+            <Parameter>
+                <Name>DestinationHost</Name>
+                <Value>69.10.248.211</Value>
+            </Parameter>
+            <Parameter>
+                <Name>DestinationService</Name>
+                <Value>55743</Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalHost</Name>
+                <Value></Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalService</Name>
+                <Value>55743</Value>
+            </Parameter>
+        </ParamGroup>
+    </Feed>
+
+    <Feed>
+        <Name>utdf_5</Name>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.46.176.12/55644</Value>
+            <Value>default2/233.46.176.28/55644</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.46.176.12/55644</Value>
+            <Value>233.46.176.28/55644</Value>
+        </Parameter>
+        <UseParameterGroup name="UtpConfig"/>
+        <UseParameterGroup name="nasdaqinet_live"/>
+        <ParamGroup>
+            <Name>RetransRequestor</Name>
+            <Parameter>
+                <Name>DestinationHost</Name>
+                <Value>69.10.248.212</Value>
+            </Parameter>
+            <Parameter>
+                <Name>DestinationService</Name>
+                <Value>55744</Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalHost</Name>
+                <Value></Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalService</Name>
+                <Value>55744</Value>
+            </Parameter>
+        </ParamGroup>
+    </Feed>
+
+    <Feed>
+        <Name>utdf_6</Name>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.46.176.13/55645</Value>
+            <Value>default2/233.46.176.29/55645</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.46.176.13/55645</Value>
+            <Value>233.46.176.29/55645</Value>
+        </Parameter>
+        <UseParameterGroup name="UtpConfig"/>
+        <UseParameterGroup name="nasdaqinet_live"/>
+        <ParamGroup>
+            <Name>RetransRequestor</Name>
+            <Parameter>
+                <Name>DestinationHost</Name>
+                <Value>69.10.248.213</Value>
+            </Parameter>
+            <Parameter>
+                <Name>DestinationService</Name>
+                <Value>55745</Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalHost</Name>
+                <Value></Value>
+            </Parameter>
+            <Parameter>
+                <Name>LocalService</Name>
+                <Value>55745</Value>
+            </Parameter>
+        </ParamGroup>
+    </Feed>
+
+
+</config>
+

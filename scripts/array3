@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+# if IFS specifier is on the same line then it will only affect the command following it and not other commands in the loop.
+#read -a arrayname reads in data and stores it in the arrayname.
+while IFS=":" read -a userdetails;do
+	unset user
+	gecos=${userdetails[4]%%,*} #deletes trailing commas with %%,*. sets gecos to be userdetails[4] with all thecommas after it deleted.
+	username=${userdetails[0]}
+	user=${gecos:-$username} #sets username to gecos, if it doesnt exist then detauls to username[0] element.
+	if [ -d "${userdetails[5]}" ]; then
+		echo "${user}'s directory details ${userdetails[5]} exists";else
+		echo "${user}'s directory ${userdetails[5]} doesn't exist";fi
+	done < /etc/passwd
+

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#there are 3 ways to increment variables using siple + and -. they are ((...)) , $((...)) or with the 'let' command
+
+i=$((i+1))
+((i=i+1))
+let "i=i+1" / or let i++i
+
+
+#another way to increment and decrement values is with the -= and += operators. these operators increment/decrement the value of the left operand with the value specifed after the operand.
+
+((i+=5))
+let "i+=5"

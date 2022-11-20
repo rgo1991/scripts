@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<master_feeds xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+<!-- ================================================================= -->
+<!--                        F E E D S                                  -->
+<!-- ================================================================= -->
+
+    <Feed>
+        <Name>abmxdp</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_1</Value>
+            <Value>abmxdp_refresh_1</Value>
+            <Value>abmxdp_request</Value>
+            <Value>abmxdp_live_2</Value>
+            <Value>abmxdp_refresh_2</Value>
+            <Value>abmxdp_live_3</Value>
+            <Value>abmxdp_refresh_3</Value>
+            <Value>abmxdp_live_4</Value>
+            <Value>abmxdp_refresh_4</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>abmxdp_1</Name>
+        <UseParameterGroup name="GlobalOrderImbalanceStatusParams"/>
+        <UseParameterGroup name="GlobalSecStatusParams"/>
+        <UseParameterGroup name="UseXdp1"/>
+        <UseParameterGroup name="MamaSend1"/>
+        <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_1</Value>
+            <Value>abmxdp_refresh_1</Value>
+            <Value>abmxdp_request</Value>
+        </Parameter>
+        <Parameter>
+           <Name>OrderImbalanceGlobalSymbolFormat</Name>
+           <Value>ARCA_IMBALANCE_1</Value>
+        </Parameter>
+        <Parameter>
+           <Name>FtGroupName</Name>
+           <Value>FT_abmxdp_1</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>abmxdp_2</Name>
+        <UseParameterGroup name="GlobalOrderImbalanceStatusParams"/>
+        <UseParameterGroup name="GlobalSecStatusParams"/>
+        <UseParameterGroup name="UseXdp2"/>
+        <UseParameterGroup name="MamaSend2"/>
+        <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_2</Value>
+            <Value>abmxdp_refresh_2</Value>
+            <Value>abmxdp_request</Value>
+        </Parameter>
+        <Parameter>
+           <Name>OrderImbalanceGlobalSymbolFormat</Name>
+           <Value>ARCA_IMBALANCE_2</Value>
+        </Parameter>
+        <Parameter>
+           <Name>FtGroupName</Name>
+           <Value>FT_abmxdp_2</Value>
+        </Parameter>
+    </Feed>
+    
+    <Feed>
+        <Name>abmxdp_3</Name>
+        <UseParameterGroup name="GlobalOrderImbalanceStatusParams"/>
+        <UseParameterGroup name="GlobalSecStatusParams"/>
+        <UseParameterGroup name="UseXdp3"/>
+        <UseParameterGroup name="MamaSend3"/>
+        <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_3</Value>
+            <Value>abmxdp_refresh_3</Value>
+            <Value>abmxdp_request</Value>
+        </Parameter>
+        <Parameter>
+           <Name>OrderImbalanceGlobalSymbolFormat</Name>
+           <Value>ARCA_IMBALANCE_3</Value>
+        </Parameter>
+        <Parameter>
+           <Name>FtGroupName</Name>
+           <Value>FT_abmxdp_3</Value>
+        </Parameter>
+    </Feed>
+    
+    <Feed>
+        <Name>abmxdp_4</Name>
+        <UseParameterGroup name="GlobalOrderImbalanceStatusParams"/>
+        <UseParameterGroup name="GlobalSecStatusParams"/>
+        <UseParameterGroup name="UseXdp4"/>
+        <UseParameterGroup name="MamaSend4"/>
+        <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_4</Value>
+            <Value>abmxdp_refresh_4</Value>
+            <Value>abmxdp_request</Value>
+        </Parameter>
+        <Parameter>
+           <Name>OrderImbalanceGlobalSymbolFormat</Name>
+           <Value>ARCA_IMBALANCE_4</Value>
+        </Parameter>
+        <Parameter>
+           <Name>FtGroupName</Name>
+           <Value>FT_abmxdp_4</Value>
+        </Parameter>
+    </Feed>
+
+    <!-- RegEx Splits -->
+
+    <Feed>
+        <Name>abmxdp_1_ab</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_1</Value>
+            <Value>abmxdp_refresh_1</Value>
+            <Value>abmxdp_request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MessageHandlerRegExpFilter</Name>
+            <Value>^[A-B]</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>abmxdp_1_cd</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_1</Value>
+            <Value>abmxdp_refresh_1</Value>
+            <Value>abmxdp_request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MessageHandlerRegExpFilter</Name>
+            <Value>^[C-D]</Value>
+        </Parameter>
+    </Feed>
+
+    <!-- Over splill load balancing -->
+    <Feed>
+        <Name>abmxdp_1_ez</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_1</Value>
+            <Value>abmxdp_refresh_1</Value>
+            <Value>abmxdp_request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MessageHandlerRegExpFilter</Name>
+            <Value>^[E-Z]</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>abmxdp_2_eg</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_2</Value>
+            <Value>abmxdp_refresh_2</Value>
+            <Value>abmxdp_request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MessageHandlerRegExpFilter</Name>
+            <Value>^[E-G]</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>abmxdp_2_hj</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_2</Value>
+            <Value>abmxdp_refresh_2</Value>
+            <Value>abmxdp_request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MessageHandlerRegExpFilter</Name>
+            <Value>^[H-J]</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>abmxdp_2_kl</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_2</Value>
+            <Value>abmxdp_refresh_2</Value>
+            <Value>abmxdp_request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MessageHandlerRegExpFilter</Name>
+            <Value>^[K-L]</Value>
+        </Parameter>
+    </Feed>
+
+    <!-- Over splill load balancing -->
+    <Feed>
+        <Name>abmxdp_2_ad_mz</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_2</Value>
+            <Value>abmxdp_refresh_2</Value>
+            <Value>abmxdp_request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MessageHandlerRegExpFilter</Name>
+            <Value>^[A-D]|[M-Z]</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>abmxdp_3_mo</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_3</Value>
+            <Value>abmxdp_refresh_3</Value>
+            <Value>abmxdp_request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MessageHandlerRegExpFilter</Name>
+            <Value>^[M-O]</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>abmxdp_3_pq</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_3</Value>
+            <Value>abmxdp_refresh_3</Value>
+            <Value>abmxdp_request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MessageHandlerRegExpFilter</Name>
+            <Value>^[P-Q]</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>abmxdp_3_rs</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_3</Value>
+            <Value>abmxdp_refresh_3</Value>
+            <Value>abmxdp_request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MessageHandlerRegExpFilter</Name>
+            <Value>^[R-S]</Value>
+        </Parameter>
+    </Feed>
+
+    <!-- Over splill load balancing -->
+    <Feed>
+        <Name>abmxdp_3_al_tz</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_3</Value>
+            <Value>abmxdp_refresh_3</Value>
+            <Value>abmxdp_request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MessageHandlerRegExpFilter</Name>
+            <Value>^[A-L]|[T-Z]</Value>
+        </Parameter>
+    </Feed>
+
+     <Feed>
+        <Name>abmxdp_4_tu</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_4</Value>
+            <Value>abmxdp_refresh_4</Value>
+            <Value>abmxdp_request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MessageHandlerRegExpFilter</Name>
+            <Value>^[T-U]</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>abmxdp_4_vw</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_4</Value>
+            <Value>abmxdp_refresh_4</Value>
+            <Value>abmxdp_request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MessageHandlerRegExpFilter</Name>
+            <Value>^[V-W]</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>abmxdp_4_xz</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_4</Value>
+            <Value>abmxdp_refresh_4</Value>
+            <Value>abmxdp_request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MessageHandlerRegExpFilter</Name>
+            <Value>^[X-Z]</Value>
+        </Parameter>
+    </Feed>
+
+    <!-- Over splill load balancing -->
+    <Feed>
+        <Name>abmxdp_4_as</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>abmxdp_live_4</Value>
+            <Value>abmxdp_refresh_4</Value>
+            <Value>abmxdp_request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MessageHandlerRegExpFilter</Name>
+            <Value>^[A-S]</Value>
+        </Parameter>
+    </Feed>
+
+
+    <Feed>
+        <Name>abmxdp_request</Name>
+        <UseParameterGroup name="AbmXdpRequestReqParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.67.1</Value>
+            <!--Value>159.125.67.12</Value-->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1069</Value>
+            <!--Value>1069</Value-->
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value></Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>abmxdp_live_1</Name>
+        <UseParameterGroup name="AbmXdpLiveParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshReqFeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>9</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpChannelId</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.59.76/11076</Value>
+            <Value>default2/224.0.59.204/11204</Value>
+            <Value>default1/224.0.59.80/11080/monitorOff</Value>
+            <Value>default2/224.0.59.208/11208/monitorOff</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.59.76/11076</Value>
+            <Value>224.0.59.204/11204</Value>
+            <Value>224.0.59.80/11080</Value>
+            <Value>224.0.59.208/11208</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>abmxdp_refresh_1</Name>
+        <UseParameterGroup name="AbmXdpRefreshParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>9</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.59.84/11084</Value>
+            <Value>default2/224.0.59.212/11212</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.59.84/11084</Value>
+            <Value>224.0.59.212/11212</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>abmxdp_live_2</Name>
+        <UseParameterGroup name="AbmXdpLiveParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshReqFeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpChannelId</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.59.77/11077</Value>
+            <Value>default2/224.0.59.205/11205</Value>
+            <Value>default1/224.0.59.81/11081/monitorOff</Value>
+            <Value>default2/224.0.59.209/11209/monitorOff</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.59.77/11077</Value>
+            <Value>224.0.59.205/11205</Value>
+            <Value>224.0.59.81/11081</Value>
+            <Value>224.0.59.209/11209</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>abmxdp_refresh_2</Name>
+        <UseParameterGroup name="AbmXdpRefreshParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.59.85/11085</Value>
+            <Value>default2/224.0.59.213/11213</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.59.85/11085</Value>
+            <Value>224.0.59.213/11213</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>abmxdp_live_3</Name>
+        <UseParameterGroup name="AbmXdpLiveParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshReqFeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>11</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpChannelId</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.59.78/11078</Value>
+            <Value>default2/224.0.59.206/11206</Value>
+            <Value>default1/224.0.59.82/11082/monitorOff</Value>
+            <Value>default2/224.0.59.210/11210/monitorOff</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.59.78/11078</Value>
+            <Value>224.0.59.206/11206</Value>
+            <Value>224.0.59.82/11082</Value>
+            <Value>224.0.59.210/11210</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>abmxdp_refresh_3</Name>
+        <UseParameterGroup name="AbmXdpRefreshParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>11</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.59.86/11086</Value>
+            <Value>default2/224.0.59.214/11214</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.59.86/11086</Value>
+            <Value>224.0.59.214/11214</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>abmxdp_live_4</Name>
+        <UseParameterGroup name="AbmXdpLiveParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>4</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshReqFeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>12</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpChannelId</Name>
+            <Value>4</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.59.79/11079</Value>
+            <Value>default2/224.0.59.207/11207</Value>
+            <Value>default1/224.0.59.83/11083/monitorOff</Value>
+            <Value>default2/224.0.59.211/11211/monitorOff</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.59.79/11079</Value>
+            <Value>224.0.59.207/11207</Value>
+            <Value>224.0.59.83/11083</Value>
+            <Value>224.0.59.211/11211</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>abmxdp_refresh_4</Name>
+        <UseParameterGroup name="AbmXdpRefreshParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>12</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.59.87/11087</Value>
+            <Value>default2/224.0.59.215/11215</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.59.87/11087</Value>
+            <Value>224.0.59.215/11215</Value>
+        </Parameter>
+    </Feed>
+</master_feeds>

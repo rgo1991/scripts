@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for the CMESBEFIX feed handler. See Wombat Technologies Market Data Platform Feed Handler Suite – Common Docs Set for more information.-->
+
+  <IncludeFile>papastats.superfeed.xml</IncludeFile>
+  <IncludeFile>cmesbefix_v5_hosts.xml</IncludeFile>
+  <IncludeFile>cmesbefix_v5_tport.xml</IncludeFile>
+  <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <!-- SFDCR-2008 -->
+   <Parameter>
+      <Name>FtActivateInterval</Name>
+      <Value>30000</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishNanoSecondFieldAsStr</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>WireCacheTemplateFile</Name>
+      <Value>/opt/wombat/feeds/config/include-files/wcache/wcache_templates.xml</Value>
+   </Parameter>
+
+   <Parameter>
+       <Name>LineHandlerDisableLineTime</Name>
+       <Value>false</Value>
+   </Parameter>
+
+<!-- SFDCR-1662 -->
+   <Parameter>
+       <Name>StrategyPublishVectorFields</Name>
+       <Value>true</Value>
+   </Parameter>
+<!-- SFDCR-1662 End -->
+
+<!-- SFD-1602 -->
+   <Parameter>
+      <Name>CmesbefixPublishMarketByPriceOrders</Name>
+      <Value>true</Value>
+      <Comment>If set to false, the order book publishing will change to
+instead process and publish full Market by Order messages.</Comment>
+   </Parameter>
+<!-- SFD-1602 -->
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+<!-- SFD-1597 -->
+   <Parameter>
+      <Name>CmesbefixPublishOpeningAsAuction</Name>
+      <Value>false</Value>
+      <Comment>Set to false - default to publish Opening updates as Opening</Comment>
+   </Parameter>
+<!-- SFD-1597 -->
+
+<!-- DFH-27780 -->
+   <Parameter>
+       <Name>CmesbefixRefreshEnabled</Name>
+       <Value>true</Value>
+   </Parameter>
+
+<!-- SFDCR-1127 -->
+
+   <Parameter>
+       <Name>CmesbefixCalculateQuoteAtEndOfEvent</Name>
+       <Value>false</Value>
+   </Parameter>
+<!--SFD-1167-->
+
+
+   <Parameter>
+      <Name>CmesbefixResetStats</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <!-- DFH-27606 -->
+   <Parameter>
+      <Name>CmesbefixRecoverOnUnknownSymbol</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+        <Name>PublishBlankOrderBookFromInstrumentInfo</Name>
+        <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+        <Name>RecordHandlerCreateBookWhenCreateRecord</Name>
+        <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <!-- <Value>16777216</Value>-->
+      <Value>67108864</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>CMEMDP</Value>
+   </Parameter>
+
+   <!-- Set per SFD-532 -->
+   <Parameter>
+      <Name>FtSubFeedProcessLineStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+   <!-- END -->
+
+<!--SFD-933: Enable MO to remove old or non-updating symbols -->
+<!-- NOT IN STRINGS
+   <Parameter>
+      <Name>CmemdpFixPublishMODateField</Name>
+      <Value>true</Value>
+   </Parameter>
+-->
+<!--SFDCR-367: Tie the options records to the underlying future records -->a
+<!-- NOT IN STRINGS
+   <Parameter>
+      <Name>CmemdpFixUseSymbolForId</Name>
+      <Value>true</Value>
+   </Parameter>
+-->
+<!-- SFDCR-499: START: Publish ALL incoming messages -->
+<!-- NO LONGER REQUIRED
+    <Parameter>
+      <Name>MamaPublisherType</Name>
+      <Value>broadcast</Value>
+    </Parameter>
+-->
+<!-- SFDCR-499: STOP -->
+
+<!--CHG174436: Add AggregateOrderBooksUseSequenceNumFromParticipants to cmemdpfix.xml -->
+<!-- NOT IN STRINGS
+    <Parameter>
+        <Name>AggregateOrderBooksUseSequenceNumFromParticipants</Name>
+        <Value>true</Value>
+   </Parameter>
+-->
+<!--CHG174436 -->
+
+<!-- set to true as per SDF 1173 for Etrade-->
+   <Parameter>
+      <Name>CmesbefixUseFractionalPricing</Name>
+      <Value>false</Value>
+   </Parameter>
+<!-- END -->
+
+ 
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MaxFieldLen</Name>
+      <Value>1000</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OrderBookUpdateImpliesNormalStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>HandleSymbolAdmin</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookDecimals</Name>
+      <Value>7</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OrderBookCheckDuplicateEntries</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineControllerUseOverridesExisting</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoAddPrefixOnSecurityStatusOrig</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CmesbefixUseTotalVolumeFromExchange</Name>
+      <Value>false</Value>
+   </Parameter>
+   
+   <Parameter>
+      <Name>CmesbefixBatchSecurityStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>CmesbefixBatchSecurityStatusRate</Name>
+      <Value>2000</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>CmesbefixBatchSecurityStatusInterval</Name>
+      <Value>5000</Value>
+   </Parameter>
+
+ 
+   <DefineParameterGroup>
+      <Name>cmesbefix_format</Name>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>cmesbefix</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>cmesbefix_live</Name>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>2000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransMaxGapSize</Name>
+         <Value>2000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>1.0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>cmesbefix_reference</Name>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseLineFilter</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MulticastConnectOnInit</Name>
+         <Value>true</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>cmesbefix_refresh</Name>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MulticastConnectOnInit</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseLineFilter</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>cmesbefix_retrans</Name>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginTimeoutInterval</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MessageRecoveryFile</Name>
+         <Value/>
+      </Parameter>
+      <Parameter>
+         <Name>TcpConnectDelay</Name>
+         <Value>100</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpConnectDelayMax</Name>
+         <Value>100</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpConnectOnStartUp</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseLineFilter</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <ParamGroup>
+      <Name>CmeSbeFixExchanges</Name>
+      <ParamGroup>
+         <Name>Exchange</Name>
+         <Parameter>
+            <Name>Name</Name>
+            <Value>XCBT</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Product</Name>
+            <Value>Cbot</Value>
+         </Parameter>
+         <Parameter>
+            <Name>BookProduct</Name>
+            <Value>CbotLevel2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>IndicativeQuoteProduct</Name>
+            <Value>CbotIndicativeQuote</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>Exchange</Name>
+         <Parameter>
+            <Name>Name</Name>
+            <Value>XKBT</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Product</Name>
+            <Value>Kbot</Value>
+         </Parameter>
+         <Parameter>
+            <Name>BookProduct</Name>
+            <Value>KbotLevel2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>IndicativeQuoteProduct</Name>
+            <Value>KbotIndicativeQuote</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>Exchange</Name>
+         <Parameter>
+            <Name>Name</Name>
+            <Value>XMGE</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Product</Name>
+            <Value>MinneapolisGrainEx</Value>
+         </Parameter>
+         <Parameter>
+            <Name>BookProduct</Name>
+            <Value>MinneapolisGrainExLevel2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>IndicativeQuoteProduct</Name>
+            <Value>MGEIndicativeQuote</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>Exchange</Name>
+         <Parameter>
+            <Name>Name</Name>
+            <Value>XCME</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Product</Name>
+            <Value>Cme</Value>
+         </Parameter>
+         <Parameter>
+            <Name>BookProduct</Name>
+            <Value>CmeOrderBook</Value>
+         </Parameter>
+         <Parameter>
+            <Name>IndicativeQuoteProduct</Name>
+            <Value>CmeRlcIndicativeQuote</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>Exchange</Name>
+         <Parameter>
+            <Name>Name</Name>
+            <Value>XMEX</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Product</Name>
+            <Value>Cme</Value>
+         </Parameter>
+         <Parameter>
+            <Name>BookProduct</Name>
+            <Value>CmeOrderBook</Value>
+         </Parameter>
+         <Parameter>
+            <Name>IndicativeQuoteProduct</Name>
+            <Value>CmeRlcIndicativeQuote</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>Exchange</Name>
+         <Parameter>
+            <Name>Name</Name>
+            <Value>XKFE</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Product</Name>
+            <Value>Cme</Value>
+         </Parameter>
+         <Parameter>
+            <Name>BookProduct</Name>
+            <Value>CmeOrderBook</Value>
+         </Parameter>
+         <Parameter>
+            <Name>IndicativeQuoteProduct</Name>
+            <Value>CmeRlcIndicativeQuote</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>Exchange</Name>
+         <Parameter>
+            <Name>Name</Name>
+            <Value>XNYM</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Product</Name>
+            <Value>Nymex</Value>
+         </Parameter>
+         <Parameter>
+            <Name>BookProduct</Name>
+            <Value>NymexLevel2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>IndicativeQuoteProduct</Name>
+            <Value>NymexIndicativeQuote</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>Exchange</Name>
+         <Parameter>
+            <Name>Name</Name>
+            <Value>XCEC</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Product</Name>
+            <Value>ComExchCtr</Value>
+         </Parameter>
+         <Parameter>
+            <Name>BookProduct</Name>
+            <Value>ComExchCtrLevel2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>IndicativeQuoteProduct</Name>
+            <Value>ComExchCtrIndicativeQuote</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>Exchange</Name>
+         <Parameter>
+            <Name>Name</Name>
+            <Value>XBMF</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Product</Name>
+            <Value>XBMFExch</Value>
+         </Parameter>
+         <Parameter>
+            <Name>BookProduct</Name>
+            <Value>XBMFExchLevel2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>IndicativeQuoteProduct</Name>
+            <Value>XBMFExchIndicativeQuote</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>Exchange</Name>
+         <Parameter>
+            <Name>Name</Name>
+            <Value>DUMX</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Product</Name>
+            <Value>Dumx</Value>
+         </Parameter>
+         <Parameter>
+            <Name>BookProduct</Name>
+            <Value>DumxLevel2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>IndicativeQuoteProduct</Name>
+            <Value>DumxIndicativeQuote</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>Exchange</Name>
+         <Parameter>
+            <Name>Name</Name>
+            <Value>NYUM</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Product</Name>
+            <Value>Cme</Value>
+         </Parameter>
+         <Parameter>
+            <Name>BookProduct</Name>
+            <Value>CmeOrderBook</Value>
+         </Parameter>
+         <Parameter>
+            <Name>IndicativeQuoteProduct</Name>
+            <Value>CmeRlcIndicativeQuote</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>Exchange</Name>
+         <Parameter>
+            <Name>Name</Name>
+            <Value>MGKB</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Product</Name>
+            <Value>Cme</Value>
+         </Parameter>
+         <Parameter>
+            <Name>BookProduct</Name>
+            <Value>CmeOrderBook</Value>
+         </Parameter>
+         <Parameter>
+            <Name>IndicativeQuoteProduct</Name>
+            <Value>CmeRlcIndicativeQuote</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>Exchange</Name>
+         <Parameter>
+            <Name>Name</Name>
+            <Value>MGCB</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Product</Name>
+            <Value>Cme</Value>
+         </Parameter>
+         <Parameter>
+            <Name>BookProduct</Name>
+            <Value>CmeOrderBook</Value>
+         </Parameter>
+         <Parameter>
+            <Name>IndicativeQuoteProduct</Name>
+            <Value>CmeRlcIndicativeQuote</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>Exchange</Name>
+         <Parameter>
+            <Name>Name</Name>
+            <Value>XKLS</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Product</Name>
+            <Value>Cme</Value>
+         </Parameter>
+         <Parameter>
+            <Name>BookProduct</Name>
+            <Value>CmeOrderBook</Value>
+         </Parameter>
+         <Parameter>
+            <Name>IndicativeQuoteProduct</Name>
+            <Value>CmeRlcIndicativeQuote</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>Exchange</Name>
+         <Parameter>
+            <Name>Name</Name>
+            <Value>XEMD</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Product</Name>
+            <Value>MexDer</Value>
+         </Parameter>
+         <Parameter>
+            <Name>BookProduct</Name>
+            <Value>MexDerLevel2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>IndicativeQuoteProduct</Name>
+            <Value>MexDerIndicativeQuote</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>Exchange</Name>
+         <Parameter>
+            <Name>Name</Name>
+            <Value>CMED</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Product</Name>
+            <Value>CmeDerivativesEurope</Value>
+         </Parameter>
+         <Parameter>
+            <Name>BookProduct</Name>
+            <Value>CmeDerivativesEuropeLevel2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>IndicativeQuoteProduct</Name>
+            <Value>CmeDerIndicativeQuote</Value>
+         </Parameter>
+      </ParamGroup>
+   </ParamGroup>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsFuture</Value>
+      <Value>FieldAttrsOption</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsItc</Value>
+      <Value>FieldAttrsCme</Value>
+      <Value>FieldAttrsNews</Value>
+      <Value>FieldAttrsStrategy</Value>
+      <Value>FieldAttrsReferential</Value>
+      <Value>FieldAttrsFixedIncome</Value>
+      <Value>FieldAttrsTradeOptional</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+   <IncludeFile>cmesbefix_product_mapping.xml</IncludeFile>
+   <IncludeFile>cmesbefix_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>cmesbefix_nrcert_channels.xml</IncludeFile>
+   <IncludeFile>cmesbefix_channels.xml</IncludeFile>
+   <IncludeFile>wombat_trade_exec_venue_mapping.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

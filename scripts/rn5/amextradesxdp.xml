@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+   
+   <!-- Site specific includes -->
+   <IncludeFile>amexts_tport.xml</IncludeFile>
+   <IncludeFile>amexts_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>AMEXTS</Value>
+   </Parameter>
+
+
+   <Parameter>
+      <Name>XdpReferenceFiles</Name>
+      <Value>/opt/wombat/feeds/data/AmericanSymbolMapping.txt</Value>
+   </Parameter>
+<!-- Superfeed Pillar XDP Login SFD-2259 START -->
+<!-- UAT -->
+        <DefineParameterGroup>
+          <Name>UseAmexTrXdp1</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>AVLATXDP07</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.159.250</Value><!-- Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35135</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.155.251/35135</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+
+        <DefineParameterGroup>
+          <Name>UseAmexTrXdpDr1</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>AVLATXDP07</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.68.159.250</Value><!-- Dr Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35135</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.68.155.251/35135</Value><!-- Dr Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+<!-- PROD A -->
+        <DefineParameterGroup>
+          <Name>UseAmexTrXdp2</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>AVLATXDP08</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.155.250</Value><!-- Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35136</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.159.251/35136</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+
+        <DefineParameterGroup>
+          <Name>UseAmexTrXdpDr2</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>AVLATXDP08</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.68.155.250</Value><!-- Dr Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35136</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.68.159.251/35136</Value><!-- Dr Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+<!-- PROD B -->
+        <DefineParameterGroup>
+          <Name>UseAmexTrXdp3</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>AVLATXDP09</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.159.250</Value><!-- Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35137</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.155.251/35137</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+
+        <DefineParameterGroup>
+          <Name>UseAmexTrXdpDr3</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>AVLATXDP09</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.68.159.250</Value><!-- Dr Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35137</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.68.155.251/35137</Value><!-- Dr Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+<!-- Superfeed Pillar XDP Login SFD-2259 END -->
+<!-- SFDCR-1246 Start -->
+
+   <Parameter>
+      <Name>XdpProductName</Name>
+      <Value>AmexTradesXdp</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpProductNameBook</Name>
+      <Value>AmexTradesXdpBook</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpRequestMarketDataRefresh</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpRequestReferenceDataRefresh</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpRefreshTimeOut</Name>
+      <Value>240</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpMaxRefreshSpoolSize</Name>
+      <Value>1000000</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpMaxRefreshAttempts</Name>
+      <Value>10</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpExchangeCode</Name>
+      <Value>AQT</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpRefreshTimeOut</Name>
+      <Value>240</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpRefreshType</Name>
+      <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>AmexTradesXdpEnableRefresh</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SubFeedGroupManagerCheckInterval</Name>
+      <Value>300000</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpPublishQuoteFieldsInTrade</Name>
+      <Value>true</Value>
+   </Parameter>
+<!-- SFDCR-1246  End -->
+<!-- SFDCR-1243 XDP Login Start -->
+        <DefineParameterGroup>
+          <Name>UseAmexTsXdp1</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>velxdp07</Value>
+          </Parameter>
+       </DefineParameterGroup>
+        <DefineParameterGroup>
+          <Name>UseAmexTsXdp2</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>velxdp08</Value>
+          </Parameter>
+       </DefineParameterGroup>
+        <DefineParameterGroup>
+          <Name>UseAmexTsXdp3</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>velxdp09</Value>
+          </Parameter>
+       </DefineParameterGroup>
+        <DefineParameterGroup>
+          <Name>UseAmexTsXdp4</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>velxdp10</Value>
+          </Parameter>
+       </DefineParameterGroup>
+        <DefineParameterGroup>
+          <Name>UseAmexTsXdp5</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>velxdp11</Value>
+          </Parameter>
+       </DefineParameterGroup>
+        <DefineParameterGroup>
+          <Name>UseAmexTsXdp6</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>velxdp12</Value>
+          </Parameter>
+       </DefineParameterGroup>
+<!-- XDP Login End -->
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+<!--CHG245429 -->
+   <Parameter>
+      <Name>PacketUnavailableErrorAsInfo</Name>
+      <Value>true</Value>
+   </Parameter>
+<!--CHG245429 -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+ 
+   <Parameter>
+      <Name>LotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpMessageHandlerName</Name>
+      <Value>amextradesxdp</Value>
+   </Parameter>
+   <Parameter>
+      <Name>AmexTradesXdpMessageHandlerName</Name>
+      <Value>amextradesxdp</Value>
+   </Parameter>
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>xdp</Value>
+   </Parameter>
+   <Parameter>
+      <Name>XdpProductId</Name>
+      <Value>53</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpLogSymbolIndexInitial</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>XdpLogAllSymbolIndexUpdates</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpLogRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>LineFilterDiscardForwardRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UseUnitOfTrade</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>cms2streetMap</Value>
+   </Parameter>
+    
+   <!--Parameter>
+      <Name>AmexTradesXdpProductName</Name>
+      <Value>NyseTsAmex</Value>
+   </Parameter SFDCR-1246 -->
+    
+   <Parameter>
+      <Name>InstrumentInfoUseCurrentTimeAsLineTimeAndSrcTime</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoAddPrefixOnSecurityStatusOrig</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookUseUndecoratedSymbolName</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordHandlerAlwaysAppendProductSuffix</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MessageRecoveryFile</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsBloomberg</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsTrade</Value>
+   </Parameter>
+    
+   <Feed>
+      <Name>amextradesxdp</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD2"/>
+<tny2sffhr19>
+      <UseParameterGroup name="UseAmexTrXdp1"/>
+      <UseParameterGroup name="UseAmexTrXdpDr1"/>
+</tny2sffhr19>
+<pny2sffhr06a>
+      <UseParameterGroup name="UseAmexTrXdp2"/>
+      <UseParameterGroup name="UseAmexTrXdpDr2"/>
+</pny2sffhr06a>
+<pny2sffhr06b>
+      <UseParameterGroup name="UseAmexTrXdp3"/>
+      <UseParameterGroup name="UseAmexTrXdpDr3"/>
+</pny2sffhr06b>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <!-- PROD Lines -->
+         <Value>amextradesxdp_live</Value>
+         <Value>amextradesxdp_request</Value>
+         <!--Value>amextradesxdp_stock_summary</Value-->
+         <Value>amextradesxdp_refresh</Value>
+         <!-- TEST Lines -->
+         <!--Value>amextradesxdp_test_live</Value>
+         <Value>amextradesxdp_test_request</Value>
+         <Value>amextradesxdp_test_stock_summary</Value-->
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>amextradesxdp_gwo</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD2"/>
+<tny2sffhr04>
+      <UseParameterGroup name="UseAmexTsXdp6"/>
+</tny2sffhr04>
+<pny2sffhr03a>
+      <UseParameterGroup name="UseAmexTsXdp2"/>
+</pny2sffhr03a>
+<pny2sffhr03b>
+      <UseParameterGroup name="UseAmexTsXdp3"/>
+</pny2sffhr03b>
+      <Parameter>
+          <Name>WmwSource</Name>
+          <Value>AMEXRTRP</Value>
+      </Parameter>
+
+   <Parameter>
+      <!--Name>AmexTradesXdpProductName</Name SFDCR-1246 -->
+      <Name>XdpProductName</Name>
+      <Value>NyseRtrpAmex</Value>
+   </Parameter>
+
+
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_amextrades_gwo</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value>/opt/wombat/log/amextradesxdp_gwo.sym</Value>
+   </Parameter>
+
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <!-- PROD Lines -->
+         <Value>amextradesxdp_live</Value>
+         <Value>amextradesxdp_request</Value>
+         <!--Value>amextradesxdp_stock_summary</Value-->
+         <Value>amextradesxdp_refresh</Value>
+         <!-- TEST Lines -->
+         <!--Value>amextradesxdp_test_live</Value>
+         <Value>amextradesxdp_test_request</Value>
+         <Value>amextradesxdp_test_stock_summary</Value-->
+      </Parameter>
+   </Feed>
+
+    
+   <DefineParameterGroup>
+      <Name>AmexTradesXdpLiveParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>LIVE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransMaxGapSize</Name>
+         <Value>3000</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>AmexTradesXdpRequestReqParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>REFRESH_REQ</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>AmexTradesXdpStockSummaryParameter</Name>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>1.5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRequestRetransTime</Name>
+         <Value>0.25</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>1000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LiveFeedId</Name>
+         <Value>live_001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>STOCK_SUMMARY</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>AmexTradesXdpRefreshParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>REFRESH</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MulticastConnectOnInit</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>1.5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>1000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterLogMissedMessages</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>AmexTradesXdp_prod_001_group</Name>
+      <Parameter>
+         <Name>RefreshReqFeedId</Name>
+         <Value>request_001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RefreshFeedId</Name>
+         <Value>refresh_001</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <Feed>
+      <Name>amextradesxdp_live</Name>
+      <UseParameterGroup name="AmexTradesXdpLiveParameter"/>
+      <UseParameterGroup name="AmexTradesXdp_prod_001_group"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>live_001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.76.24/23131</Value>
+         <Value>default2/224.0.76.152/23631</Value>
+         <Value>default1/224.0.76.25/23132/monitorOff</Value>
+         <Value>default2/224.0.76.153/23632/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.76.24</Value>
+         <Value>224.0.76.152</Value>
+         <Value>224.0.76.25</Value>
+         <Value>224.0.76.153</Value>
+         <Value>233.75.215.58</Value>
+         <Value>233.75.215.186</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>amextradesxdp_request</Name>
+      <UseParameterGroup name="AmexTradesXdpRequestReqParameter"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>request_001</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>159.125.64.153</Value SFDCR-1243 decommed >
+         <Value>162.69.145.17</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>1069</Value>
+         <Value>1061</Value>
+      </Parameter>
+      <Parameter>
+         <Name>AlternativeConnection</Name>
+         <Value>159.125.65.151/1069</Value>
+         <Value>162.69.145.18/1061</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value/>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>amextradesxdp_refresh</Name>
+      <UseParameterGroup name="AmexTradesXdpRefreshParameter"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>refresh_001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.76.26/23133</Value>
+         <Value>default2/224.0.76.154/23633</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.76.26</Value>
+         <Value>224.0.76.154</Value>
+         <Value>233.75.215.58</Value>
+         <Value>233.75.215.186</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>amextradesxdp_stock_summary</Name>
+      <UseParameterGroup name="AmexTradesXdpStockSummaryParameter"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.76.27/23134</Value>
+         <Value>default2/224.0.76.155/23634</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.76.27</Value>
+         <Value>224.0.76.155</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>amextradesxdp_test_live</Name>
+      <UseParameterGroup name="AmexTradesXdpLiveParameter"/>
+      <UseParameterGroup name="AmexTradesXdp_prod_001_group"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>live_001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.61.41/22541</Value>
+         <Value>default2/224.0.61.169/22741</Value>
+         <Value>default1/224.0.61.42/22542/monitorOff</Value>
+         <Value>default2/224.0.61.170/61145/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.26/62026</Value>
+         <Value>233.75.215.26/63026</Value>
+         <Value>233.75.215.154/62154</Value>
+         <Value>233.75.215.154/63154</Value>
+         <Value>224.0.61.41</Value>
+         <Value>224.0.61.169</Value>
+         <Value>224.0.61.42</Value>
+         <Value>224.0.61.170</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>amextradesxdp_test_refresh</Name>
+      <UseParameterGroup name="AmexTradesXdpRefreshParameter"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>refresh_001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.61.43/22543</Value>
+         <Value>default2/224.0.61.171/22743</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.61.43</Value>
+         <Value>224.0.61.171</Value>
+         <Value>233.75.215.26</Value>
+         <Value>233.75.215.154</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>amextradesxdp_test_request</Name>
+      <UseParameterGroup name="AmexTradesXdpRequestReqParameter"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>request_001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>162.68.216.54</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>1061</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>AlternativeConnection</Name>
+         <Value>159.125.76.161</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value/>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>amextradesxdp_test_stock_summary</Name>
+      <UseParameterGroup name="AmexTradesXdpStockSummaryParameter"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>224.0.61.47/22544</Value>
+         <Value>224.0.61.175/22744</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.154</Value>
+         <Value>224.0.61.47</Value>
+         <Value>224.0.61.175</Value>
+      </Parameter>
+   </Feed>
+
+   <IncludeFile>amextradesxdp_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>amextradesxdp_trade_condition_mapping.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

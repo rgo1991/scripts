@@ -1,0 +1,20 @@
+#!/bin/bash
+
+hosts=${1:-google.com} #paramater expansion. use google if no imput given. if you use ':=' then google.com would be permanantely set to $1.
+
+#this will loop until the host stops responding.ie: until the ping command works.
+#while ping -c4 -w4 $hosts;do
+#	sleep 30
+#done
+
+#this will loop indefintely until you cancel it manually. the ':' is == to 'true' and '/bin/true'
+
+while :
+do
+	ping -c3 -w4 $hosts > /dev/null 2>&1
+	if [ $? -eq 0 ];then
+	echo "Todays date is `date` and the host:$hosts is up ";else
+	echo "Todays date is `date` and the host:$hosts is down";fi
+done
+	
+

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+process_exists(){
+
+pidof "$1" && echo "These $1 process(es) were found." || \
+echo "No $1 processes were found"
+
+}
+
+echo "Checking system processes"
+process_exists apache2 | tee apache2.log
+process_exists init | tee init.log
+process_exists bash | tee bash.log
+process_exists mysql | tee mysql.log

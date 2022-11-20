@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+<!-- ================================================================= -->
+<!--                        F E E D S                                  -->
+<!-- ================================================================= -->
+
+        <DefineParameterGroup>
+          <Name>UseNyseChxXdp1</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>VLATXDP01</Value>
+          </Parameter>
+       </DefineParameterGroup>
+        <DefineParameterGroup>
+          <Name>UseNyseChxXdp2</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>VLATXDP02</Value>
+          </Parameter>
+       </DefineParameterGroup>
+        <DefineParameterGroup>
+          <Name>UseNyseChxXdp3</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>VLATXDP03</Value>
+          </Parameter>
+       </DefineParameterGroup>
+<!-- ECC-175 -->
+
+    <Feed>
+        <Name>nysechxintxdp_prod</Name>
+        <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+        <UseParameterGroup name="GlobalSecStatusParams"/>
+	<tny2sffhr18>
+        <UseParameterGroup name="UseNyseChxXdp1"/>
+	</tny2sffhr18>
+        <pny2sffhr06a>
+        <UseParameterGroup name="UseNyseChxXdp2"/>
+        </pny2sffhr06a>
+        <pny2sffhr06b>
+        <UseParameterGroup name="UseNyseChxXdp3"/>
+        </pny2sffhr06b>
+        <Parameter>
+           <Name>FtGroupName</Name>
+           <Value>FT_nysechxintxdp_prod</Value>
+        </Parameter>    
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>nysechxintxdp_prod_request</Value>
+            <Value>nysechxintxdp_prod_live_51</Value>
+            <Value>nysechxintxdp_prod_refresh_51</Value>
+            <Value>nysechxintxdp_prod_live_52</Value>
+            <Value>nysechxintxdp_prod_refresh_52</Value>
+            <Value>nysechxintxdp_prod_live_53</Value>
+            <Value>nysechxintxdp_prod_refresh_53</Value>
+            <Value>nysechxintxdp_prod_live_54</Value>
+            <Value>nysechxintxdp_prod_refresh_54</Value>
+            <Value>nysechxintxdp_prod_live_55</Value>
+            <Value>nysechxintxdp_prod_refresh_55</Value>
+            <Value>nysechxintxdp_prod_live_56</Value>
+            <Value>nysechxintxdp_prod_refresh_56</Value>
+	    <Value>nysechxintxdp_prod_stock_summary</Value>
+        </Parameter>	    
+       <Parameter>
+          <Name>XdpReferenceFiles</Name>
+          <Value>/opt/wombat/feeds/data/ChicagoSymbolMapping.txt</Value>
+       </Parameter>       
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value>nysechxintxdp.sym</Value>
+   </Parameter>
+   <Parameter>
+      <Name>OrderBookSymbolFile</Name>
+      <Value>nysechxintxdp.orderbook.sym</Value>
+   </Parameter>   
+    </Feed>
+
+    <Feed>
+        <Name>nysechxintxdp_prod_request</Name>
+        <UseParameterGroup name="NyseChxIntXdpRequestReqParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+	<tny2sffhr18>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.91.250</Value>
+            <comment>Primary ECC-175</comment>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35044</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.68.91.250</Value>
+            <comment>DR Primary ECC-175</comment>
+        </Parameter>
+	</tny2sffhr18>
+	<pny2sffhr06a>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.95.250</Value>
+            <comment>Primary ECC-175</comment>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35045</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.68.95.250</Value>
+            <comment>DR Primary ECC-175</comment>
+        </Parameter>
+	</pny2sffhr06a>
+	<pny2sffhr06b>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.91.250</Value>
+            <comment>Primary ECC-175</comment>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35046</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.68.91.250</Value>
+            <comment>DR Primary ECC-175</comment>
+        </Parameter>
+	</pny2sffhr06b>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>162.69.91.250</Value>
+            <Value>162.69.95.250</Value>
+            <Value>162.69.91.250</Value>
+            <Value>162.68.91.250</Value>
+            <Value>162.68.95.250</Value>
+            <Value>162.68.91.250</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>nysechxintxdp_prod_live_51</Name>
+        <UseParameterGroup name="NyseChxIntXdpLiveParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>51</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpChannelId</Name>
+            <Value>51</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>151</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshReqFeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.98.0/46101</Value>
+            <Value>default2/224.0.98.128/46701</Value>
+            <Value>default1/224.0.98.6/46107/monitorOff</Value>
+            <Value>default2/224.0.98.134/46707/monitorOff</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.98.0/46101</Value>
+            <Value>224.0.98.128/46701</Value>
+            <Value>224.0.98.6/46107</Value>
+            <Value>224.0.98.134/46707</Value>
+       </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>nysechxintxdp_prod_live_52</Name>
+        <UseParameterGroup name="NyseChxIntXdpLiveParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>52</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpChannelId</Name>
+            <Value>52</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>152</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshReqFeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.98.1/46102</Value>
+            <Value>default2/224.0.98.129/46702</Value>
+            <Value>default1/224.0.98.7/46108/monitorOff</Value>
+            <Value>default2/224.0.98.135/46708/monitorOff</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.98.1/46102</Value>
+            <Value>224.0.98.129/46702</Value>
+            <Value>224.0.98.7/46108</Value>
+            <Value>224.0.98.135/46708</Value>
+       </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>nysechxintxdp_prod_live_53</Name>
+        <UseParameterGroup name="NyseChxIntXdpLiveParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>53</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpChannelId</Name>
+            <Value>53</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>153</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshReqFeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.98.2/46103</Value>
+            <Value>default2/224.0.98.130/46703</Value>
+            <Value>default1/224.0.98.8/46109/monitorOff</Value>
+            <Value>default2/224.0.98.136/46709/monitorOff</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.98.2/46103</Value>
+            <Value>224.0.98.130/46703</Value>
+            <Value>224.0.98.8/46109</Value>
+            <Value>224.0.98.136/46709</Value>
+       </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>nysechxintxdp_prod_live_54</Name>
+        <UseParameterGroup name="NyseChxIntXdpLiveParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>54</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpChannelId</Name>
+            <Value>54</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>154</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshReqFeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.98.3/46104</Value>
+            <Value>default2/224.0.98.131/46704</Value>
+            <Value>default1/224.0.98.9/46110/monitorOff</Value>
+            <Value>default2/224.0.98.137/46710/monitorOff</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.98.3/46104</Value>
+            <Value>224.0.98.131/46704</Value>
+            <Value>224.0.98.9/46110</Value>
+            <Value>224.0.98.137/46710</Value>
+       </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>nysechxintxdp_prod_live_55</Name>
+        <UseParameterGroup name="NyseChxIntXdpLiveParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>55</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpChannelId</Name>
+            <Value>55</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>155</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshReqFeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.98.4/46105</Value>
+            <Value>default2/224.0.98.132/46705</Value>
+            <Value>default1/224.0.98.10/46111/monitorOff</Value>
+            <Value>default2/224.0.98.138/46711/monitorOff</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.98.4/46105</Value>
+            <Value>224.0.98.132/46705</Value>
+            <Value>224.0.98.10/46111</Value>
+            <Value>224.0.98.138/46711</Value>
+       </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>nysechxintxdp_prod_live_56</Name>
+        <UseParameterGroup name="NyseChxIntXdpLiveParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>56</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpChannelId</Name>
+            <Value>56</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>156</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshReqFeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.98.5/46106</Value>
+            <Value>default2/224.0.98.133/46706</Value>
+            <Value>default1/224.0.98.11/46112/monitorOff</Value>
+            <Value>default2/224.0.98.139/46712/monitorOff</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.98.5/46106</Value>
+            <Value>224.0.98.133/46706</Value>
+            <Value>224.0.98.11/46112</Value>
+            <Value>224.0.98.139/46712</Value>
+       </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>nysechxintxdp_prod_refresh_51</Name>
+        <UseParameterGroup name="NyseChxIntXdpRefreshParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>151</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.98.12/46113</Value>
+            <Value>default2/224.0.98.140/46713</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.98.12/46113</Value>
+            <Value>224.0.98.140/46713</Value>
+       </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>nysechxintxdp_prod_refresh_52</Name>
+        <UseParameterGroup name="NyseChxIntXdpRefreshParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>152</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.98.13/46114</Value>
+            <Value>default2/224.0.98.141/46714</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.98.13/46114</Value>
+            <Value>224.0.98.141/46714</Value>
+       </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>nysechxintxdp_prod_refresh_53</Name>
+        <UseParameterGroup name="NyseChxIntXdpRefreshParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>153</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.98.14/46115</Value>
+            <Value>default2/224.0.98.142/46715</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.98.14/46115</Value>
+            <Value>224.0.98.142/46715</Value>
+       </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>nysechxintxdp_prod_refresh_54</Name>
+        <UseParameterGroup name="NyseChxIntXdpRefreshParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>154</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.98.15/46116</Value>
+            <Value>default2/224.0.98.143/46716</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.98.15/46116</Value>
+            <Value>224.0.98.143/46716</Value>
+       </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>nysechxintxdp_prod_refresh_55</Name>
+        <UseParameterGroup name="NyseChxIntXdpRefreshParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>155</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.98.16/46117</Value>
+            <Value>default2/224.0.98.144/46717</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.98.16/46117</Value>
+            <Value>224.0.98.144/46717</Value>
+       </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>nysechxintxdp_prod_refresh_56</Name>
+        <UseParameterGroup name="NyseChxIntXdpRefreshParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>156</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.98.17/46118</Value>
+            <Value>default2/224.0.98.145/46718</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.98.17/46118</Value>
+            <Value>224.0.98.145/46718</Value>
+       </Parameter>
+    </Feed>
+     <Feed>
+   <Name>nysechxintxdp_prod_stock_summary</Name>
+   <UseParameterGroup name="NyseChxIntXdpStockSummaryParameter"/>
+   <Parameter>
+     <Name>Listen</Name>
+     <Value>default1/224.0.98.27/46271</Value>
+     <Value>default2/224.0.98.155/46871</Value>
+   </Parameter>
+   <Parameter>
+     <Name>PlaybackSourceId</Name>
+     <Value>224.0.98.27/46271</Value>
+     <Value>224.0.98.155/46871</Value>
+   </Parameter>
+ </Feed>
+
+</config>

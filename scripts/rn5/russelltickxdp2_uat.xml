@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+    <Comment>
+        This file contains the default UAT line settings.
+    </Comment>
+
+    <Feed>
+        <Name>russelltickxdp2_uat</Name>
+        <Comment>UAT Lines</Comment>
+        <Parameter>
+           <Name>WmwSource</Name>
+           <Value>RUSSELLTICKXDP_UAT</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>russelltickxdp2_uat_live</Value>
+            <Value>russelltickxdp2_uat_retrans</Value>
+            <Value>russelltickxdp2_uat_refresh</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FtGroupName</Name>
+            <Value>FT_russelltickxdp2_uat</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RecordSymbolFile</Name>
+            <Value>russelltickxdp2_uat.sym</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>russelltickxdp2_uat_live</Name>
+        <UseParameterGroup name="RussellTickXdp2LiveParameters"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RetransFeedId</Name>
+            <Value>0_Retrans</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>0_Refresh</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.102.33/30033</Value>
+            <Value>default2/224.0.102.97/30097</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.102.33/30033</Value>
+            <Value>224.0.102.97/30097</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>russelltickxdp2_uat_retrans</Name>
+        <UseParameterGroup name="RussellTickXdp2RetransParameters"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>0_Retrans</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.102.37/30037</Value>
+            <Value>default1/224.0.102.101/30101</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.102.37/30037</Value>
+            <Value>224.0.102.101/30101</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>russelltickxdp2_uat_refresh</Name>
+        <UseParameterGroup name="RussellTickXdp2RefreshParameters"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>0_Refresh</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.102.37/31037</Value>
+            <Value>default1/224.0.102.101/31101</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.102.37/31037</Value>
+            <Value>224.0.102.101/31101</Value>
+        </Parameter>
+    </Feed>
+</config>
+

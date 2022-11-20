@@ -1,0 +1,2794 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Parameter Groups for Specific MamaSenderIds -->
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuXdpLiffeP_AM</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>440</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuXdpLiffeS_AM</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4400</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuXdpLiffeP_NZ</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>463</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuXdpLiffeS_NZ</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4630</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   
+  <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuCefUltraPlusAdP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>441</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuCefUltraPlusAdS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4410</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuCefUltraPlusEiP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>442</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuCefUltraPlusEiS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4420</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuCefUltraPlusJoP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>443</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuCefUltraPlusJoS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4430</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuCefUltraPlusPsP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>444</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuCefUltraPlusPsS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4440</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuCefUltraPlusTzP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>445</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuCefUltraPlusTzS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4450</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuBitmtaP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>446</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuBitmtaS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4460</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuBmeP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>447</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuBmeS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4470</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuLseItchP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>448</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuLseItchS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4480</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuXetraUltraDublinP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>449</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuXetraUltraDublinS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4490</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuNyseArcaEuropeP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>450</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuNyseArcaEuropeS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4500</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuXetraUltraP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>451</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuXetraUltraS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4510</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuOsloP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>452</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuOsloS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4520</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuSaxessItchP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>453</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuSaxessItchS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4530</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuJseP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>454</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuJseS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4540</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuViennaP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>455</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuViennaS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4550</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuSwxP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>456</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuSwxS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4560</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuUtpCashEuroP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>457</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuUtpCashEuroS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4570</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuChixP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>458</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuChixS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4580</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuBatsEuropeP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>459</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuBatsEuropeS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4590</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuTurquoiseP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>460</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuTurquoiseS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4600</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuNyseBmP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>461</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuNyseBmS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4610</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuCefEurexP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>462</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuCefEurexS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4620</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+<!-- SFDCR-1044 Start -->
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuCefEurexCanP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4625</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuCefEurexCanS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>46205</Value>
+      </Parameter>
+   </DefineParameterGroup>
+<!-- SFDCR-1044 End -->
+
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuAthexP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>463</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdEuAthexS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4630</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdCefPri</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>464</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdSfdCefSec</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>4640</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <!-- END - Parameter Groups for Specific MamaSenderIds -->
+
+ <Feed>
+      <Name>mamacache_sfdeu_athens_micex_warsaw</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_sfdeu_athens</Value>
+         <Value>mamacache_sfdeu_micex</Value>
+         <Value>mamacache_sfdeu_warsaw</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_athens</Value>
+         <Value>thread_mamacache_micex</Value>
+         <Value>thread_mamacache_warsaw</Value>
+       </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_athens_micex_warsaw</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+  <!--INC1205944 INC1262663 xignite May 2, 2013-->
+  <Parameter>
+        <Name>MamaSubscriberRetries</Name>
+        <Value>9</Value>
+  </Parameter>
+  <Parameter>
+      <Name>MamaInitialThrottleRate</Name>
+      <Value>250</Value>
+   </Parameter>
+   <Parameter>
+      <Name>MamaRecapThrottleRate</Name>
+      <Value>250</Value>
+   </Parameter>
+   <Parameter>
+      <Name>RecapCheckRate</Name>
+      <Value>250</Value>
+   </Parameter>
+        <Parameter>
+        <Name>MamaSubscriberRetries</Name>
+        <Value>9</Value>
+        </Parameter>
+   <!--END -->
+     <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_athens</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct30a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuAthexP"/>
+      </pny2sfmct30a>
+      <pny2sfmct30b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuAthexS"/>
+      </pny2sfmct30b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+
+   <Feed>
+      <Name>mamacache_sfdeu_cefeurex</Name>
+    <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_mamacache_sfdeu_cefeurex_prod</Value>
+    </Parameter>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cef_eurex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cef_eurex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <!--Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>CEFEUREX</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_cefeurex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds3</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_cefeurex</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct31a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuCefEurexP"/>
+      </pny2sfmct31a>
+      <pny2sfmct31b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuCefEurexS"/>
+      </pny2sfmct31b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+<!-- SFDCR-1044 Start -->
+   <Feed>
+      <Name>mamacache_sfdeu_cefeurex_can</Name>
+    <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_mamacache_sfdeu_cefeurex_cantor_prod</Value>
+    </Parameter>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cefeurex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cefeurex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <!--Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>CEFEUREX</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_cefeurex_cantor</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_cefeurex</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct31a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuCefEurexCanP"/>
+      </pny2sfmct31a>
+      <pny2sfmct31b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuCefEurexCanS"/>
+      </pny2sfmct31b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+<!-- SFDCR-1044 End -->
+<Feed>
+      <Name>mamacache_sfdeu_xdpliffeeuro_test</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_xdpliffeeuro</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_xdpliffeeuro</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>XDPLIFFEEURO</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_xdpliffeeuro_test</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+
+  <!--INC1205944 xignite May 2, 2013-->
+  <!--    <Parameter>
+         <Name>MamaSubscriberRetries</Name>
+         <Value>9</Value>
+      </Parameter>
+      <Parameter>
+        <Name>MamaInitialThrottleRate</Name>
+        <Value>250</Value>
+      </Parameter>
+      <Parameter>
+        <Name>MamaRecapThrottleRate</Name>
+        <Value>250</Value>
+      </Parameter>
+      <Parameter>
+        <Name>RecapCheckRate</Name>
+        <Value>250</Value>
+      </Parameter>-->
+ <!--END -->
+
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_xlif</Value>
+      </Parameter>
+<!--     <Parameter>
+          <Name>RecordRegExpFilter</Name>
+          <Value>^[N-Z0-9].*</Value>
+     </Parameter>
+     <Parameter>
+          <Name>OrderBookRegExpFilter</Name>
+          <Value>^[N-Z0-9].*</Value>
+     </Parameter>
+        <Parameter>
+          <Name>MamaSubscriberRegExpFilter</Name>
+          <Value>^[N-Z0-9].*</Value>
+     </Parameter>
+     <Parameter>
+          <Name>MamdaSubscriberRegExpFilter</Name>
+          <Value>^[N-Z0-9].*</Value>
+     </Parameter>-->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <!--<pny2sfmct30a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuXdpLiffeP_NZ"/>
+      </pny2sfmct30a>
+      <pny2sfmct30b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuXdpLiffeS_NZ"/>
+      </pny2sfmct30b>-->
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_xdpliffeeuro_am</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_xlif</Value><!-- SFDCR-1045 -->
+         <Value>mamacache_icemdfmceu</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_xlif</Value><!-- SFDCR-1045 -->
+         <Value>thread_mamacache_icemdfmceu</Value>
+      </Parameter>
+<!--
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>XDPLIFFEEURO</Value>
+      </Parameter>
+-->
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_xdpliffeeuro_am</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds1</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+   <!--INC1205944 xignite May 2, 2013-->
+      <Parameter>
+         <Name>MamaSubscriberRetries</Name>
+         <Value>9</Value>
+      </Parameter>
+      <Parameter>
+        <Name>MamaInitialThrottleRate</Name>
+        <Value>250</Value>
+      </Parameter>
+      <Parameter>
+        <Name>MamaRecapThrottleRate</Name>
+        <Value>250</Value>
+      </Parameter>
+      <Parameter>
+        <Name>RecapCheckRate</Name>
+        <Value>250</Value>
+      </Parameter>
+  <!--END -->
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfd_europe_xdpliffe</Value>
+      </Parameter>
+      <Parameter>
+          <Name>RecordRegExpFilter</Name>
+          <Value>^\(XDPLIFFEEURO\|ICEMDFMCEU\)\.[A-M].*</Value>
+     </Parameter>
+     <Parameter>
+          <Name>OrderBookRegExpFilter</Name>
+          <Value>^\(XDPLIFFEEURO\|ICEMDFMCEU\)\.[A-M].*</Value>
+     </Parameter>
+        <Parameter>
+          <Name>MamaSubscriberRegExpFilter</Name>
+          <Value>^\(XDPLIFFEEURO\|ICEMDFMCEU\)\.[A-M].*</Value>
+     </Parameter>
+     <Parameter>
+          <Name>MamdaSubscriberRegExpFilter</Name>
+          <Value>^\(XDPLIFFEEURO\|ICEMDFMCEU\)\.[A-M].*</Value>
+     </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct30a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuXdpLiffeP_AM"/>
+      </pny2sfmct30a>
+      <pny2sfmct30b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuXdpLiffeS_AM"/>
+      </pny2sfmct30b>
+      <!-- END - Host-Specific Settings -->
+</Feed>
+
+<Feed>
+      <Name>mamacache_sfdeu_xdpliffeeuro_nz</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_xlif</Value><!-- SFDCR-1045 -->
+         <Value>mamacache_icemdfmceu</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_xlif</Value><!-- SFDCR-1045 -->
+         <Value>thread_mamacache_icemdfmceu</Value>
+      </Parameter>
+<!--
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>XDPLIFFEEURO</Value>
+      </Parameter>
+-->
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_xdpliffeeuro_nz</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds2</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+
+  <!--INC1205944 xignite May 2, 2013-->
+      <Parameter>
+         <Name>MamaSubscriberRetries</Name>
+         <Value>9</Value>
+      </Parameter>
+      <Parameter>
+        <Name>MamaInitialThrottleRate</Name>
+        <Value>250</Value>
+      </Parameter>
+      <Parameter>
+        <Name>MamaRecapThrottleRate</Name>
+        <Value>250</Value>
+      </Parameter>
+      <Parameter>
+        <Name>RecapCheckRate</Name>
+        <Value>250</Value>
+      </Parameter>
+ <!--END -->
+
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfd_europe_xdpliffe</Value>
+      </Parameter>
+     <Parameter>
+          <Name>RecordRegExpFilter</Name>
+          <Value>^\(XDPLIFFEEURO\|ICEMDFMCEU\)\.[N-Z0-9].*</Value>
+     </Parameter>
+     <Parameter>
+          <Name>OrderBookRegExpFilter</Name>
+          <Value>^\(XDPLIFFEEURO\|ICEMDFMCEU\)\.[N-Z0-9].*</Value>
+     </Parameter>
+        <Parameter>
+          <Name>MamaSubscriberRegExpFilter</Name>
+          <Value>^\(XDPLIFFEEURO\|ICEMDFMCEU\)\.[N-Z0-9].*</Value>
+     </Parameter>
+     <Parameter>
+          <Name>MamdaSubscriberRegExpFilter</Name>
+          <Value>^\(XDPLIFFEEURO\|ICEMDFMCEU\)\.[N-Z0-9].*</Value>
+     </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct30a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuXdpLiffeP_NZ"/>
+      </pny2sfmct30a>
+      <pny2sfmct30b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuXdpLiffeS_NZ"/>
+      </pny2sfmct30b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+
+ <Feed>
+      <Name>mamacache_sfdeu_cef</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cef</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cef</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>CEF</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_cef</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds3</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_cef</Value>
+      </Parameter>
+      <pny2sfmct30a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdCefPri"/>
+      </pny2sfmct30a>
+      <pny2sfmct30b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdCefSec"/>
+      </pny2sfmct30b>
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_cefultraplus_ad</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cefultraplus_ad</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cefultraplus</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>CEFULTRAPLUS</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_cefultraplus_ad</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^[A-D]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^[A-D]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^[A-D]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^[A-D]</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_cefultraplus_ad</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pm3sfdeu03a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuCefUltraPlusAdP"/>
+      </pm3sfdeu03a>
+      <pm3sfdeu03b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuCefUltraPlusAdS"/>
+      </pm3sfdeu03b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_cefultraplus_ei</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cefultraplus_ei</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cefultraplus</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>CEFULTRAPLUS</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_cefultraplus_ei</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^[E-I]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^[E-I]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^[E-I]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^[E-I]</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_cefultraplus_ei</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pm3sfdeu03a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuCefUltraPlusEiP"/>
+      </pm3sfdeu03a>
+      <pm3sfdeu03b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuCefUltraPlusEiS"/>
+      </pm3sfdeu03b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_cefultraplus_jo</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cefultraplus_jo</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cefultraplus</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>CEFULTRAPLUS</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_cefultraplus_jo</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^[J-O]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^[J-O]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^[J-O]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^[J-O]</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_cefultraplus_jo</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pm3sfdeu03a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuCefUltraPlusJoP"/>
+      </pm3sfdeu03a>
+      <pm3sfdeu03b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuCefUltraPlusJoS"/>
+      </pm3sfdeu03b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_cefultraplus_ps</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cefultraplus_ps</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cefultraplus</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>CEFULTRAPLUS</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_cefultraplus_ps</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^[P-S]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^[P-S]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^[P-S]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^[P-S]</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_cefultraplus_ps</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pm3sfdeu03a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuCefUltraPlusPsP"/>
+      </pm3sfdeu03a>
+      <pm3sfdeu03b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuCefUltraPlusPsS"/>
+      </pm3sfdeu03b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_cefultraplus_tz</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_cefultraplus_tz</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_cefultraplus</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>CEFULTRAPLUS</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_cefultraplus_tz</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Regular Expressions -->
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^[T-Z0-9].*</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^[T-Z0-9].*</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^[T-Z0-9].*</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^[T-Z0-9].*</Value>
+      </Parameter>
+      <!-- END - Regular Expressions -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_cefultraplus_tz</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pm3sfdeu03a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuCefUltraPlusTzP"/>
+      </pm3sfdeu03a>
+      <pm3sfdeu03b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuCefUltraPlusTzS"/>
+      </pm3sfdeu03b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_bitmta</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_bitmta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_bitmta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>BITMTA</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_bitmta</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds3</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_bitmta</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct30a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuBitmtaP"/>
+      </pny2sfmct30a>
+      <pny2sfmct30b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuBitmtaS"/>
+      </pny2sfmct30b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_bme</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_bme</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_bme</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>BME</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_bme</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_bme</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct30a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuBmeP"/>
+      </pny2sfmct30a>
+      <pny2sfmct30b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuBmeS"/>
+      </pny2sfmct30b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_lseitch</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_lseitch</Value>
+         <Value>mamacache_istanbul</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_lseitch</Value>
+         <Value>thread_mamacache_istanbul</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_lseitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds1</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_lseitch</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct30a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuLseItchP"/>
+      </pny2sfmct30a>
+      <pny2sfmct30b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuLseItchS"/>
+      </pny2sfmct30b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_xetraultra_dublin</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_xetraultra_dublin</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_xetraultra_dublin</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>ISE</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_xetraultra_dublin</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds2</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_xetraultra_dublin</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct30a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuXetraUltraDublinP"/>
+      </pny2sfmct30a>
+      <pny2sfmct30b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuXetraUltraDublinS"/>
+      </pny2sfmct30b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_nysearcaeurope</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_nysearcaeurope</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_nysearcaeurope</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>NAE</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_nysearcaeurope</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_nysearcaeurope</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct30a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuNyseArcaEuropeP"/>
+      </pny2sfmct30a>
+      <pny2sfmct30b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuNyseArcaEuropeS"/>
+      </pny2sfmct30b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_xetraultra</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_xetraultra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_xetraultra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>XETRAULTRA</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_xetraultra</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_xetraultra</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct30a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuXetraUltraP"/>
+      </pny2sfmct30a>
+      <pny2sfmct30b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuXetraUltraS"/>
+      </pny2sfmct30b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_oslo</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_oslo</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_oslo</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OSLO</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_oslo</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds1</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_oslo</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct30a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuOsloP"/>
+      </pny2sfmct30a>
+      <pny2sfmct30b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuOsloS"/>
+      </pny2sfmct30b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_saxessitch</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_saxessitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_saxessitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>SAXESSITCH</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_saxessitch</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds2</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_saxessitch</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct30a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuSaxessItchP"/>
+      </pny2sfmct30a>
+      <pny2sfmct30b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuSaxessItchS"/>
+      </pny2sfmct30b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_jse</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_jse</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_jse</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>JSE</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_jse</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds3</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_jse</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct30a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuJseP"/>
+      </pny2sfmct30a>
+      <pny2sfmct30b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuJseS"/>
+      </pny2sfmct30b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_vienna</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_vienna</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_vienna</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>VIENNA</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_vienna</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds1</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_vienna</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct31a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuViennaP"/>
+      </pny2sfmct31a>
+      <pny2sfmct31b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuViennaS"/>
+      </pny2sfmct31b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_swx</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_swx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_swx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>SWXMDI</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_swx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds2</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_swx</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct31a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuSwxP"/>
+      </pny2sfmct31a>
+      <pny2sfmct31b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuSwxS"/>
+      </pny2sfmct31b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_utpcasheuro</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_utpcasheuro</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_utpcasheuro</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>UTPEURO</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfde_utpcasheuro</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds3</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_utpcasheuro</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct31a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuUtpCashEuroP"/>
+      </pny2sfmct31a>
+      <pny2sfmct31b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuUtpCashEuroS"/>
+      </pny2sfmct31b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_chix</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_chix</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_chix</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>CHIX</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_chix</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_chix</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct31a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuChixP"/>
+      </pny2sfmct31a>
+      <pny2sfmct31b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuChixS"/>
+      </pny2sfmct31b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_batseurope</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_batseurope</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_batseurope</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>BATSEU</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_batseurope</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds1</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_batseurope</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct31a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuBatsEuropeP"/>
+      </pny2sfmct31a>
+      <pny2sfmct31b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuBatsEuropeS"/>
+      </pny2sfmct31b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_turquoise</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_turquoise</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_turquoise</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>TURQ</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_turquoise</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds2</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_turquoise</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct31a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuTurquoiseP"/>
+      </pny2sfmct31a>
+      <pny2sfmct31b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuTurquoiseS"/>
+      </pny2sfmct31b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_nysebm</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_nysebm</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_nysebm</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>NYSEBM</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_nysebm</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_nysebm</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Host-Specific Settings -->
+      <pny2sfmct31a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuNyseBmP"/>
+      </pny2sfmct31a>
+      <pny2sfmct31b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdEuNyseBmS"/>
+      </pny2sfmct31b>
+      <!-- END - Host-Specific Settings -->
+   </Feed>
+
+  <Feed>
+      <Name>mamacache_sfdeu_xlif_prod</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_xlif</Value>
+         <!--Value>mamacache_icemdfmceu</Value - already in mamacache_sfdeu_xdpliffeeuro_am/mamacache_sfdeu_xdpliffeeuro_nz cache -->
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_xlif</Value>
+         <!--Value>thread_mamacache_icemdfmceu</Value-->
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+
+<!--
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>XLIF</Value>
+      </Parameter>
+-->
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_xlif</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_xlif</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_tsestd_prod</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_tsestd</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_tsestd</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>TSESTD</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter-->
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_tsestd</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu</Value>
+      </Parameter>
+        <Parameter>
+         <Name>WadminTransportName</Name>
+         <Value>wadmin</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Set MamaSenderId -->
+      <!--Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>13</Value>
+      </Parameter-->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_tsestd</Value>
+      </Parameter>
+      <!--IncludeFile>mamacache_fast.xml</IncludeFile-->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_tdex_prod</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_tdex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_tdex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>TDEX</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter-->
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_tdex</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu</Value>
+      </Parameter>
+        <Parameter>
+         <Name>WadminTransportName</Name>
+         <Value>wadmin</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Set MamaSenderId -->
+      <!--Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>13</Value>
+      </Parameter-->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_tdex</Value>
+      </Parameter>
+      <!--IncludeFile>mamacache_fast.xml</IncludeFile-->
+   </Feed>
+
+  <Feed>
+      <Name>mamacache_sgxdt_prod</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_sgxdt</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_sgxdt</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter-->
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sgxdt</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WadminTransportName</Name>
+         <Value>wadmin</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>SGXDT</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_sgxdt</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <!-- Set MamaSenderId -->
+      <!--Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>43</Value>
+      </Parameter-->
+        <Parameter>
+         <Name>RecordAttrs</Name>
+         <Value>RecordAttrsNormal</Value>
+        </Parameter>
+      <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+      <!--IncludeFile>mamacache_fast.xml</IncludeFile-->
+   </Feed>
+
+  <Feed>
+      <Name>mamacache_sfe_prod</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_sfe</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_sfe</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter-->
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfe</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WadminTransportName</Name>
+         <Value>wadmin</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>XSFE</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Set MamaSenderId -->
+      <!--Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>13</Value>
+      </Parameter-->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_sfe</Value>
+      </Parameter>
+      <!--IncludeFile>mamacache_fast.xml</IncludeFile-->
+   </Feed>
+
+  <Feed>
+      <Name>mamacache_osederivatives_prod</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_osederivatives</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_osederivatives</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter-->
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_osederivatives</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WadminTransportName</Name>
+         <Value>wadmin</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OSEDERIV</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- Set MamaSenderId -->
+      <!--Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>13</Value>
+      </Parameter-->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfdeu_osederiv</Value>
+      </Parameter>
+      <!--IncludeFile>mamacache_fast.xml</IncludeFile-->
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_sfdeu_utpcasheuro</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_utpcasheuro</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_utpcasheuro</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>UTPEURO</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfde_utpcasheuro</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_sfdeu_feeds3</Value>
+      </Parameter>
+      <pny2sfmct31a>
+         <UseParameterGroup name="MamaCacheFtPrimary"/>
+         <UseParameterGroup name="MamaSenderIdSfdeUtpCashP"/>
+      </pny2sfmct31a>
+      <pny2sfmct31b>
+         <UseParameterGroup name="MamaCacheFtSecondary"/>
+         <UseParameterGroup name="MamaSenderIdSfdeUtpCashS"/>
+      </pny2sfmct31b>
+      <!-- END - Host-Specific Settings -->
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+      <Parameter>
+         <Name>MamaDictTransport</Name>
+         <Value>sfd_europe_utpcasheuro</Value>
+      </Parameter>
+      <!-- Use SperFeed Europe MamaCache Dictionary -->
+   </Feed>
+
+</config>

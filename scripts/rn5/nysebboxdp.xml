@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for the NYSE Quotes feed handler. See the Administrators Guide for more information: http://wombatconsulting.com/feedhandlers/admin-guide.html--><!--The following configuration clauses are common to all xdp feed handlers-->
+    
+   <!-- Site specific includes -->
+   <IncludeFile>nysebboxdp_tport.xml</IncludeFile>
+   <IncludeFile>nysebboxdp_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+   <Parameter>
+      <Name>XdpMaxRefreshSpoolSize</Name>
+      <Value>1000000</Value>
+   </Parameter>
+    
+   <!--Parameter>
+      <Name>LotSizeMapFileName</Name>
+      <Value>/opt/wombat/feeds/config/lot_size_map.txt</Value>
+   </Parameter-->
+
+<Parameter>
+        <Name>XdpApplyLotsToSize</Name>
+        <Value>false</Value>
+</Parameter>
+
+   <Parameter>
+      <Name>XdpMessageHandlerName</Name>
+      <Value>nysebboxdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpProductName</Name>
+      <Value>NyseBboXdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpProductNameBook</Name>
+      <Value>NyseBboXdpBook</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>xdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpSourceId</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpRefreshType</Name>
+      <Value>0</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpLogRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpLogRefresh</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpWarnIfUOTUnavailable</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpProductId</Name>
+      <Value>3</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UseUnitOfTrade</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RetransmissionMethod</Name>
+      <Value>0</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ZeroBookPriceIfClosed</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>100</Value>
+   </Parameter>
+   <Parameter>
+      <Name>QuoteSizeMultiplier</Name>
+      <Value>100</Value>
+   </Parameter>
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_nysebboxdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value/>
+   </Parameter>
+    <Parameter>
+      <Name>OrderBookSymbolFile</Name>
+      <Value/>
+   </Parameter>
+   
+   <Parameter>
+      <Name>PublishOrderBooks</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>nyse2streetMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MessageRecoveryFile</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ParticipantQuoteCount</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoUseCurrentTimeAsLineTimeAndSrcTime</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoAddPrefixOnSecurityStatusOrig</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterDiscardForwardRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookUseUndecoratedSymbolName</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordHandlerAlwaysAppendProductSuffix</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NativeTimeZone</Name>
+      <Value>UTC</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsBloomberg</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsTrade</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>NyseBboXdpLiveParameter</Name>
+      <Parameter>
+         <Name>MulticastConnectOnInit</Name>
+         <Value>true</Value>
+      </Parameter>      
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>LIVE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>false</Value>
+      </Parameter>      
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>NyseBboXdpRefreshParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>REFRESH</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MulticastConnectOnInit</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>0.5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>100</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseMessageHandler</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>NyseBboXdpRequestReqParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>REFRESH_REQ</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseMessageHandler</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <IncludeFile>nysebboxdp_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>nysebboxdp_quote_condition_mapping.xml</IncludeFile>
+   <IncludeFile>nysebboxdp_prod.xml</IncludeFile>
+   <IncludeFile>nysemktbboxdp_prod.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

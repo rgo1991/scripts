@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <Feed>
+      <Name>mamacache_icemdfmc_stag</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_icemdfmc</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_icemdfmc</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_icemdfmc</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.staging</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Enable Group Symbols -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbols -->
+      <!-- Set MamaSenderId -->
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>10066</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>mamacache_icemdfmc_prod</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>mamacache_icemdfmc</Value>
+         <Value>mamacache_icemdfmceu</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_mamacache_icemdfmc</Value>
+         <Value>thread_mamacache_icemdfmceu</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespacePerSubFeed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <!-- Publishing Parameters -->
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_icemdfmc</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_icemdfmc_feeds0</Value>
+      </Parameter>
+      <!-- END - Publishing Parameters -->
+      <!-- FAST Publishing -->
+      <Parameter>
+         <Name>MamaUseFastForRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaUseFastForSimpleDeltas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberHandlerType</Name>
+         <Value>same_fids</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaFastPrecision</Name>
+         <Value>6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublishAppDataType</Name>
+         <Value>false</Value>
+      </Parameter>
+      <!-- END - FAST Publishing -->
+      <!-- Enable Group Symbols -->
+      <Parameter>
+         <Name>PublishGroupRecords</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>GroupNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <!-- END - Enable Group Symbols -->
+      <!-- Set MamaSenderId -->
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>10067</Value>
+      </Parameter>
+   </Feed>
+   
+</config>

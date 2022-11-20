@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+   
+   <!-- Site specific includes -->
+   <IncludeFile>nysealerts_tport.xml</IncludeFile>
+   <IncludeFile>nysealerts_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterRetransActive</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterRetransMaxGapSize</Name>
+      <Value>500</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>pdp2</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>nyse2streetMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsNyseAlerts</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>nysealerts_prim</Name>
+      <Comment>Primary NYSE Alerts Feed</Comment>
+      <ParamGroup>
+         <Name>Listen</Name>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>default1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MulticastGroup</Name>
+            <Value>224.0.5.228</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Service</Name>
+            <Value>8228</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Type</Name>
+            <Value>PDP</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Primary NYSE Alerts Retransmission Feed</Comment>
+      <ParamGroup>
+         <Name>Listen</Name>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>default1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MulticastGroup</Name>
+            <Value>224.0.5.230</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Service</Name>
+            <Value>8230</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Type</Name>
+            <Value>PDP</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Monitor</Name>
+            <Value>off</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.76.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>9800</Value>
+         </Parameter>
+      </ParamGroup>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>nysealerts_sec</Name>
+      <Comment>Secondary NYSE Alerts Feed</Comment>
+      <ParamGroup>
+         <Name>Listen</Name>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>default2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MulticastGroup</Name>
+            <Value>224.0.5.229</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Service</Name>
+            <Value>8229</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Type</Name>
+            <Value>PDP</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary NYSE Alerts Retransmission Feed</Comment>
+      <ParamGroup>
+         <Name>Listen</Name>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>default2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MulticastGroup</Name>
+            <Value>224.0.5.231</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Service</Name>
+            <Value>8231</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Type</Name>
+            <Value>PDP</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Monitor</Name>
+            <Value>off</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.76.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>9800</Value>
+         </Parameter>
+      </ParamGroup>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>nysealerts_prim_test</Name>
+      <Comment>Primary NYSE Alerts TEST Feed</Comment>
+      <ParamGroup>
+         <Name>Listen</Name>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>default1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MulticastGroup</Name>
+            <Value>224.0.5.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Service</Name>
+            <Value>8161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Type</Name>
+            <Value>PDP</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Primary NYSE Alerts TEST Retransmission Feed</Comment>
+      <ParamGroup>
+         <Name>Listen</Name>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>default1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MulticastGroup</Name>
+            <Value>224.0.5.163</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Service</Name>
+            <Value>8163</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Type</Name>
+            <Value>PDP</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Monitor</Name>
+            <Value>off</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Primary TEST Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.76.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>9900</Value>
+         </Parameter>
+      </ParamGroup>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>nysealerts_sec_test</Name>
+      <Comment>Secondary NYSE Alerts TEST Feed</Comment>
+      <ParamGroup>
+         <Name>Listen</Name>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>default2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MulticastGroup</Name>
+            <Value>224.0.5.162</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Service</Name>
+            <Value>8162</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Type</Name>
+            <Value>PDP</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary NYSE Alerts TEST Retransmission Feed</Comment>
+      <ParamGroup>
+         <Name>Listen</Name>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>default2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MulticastGroup</Name>
+            <Value>224.0.5.164</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Service</Name>
+            <Value>8164</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Type</Name>
+            <Value>PDP</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Monitor</Name>
+            <Value>off</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary TEST Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.76.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>9900</Value>
+         </Parameter>
+      </ParamGroup>
+   </DefineParameterGroup>
+    
+   <Feed>
+      <Name>nysealerts_nyse</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD2"/>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NYSEALERTS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NyseAlertsProductName</Name>
+         <Value>NyseAlerts</Value>
+      </Parameter>
+      <UseParameterGroup name="nysealerts_prim"/>
+      <UseParameterGroup name="nysealerts_sec"/>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.5.228</Value>
+         <Value>224.0.5.230</Value>
+         <Value>224.0.5.229</Value>
+         <Value>224.0.5.231</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysealerts_nyse_test</Name>
+      <UseParameterGroup name="nysealerts_prim_test"/>
+      <UseParameterGroup name="nysealerts_sec_test"/>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.5.161</Value>
+         <Value>224.0.5.163</Value>
+         <Value>224.0.5.162</Value>
+         <Value>224.0.5.184</Value>
+      </Parameter>
+   </Feed>
+    
+   <DefineParameterGroup>
+      <Name>nysealerts_amex_prim</Name>
+      <Comment>Primary NYSE AMEX Alerts Feed</Comment>
+      <ParamGroup>
+         <Name>Listen</Name>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>default1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MulticastGroup</Name>
+            <Value>233.75.215.56</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Service</Name>
+            <Value>62056</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Type</Name>
+            <Value>PDP</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Primary NYSE AMEX Alerts Retransmission Feed</Comment>
+      <ParamGroup>
+         <Name>Listen</Name>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>default1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MulticastGroup</Name>
+            <Value>233.75.215.56</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Service</Name>
+            <Value>63056</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Type</Name>
+            <Value>PDP</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Monitor</Name>
+            <Value>off</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Primary NYSE AMEX Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.76.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>30009</Value>
+         </Parameter>
+      </ParamGroup>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>nysealerts_amex_sec</Name>
+      <Comment>Secondary NYSE AMEX Alerts Feed</Comment>
+      <ParamGroup>
+         <Name>Listen</Name>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>default2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MulticastGroup</Name>
+            <Value>233.75.215.184</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Service</Name>
+            <Value>62184</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Type</Name>
+            <Value>PDP</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary NYSE AMEX Retransmission Feed</Comment>
+      <ParamGroup>
+         <Name>Listen</Name>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>default2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MulticastGroup</Name>
+            <Value>233.75.215.184</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Service</Name>
+            <Value>63184</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Type</Name>
+            <Value>PDP</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Monitor</Name>
+            <Value>off</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary NYSE AMEX Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.76.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>30009</Value>
+         </Parameter>
+      </ParamGroup>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>nysealerts_amex_prim_test</Name>
+      <Comment>Primary NYSE AMEX Alerts TEST Feed</Comment>
+      <ParamGroup>
+         <Name>Listen</Name>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>default1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MulticastGroup</Name>
+            <Value>233.75.215.24</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Service</Name>
+            <Value>62024</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Type</Name>
+            <Value>PDP</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Primary NYSE AMEX TEST Retransmission Feed</Comment>
+      <ParamGroup>
+         <Name>Listen</Name>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>default1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MulticastGroup</Name>
+            <Value>233.75.215.24</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Service</Name>
+            <Value>63024</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Type</Name>
+            <Value>PDP</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Monitor</Name>
+            <Value>off</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Primary NYSE AMEX TEST Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.76.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>30010</Value>
+         </Parameter>
+      </ParamGroup>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>nysealerts_amex_sec_test</Name>
+      <Comment>Secondary NYSE Alerts TEST Feed</Comment>
+      <ParamGroup>
+         <Name>Listen</Name>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>default2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MulticastGroup</Name>
+            <Value>233.75.215.152</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Service</Name>
+            <Value>62152</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Type</Name>
+            <Value>PDP</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary NYSE AMEX TEST Retransmission Feed</Comment>
+      <ParamGroup>
+         <Name>Listen</Name>
+         <Parameter>
+            <Name>Interface</Name>
+            <Value>default2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MulticastGroup</Name>
+            <Value>233.75.215.152</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Service</Name>
+            <Value>63152</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Type</Name>
+            <Value>PDP</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Monitor</Name>
+            <Value>off</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary NYSE AMEX TEST Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.76.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>30010</Value>
+         </Parameter>
+      </ParamGroup>
+   </DefineParameterGroup>
+    
+   <Feed>
+      <Name>nysealerts_amex</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector1NSD2"/>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>AMEXALERTS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NyseAlertsProductName</Name>
+         <Value>NyseAlertsAmex</Value>
+      </Parameter>
+      <UseParameterGroup name="nysealerts_amex_prim"/>
+      <UseParameterGroup name="nysealerts_amex_sec"/>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.56/62056</Value>
+         <Value>233.75.215.56/63056</Value>
+         <Value>233.75.215.184/62184</Value>
+         <Value>233.75.215.184/63184</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysealerts_amex_test</Name>
+      <UseParameterGroup name="nysealerts_amex_prim_test"/>
+      <UseParameterGroup name="nysealerts_amex_sec_test"/>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.24/62024</Value>
+         <Value>233.75.215.24/63024</Value>
+         <Value>233.75.215.152/62152</Value>
+         <Value>233.75.215.152/63152</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysealerts</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>nysealerts_nyse</Value>
+         <Value>nysealerts_amex</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nysealerts_test</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>nysealerts_nyse_test</Value>
+         <Value>nysealerts_amex_test</Value>
+      </Parameter>
+   </Feed>
+    
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

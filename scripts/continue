@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#another example of the continue builtin. note that  we can set the if condition to be dependant on any variable including user input. 
+
+i=1
+while [ "$i" -lt "5" ]; do
+	echo i is $i
+	read -p "Press r to repeat or any other key to continue: " x
+	if [ $x == "r" ];then
+	echo "Skipping to the end of the loop"
+	continue;fi
+	let i++
+done

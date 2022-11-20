@@ -1,0 +1,15 @@
+#!/bin/bash
+
+oIFS=$IFS
+IFS=":"
+
+while read login pass uid gid name home shell
+do 
+	#do the following if the shell variable isnt /usr/sbin/nologin and if the variable home doesnot end with /var/* in it.
+	if [ "$shell" != /usr/sbin/nologin ] && [ ! -z "${home%%\/var\/*}" ];
+then 
+	echo "user $login ($name) lives in $home and uses `basename $shell`"
+fi
+done < /etc/passwd
+
+oIFS=$IFS #good practice to set the IFS back to default after youre done.

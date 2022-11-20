@@ -1,0 +1,127 @@
+#!/bin/bash
+#
+#Morning checkout script - Check all processes are running
+#edited for DBAC processes specifically
+
+exec > >(tee "/tmp/dbacprocesscheck.txt") 2>&1
+
+group1="pny2sfmct34a|dbac_tsxl1_a|03:00 \
+pny2sfmct34a|dbac_tsxl1_b|03:00 \
+pny2sfmct34a|dbac_cdfomega_l1|06:00 \
+pny2sfmct34a|dbac_cdfomega_l2|06:00 \
+pny2sfmct34a|dbac_cdfcxc_am_l2|06:00 \
+pny2sfmct34a|dbac_cdfcxc_nz_l2|06:00 \
+pny2sfmct34a|dbac_cdfaeqlit_l1|06:00 \
+pny2sfmct34a|dbac_cdfaeqneo_l1|06:00 \
+pny2sfmct34a|dbac_cdfaeqneo_l2|06:00 \
+pny2sfmct34a|dbac_cdfcansecexch_l1|06:00 \
+pny2sfmct34a|dbac_cdfcansecexch_l2|06:00 \
+pny2sfmct34a|dbac_cdfalpha_l1|06:00 \
+pny2sfmct34a|dbac_cdfalpha_l2|06:00 \
+pny2sfmct34a|dbac_nyseoi|06:00 \
+pny2sfmct34a|dbac_nasdaqoi|06:00"
+
+
+group2="pny2sfmct35a|dbac_cta_l1|06:00 \
+pny2sfmct35a|dbac_ctaamex_l1|06:00 \
+pny2sfmct35a|dbac_cdfcx2_l1|06:00 \
+pny2sfmct35a|dbac_cdfcx2_l2|06:00 \
+pny2sfmct35a|dbac_cdfcxd_l1|06:00 \
+pny2sfmct35a|dbac_cdflyx_l1|06:00 \
+pny2sfmct35a|dbac_cdflyx_l2|06:00 \
+pny2sfmct35a|dbac_cdfinstcancross_l1|06:00 \
+pny2sfmct35a|dbac_cdfliqnet_l1|06:00 \
+pny2sfmct35a|dbac_cdftriactmatch_l1|06:00 \
+pny2sfmct35a|dbac_chxdob_l1|06:00 \
+pny2sfmct35a|dbac_chxdob_l2|06:00"
+
+
+group3="pny2sfmct36a|dbac_nasdaqtv_l2|03:00 \
+pny2sfmct36a|dbac_nyseobultra_l2|06:00 \
+pny2sfmct36a|dbac_nysemktobultra_l2|06:00 \
+pny2sfmct36a|dbac_batsy_l2|06:00 \
+pny2sfmct36a|dbac_batsz_l2|06:00 \
+pny2sfmct36a|dbac_tsxl2_am|03:00 \
+pny2sfmct36a|dbac_tsxl2_nz|03:00"
+
+
+
+group4="pny2sfmct37a|dbac_utp_l1|03:00 \
+pny2sfmct37a|dbac_bx_l2|06:00 \
+pny2sfmct37a|dbac_psx_l2|06:00 \
+pny2sfmct37a|dbac_dedgea_l2|06:00 \
+pny2sfmct37a|dbac_dedgex_l2|06:00 \
+pny2sfmct37a|dbac_cdfaeqlit_am_l2|06:00 \
+pny2sfmct37a|dbac_cdfaeqlit_nz_l2|06:00"
+
+
+master=("$group1" "$group2" "$group3" "$group4")
+
+LOCAL_HOST=`hostname -s`
+
+OLD_IFS="${IFS}"
+
+
+echo " "
+echo "      ###################################################"
+echo "                         Process Check"
+echo "      ###################################################"
+echo " "
+
+IFS=" "
+
+CURRENTTIME=$(date +%H:%M)
+
+STATUS="GREEN"
+
+for i in "${master[@]}"; do
+
+   echo
+   echo
+   echo
+
+   for j in $i; do
+
+      HOST=`echo $j | awk -F'|' '{print $1}'`
+      PROC=`echo $j | awk -F'|' '{print $2}'`
+      TIME=`echo $j | awk -F'|' '{print $3}'`
+
+      if [ "$hostname" == "$LOCAL_HOST" ]
+      then
+         PID=`/sbin/pidof $process`
+      else
+         PID=`ssh $HOST "/sbin/pidof $PROC" 2> /dev/null`
+      fi
+
+      if [ "$PID" != "" ]; then
+         printf "    %-10s | %-30s %-20s\n" "$HOST" "$PROC" "[running]"
+      else
+         if [[ "$CURRENTTIME" < "$TIME" ]]; then
+            printf "    %-10s | %-30s %-20s\n" "$HOST" "$PROC" "[missing] OK - not expected to be running until $TIME"
+         else
+            printf "    %-10s | %-30s %-20s\n" "$HOST" "$PROC" "[missing] ** CRITICAL ** - expected to be running from $TIME **"
+            STATUS="RED"
+         fi
+      fi
+
+   done
+
+done
+
+if [ $STATUS == "RED" ]; then
+    echo ""
+    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    echo "!!!!!!!    Some Processes not running     !!!!!!!!"
+    echo "!!!!!!! Check carefully the output above  !!!!!!!!"
+    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+
+    #cat /tmp/dbacprocesscheck.txt|mail -s "RED - Superfeed (US) NY2 Production DBAC process check" pdougan@tradevela.com
+    cat /tmp/dbacprocesscheck.txt|mail -s "RED - Superfeed (US) NY2 Production DBAC Process Status Check - $CURRENTTIME" managedservices@tradevela.com
+else
+    echo ""
+    echo " All Good!"
+    echo ""
+
+    #cat /tmp/dbacprocesscheck.txt|mail -s "GREEN - Superfeed (US) NY2 Production DBAC process check" pdougan@tradevela.com
+    cat /tmp/dbacprocesscheck.txt|mail -s "GREEN - Superfeed (US) NY2 Production DBAC Process Status Check - $CURRENTTIME" managedservices@tradevela.com
+fi

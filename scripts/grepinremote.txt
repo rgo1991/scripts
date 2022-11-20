@@ -1,0 +1,69 @@
+root         114       2  0 20:08 ?        00:00:00 [charger_manager]
+avahi        526       1  0 20:08 ?        00:00:00 avahi-daemon: running [rg-VirtualBox.local]
+rg          1118       1  0 20:08 ?        00:00:00 /lib/systemd/systemd --user
+rg          1120    1118  0 20:08 ?        00:00:00 (sd-pam)
+rg          1126    1118  0 20:08 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+rg          1128    1118  0 20:08 ?        00:00:00 /usr/libexec/tracker-miner-fs
+rg          1130       1  0 20:08 ?        00:00:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+rg          1134    1118  0 20:08 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+rg          1138    1118  0 20:08 ?        00:00:00 /usr/libexec/gvfsd
+rg          1143    1118  0 20:08 ?        00:00:00 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+rg          1161    1118  0 20:08 ?        00:00:00 /usr/libexec/gvfs-udisks2-volume-monitor
+rg          1168    1118  0 20:08 ?        00:00:00 /usr/libexec/gvfs-mtp-volume-monitor
+rg          1172    1118  0 20:08 ?        00:00:00 /usr/libexec/gvfs-afc-volume-monitor
+rg          1177    1118  0 20:08 ?        00:00:00 /usr/libexec/gvfs-goa-volume-monitor
+rg          1181    1118  0 20:08 ?        00:00:00 /usr/libexec/goa-daemon
+rg          1185    1110  0 20:08 tty2     00:00:00 /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
+rg          1187    1185  0 20:08 tty2     00:00:04 /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -background none -noreset -keeptty -verbose 3
+rg          1194    1118  0 20:08 ?        00:00:00 /usr/libexec/goa-identity-service
+rg          1196    1118  0 20:08 ?        00:00:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+rg          1225    1185  0 20:08 tty2     00:00:00 /usr/libexec/gnome-session-binary --systemd --systemd --session=ubuntu
+rg          1293    1225  0 20:08 ?        00:00:00 /usr/bin/ssh-agent /usr/bin/im-launch env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
+rg          1316    1118  0 20:09 ?        00:00:00 /usr/libexec/at-spi-bus-launcher
+rg          1322    1316  0 20:09 ?        00:00:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+rg          1335    1118  0 20:09 ?        00:00:00 /usr/libexec/gnome-session-ctl --monitor
+rg          1342    1118  0 20:09 ?        00:00:00 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
+rg          1356    1118  1 20:09 ?        00:00:10 /usr/bin/gnome-shell
+rg          1379    1118  0 20:09 ?        00:00:00 /usr/libexec/gvfsd-metadata
+rg          1383    1356  0 20:09 ?        00:00:00 ibus-daemon --panel disable --xim
+rg          1387    1383  0 20:09 ?        00:00:00 /usr/libexec/ibus-memconf
+rg          1388    1383  0 20:09 ?        00:00:00 /usr/libexec/ibus-extension-gtk3
+rg          1392    1118  0 20:09 ?        00:00:00 /usr/libexec/ibus-x11 --kill-daemon
+rg          1394    1118  0 20:09 ?        00:00:00 /usr/libexec/ibus-portal
+rg          1404    1118  0 20:09 ?        00:00:00 /usr/libexec/at-spi2-registryd --use-gnome-session
+rg          1408    1118  0 20:09 ?        00:00:00 /usr/libexec/xdg-permission-store
+rg          1413    1118  0 20:09 ?        00:00:00 /usr/libexec/gnome-shell-calendar-server
+rg          1419    1118  0 20:09 ?        00:00:00 /usr/libexec/evolution-source-registry
+rg          1429    1118  0 20:09 ?        00:00:00 /usr/libexec/evolution-calendar-factory
+rg          1437    1118  0 20:09 ?        00:00:00 /usr/libexec/dconf-service
+rg          1442    1118  0 20:09 ?        00:00:00 /usr/libexec/evolution-addressbook-factory
+rg          1459    1118  0 20:09 ?        00:00:00 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
+rg          1465    1138  0 20:09 ?        00:00:00 /usr/libexec/gvfsd-trash --spawner :1.3 /org/gtk/gvfs/exec_spaw/0
+rg          1479    1118  0 20:09 ?        00:00:00 /usr/libexec/gsd-a11y-settings
+rg          1480    1118  0 20:09 ?        00:00:00 /usr/libexec/gsd-color
+rg          1483    1118  0 20:09 ?        00:00:00 /usr/libexec/gsd-datetime
+rg          1484    1118  0 20:09 ?        00:00:00 /usr/libexec/gsd-housekeeping
+rg          1489    1118  0 20:09 ?        00:00:00 /usr/libexec/gsd-keyboard
+rg          1492    1118  0 20:09 ?        00:00:00 /usr/libexec/gsd-media-keys
+rg          1493    1118  0 20:09 ?        00:00:00 /usr/libexec/gsd-power
+rg          1494    1118  0 20:09 ?        00:00:00 /usr/libexec/gsd-print-notifications
+rg          1495    1118  0 20:09 ?        00:00:00 /usr/libexec/gsd-rfkill
+rg          1500    1118  0 20:09 ?        00:00:00 /usr/libexec/gsd-screensaver-proxy
+rg          1502    1118  0 20:09 ?        00:00:00 /usr/libexec/gsd-sharing
+rg          1505    1118  0 20:09 ?        00:00:00 /usr/libexec/gsd-smartcard
+rg          1508    1118  0 20:09 ?        00:00:00 /usr/libexec/gsd-sound
+rg          1511    1118  0 20:09 ?        00:00:00 /usr/libexec/gsd-usb-protection
+rg          1518    1118  0 20:09 ?        00:00:00 /usr/libexec/gsd-wacom
+rg          1522    1118  0 20:09 ?        00:00:00 /usr/libexec/gsd-wwan
+rg          1529    1342  0 20:09 ?        00:00:00 /usr/libexec/gsd-disk-utility-notify
+rg          1530    1118  0 20:09 ?        00:00:00 /usr/libexec/gsd-xsettings
+rg          1550    1342  0 20:09 ?        00:00:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
+rg          1561    1118  0 20:09 ?        00:00:00 /usr/libexec/gsd-printer
+rg          1610    1383  0 20:09 ?        00:00:00 /usr/libexec/ibus-engine-simple
+rg          1908    1342  0 20:10 ?        00:00:00 update-notifier
+rg          1935    1118  0 20:10 ?        00:00:02 /usr/libexec/gnome-terminal-server
+rg          1944    1935  0 20:10 pts/0    00:00:00 bash
+root        6021    4852  0 20:24 ?        00:00:00 sshd: rg [priv]
+rg          6073    6021  0 20:24 ?        00:00:00 sshd: rg@notty
+rg          6074    6073  0 20:24 ?        00:00:00 bash -c ps -ef > test.out
+rg          6075    6074  0 20:24 ?        00:00:00 ps -ef

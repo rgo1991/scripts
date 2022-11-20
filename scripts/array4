@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#reads in the file websites, '-s 2' skips the first 2 values. '-n 4' only uses 4 values for the array.
+#if needed -t used with readarray will strip trailing new lines.
+readarray -n 4 -s 2  websites < websites
+
+#if needed printf "%s\n" will display the array elements as strings separated with new lines.
+
+printf "%s" "${websites[@]}"

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+<IncludeFile>wombat_trade_exec_venue_mapping.xml</IncludeFile>
+
+<!--TradeExecVenueMappings>   
+<Map>
+ <SrcTradeExecVenueString>RegularTrade</SrcTradeExecVenueString>
+ <WombatTradeExecVenue>OnExchange</WombatTradeExecVenue>
+</Map>
+</TradeExecVenueMappings-->
+<TradeExecVenueMappings>   
+<Map>
+ <SrcTradeExecVenueString>RegularTrade</SrcTradeExecVenueString>
+ <WombatTradeExecVenue>OnExchange</WombatTradeExecVenue>
+</Map>
+<Map>
+ <SrcTradeExecVenueString>BlockTrade</SrcTradeExecVenueString>
+ <WombatTradeExecVenue>OnExchange</WombatTradeExecVenue>
+</Map>
+<Map>
+ <SrcTradeExecVenueString>EfpBlockTrade</SrcTradeExecVenueString>
+ <WombatTradeExecVenue>OnExchange</WombatTradeExecVenue>
+</Map>
+<Map>
+ <SrcTradeExecVenueString>EfsBlockTrade</SrcTradeExecVenueString>
+ <WombatTradeExecVenue>OnExchange</WombatTradeExecVenue>
+</Map>
+<Map>
+ <SrcTradeExecVenueString>EfsEfpBlockTrade</SrcTradeExecVenueString>
+ <WombatTradeExecVenue>OnExchange</WombatTradeExecVenue>
+</Map>
+<Map>
+ <SrcTradeExecVenueString>ContraBlockTrade</SrcTradeExecVenueString>
+ <WombatTradeExecVenue>OnExchange</WombatTradeExecVenue>
+</Map>
+<Map>
+ <SrcTradeExecVenueString>CrossContraBlockTrade</SrcTradeExecVenueString>
+ <WombatTradeExecVenue>OnExchange</WombatTradeExecVenue>
+</Map>
+<Map>
+ <SrcTradeExecVenueString>EfsEfpContraBlockTrade</SrcTradeExecVenueString>
+ <WombatTradeExecVenue>OnExchange</WombatTradeExecVenue>
+</Map>
+<Map>
+ <SrcTradeExecVenueString>OffExchangeBlockTrade</SrcTradeExecVenueString>
+ <WombatTradeExecVenue>OffExchange</WombatTradeExecVenue>
+</Map>
+</TradeExecVenueMappings>
+</config>

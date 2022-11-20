@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Site specific includes -->
+   <IncludeFile>arcagixdp_tport.xml</IncludeFile>
+   <IncludeFile>arcagixdp_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>GIF</Value>
+   </Parameter>
+<!-- SFDCR-1195 -->
+   <Parameter>
+      <Name>StartOfDayRollIndex</Name>
+      <Value>true</Value>
+   </Parameter>
+<!-- SFDCR-1195 END -->
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpWarnIfUOTUnavailable</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpProductId</Name>
+      <Value>156</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UseUnitOfTrade</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>AgiXdpMessageHandlerName</Name>
+      <Value>arcagixdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpMessageHandlerName</Name>
+      <Value>arcagixdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>xdp</Value>
+   </Parameter>
+<!--    
+   <Parameter>
+      <Name>MamaDataDictResponder</Name>
+      <Value>false</Value>
+   </Parameter>
+-->    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+<!--    
+   <Parameter>
+      <Name>InstrumentInfoUseCurrentTimeAsLineTimeAndSrcTime</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NativeTimeZone</Name>
+      <Value>UTC</Value>
+   </Parameter>
+-->    
+   <Parameter>
+      <Name>ArcaGiXdpProductName</Name>
+      <Value>ArcaGiXdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>nyse2streetMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MessageRecoveryFile</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordHandlerAlwaysAppendProductSuffix</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsIndex</Value>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsBloomberg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+   </Parameter>
+   <IncludeFile>arcagixdp_sec_status_mapping.xml</IncludeFile>
+    
+   <DefineParameterGroup>
+      <Name>ArcaGiXdpLiveParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>LIVE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <Feed>
+      <Name>arcagixdp</Name>
+      <UseParameterGroup name="ArcaGiXdpLiveParameter"/>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD2"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>live_001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.70.68/13162</Value>
+         <Value>default2/224.0.70.196/14162</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.70.68/13162</Value>
+         <Value>224.0.70.196/14162</Value>
+      </Parameter>
+   </Feed>
+
+   <IncludeFile>arcagixdp_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

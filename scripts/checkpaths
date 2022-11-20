@@ -1,0 +1,37 @@
+#!/bin/bash
+
+DEV1=${1:-e}
+#DEV2=${2:-c}
+#DEV3=${3:-d}
+#DEV4=${4:-j}
+
+EXPECTED=350
+
+cd /var/tmp
+rm -f dd.pid
+
+for DEV in $DEV1 $DEV2 $DEV3 $DEV4;do
+	dd if=/mnt/$DEV of=/dev/null bs=1000 count=1 2>&1 | grep -w copied >> dd.$DEV &
+	echo $! >> dd.pid;done
+
+sleep $EXPECTED
+CHILDREN=2
+
+while [ "${CHILDREN}" -gt "0" ];do
+	echo "`date`: I have $CHILDREN children"
+	sleep 5
+	CHILDREN=`ps hfp $(cat dd.pid) | wc -l`;done
+
+MAILOUT=0
+for SECONDS in `awk '{print $6}' dd.$DEV1 dd.$DEV2 dd.$DEV3 dd.$DEV4 | cut -d"." -f1`;do
+	if [ "$SECONDS" -gt "$EXPECTED" ]; then
+	MAILOUT=1;fi
+done
+
+if [ "$MAILOUT" -gt "$EXPECTED" ]; then
+	for DEV in $DEV1 $DEV2 $DEV3 $DEV4;do
+	msg=`cat dd.$DEV`
+	logger -t storagespeed "Path comparison: $DEV :$msg";done
+	echo "It should take no more than $EXPECTED seconds to read 8GB from a device"
+	echo "It took:\n `grep . dd.$DEV1 dd.$DEV2 dd.$DEV3 dd.$DEV4`" | mailx -s "SlowI/O on `uname -n`" renatas.gorodeckas2@gmail.com;fi
+

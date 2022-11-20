@@ -1,0 +1,2571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+     <Parameter>
+      <Name>MamaDelayCompressionLevel</Name>
+      <Value>1</Value>
+   </Parameter>
+
+<!-- Group Subscription - Begin Changes --> 
+   <Parameter>
+      <Name>AlwaysCheckModified</Name>
+      <Value>never</Value>
+   </Parameter>
+ 
+   <Parameter>
+      <Name>MamaSubscriberAllowGroups</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishGroupRecords</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>GroupNotFoundAction</Name>
+      <Value>request</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UseNative</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>MamaSubscriberHandlerType</Name>
+      <Value>same_fids</Value>
+      <!-- <Value>passthru</Value>  -->
+      <!-- <Value>pass_thru</Value> -->
+   </Parameter>
+<!-- 
+   <Parameter>
+      <Name>MamaSenderIdField</Name>
+      <Value>u16</Value>
+   </Parameter>
+-->
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>123456</Value>
+   </Parameter>
+
+   <!--
+   <Parameter>
+     <Name>MamaPassThroughReplaceSenderId</Name>
+     <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>MamaSenderIdField</Name>
+      <Value>mixed</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>1</Value>
+   </Parameter>
+   -->
+
+<!-- Group Subscription - End Changes --> 
+
+
+
+   <Parameter>
+      <Name>SharedObjects</Name>
+      <Value>papastats.so.2_99</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>MamaDefaultBridge</Name>
+      <Value>wmw</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MamaDelayPeriod</Name>
+      <Value>900</Value>
+      <!-- <Value>300</Value> -->
+      <!--Value>60</Value-->
+      <Comment>This is the delay period specified in seconds.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MamaDelayTickInterval</Name>
+      <Value>0.1</Value>
+      <Comment>This is the period over which a block data is cached and replayed.  This time is specified in seconds.  If the period is 100ms, then all data recorded during that 100ms period, will be stored together and later all will be replayed together.  The smaller that this period is, the closer replay will mimic real-time behaviour.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MamaDelayMaxFileSize</Name>
+      <Value>51200</Value>
+      <!-- <Value>1024000</Value> -->
+      <Comment>This is the maximum file size used for the delay cache.  This is specified in Kilobytes.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MamaDelayFilePath</Name>
+      <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+      <Value>/fast/delayserver_opracf/</Value>
+      <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>FetchMamaDict</Name>
+      <Value>true</Value>
+   </Parameter>
+
+    
+   <Parameter>
+      <Name>MamaDictTransport</Name>
+      <Value>feeds</Value>
+      <Comment>Input data dictionary</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MamaDataDictResponder</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MamaUseWombatMsg</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CreateWombatmwInternalThread</Name>
+      <Value>false</Value>
+      <Comment>Set to true when using WMW (TCP) transport</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordNotFoundAction</Name>
+      <Value>request</Value>
+      <Comment>This allows requests to go upstream for symbols not yet in cache</Comment>
+   </Parameter>
+   
+   <Parameter>
+        <Name>GroupNotFoundAction</Name>
+        <Value>request</Value>
+        <Comment>This allows requests to go upstream for symbols not yet in cache</Comment>
+    </Parameter>
+                       	   
+   <Parameter>
+      <Name>FtInitialWeight</Name>
+      <Value>medium</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MamdaSubscriberAllowBooks</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MamaSubscriberAllowGroups</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MamaPassThroughReplaceSenderId</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MamaSubscriberAppBaseName</Name>
+      <Value>delayserver</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MamaSourceConfigurationIsRequired</Name>
+      <Value>true</Value>
+      <Comment>This must be true for SuperBook and will enforce strict checking for source-related configuration errors.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CreateMamaSourceManagerTransports</Name>
+      <Value>true</Value>
+      <Comment>Create all transports defined in MamaSources during start-up. Set to false if not using all transports defined, or remove unused MamaSource definitions.</Comment>
+   </Parameter>
+    
+   <Feed>
+      <Name>delayserver</Name>
+      <Parameter>
+         <Name>MamaSubscriberFeedName</Name>
+         <Value>delayserver</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>DELAY</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>WOMBAT</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>delayserver_multi</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>delayserver_cta</Value>
+         <Value>delayserver_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>WOMBAT</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_cta</Value>
+         <Value>thread_delayserver_utp</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>delayserver_opracf</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(\([0-9]\)\|\(A[\._0-9A-P]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(\([0-9]\)\|\(A[\._0-9A-P]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(\([0-9]\)\|\(A[\._0-9A-P]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(\([0-9]\)\|\(A[\._0-9A-P]\)\)</Value>
+      </Parameter-->
+   </Feed>    
+   <Feed>
+      <Name>delayserver_opracf1</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf1/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf1</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(\([0-9]\)\|\(A[\._0-9A-P]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(\([0-9]\)\|\(A[\._0-9A-P]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(\([0-9]\)\|\(A[\._0-9A-P]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(\([0-9]\)\|\(A[\._0-9A-P]\)\)</Value>
+      </Parameter-->
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <!-- Reg:0-9 , A-AM\(A-Z) -->
+         <Value>^\(\(A[\._0-9A-K]\)\|\(AL[\.A-B_0-9]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(\(A[\._0-9A-K]\)\|\(AL[\.A-B_0-9]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(\(A[\._0-9A-K]\)\|\(AL[\.A-B_0-9]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(\(A[\._0-9A-K]\)\|\(AL[\.A-B_0-9]\)\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600001</Value>
+   </Parameter>      
+   </Feed>    
+
+   <Feed>
+      <Name>delayserver_opracf2</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf2/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf2</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <!-- Reg:A[N-Z], B[A-Z]-->
+         <!-- <Value>^\\(\\(A[N-Z]\\)\\|\\(B[\._0-9A-Z]\\)\\)</Value> -->
+         <Value>^\(\([\.0-9]\)\|\(AL[C-Z]\)\|\(AM[\._0-9A-Y]\)\|\(AMZ[\._0-9A-M]\)\|\(AMZN[\._0-9]\)\|\(AMZN[_0-9]_...[13579]..C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(\([\.0-9]\)\|\(AL[C-Z]\)\|\(AM[\._0-9A-Y]\)\|\(AMZ[\._0-9A-M]\)\|\(AMZN[\._0-9]\)\|\(AMZN[_0-9]_...[13579]..C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(\([\.0-9]\)\|\(AL[C-Z]\)\|\(AM[\._0-9A-Y]\)\|\(AMZ[\._0-9A-M]\)\|\(AMZN[\._0-9]\)\|\(AMZN[_0-9]_...[13579]..C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(\([\.0-9]\)\|\(AL[C-Z]\)\|\(AM[\._0-9A-Y]\)\|\(AMZ[\._0-9A-M]\)\|\(AMZN[\._0-9]\)\|\(AMZN[_0-9]_...[13579]..C\)\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600002</Value>
+   </Parameter>
+   </Feed>    
+
+   <Feed>
+      <Name>delayserver_opracf3</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf3/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf3</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <!-- Reg:C[\.A-Z], D[\.A-L] -->
+         <Value>^\(AMZN[\._0-9]_......P\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(AMZN[\._0-9]_......P\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(AMZN[\._0-9]_......P\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(AMZN[\._0-9]_......P\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600003</Value>
+   </Parameter>
+   </Feed>    
+
+   <Feed>
+      <Name>delayserver_opracf4</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf4/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf4</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg:D[\.N-Z] , E-F, G[\.A-D] -->
+        <Value>^\(\(AMZN[_0-9]_...[02468]..C\)\|\(AMZN[A-Z]\)\|\(AMZ[\.O-Z]\)\|\(A[N-Z]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(\(AMZN[_0-9]_...[02468]..C\)\|\(AMZN[A-Z]\)\|\(AMZ[\.O-Z]\)\|\(A[N-Z]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(\(AMZN[_0-9]_...[02468]..C\)\|\(AMZN[A-Z]\)\|\(AMZ[\.O-Z]\)\|\(A[N-Z]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(\(AMZN[_0-9]_...[02468]..C\)\|\(AMZN[A-Z]\)\|\(AMZ[\.O-Z]\)\|\(A[N-Z]\)\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600004</Value>
+   </Parameter>
+   </Feed>    
+
+   <Feed>
+      <Name>delayserver_opracf5</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf5/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf5</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg:G[\.E-Z] , H, I[\.A-Q] -->
+        <Value>^\(\(B[\._0-9A-J]\)\|\(BK[\._0-9A-M]\)\|\(BKN[\._0-9A-F]\)\|\(BKNG[\._0-9]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(\(B[\._0-9A-J]\)\|\(BK[\._0-9A-M]\)\|\(BKN[\._0-9A-F]\)\|\(BKNG[\._0-9]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(\(B[\._0-9A-J]\)\|\(BK[\._0-9A-M]\)\|\(BKN[\._0-9A-F]\)\|\(BKNG[\._0-9]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(\(B[\._0-9A-J]\)\|\(BK[\._0-9A-M]\)\|\(BKN[\._0-9A-F]\)\|\(BKNG[\._0-9]_......C\)\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600005</Value>
+   </Parameter>
+   </Feed>    
+
+   <Feed>
+      <Name>delayserver_opracf6</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf6/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf6</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg:I[\.R-Z], J-L, M[\.A-D]  -->
+        <Value>^\(\(BKNG[_0-9]_......P\)\|\(BKNG[A-Z]\)\|\(BKN[H-Z]\)\|\(BK[O-Z]\)\|\(B[L-Z]\)\|\(C[\._0-9A-L]\)\|\(CM[\._0-9A-H]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(\(BKNG[_0-9]_......P\)\|\(BKNG[A-Z]\)\|\(BKN[H-Z]\)\|\(BK[O-Z]\)\|\(B[L-Z]\)\|\(C[\._0-9A-L]\)\|\(CM[\._0-9A-H]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(\(BKNG[_0-9]_......P\)\|\(BKNG[A-Z]\)\|\(BKN[H-Z]\)\|\(BK[O-Z]\)\|\(B[L-Z]\)\|\(C[\._0-9A-L]\)\|\(CM[\._0-9A-H]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(\(BKNG[_0-9]_......P\)\|\(BKNG[A-Z]\)\|\(BKN[H-Z]\)\|\(BK[O-Z]\)\|\(B[L-Z]\)\|\(C[\._0-9A-L]\)\|\(CM[\._0-9A-H]\)\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600006</Value>
+   </Parameter>
+   </Feed>    
+
+   <Feed>
+      <Name>delayserver_opracf7</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf7/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf7</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg:M[\.E-Z] , N[\.A-V] -->
+        <Value>^\(\(CM[I-Z]\)\|\(C[N-Z]\)\|\(D[\._0-9A-D]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(\(CM[I-Z]\)\|\(C[N-Z]\)\|\(D[\._0-9A-D]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(\(CM[I-Z]\)\|\(C[N-Z]\)\|\(D[\._0-9A-D]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(\(CM[I-Z]\)\|\(C[N-Z]\)\|\(D[\._0-9A-D]\)\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600007</Value>
+   </Parameter>
+   </Feed>    
+
+   <Feed>
+      <Name>delayserver_opracf8</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf8/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf8</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg:N[\.W-Z] , O-Q -->   
+        <Value>^\(\(D[E-Z]\)\|\(E[\._0-9A-R]\)\|\(ES[\._0-9A-S]\)\|\(EST[\._0-9A-B]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(\(D[E-Z]\)\|\(E[\._0-9A-R]\)\|\(ES[\._0-9A-S]\)\|\(EST[\._0-9A-B]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(\(D[E-Z]\)\|\(E[\._0-9A-R]\)\|\(ES[\._0-9A-S]\)\|\(EST[\._0-9A-B]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(\(D[E-Z]\)\|\(E[\._0-9A-R]\)\|\(ES[\._0-9A-S]\)\|\(EST[\._0-9A-B]\)\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600008</Value>
+   </Parameter>
+   </Feed>    
+
+   <Feed>
+      <Name>delayserver_opracf9</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf9/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf9</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg:R, S[\.A-Q], S[\.A-Q], SP[\.A-X], SPY/C[\.A-Z]-->   
+        <Value>^\(\(EST[C-Z]\)\|\(ES[U-Z]\)\|\(E[T-Z]\)\|\(F\)\|\(G[\._0-9A-C]\)\|\(GD[\._0-9A-W]\)\|\(GDX[\._0-9A-I]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(\(EST[C-Z]\)\|\(ES[U-Z]\)\|\(E[T-Z]\)\|\(F\)\|\(G[\._0-9A-C]\)\|\(GD[\._0-9A-W]\)\|\(GDX[\._0-9A-I]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(\(EST[C-Z]\)\|\(ES[U-Z]\)\|\(E[T-Z]\)\|\(F\)\|\(G[\._0-9A-C]\)\|\(GD[\._0-9A-W]\)\|\(GDX[\._0-9A-I]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(\(EST[C-Z]\)\|\(ES[U-Z]\)\|\(E[T-Z]\)\|\(F\)\|\(G[\._0-9A-C]\)\|\(GD[\._0-9A-W]\)\|\(GDX[\._0-9A-I]\)\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600009</Value>
+   </Parameter>
+   </Feed>    
+
+   <Feed>
+      <Name>delayserver_opracf10</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf10/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf10</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg:SPY/P[\.A-Z], SPZ[\.A-Z], SQ[\.A-Z], T[\.A-S] -->   
+        <Value>^\(\(GDX[J-Z]\)\|\(GD[Y-Z]\)\|\(G[E-S]\)\|\(GT[\._0-9A-K]\)\|\(GTL[\._0-9A-R]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(\(GDX[J-Z]\)\|\(GD[Y-Z]\)\|\(G[E-S]\)\|\(GT[\._0-9A-K]\)\|\(GTL[\._0-9A-R]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(\(GDX[J-Z]\)\|\(GD[Y-Z]\)\|\(G[E-S]\)\|\(GT[\._0-9A-K]\)\|\(GTL[\._0-9A-R]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(\(GDX[J-Z]\)\|\(GD[Y-Z]\)\|\(G[E-S]\)\|\(GT[\._0-9A-K]\)\|\(GTL[\._0-9A-R]\)\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600010</Value>
+   </Parameter>
+   </Feed>    
+
+   <Feed>
+      <Name>delayserver_opracf11</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf11/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf11</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg: T[\.T-Z], U-V , W[\.A-B]-->   
+        <Value>^\(\(GTL[S-Z]\)\|\(GT[M-Z]\)\|\(G[U-Z]\)\|\([\.H]\)\|\(I[\._0-9A-S]\)\|\(IT[\._0-9A-V]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(\(GTL[S-Z]\)\|\(GT[M-Z]\)\|\(G[U-Z]\)\|\([\.H]\)\|\(I[\._0-9A-S]\)\|\(IT[\._0-9A-V]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(\(GTL[S-Z]\)\|\(GT[M-Z]\)\|\(G[U-Z]\)\|\([\.H]\)\|\(I[\._0-9A-S]\)\|\(IT[\._0-9A-V]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(\(GTL[S-Z]\)\|\(GT[M-Z]\)\|\(G[U-Z]\)\|\([\.H]\)\|\(I[\._0-9A-S]\)\|\(IT[\._0-9A-V]\)\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600011</Value>
+   </Parameter>
+   </Feed>    
+
+   <Feed>
+      <Name>delayserver_opracf12</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <!--
+      <Parameter>
+       <Name>MamaDelayMaxFileSize</Name>
+         <Value>1024</Value>
+         <Comment>This is the maximum file size used for the delay cache.  This is specified in Kilobytes.</Comment>
+      </Parameter>
+      -->
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf12/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf12</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg: W[\.C-Z] , X-Z-->   
+        <Value>^\(\(IT[W-Z]\)\|\(I[U-Z]\)\|\(J\)\|\(K[\._0-9A-N]\)\|\(KO[\._0-9]___......C\)\|\(KO[\._0-9]___...[13579]..P\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(\(IT[W-Z]\)\|\(I[U-Z]\)\|\(J\)\|\(K[\._0-9A-N]\)\|\(KO[\._0-9]___......C\)\|\(KO[\._0-9]___...[13579]..P\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(\(IT[W-Z]\)\|\(I[U-Z]\)\|\(J\)\|\(K[\._0-9A-N]\)\|\(KO[\._0-9]___......C\)\|\(KO[\._0-9]___...[13579]..P\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(\(IT[W-Z]\)\|\(I[U-Z]\)\|\(J\)\|\(K[\._0-9A-N]\)\|\(KO[\._0-9]___......C\)\|\(KO[\._0-9]___...[13579]..P\)\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600012</Value>
+   </Parameter>
+   </Feed>   
+ 
+   <Feed>
+      <Name>delayserver_opracf13</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <!--
+      <Parameter>
+       <Name>MamaDelayMaxFileSize</Name>
+         <Value>1024</Value>
+         <Comment>This is the maximum file size used for the delay cache.  This is specified in Kilobytes.</Comment>
+      </Parameter>
+      -->
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf13/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf13</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(\(KO[_0-9]___...[02468]..P\)\|\(KO[A-Z]\)\|\(K[P-Z]\)\|\(L\)\|\(M[\._0-9A-F]\)\|\(MG[\._0-9A-O]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(\(KO[_0-9]___...[02468]..P\)\|\(KO[A-Z]\)\|\(K[P-Z]\)\|\(L\)\|\(M[\._0-9A-F]\)\|\(MG[\._0-9A-O]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(\(KO[_0-9]___...[02468]..P\)\|\(KO[A-Z]\)\|\(K[P-Z]\)\|\(L\)\|\(M[\._0-9A-F]\)\|\(MG[\._0-9A-O]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(\(KO[_0-9]___...[02468]..P\)\|\(KO[A-Z]\)\|\(K[P-Z]\)\|\(L\)\|\(M[\._0-9A-F]\)\|\(MG[\._0-9A-O]\)\)</Value>
+      </Parameter>
+   </Feed>    
+
+   <Feed>
+      <Name>delayserver_opracf14</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <!--
+      <Parameter>
+       <Name>MamaDelayMaxFileSize</Name>
+         <Value>1024</Value>
+         <Comment>This is the maximum file size used for the delay cache.  This is specified in Kilobytes.</Comment>
+      </Parameter>
+      -->
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf14/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf14</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg: W[\.C-Z] , X-Z-->   
+        <Value>^\(\(MG[P-Z]\)\|\(M[H-Z]\)\|\(N[\._0-9A-E]\)\|\(NF[\._0-9A-K]\)\|\(NFL[\._0-9A-W]\)\|\(NFLX[\._0-9]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(\(MG[P-Z]\)\|\(M[H-Z]\)\|\(N[\._0-9A-E]\)\|\(NF[\._0-9A-K]\)\|\(NFL[\._0-9A-W]\)\|\(NFLX[\._0-9]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(\(MG[P-Z]\)\|\(M[H-Z]\)\|\(N[\._0-9A-E]\)\|\(NF[\._0-9A-K]\)\|\(NFL[\._0-9A-W]\)\|\(NFLX[\._0-9]_......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(\(MG[P-Z]\)\|\(M[H-Z]\)\|\(N[\._0-9A-E]\)\|\(NF[\._0-9A-K]\)\|\(NFL[\._0-9A-W]\)\|\(NFLX[\._0-9]_......C\)\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600014</Value>
+   </Parameter>
+   </Feed>   
+
+   
+   <Feed>
+      <Name>delayserver_opracf15</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <!--
+      <Parameter>
+       <Name>MamaDelayMaxFileSize</Name>
+         <Value>1024</Value>
+         <Comment>This is the maximum file size used for the delay cache.  This is specified in Kilobytes.</Comment>
+      </Parameter>
+      -->
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf15/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf15</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg: W[\.C-Z] , X-Z-->   
+        <Value>^\(\(NFLX[_0-9]_......P\)\|\(NFLX[A-Z]\)\|\(NFL[Y-Z]\)\|\(NF[M-Z]\)\|\(N[G-Z]\)\|\(O[\._0-9A-Q]\)\|\(OR[\._0-9A-H]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(\(NFLX[_0-9]_......P\)\|\(NFLX[A-Z]\)\|\(NFL[Y-Z]\)\|\(NF[M-Z]\)\|\(N[G-Z]\)\|\(O[\._0-9A-Q]\)\|\(OR[\._0-9A-H]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(\(NFLX[_0-9]_......P\)\|\(NFLX[A-Z]\)\|\(NFL[Y-Z]\)\|\(NF[M-Z]\)\|\(N[G-Z]\)\|\(O[\._0-9A-Q]\)\|\(OR[\._0-9A-H]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(\(NFLX[_0-9]_......P\)\|\(NFLX[A-Z]\)\|\(NFL[Y-Z]\)\|\(NF[M-Z]\)\|\(N[G-Z]\)\|\(O[\._0-9A-Q]\)\|\(OR[\._0-9A-H]\)\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600015</Value>
+   </Parameter>
+   </Feed>   
+
+   <Feed>
+      <Name>delayserver_opracf16</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <!--
+      <Parameter>
+       <Name>MamaDelayMaxFileSize</Name>
+         <Value>1024</Value>
+         <Comment>This is the maximum file size used for the delay cache.  This is specified in Kilobytes.</Comment>
+      </Parameter>
+      -->
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf16/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf16</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg: W[\.C-Z] , X-Z-->   
+        <Value>^\(\(OR[I-Z]\)\|\(O[S-Z]\)\|\(P\)\|\(Q[\._0-9A-P]\)\|\(QQ[\._0-9A-P]\)\|\(QQQ[_0-9]__......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(\(OR[I-Z]\)\|\(O[S-Z]\)\|\(P\)\|\(Q[\._0-9A-P]\)\|\(QQ[\._0-9A-P]\)\|\(QQQ[_0-9]__......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(\(OR[I-Z]\)\|\(O[S-Z]\)\|\(P\)\|\(Q[\._0-9A-P]\)\|\(QQ[\._0-9A-P]\)\|\(QQQ[_0-9]__......C\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(\(OR[I-Z]\)\|\(O[S-Z]\)\|\(P\)\|\(Q[\._0-9A-P]\)\|\(QQ[\._0-9A-P]\)\|\(QQQ[_0-9]__......C\)\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600016</Value>
+   </Parameter>
+   </Feed>   
+
+   
+   <Feed>
+      <Name>delayserver_opracf17</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <!--
+      <Parameter>
+       <Name>MamaDelayMaxFileSize</Name>
+         <Value>1024</Value>
+         <Comment>This is the maximum file size used for the delay cache.  This is specified in Kilobytes.</Comment>
+      </Parameter>
+      -->
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf17/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf17</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg: W[\.C-Z] , X-Z-->   
+        <Value>^\(\(QQQ[_0-9]__......P\)\|\(QQQ[\._A-Z]\)\|\(QQ[R-Z]\)\|\(Q[R-Z]\)\|\(R\)\|\(S[\._0-9A-D]\)\|\(SE[\._0-9]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(\(QQQ[_0-9]__......P\)\|\(QQQ[\._A-Z]\)\|\(QQ[R-Z]\)\|\(Q[R-Z]\)\|\(R\)\|\(S[\._0-9A-D]\)\|\(SE[\._0-9]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(\(QQQ[_0-9]__......P\)\|\(QQQ[\._A-Z]\)\|\(QQ[R-Z]\)\|\(Q[R-Z]\)\|\(R\)\|\(S[\._0-9A-D]\)\|\(SE[\._0-9]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(\(QQQ[_0-9]__......P\)\|\(QQQ[\._A-Z]\)\|\(QQ[R-Z]\)\|\(Q[R-Z]\)\|\(R\)\|\(S[\._0-9A-D]\)\|\(SE[\._0-9]\)\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600017</Value>
+   </Parameter>
+   </Feed>   
+
+   
+   <Feed>
+      <Name>delayserver_opracf18</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <!--
+      <Parameter>
+       <Name>MamaDelayMaxFileSize</Name>
+         <Value>1024</Value>
+         <Comment>This is the maximum file size used for the delay cache.  This is specified in Kilobytes.</Comment>
+      </Parameter>
+      -->
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf18/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf18</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg: W[\.C-Z] , X-Z-->   
+        <Value>^\(\(SE[A-Z]\)\|\(SF[\._0-9A-Z]\)\|\(S[G-O]\)\|\(SP[\._0-9A-X]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(\(SE[A-Z]\)\|\(SF[\._0-9A-Z]\)\|\(S[G-O]\)\|\(SP[\._0-9A-X]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(\(SE[A-Z]\)\|\(SF[\._0-9A-Z]\)\|\(S[G-O]\)\|\(SP[\._0-9A-X]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(\(SE[A-Z]\)\|\(SF[\._0-9A-Z]\)\|\(S[G-O]\)\|\(SP[\._0-9A-X]\)\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600018</Value>
+   </Parameter>
+   </Feed>   
+
+   
+   
+   <Feed>
+      <Name>delayserver_opracf19</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <!--
+      <Parameter>
+       <Name>MamaDelayMaxFileSize</Name>
+         <Value>1024</Value>
+         <Comment>This is the maximum file size used for the delay cache.  This is specified in Kilobytes.</Comment>
+      </Parameter>
+      -->
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf19/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf19</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg: W[\.C-Z] , X-Z-->   
+        <Value>^\(SPY[_0-9]__......C\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(SPY[_0-9]__......C\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(SPY[_0-9]__......C\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(SPY[_0-9]__......C\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600019</Value>
+   </Parameter>
+   </Feed>   
+
+   
+   <Feed>
+      <Name>delayserver_opracf20</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <!--
+      <Parameter>
+       <Name>MamaDelayMaxFileSize</Name>
+         <Value>1024</Value>
+         <Comment>This is the maximum file size used for the delay cache.  This is specified in Kilobytes.</Comment>
+      </Parameter>
+      -->
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf20/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf20</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg: W[\.C-Z] , X-Z-->   
+        <Value>^\(SPY[_0-9]__......P\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(SPY[_0-9]__......P\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(SPY[_0-9]__......P\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(SPY[_0-9]__......P\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600020</Value>
+   </Parameter>
+   </Feed>   
+
+   
+   <Feed>
+      <Name>delayserver_opracf21</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <!--
+      <Parameter>
+       <Name>MamaDelayMaxFileSize</Name>
+         <Value>1024</Value>
+         <Comment>This is the maximum file size used for the delay cache.  This is specified in Kilobytes.</Comment>
+      </Parameter>
+      -->
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf21/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf21</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg: W[\.C-Z] , X-Z-->   
+        <Value>^\(\(SPY[\.A-Z]\)\|\(SP[Z]\)\|\(S[Q-Z]\)\|\(T[\._0-9A-R]\)\|\(TS[\._0-9A-K]\)\|\(TSL[\._0-9]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(\(SPY[\.A-Z]\)\|\(SP[Z]\)\|\(S[Q-Z]\)\|\(T[\._0-9A-R]\)\|\(TS[\._0-9A-K]\)\|\(TSL[\._0-9]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(\(SPY[\.A-Z]\)\|\(SP[Z]\)\|\(S[Q-Z]\)\|\(T[\._0-9A-R]\)\|\(TS[\._0-9A-K]\)\|\(TSL[\._0-9]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(\(SPY[\.A-Z]\)\|\(SP[Z]\)\|\(S[Q-Z]\)\|\(T[\._0-9A-R]\)\|\(TS[\._0-9A-K]\)\|\(TSL[\._0-9]\)\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600021</Value>
+   </Parameter>
+   </Feed>   
+
+
+   <Feed>
+      <Name>delayserver_opracf22</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <!--
+      <Parameter>
+       <Name>MamaDelayMaxFileSize</Name>
+         <Value>1024</Value>
+         <Comment>This is the maximum file size used for the delay cache.  This is specified in Kilobytes.</Comment>
+      </Parameter>
+      -->
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf22/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf22</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg: W[\.C-Z] , X-Z-->   
+        <Value>^\(TSLA[\._0-9]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(TSLA[\._0-9]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(TSLA[\._0-9]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(TSLA[\._0-9]\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600022</Value>
+   </Parameter>
+   </Feed>   
+
+   <Feed>
+      <Name>delayserver_opracf23</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <!--
+      <Parameter>
+       <Name>MamaDelayMaxFileSize</Name>
+         <Value>1024</Value>
+         <Comment>This is the maximum file size used for the delay cache.  This is specified in Kilobytes.</Comment>
+      </Parameter>
+      -->
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf23/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf23</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg: W[\.C-Z] , X-Z-->   
+        <Value>^\(\(TSLA[A-Z]\)\|\(TSL[B-Z]\)\|\(TS[M-Z]\)\|\(T[T-Z]\)\|\([\.UV]\)\|\(W[\._0-9A-C]\)\|\(WD[\._0-9A-C]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(\(TSLA[A-Z]\)\|\(TSL[B-Z]\)\|\(TS[M-Z]\)\|\(T[T-Z]\)\|\([\.UV]\)\|\(W[\._0-9A-C]\)\|\(WD[\._0-9A-C]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(\(TSLA[A-Z]\)\|\(TSL[B-Z]\)\|\(TS[M-Z]\)\|\(T[T-Z]\)\|\([\.UV]\)\|\(W[\._0-9A-C]\)\|\(WD[\._0-9A-C]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(\(TSLA[A-Z]\)\|\(TSL[B-Z]\)\|\(TS[M-Z]\)\|\(T[T-Z]\)\|\([\.UV]\)\|\(W[\._0-9A-C]\)\|\(WD[\._0-9A-C]\)\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600023</Value>
+   </Parameter>
+   </Feed>   
+
+   <Feed>
+      <Name>delayserver_opracf24</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPRAV5CF</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <!--
+      <Parameter>
+       <Name>MamaDelayMaxFileSize</Name>
+         <Value>1024</Value>
+         <Comment>This is the maximum file size used for the delay cache.  This is specified in Kilobytes.</Comment>
+      </Parameter>
+      -->
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+               <!-- <Value>/opt/wombat/log/delayserver_opracf/</Value> -->
+            <Value>/fast/delayserver_opracf24/</Value>
+            <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_opracf_delay_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayPreAllocateSize</Name>
+         <Value>70000000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_opracf24</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OPRAV5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_opracf</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+	<!-- Reg: W[\.C-Z] , X-Z-->   
+        <Value>^\(\(WD[D-Z]\)\|\(WE[\._0-9A-Z]\)\|\(W[F-Z]\)\|\([\.X-Z]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+        <Value>^\(\(WD[D-Z]\)\|\(WE[\._0-9A-Z]\)\|\(W[F-Z]\)\|\([\.X-Z]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+        <Value>^\(\(WD[D-Z]\)\|\(WE[\._0-9A-Z]\)\|\(W[F-Z]\)\|\([\.X-Z]\)\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+        <Value>^\(\(WD[D-Z]\)\|\(WE[\._0-9A-Z]\)\|\(W[F-Z]\)\|\([\.X-Z]\)\)</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaSenderId</Name>
+      <Value>600024</Value>
+   </Parameter>
+   </Feed>   
+
+   
+   
+   
+   
+   <Feed>
+      <Name>delayserver_tsxl1</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>TSXL1</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_tsx_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_tsx</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_tsxl1</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>TSXL1DEL</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_tsxl1</Value>
+      </Parameter>
+   </Feed>
+   
+
+   <Feed>
+      <Name>delayserver_cme</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>CMEMDP</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+         <Value>/opt/wombat/log/delayserver_cmemdp/</Value>
+         <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>CompressedFileCache</Name>
+         <Value>delayserver_cmemdp</Value>
+         <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <!--Value>mama.properties.mamacache_cmemdpdow_delay_feeds0</Value-->
+         <Value>mama.properties.mamacache_neovest_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cme</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_cme</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>CMEMDP</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_cme</Value>
+      </Parameter>
+   <!--Parameter>
+      <Name>MamaDelayFilePath</Name>
+      <Value>/opt/wombat/log/delayserver_cmemdpdow</Value>
+   </Parameter-->
+   </Feed>
+
+    <Feed>
+      <Name>delayserver_otcmkts</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OTCMKTS</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>CompressedFileCache</Name>
+         <Value>delayserver_otcmkts</Value>
+         <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_otcmkts_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_otcmkts</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_tsxl1</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>OTCMKTSDEL</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_tsxl1</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaDelayFilePath</Name>
+      <Value>/opt/wombat/log/delayserver_otcmkts</Value>
+   </Parameter>
+
+   </Feed>
+
+    <Feed>
+      <Name>delayserver_gids</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>GIDS</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>CompressedFileCache</Name>
+         <Value>delayserver_gids</Value>
+         <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_gids_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_gids</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_tsxl1</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>GIDSDEL</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_tsxl1</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaDelayFilePath</Name>
+      <Value>/opt/wombat/log/delayserver_gids</Value>
+   </Parameter>
+
+   </Feed>
+
+    <Feed>
+      <Name>delayserver_nasdaqbbo</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>NASDAQBBO</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>CompressedFileCache</Name>
+         <Value>delayserver_nasdaqbbo</Value>
+         <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_nasdaqbbo_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_nasdaqbbo</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_tsxl1</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>NASDAQBBODEL</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_tsxl1</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaDelayFilePath</Name>
+      <Value>/opt/wombat/log/delayserver_nasdaqbbo</Value>
+   </Parameter>
+
+   </Feed>
+
+   <Feed>
+      <Name>delayserver_nysebbo</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>NYSEBBO</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>CompressedFileCache</Name>
+         <Value>delayserver_nysebbo</Value>
+         <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_nysebbo_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_nysebbo</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_tsxl1</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>NYSEBBODEL</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_tsxl1</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaDelayFilePath</Name>
+      <Value>/opt/wombat/log/delayserver_nysebbo</Value>
+   </Parameter>
+
+   </Feed>
+   <Feed>
+      <Name>delayserver_nyse</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>NYSE</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+         <Value>/opt/wombat/log/delayserver_nyse/</Value>
+         <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>CompressedFileCache</Name>
+         <Value>delayserver_nyse</Value>
+         <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <!--Value>mama.properties.mamacache_nyse_delay_feeds0</Value-->
+         <Value>mama.properties.mamacache_neovest_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_nyse</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_cta</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>NYSE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_cta</Value>
+      </Parameter>
+   <!--Parameter>
+      <Name>MamaDelayFilePath</Name>
+      <Value>/opt/wombat/log/delayserver_nyse</Value>
+   </Parameter-->
+
+   </Feed>
+
+   <Feed>
+      <Name>delayserver_nyse_naming</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>NYSE</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>CompressedFileCache</Name>
+         <Value>delayserver_nyse_naming</Value>
+         <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_nyse_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_nyse_naming</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>delayserver_cta</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>NYSEDEL</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_tsxl1</Value>
+      </Parameter>
+   <Parameter>
+      <Name>MamaDelayFilePath</Name>
+      <Value>/opt/wombat/log/delayserver_nyse_naming</Value>
+   </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>delayserver_cta_amex</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>AMEX</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+         <Value>/opt/wombat/log/delayserver_cta_amex/</Value>
+         <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>CompressedFileCache</Name>
+         <Value>delayserver_cta_amex</Value>
+         <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_neovest_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_cta_amex</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_cta_amex</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>AMEX</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_cta_amex</Value>
+      </Parameter>
+   </Feed>
+   
+   <Feed>
+      <Name>delayserver_utp</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>NASDAQ</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+         <Value>/opt/wombat/log/delayserver_utp/</Value>
+         <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>CompressedFileCache</Name>
+         <Value>delayserver_utp</Value>
+         <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_neovest_delay_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_utp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_utp</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>NASDAQ</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_utp</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>delayserver_arca</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>ARCA</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaDelayFilePath</Name>
+         <Value>/opt/wombat/log/delayserver_arca/</Value>
+         <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>CompressedFileCache</Name>
+         <Value>delayserver_arca</Value>
+         <Comment>This is the directory where the data files will be written.  It must exist and be writable.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_neovest_delay_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_arca</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_arca</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>ARCA</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_arca</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>delayserver_cefeurex</Name>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>CEFEUREX</Value>
+         <Comment>The name given to the upstream source in the MamaSource section</Comment>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.mamacache_cefeurex_delay_feeds0</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>mamacache_sfdeu_cefeurex</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_delayserver_cefeurex</Value>
+      </Parameter>
+      <Comment>The following parameters are only used when this "subfeed"
+         is run in standalone mode.</Comment>
+      <Parameter>
+         <Name>MamaSymbolNamespace</Name>
+         <Value>CEFEUREXDEL</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_delayserver_cefeurex</Value>
+      </Parameter>
+   </Feed>    
+
+   <Thread>
+      <Name>thread_delayserver</Name>
+      <Parameter>
+         <Name>Enabled</Name>
+         <Value>true</Value>
+      </Parameter>
+   </Thread>
+    
+   <Thread>
+      <Name>thread_delayserver_tsxl1</Name>
+      <Parameter>
+         <Name>Enabled</Name>
+         <Value>true</Value>
+      </Parameter>
+   </Thread>
+
+   <Thread>
+      <Name>thread_delayserver_cta</Name>
+      <Parameter>
+         <Name>Enabled</Name>
+         <Value>true</Value>
+      </Parameter>
+   </Thread>
+    
+   <Thread>
+      <Name>thread_delayserver_utp</Name>
+      <Parameter>
+         <Name>Enabled</Name>
+         <Value>true</Value>
+      </Parameter>
+   </Thread>
+
+   <Thread>
+      <Name>thread_delayserver_cefeurex</Name>
+      <Parameter>
+         <Name>Enabled</Name>
+         <Value>true</Value>
+      </Parameter>
+   </Thread>
+
+   <Thread>
+      <Name>thread_delayserver_opracf</Name>
+      <Parameter>
+         <Name>Enabled</Name>
+         <Value>true</Value>
+      </Parameter>
+   </Thread>
+
+   <Thread>
+      <Name>thread_delayserver_cta_amex</Name>
+      <Parameter>
+         <Name>Enabled</Name>
+         <Value>true</Value>
+      </Parameter>
+   </Thread>
+
+   <Thread>
+      <Name>thread_delayserver_cme</Name>
+      <Parameter>
+         <Name>Enabled</Name>
+         <Value>true</Value>
+      </Parameter>
+   </Thread>
+
+   <Thread>
+      <Name>thread_delayserver_arca</Name>
+      <Parameter>
+         <Name>Enabled</Name>
+         <Value>true</Value>
+      </Parameter>
+   </Thread>    
+
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+      <Value>RecordAttrsAll</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsNormal</Value>
+      <Value>FieldAttrsAll</Value>
+   </Parameter>
+
+   <IncludeFile>delayserver_sources.xml</IncludeFile>
+   <IncludeFile>papastats.2.99.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+</config>

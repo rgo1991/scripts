@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+#maps all new lines in teh websites file to an array.more info:http://mywiki.wooledge.org/BashFAQ/005#Loading_lines_from_a_file_or_stream
+mapfile -t sitelist < websites
+
+for i in ${sitelist[*]};do
+echo $i
+	echo;echo
+	ping -w2 $i >> ping.log
+	if [ $? -gt 0 ];then
+	echo "Website: $i is not available" >> ping.log;fi
+done

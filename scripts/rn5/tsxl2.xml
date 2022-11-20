@@ -1,0 +1,1624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for Toronto Stock Exchange (TSX) Level 2 feed handler. See the Administrators Guide for more information:    http://wombatconsulting.com/feedhandlers/admin-guide.html--><!--The following configuration clauses are common to all tsxl2 feed handlers-->
+    
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>tsxl2_tport.xml</IncludeFile>
+   <IncludeFile>tsxl2_hosts.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+
+    <Parameter>
+      <Name>PrependBrokerIdToEntryId</Name>
+      <Value>true</Value>
+    </Parameter>
+
+
+   <Parameter>
+      <Name>FtInterface</Name>
+      <Value>bond0</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>67108864</Value>
+      <!-- <Value>16777216</Value> -->
+   </Parameter>
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>TSXL2</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_tsxl2</Value>
+   </Parameter>
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+   <!-- See note in wombat.xml for FT details -->
+   <Parameter>
+      <Name>FtService</Name>
+      <Value>7735</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value>tsxl2.sym</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>OrderBookSymbolFile</Name>
+      <Value>tsxl2.orderbook.sym</Value>
+   </Parameter>
+ 
+   <Parameter>
+      <Name>DefaultMulticastInterface1</Name>
+      <Value>127.0.0.1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>DefaultMulticastInterface2</Name>
+      <Value>127.0.0.1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>tsx</Value>
+   </Parameter>
+
+<!--Make sure the following paramenter TradeCalculateNetChange is set to false as the TSX sends a value for wNetChange. We don't want RecordHandlerTrade calculating it as well!-->
+   <Parameter>
+      <Name>TradeCalculateNetChange</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbolSuffixTopOfBook</Name>
+      <Value>T</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookDecimals</Name>
+      <Value>4</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishStatusOnBookSymbols</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MhIfOrderBookUniqueOrderIds</Name>
+      <Value>false</Value>
+      <Comment>This must be set to false if order book is used.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishMarketOrders</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MarketOrderAskPrice</Name>
+      <Value>0</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MarketOrderBidPrice</Name>
+      <Value>999999</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterRetransMaxGapSize</Name>
+      <Value>20000</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterGapLimitSize</Name>
+      <Value>15000</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterMaxValidGapSize</Name>
+      <Value>0</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterGapLimitTime</Name>
+      <Value>15</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterGapLimitStartOfDay</Name>
+      <Value>1000</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterRetransActive</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LogRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TsxRetransMaxQueueSize</Name>
+      <Value>500</Value>
+      <Comment>Maximum retrans queue size to keep. Older retrans request will be discarded if this limit is reached. Set to 0 to have no limit.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TcpConnectDelay</Name>
+      <Value>100</Value>
+   </Parameter>
+   <Parameter>
+      <Name>TcpConnectDelayMax</Name>
+      <Value>100</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>dotReplacementMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>Tl2PrimeSymbolsOnStatusMessage</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CheckForClassD</Name>
+      <Value>true</Value>
+   </Parameter><!--For any of the below, using "ProductDisabled" will disable calculation and publishing for that product.-->
+    
+   <DefineParameterGroup>
+      <Name>TsxProducts</Name>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>TSXLevel2</Value>
+         <Comment>Defaults to TSXLevel2.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameOrderBook</Name>
+         <Value>TSXLevel2Book</Value>
+         <Comment>Defaults to TSXLevel2Book. (Board Lot)</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTopOfBook</Name>
+         <Value>TSXLevel2Top</Value>
+         <Comment>Defaults to TSXLevel2Top. (Board Lot)</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTrade</Name>
+         <Value>TSXLevel2Trade</Value>
+         <Comment>Defaults to TSXLevel2Trade.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameOrderBook</Name>
+         <Value>TSXLevel2OddLotBook</Value>
+         <Comment>Defaults to TSXLevel2OddLotBook.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameTopOfBook</Name>
+         <Value>TSXLevel2OddLotTop</Value>
+         <Comment>Defaults to TSXLevel2OddLotTop.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameOrderBook</Name>
+         <Value>TSXLevel2SpecialTermsBook</Value>
+         <Comment>Defaults to TSXLevel2SpecialTermsBook.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameTopOfBook</Name>
+         <Value>TSXLevel2SpecialTermsTop</Value>
+         <Comment>Defaults to TSXLevel2SpecialTermsTop.</Comment>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>VentureProducts</Name>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>TSXVentureLevel2</Value>
+         <Comment>Defaults to TSXLevel2.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameOrderBook</Name>
+         <Value>TSXVentureLevel2Book</Value>
+         <Comment>Defaults to TSXLevel2Book.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTopOfBook</Name>
+         <Value>TSXVentureLevel2Top</Value>
+         <Comment>Defaults to TSXLevel2Top.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTrade</Name>
+         <Value>TSXVentureLevel2Trade</Value>
+         <Comment>Defaults to TSXLevel2Trade.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameOrderBook</Name>
+         <Value>TSXVentureLevel2OddLotBook</Value>
+         <Comment>Defaults to TSXLevel2OddLotBook.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameTopOfBook</Name>
+         <Value>TSXVentureLevel2OddLotTop</Value>
+         <Comment>Defaults to TSXLevel2OddLotTop.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameOrderBook</Name>
+         <Value>TSXVentureLevel2SpecialTermsBook</Value>
+         <Comment>Defaults to TSXLevel2SpecialTermsBook.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameTopOfBook</Name>
+         <Value>TSXVentureLevel2SpecialTermsTop</Value>
+         <Comment>Defaults to TSXLevel2SpecialTermsTop.</Comment>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>AlphaProducts</Name>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>AlphaLevel2</Value>
+         <Comment>Defaults to TSXLevel2.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameOrderBook</Name>
+         <Value>AlphaLevel2Book</Value>
+         <Comment>Defaults to TSXLevel2Book. (Board Lot)</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTopOfBook</Name>
+         <Value>AlphaLevel2Top</Value>
+         <Comment>Defaults to TSXLevel2Top. (Board Lot)</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTrade</Name>
+         <Value>AlphaLevel2Trade</Value>
+         <Comment>Defaults to TSXLevel2Trade.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameOrderBook</Name>
+         <Value>AlphaLevel2OddLotBook</Value>
+         <Comment>Defaults to TSXLevel2OddLotBook.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameTopOfBook</Name>
+         <Value>AlphaLevel2OddLotTop</Value>
+         <Comment>Defaults to TSXLevel2OddLotTop.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameOrderBook</Name>
+         <Value>AlphaLevel2SpecialTermsBook</Value>
+         <Comment>Defaults to TSXLevel2SpecialTermsBook.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameTopOfBook</Name>
+         <Value>AlphaLevel2SpecialTermsTop</Value>
+         <Comment>Defaults to TSXLevel2SpecialTermsTop.</Comment>
+      </Parameter>
+   </DefineParameterGroup>
+
+<!--
+Use this parameter to map participant Id T to TO
+        <Parameter> 
+           <Name>ParticipantIdMapFuncName<Name>
+           <Value>tsxPartIdMap<Value>
+        <Parameter>
+      -->
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsIndex</Value>
+      <Value>FieldAttrsFundamental</Value>
+      <Value>FieldAttrsReferential</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsFixedIncome</Value>
+      <Value>FieldAttrsTsx</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsNetworkMonitor</Value>
+      <Value>FieldAttrsOrder</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>TsxLineFormat</Name>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>tsx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumOffset</Name>
+         <Value>4</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumLength</Name>
+         <Value>9</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryOffset</Name>
+         <Value>5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryControl</Name>
+         <Value> </Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeOffset</Name>
+         <Value>19</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeSeqNumReset</Name>
+         <Value> </Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransOffset</Name>
+         <Value>16</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransLength</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransOrig</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeHeartbeat</Name>
+         <Value> </Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <!--Feed>
+      <Name>tsxl2</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tl2_1</Value>
+         <Value>tl2_2</Value>
+         <Value>cl2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/tsxl2.orderbook.sym</Value>
+      </Parameter>
+   <IncludeFile>papastats.2.16.xml</IncludeFile>
+   </Feed-->
+
+   <Feed>
+      <Comment>tsxl2 feed is configured to receive TL2 and CL2 from the Quantum RTMD platform</Comment>
+      <Name>tsxl2</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tl2_1qp</Value>
+         <Value>tl2_2qp</Value>
+         <Value>cl2qp</Value>
+      </Parameter>
+<!--SFDCR-1400 -->      
+      <Parameter>
+         <Name>MamaUseDictionaryType</Name>
+         <Value>true</Value>
+      </Parameter>
+<!--SFDCR-1400 End -->
+<!--SFDCR-1401 Start-->     
+      <Parameter>
+         <Name>TradeCalculateVwap</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TradeCalculateStdDev</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TradeCalculateTotalVolume</Name>
+         <Value>true</Value>
+      </Parameter>
+<!--SFDCR-1401 END -->
+   <!--Parameter>
+      <Name>PublishTimeZone</Name>
+      <Value>US/Eastern</Value>
+   </Parameter-->      
+  </Feed>
+    
+   <Feed>
+      <Name>alphal2</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>al2qp</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>alpha_test</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>al2qt</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Comment>tsxl2_rtmd feed is configured to receive TL2 and CL2 from the RTMD platform</Comment>
+      <Name>tsxl2_rtmd</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tl2_1</Value>
+         <Value>tl2_2</Value>
+         <Value>cl2</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>tsxl2_p</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <UseParameterGroup name="PlaybackFiles"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tl2_p</Value>
+         <Value>cl2_p</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractFile</Name>
+         <Value>tsx.play.%Y%m%d</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_1</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-75</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <UseParameterGroup name="TsxProducts"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.131/17533/on</Value>
+         <Value>default2/233.102.209.3/17530/on</Value>
+         <Value>default1/0.0.0.0/17034/off</Value>
+         <Value>default2/0.0.0.0/17032/off</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.131</Value>
+         <Value>233.102.209.3</Value>
+         <Comment>239.142.2.3 and 239.142.1.3 are the old private IPs, here
+            for compatibility with older playback files.</Comment>
+         <Value>239.142.2.3</Value>
+         <Value>239.142.1.3</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.219.10</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17031</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.220.11</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17031</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_2</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-75</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <UseParameterGroup name="TsxProducts"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.209/18533/on</Value>
+         <Value>default2/233.102.209.81/18530/on</Value>
+         <Value>default1/0.0.0.0/18034/off</Value>
+         <Value>default2/0.0.0.0/18032/off</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.209</Value>
+         <Value>233.102.209.81</Value>
+         <Comment>239.142.2.3 and 239.142.1.3 are the old private IPs, here
+            for compatibility with older playback files.</Comment>
+         <Value>239.142.2.3</Value>
+         <Value>239.142.1.3</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.219.25</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>18031</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.220.25</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>18031</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>cl2</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-77</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <UseParameterGroup name="VentureProducts"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.132/17543/on</Value>
+         <Value>default2/233.102.209.4/17540/on</Value>
+         <Value>default1/0.0.0.0/17044/off</Value>
+         <Value>default2/0.0.0.0/17042/off</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.132</Value>
+         <Value>233.102.209.4</Value>
+         <Comment>239.142.2.4 and 239.142.1.4 are the old private IPs, here
+            for compatibility with older playback files.</Comment>
+         <Value>239.142.2.4</Value>
+         <Value>239.142.1.4</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.219.10</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17041</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.220.11</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>17041</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_1qp</Name>
+      <Comment>Quantum RTMD Production TL2-11</Comment>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-78</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <UseParameterGroup name="TsxProducts"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.72.14/30690/on</Value>
+         <Value>default2/224.0.72.78/30695/on</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.72.14</Value>
+         <Value>224.0.72.78</Value>
+         <Comment>Keep the two IPs below for compatability with older playback files.</Comment>
+         <Value>233.102.209.131</Value>
+         <Value>233.102.209.3</Value>
+         <Comment>239.142.2.3 and 239.142.1.3 are the old private IPs, here
+            for compatibility with older playback files.</Comment>
+         <Value>239.142.2.3</Value>
+         <Value>239.142.1.3</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Tl2IsQtm</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Comment>TL2-11A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.4</Value>
+         </Parameter>
+<!-- Start SFD-1968 -->
+<tny2sffhr19>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>15666</Value>
+         </Parameter>
+</tny2sffhr19>
+<pny2sffhr07a>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>13528</Value>
+         </Parameter>
+</pny2sffhr07a>
+<pny2sffhr07b>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>13529</Value>
+         </Parameter>
+</pny2sffhr07b>
+<!-- End SFD-1968 -->
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>100000</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TL2-11A retransmission server long recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.7</Value>
+         </Parameter>
+<!-- Start SFD-1968 -->
+<tny2sffhr19>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>13571</Value>
+         </Parameter>
+</tny2sffhr19>
+<pny2sffhr07a>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>13572</Value>
+         </Parameter>
+</pny2sffhr07a>
+<pny2sffhr07b>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>13573</Value>
+         </Parameter>
+</pny2sffhr07b>
+<!-- End SFD-1968 -->
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>100001</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TL2-11B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.132</Value>
+         </Parameter>
+<!-- Start SFD-1968 -->
+<tny2sffhr19>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>13532</Value>
+         </Parameter>
+</tny2sffhr19>
+<pny2sffhr07a>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>13533</Value>
+         </Parameter>
+</pny2sffhr07a>
+<pny2sffhr07b>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>13534</Value>
+         </Parameter>
+</pny2sffhr07b>
+<!-- End SFD-1968 -->
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>100000</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TL2-11B retransmission server long recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.135</Value>
+         </Parameter>
+<!-- Start SFD-1968 -->
+<tny2sffhr19>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>13575</Value>
+         </Parameter>
+</tny2sffhr19>
+<pny2sffhr07a>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>13576</Value>
+         </Parameter>
+</pny2sffhr07a>
+<pny2sffhr07b>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>13577</Value>
+         </Parameter>
+</pny2sffhr07b>
+<!-- End SFD-1968 -->
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>100001</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_2qp</Name>
+      <Comment>Quantum RTMD Production TL2-21</Comment>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-78</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <UseParameterGroup name="TsxProducts"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.72.30/30691/on</Value>
+         <Value>default2/224.0.72.94/30696/on</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.72.30</Value>
+         <Value>224.0.72.94</Value>
+         <Comment>Keep the two IPs below for compatability with older playback files.</Comment>
+         <Value>233.102.209.209</Value>
+         <Value>233.102.209.81</Value>
+         <Comment>239.142.2.3 and 239.142.1.3 are the old private IPs, here
+            for compatibility with older playback files.</Comment>
+         <Value>239.142.2.3</Value>
+         <Value>239.142.1.3</Value>
+      </Parameter>
+      <Comment>TL2-21A retransmission server normal recovery</Comment>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Tl2IsQtm</Name>
+         <Value>true</Value>
+      </Parameter>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.68</Value>
+         </Parameter>
+<!-- Start SFD-1968 -->
+<tny2sffhr19>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>23815</Value>
+         </Parameter>
+</tny2sffhr19>
+<pny2sffhr07a>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>21852</Value>
+         </Parameter>
+</pny2sffhr07a>
+<pny2sffhr07b>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>21853</Value>
+         </Parameter>
+</pny2sffhr07b>
+<!-- End SFD-1968 -->
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>100000</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TL2-21A retransmission server long recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.70</Value>
+         </Parameter>
+<!-- Start SFD-1968 -->
+<tny2sffhr19>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>21873</Value>
+         </Parameter>
+</tny2sffhr19>
+<pny2sffhr07a>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>21874</Value>
+         </Parameter>
+</pny2sffhr07a>
+<pny2sffhr07b>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>21875</Value>
+         </Parameter>
+</pny2sffhr07b>
+<!-- End SFD-1968 -->
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>100001</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TL2-21B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.196</Value>
+         </Parameter>
+<!-- Start SFD-1968 -->
+<tny2sffhr19>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>21858</Value>
+         </Parameter>
+</tny2sffhr19>
+<pny2sffhr07a>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>21856</Value>
+         </Parameter>
+</pny2sffhr07a>
+<pny2sffhr07b>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>21857</Value>
+         </Parameter>
+</pny2sffhr07b>
+<!-- End SFD-1968 -->
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>100000</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TL2-21B retransmission server long recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.198</Value>
+         </Parameter>
+<!-- Start SFD-1968 -->
+<tny2sffhr19>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>21877</Value>
+         </Parameter>
+</tny2sffhr19>
+<pny2sffhr07a>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>21878</Value>
+         </Parameter>
+</pny2sffhr07a>
+<pny2sffhr07b>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>21879</Value>
+         </Parameter>
+</pny2sffhr07b>
+<!-- End SFD-1968 -->
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>100001</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>cl2qp</Name>
+      <Comment>Quantum RTMD Production CL2-11</Comment>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-79</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <UseParameterGroup name="VentureProducts"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.72.16/30710/on</Value>
+         <Value>default2/224.0.72.80/30715/on</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.72.16</Value>
+         <Value>224.0.72.80</Value>
+         <Comment>Keep the two IPs below for compatability with older playback files.</Comment>
+         <Value>233.102.209.132</Value>
+         <Value>233.102.209.4</Value>
+         <Comment>239.142.2.4 and 239.142.1.4 are the old private IPs, here
+            for compatibility with older playback files.</Comment>
+         <Value>239.142.2.4</Value>
+         <Value>239.142.1.4</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Tl2IsQtm</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Comment>CL2-11A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.6</Value>
+         </Parameter>
+<!-- Start SFD-1968 -->
+<tny2sffhr19>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>13543</Value>
+         </Parameter>
+</tny2sffhr19>
+<pny2sffhr07a>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>13544</Value>
+         </Parameter>
+</pny2sffhr07a>
+<pny2sffhr07b>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>13545</Value>
+         </Parameter>
+</pny2sffhr07b>
+<!-- End SFD-1968 -->
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>CL2-11B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.134</Value>
+         </Parameter>
+<!-- Start SFD-1968 -->
+<tny2sffhr19>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>13547</Value>
+         </Parameter>
+</tny2sffhr19>
+<pny2sffhr07a>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>13548</Value>
+         </Parameter>
+</pny2sffhr07a>
+<pny2sffhr07b>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>13549</Value>
+         </Parameter>
+</pny2sffhr07b>
+<!-- End SFD-1968 -->
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_1qt</Name>
+      <Comment>Quantum RTMD Test TL2-11</Comment>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-80</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <UseParameterGroup name="TsxProducts"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.13/37720/on</Value>
+         <Value>default2/233.102.209.34/37721/on</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.13</Value>
+         <Value>233.102.209.34</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Tl2IsQtm</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Comment>TL2-11A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.121</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>100000</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TL2-11A retransmission server long recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.145</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>100001</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TL2-11B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.126</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>100000</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TL2-11B retransmission server long recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.146</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>100001</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_2qt</Name>
+      <Comment>Quantum RTMD Test TL2-21</Comment>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-80</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <UseParameterGroup name="TsxProducts"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.79/37722/on</Value>
+         <Value>default2/233.102.209.124/37753/on</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.79</Value>
+         <Value>233.102.209.124</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Tl2IsQtm</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Comment>TL2-21A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.131</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>100000</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TL2-21A retransmission server long recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.118</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>100001</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TL2-21B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.136</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>100000</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TL2-21B retransmission server long recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.119</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>100001</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>cl2qt</Name>
+      <Comment>Quantum RTMD Test CL2-11</Comment>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-81</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <UseParameterGroup name="VentureProducts"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/223.102.209.54/37740/on</Value>
+         <Value>default2/223.102.209.94/37741/on</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>223.102.209.54</Value>
+         <Value>223.102.209.94</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+         <Comment>Set to true if the retransmission server(s) are on the Quantum platform (QRTMD)</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Tl2IsQtm</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Comment>CL2-11A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.123</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>CL2-11B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.128</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>al2qp</Name>
+      <Comment>Quantum RTMD AL2_11</Comment>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <UseParameterGroup name="AlphaProducts"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.72.44/30760</Value>
+         <Value>default2/224.0.72.73/30765</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.72.44</Value>
+         <Value>224.0.72.73</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Comment>AL2-11A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.28</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>AL2-11B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.226.148</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>al2qt</Name>
+      <Comment>GTE (test) Quantum RTMD AL2_11</Comment>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <UseParameterGroup name="AlphaProducts"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.0.106.21/37790</Value>
+         <Value>default2/224.0.106.149/37791</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.0.106.21</Value>
+         <Value>224.0.106.149</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <Parameter>
+         <Name>TsxUseQuantumRecovery</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Comment>AL2-11A retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.243</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>AL2-11B retransmission server normal recovery</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.223.245</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Comment>The port number below is temporary to allow playbacks to process.  It will be replaced by the recovery port number in the TMX configuration bundle.</Comment>
+            <Value>9999</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MinimumGapSize</Name>
+            <Value>1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>MaximumGapSize</Name>
+            <Value>999999999</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_p</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <UseParameterGroup name="PlaybackFiles"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tl2_1</Value>
+         <Value>tl2_2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractFile</Name>
+         <Value>tl2.play.%Y%m%d</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>cl2_p</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <UseParameterGroup name="PlaybackFiles"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>cl2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractFile</Name>
+         <Value>cl2.play.%Y%m%d</Value>
+      </Parameter>
+   </Feed>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

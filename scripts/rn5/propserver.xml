@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <Parameter>
+      <Name>MamaPropertiesFileName</Name>
+      <Value>mama.properties.propserver</Value>
+   </Parameter>
+   
+   <Parameter>
+      <Name>MamaDefaultBridge</Name>
+      <Value>wmw</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>Transport</Name>
+      <Value>propserver</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LogRequestResponse</Name>
+      <Value>True</Value>
+      <Comment>Log each client request and response.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>WadminTransportName</Name>
+      <Value>wadmin</Value>
+   </Parameter>
+
+   <!-- Parameter Groups for Specific MamaSenderIds -->
+   <DefineParameterGroup>
+      <Name>MamaSenderIdPropServerP</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>999</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdPropServerS</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>9990</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <!-- END - Parameter Groups for Specific MamaSenderIds -->
+
+   <!-- Parameter Groups for Specific MamaSenderIds -->
+   <DefineParameterGroup>
+      <Name>MamaSenderIdPropServerPri</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>9991</Value>
+      </Parameter>
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>propserver04_ft</Value>
+   </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>MamaSenderIdPropServerSec</Name>
+      <Parameter>
+         <Name>MamaSenderId</Name>
+         <Value>9992</Value>
+      </Parameter>
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>propserver04_ft</Value>
+   </Parameter>
+   </DefineParameterGroup>
+   <!-- END - Parameter Groups for Specific MamaSenderIds -->
+
+   <IncludeFile>propserver_profiles.xml</IncludeFile>
+   <IncludeFile>propserver_properties.xml</IncludeFile>
+   <IncludeFile>propserver_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+</config>

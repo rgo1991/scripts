@@ -1,0 +1,45 @@
+#!/bin/bash
+
+LOGFILE=/tmp/myscript.log
+VERBOSE=10
+APPNAME=`basename $0`
+
+function logmsg(){
+echo "${APPNAME}: `date`: $@" >> $LOGFILE
+}
+
+function debug(){
+	verbosity=$1
+	shift
+	if [ "$VERBOSE" -gt "$verbosity" ];then
+	echo "${APPNAME}: `date`: DEBUG Level ${verbosity}: $@" >> $LOGFILE;fi
+
+}
+
+function die(){
+	echo "${APPNAME}: `date`: DATAL ERROR: $@" >> $LOGFILE
+	exit 1
+}
+
+logmsg Starting script $0
+uname -pu || die uname command not found
+
+logmsg `uname -a`
+cat /etc/redhat-release || debug 8 Not a red-hat based system
+cat /etc/debian_version || debug 8 Not a debian based system
+
+cd /proc || debug 5 /proc filesystem not found
+grep -q "physical id" /proc/cpuinfo || debug 8 /proc/cpuinfo virtual file not found.
+
+logmsg Found `grep "physical id" /proc/cpuinfo | sort -u | wc -l` physical CPUs.
+unset IPADDR
+
+. /etc/sysconfig/network-scripts/ifcfg-eth0 || debug 1 ifcfg-eth0 not readable
+logmsg eth0 IP address defined as ${IPADDR}
+logmsg script $0 finished. 
+
+
+
+
+
+

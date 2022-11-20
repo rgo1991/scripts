@@ -1,0 +1,1636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for Consolidated data feed - Canadian Best Bid and Offer feed handler. See the Administrators Guide for more information:    http://wombatconsulting.com/feedhandlers/admin-guide.html--><!--The following configuration clauses are common to all cdf feed handlers-->
+
+<!-- SFDCR-1378 -->
+   <!-- Site specific includes -->
+   <IncludeFile>cdf_tport.xml</IncludeFile>
+   <IncludeFile>cdf_hosts.xml</IncludeFile>
+   <!--IncludeFile>productdefs_cdf.xml</IncludeFile-->
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+      <Parameter>
+        <Name>AlwaysPublishFieldList</Name>
+        <Value>wBuyerId</Value>
+        <Value>wSellerId</Value>
+        <Value>wTsxExchangeId</Value>
+        <Value>wPrimExch</Value>
+	<Value>wPartId</Value>
+	<Value>wOrderQualifier</Value>
+	<Value>wIsIrregular</Value>
+        <Value>wTradeId</Value>
+      </Parameter>
+
+
+    <Parameter>
+      <Name>TradeRemoveUnusedIrregularFields</Name>
+      <Value>true</Value>
+    </Parameter>
+
+   <Parameter>
+     <Name>PublishNanoSecondFieldAsStr</Name>
+     <Value>true</Value>
+   </Parameter>
+
+
+   <Parameter>
+     <Name>WmwSource</Name>
+     <Value>TMXCDF</Value>
+   </Parameter>
+
+   <Parameter>
+     <Name>PrependBrokerIdToEntryId</Name>
+     <Value>true</Value>
+   </Parameter>
+
+   <!-- See note in wombat.xml for FT details -->
+   <Parameter>
+      <Name>FtService</Name>
+      <Value>7742</Value>
+   </Parameter>
+
+   <!-- See note in wombat.xml for FT details -->
+   <Parameter>
+      <Name>FtService</Name>
+      <Value>7742</Value>
+   </Parameter>
+<!--SFDCR-1410 -->
+      <Parameter>
+         <Name>MamaUseDictionaryType</Name>
+         <Value>true</Value>
+      </Parameter>
+<!--SFDCR-1410 End -->
+<!--SFDCR-1411 Start-->
+      <Parameter>
+         <Name>TradeCalculateVwap</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TradeCalculateStdDev</Name>
+         <Value>true</Value>
+      </Parameter>
+<!--SFDCR-1411 Start-->
+<!-- SFDCR-1422 - enable trade direction -->
+      <Parameter>
+         <Name>TradeCalculateTick</Name>
+         <Value>true</Value>
+      </Parameter>
+<!-- SFDCR-1422 END -->
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+<!-- START: Like TABA Toronto -->
+   <Parameter>
+      <Name>ParticipantQuoteCount</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishMarketOrders</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SymbolSuffixTopOfBook</Name>
+      <Value>BBO</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TopOfBookDecimals</Name>
+      <Value>4</Value>
+   </Parameter>
+<!-- END: Like TABA Toronto -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>67108864</Value>
+      <!-- <Value>49571904</Value>  -->
+   </Parameter>
+
+
+<!-- SFDCR-1378 END -->    
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>tsx</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CheckForClassD</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UnicastListenOnAllInterfaces</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterRetransMaxGapSize</Name>
+      <Value>10000</Value>
+      <Comment>Max number of messages per request, defined the exchange side</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterGapLimitSize</Name>
+      <Value>15000</Value><!-- sfdcr-916 -->
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterMaxValidGapSize</Name>
+      <Value>0</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterGapLimitTime</Name>
+      <Value>1.0</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterGapLimitStartOfDay</Name>
+      <Value>1000</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterRetransActive</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LogRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TsxRetransMaxQueueSize</Name>
+      <Value>500</Value>
+      <Comment>Maximum retrans queue size to keep. Older retrans request will be discarded if this limit is reached. Set to 0 to have no limit.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TsxMaxRetransMsgsPerRequest</Name>
+      <Value>10000</Value>
+      <Comment>Maximum retrans gap size supported per request.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OrderBookUpdateImpliesNormalStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishStatusOnBookSymbols</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>dotReplacementMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MhIfOrderBookUniqueOrderIds</Name>
+      <Value>false</Value>
+      <Comment>This must be set to false if order book is used.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CdfRegularTrades</Name>
+      <Value>Normal</Value>
+      <Value>MarketOnClose</Value>
+      <!-- <Value>OddLot</Value> Removed as CDF was treating all OddLots as regular trades -->
+      <!-- ML have the following set so we may need to enable some of these in the future
+      <Value>Basis</Value>
+      <Value>Contgt</Value>
+      <Value>Intrnl</Value>
+      <Value>STS</Value>
+      <Value>VWAP</Value>
+      <Value>ExtendedHours</Value>
+      <Value>ByPass</Value> 
+      -->
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsIndex</Value>
+      <Value>FieldAttrsFundamental</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsFixedIncome</Value>
+      <Value>FieldAttrsTsx</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsNetworkMonitor</Value>
+      <Value>FieldAttrsOrder</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsReferential</Value>
+      <Value>FieldAttrsOrderImbalance</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>TsxLineFormat</Name>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>tsx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumOffset</Name>
+         <Value>4</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumLength</Name>
+         <Value>9</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryOffset</Name>
+         <Value>5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryControl</Name>
+         <Value> </Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeOffset</Name>
+         <Value>19</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeSeqNumReset</Name>
+         <Value> </Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransOffset</Name>
+         <Value>16</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransLength</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransOrig</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeHeartbeat</Name>
+         <Value> </Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <Feed>
+      <Name>cdf</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tl2_cdf_tl2p1</Value>
+         <Value>tl2_cdf_tl2p2</Value>
+         <Value>tl2_cdf_tl2p3</Value>
+         <Value>tl2_cdf_tl2p4</Value>
+         <Value>tl2_cdf_tsxv</Value>
+         <Value>tl2_cdf_chx</Value>
+         <Value>tl2_cdf_omg</Value>
+         <Value>tl2_cdf_lyx</Value>
+         <Value>tl2_cdf_ptx</Value>
+         <Value>tl2_cdf_alp</Value>
+         <Value>tl2_cdf_lqn</Value>
+         <Value>tl2_cdf_tcm</Value>
+         <Value>tl2_cdf_select</Value>
+         <Value>tl2_cdf_icx</Value>
+         <Value>tl2_cdf_cx2</Value>
+         <Value>tl2_cdf_aeq</Value>
+         <Value>tl2_cdf_chd</Value>
+      </Parameter>
+   </Feed>
+
+<!-- SFDCR-1378 Start -->
+   <Feed>
+      <Name>cdf_split1</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+        <Name>SubFeeds</Name>
+         <Value>tl2_cdf_tl2p1</Value>
+         <Value>tl2_cdf_tl2p2</Value>
+         <Value>tl2_cdf_tl2p3</Value>
+         <Value>tl2_cdf_tl2p4</Value>
+      </Parameter>
+      <Parameter>
+        <Name>RecordSymbolFile</Name>
+        <Value>cdf_split1.sym</Value>
+      </Parameter>
+      <Parameter>
+        <Name>OrderBookSymbolFile</Name>
+        <Value>cdf_split1.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+     <Name>cdf_split2</Name>
+     <UseParameterGroup name="WmwTransportPropertiesVector2NSD1"/>
+     <UseParameterGroup name="TsxLineFormat"/>
+     <Parameter>
+        <Name>SubFeeds</Name>
+         <Value>tl2_cdf_ptx</Value>
+         <Value>tl2_cdf_alp</Value>
+         <Value>tl2_cdf_lqn</Value>
+         <Value>tl2_cdf_tcm</Value>
+         <!--Value>tl2_cdf_select</Value EDCP-7340-->
+     </Parameter>
+     <Parameter>
+        <Name>RecordSymbolFile</Name>
+        <Value>cdf_split2.sym</Value>
+     </Parameter>
+     <Parameter>
+        <Name>OrderBookSymbolFile</Name>
+        <Value>cdf_split2.orderbook.sym</Value>
+     </Parameter>
+   </Feed>
+
+   <Feed>
+     <Name>cdf_split3</Name>
+     <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>
+     <UseParameterGroup name="TsxLineFormat"/>
+     <Parameter>
+        <Name>SubFeeds</Name>
+         <Value>tl2_cdf_icx</Value>
+         <Value>tl2_cdf_cx2</Value>
+         <Value>tl2_cdf_aeq</Value>
+         <Value>tl2_cdf_chd</Value>
+     </Parameter>
+     <Parameter>
+        <Name>RecordSymbolFile</Name>
+        <Value>cdf_split3.sym</Value>
+     </Parameter>
+     <Parameter>
+        <Name>OrderBookSymbolFile</Name>
+        <Value>cdf_split3.orderbook.sym</Value>
+     </Parameter>
+   </Feed>
+
+
+   <Feed>
+     <Name>cdf_split4</Name>
+     <UseParameterGroup name="WmwTransportPropertiesVector1NSD1"/>
+     <UseParameterGroup name="TsxLineFormat"/>
+     <Parameter>
+        <Name>SubFeeds</Name>
+         <Value>tl2_cdf_tsxv</Value>
+         <Value>tl2_cdf_chx</Value>
+         <Value>tl2_cdf_omg</Value>
+         <Value>tl2_cdf_lyx</Value>
+     </Parameter>
+     <Parameter>
+        <Name>RecordSymbolFile</Name>
+        <Value>cdf_split4.sym</Value>
+     </Parameter>
+     <Parameter>
+        <Name>OrderBookSymbolFile</Name>
+        <Value>cdf_split4.orderbook.sym</Value>
+     </Parameter>
+   </Feed>
+<!-- SFDCR-1378 End -->
+    
+   <Feed>
+      <Name>tl2_cdf_tl2</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tl2_cdf_tl2p1</Value>
+         <Value>tl2_cdf_tl2p2</Value>
+         <Value>tl2_cdf_tl2p3</Value>
+         <Value>tl2_cdf_tl2p4</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_cdf_other</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>tl2_cdf_tsxv</Value>
+         <Value>tl2_cdf_chx</Value>
+         <Value>tl2_cdf_omg</Value>
+         <Value>tl2_cdf_lyx</Value>
+         <Value>tl2_cdf_ptx</Value>
+         <Value>tl2_cdf_alp</Value>
+         <Value>tl2_cdf_lqn</Value>
+         <Value>tl2_cdf_tcm</Value>
+         <Value>tl2_cdf_select</Value>
+         <Value>tl2_cdf_icx</Value>
+         <Value>tl2_cdf_cx2</Value>
+         <Value>tl2_cdf_chd</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_cdf_tl2p1</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>CdfTsxLevel2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTrade</Name>
+         <Value>CdfTsxLevel2Trade</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameOrderBook</Name>
+         <Value>CdfTsxLevel2Book</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTopOfBook</Name>
+         <Value>CdfTsxLevel2Top</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameOrderBook</Name>
+         <Value>CdfTsxLevel2OddLotBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameTopOfBook</Name>
+         <Value>CdfTsxLevel2OddLotTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameOrderBook</Name>
+         <Value>CdfTsxLevel2SpecialTermsBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameTopOfBook</Name>
+         <Value>CdfTsxLevel2SpecialTermsTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.224/60000</Value>
+         <Value>default1/0.0.0.0/60050/monitorOff</Value>
+         <Value>default2/233.102.209.96/60001</Value>
+         <Value>default2/0.0.0.0/60051/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.224/60000</Value>
+         <Value>233.102.209.224/60050</Value>
+         <Value>233.102.209.96/60001</Value>
+         <Value>233.102.209.96/60051</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60020</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60020</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_cdf_tl2p2</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>CdfTsxLevel2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTrade</Name>
+         <Value>CdfTsxLevel2Trade</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameOrderBook</Name>
+         <Value>CdfTsxLevel2Book</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTopOfBook</Name>
+         <Value>CdfTsxLevel2Top</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameOrderBook</Name>
+         <Value>CdfTsxLevel2OddLotBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameTopOfBook</Name>
+         <Value>CdfTsxLevel2OddLotTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameOrderBook</Name>
+         <Value>CdfTsxLevel2SpecialTermsBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameTopOfBook</Name>
+         <Value>CdfTsxLevel2SpecialTermsTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.240/61012</Value>
+         <Value>default1/0.0.0.0/61060/monitorOff</Value>
+         <Value>default2/233.102.209.112/61013</Value>
+         <Value>default2/0.0.0.0/61061/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.240/61012</Value>
+         <Value>233.102.209.240/61060</Value>
+         <Value>233.102.209.112/61013</Value>
+         <Value>233.102.209.112/61061</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61025</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61025</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_cdf_tl2p3</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>CdfTsxLevel2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTrade</Name>
+         <Value>CdfTsxLevel2Trade</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameOrderBook</Name>
+         <Value>CdfTsxLevel2Book</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTopOfBook</Name>
+         <Value>CdfTsxLevel2Top</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameOrderBook</Name>
+         <Value>CdfTsxLevel2OddLotBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameTopOfBook</Name>
+         <Value>CdfTsxLevel2OddLotTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameOrderBook</Name>
+         <Value>CdfTsxLevel2SpecialTermsBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameTopOfBook</Name>
+         <Value>CdfTsxLevel2SpecialTermsTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.219/61100</Value>
+         <Value>default1/0.0.0.0/61103/monitorOff</Value>
+         <Value>default2/233.102.209.86/61101</Value>
+         <Value>default2/0.0.0.0/61104/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.219/61100</Value>
+         <Value>233.102.209.219/61103</Value>
+         <Value>233.102.209.86/61101</Value>
+         <Value>233.102.209.86/61104</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61102</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61102</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_cdf_tl2p4</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>CdfTsxLevel2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTrade</Name>
+         <Value>CdfTsxLevel2Trade</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameOrderBook</Name>
+         <Value>CdfTsxLevel2Book</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTopOfBook</Name>
+         <Value>CdfTsxLevel2Top</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameOrderBook</Name>
+         <Value>CdfTsxLevel2OddLotBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameTopOfBook</Name>
+         <Value>CdfTsxLevel2OddLotTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameOrderBook</Name>
+         <Value>CdfTsxLevel2SpecialTermsBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameTopOfBook</Name>
+         <Value>CdfTsxLevel2SpecialTermsTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.220/61105</Value>
+         <Value>default1/0.0.0.0/61108/monitorOff</Value>
+         <Value>default2/233.102.209.87/61106</Value>
+         <Value>default2/0.0.0.0/61109/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.220/61105</Value>
+         <Value>233.102.209.220/61108</Value>
+         <Value>233.102.209.87/61106</Value>
+         <Value>233.102.209.87/61109</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61107</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61107</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_cdf_tsxv</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>CdfTsxVentureLevel2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTrade</Name>
+         <Value>CdfTsxVentureLevel2Trade</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameOrderBook</Name>
+         <Value>CdfTsxVentureLevel2Book</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTopOfBook</Name>
+         <Value>CdfTsxVentureLevel2Top</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameOrderBook</Name>
+         <Value>CdfTsxVentureLevel2OddLotBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameTopOfBook</Name>
+         <Value>CdfTsxVentureLevel2OddLotTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameOrderBook</Name>
+         <Value>CdfTsxVentureLevel2SpecialTermsBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameTopOfBook</Name>
+         <Value>CdfTsxVentureLevel2SpecialTermsTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.234/61000</Value>
+         <Value>default1/0.0.0.0/60071/monitorOff</Value>
+         <Value>default2/233.102.209.106/61001</Value>
+         <Value>default2/0.0.0.0/60072/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.234/61000</Value>
+         <Value>233.102.209.234/60071</Value>
+         <Value>233.102.209.106/61001</Value>
+         <Value>233.102.209.106/60072</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60030</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60030</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_cdf_chx</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Tl2IsChix</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTrade</Name>
+         <Value>CdfChixLevel2Trade</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameOrderBook</Name>
+         <Value>CdfChixLevel2Book</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTopOfBook</Name>
+         <Value>CdfChixLevel2Top</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameOrderBook</Name>
+         <Value>CdfChixLevel2OddLotBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameTopOfBook</Name>
+         <Value>CdfChixLevel2OddLotTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>CdfChixLevel2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.225/60002</Value>
+         <Value>default1/0.0.0.0/60052/monitorOff</Value>
+         <Value>default2/233.102.209.97/60003</Value>
+         <Value>default2/0.0.0.0/60053/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.225/60002</Value>
+         <Value>233.102.209.225/60052</Value>
+         <Value>233.102.209.97/60003</Value>
+         <Value>233.102.209.97/60053</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60021</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60021</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_cdf_omg</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>TsxL2ProductNameTrade</Name>
+         <Value>CdfOmegaLevel2Trade</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameOrderBook</Name>
+         <Value>CdfOmegaLevel2Book</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTopOfBook</Name>
+         <Value>CdfOmegaLevel2Top</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameOrderBook</Name>
+         <Value>CdfOmegaLevel2OddLotBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameTopOfBook</Name>
+         <Value>CdfOmegaLevel2OddLotTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>CdfOmegaLevel2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Tl2IsOmega</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.226/60004</Value>
+         <Value>default1/0.0.0.0/60054/monitorOff</Value>
+         <Value>default2/233.102.209.98/60005</Value>
+         <Value>default2/0.0.0.0/60055/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.226/60004</Value>
+         <Value>233.102.209.226/60054</Value>
+         <Value>233.102.209.98/60005</Value>
+         <Value>233.102.209.98/60055</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60022</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60022</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_cdf_lyx</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>TsxL2ProductNameTrade</Name>
+         <Value>CdfLynxLevel2Trade</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameOrderBook</Name>
+         <Value>CdfLynxLevel2Book</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTopOfBook</Name>
+         <Value>CdfLynxLevel2Top</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameOrderBook</Name>
+         <Value>CdfLynxLevel2OddLotBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameTopOfBook</Name>
+         <Value>CdfLynxLevel2OddLotTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>CdfLynxLevel2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Tl2IsOmega</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.245/61021</Value>
+         <Value>default1/0.0.0.0/61068/monitorOff</Value>
+         <Value>default2/233.102.209.116/61022</Value>
+         <Value>default2/0.0.0.0/61069/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.245/61021</Value>
+         <Value>233.102.209.245/61068</Value>
+         <Value>233.102.209.116/61022</Value>
+         <Value>233.102.209.116/61069</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61029</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61029</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_cdf_ptx</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Tl2IsPure</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTrade</Name>
+         <Value>CdfPureLevel2Trade</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameOrderBook</Name>
+         <Value>CdfPureLevel2Book</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTopOfBook</Name>
+         <Value>CdfPureLevel2Top</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameOrderBook</Name>
+         <Value>CdfPureLevel2OddLotBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameTopOfBook</Name>
+         <Value>CdfPureLevel2OddLotTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameOrderBook</Name>
+         <Value>CdfPureLevel2SpecialTermsBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameTopOfBook</Name>
+         <Value>CdfPureLevel2SpecialTermsTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>CdfPureLevel2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Tl2UseSpecificPartIdForCnq</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.227/60006</Value>
+         <Value>default1/0.0.0.0/60056/monitorOff</Value>
+         <Value>default2/233.102.209.99/60007</Value>
+         <Value>default2/0.0.0.0/60057/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.227/60006</Value>
+         <Value>233.102.209.227/60056</Value>
+         <Value>233.102.209.99/60007</Value>
+         <Value>233.102.209.99/60057</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60023</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60023</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_cdf_alp</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Comment>
+             This parameter (Tl2IsAlpha) must be set to false or deleted before
+             for the switch over to the new Alpha feed on TMX. After the
+             switch the alpha subfeed will follow the same rules as tsx.
+         </Comment>
+      <Parameter>
+         <Name>Tl2IsAlpha</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTrade</Name>
+         <Value>CdfAlphaLevel2Trade</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameOrderBook</Name>
+         <Value>CdfAlphaLevel2Book</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTopOfBook</Name>
+         <Value>CdfAlphaLevel2Top</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>CdfAlphaLevel2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameOrderBook</Name>
+         <Value>CdfAlphaLevel2OddLotBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameTopOfBook</Name>
+         <Value>CdfAlphaLevel2OddLotTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameOrderBook</Name>
+         <Value>CdfAlphaLevel2SpecialTermsBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameTopOfBook</Name>
+         <Value>CdfAlphaLevel2SpecialTermsTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.230/60010</Value>
+         <Value>default1/0.0.0.0/60060/monitorOff</Value>
+         <Value>default2/233.102.209.102/60011</Value>
+         <Value>default2/0.0.0.0/60061/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.230/60010</Value>
+         <Value>233.102.209.230/60060</Value>
+         <Value>233.102.209.102/60011</Value>
+         <Value>233.102.209.102/60061</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60025</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60025</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_cdf_lqn</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>CdfLqnLevel2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTrade</Name>
+         <Value>CdfLqnLevel2Trade</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.231/60012</Value>
+         <Value>default1/0.0.0.0/60062/monitorOff</Value>
+         <Value>default2/233.102.209.103/60013</Value>
+         <Value>default2/0.0.0.0/60063/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.231/60012</Value>
+         <Value>233.102.209.231/60062</Value>
+         <Value>233.102.209.103/60013</Value>
+         <Value>233.102.209.103/60063</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60026</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60026</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_cdf_tcm</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>CdfTcmLevel2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTrade</Name>
+         <Value>CdfTcmLevel2Trade</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.229/60014</Value>
+         <Value>default1/0.0.0.0/60064/monitorOff</Value>
+         <Value>default2/233.102.209.101/60015</Value>
+         <Value>default2/0.0.0.0/60065/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.229/60014</Value>
+         <Value>233.102.209.229/60064</Value>
+         <Value>233.102.209.101/60015</Value>
+         <Value>233.102.209.101/60065</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60027</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>60027</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_cdf_select</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Tl2IsSelect</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>CdfTsxSelectLevel2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTrade</Name>
+         <Value>CdfTsxSelectLevel2Trade</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameOrderBook</Name>
+         <Value>CdfTsxSelectLevel2Book</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTopOfBook</Name>
+         <Value>CdfTsxSelectLevel2Top</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameOrderBook</Name>
+         <Value>CdfTsxSelectLevel2OddLotBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameTopOfBook</Name>
+         <Value>CdfTsxSelectLevel2OddLotTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameOrderBook</Name>
+         <Value>CdfTsxSelectLevel2SpecialTermsBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2SpecialTermsProductNameTopOfBook</Name>
+         <Value>CdfTsxSelectLevel2SpecialTermsTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.241/61014</Value>
+         <Value>default1/0.0.0.0/61062/monitorOff</Value>
+         <Value>default2/233.102.209.113/61015</Value>
+         <Value>default2/0.0.0.0/61063/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.241/61014</Value>
+         <Value>233.102.209.241/61062</Value>
+         <Value>233.102.209.113/61015</Value>
+         <Value>233.102.209.113/61063</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61026</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61026</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_cdf_icx</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>CdfTsxIcxLevel2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTrade</Name>
+         <Value>CdfTsxIcxLevel2Trade</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.239/61010</Value>
+         <Value>default1/0.0.0.0/61058/monitorOff</Value>
+         <Value>default2/233.102.209.111/61011</Value>
+         <Value>default2/0.0.0.0/61059/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.239/61010</Value>
+         <Value>233.102.209.239/61058</Value>
+         <Value>233.102.209.111/61011</Value>
+         <Value>233.102.209.111/61059</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61024</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61024</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_cdf_cx2</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Tl2IsChix</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>CdfCx2Level2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTrade</Name>
+         <Value>CdfCx2Level2Trade</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameOrderBook</Name>
+         <Value>CdfCx2Level2Book</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTopOfBook</Name>
+         <Value>CdfCx2Level2Top</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameOrderBook</Name>
+         <Value>CdfCx2Level2OddLotBook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2OddLotProductNameTopOfBook</Name>
+         <Value>CdfCx2Level2OddLotTop</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.244/61019</Value>
+         <Value>default1/0.0.0.0/61066/monitorOff</Value>
+         <Value>default2/233.102.209.115/61020</Value>
+         <Value>default2/0.0.0.0/61067/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.244/61019</Value>
+         <Value>233.102.209.244/61066</Value>
+         <Value>233.102.209.115/61020</Value>
+         <Value>233.102.209.115/61067</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61028</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61028</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_cdf_aeq</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>Tl2IsAequitas</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>CdfAequitasGeneric</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.247/61023</Value>
+         <Value>default1/0.0.0.0/61031/monitorOff</Value>
+         <Value>default2/233.102.209.118/61024</Value>
+         <Value>default2/0.0.0.0/61032/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.247/61023</Value>
+         <Value>233.102.209.247/61031</Value>
+         <Value>233.102.209.118/61024</Value>
+         <Value>233.102.209.118/61032</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61030</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61030</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>tl2_cdf_chd</Name>
+      <UseParameterGroup name="TsxLineFormat"/>
+      <Parameter>
+         <Name>TsxL2ProductName</Name>
+         <Value>CdfCXDDarkPool</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TsxL2ProductNameTrade</Name>
+         <Value>CdfCXDDarkPoolTrade</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.102.209.251/61089</Value>
+         <Value>default1/0.0.0.0/61092/monitorOff</Value>
+         <Value>default2/233.102.209.122/61090</Value>
+         <Value>default2/0.0.0.0/61093/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.102.209.251/61089</Value>
+         <Value>233.102.209.251/61092</Value>
+         <Value>233.102.209.122/61090</Value>
+         <Value>233.102.209.122/61093</Value>
+      </Parameter>
+      <Comment>TSX Markham site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.149.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61091</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>TSX Toronto site retransmission server</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>142.201.157.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>61091</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+   <IncludeFile>cdf_trade_condition_mapping.xml</IncludeFile>
+   <IncludeFile>cdf_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>cdf_product_mapping.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

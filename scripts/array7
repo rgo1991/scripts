@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#retrieving items from the array
+
+
+food=( apples bananas cucumbers dates eggs fajitas grapes )
+
+echo ${food[@]}
+
+echo ${food[@]:0:1} #select first item in array
+echo ${food[@]:3:1} #select 4th item
+echo ${food[@]:4:1} #select 5th item
+
+echo ${food[@]:0:3} #select first 4 items
+echo ${food[@]:2:4} #select 4 items from the 3rd item
+echo ${food[@]:3:3} #select 3 items from the 4th item
+
+echo ${food[@]:3} #select items from 4 elemtn onwards
+echo ${food[@]:5} #select items from 6th elemtn onwards
+
+# formatting the array with printf. printf will apply text and formatting to all individual elements in the array:
+
+echo 
+echo ${food[@]}
+echo
+printf "Food types: %s\n" "${food[@]}" #adds text and appens a new line to each array element.

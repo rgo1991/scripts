@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+    <Feed>
+        <Name>nysecbboxdp_uat</Name>
+        <Comment></Comment>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>nysecbboxdp_uat_trades</Value>
+            <Value>nysecbboxdp_uat_trades_refresh</Value>
+            <Value>nysecbboxdp_uat_trades_retrans</Value>
+            <Value>nysecbboxdp_uat_quotes_retrans</Value>
+            <Value>nysecbboxdp_uat_stock_summary</Value>
+            <Value>nysecbboxdp_uat_quotes</Value>
+            <Value>nysecbboxdp_uat_quotes_refresh</Value>
+            <Value>nysecbboxdp_uat_retrans</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>nysecbboxdp_uat_trades</Name>
+        <Comment>Trades uat feed</Comment>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>UAT_TRADE_REFRESH</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshReqFeedId</Name>
+            <Value>RETRANS</Value>
+        </Parameter>
+        <Parameter>
+           <Name>Listen</Name>
+           <Value>default1/224.1.2.252/29600</Value>
+           <Value>default2/224.1.2.255/30600</Value>
+           <Value>default1/224.1.2.252/29650</Value>
+           <Value>default2/224.1.2.255/30650</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>224.1.2.252/29600</Value>
+           <Value>224.1.2.255/30600</Value>
+           <Value>224.1.2.252/29650</Value>
+           <Value>224.1.2.255/30650</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpReferenceFiles</Name>
+            <Value>ARCASymbolMapping.txt</Value>
+            <!-- Value>NYSESymbolMapping_NMS.txt</Value -->
+        </Parameter>
+        <UseParameterGroup name="NyseCBboXdpLiveParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>nysecbboxdp_uat_trades_refresh</Name>
+        <Comment>Trades Refresh line</Comment>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>UAT_TRADE_REFRESH</Value>
+        </Parameter>
+        <Parameter>
+           <Name>Listen</Name>
+           <Value>default1/224.1.2.252/29630</Value>
+           <Value>default2/224.1.2.255/30630</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>224.1.2.252/29630</Value>
+           <Value>224.1.2.255/30630</Value>
+        </Parameter>
+        <UseParameterGroup name="NyseCBboXdpRefreshParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>nysecbboxdp_uat_stock_summary</Name>
+        <Comment>Stock Summary line</Comment>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>UAT_STOCK_SUMMARY</Value>
+        </Parameter>
+        <Parameter>
+           <Name>Listen</Name>
+           <Value>default1/224.1.2.252/29610</Value>
+           <Value>default2/224.1.2.255/30610</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>224.1.2.252/29610</Value>
+           <Value>224.1.2.252/30610</Value>
+        </Parameter>
+        <UseParameterGroup name="NyseCBboXdpLiveParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>nysecbboxdp_uat_quotes</Name>
+        <Comment>Quotes Feed</Comment>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>UAT_QUOTE_REFRESH</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshReqFeedId</Name>
+            <Value>RETRANS</Value>
+        </Parameter>
+        <Parameter>
+           <Name>Listen</Name>
+           <Value>default1/224.1.2.252/29620</Value>
+           <Value>default2/224.1.2.255/30620</Value>
+           <Value>default1/224.1.2.252/29660</Value>
+           <Value>default2/224.1.2.255/30660</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>224.1.2.252/29620</Value>
+           <Value>224.1.2.255/30620</Value>
+           <Value>224.1.2.252/29660</Value>
+           <Value>224.1.2.252/30660</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpReferenceFiles</Name>
+            <Value>ARCASymbolMapping.txt</Value>
+            <!-- Value>NYSESymbolMapping_NMS.txt</Value -->
+        </Parameter>
+        <UseParameterGroup name="NyseCBboXdpLiveParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>nysecbboxdp_uat_quotes_refresh</Name>
+        <Comment>Quotes Feed</Comment>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>UAT_QUOTE_REFRESH</Value>
+        </Parameter>
+        <Parameter>
+           <Name>Listen</Name>
+           <Value>default1/224.1.2.252/29640</Value>
+           <Value>default2/224.1.2.255/30640</Value>
+        </Parameter>
+        <Parameter>
+           <Name>PlaybackSourceId</Name>
+           <Value>224.1.2.252/29640</Value>
+           <Value>224.1.2.255/30640</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XdpReferenceFiles</Name>
+            <Value>ARCASymbolMapping.txt</Value>
+            <!-- Value>NYSESymbolMapping_NMS.txt</Value -->
+        </Parameter>
+        <UseParameterGroup name="NyseCBboXdpRefreshParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>nysecbboxdp_uat_retrans</Name>
+        <Comment>Retrans</Comment>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>RETRANS</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Login</Name>
+            <Value/>
+        </Parameter>
+        <Parameter>
+            <Name>Password</Name>
+            <Value/>
+        </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.68.216.48</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1079</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>162.68.216.48</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MessageRecoveryFile</Name>
+            <Value/>
+        </Parameter>
+        <UseParameterGroup name="NyseCBboXdpRetransParameter"/>
+    </Feed>
+
+</config>

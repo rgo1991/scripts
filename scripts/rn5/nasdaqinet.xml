@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for the Asx Itch (ASX 24 ITCH) feed. -->
+    
+   <!-- Site specific includes -->
+   <IncludeFile>utp_tport.xml</IncludeFile>
+   <IncludeFile>utp_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.superfeed.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <!-- SFD-1113: Symbol Announce -->
+      <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>FtActivateInterval</Name>
+      <Value>30000</Value>
+   </Parameter>
+   <Parameter>
+     <Name>FtProcessSeqNumGap</Name>
+     <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+     <Name>PublishNanoSecondFieldAsStr</Name>
+     <Value>true</Value>
+   </Parameter>
+
+      <Parameter>
+         <Name>SymbolAnnounceSymbolFormat</Name>
+         <Value>_ANNOUNCE</Value>
+      </Parameter>
+   <!-- SFD-1113: Symbol Announce -->
+
+
+   <UseParameterGroup name="WHK_DEFAULT_TPORT"/>
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>NASDAQ</Value>
+   </Parameter>
+<!-- DFH-28939 DFH-28926 DFH-28956 -->
+   <Parameter>
+      <Name>NasdaqInetUseLegacySecurityStatusOrig</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>NasdaqinetPublishDataLikeNasdaq</Name>
+      <Value>true</Value>
+   </Parameter>
+<!-- DFH-28939 -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <!--Value>16777216</Value-->
+      <Value>67108864</Value>
+   </Parameter>
+<!-- EDCP-7885 utp.xml config Start -->
+<!-- SFDCR-966 - enable trade direction -->
+      <Parameter>
+         <Name>TradeCalculateTick</Name>
+         <Value>true</Value>
+      </Parameter>
+<!-- SFDCR-966 END -->
+<!-- SFDCR-1566/LCAP-6 enable for CTA/UTP -->
+      <Parameter>
+         <Name>NasdaqUseParticipantTimestamp</Name>
+         <Value>true</Value>
+      </Parameter>
+
+<!-- END -->
+   <!-- Correct wQuoteSize to match other feeds - Added Jan 12, 2009 -->
+   <Parameter>
+      <Name>QuoteSizeMultiplier</Name>
+      <Value>100</Value>
+   </Parameter>
+   <!-- END - Correct wQuoteSize to match other feeds -->
+   <!-- Publish the Short Sale indicator on the .Q participant - SFD-602 / EDCP-2041 -->
+   <Parameter>
+      <Name>NasdaqPublishRegShoOnPart</Name>
+      <Value>true</Value>
+   </Parameter>
+   <!-- END -->
+   <Parameter>
+      <Name>NasdaqHandleEmergencySessionStatus</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>UqdfZeroQuoteChangesSecurityStatus</Name>
+      <Value>true</Value>
+   </Parameter>
+<!-- EDCP 5684 - Added November 21, 2013 -->
+     <Parameter>
+         <Name>NormalizeSymbology</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SymbologyMapFuncName</Name>
+         <Value>dotReplacementMap</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SymbolMapDotReplacement</Name>
+         <Value>/</Value>
+      </Parameter>
+   <Parameter>
+      <Name>PublishOrderBooks</Name>
+      <Value>false</Value><!-- SFDCR-1657 -->
+   </Parameter>
+
+   <Parameter>
+      <Name>OrderBookData</Name>
+      <Value>false</Value><!-- SFDCR-1657 -->
+   </Parameter>
+
+   <Parameter>
+      <Name>HandleSessionStatus</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>NasdaqTradingActionOrigOnParticipants</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>NasdaqTradingActionUpdatesSecurityStatusOnParticipants</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>UqdfClosedQuoteChangesSecurityStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+   <Parameter>
+      <Name>UqdfSessionClosedQuoteQualiferNormal</Name>
+      <Value>false</Value>
+   </Parameter>   
+   <Parameter>
+      <Name>UqdfNormalQuoteChangesStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+   <Parameter>
+      <Name>UqdfOpeningQuoteChangesStatus</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>UtdfSubMarketCenterIdAction</Name>
+      <Value>ignore</Value>
+   </Parameter>
+   <Parameter>
+      <Name>PublishGroupRecords</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>GeneralAdminSymbol</Name>
+      <Value>NASDAQADMIN</Value>
+   </Parameter>
+   <!-- Publish calculated and exchange-sent TotalVolume on separate fields - SFDCR-101 -->
+   <Parameter>
+      <Name>PublishCloseVolumeUniquely</Name>
+      <Value>true</Value>
+   </Parameter>
+   <!-- End -->
+   <Parameter>
+      <Name>PublishSecurityStatusIndividual</Name>
+      <Value>true</Value>
+   </Parameter>
+<!-- END -->
+   <Parameter>
+      <Name>CheckSecurityStatusModified</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UtpMapBookConditionCodes</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>NasdaqQuoteResumeChangesStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+   <Parameter>
+      <Name>UqdfSessionClosedQuoteQualifierNormal</Name>
+      <Value>false</Value>
+   </Parameter>
+   <Parameter>
+      <Name>IncludeGroupSymbol</Name>
+      <Value>true</Value>
+   </Parameter>  
+   <Parameter>
+      <Name>SessionStatusCreateField</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>GenerateGroupSymbol</Name>
+      <Value>true</Value>
+   </Parameter> 
+   <Parameter>
+      <Name>NasdaqTradingActionOrigOnParticipants</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>RecordPublisherUseSentinel</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>UqdfOpeningQuoteChangesStatus</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>PublishIndividualRecords</Name>
+      <Value>true</Value>
+   </Parameter>
+
+<!-- EDCP-7885 utp.xml config End -->
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>sleep</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NativeTimeZone</Name>
+      <Value>UTC</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>DefaultTimeZone</Name>
+      <Value>UTC</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishTimeZone</Name>
+      <Value>UTC</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishSymbology</Name>
+      <Value>MNEMONIC</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MessageHandlerName</Name>
+      <Value>nasdaqinet</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqInetProductName</Name>
+      <Value>NasdaqInetText</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishGeneralAdmin</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+      <Value>RecordAttrsOption</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookDecimals</Name>
+      <Value>6</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>moldudp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MulticastProtocol</Name>
+      <Value>MoldUdp64</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterHeartbeatsHavePrevSeqNum</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterCheckEveryMessageInBlock</Name>
+      <Value>true</Value>
+      <Comment>Required as NASDAQ package data differently from their two data centres.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Comment>The Noismc feed does not send overnight test data</Comment>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishMarketOrders</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OptionPublishSymbologyFormat</Name>
+      <Value>%u%p%y%d%s%P%e</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>StrategyLegPublishSymbologyFormat</Name>
+      <Value>%r%t</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>GenerateExplicitQuoteFromBook</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>GenerateImpliedQuoteFromBook</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TradeConditionMapIgnoreUnknownSrcTradeCond</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqMarketStatusSymbol</Name>
+      <Value>MARKET_STATUS</Value>
+   </Parameter>
+<!--- artifact48652- Added May 2, 2013 / DFH-28655 -->
+   <Parameter>
+      <Name>ExtendedDuplicateChecks</Name>
+      <Value>true</Value>
+   </Parameter>
+<!--- END -->
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsFundamental</Value>
+      <Value>FieldAttrsBloomberg</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderListPart</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsTradeOptional</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsFixedIncome</Value>
+      <Value>FieldAttrsOrder</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsReferential</Value>
+      <Value>FieldAttrsFundamental</Value>
+      <Value>FieldAttrsOption</Value>
+      <Value>FieldAttrsStrategy</Value>
+      <Value>FieldAttrsTradeWeb</Value>
+      <Value>FieldAttrsSgx</Value>
+      <Value>FieldAttrsNews</Value>
+      <Value>FieldAttrsCme</Value>
+      <Value>FieldAttrsRfq</Value>
+      <Value>FieldAttrsFund</Value>
+      <Value>FieldAttrsNasdaq</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ParticipantIdMapFuncName</Name>
+      <Value>nasdaqinetPartIdMap</Value>
+      <Comment>Participant ID mapping function. nasdaqinetPartIdMap is default.</Comment>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>UtpConfig</Name>
+      <Parameter>
+         <Name>NormalizeSymbology</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SymbologyMapFuncName</Name>
+         <Value>dotReplacementMap</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransAll</Name>
+         <Value>R </Value>
+      </Parameter>
+      <Parameter>
+         <Name>UtpParticipants</Name>
+         <Comment>List of all UTP Participants.</Comment>
+         <Value>Q</Value>
+         <Value>A</Value>
+         <Value>B</Value>
+         <Value>D</Value>
+         <Value>E</Value>
+         <Value>I</Value>
+         <Value>J</Value>
+         <Value>K</Value>
+         <Value>M</Value>
+         <Value>N</Value>
+         <Value>P</Value>
+         <Value>X</Value>
+         <Value>Y</Value>
+         <Value>Z</Value>
+         <Value>C</Value><!-- SFDCR-1792/EDCP-10938 -->
+         <Value>L</Value>
+         <Value>U</Value><!-- SFDCR-1903/EDCP-11407 -->
+         <Value>H</Value><!-- SFDCR-1922/EDCP-11350 -->
+      </Parameter>
+      <Parameter>
+         <Name>UtpParticipantsUpdateFinancialStatus</Name>
+      </Parameter>
+      <Parameter>
+         <Name>RecHandNasdaqPublishMsgGeneric</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UtpParticipantsShortSaleBidTick</Name>
+         <Comment>The list of participants, that get wShortSaleBidTick sent with them</Comment>
+      </Parameter><!--UseParameterGroup name="NasdaqLineFormat"/-->
+      <Parameter>
+         <Name>NasdaqClearBooksOnWipeout</Name>
+         <Value>false</Value>
+         <Comment>UTP sends zero quotes for securities affected by a quote
+                     wipeout and this allows us to remove the necessary price
+                     levels. Books should not be cleared or marked stale.
+            </Comment>
+      </Parameter>
+      <Parameter>
+         <Name>GroupSymbolAll</Name><!--Value>UTP</Value-->
+      </Parameter>      
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>nasdaqinet_live</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>LIVE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>2000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>30</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransMaxGapSize</Name>
+         <Value>2000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitStartOfDay</Name>
+         <Value>30000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MulticastConnectOnInit</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MoldRetransRetryCount</Name>
+         <Value>5</Value>
+         <Comment>Number of times to attempt a retry.  Zero disables this functionality.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MoldRetransIntervalMsec</Name>
+         <Value>1000</Value>
+         <Comment>Milliseconds to wait after first request before sending a subsequent request.</Comment>
+         <Comment>If multiple responses occur, these are correctly handled (the first is processed, the rest are dropped)</Comment>
+      </Parameter>
+   </DefineParameterGroup>
+   <IncludeFile>nasdaqinet_prod.xml</IncludeFile>
+   <IncludeFile>nasdaqinet_test.xml</IncludeFile>
+   <IncludeFile>nasdaqinet_product_mapping.xml</IncludeFile>
+   <IncludeFile>nasdaqinet_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>nasdaqinet_trade_condition_mapping.xml</IncludeFile>
+   <IncludeFile>productdefs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

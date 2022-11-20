@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+
+
+select 'Title ' || title_id || ' published on ' || pubdate as "biography publication dates" from titles where type = 'biography' and pubdate is not null order by pubdate desc; 

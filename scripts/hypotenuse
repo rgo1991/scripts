@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo -n "Enter the adjacent lenght: "
+read adjacent
+
+echo -n "Enter the opposite lenght: "
+read opposite
+
+osquared=$(($opposite ** 2))
+asquared=$(($adjacent ** 2))
+hsquared=$(($osquered + $asquared))
+hypotenuse=`echo "scale=3;sqrt ($hsquared)" | bc`
+echo "The Hypotenuse is $hypotenuse"

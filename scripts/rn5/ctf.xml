@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for the Comstock Token Format (CTF) feed handler. See the Vela website for more information: https://tradevela.com/client-area-->
+   <!-- Site specific includes -->
+   <IncludeFile>ctf_tport.xml</IncludeFile>
+   <IncludeFile>ctf_hosts.xml</IncludeFile>
+   <!-- END Site specific includes -->
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>CTF</Value>
+   </Parameter>
+<!-- SFDCR-1195 -->
+   <Parameter>
+      <Name>StartOfDayRollIndex</Name>
+      <Value>true</Value>
+   </Parameter>
+<!-- SFDCR-1195 END -->
+<!-- DFH-31041 -->
+   <Parameter>
+      <Name>CtfUnmodifiedFieldList</Name>
+      <Value>wIndexSymbol</Value>
+      <Value>wOrigPartId</Value>
+      <Value>wExchangeId</Value>
+      <Value>wIssueSymbol</Value>
+   </Parameter>
+<!-- DFH-31041 -->
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+<!-- TcpIp/Port and Login -->
+   <DefineParameterGroup>
+      <Name>CtfLoginUatP</Name><!-- Mahwah Sec CSP-->
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>216.221.220.221</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>7031</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginUsername</Name>
+         <Value>Vela_1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginPassword</Name>
+         <Value>B6IyL@p</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>CtfLoginProdP</Name><!-- Mahwah Pri CSP-->
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>216.221.220.221</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>7031</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginUsername</Name>
+         <Value>Vela_2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginPassword</Name>
+         <Value>5riNLw!</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>CtfLoginProdS</Name><!-- Mahwah Secondary CSP -->
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>216.221.220.219</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>7031</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginUsername</Name>
+         <Value>Vela_3</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginPassword</Name>
+         <Value>Fl#Ak2t</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <DefineParameterGroup>
+      <Name>CtfLoginChP</Name><!-- -->
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>216.221.208.196</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>7031</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginUsername</Name>
+         <Value>Vela_5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginPassword</Name>
+         <Value>sT2b!Ni</Value>
+      </Parameter>
+   </DefineParameterGroup>
+<!-- -->   
+   <Parameter>
+      <Name>ExtractHint</Name>
+      <Value>-13</Value>
+      <Comment>Used to identify the feed in the metadata</Comment>
+   </Parameter>
+    
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MdrvPrefix</Name>
+      <Value>CTF</Value>
+      <Comment>For MDRV and MAMA/RV publishing interface</Comment>
+   </Parameter>
+    
+   <!--Parameter>
+      <Name>LbtSource</Name>
+      <Value>CTF</Value>
+      <Comment>For MAMA/LBT publishing interface</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TibSource</Name>
+      <Value>CTF</Value>
+      <Comment>For TIB/SASS publishing interface</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TibSector</Name>
+      <Value>REC</Value>
+      <Comment>For TIB/SASS publishing interface</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TibExchange</Name>
+      <Value>NaE</Value>
+      <Comment>For TIB/SASS publishing interface</Comment>
+   </Parameter-->
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FtRvService</Name>
+      <Value>7701</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_ctf</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>false</Value>
+      <Comment>We think CTF uses native symbology.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>Level1ProductName</Name>
+      <Value>Error_Invalid_Lvl1_EID</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>Level2ProductName</Name>
+      <Value>Error_Invalid_Lvl2_EID</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfEnableNewEidConfigDump</Name>
+      <Value>true</Value>
+      <comment>Auto-generates files containing info on new entitlements when ctf is shut down.</comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfNewEidConfigExtension</Name>
+      <Value>AUTO</Value>
+      <comment>Filename extension we apply to ctf_productsdef.xml and Ctf2WombatEntitlementMap.xml when logging new entitlements</comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfQueryTagBufferSize</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfUseExtendedQueryTags</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfSnapshotOnSubscribe</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfIgnoreCycleMessages</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfSuppressQuotesWithSamePrice</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfSuppressTradeWithNonPrintableExecution</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ConflateExchange</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ConflateInterval</Name>
+      <Value>1000</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LoginWhenToStartHeartBeats</Name>
+      <Value>never</Value>
+      <Comment/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MessageRecoveryFile</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>basic</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsIndex</Value>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsOrder</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsNews</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsComstock</Value>
+      <Value>FieldAttrsReuters</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfSubscribeMode</Name>
+      <Value>exchange</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfSubscribeExchangeCodes</Name>
+      <Value>922</Value>
+      <Comment>We suggest clients always subscribe to 922 as it is the internal pseudo exchange which sends out CSP.STATUS messages. These messages are handled by Feed Handler to determine the Line Status.</Comment>
+      <!--Value>558</Value>
+      <Value>227</Value-->
+	<Value>624</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfDisplayPrecisionFieldCode</Name>
+      <Value>280</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfDefaultDisplayPrecision</Name>
+      <Value>4</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfAlwaysUseDefaultDisplayPrecision</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfAlwaysPublishDisplayPrecision</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfProcessPlattsNews</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfEnableZeroQuotePriceSize</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfEnableSymbologyMapping</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfUseSymbologyICM</Name>
+      <Value>false</Value>
+      <Comment>When set to true, applied the symbology based on three tokens (ISIN/MIC.CODE/ENUM.CURRENCY). If true, ensure CtfUseSymbologyCusip is false. Only use this feature after consulting NYSE Technology Support</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfUseSymbologyCusip</Name>
+      <Value>false</Value>
+      <Comment>When set to true, the cusip will be mapped to wIssueSymbol for instruments which have a cusip. This will allow subscription to cusip. If true, ensure CtfUseSymbologyICM is false.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfCusipPrefix</Name>
+      <Value/>
+      <Comment>This parameter, when used in conjunction with CtfUseSymbologyCusip set to true, will publish the cusip symbol with the prefix value defined. Multiple character string supported, upto maximum supported symbol length. Maximum length of prefix supported is 32 characters.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfSymbolPrefixDelim</Name>
+      <Value>:</Value>
+      <Comment>This parameter only takes one character</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfSymbolSuffixDelim</Name>
+      <Value>-</Value>
+      <Comment>This parameter only takes one character</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfPrefixFilters</Name><!--Value>A</Value-->
+      <Comment>By setting this parameter, the FH filters out the symbols with the configured prefixes. Please refer to CtfSymbolPrefixDelim for prefix delimiter</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfSuffixFilters</Name><!--Value>OTC</Value-->
+      <Comment>By setting this parameter, the FH filters out the symbols with the configured suffixes. Please refer to CtfSymbolSuffixDelim for suffix delimiter</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfMktOrderEuronextSrcIds</Name>
+      <Comment>For special processing of Euronext Market Orders</Comment>
+      <Value>356</Value>
+      <Value>642</Value>
+      <Value>643</Value>
+      <Value>720</Value>
+      <Value>730</Value>
+      <Value>738</Value>
+      <Value>740</Value>
+      <Value>753</Value>
+      <Value>754</Value>
+      <Value>812</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CtfExtraBookProcessingSrcIds</Name>
+      <Comment>For extra processing of orderbook messages</Comment>
+      <Value>812</Value>
+   </Parameter>
+    
+   <Feed>
+      <Name>ctf_interactive</Name>
+      <Parameter>
+         <Name>CtfSubscribeMode</Name>
+         <Value>symbol</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherType</Name>
+         <Value>interactive</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <Parameter>
+         <Name>CtfIsSplitExchange</Name>
+         <Value>false</Value>
+         <Comment>Set to true if the connection requires a split connection.</Comment>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>ctf_p</Name>
+      <Parameter>
+         <Name>ExtractFile</Name>
+         <Value>ctf.play.%Y%m%d</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>sleep</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ctf_nysegif</Name>
+<tny2sffhr22>
+      <UseParameterGroup name="CtfLoginUatP"/>
+</tny2sffhr22>
+<pny2sffhr06a>
+      <UseParameterGroup name="CtfLoginProdP"/>
+</pny2sffhr06a>
+<pny2sffhr06b>
+      <UseParameterGroup name="CtfLoginProdS"/>
+</pny2sffhr06b>
+   </Feed>
+
+   <Feed>
+      <Name>ctf_7033</Name>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>216.221.220.221</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>7033</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>ctf_7022</Name>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>216.221.220.220</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>7022</Value>
+      </Parameter>
+   </Feed>
+
+     <Feed>
+      <Name>ctf_gif</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>      
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>ctf_nysegif</Value>
+      </Parameter>
+<!-- MS-2902 -->
+   <Parameter>
+      <Name>MamaSymbolListResponder</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>PublishAllOnRootSymbol</Name>
+      <Value>false</Value>
+   </Parameter>
+   <!--Parameter>
+      <Name>PublishOriginalMessageType</Name>
+      <Value>true</Value>
+   </Parameter-->
+   <!--Parameter>
+      <Name>IgnoreMessageTypes</Name>
+      <Value>true</Value>
+   </Parameter-->  
+   <Parameter>
+      <Name>IgnoredMessages</Name>
+      <Value>132</Value>
+   </Parameter> 
+   <Parameter>
+      <Name>AlwaysPublishFieldList</Name>
+      <Value>wInstrumentType</Value>
+      <Value>wExchangeId</Value>
+      <Value>wIndexValue</Value>
+      <Value>wDividend</Value>
+   </Parameter>
+<!-- MS-2902 END-->
+      <Parameter>
+        <Name>CtfPublishTradeQuoteAsUpdate</Name>
+        <Value>true</Value>
+      </Parameter>      
+      <!--Parameter>
+        <Name>CtfTradeAlwaysPublishFieldList</Name>
+        <Value>wSrcTime</Value>
+      </Parameter-->      
+      <Parameter>
+         <Name>CtfMaintainIndexCount</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>CtfStripPrefix</Name>
+         <Value>false</Value><!-- set to false to use ctf symbology -->
+      </Parameter>
+      <Parameter>
+         <Name>CtfPublishRecapForSnap</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>CtfPublishRecapForCycle</Name>
+         <Value>false</Value>
+      </Parameter>      
+      <Parameter>
+        <Name>CtfIgnoreCycleMessages</Name>
+        <Value>true</Value>
+    </Parameter>      
+      <Parameter>
+         <Name>MamaPublishFieldIndices</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>CtfSnapshotOnSubscribe</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>CtfSubscribeMode</Name>
+         <Value>exchange</Value>
+      </Parameter>
+      <Parameter>
+         <Name>CtfUsePartIdSuffix</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherType</Name>
+         <Value>symbol</Value>
+      </Parameter>
+     <Parameter>
+         <Name>RecordNotFoundAction</Name>
+         <Value>request</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtGroupName</Name>
+         <Value>FT_ctf_gif</Value>
+      </Parameter>
+      <Parameter>
+        <Name>StatusSymbolFormat</Name>
+        <Value>admin.$c.$f.$h.$t</Value>
+      </Parameter>
+     <Parameter>
+        <Name>PapaStatsPublishTopic</Name>
+        <Value>admin.$c.$f.$h.$t</Value>
+      </Parameter>
+      <!--Parameter>
+        <Name>SuppressTradePublishing</Name>
+        <Value>true</Value>
+      </Parameter-->      
+     <!--Parameter>
+        <Name>RecordRegExpFilter</Name>
+        <Value>\(^[\.922]\)$</Value>
+        <Comment>This will prevent all instances from replying to subscription requests from clients.</Comment>
+     </Parameter>
+     <Parameter>
+       <Name>MamaSubscriberRegExpFilter</Name>
+       <Value>.*(\.(922))$</Value>
+     </Parameter>
+      <Parameter>
+        <Name>CtfSubscriptionStripRegex</Name>
+        <Value>^[fs](.*)$</Value>
+     </Parameter-->
+     <Parameter>
+        <Name>CtfSubscribeExchangeCodes</Name>
+        <Value>624</Value>
+     </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>10.25.151.42/7031</Value>
+      </Parameter>    
+      <!--Parameter>
+         <Name>RecordSymbolFile</Name>
+         <Value>/opt/wombat/log/ctf_gif.sym</Value>
+      </Parameter-->
+   </Feed>
+   <IncludeFile>ctf_fields.xml</IncludeFile>
+   <IncludeFile>ctf_trade_condition_mapping.xml</IncludeFile>
+   <IncludeFile>ctf_exchanges.xml</IncludeFile>
+   <IncludeFile>ctf_composite_map.xml</IncludeFile>
+   <IncludeFile>ctf_consolidated_map.xml</IncludeFile>
+   <IncludeFile>ctf_field_factors.xml</IncludeFile>
+   <IncludeFile>ctf_productdefs.xml</IncludeFile>
+   <!--IncludeFile>productdefs_superfeed.xml</IncludeFile-->
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

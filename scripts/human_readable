@@ -1,0 +1,33 @@
+#!/bin/bash
+
+function usage(){
+
+	echo "Usage: mkfile [ -i infile ] [ -q ] [ -b blocksize ] size[k|m|g] filename "
+	echo "Blocksize is 512 bytes by default"
+	exit 2
+}
+
+function human_readable(){
+	#multiplier value gets changed depending on what letter comes after. eg 10k will change multiplier to 1024 etc.
+
+read $@ 2>/dev/null
+	multiplier=1
+for i in $@;do
+	case $i in
+		*b) multiplier=1;;
+		*k) multiplier=1024;;
+		*m) multiplier=1048576;;
+		*g) multiplier=1073741824;;
+	esac
+
+	#takes the input and strips the letter
+	numeric=`echo $i | tr -d 'k' | tr -d 'm' | tr -d 'g' | tr -d 'b'`
+	#multiplies the input (without the letter) and the new multiplier value.:
+	final=`expr $numeric \* $multiplier`
+	
+#	final=$(($1 * $multiplier))
+	echo $final
+done
+}
+
+human_readable $*

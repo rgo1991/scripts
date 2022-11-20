@@ -1,0 +1,1115 @@
+#!/bin/sh
+
+# Use this file to run interactive console applications which will only terminate with ctrl-c
+
+if [ `hostname -s` == "wtwommnp01" ];
+then
+   echo "!! Cannot run market data checks from wtwommnp01 !!"
+   exit 0
+fi
+
+wombatpath="/opt/wombat/"
+
+cd $wombatpath/apis_ent/client_profiles/
+
+wombatbin="$wombatpath/apis/bin"
+
+echo " "
+echo "      ###################################################"
+echo "                     Subscription Checks"
+echo "      ###################################################"
+echo " "
+
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.ota_ny2
+#. /opt/wombat/scripts/profile.wombat
+# Set WOMBAT_PATH to Cantor
+#export WOMBAT_PATH=/opt/wombat/apis_ent/config/config_cantor_ny2
+##echo $WOMBAT_PATH
+#SFENTS-144 - mamalistenc -S GIDS -s NQGXUS -tport ota_nasdaqgids
+
+commandstorun="mamalistenc -S NYSE -s BAC -tport ota_cta
+mamalistenc -S AMEX -s SPY -tport ota_cta
+mamalistenc -S AMEX -s GLD -tport ota_ctasm
+mamalistenc -S AMEX -s XLV -tport ota_ctasm
+mamalistenc -S AMEX -s SCO -tport ota_ctasm
+mamalistenc -S NYSE -s BAC -tport ota_ctasm
+mamalistenc -S NYSE -s C -tport ota_ctasm
+mamalistenc -S NYSE -s ORCL -tport ota_ctasm
+mamalistenc -S NYSE -s TWTR -tport ota_ctasm
+mamalistenc -S NOTCBB -tport ota_notcbb -s FMCC
+mamalistenc -S OTCMKTS -tport ota_otcrealtimeplus -s ANCUF.IQ
+mamalistenc -S NASDAQ -s AAPL -tport ota_utp
+mamalistenc -S NASDAQ -s AAPL -tport ota_utpsm
+mamalistenc -S NASDAQ -s FB -tport ota_utpsm
+mamalistenc -S NASDAQ -s QQQ -tport ota_utpsm
+mamalistenc -S NASDAQ -s SIRI -tport ota_utpsm
+mamalistenc -S OPRAV5 -tport ota_opra -s AAPL__210917P00500000"
+secondstorun=4
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo "  OTA (Ny2 Entitlements)"
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+
+rm -f $tempdiff
+
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.sig_lasalle_ny2
+#. /opt/wombat/scripts/profile.wombat
+# Set WOMBAT_PATH to Cantor
+#export WOMBAT_PATH=/opt/wombat/apis_ent/config/config_cantor_ny2
+##echo $WOMBAT_PATH
+
+commandstorun="mamalistenc -S NYSE -tport ny2_cta -s IBM
+mamalistenc -S AMEX -tport ny2_cta -s SPY
+mamalistenc -S NASDAQ -s AMZN -tport ny2_utp
+mamalistenc -S NOTCBB -s BLEW -tport ny2_notcbb
+mamalistenc -S OTCMKTS -tport ny2_otcrealtimeplus -s ANCUF.IQ
+mamalistenc -S OTCMKTSG -tport ny2_otcg -s FNMA.IQ
+mamalistenc -S NASDAQL2 -s AAPL.BBO -tport ny2_nasdaql2"
+secondstorun=4
+
+#mamalistenc  -S NYSEALERTS -tport ny2_nysealerts -s BAC.ALERTS - alerts decommed
+#mamalistenc  -S AMEXALERTS -tport ny2_amexalerts -s SPY.ALERTS
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo "  SIG LaSalle (Ny2 Entitlements)"
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+rm -f $tempdiff
+
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.sig_ny4
+#. /opt/wombat/scripts/profile.wombat
+# Set WOMBAT_PATH to Cantor
+#export WOMBAT_PATH=/opt/wombat/apis_ent/config/config_cantor_ny2
+##echo $WOMBAT_PATH
+
+commandstorun="mamalistenc -S NYSE -tport ny2_cta -s IBM
+mamalistenc -S AMEX -tport ny2_cta -s SPY
+mamalistenc -S NASDAQ -s AMZN -tport ny2_utp
+mamalistenc -S NOTCBB -s BLEW -tport ny2_notcbb
+mamalistenc -S OTCMKTS -tport ny2_otcrealtimeplus -s ANCUF.IQ
+mamalistenc -S NASDAQL2 -s AAPL.BBO -tport ny2_nasdaql2"
+secondstorun=4
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo "  SIG NY4 (Ny2 Entitlements)"
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+
+rm -f $tempdiff
+
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.etrade_ny2
+#. /opt/wombat/scripts/profile.wombat
+# Set WOMBAT_PATH to Cantor
+#export WOMBAT_PATH=/opt/wombat/apis_ent/config/config_cantor_ny2
+##echo $WOMBAT_PATH
+
+commandstorun="mamalistenc -S CBOECSM -tport etrade_cboecsm -s VXZ20
+mamalistenc -S CMEMDP -tport etrade_cmemdp -s GEZ0"
+
+
+# SFENTS-191 - removed: mamalistenc -S CEF -tport etrade_cefeurex -s FDAX_SEP17"
+# SFENTS-191 removed: mamalistenc -S CEF -tport etrade_cefeurex -s FDAX_SEP18
+# SFENTS-211 added COMEX: mamalistenc -S CMEMDP -tport etrade_cmemdp -s GCZ8
+secondstorun=4
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo "  ETRADE - CFE, Cme Eurex (NY2 Entitlements)"
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+
+rm -f $tempdiff
+
+
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.fixnetix_ny2
+#echo $WOMBAT_PATH
+
+commandstorun="mamalistenc -S NYSE -s TWTR -tport ny2_cta"
+secondstorun=4
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo "  Fixnetix  (Ny2 Entitlements)"
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+
+rm -f $tempdiff
+
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.fixnetix_sb_ny2
+#echo $WOMBAT_PATH
+
+commandstorun="mamalistenc -S NYSE -s TWTR -tport ny2_cta
+mamalistenc -S NASDAQ -s AAPL -tport ny2_utp"
+secondstorun=4
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo "  Fixnetix strdbank Ny2 Entitlements "
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+
+rm -f $tempdiff
+
+
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.larrainvial_ny2
+##echo $WOMBAT_PATH
+
+commandstorun="mamalistenc -S AMEX -tport larrainvial_cta -s SPY
+mamalistenc -S NYSE -s TWTR -tport larrainvial_cta"
+secondstorun=4
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo "  LarrainVial Ny2 Entitlements "
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+
+rm -f $tempdiff
+
+###########
+# SFENTS-127:Client Name: Aerocraft LTD
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.aero_ny2
+#echo $WOMBAT_PATH
+
+commandstorun="mamalistenc -S DEDGE -tport directedge -s bAAPL.EDGX -s bAAPL.EDGA
+mamalistenc -S BXITCH -tport bxitch -s bFB.BX -s FB.BX
+mamalistenc -S BATS -tport bats -s bAAPL.BATS
+mamalistenc -S BATSY -tport batsy -s bFB.BATSY
+mamalistenc -S ORDER -s MSFT.NSDQ -tport tvitch"
+
+secondstorun=4
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo "  Aerocraft NY2 Entitlements "
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+
+rm -f $tempdiff
+
+###########
+# SFENTS-123: XIGNITE new CLIENT/ENTS
+# SFENTS-210 - icemdfmceu removed Oct 23 2018
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.xignite_ny2
+#echo $WOMBAT_PATH
+
+#mamalistenc -S CEF -tport cefeurex -s FDAX_MAR20
+#mamalistenc -S OPTIQDERIV -tport xlif -s GIAXF000000000N -s FCEZ9
+#mamalistenc -S CMEMDP -tport cmemdp -s CLM0
+#mamalistenc -S NORDICDERIVITCH -tport nordicderivitch -s OMXS30FUU0_C"
+
+
+commandstorun="mamalistenc -S ICEMDFMC -tport ice -s 'G   FMH0021!.IR'
+mamalistenc -S HSVF -tport hsvf -s BAXZ9.HSVF
+mamalistenc -S CBOECSM -tport cboecsm -s VXJ21
+mamalistenc -S OPRAV5 -tport opracf -s AAPL__210917P00500000
+mamalistenc -S CMEMDP -tport cmemdp -s CLN1
+mamalistenc -S CMEMDP -tport cmemdp -s GEZ0"
+
+secondstorun=4
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo "  XIGNITE NY2 Entitlements "
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+
+rm -f $tempdiff
+
+###########
+# SFENTS-195
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.stifel_ny2
+#echo $WOMBAT_PATH
+
+commandstorun="mamalistenc -S NYSE -tport cta -s AIG
+mamalistenc -S AMEX -tport cta -s SPY
+mamalistenc -S INDEXCTA -tport cta_index -s AADR.IV -s CLIX.IV
+mamalistenc -S NASDAQ -s AAPL -tport utp
+mamalistenc -S TSXL1 -tport tsxl1 -s TECK/B -s WEED
+mamalistenc -S CMEMDPDOW -s SP500 -tport cmemdp_split"
+
+secondstorun=4
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo " Stifel NY2 Entitlements "
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+
+rm -f $tempdiff
+
+###########
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.striketech_ny2
+#echo $WOMBAT_PATH
+
+#mamalistenc -S CMEMDP -tport cmemdp -s 6EK0
+#mamalistenc -S OPTIQDERIV -tport xlif -s FCEZ9
+#mamalistenc -S ORDER -tport tvitch -s MSFT.NSDQ
+#mamalistenc -S ORDER -tport tvitch -s bAAPL.NSDQ -s bMSFT.NSDQ
+#mamalistenc -S RUSSELLTICK -tport russelltickxdp -s RAV -s RUXNGEOE
+#mamalistenc -S CMEMDP -tport cmemdp -s ZTM0
+#mamalistenc -S GIF -tport gif -s ICEJX -s ICELX
+
+commandstorun="mamalistenc -S NYSE -tport cta -s AIG
+mamalistenc -S AMEX -tport cta -s SPY
+mamalistenc -S INDEXCTA -tport cta_index -s AADR.IV -s CLIX.IV
+mamalistenc -S NASDAQ -s AAPL -tport utp
+mamalistenc -S CMEMDP -tport cmemdp -s 6EZ1
+mamalistenc -S CMEMDP -tport cmemdp -s GEZ0
+mamalistenc -S CMEMDPDOW -tport cmemdp -s SP500
+mamalistenc -S CBOEMDE -tport mde -s OEX
+mamalistenc -S ICEMDFMC -tport ice -s 'BRN FMH0021!.IR'
+mamalistenc -S ICEMDFMCEU -tport icemdfmceu -s ZU20.IR
+mamalistenc -S GIDS -s SX -tport nasdaqgids
+mamalistenc -S TSXL1 -tport tsxl1 -s TECK/B -s WEED
+mamalistenc -S BITGTP -tport bitmta -s IT0003132476.EUR.MTAA
+mamalistenc -S OPTIQ -tport optiq -s FR0000031775.EUR.XPAR
+mamalistenc -S XLON -tport lseitch -s GB0002875804.GBX.XLON
+mamalistenc -S SAXESSITCH -tport saxessitch -s SE0000108656.SEK.XSTO -s FI0009000681.EUR.XHEL
+mamalistenc -S SWXMDI -tport swx -s CH0011075394.CHF.XSWX
+mamalistenc -S XETRAULTRA -tport xetraultra -s DE0005140008.EUR.XETR"
+
+#mamalistenc -S NOTCBB -tport notcbb -s FNMA -s TCEHY
+#mamalistenc -S CBOECSM -tport cboecsm -s VXG20
+#mamalistenc -S BME -tport bme -s PITXEU2642J19102
+
+secondstorun=4
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo " Strike Tech NY2 Entitlements "
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+
+rm -f $tempdiff
+
+###########
+# SFENTS-194
+# Import entitled profile
+#. /opt/wombat/apis_ent/client_profiles/profile.eckhardt_ny2
+#echo $WOMBAT_PATH
+# mamacache_sfdeu_cefeurex_can ECKHARDT-11
+#mamalistenc -S CEF -tport cefeurex -s FGBL_MAR20
+#mamalistenc -S CEF -tport cefeurex -s FDAX_MAR20
+
+#commandstorun="mamalistenc -S CBOECSM -tport cboecsm -s XBTM19
+#mamalistenc -S CMEMDP -tport cmemdp_split -s 6EH0
+#mamalistenc -S CMEMDP -tport cmemdp_split -s ZTH0
+#mamalistenc -S CMEMDP -tport cmemdp_split -s GCH0
+#mamalistenc -S CMEMDP -tport cmemdp_split -s CLH0
+#mamalistenc -S ICEMDFMC -tport ice -s 'BRN FMZ0020!.IR'
+#mamalistenc -S ICEMDFMCEU -tport icemdfmceu -s ZU20.IR
+#mamalistenc -S HSVF -tport hsvf -s BAXZ9.HSVF
+#mamalistenc -S OPTIQDERIV -tport xlif -s FCEZ9 -s AAIX825000 -s AXFZ9"
+
+#secondstorun=4
+
+#if [ -x /bin/mktemp ]; then
+#    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+#else
+#    tempdiff=`date '+%H%M%S'`
+#    tempdiff="/tmp/check_tmp.${tempdiff}"
+#    touch $tempdiff
+#    chmod 600 $tempdiff
+#fi
+#echo "##############################################################################"
+#echo " Eckhardt NY2 Entitlements "
+#echo "##############################################################################"
+#echo ""
+#
+#echo -e "$commandstorun" | while read command; do
+#        echo "" > $tempdiff
+#        formattedCommand="$command"
+#
+#        $formattedCommand &>$tempdiff &
+#        myPID=$!
+#        sleep $secondstorun
+#        kill ${myPID}
+#        count=`cat $tempdiff | grep "Status OK" | wc -l`
+#        if [ "$count" \> 0 ]; then
+#                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+#        else
+#                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+#        fi
+#done 2> /dev/null
+#
+#echo ""
+#
+#rm -f $tempdiff
+
+###########
+# SFENTS-221
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.laurioncapital_ny2
+#echo $WOMBAT_PATH
+commandstorun="mamalistenc -S NYSE -tport cta -s AIG
+mamalistenc -S AMEX -tport cta -s SPY
+mamalistenc -S INDEXCTA -tport cta_index -s CLIX.IV
+mamalistenc -S NASDAQ -tport utp -s AAPL
+mamalistenc -S CBOECSM -tport cboecsm -s VXG21
+mamalistenc -S ORDER -tport tvitch -s bAAPL.NSDQ -s bMSFT.NSDQ
+mamalistenc -S NYSEOI -s BAC.OI -tport nyseoism"
+
+secondstorun=4
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo " Laurion Capital NY2 Entitlements "
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+
+rm -f $tempdiff
+
+###########
+# SFENTS-212
+# Import entitled profile
+#. /opt/wombat/apis_ent/client_profiles/profile.statestreet_ny2
+#echo $WOMBAT_PATH
+#commandstorun="mamalistenc -S NYSE -tport cta -s AIG
+#mamalistenc -S AMEX -tport cta -s SPY
+#mamalistenc -S INDEXCTA -tport cta_index -s CLIX.IV
+#mamalistenc -S NASDAQ -tport utp -s AAPL"
+
+#secondstorun=4
+
+#if [ -x /bin/mktemp ]; then
+#    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+#else
+#    tempdiff=`date '+%H%M%S'`
+#    tempdiff="/tmp/check_tmp.${tempdiff}"
+#    touch $tempdiff
+#   chmod 600 $tempdiff
+#fi
+#echo "##############################################################################"
+#echo " State Street Bank NY2 Entitlements "
+#echo "##############################################################################"
+#echo ""
+#
+#echo -e "$commandstorun" | while read command; do
+#        echo "" > $tempdiff
+#        formattedCommand="$command"
+#
+#       $formattedCommand &>$tempdiff &
+#        myPID=$!
+#        sleep $secondstorun
+#        kill ${myPID}
+#        count=`cat $tempdiff | grep "Status OK" | wc -l`
+#        if [ "$count" \> 0 ]; then
+#                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+#        else
+#                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+#        fi
+#done 2> /dev/null
+#
+#echo ""
+#
+#rm -f $tempdiff
+
+###########
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.quotemedia_ny2
+#echo $WOMBAT_PATH
+#mamalistenc -S CMEMDP -tport cmemdp -s ZTM0
+#mamalistenc -S GIF -tport gif -s ICEJX -s ICELX
+
+commandstorun="mamalistenc -S NASDAQ -s AAPL -tport utp
+mamalistenc -S CBOEMDE -tport mde -s OEX
+mamalistenc -S OPRAV5 -tport opracf -s SPY___231215P00590000
+mamalistenc -S MFDS -tport mfds -s ZNAVAX -s AFAXX
+mamalistenc -S ORDER -tport tvitch -s MSFT.NSDQ
+mamalistenc -S ORDER -tport tvitch -s bAAPL.NSDQ -s bMSFT.NSDQ
+mamalistenc -S GIDS -s SX -tport nasdaqgids
+mamalistenc -S NASDAQL2 -tport nasdaql2 -s AAPL.BBO
+mamalistenc -S NASDAQBBO -tport nasdaqbbo -s SPY.BBO
+mamalistenc -S NASDAQLS -tport nasdaqls -s TWTR.TRD
+mamalistenc -S IEX -tport iex -s BAC -s EAGL
+mamalistenc -S IEXDEEP -tport iexdeep -s BAC -s bBAC
+mamalistenc -S NYSE -tport cta -s AIG
+mamalistenc -S AMEX -tport cta -s SPY
+mamalistenc -S INDEXCTA -tport cta_index -s AADR.IV -s CLIX.IV
+mamalistenc -S CMEMDP -tport cmemdp -s ESZ1
+mamalistenc -S CMEMDP -tport cmemdp -s GEZ0
+mamalistenc -S CMEMDPDOW -tport cmemdpdow -s SP500
+mamalistenc -S OTCMKTS -tport otcrealtimeplus -s FNMA.IQ -s GUYFF.IQ -s bFNMA.IQ -s bGUYFF.IQ
+mamalistenc -S NOTCBB -tport notcbb -s FNMA -s TCEHY
+mamalistenc -S RUSSELLTICK -tport russelltickxdp -s RAV -s RUXNGEOE
+mamalistenc -S IEX -s BAC -tport iex
+mamalistenc -S IEXDEEP -s BAC -s bBAC -tport iexdeep
+mamalistenc -S CBOEONE -tport cboeone -s SPY.CBOE"
+
+secondstorun=4
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo " Quote Media NY2 Entitlements "
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+
+rm -f $tempdiff
+
+###########
+# SFENTS-164
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.tdsec_ny2
+#echo $WOMBAT_PATH
+
+commandstorun="mamalistenc -S NYSE -tport cta -s AIG
+mamalistenc -S AMEX -tport cta -s SPY
+mamalistenc -S INDEXCTA -tport cta_index -s AADR.IV -s CLIX.IV
+mamalistenc -S NASDAQ -s AAPL -tport utp
+mamalistenc -S OPRAV5 -tport opracf -s AAPL__210917P00500000"
+
+secondstorun=4
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo " TDSEC NY2 Entitlements "
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+
+rm -f $tempdiff
+
+
+###########
+# VELAENTS-264
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.numerix_ny2
+#echo $WOMBAT_PATH
+
+commandstorun="mamalistenc -S NYSE -tport cta -s AIG
+mamalistenc -S AMEX -tport cta -s SPY
+mamalistenc -S NASDAQ -s AAPL -tport utp"
+
+secondstorun=4
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo " NUMERIXS NY2 Entitlements "
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+rm -f $tempdiff
+
+###########
+# VELAENTS-272
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.globsvs_ny2
+#echo $WOMBAT_PATH
+
+commandstorun="mamalistenc -S NYSE -tport cta -s AIG
+mamalistenc -S AMEX -tport cta -s SPY
+mamalistenc -S NASDAQ -s AAPL -tport utp
+mamalistenc -S BATS -tport bats -s bMSFT.BATS
+mamalistenc -S BATSY -tport batsy -s bMSFT.BATSY
+mamalistenc -S DEDGE -tport dedge -s bAAPL.EDGX -s bBAC.EDGA
+mamalistenc -S OPENBOOK -s bAA -tport openbook
+mamalistenc -S ORDER -s bMSFT.NSDQ -s bAAPL.NSDQ -tport tvitch
+mamalistenc -S OTCMKTSG -tport otcg -s ANCUF.IQ
+mamalistenc -S ARCA -tport arcabook -s bBAC.ARCA
+mamalistenc -S NYSEOI -tport nyseoism -s BAC.OI -s SPY.OI
+mamalistenc -S IEXDEEP -s bBAC -tport iexdeep"
+
+secondstorun=4
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo " Global Services NY2 Entitlements "
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+rm -f $tempdiff
+
+###########
+#VELAENTS-245
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.tda
+#echo $WOMBAT_PATH
+
+commandstorun="mamalistenc -S OPRAV5 -s AAPL__210917P00500000 -tport opracf_del"
+
+secondstorun=4
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo " TDAME NY2 Entitlements "
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+rm -f $tempdiff
+
+###########
+# VELAENTS-302
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.intrinio
+#echo $WOMBAT_PATH
+
+commandstorun="mamalistenc -S IEX -tport iex -s AAPL"
+
+secondstorun=4
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo " Intrinio NY2 Entitlements "
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+rm -f $tempdiff
+
+###########
+# VELAENTS-307
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.fxcm_ny2
+#echo $WOMBAT_PATH
+
+commandstorun="mamalistenc -S ICEMDFMCEU -tport icemdfmceu -s CH21.IR
+mamalistenc -S CMEMDP -tport cmemdp -s CLN1
+mamalistenc -S OPTIQDERIV -tport xlif -s FCEF1
+mamalistenc -S HKFEOMD -tport hkfeomd -s HHIM1
+mamalistenc -S BME -tport bme -s FIBXZ0
+mamalistenc -S CEF -tport cefeurex -s FDAX_JUN21
+mamalistenc -S CBOECSM -tport cboecsm -s VAJ21"
+
+secondstorun=4
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo " FXCM GLOBAL SERVICES NY2 Entitlements "
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+rm -f $tempdiff
+
+###########
+# VELAENTS-323
+# Import entitled profile
+. /opt/wombat/apis_ent/client_profiles/profile.sber_ny2
+#echo $WOMBAT_PATH
+
+commandstorun="mamalistenc -S NASDAQLS -tport nasdaqls -s TWTR.TRD
+mamalistenc -S NASDAQBBO -tport nasdaqbbo -s SPY.BBO"
+
+secondstorun=4
+
+if [ -x /bin/mktemp ]; then
+    tempdiff=`/bin/mktemp /tmp/check_tmp.XXXXXXXXXX`
+else
+    tempdiff=`date '+%H%M%S'`
+    tempdiff="/tmp/check_tmp.${tempdiff}"
+    touch $tempdiff
+    chmod 600 $tempdiff
+fi
+echo "##############################################################################"
+echo " CJSC Sberbank CIB NY2 Entitlements "
+echo "##############################################################################"
+echo ""
+
+echo -e "$commandstorun" | while read command; do
+        echo "" > $tempdiff
+        formattedCommand="$command"
+
+        $formattedCommand &>$tempdiff &
+        myPID=$!
+        sleep $secondstorun
+        kill ${myPID}
+        count=`cat $tempdiff | grep "Status OK" | wc -l`
+        if [ "$count" \> 0 ]; then
+                echo -e "$formattedCommand: INFO-($count)Status OK Messages"
+        else
+                echo -e "$formattedCommand: *******CRITICAL******* -(0)Status OK Messages"
+        fi
+done 2> /dev/null
+
+echo ""
+rm -f $tempdiff
+psmamalistenc=`ps -ef|grep mamalistenc|grep -v grep|wc -l`
+if [ $psmamalistenc -ge 1 ]; then
+   killall mamalistenc
+else
+   exit 0
+fi
+

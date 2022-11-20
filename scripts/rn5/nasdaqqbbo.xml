@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Site specific includes -->
+   <IncludeFile>nasdaqqbbo_tport.xml</IncludeFile>
+   <IncludeFile>nasdaqqbbo_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>NASDAQBBO</Value>
+   </Parameter>
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+<!-- EDCP5601: START -->
+
+   <DefineParameterGroup>
+      <Name>NasdaqqbboConfig</Name>
+      <Parameter>
+         <Name>FeedVersion</Name>
+         <Value>2.0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>MoldUdp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MulticastProtocol</Name>
+         <Value>moldudp64</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NasdaqFeedFormat</Name>
+         <Value>qbbo</Value>
+         <Comment>Please do not change this without consulting Wombat Support</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterCheckEveryMessageInBlock</Name>
+         <Value>true</Value>
+         <Comment>Required as NASDAQ package data differently from their two data centres.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>SleepAtEndOfTransmission</Name>
+         <Value>true</Value>
+         <Comment>The TotalView Feed does not send overnight test data</Comment>
+      </Parameter>
+   </DefineParameterGroup>
+
+<!-- EDCP5601: END -->
+      
+   <!--Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>MoldUdp</Value>
+   </Parameter>
+   <Parameter>
+      <Name>LineFilterCheckEveryMessageInBlock</Name>
+      <Value>true</Value>
+   </Parameter-->
+   <Parameter>
+      <Name>LineFilterGapLimitSize</Name>
+      <Value>2000</Value>
+   </Parameter>
+   <Parameter>
+      <Name>LineFilterGapLimitTime</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqQuoteResumeChangesStatus</Name>
+      <Value>true</Value><!-- SFD-1809 -->
+   </Parameter>
+
+<!-- SFD-1809 -->
+
+   <Parameter>
+      <Name>NasdaqPublishRegShoOnPart</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>NasdaqHandleEmergencySessionStatus</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UqdfZeroQuoteChangesSecurityStatus</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>HandleSessionStatus</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SessionStatusCreateField</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishSecurityStatusIndividual</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>CheckSecurityStatusModified</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UtpMapBookConditionCodes</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>NasdaqTradingActionOrigOnParticipants</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>NasdaqTradingActionUpdatesSecurityStatusOnParticipants</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UqdfClosedQuoteChangesSecurityStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UqdfSessionClosedQuoteQualiferNormal</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UqdfNormalQuoteChangesStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UqdfOpeningQuoteChangesStatus</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UqdfSessionClosedQuoteQualifierNormal</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishIndividualRecords</Name>
+      <Value>true</Value>
+   </Parameter>
+
+      <!--Parameter>
+         <Name>SessionStatusDoNotModifyHaltedSymbols</Name>
+         <Value>true</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>SessionStatusOverrideHalted</Name>
+         <Value>false</Value>
+      </Parameter-->
+<!-- SFD-1809 End -->
+   <!--Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>true</Value>
+   </Parameter-->
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>itch2streetFullMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+   <Parameter>
+      <Name>TopOfBookDecimals</Name>
+      <Value>4</Value>
+   </Parameter>
+  <!-- SFDCR-421  --> 
+   <Parameter>
+      <Name>OrderBookData</Name><!-- SFDCR-1822 removing books, not used in superbook anymore-->
+      <Value>false</Value>
+   </Parameter>
+  <!-- SFDCR-421  --> 
+   <Parameter>
+      <Name>PublishOrderBooks</Name><!-- SFDCR-1822 removing books, not used in superbook anymore-->
+      <Value>false</Value>
+   </Parameter>
+   <Parameter>
+      <Name>ClearBooksAtEndOfDay</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqQbboProductName</Name>
+      <Value>NasdaqQbbo</Value>
+   </Parameter>
+   <Parameter>
+      <Name>NasdaqQbboProductNameOrderBook</Name>
+      <Value>NasdaqQbboBook</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>NasdaqTvbinProductNameTop</Name>
+      <Value>NasdaqQbbo</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderListPart</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsNasdaq</Value><!-- Added per EDCP5601-->
+      <Value>FieldAttrsReferential</Value>
+      <Value>FieldAttrsOrderImbalance</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>Retransmission_TapeA</Name>
+      <Parameter>
+         <Name>LineFilterRetransMaxGapSize</Name>
+         <Value>1000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterLogRetrans</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MoldRetransRetryCount</Name>
+         <Value>10</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MoldRetransIntervalMsec</Name>
+         <Value>100</Value>
+      </Parameter>
+
+      <ParamGroup>
+         <Name>RetransRequestor</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>206.200.127.0</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>18100</Value>
+         </Parameter>
+         <Parameter>
+            <Name>LocalHost</Name>
+            <Value/>
+         </Parameter>
+         <Parameter>
+            <Name>LocalService</Name>
+            <Value>50000</Value>
+         </Parameter>
+      </ParamGroup>
+
+      <ParamGroup>
+         <Name>RetransRequestor</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>206.200.92.62</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>18100</Value>
+         </Parameter>
+         <Parameter>
+            <Name>LocalHost</Name>
+            <Value/>
+         </Parameter>
+         <Parameter>
+            <Name>LocalService</Name>
+            <Value>50001</Value>
+         </Parameter>
+      </ParamGroup>
+
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>Retransmission_TapeB</Name>
+      <Parameter>
+         <Name>LineFilterRetransMaxGapSize</Name>
+         <Value>1000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterLogRetrans</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MoldRetransRetryCount</Name>
+         <Value>10</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MoldRetransIntervalMsec</Name>
+         <Value>100</Value>
+      </Parameter>
+      <ParamGroup>
+         <Name>RetransRequestor</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>206.200.127.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>18101</Value>
+         </Parameter>
+         <Parameter>
+            <Name>LocalHost</Name>
+            <Value/>
+         </Parameter>
+         <Parameter>
+            <Name>LocalService</Name>
+            <Value>50002</Value>
+         </Parameter>
+      </ParamGroup>
+
+      <ParamGroup>
+         <Name>RetransRequestor</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>206.200.92.63</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>18101</Value>
+         </Parameter>
+         <Parameter>
+            <Name>LocalHost</Name>
+            <Value/>
+         </Parameter>
+         <Parameter>
+            <Name>LocalService</Name>
+            <Value>50003</Value>
+         </Parameter>
+      </ParamGroup>
+
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>Retransmission_TapeC</Name>
+      <Parameter>
+         <Name>LineFilterRetransMaxGapSize</Name>
+         <Value>1000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterLogRetrans</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MoldRetransRetryCount</Name>
+         <Value>10</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MoldRetransIntervalMsec</Name>
+         <Value>100</Value>
+      </Parameter>
+      <ParamGroup>
+         <Name>RetransRequestor</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>206.200.127.2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>18102</Value>
+         </Parameter>
+         <Parameter>
+            <Name>LocalHost</Name>
+            <Value/>
+         </Parameter>
+         <Parameter>
+            <Name>LocalService</Name>
+            <Value>50004</Value>
+         </Parameter>
+      </ParamGroup>
+      <ParamGroup>
+         <Name>RetransRequestor</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>206.200.92.64</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>18102</Value>
+         </Parameter>
+         <Parameter>
+            <Name>LocalHost</Name>
+            <Value/>
+         </Parameter>
+         <Parameter>
+            <Name>LocalService</Name>
+            <Value>50005</Value>
+         </Parameter>
+      </ParamGroup>
+
+   </DefineParameterGroup>
+    
+   <Feed>
+      <Name>nasdaqqbbo</Name>
+      <UseParameterGroup name="NasdaqqbboConfig"/>
+      <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>nasdaqqbbo_tapeA</Value>
+         <Value>nasdaqqbbo_tapeB</Value>
+         <Value>nasdaqqbbo_tapeC</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/nasdaqqbbo.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nasdaqqbbo_tapeA</Name>
+      <UseParameterGroup name="NasdaqqbboConfig"/>
+      <UseParameterGroup name="Retransmission_TapeA"/>
+         <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.54.12.64/18000</Value>
+         <Value>default2/233.187.20.13/18000</Value><!-- EDCP-7256 DR Data Center Migration to Chicago -->
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.54.12.64</Value>
+         <Value>233.187.20.13</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/nasdaqqbbo_tapeA.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nasdaqqbbo_tapeB</Name>
+      <UseParameterGroup name="NasdaqqbboConfig"/>
+      <UseParameterGroup name="Retransmission_TapeB"/>
+         <UseParameterGroup name="WmwTransportPropertiesVector2NSD1"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.54.12.64/18001</Value>
+         <Value>default2/233.187.20.13/18001</Value><!-- EDCP-7256 DR Data Center Migration to Chicago -->
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.54.12.64</Value>
+         <Value>233.187.20.13</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/nasdaqqbbo_tapeB.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nasdaqqbbo_tapeC</Name>
+      <UseParameterGroup name="NasdaqqbboConfig"/>
+      <UseParameterGroup name="Retransmission_TapeC"/>
+         <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.54.12.64/18002</Value>
+         <Value>default2/233.187.20.13/18002</Value><!-- EDCP-7256 DR Data Center Migration to Chicago -->
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.54.12.64</Value>
+         <Value>233.187.20.13</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/nasdaqqbbo_tapeC.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

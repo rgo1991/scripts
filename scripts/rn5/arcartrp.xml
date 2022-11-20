@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+   
+   <!-- Site specific includes -->
+   <IncludeFile>arcartrp_tport.xml</IncludeFile>
+   <IncludeFile>arcartrp_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>ARCARTRP</Value>
+   </Parameter>
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+   <Parameter>
+      <Name>TcpAnyFailOk</Name>
+      <Value>true</Value>
+   </Parameter>
+ 
+   <Parameter>
+      <Name>LineFilterRetransActive</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterRetransMaxGapSize</Name>
+      <Value>500</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>pdp2</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ArcaRtrpProductName</Name>
+      <Value>ArcaRtrp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <!-- SymbologyMapFuncName is now set per SubFeed -->
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>ArcaRtrpTcpConfig</Name>
+      <Parameter>
+         <Name>TcpConnectedMeansLineUp</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MessageRecoveryFile</Name>
+         <Value/>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <Feed>
+      <Name>arcartrp</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector1NSD2"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>arcartrp_listed</Value>
+         <Value>arcartrp_otc</Value>
+         <Value>arcartrp_etf</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>arcartrp_listed</Name>
+      <Comment>ArcaRtrp A through Z for Listed Securities</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.1.2.48/17061</Value>
+         <Value>default1/224.1.2.54/17073/monitorOff</Value>
+         <Value>default2/224.1.2.64/18061</Value>
+         <Value>default2/224.1.2.70/18073/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.1.2.48</Value>
+         <Value>224.1.2.54</Value>
+         <Value>224.1.2.64</Value>
+         <Value>224.1.2.70</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Type</Name>
+         <Value>PDP</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.74.165</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>52431</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.74.165</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>52531</Value>
+         </Parameter>
+      </ParamGroup>
+      <Parameter>
+         <Name>SymbologyMapFuncName</Name>
+         <Value>comstock2streetFullMap</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>arcartrp_test_listed</Name>
+      <Comment>ArcaRtrp A through z test for Listed Securites lines</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.1.2.76/10303</Value>
+         <Value>default1/224.1.2.76/10319/monitorOff</Value>
+         <Value>default2/224.1.2.77/10403</Value>
+         <Value>default2/224.1.2.77/10419/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.1.2.76</Value>
+         <Value>224.1.2.77</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Type</Name>
+         <Value>PDP</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address for test lines</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.74.165</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>52431</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address for test lines</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.74.165</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>52531</Value>
+         </Parameter>
+      </ParamGroup>
+      <Parameter>
+         <Name>SymbologyMapFuncName</Name>
+         <Value>comstock2streetFullMap</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>arcartrp_otc</Name>
+      <Comment>ArcaRtrp A through Z for OTC Securities</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.1.2.49/17063</Value>
+         <Value>default1/224.1.2.55/17075/monitorOff</Value>
+         <Value>default2/224.1.2.65/18063</Value>
+         <Value>default2/224.1.2.71/18075/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.1.2.49</Value>
+         <Value>224.1.2.55</Value>
+         <Value>224.1.2.65</Value>
+         <Value>224.1.2.71</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Type</Name>
+         <Value>PDP</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.74.165</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>52433</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.74.165</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>52533</Value>
+         </Parameter>
+      </ParamGroup>
+      <Parameter>
+         <Name>SymbologyMapFuncName</Name>
+         <Value>itch2streetFullMap</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>arcartrp_test_otc</Name>
+      <Comment>ArcaRtrp A through z test for OTC Securites lines</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.1.2.76/10305</Value>
+         <Value>default1/224.1.2.76/10321/monitorOff</Value>
+         <Value>default2/224.1.2.77/10405</Value>
+         <Value>default2/224.1.2.77/10421/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.1.2.76</Value>
+         <Value>224.1.2.77</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Type</Name>
+         <Value>PDP</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address for test lines</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.74.165</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>52433</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address for test lines</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.74.165</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>52533</Value>
+         </Parameter>
+      </ParamGroup>
+      <Parameter>
+         <Name>SymbologyMapFuncName</Name>
+         <Value>itch2streetFullMap</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>arcartrp_etf</Name>
+      <Comment>ArcaRtrp A through Z for AMEX and ETF Securities</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.1.2.50/17065</Value>
+         <Value>default1/224.1.2.56/17077/monitorOff</Value>
+         <Value>default2/224.1.2.66/18065</Value>
+         <Value>default2/224.1.2.72/18077/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.1.2.50</Value>
+         <Value>224.1.2.56</Value>
+         <Value>224.1.2.66</Value>
+         <Value>224.1.2.72</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Type</Name>
+         <Value>PDP</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.74.165</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>52434</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.74.165</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>52535</Value>
+         </Parameter>
+      </ParamGroup>
+      <Parameter>
+         <Name>SymbologyMapFuncName</Name>
+         <Value>itch2streetFullMap</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>arcartrp_test_etf</Name>
+      <Comment>ArcaRtrp A through z test for AMEX and ETF Securites lines</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.1.2.76/10307</Value>
+         <Value>default1/224.1.2.76/10323/monitorOff</Value>
+         <Value>default2/224.1.2.77/10407</Value>
+         <Value>default2/224.1.2.77/10423/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.1.2.76</Value>
+         <Value>224.1.2.77</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Type</Name>
+         <Value>PDP</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address for test lines</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.74.165</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>52435</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address for test lines</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>DestinationHost</Name>
+            <Value>159.125.74.165</Value>
+         </Parameter>
+         <Parameter>
+            <Name>DestinationService</Name>
+            <Value>52535</Value>
+         </Parameter>
+      </ParamGroup>
+      <Parameter>
+         <Name>SymbologyMapFuncName</Name>
+         <Value>itch2streetFullMap</Value>
+      </Parameter>
+   </Feed>
+    
+   <DefineParameterGroup>
+      <Name>arcartrp_prim_tcp</Name>
+      <Comment>Primary ARCA ArcaRtrp Feeds (Original and Retransmissions)</Comment>
+      <Comment>Primary ARCA ArcaRtrp Feed</Comment>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>8042</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>arcartrp_sec_tcp</Name>
+      <Comment>Primary ARCA ArcaRtrp Feeds (Original and Retransmissions)</Comment>
+      <Comment>Primary ARCA ArcaRtrp Feed</Comment>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>8138</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <Feed>
+      <Name>arcartrp_tcp</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>arcartrp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>192.168.187.5</Value>
+      </Parameter>
+      <UseParameterGroup name="ArcaRtrpTcpConfig"/>
+   </Feed>
+    
+   <Feed>
+      <Name>arcartrp_p</Name>
+      <UseParameterGroup name="PlaybackFiles"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>arcartrp</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractFile</Name>
+         <Value>arcartrp.play.%Y%m%d</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>arcartrp_test_p</Name>
+      <UseParameterGroup name="PlaybackFiles"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>arcartrp_test</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractFile</Name>
+         <Value>arcartrp_test.play.%Y%m%d</Value>
+      </Parameter>
+   </Feed>
+
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

@@ -1,0 +1,47 @@
+#!/bin/bash
+
+
+for fruits in $*
+do
+	echo i like $fruits
+done
+
+#command line parameters can also be expressed like this in a for loop, and it will work just fine. it will just assume you are talking about $* again.
+
+for fruits
+do
+	echo "i really like $fruits"
+done
+
+#for loops in functions
+
+function_fruits(){
+
+for fruits
+do
+	echo i really really like $fruits
+done
+
+}
+
+function_fruits grape melon ananas
+
+
+#using seq command to pass in a sequence of numbers to the for loop. we can use commands to filter output into the for loop. this will work with any command.
+
+
+UPHOSTS=/home/renatas/scripts/uphosts.`date +%m%d%Y`
+DOWNHOSTS=/home/renatas/scripts/downhosts.`date +%m%d%Y`
+
+PREFIX=192.168.1
+
+for OCTET in `seq 1 254`
+do
+	echo -en Pinging $PREFIX.$OCTET...
+	ping -c1 -w1 $PREFIX.$OCTET > /dev/null 2>&1
+	if [ $? -ne 0 ];then
+	echo FAILED;echo ${PREFIX}.${OCTET} >> $DOWNHOSTS ;else
+	echo OK; echo ${PREFIX}.${OCTET} >> $UPHOSTS
+	exit
+	fi
+done

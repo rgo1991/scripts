@@ -1,0 +1,32 @@
+#!/bin/bash
+
+awk -F ":" '{print $1}' < /etc/passwd #set field separator as a colon and print the first value that comes before it from each line. 
+
+
+awk -F ":" '{print $1" "$4" "$7}' < /etc/passwd #print 1st, 4th and 7th values and put a space in between them. the quotes with a space in them will accomplish that.
+
+awk -F ":" '{print $1"\t"$4"\t"$7}' < /etc/passwd # \t separates fields with a tab.
+
+awk 'BEGIN{FS=":"; OFS="-----"} {print $1,$2,$6}' < /etc/passwd #set field separator to be colon but in stdout show ----- as a field separator.
+
+awk -F "/" '/^\// {print $NF}' < /etc/shells #use / as field separator. then take every line that begins with a / and print out the last element of those lines. $NF means last element. '/^\//' means lines begining with a slash.
+
+awk -F "/" '/^\// {print $NF}' < /etc/shells | uniq #same as above except the uniq command removes any duplicates from
+
+df | awk '/^C:/ {print $1"\t"$2 + $3}' #grab everyline that starts with C: and print 1st, 2nd and 3rd elements. put a tab space in between 1st and 2nd and also add 2nd and 3rd via arithmetic.
+
+awk 'length ($0) > 8' /etc/shells #print out lines that have more than 8 characters.
+
+ps -ef | awk '{ if($NF == "/init") print $0}' #only print the lines that  end with /init. and print the full line not specific elements, as defined by print $0
+
+awk 'BEGIN {for(i=1; i<=10; i++) print i, "plus 2", "is", i+2}' #using for loops within awk
+
+df | awk '$1 ~ /^[C,E]/ {print $0}' #print only the lines that start with either the letter C or the letter E
+
+awk '{print substr($0, 5)}' < /etc/shells # ignore the first 4 characters of every line and print everything after
+
+awk 'match($0, /k/) {print $0 " has the letter \"k\" at " RSTART}' < /etc/passwd #search for the letter k in every element in the line. then print that line and tel me which character the k is. RSTART tells me the location of the thing im searching.
+
+df | awk 'NR==9, NR==12 {print $0}' #lets to select specific lines. NR means the line number. so this means take from line 9 to 12 and print all the elements in those lines. {print NR $0} will display line numbers as well, kind of like in wim.
+
+awk 'END {print NR}' < /etc/passwd #counts the lines in the file. add more files at the end of the stdin and awk will add the lines and output the total combined lines in specified files.

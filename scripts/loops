@@ -1,0 +1,40 @@
+#!/bin/bash
+
+
+#set the output of the recursive file to the variable 'recursive'
+recursive=`/home/renatas/scripts/recursive`
+
+#set the numbered (-a) array to contain the output of the 'recusrive' variable. It stores all the words into their own individual elements.
+declare -a planets=( $recursive ) 
+
+#set variable 'array_lenght' to be the number of total elements in our array. use it if needed.
+array_lenght=${#planets[@]}
+
+i=0
+j=9
+
+while [ $i -lt 9 ]; do
+	echo "${planets[$i]}"  #echo the element whose number is equal to $i variable.
+	let i++ 
+done
+echo
+while [ $j -gt 8 ] && [ $j -lt "${#planets[@]}" ]; do #the hash in front of the array name specifies to take the total number of elements in the array
+	printf '%s ' "${planets[$j]}"  #print the array in one line and add spaces in between each element with '%s '.
+	let j++
+done	
+echo
+echo
+
+i=0
+j=9
+
+until [ $i == 8 ];do
+	echo "${planets[$i]}"
+	let i++
+done
+echo
+until [ $j == $array_lenght ];do
+	printf '%s ' "${planets[$j]}"
+	let j++
+done
+echo

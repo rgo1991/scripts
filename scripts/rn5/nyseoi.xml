@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+   
+   <!-- Site specific includes -->
+   <IncludeFile>nyseoi_tport.xml</IncludeFile>
+   <IncludeFile>nyseoi_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>PublishOrderImbalanceGlobal</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishOrderImbalanceIndividual</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+   <Parameter>
+      <Name>Pdp3RetransProductId</Name>
+      <Value>116</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterRetransActive</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterRetransMaxGapSize</Name>
+      <Value>500</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>pdp3</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NyseOiProductName</Name>
+      <Value>NyseOi</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>nyse2streetMap</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>Pdp3ActivateIndexMaps</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>Pdp3MessageHandlerName</Name>
+      <Value>nyseoi</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsOrderImbalance</Value>
+   </Parameter>
+    
+   <Feed>
+      <Name>nyseoi</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>nyseoi_nyse</Value>
+         <Value>nyseoi_amex</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nyseoi_nyse</Name>
+      <UseParameterGroup name="GlobalOrderImbalanceStatusParams"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+      <UseParameterGroup name="WmwTransportPropertiesVector1NSD2"/>
+      <Parameter>
+         <Name>OrderImbalanceGlobalSymbolFormat</Name>
+         <Value>NYSEOI_NYSE_IMBALANCE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>NYSEOI</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NyseOiProductName</Name>
+         <Value>NyseOi</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Pdp3RetransSourceId</Name>
+         <Value>SUPERFEED01</Value>
+      </Parameter>
+      <Comment>NYSE Order Imbalance Feed Productions Channels</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.44/60044</Value>
+         <Value>default1/233.75.215.45/60045/monitorOff</Value>
+         <Value>default2/233.75.215.172/60172</Value>
+         <Value>default2/233.75.215.173/60173/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.44</Value>
+         <Value>233.75.215.45</Value>
+         <Value>233.75.215.172</Value>
+         <Value>233.75.215.173</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>8880</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>9880</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>nyseoi_nyse_test</Name>
+      <Parameter>
+         <Name>NyseOiProductName</Name>
+         <Value>NyseOi</Value>
+      </Parameter>
+      <Comment>NYSE Order Imbalance Feed Test Channels</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.12/60012</Value>
+         <Value>default1/233.75.215.13/60013/monitorOff</Value>
+         <Value>default2/233.75.215.140/60140</Value>
+         <Value>default2/233.75.215.141/60141/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.12</Value>
+         <Value>233.75.215.13</Value>
+         <Value>233.75.215.140</Value>
+         <Value>233.75.215.141</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>8890</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>9890</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>nyseoi_amex</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector1NSD2"/>
+      <UseParameterGroup name="GlobalOrderImbalanceStatusParams"/>
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+      <Parameter>
+         <Name>OrderImbalanceGlobalSymbolFormat</Name>
+         <Value>NYSEOI_AMEX_IMBALANCE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>WmwSource</Name>
+         <Value>AMEXOI</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NyseOiProductName</Name>
+         <Value>AmexOi</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Pdp3RetransSourceId</Name>
+         <Value>SUPERFEED02</Value>
+      </Parameter>
+      <Comment>NYSE AMEX Order Imbalance Feed Productions Channels</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.62/62062</Value>
+         <Value>default1/233.75.215.62/63062/monitorOff</Value>
+         <Value>default2/233.75.215.190/62190</Value>
+         <Value>default2/233.75.215.190/63190/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.62</Value>
+         <Value>233.75.215.190</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>30019</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>30019</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>nyseoi_amex_test</Name>
+      <Parameter>
+         <Name>NyseOiProductName</Name>
+         <Value>AmexOi</Value>
+      </Parameter>
+      <Comment>NYSE AMEX Order Imbalance Feed Test Channels</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.30/62030</Value>
+         <Value>default1/233.75.215.30/63030/monitorOff</Value>
+         <Value>default2/233.75.215.158/62158</Value>
+         <Value>default2/233.75.215.158/63158/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.30</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>30020</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>30020</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>nyseoi_uat</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>nyseoi_nyse_uat</Value>
+         <Value>nyseoi_amex_uat</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>nyseoi_nyse_uat</Name>
+      <Parameter>
+         <Name>NyseOiProductName</Name>
+         <Value>NyseOi</Value>
+      </Parameter>
+      <Comment>NYSE Order Imbalance Feed UAT Channels</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.49/65043</Value>
+         <Value>default1/233.75.215.49/65093/monitorOff</Value>
+         <Value>default2/233.75.215.177/65143</Value>
+         <Value>default2/233.75.215.177/65193/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.49</Value>
+         <Value>233.75.215.177</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>198.140.57.2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>65233</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>nyseoi_amex_uat</Name>
+      <Parameter>
+         <Name>NyseOiProductName</Name>
+         <Value>AmexOi</Value>
+      </Parameter>
+      <Comment>NYSE AMEX Order Imbalance Feed UAT Channels</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.49/65044</Value>
+         <Value>default1/233.75.215.49/65094/monitorOff</Value>
+         <Value>default2/233.75.215.177/65144</Value>
+         <Value>default2/233.75.215.177/65194/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.49</Value>
+         <Value>233.75.215.177</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>198.140.57.2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>65234</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

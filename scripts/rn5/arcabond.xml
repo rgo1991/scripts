@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Site specific includes -->
+   <IncludeFile>arcabond_tport.xml</IncludeFile>
+   <IncludeFile>arcabond_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>ARCABOND</Value>
+   </Parameter>
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+   <Parameter>
+      <Name>MessageRecoveryFile</Name>
+      <Value/>
+   </Parameter>
+
+   <Parameter>
+      <Name>ExtractHint</Name>
+      <Value>-1</Value>
+      <Comment>Used to identify the feed in the metadata</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>ProcessDataInSeparateThread</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LoginHeartbeatInterval</Name>
+      <Value>30</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LoginResetTimeBegin</Name>
+      <Value>20:00</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LoginResetTimeEnd</Name>
+      <Value>03:30</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SymbolPrefixTopOfBook</Name>
+      <Value/>
+   </Parameter>
+
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TopOfBookDecimals</Name>
+      <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter> 
+      <Name>LineQualityInterval</Name>
+      <Value>0</Value> 
+   </Parameter> 
+ 
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>ArcaBookProductNameBondOrderBook</Name>
+      <Value>EcnArcaBondOrderBook</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>ArcaBookProductNameBondTop</Name>
+      <Value>EcnArcaBondTop</Value>
+   </Parameter>
+<!-- DFH-17234 -->
+   <Parameter>
+      <Name>ArcaBookProductNameOrderBook</Name>
+      <Value>EcnArcaBondOrderBook</Value>
+   </Parameter>
+      
+   <Parameter>
+      <Name>ArcaBookProductNameTopOfBook</Name>
+      <Value>EcnArcaBondTop</Value>
+   </Parameter>
+<!-- DFH-17234 -->
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>false</Value>
+      <Comment>We think ARCA uses native symbology.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>LoginWhenToStartHeartBeats</Name>
+      <Value>never</Value>
+      <Comment>Only ARCA sends heartbeats to us; we only send heartbeat responses.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>ArcaBookFormatType</Name>
+      <Value>binary</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>ArcaBookSubscribeBond</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>arcabook</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsOrder</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsFixedIncome</Value>
+   </Parameter>
+
+   <Feed>
+      <Name>arcabond_replay</Name>
+      <Parameter>
+         <Name>InputFile</Name>
+         <Value>/home/wombat/data/arcabond_20030315_short.play</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InputRate</Name>
+         <Value>100</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RewindPlayback</Name>
+         <Value>true</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>arcabond_mt</Name>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>arcabond_al</Value>
+         <Value>arcabond_mz</Value>
+      </Parameter>
+      <Parameter>
+         <Name>QueueUseSender</Name>
+         <Value>true</Value>
+      </Parameter>
+   </Feed>
+
+   <Thread>
+      <Name>default</Name>
+      <Parameter>
+         <Name>Enabled</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>IsMsgSending</Name>
+         <Value>true</Value>
+      </Parameter>
+   </Thread>
+
+   <Thread>
+      <Name>arcabond_al</Name>
+      <Parameter>
+         <Name>Enabled</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>IsMsgHandling</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MhMatchStartChar</Name>
+         <Value>A</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MhMatchEndChar</Name>
+         <Value>L</Value>
+      </Parameter><!--
+        <Parameter>
+            <Name>UseRegExp</Name>
+            <Value>^[A-L]</Value>
+        </Parameter>
+-->
+   </Thread>
+
+   <Thread>
+      <Name>arcabond_mz</Name>
+      <Parameter>
+         <Name>Enabled</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>IsMsgHandling</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MhMatchStartChar</Name>
+         <Value>M</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MhMatchEndChar</Name>
+         <Value>Z</Value>
+      </Parameter><!--
+        <Parameter>
+            <Name>UseRegExp</Name>
+            <Value>^[A-L]</Value>
+        </Parameter>
+-->
+   </Thread>
+
+   <Feed>
+      <Name>arcabondproxy</Name>
+      <Parameter>
+         <Name>LogFile</Name>
+         <Value>-</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>127.0.0.1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>26471</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MasqTcpIpAddress</Name>
+         <Value>192.168.187.6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MasqTcpPort</Name>
+         <Value>12345</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MasqLoginUsername</Name>
+         <Value>demo</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MasqLoginPassword</Name>
+         <Value>demo</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MasqLoginTimeout</Name>
+         <Value>65</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ArcaBookMasqIsBinary</Name>
+         <Value>true</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>arcabond_test</Name>
+      <Parameter>
+         <Name>LogFile</Name>
+         <Value>-</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>192.168.187.6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>12346</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginUsername</Name>
+         <Value>womb01</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginPassword</Name>
+         <Value>openup</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginTimeout</Name>
+         <Value>65</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>arcabond_p</Name>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>192.168.187.6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>12346</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginUsername</Name>
+         <Value>womb01</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginPassword</Name>
+         <Value>openup</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractFile</Name>
+         <Value>arcabond_bin.play</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>sleep</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>arcabond_listed_p</Name>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>192.168.187.6</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>12346</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginUsername</Name>
+         <Value>womb01</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginPassword</Name>
+         <Value>openup</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractFile</Name>
+         <Value>arcabond_listed.play</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LogFile</Name>
+         <Value>-</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ArcaBookSubscribeListed</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ArcaBookSubscribeEtf</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ArcaBookSubscribeOtc</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ArcaBookSubscribeArcaEdgeBb</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ArcaBookSubscribeBond</Name>
+         <Value>false</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>arcabond_quotes</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>
+      <!-- Host-specific config -->
+      <pny2sffhr03a>
+         <UseParameterGroup name="ArcabondPrimaryLogin"/>
+      </pny2sffhr03a>
+      <pny2sffhr03b>
+         <UseParameterGroup name="ArcabondSecondaryLogin"/>
+      </pny2sffhr03b>
+      <!-- END - Host-specific config -->
+      <Parameter>
+         <Name>LoginTimeout</Name>
+         <Value>65</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/arcabond_quotes.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>arcabond_trades</Name>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>159.125.76.36</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>52000</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginUsername</Name>
+         <Value>nyxtbtr1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginPassword</Name>
+         <Value>ny513t1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LoginTimeout</Name>
+         <Value>65</Value>
+      </Parameter>
+   </Feed>
+
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

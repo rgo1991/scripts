@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--Details for a TCP "concentrator" to integrate multiple gap request connections into a single connection to allow multiple feed handlers to share a single connection. See the Administrators Guide for more information:  http://wombatconsulting.com/feedhandlers/admin-guide.html-->
+   <!-- Site specific includes -->
+   <IncludeFile>batsmc_tport.xml</IncludeFile>
+   <IncludeFile>batsmc_hosts.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <!--Parameter>
+      <Name>SharedObjects</Name>
+      <Value>papastats.so.2_16_51_RH5</Value>
+   </Parameter-->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+   <!--Parameter>
+      <Name>SrvTcpIpAddress</Name>
+      <Value>127.0.0.1</Value>
+      <Comment>The "south-side" TCP/IP address to bind to accept connections from feed handlers.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>SrvTcpPort</Name>
+      <Value>28000</Value>
+      <Comment>The "south-side" TCP/IP port or service name to bind to accept connections from feed handlers.</Comment>
+   </Parameter-->
+
+   <Parameter>
+      <Name>SrvUseUnixDomainSocket</Name>
+      <Value>false</Value>
+      <Comment>Control if the south-facing connections should be UNIX Domain Sockets.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>SrvUnixDomainSocketPathName</Name>
+      <Value>/tmp/wombatsocket</Value>
+      <Comment>For south-side UNIX Domain Sockets, the directory to be used.</Comment>
+   </Parameter>
+
+   <!--Parameter>
+      <Name>TcpIpAddress</Name>
+      <Value>174.136.172.135</Value>
+      <Comment>The TCP/IP address to connect to (exchange-provided)</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>TcpPort</Name>
+      <Value>18935</Value>
+      <Comment>The TCP/IP port or service name to connect to (exchange-provided)</Comment>
+   </Parameter-->
+
+   <Parameter>
+      <Name>TcpTryReconnect</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TcpConnectDelay</Name>
+      <Value>1000</Value>
+      <Comment>(ms) Initial connection delay</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>TcpConnectDelayMax</Name>
+      <Value>60000</Value>
+      <Comment>(ms)</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>TcpConnectedMeansLineUp</Name>
+      <Value>true</Value>
+      <Comment>Concentrator implementation-dependent</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>UseUnixDomainSocket</Name>
+      <Value>false</Value>
+      <Comment>Control if the exchange connection is to be a UNIX Domain Socket</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>UnixDomainSocketPathName</Name>
+      <Value>/tmp/wombatsocket</Value>
+      <Comment/>
+   </Parameter>
+
+   <!--Parameter>
+      <Name>BatsmcConcExchSession</Name>
+      <Value>0007</Value>
+      <Comment>Exchange-provided session ID</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcExchLogin</Name>
+      <Value>NATS</Value>
+      <Comment>Exchange-provided login ID</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcExchPassword</Name>
+      <Value>wx4nats</Value>
+      <Comment>Exchange-provided password</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowLogin</Name>
+      <Value>WMBT</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowPassword</Name>
+      <Value>CONCENTRA1</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter-->
+
+   <Parameter>
+      <Name>ConcentratorInterval</Name>
+      <Value>3</Value>
+      <Comment>Used to trigger north-bound heartbeats</Comment>
+   </Parameter>
+
+   <Feed>
+      <Name>batsmcconcentrator</Name>
+   </Feed>
+
+   <Feed>
+      <Name>batsmcconcentrator_uat</Name>
+      <Parameter>
+	<Name>SubFeeds</Name>
+	<Value>batsmcconcentrator_UatEdgeX</Value>
+        <Value>batsmcconcentrator_UatEdgeA</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>batsmcconcentrator_UatEdgeX</Name>
+      <!-- North side -->
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <!--Value>174.136.172.132</Value-->
+         <Value>174.136.172.132</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>TcpPort</Name>
+         <!--Value>18934</Value-->
+         <Value>18934</Value>
+      </Parameter>
+
+      <!--Parameter>
+	 <Name>SecondaryTcpIpAddress</Name>
+         <Value>174.136.182.196</Value>
+      </Parameter>
+
+      <Parameter>
+          <Name>SecondaryTcpPort</Name>
+          <Value>18934</Value>
+      </Parameter-->	  
+
+      <Parameter>
+         <Name>BatsmcConcExchSession</Name>
+         <!--Value>0001</Value-->
+         <Value>0001</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchLogin</Name>
+         <Value>NATS</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchPassword</Name>
+         <!--Value>wx1nats</Value-->
+         <Value>wx1nats</Value>
+      </Parameter>
+      <!-- South side -->
+      <Parameter>
+         <Name>SrvTcpIpAddress</Name>
+         <!--Value>127.0.0.1</Value-->
+         <Value>10.208.239.62</Value>
+      </Parameter>
+
+      <Parameter>
+        <Name>SrvTcpPort</Name>
+         <Value>28000</Value>
+      </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowLogin</Name>
+      <Value>WMBT</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowPassword</Name>
+      <Value>CONCENTRA1</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>	  
+   </Feed>
+
+   <Feed>
+      <Name>batsmcconcentrator_UatEdgeA</Name>
+      <!-- North side -->
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>174.136.170.132</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>18924</Value>
+      </Parameter>
+	  <!--Parameter>
+	  <Name>SecondaryTcpIpAddress</Name>
+          <Value>174.136.182.68</Value>
+      </Parameter>
+      <Parameter>
+          <Name>SecondaryTcpPort</Name>
+          <Value>18924</Value>
+	  </Parameter-->	  
+      <Parameter>
+         <Name>BatsmcConcExchSession</Name>
+         <Value>0001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>BatsmcConcExchLogin</Name>
+         <Value>NATS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>BatsmcConcExchPassword</Name>
+         <Value>wa1nats</Value>
+      </Parameter>
+      <!-- South side -->
+      <Parameter>
+         <Name>SrvTcpIpAddress</Name>
+         <Value>10.208.239.62</Value>
+         <!--Value>127.0.0.1</Value-->
+      </Parameter>
+      <Parameter>
+         <Name>SrvTcpPort</Name>
+         <Value>38000</Value>
+      </Parameter>
+   <Parameter>
+      <Name>BatsmcConcShadowLogin</Name>
+      <Value>WMBT</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowPassword</Name>
+      <Value>CONCENTRA2</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>	  
+   </Feed>
+
+   <Feed>
+      <Name>batsmcconcentrator_UatBatsY</Name>
+      <!-- North side -->
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>174.136.167.5</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>17027</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>SecondaryTcpIpAddress</Name>
+         <Value>174.136.182.196</Value>
+      </Parameter>
+
+      <Parameter>
+          <Name>SecondaryTcpPort</Name>
+          <Value>18934</Value>
+      </Parameter-->
+
+      <Parameter>
+         <Name>BatsmcConcExchSession</Name>
+         <Value>0001</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchLogin</Name>
+         <Value>NATS</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchPassword</Name>
+         <Value>gy1nats</Value>
+      </Parameter>
+      <!-- South side -->
+      <Parameter>
+         <Name>SrvTcpIpAddress</Name>
+         <Value>10.208.239.62</Value>
+	 <!--Value>159.125.44.33</Value-->
+      </Parameter>
+
+      <Parameter>
+        <Name>SrvTcpPort</Name>
+         <Value>28100</Value>
+      </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowLogin</Name>
+      <Value>WMBT</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowPassword</Name>
+      <Value>CONCENTRA3</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+   
+   </Feed>
+
+   <Feed>
+      <Name>batsmcconcentrator_UatBatsZ</Name>
+      <!-- North side -->
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>208.90.210.137</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>18934</Value>
+      </Parameter>
+      <!--Parameter>
+         <Name>SecondaryTcpIpAddress</Name>
+         <Value>174.136.182.196</Value>
+      </Parameter>
+
+      <Parameter>
+          <Name>SecondaryTcpPort</Name>
+          <Value>18934</Value>
+      </Parameter-->
+
+      <Parameter>
+         <Name>BatsmcConcExchSession</Name>
+         <Value>0147</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchLogin</Name>
+         <Value>NATS</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchPassword</Name>
+         <Value>gzd6nats</Value>
+      </Parameter>
+      <!-- South side -->
+      <Parameter>
+         <Name>SrvTcpIpAddress</Name>
+         <Value>10.208.239.62</Value>
+	 <!--Value>159.125.44.33</Value-->
+      </Parameter>
+
+      <Parameter>
+        <Name>SrvTcpPort</Name>
+         <Value>28200</Value>
+      </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowLogin</Name>
+      <Value>WMBT</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowPassword</Name>
+      <Value>CONCENTRA4</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+   
+   </Feed>
+
+<!-- WHK prod batsmcconcentrator njwamfhp33a/b -->
+
+   <Feed>
+      <Name>batsmcconcentrator_BZP</Name>
+   <UseParameterGroup name="WHK_NEW_TPORT"/>
+      <!-- North side -->
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>174.136.161.133</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>18987</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchSession</Name>
+         <Value>0037</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchLogin</Name>
+         <Value>NATS</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchPassword</Name>
+         <Value>g4nats</Value>
+      </Parameter>
+      <!-- South side eth4.400 njwamfhp33a-->
+      <Parameter>
+         <Name>SrvTcpIpAddress</Name>
+         <Value>10.148.95.137</Value>
+      </Parameter>
+
+      <Parameter>
+        <Name>SrvTcpPort</Name>
+         <Value>28200</Value>
+      </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowLogin</Name>
+      <Value>WMBT</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowPassword</Name>
+      <Value>CONCENTRA5</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>batsmcconcentrator_BZS</Name>
+      <!-- North side -->
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>174.136.161.133</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>18987</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchSession</Name>
+         <Value>0037</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchLogin</Name>
+         <Value>NATS</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchPassword</Name>
+         <Value>g4nats</Value>
+      </Parameter>
+      <!-- South side -->
+      <Parameter>
+         <Name>SrvTcpIpAddress</Name>
+         <Value>10.148.95.138</Value>
+      </Parameter>
+
+      <Parameter>
+        <Name>SrvTcpPort</Name>
+         <Value>28200</Value>
+      </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowLogin</Name>
+      <Value>WMBT</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowPassword</Name>
+      <Value>CONCENTRA6</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+   </Feed>
+   
+   <Feed>
+      <Name>batsmcconcentrator_BYP</Name>
+   <UseParameterGroup name="WHK_NEW_TPORT"/>
+      <!-- North side -->
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>174.136.162.133</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>17027</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchSession</Name>
+         <Value>0002</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchLogin</Name>
+         <Value>NATS</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchPassword</Name>
+         <Value>gy2nats</Value>
+      </Parameter>
+      <!-- South side -->
+      <Parameter>
+         <Name>SrvTcpIpAddress</Name>
+         <Value>10.148.95.137</Value>
+      </Parameter>
+
+      <Parameter>
+        <Name>SrvTcpPort</Name>
+         <Value>28100</Value>
+      </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowLogin</Name>
+      <Value>WMBT</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowPassword</Name>
+      <Value>CONCENTRA7</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>batsmcconcentrator_BYS</Name>
+      <!-- North side -->
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>174.136.167.8</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>17011</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchSession</Name>
+         <Value>0003</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchLogin</Name>
+         <Value>NATS</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchPassword</Name>
+         <Value>gy3nats</Value>
+      </Parameter>
+      <!-- South side -->
+      <Parameter>
+         <Name>SrvTcpIpAddress</Name>
+         <Value>10.148.95.138</Value>
+      </Parameter>
+
+      <Parameter>
+        <Name>SrvTcpPort</Name>
+         <Value>28100</Value>
+      </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowLogin</Name>
+      <Value>WMBT</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowPassword</Name>
+      <Value>CONCENTRA8</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+   </Feed>
+<!-- WHK prod batsmcconcentrator END -->
+<!-- NY2 prod batsmcconcentrator pny2sffhr10a -->
+
+   <Feed>
+      <Name>batsmcconcentrator_BZX</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>      
+      <!-- North side -->
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>174.136.161.150</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>18932</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchSession</Name>
+         <Value>0002</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchLogin</Name>
+         <Value>WBAT</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchPassword</Name>
+         <Value>gzb1wbat</Value>
+      </Parameter>
+      <!-- South side -->
+      <Parameter>
+         <Name>SrvTcpIpAddress</Name>
+         <Value>10.225.65.19</Value>
+      </Parameter>
+
+      <Parameter>
+        <Name>SrvTcpPort</Name>
+         <Value>28200</Value>
+      </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowLogin</Name>
+      <Value>WMBT</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowPassword</Name>
+      <Value>CONCENTRA1</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>batsmcconcentrator_BYX</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector1NSD1"/>      
+      <!-- North side -->
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>174.136.162.151</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>17134</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchSession</Name>
+         <Value>0002</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchLogin</Name>
+         <Value>WBAT</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchPassword</Name>
+         <Value>gyb1wbat</Value>
+      </Parameter>
+      <!-- South side -->
+      <Parameter>
+         <Name>SrvTcpIpAddress</Name>
+         <Value>10.225.65.19</Value>
+      </Parameter>
+
+      <Parameter>
+        <Name>SrvTcpPort</Name>
+         <Value>28100</Value>
+      </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowLogin</Name>
+      <Value>WMBT</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowPassword</Name>
+      <Value>CONCENTRA2</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+   </Feed>
+<!-- END batsmcconcentrator pny2sffhr10a -->
+
+<!-- START batsmcconcentrator pny2sffhr10b -->
+   
+   <Feed>
+      <Name>batsmcconcentrator_EDGX</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector2NSD1"/>      
+      <!-- North side -->
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>174.136.172.149</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>18932</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchSession</Name>
+         <Value>0002</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchLogin</Name>
+         <Value>WBAT</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchPassword</Name>
+         <Value>gxb1wbat</Value>
+      </Parameter>
+      <!-- South side -->
+      <Parameter>
+         <Name>SrvTcpIpAddress</Name>
+         <Value>10.225.65.20</Value>
+      </Parameter>
+
+      <Parameter>
+        <Name>SrvTcpPort</Name>
+         <Value>28100</Value>
+      </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowLogin</Name>
+      <Value>WMBT</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowPassword</Name>
+      <Value>CONCENTRA3</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>batsmcconcentrator_EDGA</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>      
+      <!-- North side -->
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>174.136.170.150</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>18923</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchSession</Name>
+         <Value>0002</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchLogin</Name>
+         <Value>WBAT</Value>
+      </Parameter>
+
+      <Parameter>
+         <Name>BatsmcConcExchPassword</Name>
+         <Value>gab1wbat</Value>
+      </Parameter>
+      <!-- South side -->
+      <Parameter>
+         <Name>SrvTcpIpAddress</Name>
+         <Value>10.225.65.20</Value>
+      </Parameter>
+
+      <Parameter>
+        <Name>SrvTcpPort</Name>
+         <Value>28200</Value>
+      </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowLogin</Name>
+      <Value>WMBT</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>BatsmcConcShadowPassword</Name>
+      <Value>CONCENTRA4</Value>
+      <Comment>The login to be used by feed handlers connecting to the concentrator.</Comment>
+   </Parameter>
+   </Feed>
+<!-- START batsmcconcentrator pny2sffhr10b -->
+   
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

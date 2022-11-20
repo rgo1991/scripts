@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for the CHX Depth of Book feedhandler. See the Administrators Guide for more information: http://wombatconsulting.com/feedhandlers/admin-guide.html-->
+    
+   <!-- Site specific includes -->
+   <IncludeFile>chxdob_tport.xml</IncludeFile>
+   <IncludeFile>chxdob_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.superfeed.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>MamaUseDictionaryType</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>CHXDOB</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ChxDobMessageHandlerName</Name>
+      <Value>chxdob</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>chxdob</Value>
+   </Parameter>
+    
+   <!--Parameter>
+      <Name>ChxDobLogonId</Name>
+      <Value>VELA1</Value>
+   </Parameter-->
+
+   <Parameter>
+      <Name>TcpConnectOnStartUp</Name>
+      <Value>false</Value>
+   </Parameter> 
+
+   <Parameter>
+      <Name>ChxDobSourceId</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ChxDobLogRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbolPrefixTopOfBook</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ChxDobClearBooksAtEndOfDay</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookDecimals</Name>
+      <Value>4</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>100</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ChxDobTrackMatchNumbers</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SendLogoffAtTermination</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SharedObjects</Name>
+      <Value>/var/tmp/chxdob_lots/src/src/feeds/multicast/common/LotsTopOfBook/LotsTopOfBook_1_1_1/lib/LotsTopOfBook.so</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateRLTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishRLTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TibSource</Name>
+      <Value>ORDER</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TibSector</Name>
+      <Value>REC</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TibExchange</Name>
+      <Value>NaE</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MdrvPrefix</Name>
+      <Value>ORDER</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MamaDataDictResponder</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FtRvService</Name>
+      <Value>7731</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_chxdob</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value>chxdob.sym</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>OrderBookSymbolFile</Name>
+      <Value>chxdob.orderbook.sym</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ChxDobProductNameOrderBook</Name>
+      <Value>ChxBook</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ChxDobProductNameTopOfBook</Name>
+      <Value>ChxTop</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ChxDobProductNameTrade</Name>
+      <Value>ChxTrade</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>nyse2streetMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Comment>For getting data into Superbook we need to publish a book update.</Comment>
+      <Name>PublishOrderBooks</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterChxDobExtraCheckForDuplicates</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsBloomberg</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsTrade</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>ChxDobListedParameterProductGroup</Name>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>ChxDobOtcParameterProductGroup</Name>
+   </DefineParameterGroup>
+    
+   <Feed>
+      <Name>chxdob</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>      
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>chxdob_listed</Value>
+         <Value>chxdob_otc</Value>
+         <Value>chxdob_listed_retrans</Value>
+         <Value>chxdob_otc_retrans</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>chxdob_regression</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>chxdob_listed</Value>
+         <Value>chxdob_otc</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>chxdob_listed</Name>
+      <UseParameterGroup name="ChxDobListedParameterProductGroup"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>101</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>LIVE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RetransFeedId</Name>
+         <Value>103</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.42.253.4/54321</Value>
+         <Value>default1/233.42.253.5/54322</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.42.253.4</Value>
+         <Value>233.42.253.5</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>chxdob_otc</Name>
+      <UseParameterGroup name="ChxDobOtcParameterProductGroup"/>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>102</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>LIVE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RetransFeedId</Name>
+         <Value>104</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.42.253.6/54323</Value>
+         <Value>default1/233.42.253.7/54324</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.42.253.6</Value>
+         <Value>233.42.253.7</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>chxdob_listed_retrans</Name>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>103</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>RETRANS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>204.52.134.180</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>54405</Value>
+      </Parameter>
+      <tny2sffhr07>      
+         <Parameter>
+            <Name>ChxDobLogonId</Name>
+            <Comment>Update the LogonId with the customer provided one.</Comment>
+            <Value>VEL1</Value>
+         </Parameter>
+      </tny2sffhr07>
+      <pny2sffhr03a>      
+         <Parameter>
+            <Name>ChxDobLogonId</Name>
+            <Comment>Update the LogonId with the customer provided one.</Comment>
+            <Value>VEL2</Value>
+         </Parameter>
+      </pny2sffhr03a>
+      <pny2sffhr03b>      
+         <Parameter>
+            <Name>ChxDobLogonId</Name>
+            <Comment>Update the LogonId with the customer provided one.</Comment>
+            <Value>VEL3</Value>
+         </Parameter>
+      </pny2sffhr03b>
+   </Feed>
+    
+   <Feed>
+      <Name>chxdob_otc_retrans</Name>
+      <Parameter>
+         <Name>FeedId</Name>
+         <Value>104</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>RETRANS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>204.52.134.180</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>54407</Value>
+      </Parameter>
+      <tny2sffhr07>
+      <Parameter>
+         <Name>LogonId</Name>
+         <Comment>Update the LogonId with the customer provided one.</Comment>
+         <Value>VEL1</Value>
+      </Parameter>
+      </tny2sffhr07>
+      <pny2sffhr03a>      
+      <Parameter>
+         <Name>LogonId</Name>
+         <Comment>Update the LogonId with the customer provided one.</Comment>
+         <Value>VEL2</Value>
+      </Parameter>
+      </pny2sffhr03a>
+      <pny2sffhr03b>      
+      <Parameter>
+         <Name>LogonId</Name>
+         <Comment>Update the LogonId with the customer provided one.</Comment>
+         <Value>VEL3</Value>
+      </Parameter>
+      </pny2sffhr03b>
+   </Feed>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

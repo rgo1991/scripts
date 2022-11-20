@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+   
+   <!-- Site specific includes -->
+   <IncludeFile>aobu_tport.xml</IncludeFile>
+   <IncludeFile>aobu_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+<!-- Start EDCP-8793 -->
+
+   <!--Parameter>
+      <Name>Pdp3RetransProductId</Name>
+      <Value>115</Value>
+      <Comment>Product Id for OpenBook Ultra is always 115</Comment>
+   </Parameter-->
+
+<!-- SFDCR-1423 Start -->
+      <Parameter>
+         <Name>MamaUseDictionaryType</Name>
+         <Value>true</Value>
+      </Parameter>
+<!--SFDCR-1423 End -->
+   <Parameter>
+      <Name>Pdp3RetransProductId</Name>
+      <Value>62</Value>
+      <Comment>Product Id for NYSE American OpenBook Ultra</Comment>
+   </Parameter>
+
+<!-- End EDCP-8793 -->
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>AMEXDOB</Value>
+   </Parameter>
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+   <Parameter>
+      <Name>LineFilterLogRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>LineFilterRetransActive</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterDiscardForwardRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterGapLimitSize</Name>
+      <Value>2000</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterRetransMaxGapSize</Name>
+      <Value>999</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterGapLimitTime</Name>
+      <Value>1.5</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterRequestRetransTime</Name>
+      <Value>0</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RefreshTimerInterval</Name>
+      <Value>500</Value>
+      <Comment>Timer interval in milliseconds</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>IncompleteRefreshDelay</Name>
+      <Value>2</Value>
+      <Comment>Delay before resending initial refresh request in seconds</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RefreshRetryDelay</Name>
+      <Value>300</Value>
+      <Comment>Delay before resending refresh request if initial attempts fail (in seconds)</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>pdp3</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Comment>For getting data into Superbook we need to publish a book update.</Comment>
+      <Name>PublishOrderBooks</Name>
+      <Value>true</Value>
+   </Parameter>
+   
+   <Parameter>
+      <Name>SymbolSuffixTopOfBook</Name>
+      <Value>BBO</Value>
+   </Parameter>
+ 
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookDecimals</Name>
+      <Value>4</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <!--Value>true</Value--><!--artf51802-->
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <!--Value>true</Value--><!--artf51802-->
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>cms2streetMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ParticipantIdMapFuncName</Name>
+      <Value>AobuPartIdMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>QuoteSizeMultiplier</Name>
+      <Value>1</Value>
+   </Parameter><!--Pdp3ActivateIndexMaps must be true for obu. It activates the Index to Symbol mapping features neccessary for obu to function properly.-->
+    
+   <Parameter>
+      <Name>Pdp3ActivateIndexMaps</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>Pdp3MessageHandlerName</Name>
+      <Value>aobu</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>AobuProductNameOrderBook</Name>
+      <Value>NyseAlternextOpenBookOrderBook</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>AobuProductNameTop</Name>
+      <Value>NyseAlternextOpenBookTop</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>AobuProductNameTrade</Name>
+      <Value>NyseAlternextOpenBookTrade</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>AllowPartialBooks</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>Pdp3IndexSymbolRecoveryFileName</Name>
+      <Value>mysymbolindexmapfile</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ProcessMissingSymbolAsUnknown</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsOrder</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>AobuTcpConfig</Name>
+      <Parameter>
+         <Name>TcpConnectedMeansLineUp</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MessageRecoveryFile</Name>
+         <Value/>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <Feed>
+      <Name>aobu_az</Name>
+      <Comment>NYSE Alternext OpenBook Ultra Equities Symbols A-Z</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.63/62063</Value>
+         <Value>default1/233.75.215.63/63063/monitorOff</Value>
+         <Value>default2/233.75.215.191/62191</Value>
+         <Value>default2/233.75.215.191/63191/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.63/62063</Value>
+         <Value>233.75.215.63/63063</Value>
+         <Value>233.75.215.191/62191</Value>
+         <Value>233.75.215.191/63191</Value>
+      </Parameter>
+      <Parameter>
+         <Name>Type</Name>
+         <Value>PDP</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>30017</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.76.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>30017</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+    
+   <Feed>
+      <Name>aobu_p</Name>
+      <UseParameterGroup name="PlaybackFiles"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>aobu</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ExtractFile</Name>
+         <Value>aobu.play.%Y%m%d</Value>
+      </Parameter>
+   </Feed>
+    
+   <!--Feed>
+      <Name>aobu</Name>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>aobu_az</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/aobu.orderbook.sym</Value>
+      </Parameter>
+   </Feed - removing as part of EDCP8605 -->
+
+<!-- SFD-1805 Start -->
+   <Feed>
+      <Name>aobu</Name>
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_aobu</Value>
+   </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>aobu_ac</Value>
+         <Value>aobu_dj</Value>
+         <Value>aobu_kr</Value>
+         <Value>aobu_sz</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/aobu.orderbook.sym</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>aobu_ac</Name>
+      <Comment>NYSE Alternext OpenBook Ultra Equities Symbols A-C</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.0/23100</Value>
+         <Value>default1/233.75.215.4/23105/monitorOff</Value>
+         <Value>default1/233.75.215.8/23110/monitorOff</Value>
+         <Value>default2/233.75.215.128/23600</Value>
+         <Value>default2/233.75.215.132/23605/monitorOff</Value>
+         <Value>default2/233.75.215.136/23610/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.0/23100</Value>
+         <Value>233.75.215.4/23105</Value>
+         <Value>233.75.215.8/23110</Value>
+         <Value>233.75.215.128/23600</Value>
+         <Value>233.75.215.132/23605</Value>
+         <Value>233.75.215.136/23610</Value>
+         <Value>233.75.215.63/62063</Value>
+         <Value>233.75.215.63/63063</Value>
+         <Value>233.75.215.191/62191</Value>
+         <Value>233.75.215.191/63191</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.145.17</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1062</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.145.18</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1062</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+   <Feed>
+      <Name>aobu_dj</Name>
+      <Comment>NYSE Alternext OpenBook Ultra Equities Symbols D-J</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.1/23101</Value>
+         <Value>default1/233.75.215.5/23106/monitorOff</Value>
+         <Value>default1/233.75.215.9/23111/monitorOff</Value>
+         <Value>default2/233.75.215.129/23601</Value>
+         <Value>default2/233.75.215.133/23606/monitorOff</Value>
+         <Value>default2/233.75.215.137/23611/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.1/23101</Value>
+         <Value>233.75.215.5/23106</Value>
+         <Value>233.75.215.9/23111</Value>
+         <Value>233.75.215.129/23601</Value>
+         <Value>233.75.215.133/23606</Value>
+         <Value>233.75.215.137/23611</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.145.17</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1063</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.145.18</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1063</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+   <Feed>
+      <Name>aobu_kr</Name>
+      <Comment>NYSE Alternext OpenBook Ultra Equities Symbols K-R</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.2/23102</Value>
+         <Value>default1/233.75.215.6/23107/monitorOff</Value>
+         <Value>default1/233.75.215.10/23112/monitorOff</Value>
+         <Value>default2/233.75.215.130/23602</Value>
+         <Value>default2/233.75.215.134/23607/monitorOff</Value>
+         <Value>default2/233.75.215.138/23612/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.2/23102</Value>
+         <Value>233.75.215.6/23107</Value>
+         <Value>233.75.215.10/23112</Value>
+         <Value>233.75.215.130/23602</Value>
+         <Value>233.75.215.134/23607</Value>
+         <Value>233.75.215.138/23612</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.145.17</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1064</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.145.18</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1064</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+   <Feed>
+      <Name>aobu_sz</Name>
+      <Comment>NYSE Alternext OpenBook Ultra Equities Symbols S-Z</Comment>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.75.215.3/23103</Value>
+         <Value>default1/233.75.215.7/23108/monitorOff</Value>
+         <Value>default1/233.75.215.11/23113/monitorOff</Value>
+         <Value>default2/233.75.215.131/23603</Value>
+         <Value>default2/233.75.215.135/23608/monitorOff</Value>
+         <Value>default2/233.75.215.139/23613/monitorOff</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.75.215.3/23103</Value>
+         <Value>233.75.215.7/23108</Value>
+         <Value>233.75.215.11/23113</Value>
+         <Value>233.75.215.131/23603</Value>
+         <Value>233.75.215.135/23608</Value>
+         <Value>233.75.215.139/23613</Value>
+      </Parameter>
+      <Comment>Primary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.145.17</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1065</Value>
+         </Parameter>
+      </ParamGroup>
+      <Comment>Secondary Retransmission Request Address</Comment>
+      <ParamGroup>
+         <Name>RefreshRequest</Name>
+         <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.145.18</Value>
+         </Parameter>
+         <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1065</Value>
+         </Parameter>
+      </ParamGroup>
+   </Feed>
+
+   <DefineParameterGroup>
+      <Name>PlaybackFiles</Name>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>SLEEP</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseFtRv</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtMuted</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordSymbolFile</Name>
+         <Value/>
+      </Parameter>
+      <Parameter>
+         <Name>UseWadmin</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseMdrv</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseSsl</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseLbt</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseWmw</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FieldAttrs</Name>
+         <Value/>
+      </Parameter>
+   </DefineParameterGroup>
+
+
+<!-- SFD-1805 End -->
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

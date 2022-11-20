@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for the FINRA feeds (BBDS and TDDS). See the Administrators Guide for more information--><!--The following configuration clauses are common to all FINRA feed handlers-->
+    
+   <!-- Site specific includes -->
+   <IncludeFile>finra_tport.xml</IncludeFile>
+   <IncludeFile>finra_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.superfeed.xml</IncludeFile>
+   <!-- END Site specific includes -->
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>NOTCBB</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TradeCalculateTick</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter> 
+      <Name>RecordNotFoundAction</Name> 
+      <Value>create</Value> 
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ParticipantIdMapFuncName</Name>
+      <Value>nasdaqPartIdMap</Value>
+      <Comment>Participant ID mapping function. nasdaqPartIdMap is default.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Comment>so that test data is ignored</Comment>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OrderBookData</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TradeCalculateVwap</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FinraQuoteResumeChangesStatus</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>HandleSessionStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FinraMarketStatusSymbol</Name>
+      <Value>MARKET_STATUS</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishGeneralAdmin</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>GeneralAdminSymbol</Name>
+      <Value>FINRAADMIN</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>FinraLineFormat</Name>
+      <Comment>Common line-related configuration information.  Some feeds override these.</Comment>
+      <Parameter>
+         <Name>LineDataFormat</Name>
+         <Value>block</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryOffset</Name>
+         <Value>0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageCategoryControl</Name>
+         <Value>C</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeOffset</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumOffset</Name>
+         <Value>5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataSeqNumLength</Name>
+         <Value>8</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeSeqNumReset</Name>
+         <Value>ILM</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataMessageTypeHeartbeat</Name>
+         <Value>T</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransOffset</Name>
+         <Value>3</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransLength</Name>
+         <Value>2</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransOrig</Name>
+         <Value>O </Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransAll</Name>
+         <Value>V </Value>
+         <Comment>Internal; some feeds override</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransTest</Name>
+         <Value>A </Value>
+         <Comment>Internal (future). Test cycle transmission.</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterCheckEveryMessageInBlock</Name>
+         <Value>true</Value>
+         <Comment>Set to true as workaround to Finra feed bug.</Comment>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>BbdsConfig</Name>
+      <Parameter>
+         <Name>CalculateTopOfBook</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ChainParticipants</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransTest</Name>
+         <Value>T </Value>
+         <Comment>Internal</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransAll</Name>
+         <Value>R </Value>
+         <Comment>Internal</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>FieldAttrs</Name>
+         <Value>FieldAttrsCommon</Value>
+         <Value>FieldAttrsFund</Value>
+         <Value>FieldAttrsIndex</Value>
+         <Value>FieldAttrsQuote</Value>
+         <Value>FieldAttrsChain</Value>
+         <Value>FieldAttrsOrderBookMsg</Value>
+         <Value>FieldAttrsOrderBookWombatMsg</Value>
+         <Value>FieldAttrsOrderListPart</Value>
+         <Value>FieldAttrsSecurityStatus</Value>
+         <Value>FieldAttrsStatus</Value>
+         <Value>FieldAttrsReuters</Value>
+      </Parameter>
+      <UseParameterGroup name="FinraLineFormat"/>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>TddsConfig</Name>
+      <Parameter>
+         <Name>OrderBookData</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TddsPublishPriceChangeIndicator</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransAll</Name>
+         <Value>R </Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineDataRetransTest</Name>
+         <Value>T </Value>
+      </Parameter>
+      <Parameter>
+         <Name>FieldAttrs</Name>
+         <Value>FieldAttrsCommon</Value>
+         <Value>FieldAttrsFund</Value>
+         <Value>FieldAttrsTrade</Value>
+         <Value>FieldAttrsIndex</Value>
+         <Value>FieldAttrsFundamental</Value>
+         <Value>FieldAttrsSecurityStatus</Value>
+         <Value>FieldAttrsStatus</Value>
+         <Value>FieldAttrsReuters</Value>
+         <Value>FieldAttrsNasdaq</Value>
+      </Parameter>
+      <UseParameterGroup name="FinraLineFormat"/>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>NotcbbConfig</Name>
+      <Parameter>
+         <Name>CalculateTopOfBook</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>ChainParticipants</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookData</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FieldAttrs</Name>
+         <Value>FieldAttrsCommon</Value>
+         <Value>FieldAttrsFund</Value>
+         <Value>FieldAttrsIndex</Value>
+         <Value>FieldAttrsQuote</Value>
+         <Value>FieldAttrsTrade</Value>
+         <Value>FieldAttrsChain</Value>
+         <Value>FieldAttrsFundamental</Value>
+         <Value>FieldAttrsOrderBookMsg</Value>
+         <Value>FieldAttrsOrderListPart</Value>
+         <Value>FieldAttrsOrderBookWombatMsg</Value>
+         <Value>FieldAttrsSecurityStatus</Value>
+         <Value>FieldAttrsStatus</Value>
+      </Parameter>
+      <UseParameterGroup name="FinraLineFormat"/>
+   </DefineParameterGroup>
+    
+   <Feed>
+      <Name>finra</Name>
+         <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>bbds</Value>
+         <Value>tdds</Value>
+      </Parameter>
+      <UseParameterGroup name="NotcbbConfig"/>
+      <Parameter> 
+         <Name>SecurityStatusGlobalSymbolFormat</Name> 
+         <Value>NOTCBB_SECSTATUS</Value> 
+      </Parameter> 
+      <UseParameterGroup name="GlobalSecStatusParams"/>
+   </Feed>
+    
+   <Feed>
+      <Name>notcbb</Name>
+      <Comment>Old name - same as finra</Comment>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>bbds</Value>
+         <Value>tdds</Value>
+      </Parameter>
+      <UseParameterGroup name="NotcbbConfig"/>
+   </Feed>
+    
+   <Feed>
+      <Name>tdds</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-38</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.3.0.10/55378</Value>
+         <Value>default2/224.3.0.20/55379</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.3.0.10</Value>
+         <Value>224.3.0.20</Value>
+      </Parameter>
+      <UseParameterGroup name="TddsConfig"/>
+   </Feed>
+    
+   <Feed>
+      <Name>bbds</Name>
+      <Parameter>
+         <Name>ExtractHint</Name>
+         <Value>-29</Value>
+         <Comment>Used to identify the feed in the metadata</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/224.3.0.24/55366</Value>
+         <Value>default2/224.3.0.25/55367</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>224.3.0.24</Value>
+         <Value>224.3.0.25</Value>
+      </Parameter>
+      <UseParameterGroup name="BbdsConfig"/>
+   </Feed>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

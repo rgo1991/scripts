@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <MamaSources>
+
+      <!-- UTP Participant Mapping -->
+      <MamaSource>
+         <Name>UTP</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>NASDAQV5</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> Boston Stock Exchange on UTP </Comment>
+         <Name>BOSX_UTP</Name>
+         <Type>Sub</Type>
+         <ParentId>UTP</ParentId>
+         <SubSourceId>B</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> CBOE Stock Exchange on UTP </Comment>
+         <Name>CBSX_UTP</Name>
+         <Type>Sub</Type>
+         <ParentId>UTP</ParentId>
+         <SubSourceId>W</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> Chicago Stock Exchange on UTP </Comment>
+         <Name>CHXE_UTP</Name>
+         <Type>Sub</Type>
+         <ParentId>UTP</ParentId>
+         <SubSourceId>M</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> FINRA on UTP </Comment>
+         <Name>ADF_UTP</Name>
+         <Type>Sub</Type>
+         <ParentId>UTP</ParentId>
+         <SubSourceId>D</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> International Securities Exchange on UTP </Comment>
+         <Name>XISE_UTP</Name>
+         <Type>Sub</Type>
+         <ParentId>UTP</ParentId>
+         <SubSourceId>I</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> National Stock Exchange on UTP </Comment>
+         <Name>CINN_UTP</Name>
+         <Type>Sub</Type>
+         <ParentId>UTP</ParentId>
+         <SubSourceId>C</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> Philidelphia Stock Exchange on UTP </Comment>
+         <Name>PHLX_UTP</Name>
+         <Type>Sub</Type>
+         <ParentId>UTP</ParentId>
+         <SubSourceId>X</SubSourceId>
+      </MamaSource>
+
+      <!-- CTA Tape A Participant Mapping -->
+      <MamaSource>
+         <Name>CTA</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>NYSEV5</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> Boston Stock Exchange on CTA Tape A </Comment>
+         <Name>BOSX_CTA</Name>
+         <Type>Sub</Type>
+         <ParentId>CTA</ParentId>
+         <SubSourceId>B</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> CBOE Stock Exchange on CTA Tape A </Comment>
+         <Name>CBSX_CTA</Name>
+         <Type>Sub</Type>
+         <ParentId>CTA</ParentId>
+         <SubSourceId>W</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> Chicago Stock Exchange on CTA Tape A </Comment>
+         <Name>CHXE_CTA</Name>
+         <Type>Sub</Type>
+         <ParentId>CTA</ParentId>
+         <SubSourceId>M</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> FINRA on CTA Tape A </Comment>
+         <Name>ADF_CTA</Name>
+         <Type>Sub</Type>
+         <ParentId>CTA</ParentId>
+         <SubSourceId>D</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> International Securities Exchange on CTA Tape A </Comment>
+         <Name>XISE_CTA</Name>
+         <Type>Sub</Type>
+         <ParentId>CTA</ParentId>
+         <SubSourceId>I</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> LavaFlow on CTA Tape A </Comment>
+         <Name>FLOW_CTA</Name>
+         <Type>Sub</Type>
+         <ParentId>CTA</ParentId>
+         <SubSourceId>FLOW</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> National Stock Exchange on CTA Tape A </Comment>
+         <Name>CINN_CTA</Name>
+         <Type>Sub</Type>
+         <ParentId>CTA</ParentId>
+         <SubSourceId>C</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> Philidelphia Stock Exchange on CTA Tape A </Comment>
+         <Name>PHLX_CTA</Name>
+         <Type>Sub</Type>
+         <ParentId>CTA</ParentId>
+         <SubSourceId>X</SubSourceId>
+      </MamaSource>
+
+      <!-- CTA Tape B Participant Mapping -->
+      <MamaSource>
+         <Name>AMEX</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>AMEXV5</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> Boston Stock Exchange on CTA Tape B </Comment>
+         <Name>BOSX_AMEX</Name>
+         <Type>Sub</Type>
+         <ParentId>AMEX</ParentId>
+         <SubSourceId>B</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> CBOE Stock Exchange on CTA Tape B </Comment>
+         <Name>CBSX_AMEX</Name>
+         <Type>Sub</Type>
+         <ParentId>AMEX</ParentId>
+         <SubSourceId>W</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> Chicago Stock Exchange on CTA Tape B </Comment>
+         <Name>CHXE_AMEX</Name>
+         <Type>Sub</Type>
+         <ParentId>AMEX</ParentId>
+         <SubSourceId>M</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> FINRA on CTA Tape B </Comment>
+         <Name>ADF_AMEX</Name>
+         <Type>Sub</Type>
+         <ParentId>AMEX</ParentId>
+         <SubSourceId>D</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> International Securities Exchange on CTA Tape B </Comment>
+         <Name>XISE_AMEX</Name>
+         <Type>Sub</Type>
+         <ParentId>AMEX</ParentId>
+         <SubSourceId>I</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> LavaFlow on CTA Tape B </Comment>
+         <Name>FLOW_AMEX</Name>
+         <Type>Sub</Type>
+         <ParentId>CTA</ParentId>
+         <SubSourceId>FLOW</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> National Stock Exchange on CTA Tape B </Comment>
+         <Name>CINN_AMEX</Name>
+         <Type>Sub</Type>
+         <ParentId>AMEX</ParentId>
+         <SubSourceId>C</SubSourceId>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> Philidelphia Stock Exchange on CTA Tape B </Comment>
+         <Name>PHLX_AMEX</Name>
+         <Type>Sub</Type>
+         <ParentId>AMEX</ParentId>
+         <SubSourceId>X</SubSourceId>
+      </MamaSource>
+
+      <!-- Group TvItch-->
+      <MamaSource>
+         <Comment> NASDAQ Full Depth from Tvitch </Comment>
+         <Name>TVITCH</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>ORDER</SubscSourceName>
+         <Transport>feeds</Transport>
+         <Group>GRP_NSDQ</Group>
+         <GroupWeight>30</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> Nasdaq Stock Exchange on UTP </Comment>
+         <Name>NSDQ_UTP</Name>
+         <Type>Sub</Type>
+         <ParentId>UTP</ParentId>
+         <SubSourceId>Q</SubSourceId>
+         <Group>GRP_NSDQ</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> Nasdaq Stock Exchange on CTA Tape A </Comment>
+         <Name>NSDQ_CTA</Name>
+         <Type>Sub</Type>
+         <ParentId>CTA</ParentId>
+         <SubSourceId>T</SubSourceId>
+         <Group>GRP_NSDQ</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> Nasdaq Stock Exchange on CTA Tape B </Comment>
+         <Name>NSDQ_AMEX</Name>
+         <Type>Sub</Type>
+         <ParentId>AMEX</ParentId>
+         <SubSourceId>T</SubSourceId>
+         <Group>GRP_NSDQ</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <!-- Group NYSE Arca -->
+<!--
+      <MamaSource>
+         <Comment> NYSE Arca Full Depth from ArcaBook </Comment>
+         <Name>ARCA</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>ARCA</SubscSourceName>
+         <Transport>feeds</Transport>
+         <Group>GRP_ARCA</Group>
+         <GroupWeight>30</GroupWeight>
+      </MamaSource>
+-->
+
+ <!-- SFD-1011 -insrting arcabbo -->
+      <MamaSource>
+         <Comment> NYSE Arca Full Depth from ArcaBook </Comment>
+         <Name>ARCABBO</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>ARCABBO</SubscSourceName>
+         <Transport>feeds</Transport>
+         <Group>GRP_ARCA</Group>
+         <GroupWeight>30</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> NYSE Arca on UTP </Comment>
+         <Name>ARCA_UTP</Name>
+         <Type>Sub</Type>
+         <ParentId>UTP</ParentId>
+         <SubSourceId>P</SubSourceId>
+         <Group>GRP_ARCA</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> NYSE Arca on CTA Tape A </Comment>
+         <Name>ARCA_CTA</Name>
+         <Type>Sub</Type>
+         <ParentId>CTA</ParentId>
+         <SubSourceId>P</SubSourceId>
+         <Group>GRP_ARCA</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> NYSE Arca on CTA Tape B </Comment>
+         <Name>ARCA_AMEX</Name>
+         <Type>Sub</Type>
+         <ParentId>AMEX</ParentId>
+         <SubSourceId>P</SubSourceId>
+         <Group>GRP_ARCA</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <!-- Group NYSE -->
+      <MamaSource>
+         <Comment> New York Stock Exchange Full Depth from OpenBook Ultra </Comment>
+         <Name>OPENBOOK</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>OPENBOOK</SubscSourceName>
+         <Transport>feeds</Transport>
+         <Group>GRP_NYSE</Group>
+         <GroupWeight>10</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> New York Stock Exchange Full Depth from NYSE BQ</Comment>
+         <Name>NYSEBBO</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>NYSEBBO</SubscSourceName>
+         <Transport>feeds</Transport>
+         <Group>GRP_NYSE</Group>
+         <GroupWeight>30</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> New York Stock Exchange on UTP </Comment>
+         <Name>NYSE_UTP</Name>
+         <Type>Sub</Type>
+         <ParentId>UTP</ParentId>
+         <SubSourceId>N</SubSourceId>
+         <Group>GRP_NYSE</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> New York Stock Exchange on CTA Tape A </Comment>
+         <Name>NYSE_CTA</Name>
+         <Type>Sub</Type>
+         <ParentId>CTA</ParentId>
+         <SubSourceId>N</SubSourceId>
+         <Group>GRP_NYSE</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> New York Stock Exchange on CTA Tape B </Comment>
+         <Name>NYSE_AMEX</Name>
+         <Type>Sub</Type>
+         <ParentId>AMEX</ParentId>
+         <SubSourceId>N</SubSourceId>
+         <Group>GRP_NYSE</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <!-- Group BATS -->
+      <MamaSource>
+         <Comment> BATS Exchange Full Depth from BATS Multicast </Comment>
+         <Name>BATS</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>BATS</SubscSourceName>
+         <Transport>feeds</Transport>
+         <Group>GRP_BATS</Group>
+         <GroupWeight>30</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> BATS Exchange on UTP </Comment>
+         <Name>BATS_UTP</Name>
+         <Type>Sub</Type>
+         <ParentId>UTP</ParentId>
+         <SubSourceId>Z</SubSourceId>
+         <Group>GRP_BATS</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> BATS Exchange on CTA Tape A </Comment>
+         <Name>BATS_CTA</Name>
+         <Type>Sub</Type>
+         <ParentId>CTA</ParentId>
+         <SubSourceId>Z</SubSourceId>
+         <Group>GRP_BATS</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> BATS Exchange on CTA Tape B </Comment>
+         <Name>BATS_AMEX</Name>
+         <Type>Sub</Type>
+         <ParentId>AMEX</ParentId>
+         <SubSourceId>Z</SubSourceId>
+         <Group>GRP_BATS</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> BATS Exchange Y on UTP</Comment>
+         <Name>BATSY_UTP</Name>
+         <Type>Sub</Type>
+         <ParentId>UTP</ParentId>
+         <SubSourceId>Y</SubSourceId>
+         <!-- Leave BATS Y out of the BATS group until we have a direct feed for it -->
+         <!--Group>GRP_BATS</Group>
+         <GroupWeight>20</GroupWeight-->
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> BATS Exchange Y on CTA Tape A </Comment>
+         <Name>BATSY_CTA</Name>
+         <Type>Sub</Type>
+         <ParentId>CTA</ParentId>
+         <SubSourceId>Y</SubSourceId>
+         <!-- Leave BATS Y out of the BATS group until we have a direct feed for it -->
+         <!--Group>GRP_BATS</Group>
+         <GroupWeight>20</GroupWeight-->
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> BATS Exchange Y on CTA Tape B </Comment>
+         <Name>BATSY_AMEX</Name>
+         <Type>Sub</Type>
+         <ParentId>AMEX</ParentId>
+         <SubSourceId>Y</SubSourceId>
+         <!-- Leave BATS Y out of the BATS group until we have a direct feed for it -->
+         <!--Group>GRP_BATS</Group>
+         <GroupWeight>20</GroupWeight-->
+      </MamaSource>
+
+      <!-- Group NYSE Amex -->
+      <MamaSource>
+         <Comment> NYSE Amex Full Depth from Amex OpenBook Ultra </Comment>
+         <Name>AMEXDOB</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>AMEXDOB</SubscSourceName>
+         <Transport>feeds</Transport>
+         <Group>GRP_AMEX</Group>
+         <GroupWeight>30</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> NYSE Amex Full Depth from Amex OpenBook Ultra </Comment>
+         <Name>AMEXBBO</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>AMEXBBO</SubscSourceName>
+         <Transport>feeds</Transport>
+         <Group>GRP_AMEX</Group>
+         <GroupWeight>30</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> NYSE Amex on UTP</Comment>
+         <Name>AMEX_UTP</Name>
+         <Type>Sub</Type>
+         <ParentId>UTP</ParentId>
+         <SubSourceId>A</SubSourceId>
+         <Group>GRP_AMEX</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> NYSE Amex on CTA Tape A </Comment>
+         <Name>AMEX_CTA</Name>
+         <Type>Sub</Type>
+         <ParentId>CTA</ParentId>
+         <SubSourceId>A</SubSourceId>
+         <Group>GRP_AMEX</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> NYSE Amex on CTA Tape B </Comment>
+         <Name>AMEX_AMEX</Name>
+         <Type>Sub</Type>
+         <ParentId>AMEX</ParentId>
+         <SubSourceId>A</SubSourceId>
+         <Group>GRP_AMEX</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <!-- Group DirectEdge - EDGE A -->
+      <MamaSource>
+         <Comment> DirectEdge Full Depth from DirectEdge NextGen </Comment>
+         <Name>DEDGA</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>DEDGEMC</SubscSourceName>
+         <Transport>feeds</Transport>
+         <Group>GRP_DEDGA</Group>
+         <GroupWeight>30</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> DirectEdge A on UTP </Comment>
+         <Name>EDGA_UTP</Name>
+         <Type>Sub</Type>
+         <ParentId>UTP</ParentId>
+         <SubSourceId>J</SubSourceId>
+         <Group>GRP_DEDGA</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> DirectEdge A on CTA Tape A </Comment>
+         <Name>EDGA_NYSE</Name>
+         <Type>Sub</Type>
+         <ParentId>CTA</ParentId>
+         <SubSourceId>J</SubSourceId>
+         <Group>GRP_DEDGA</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> DirectEdge A on CTA Tape B </Comment>
+         <Name>EDGA_AMEX</Name>
+         <Type>Sub</Type>
+         <ParentId>AMEX</ParentId>
+         <SubSourceId>J</SubSourceId>
+         <Group>GRP_DEDGA</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <!-- Group DirectEdge - EDGE X -->
+      <MamaSource>
+         <Comment> DirectEdge Full Depth from DirectEdge NextGen </Comment>
+         <Name>DEDGX</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <OutboundThrottleRate>200</OutboundThrottleRate>
+         <SubscSourceName>DEDGEMC</SubscSourceName>
+         <Transport>feeds</Transport>
+         <Group>GRP_DEDGX</Group>
+         <GroupWeight>30</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> DirectEdge X on UTP </Comment>
+         <Name>EDGX_UTP</Name>
+         <Type>Sub</Type>
+         <ParentId>UTP</ParentId>
+         <SubSourceId>K</SubSourceId>
+         <Group>GRP_DEDGX</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> DirectEdge X on CTA Tape A </Comment>
+         <Name>EDGX_NYSE</Name>
+         <Type>Sub</Type>
+         <ParentId>CTA</ParentId>
+         <SubSourceId>K</SubSourceId>
+         <Group>GRP_DEDGX</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+      <MamaSource>
+         <Comment> DirectEdge X on CTA Tape B </Comment>
+         <Name>EDGX_AMEX</Name>
+         <Type>Sub</Type>
+         <ParentId>AMEX</ParentId>
+         <SubSourceId>K</SubSourceId>
+         <Group>GRP_DEDGX</Group>
+         <GroupWeight>20</GroupWeight>
+      </MamaSource>
+
+   </MamaSources>
+
+</config>

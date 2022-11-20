@@ -1,0 +1,15 @@
+#!/bin/bash
+
+getconfig(){
+
+echo "CPU Specification :"
+
+lscpu | sed s/":"/","/1 | tr ' ' ','
+
+}
+
+echo -en "Getting system details... "
+getconfig > cpu.csv
+echo "Done"
+ls cpu.csv
+

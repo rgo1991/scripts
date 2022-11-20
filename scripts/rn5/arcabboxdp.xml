@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for the NYSE Quotes feed handler. See the Administrators Guide for more information: http://wombatconsulting.com/feedhandlers/admin-guide.html-->
+
+   <!-- Site specific includes -->
+   <IncludeFile>arcabboxdp_tport.xml</IncludeFile>
+   <IncludeFile>arcabboxdp_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>ARCABBO</Value>
+   </Parameter>
+
+   <!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+   <!-- SFD-1113: Symbol Announce -->
+
+   <Parameter>
+      <Name>UdpBufferSize</Name>
+      <Value>16777216</Value>
+   </Parameter>
+
+<!-- SFDCR-2014 Start -->
+<!-- Superfeed Pillar XDP Login SFD-2337 ECC-284 START -->
+<!-- UAT -->
+        <DefineParameterGroup>
+          <Name>UseABboXdp1U</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>PVLATXDP01</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.139.250</Value><!-- Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35330</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.143.251/35330</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+
+        <DefineParameterGroup>
+          <Name>UseABboXdp2U</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>PVLATXDP02</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.143.250</Value><!-- Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35331</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.139.251/35331</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+<!-- PROD A -->
+        <DefineParameterGroup>
+          <Name>UseABboXdp1P</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>PVLATXDP03</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.139.250</Value><!-- Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35332</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.143.251/35332</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+
+        <DefineParameterGroup>
+          <Name>UseABboXdp2P</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>PVLATXDP04</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.143.250</Value><!-- Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35333</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.139.251/35333</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+<!-- PROD B -->
+        <DefineParameterGroup>
+          <Name>UseABboXdp1S</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>PVLATXDP05</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.139.250</Value><!-- Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35334</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.143.251/35334</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+
+        <DefineParameterGroup>
+          <Name>UseABboXdp2S</Name>
+          <Parameter>
+             <Name>XdpSourceId</Name>
+             <Value>PVLATXDP06</Value>
+          </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>162.69.143.250</Value><!-- Pri -->
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>35335</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>162.69.139.251/35335</Value><!-- Sec -->
+        </Parameter>
+       </DefineParameterGroup>
+
+<!-- Superfeed Pillar XDP Login SFD-2337 END -->
+<!-- SFDCR-2014 END  -->
+
+   <!--The following configuration clauses are common to all xdp feed handlers-->
+   <Parameter>
+      <Name>XdpMessageHandlerName</Name>
+      <Value>arcabboxdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpProductName</Name>
+      <Value>ArcaBboXdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpProductNameBook</Name>
+      <Value>ArcaBboXdpBook</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>xdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpLogRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpProductId</Name>
+      <Value>152</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UseUnitOfTrade</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbolPrefixTopOfBook</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FtRvService</Name>
+      <Value>7731</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_arcabboxdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <!-- <Value>/opt/wombat/log/arcabboxdp.sym</Value> -->
+      <Value></Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>OrderBookSymbolFile</Name>
+      <!-- <Value>/opt/wombat/log/arcabboxdp.orderbook.sym</Value> -->
+      <Value></Value>
+   </Parameter>
+    
+   <Parameter>
+      <Comment>For getting data into Superbook we need to publish a book update.</Comment>
+      <Name>PublishOrderBooks</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>nyse2streetMap</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpApplyLotsToSize</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MessageRecoveryFile</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ParticipantQuoteCount</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoUseCurrentTimeAsLineTimeAndSrcTime</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoAddPrefixOnSecurityStatusOrig</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterDiscardForwardRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MessageRecoveryFile</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookUseUndecoratedSymbolName</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordHandlerAlwaysAppendProductSuffix</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpReferenceFiles</Name>
+      <Value>/opt/wombat/feeds/data/ARCASymbolMapping.txt</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpRefreshType</Name>
+      <Value>3</Value>
+   </Parameter>
+
+   <!--Parameter>
+      <Name>XdpRequestMarketDataRefresh</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpRequestReferenceDataRefresh</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>XdpMaxRefreshSpoolSize</Name>
+      <Value>100000</Value>
+   </Parameter-->
+    
+   <Parameter>
+      <Name>NativeTimeZone</Name>
+      <Value>UTC</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsBloomberg</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsTrade</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>ArcaBboXdpLiveParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>LIVE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRequestRetransTime</Name>
+         <Value>0.25</Value>
+         <Comment>1/4 second</Comment>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>ArcaBboXdpRefreshParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>REFRESH</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MulticastConnectOnInit</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>0.5</Value>
+      </Parameter>
+
+
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>100</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>ArcaBboXdpRequestReqParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>REFRESH_REQ</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+    <!-- Subfeeds for arcabboxdp_prod -->
+    <Feed>
+        <Name>arcabboxdp</Name>
+        <UseParameterGroup name="WmwTransportPropertiesVector2NSD1"/>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>arcabboxdp_request</Value>
+            <Value>arcabboxdp_live_1</Value>
+            <Value>arcabboxdp_refresh_1</Value>
+            <Value>arcabboxdp_live_2</Value>
+            <Value>arcabboxdp_refresh_2</Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>arcabboxdp_1</Name>
+        <UseParameterGroup name="WmwTransportPropertiesVector0NSD2"/>
+        <tny2sffhr01>
+                <UseParameterGroup name="UseABboXdp1U"/>
+        </tny2sffhr01>
+        <pny2sffhr06a>
+                <UseParameterGroup name="UseABboXdp1P"/>
+        </pny2sffhr06a>
+        <pny2sffhr06b>
+                <UseParameterGroup name="UseABboXdp1S"/>
+        </pny2sffhr06b>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>arcabboxdp_request</Value>
+            <Value>arcabboxdp_live_1</Value>
+            <Value>arcabboxdp_refresh_1</Value>
+        </Parameter>
+        <Parameter>
+           <Name>OrderBookSymbolFile</Name>
+           <Value>/opt/wombat/log/arcabboxdp_1.orderbook.sym</Value>
+        </Parameter>
+   	<Parameter>
+      	   <Name>FtGroupName</Name>
+      	   <Value>FT_arcabboxdp_1</Value>
+   	</Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>arcabboxdp_2</Name>
+        <UseParameterGroup name="WmwTransportPropertiesVector0NSD2"/>
+        <tny2sffhr01>
+                <UseParameterGroup name="UseABboXdp2U"/>
+        </tny2sffhr01>
+        <pny2sffhr06a>
+                <UseParameterGroup name="UseABboXdp2P"/>
+        </pny2sffhr06a>
+        <pny2sffhr06b>
+                <UseParameterGroup name="UseABboXdp2S"/>
+        </pny2sffhr06b>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>arcabboxdp_request</Value>
+            <Value>arcabboxdp_live_2</Value>
+            <Value>arcabboxdp_refresh_2</Value>
+        </Parameter>
+        <Parameter>
+           <Name>OrderBookSymbolFile</Name>
+           <Value>/opt/wombat/log/arcabboxdp_2.orderbook.sym</Value>
+        </Parameter>
+        <Parameter>
+           <Name>FtGroupName</Name>
+           <Value>FT_arcabboxdp_2</Value>
+        </Parameter>
+    </Feed>
+
+<!-- SFDCR-2014 Start -->
+
+    <Feed>
+        <Name>arcabboxdp_request</Name>
+        <UseParameterGroup name="ArcaBboXdpRequestReqParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <!--Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.67.1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1069</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AlternativeConnection</Name>
+            <Value>159.125.67.12/1069</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value></Value>
+        </Parameter-->
+    </Feed>
+
+    <Feed>
+        <Name>arcabboxdp_live_1</Name>
+        <UseParameterGroup name="ArcaBboXdpLiveParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshReqFeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.59.24/11241</Value>
+            <Value>default2/224.0.59.152/11301</Value>
+            <Value>default1/224.0.59.26/11243/monitorOff</Value>
+            <Value>default2/224.0.59.154/11303/monitorOff</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.59.24/11241</Value>
+            <Value>224.0.59.152/11301</Value>
+            <Value>224.0.59.26/11243</Value>
+            <Value>224.0.59.154/11303</Value>
+       </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>arcabboxdp_refresh_1</Name>
+        <UseParameterGroup name="ArcaBboXdpRefreshParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.59.28/11245</Value>
+            <Value>default2/224.0.59.156/11305</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.59.28/11245</Value>
+            <Value>224.0.59.156/11305</Value>
+       </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>arcabboxdp_live_2</Name>
+        <UseParameterGroup name="ArcaBboXdpLiveParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshReqFeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>6</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.59.25/11242</Value>
+            <Value>default2/224.0.59.153/11302</Value>
+            <Value>default1/224.0.59.27/11244/monitorOff</Value>
+            <Value>default2/224.0.59.155/11304/monitorOff</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.59.25/11242</Value>
+            <Value>224.0.59.153/11302</Value>
+            <Value>224.0.59.27/11244</Value>
+            <Value>224.0.59.155/11304</Value>
+       </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>arcabboxdp_refresh_2</Name>
+        <UseParameterGroup name="ArcaBboXdpRefreshParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>6</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.59.29/11246</Value>
+            <Value>default2/224.0.59.157/11306</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.59.29/11246</Value>
+            <Value>224.0.59.157/11306</Value>
+       </Parameter>
+    </Feed>
+<!-- SFDCR-2014 End -->
+
+   <!-- Subfeeds for arcabboxdp_cert -->
+    <Feed>
+        <Name>arcabboxdp_cert</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>arcabboxdp_cert_request</Value>
+            <Value>arcabboxdp_cert_live</Value>
+            <Value>arcabboxdp_cert_refresh</Value>
+        </Parameter>
+    </Feed>
+
+
+    <Feed>
+        <Name>arcabboxdp_cert_request</Name>
+        <UseParameterGroup name="ArcaBboXdpRequestReqParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpIpAddress</Name>
+            <Value>159.125.47.113</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TcpPort</Name>
+            <Value>1041</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value></Value>
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>arcabboxdp_cert_live</Name>
+        <UseParameterGroup name="ArcaBboXdpLiveParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshReqFeedId</Name>
+            <Value>request</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RefreshFeedId</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.1.2.252/29400</Value>
+            <Value>default2/224.1.2.255/30400</Value>
+            <Value>default1/224.1.2.252/29420/monitorOff</Value>
+            <Value>default2/224.1.2.255/30420/monitorOff</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.1.2.252/29400</Value>
+            <Value>224.1.2.255/30400</Value>
+            <Value>224.1.2.252/29420</Value>
+            <Value>224.1.2.255/30420</Value>
+       </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>arcabboxdp_cert_refresh</Name>
+        <UseParameterGroup name="ArcaBboXdpLiveParameter"/>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.61.8/22509</Value>
+            <Value>default2/224.0.61.136/22709</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.61.8/22509</Value>
+            <Value>224.0.61.136/22709</Value>
+       </Parameter>
+    </Feed>
+
+   <IncludeFile>arcabboxdp_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>arcabboxdp_quote_condition_mapping.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

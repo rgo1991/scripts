@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <MamaSources>
+
+      <MamaSource>
+         <Name>WOMBAT</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <SubscSourceName>WOMBAT</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+      <MamaSource>
+         <Name>TSXL1</Name>
+         <Type>Main</Type>
+         <InitState>OK</InitState>
+         <SubscSourceName>TSXL1</SubscSourceName>
+         <Transport>feeds</Transport>
+      </MamaSource>
+
+   </MamaSources>
+
+</config>

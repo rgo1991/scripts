@@ -1,0 +1,2989 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+<!-- SF legacy opra production Start -->
+
+   <Feed>
+      <Name>opra_1</Name>
+      <Comment>Symbol Range: A to AAPL-calls</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.1/11101</Value>
+         <Value>default2/233.43.202.33/12101</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.1</Value>
+         <Value>233.43.202.33</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>1</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_2</Name>
+      <Comment>Symbol Range: AAPL-puts to ACDZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.2/11102</Value>
+         <Value>default2/233.43.202.34/12102</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.2</Value>
+         <Value>233.43.202.34</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>2</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_3</Name>
+      <Comment>Symbol Range: ACE to ALZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.3/11103</Value>
+         <Value>default2/233.43.202.35/12103</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.3</Value>
+         <Value>233.43.202.35</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>3</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_4</Name>
+      <Comment>Symbol Range: AM to APCZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.4/11104</Value>
+         <Value>default2/233.43.202.36/12104</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.4</Value>
+         <Value>233.43.202.36</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>4</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_5</Name>
+      <Comment>Symbol Range: APD to BDZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.5/11105</Value>
+         <Value>default2/233.43.202.37/12105</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.5</Value>
+         <Value>233.43.202.37</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>5</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_6</Name>
+      <Comment>Symbol Range: BE to BZZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.6/11106</Value>
+         <Value>default2/233.43.202.38/12106</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.6</Value>
+         <Value>233.43.202.38</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>6</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_7</Name>
+      <Comment>Symbol Range: C to CDZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.7/11107</Value>
+         <Value>default2/233.43.202.39/12107</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.7</Value>
+         <Value>233.43.202.39</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>7</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_8</Name>
+      <Comment>Symbol Range: CE to CMFZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.8/11108</Value>
+         <Value>default2/233.43.202.40/12108</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.8</Value>
+         <Value>233.43.202.40</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>8</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_9</Name>
+      <Comment>Symbol Range: CMG to CSBZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.9/11109</Value>
+         <Value>default2/233.43.202.41/12109</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.9</Value>
+         <Value>233.43.202.41</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>9</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_10</Name>
+      <Comment>Symbol Range: CSC to DFZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.10/11110</Value>
+         <Value>default2/233.43.202.42/12110</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.10</Value>
+         <Value>233.43.202.42</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>10</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_11</Name>
+      <Comment>Symbol Range: DG to DIAZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.11/11111</Value>
+         <Value>default2/233.43.202.43/12111</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.11</Value>
+         <Value>233.43.202.43</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>11</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_12</Name>
+      <Comment>Symbol Range: DIB to EDMZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.12/11112</Value>
+         <Value>default2/233.43.202.44/12112</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.12</Value>
+         <Value>233.43.202.44</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>12</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_13</Name>
+      <Comment>Symbol Range: EDN to ERZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.13/11113</Value>
+         <Value>default2/233.43.202.45/12113</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.13</Value>
+         <Value>233.43.202.45</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>13</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_14</Name>
+      <Comment>Symbol Range: ES to FASZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.14/11114</Value>
+         <Value>default2/233.43.202.46/12114</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.14</Value>
+         <Value>233.43.202.46</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>14</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_15</Name>
+      <Comment>Symbol Range: FAT to FSZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.15/11115</Value>
+         <Value>default2/233.43.202.47/12115</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.15</Value>
+         <Value>233.43.202.47</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>15</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_16</Name>
+      <Comment>Symbol Range: FT to GDZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.16/11116</Value>
+         <Value>default2/233.43.202.48/12116</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.16</Value>
+         <Value>233.43.202.48</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>16</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_17</Name>
+      <Comment>Symbol Range: GE to GLD-calls</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.17/11117</Value>
+         <Value>default2/233.43.202.49/12117</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.17</Value>
+         <Value>233.43.202.49</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>17</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_18</Name>
+      <Comment>Symbol Range: GLD-puts to GNZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.18/11118</Value>
+         <Value>default2/233.43.202.50/12118</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.18</Value>
+         <Value>233.43.202.50</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>18</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_19</Name>
+      <Comment>Symbol Range: GO to GOOG-calls</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.19/11119</Value>
+         <Value>default2/233.43.202.51/12119</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.19</Value>
+         <Value>233.43.202.51</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>19</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_20</Name>
+      <Comment>Symbol Range: GOOG-puts to GZZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.20/11120</Value>
+         <Value>default2/233.43.202.52/12120</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.20</Value>
+         <Value>233.43.202.52</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>20</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_21</Name>
+      <Comment>Symbol Range: H to IBLZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.21/11121</Value>
+         <Value>default2/233.43.202.53/12121</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.21</Value>
+         <Value>233.43.202.53</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>21</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_22</Name>
+      <Comment>Symbol Range: IBM to IUZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.22/11122</Value>
+         <Value>default2/233.43.202.54/12122</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.22</Value>
+         <Value>233.43.202.54</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>22</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_23</Name>
+      <Comment>Symbol Range: IV to JBZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.23/11123</Value>
+         <Value>default2/233.43.202.55/12123</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.23</Value>
+         <Value>233.43.202.55</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>23</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_24</Name>
+      <Comment>Symbol Range: JC to KOZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.24/11124</Value>
+         <Value>default2/233.43.202.56/12124</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.24</Value>
+         <Value>233.43.202.56</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>24</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_25</Name>
+      <Comment>Symbol Range: KP to M</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.129/16101</Value>
+         <Value>default2/233.43.202.161/17101</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.129</Value>
+         <Value>233.43.202.161</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>25</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_26</Name>
+      <Comment>Symbol Range: MA to MDZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.130/16102</Value>
+         <Value>default2/233.43.202.162/17102</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.130</Value>
+         <Value>233.43.202.162</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>26</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_27</Name>
+      <Comment>Symbol Range: ME to MSFZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.131/16103</Value>
+         <Value>default2/233.43.202.163/17103</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.131</Value>
+         <Value>233.43.202.163</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>27</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_28</Name>
+      <Comment>Symbol Range: MSG to NFLX-calls</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.132/16104</Value>
+         <Value>default2/233.43.202.164/17104</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.132</Value>
+         <Value>233.43.202.164</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>28</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_29</Name>
+      <Comment>Symbol Range: NFLX-puts to OHZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.133/16105</Value>
+         <Value>default2/233.43.202.165/17105</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.133</Value>
+         <Value>233.43.202.165</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>29</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_30</Name>
+      <Comment>Symbol Range: OI to PCLN-calls</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.134/16106</Value>
+         <Value>default2/233.43.202.166/17106</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.134</Value>
+         <Value>233.43.202.166</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>30</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_31</Name>
+      <Comment>Symbol Range: PCLN-puts to PODZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.135/16107</Value>
+         <Value>default2/233.43.202.167/17107</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.135</Value>
+         <Value>233.43.202.167</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>31</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_32</Name>
+      <Comment>Symbol Range: POE to QQQ-calls</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.136/16108</Value>
+         <Value>default2/233.43.202.168/17108</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.136</Value>
+         <Value>233.43.202.168</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>32</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_33</Name>
+      <Comment>Symbol Range: QQQ-puts to RLZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.137/16109</Value>
+         <Value>default2/233.43.202.169/17109</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.137</Value>
+         <Value>233.43.202.169</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>33</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_34</Name>
+      <Comment>Symbol Range: RM to SCZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.138/16110</Value>
+         <Value>default2/233.43.202.170/17110</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.138</Value>
+         <Value>233.43.202.170</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>34</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_35</Name>
+      <Comment>Symbol Range: SD to SLV-calls</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.139/16111</Value>
+         <Value>default2/233.43.202.171/17111</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.139</Value>
+         <Value>233.43.202.171</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>35</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_36</Name>
+      <Comment>Symbol Range: SLV-puts to SPXZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.140/16112</Value>
+         <Value>default2/233.43.202.172/17112</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.140</Value>
+         <Value>233.43.202.172</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>36</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_37</Name>
+      <Comment>Symbol Range: SPY to SPY-calls</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.141/16113</Value>
+         <Value>default2/233.43.202.173/17113</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.141</Value>
+         <Value>233.43.202.173</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>37</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_38</Name>
+      <Comment>Symbol Range: SPY-puts to SPYZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.142/16114</Value>
+         <Value>default2/233.43.202.174/17114</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.142</Value>
+         <Value>233.43.202.174</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>38</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_39</Name>
+      <Comment>Symbol Range: SPZ to SYZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.143/16115</Value>
+         <Value>default2/233.43.202.175/17115</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.143</Value>
+         <Value>233.43.202.175</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>39</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_40</Name>
+      <Comment>Symbol Range: SZ to TLTZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.144/16116</Value>
+         <Value>default2/233.43.202.176/17116</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.144</Value>
+         <Value>233.43.202.176</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>40</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_41</Name>
+      <Comment>Symbol Range: TLU to TTZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.145/16117</Value>
+         <Value>default2/233.43.202.177/17117</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.145</Value>
+         <Value>233.43.202.177</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>41</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_42</Name>
+      <Comment>Symbol Range: TU to URZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.146/16118</Value>
+         <Value>default2/233.43.202.178/17118</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.146</Value>
+         <Value>233.43.202.178</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>42</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_43</Name>
+      <Comment>Symbol Range: US to VBZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.147/16119</Value>
+         <Value>default2/233.43.202.179/17119</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.147</Value>
+         <Value>233.43.202.179</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>43</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_44</Name>
+      <Comment>Symbol Range: VC to VXZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.148/16120</Value>
+         <Value>default2/233.43.202.180/17120</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.148</Value>
+         <Value>233.43.202.180</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>44</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_45</Name>
+      <Comment>Symbol Range: VY to WLZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.149/16121</Value>
+         <Value>default2/233.43.202.181/17121</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.149</Value>
+         <Value>233.43.202.181</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>45</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_46</Name>
+      <Comment>Symbol Range: WM to XLE-calls</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.150/16122</Value>
+         <Value>default2/233.43.202.182/17122</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.150</Value>
+         <Value>233.43.202.182</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>46</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_47</Name>
+      <Comment>Symbol Range: XLE-puts to XLXZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.151/16123</Value>
+         <Value>default2/233.43.202.183/17123</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.151</Value>
+         <Value>233.43.202.183</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>47</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>opra_48</Name>
+      <Comment>Symbol Range: XLY to ZZZZZ</Comment>
+      <UseParameterGroup name="OprabinLineFormat"/>
+      <Parameter>
+         <Name>Listen</Name>
+         <Value>default1/233.43.202.152/16124</Value>
+         <Value>default2/233.43.202.184/17124</Value>
+      </Parameter>
+      <Parameter>
+         <Name>PlaybackSourceId</Name>
+         <Value>233.43.202.152</Value>
+         <Value>233.43.202.184</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SiacRetransMulticastLine</Name>
+         <Value>48</Value>
+      </Parameter>
+   </Feed>
+<!-- SF legacy opra production End -->
+      <Parameter>
+         <Name>LineFilterMaxValidGapSize</Name>
+         <Value>3999999999</Value>
+         <Comment>Largest acceptable sequence number gap for incoming data
+                  Messages showing gaps exceeding this value will be discarded
+         </Comment>
+      </Parameter>
+
+      <Feed>
+         <Name>oprabin_1</Name>
+         <Comment>Symbol Range: A to ADMZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.1/11101</Value>
+            <Value>default2/233.43.202.33/12101</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.1</Value>
+            <Value>233.43.202.33</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>1</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_2</Name>
+         <Comment>Symbol Range: ADN to ALLZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.2/11102</Value>
+            <Value>default2/233.43.202.34/12102</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.2</Value>
+            <Value>233.43.202.34</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>2</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_3</Name>
+         <Comment>Symbol Range: ALM to APAZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.3/11103</Value>
+            <Value>default2/233.43.202.35/12103</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.3</Value>
+            <Value>233.43.202.35</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>3</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_4</Name>
+         <Comment>Symbol Range: APB to AZZZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.4/11104</Value>
+            <Value>default2/233.43.202.36/12104</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.4</Value>
+            <Value>233.43.202.36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>4</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_5</Name>
+         <Comment>Symbol Range: B to BGZZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.5/11105</Value>
+            <Value>default2/233.43.202.37/12105</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.5</Value>
+            <Value>233.43.202.37</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>5</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_6</Name>
+         <Comment>Symbol Range: BH to BRCZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.6/11106</Value>
+            <Value>default2/233.43.202.38/12106</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.6</Value>
+            <Value>233.43.202.38</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>6</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_7</Name>
+         <Comment>Symbol Range: BRD to CCKZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.7/11107</Value>
+            <Value>default2/233.43.202.39/12107</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.7</Value>
+            <Value>233.43.202.39</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>7</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_8</Name>
+         <Comment>Symbol Range: CCL to CMAZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.8/11108</Value>
+            <Value>default2/233.43.202.40/12108</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.8</Value>
+            <Value>233.43.202.40</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>8</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_9</Name>
+         <Comment>Symbol Range: CMB to CORZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.9/11109</Value>
+            <Value>default2/233.43.202.41/12109</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.9</Value>
+            <Value>233.43.202.41</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>9</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_10</Name>
+         <Comment>Symbol Range: COS to CVSZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.10/11110</Value>
+            <Value>default2/233.43.202.42/12110</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.10</Value>
+            <Value>233.43.202.42</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>10</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_11</Name>
+         <Comment>Symbol Range: CVT to DHZZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.11/11111</Value>
+            <Value>default2/233.43.202.43/12111</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.11</Value>
+            <Value>233.43.202.43</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>11</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_12</Name>
+         <Comment>Symbol Range: DI to DOAZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.12/11112</Value>
+            <Value>default2/233.43.202.44/12112</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.12</Value>
+            <Value>233.43.202.44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>12</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_13</Name>
+         <Comment>Symbol Range: DOB to EEMZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.13/11113</Value>
+            <Value>default2/233.43.202.45/12113</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.13</Value>
+            <Value>233.43.202.45</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>13</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_14</Name>
+         <Comment>Symbol Range: EEN to ESMZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.14/11114</Value>
+            <Value>default2/233.43.202.46/12114</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.14</Value>
+            <Value>233.43.202.46</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>14</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_15</Name>
+         <Comment>Symbol Range: ESN to FASZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.15/11115</Value>
+            <Value>default2/233.43.202.47/12115</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.15</Value>
+            <Value>233.43.202.47</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>15</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_16</Name>
+         <Comment>Symbol Range: FAT to FSZZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.16/11116</Value>
+            <Value>default2/233.43.202.48/12116</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.16</Value>
+            <Value>233.43.202.48</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>16</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_17</Name>
+         <Comment>Symbol Range: FT to GIKZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.17/11117</Value>
+            <Value>default2/233.43.202.49/12117</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.17</Value>
+            <Value>233.43.202.49</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>17</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_18</Name>
+         <Comment>Symbol Range: GIL to GPZZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.18/11118</Value>
+            <Value>default2/233.43.202.50/12118</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.18</Value>
+            <Value>233.43.202.50</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>18</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_19</Name>
+         <Comment>Symbol Range: GQ to HNZZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.19/11119</Value>
+            <Value>default2/233.43.202.51/12119</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.19</Value>
+            <Value>233.43.202.51</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>19</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_20</Name>
+         <Comment>Symbol Range: HO to ICZZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.20/11120</Value>
+            <Value>default2/233.43.202.52/12120</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.20</Value>
+            <Value>233.43.202.52</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>20</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_21</Name>
+         <Comment>Symbol Range: ID to IVZZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.21/11121</Value>
+            <Value>default2/233.43.202.53/12121</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.21</Value>
+            <Value>233.43.202.53</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>21</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_22</Name>
+         <Comment>Symbol Range: IW to IYSZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.22/11122</Value>
+            <Value>default2/233.43.202.54/12122</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.22</Value>
+            <Value>233.43.202.54</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>22</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_23</Name>
+         <Comment>Symbol Range: IYT to JZZZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.23/11123</Value>
+            <Value>default2/233.43.202.55/12123</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.23</Value>
+            <Value>233.43.202.55</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>23</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_24</Name>
+         <Comment>Symbol Range: K to LLZZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.24/11124</Value>
+            <Value>default2/233.43.202.56/12124</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.24</Value>
+            <Value>233.43.202.56</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>24</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_25</Name>
+         <Comment>Symbol Range: LM to MCDZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.129/16101</Value>
+            <Value>default2/233.43.202.161/17101</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.129</Value>
+            <Value>233.43.202.161</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>25</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_26</Name>
+         <Comment>Symbol Range: MCE to MMMZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.130/16102</Value>
+            <Value>default2/233.43.202.162/17102</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.130</Value>
+            <Value>233.43.202.162</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>26</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_27</Name>
+         <Comment>Symbol Range: MMN to MSZZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.131/16103</Value>
+            <Value>default2/233.43.202.163/17103</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.131</Value>
+            <Value>233.43.202.163</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>27</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_28</Name>
+         <Comment>Symbol Range: MT to NDXZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.132/16104</Value>
+            <Value>default2/233.43.202.164/17104</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.132</Value>
+            <Value>233.43.202.164</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>28</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_29</Name>
+         <Comment>Symbol Range: NDY to NVKZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.133/16105</Value>
+            <Value>default2/233.43.202.165/17105</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.133</Value>
+            <Value>233.43.202.165</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>29</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_30</Name>
+         <Comment>Symbol Range: NVL to PABZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.134/16106</Value>
+            <Value>default2/233.43.202.166/17106</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.134</Value>
+            <Value>233.43.202.166</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>30</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_31</Name>
+         <Comment>Symbol Range: PAC to PIZZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.135/16107</Value>
+            <Value>default2/233.43.202.167/17107</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.135</Value>
+            <Value>233.43.202.167</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>31</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_32</Name>
+         <Comment>Symbol Range: PJ to PXBZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.136/16108</Value>
+            <Value>default2/233.43.202.168/17108</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.136</Value>
+            <Value>233.43.202.168</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>32</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_33</Name>
+         <Comment>Symbol Range: PXC to QQQZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.137/16109</Value>
+            <Value>default2/233.43.202.169/17109</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.137</Value>
+            <Value>233.43.202.169</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>33</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_34</Name>
+         <Comment>Symbol Range: QQR to RRBZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.138/16110</Value>
+            <Value>default2/233.43.202.170/17110</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.138</Value>
+            <Value>233.43.202.170</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>34</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_35</Name>
+         <Comment>Symbol Range: RRC to SBUZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.139/16111</Value>
+            <Value>default2/233.43.202.171/17111</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.139</Value>
+            <Value>233.43.202.171</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>35</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_36</Name>
+         <Comment>Symbol Range: SBV to SKMZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.140/16112</Value>
+            <Value>default2/233.43.202.172/17112</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.140</Value>
+            <Value>233.43.202.172</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>36</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_37</Name>
+         <Comment>Symbol Range: SKN to SPXZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.141/16113</Value>
+            <Value>default2/233.43.202.173/17113</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.141</Value>
+            <Value>233.43.202.173</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>37</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_38</Name>
+         <Comment>Symbol Range: SPY to SPYZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.142/16114</Value>
+            <Value>default2/233.43.202.174/17114</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.142</Value>
+            <Value>233.43.202.174</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>38</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_39</Name>
+         <Comment>Symbol Range: SPZ to SWJZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.143/16115</Value>
+            <Value>default2/233.43.202.175/17115</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.143</Value>
+            <Value>233.43.202.175</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>39</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_40</Name>
+         <Comment>Symbol Range: SWK to TISZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.144/16116</Value>
+            <Value>default2/233.43.202.176/17116</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.144</Value>
+            <Value>233.43.202.176</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>40</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_41</Name>
+         <Comment>Symbol Range: TIT to TVZZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.145/16117</Value>
+            <Value>default2/233.43.202.177/17117</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.145</Value>
+            <Value>233.43.202.177</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>41</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_42</Name>
+         <Comment>Symbol Range: TW to UPKZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.146/16118</Value>
+            <Value>default2/233.43.202.178/17118</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.146</Value>
+            <Value>233.43.202.178</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>42</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_43</Name>
+         <Comment>Symbol Range: UPL to UYLZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.147/16119</Value>
+            <Value>default2/233.43.202.179/17119</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.147</Value>
+            <Value>233.43.202.179</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>43</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_44</Name>
+         <Comment>Symbol Range: UYM to VYZZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.148/16120</Value>
+            <Value>default2/233.43.202.180/17120</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.148</Value>
+            <Value>233.43.202.180</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>44</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_45</Name>
+         <Comment>Symbol Range: VZ to WLSZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.149/16121</Value>
+            <Value>default2/233.43.202.181/17121</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.149</Value>
+            <Value>233.43.202.181</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>45</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_46</Name>
+         <Comment>Symbol Range: WLT to XHZZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.150/16122</Value>
+            <Value>default2/233.43.202.182/17122</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.150</Value>
+            <Value>233.43.202.182</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>46</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_47</Name>
+         <Comment>Symbol Range: XI to XLZZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.151/16123</Value>
+            <Value>default2/233.43.202.183/17123</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.151</Value>
+            <Value>233.43.202.183</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>47</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_48</Name>
+         <Comment>Symbol Range: XM to ZZZZZ</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.43.202.152/16124</Value>
+            <Value>default2/233.43.202.184/17124</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.43.202.152</Value>
+            <Value>233.43.202.184</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>48</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_91</Name>
+         <Comment>Extended Hours</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>MessageHandlerRegExpFilter</Name>
+            <Value>SPX.*</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.86.0/11301</Value>
+            <Value>default2/224.0.86.128/12301</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.86.0</Value>
+            <Value>224.0.86.128</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>91</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_92</Name>
+         <Comment>Extended Hours</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>MessageHandlerRegExpFilter</Name>
+            <Value>SPX.*</Value>
+         </Parameter>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.86.1/11302</Value>
+            <Value>default2/224.0.86.129/12302</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.86.1</Value>
+            <Value>224.0.86.129</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>92</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_93</Name>
+         <Comment>Extended Hours</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+        <Parameter>
+            <Name>MessageHandlerRegExpFilter</Name>
+            <Value>VIX.*</Value>
+        </Parameter>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.86.2/11303</Value>
+            <Value>default2/224.0.86.130/12303</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.86.2</Value>
+            <Value>224.0.86.130</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>93</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_94</Name>
+         <Comment>Extended Hours</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+        <Parameter>
+            <Name>MessageHandlerRegExpFilter</Name>
+            <Value>VIX.*</Value>
+        </Parameter>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.86.3/11304</Value>
+            <Value>default2/224.0.86.131/12304</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>224.0.86.3</Value>
+            <Value>224.0.86.131</Value>
+         </Parameter>
+         <Parameter>
+            <Name>SiacRetransMulticastLine</Name>
+            <Value>94</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_1_2</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_1</Value>
+            <Value>oprabin_2</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_3_4</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_3</Value>
+            <Value>oprabin_4</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_5_6</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_5</Value>
+            <Value>oprabin_6</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_7_8</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_7</Value>
+            <Value>oprabin_8</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_9_10</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_9</Value>
+            <Value>oprabin_10</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_11_12</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_11</Value>
+            <Value>oprabin_12</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_13_14</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_13</Value>
+            <Value>oprabin_14</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_15_16</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_15</Value>
+            <Value>oprabin_16</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_17_18</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_17</Value>
+            <Value>oprabin_18</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_19_20</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_19</Value>
+            <Value>oprabin_20</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_21_22</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_21</Value>
+            <Value>oprabin_22</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_23_24</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_23</Value>
+            <Value>oprabin_24</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_25_26</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_25</Value>
+            <Value>oprabin_26</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_27_28</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_27</Value>
+            <Value>oprabin_28</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_29_30</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_29</Value>
+            <Value>oprabin_30</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_31_32</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_31</Value>
+            <Value>oprabin_32</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_33_34</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_33</Value>
+            <Value>oprabin_34</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_35_36</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_35</Value>
+            <Value>oprabin_36</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_35e</Name>
+         <Comment>Regular and extended sessions</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_35</Value>
+            <Value>oprabin_91</Value>
+            <Value>oprabin_92</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_35_36e</Name>
+         <Comment>Regular and extended sessions</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_35</Value>
+            <Value>oprabin_36</Value>
+            <Value>oprabin_91</Value>
+            <Value>oprabin_92</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_39_40</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_39</Value>
+            <Value>oprabin_40</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_41_42</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_41</Value>
+            <Value>oprabin_42</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_43_44</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_43</Value>
+            <Value>oprabin_44</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_43e</Name>
+         <Comment>Regular and extended sessions</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_43</Value>
+            <Value>oprabin_93</Value>
+            <Value>oprabin_94</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_43_44e</Name>
+         <Comment>Regular and extended sessions</Comment>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_43</Value>
+            <Value>oprabin_44</Value>
+            <Value>oprabin_93</Value>
+            <Value>oprabin_94</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_45_46</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_45</Value>
+            <Value>oprabin_46</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_47_48</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_47</Value>
+            <Value>oprabin_48</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_1_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_1</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_1.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_2_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_2</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_2.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_3_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_3</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_3.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_4_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_4</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_4.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_5_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_5</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_5.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_6_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_6</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_6.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_7_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_7</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_7.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_8_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_8</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_8.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_9_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_9</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_9.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_10_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_10</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_10.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_11_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_11</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_11.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_12_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_12</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_12.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_13_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_13</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_13.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_14_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_14</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_14.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_15_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_15</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_15.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_16_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_16</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_16.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_17_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_17</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_17.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_18_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_18</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_18.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_19_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_19</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_19.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_20_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_20</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_20.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_21_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_21</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_21.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_22_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_22</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_22.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_23_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_23</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_23.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_24_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_24</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_24.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_25_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_25</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_25.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_26_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_26</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_26.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_27_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_27</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_27.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_28_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_28</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_28.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_29_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_29</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_29.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_30_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_30</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_30.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_31_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_31</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_31.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_32_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_32</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_32.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_33_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_33</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_33.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_34_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_34</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_34.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_35_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_35</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_35.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_36_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_36</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_36.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_37_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_37</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_37.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_38_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_38</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_38.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_39_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_39</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_39.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_40_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_40</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_40.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_41_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_41</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_41.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_42_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_42</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_42.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_43_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_43</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_43.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_44_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_44</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_44.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_45_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_45</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_45.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_46_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_46</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_46.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_47_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_47</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_47.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_48_p</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <UseParameterGroup name="PlaybackFiles"/>
+         <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>oprabin_48</Value>
+         </Parameter>
+         <Parameter>
+            <Name>ExtractFile</Name>
+            <Value>oprabin_48.play.%Y%m%d</Value>
+         </Parameter>
+      </Feed>
+
+      <Feed>
+         <Name>oprabin_ise</Name>
+         <UseParameterGroup name="OpraLineFormat"/>
+         <Parameter>
+            <Name>ReadRawData</Name>
+            <Value>true</Value>
+         </Parameter>
+      </Feed>
+</config>

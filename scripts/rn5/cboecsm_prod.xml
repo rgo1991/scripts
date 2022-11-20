@@ -1,0 +1,436 @@
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+   <IncludeFile>cboecsm_tport.xml</IncludeFile>
+   <IncludeFile>cboecsm_hosts.xml</IncludeFile>
+
+    <!-- Feed cboecsm_cfe for cboecsm -->
+
+    <!-- Production -->
+     <Feed>
+        <Name>cboecsm</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>cboecsm_cfe_ref</Value>
+            <Value>cboecsm_cfe_level2</Value>
+<!--             <Value>cboecsm_cfe_level1</Value> -->
+<!--             <Value>cboecsm_cfe_strat_ref</Value> -->
+<!--             <Value>cboecsm_cfe_strat_level2</Value> -->
+<!--             <Value>cboecsm_cfe_strat_level1</Value> -->
+        </Parameter>
+    </Feed>
+
+    <Feed>
+        <Name>cboecsm_cfe</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>cboecsm_cfe_ref</Value>
+            <Value>cboecsm_cfe_level2</Value>
+            <Value>cboecsm_cfe_level1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RecordSymbolFile</Name>
+            <Value>cboecsm_cfe.sym</Value>
+        </Parameter>
+
+        <Parameter>
+            <Name>OrderBookSymbolFile</Name>
+            <Value>cboecsm_cfe.orderbook.sym</Value>
+        </Parameter>
+
+        <UseParameterGroup name="GlobalSecStatusParams"/>
+        <Parameter>
+            <Name>SecurityStatusGlobalSymbolFormat</Name>
+            <Value>CBOECSM_CFE_SECSTATUS</Value>
+        </Parameter>
+
+        <UseParameterGroup name="GlobalOrderImbalanceStatusParams"/>
+        <Parameter>
+            <Name>OrderImbalanceGlobalSymbolFormat</Name>
+            <Value>CBOECSM_CFE_IMBALANCE</Value>
+        </Parameter>
+    </Feed>
+
+<!-- EDCP-7759 CBOECSM - MDE replacement feed Aug 01 2016 Start --> 
+
+<!-- SFDCR-1603 - QM-36 -->
+    <Feed>
+        <Name>cboecsm_csmi_prod</Name>
+        <UseParameterGroup name="WmwTransportPropertiesVector1NSD1"/>
+        <UseParameterGroup name="CboeCsmLiveParameter"/>
+        <Parameter>
+           <Name>WmwSource</Name>
+           <Value>CBOEMDE</Value>
+        </Parameter>
+           <Parameter>
+           <Name>LineDataFormat</Name>
+           <Value>cboecsm</Value>
+        </Parameter>
+         <!--Parameter>
+            <Name>Listen</Name>
+            <Value>default1/224.0.131.168/30201</Value>
+            <Value>default2/233.130.124.168/30201</Value>
+            <Value>default1/224.0.131.169/30201</Value>
+            <Value>default2/233.130.124.169/30201</Value>
+            <Value>default1/224.0.131.170/30201</Value>
+            <Value>default2/233.130.124.170/30201</Value>
+            <Value>default1/224.0.131.171/30201</Value>
+            <Value>default2/233.130.124.171/30201</Value>
+            <Value>default1/224.0.131.172/30201</Value>
+            <Value>default2/233.130.124.172/30201</Value>
+         </Parameter-->
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>cboecsm_csmi</Value>
+            <Value>cboecsm_msci</Value>
+            <Value>cboecsm_ftse</Value>
+            <Value>cboecsm_cccy</Value>
+            <Value>cboecsm_inav</Value>
+        </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.103.126.82</Value>
+            <Value>233.103.126.210</Value>
+            <Value>233.65.120.138</Value>
+            <Value>224.0.131.168</Value>
+            <Value>233.130.124.168</Value>
+            <Value>233.182.199.8</Value>
+            <Value>224.0.74.176</Value>
+            <Value>224.0.131.169</Value>
+            <Value>233.130.124.169</Value>
+            <Value>224.0.131.170</Value>
+            <Value>233.130.124.170</Value>
+            <Value>224.0.131.171</Value>
+            <Value>233.130.124.171</Value>
+            <Value>224.0.131.172</Value>
+            <Value>233.130.124.172</Value>
+         </Parameter>
+        <Parameter>
+            <Name>RecordSymbolFile</Name>
+            <Value>cboecsm_csmi.sym</Value>
+        </Parameter>
+        <Parameter>
+            <Name>OrderBookSymbolFile</Name>
+            <Value>cboecsm_csmi.orderbook.sym</Value>
+        </Parameter>
+        <Parameter>
+           <Name>FtGroupName</Name>
+           <Value>FT_mde</Value>
+        </Parameter>
+<!-- DFH-28731-->
+        <Parameter>
+            <Name>StartOfDayRollIndex</Name>
+            <Value>true</Value>
+        </Parameter>
+<!-- DFH-28731-->
+      </Feed>
+
+<!-- EDCP-7759 End -->
+    <Feed>
+        <Name>cboecsm_cfe_strat</Name>
+        <Parameter>
+            <Name>SubFeeds</Name>
+            <Value>cboecsm_cfe_strat_ref</Value>
+            <Value>cboecsm_cfe_strat_level2</Value>
+            <Value>cboecsm_cfe_strat_level1</Value>
+        </Parameter>
+    </Feed>
+    <!-- end of Production -->
+
+    <!-- CFE GROUP -->
+
+    <Feed>
+        <Name>cboecsm_cfe_ref</Name>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>cfe_ref</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FeedRole</Name>
+            <Value>reference</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.65.120.77/63869</Value>
+            <Value>default2/233.65.120.205/63885</Value>
+        </Parameter>
+        <Parameter>
+             <Name>PlaybackSourceId</Name>
+             <Value>233.65.120.77/63869</Value>
+             <Value>233.65.120.205/63885</Value>
+        </Parameter>
+        <UseParameterGroup name="CboeCsmReferenceParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>cboecsm_cfe_level2</Name>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>cfe_level2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>ReferenceFeedId</Name>
+            <Value>cfe_ref</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.65.120.72/63864</Value>
+            <Value>default2/233.65.120.200/63880</Value>
+        </Parameter>
+        <Parameter>
+             <Name>PlaybackSourceId</Name>
+             <Value>233.65.120.72/63864</Value>
+             <Value>233.65.120.200/63880</Value>
+        </Parameter>
+        <UseParameterGroup name="CboeCsmLiveParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>cboecsm_cfe_level1</Name>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>cfe_level1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>ReferenceFeedId</Name>
+            <Value>cfe_ref</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.65.120.64/64860</Value>
+            <Value>default2/233.65.120.192/64862</Value>
+        </Parameter>
+        <Parameter>
+             <Name>PlaybackSourceId</Name>
+             <Value>233.65.120.64/64860</Value>
+             <Value>233.65.120.192/64862</Value>
+        </Parameter>
+        <UseParameterGroup name="CboeCsmLiveParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>cboecsm_cfe_strat_ref</Name>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>cfe_strat_ref</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FeedRole</Name>
+            <Value>reference</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.65.120.79/63871</Value>
+            <Value>default2/233.65.120.207/63887</Value>
+        </Parameter>
+        <Parameter>
+             <Name>PlaybackSourceId</Name>
+             <Value>233.65.120.79/63871</Value>
+             <Value>233.65.120.207/63887</Value>
+        </Parameter>
+        <UseParameterGroup name="CboeCsmReferenceParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>cboecsm_cfe_strat_level2</Name>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>cfe_strat_level2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>ReferenceFeedId</Name>
+            <Value>cfe_strat_ref</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.65.120.78/63870</Value>
+            <Value>default2/233.65.120.206/63886</Value>
+        </Parameter>
+        <Parameter>
+             <Name>PlaybackSourceId</Name>
+             <Value>233.65.120.78/63870</Value>
+             <Value>233.65.120.206/63886</Value>
+        </Parameter>
+        <UseParameterGroup name="CboeCsmLiveParameter"/>
+    </Feed>
+
+    <Feed>
+        <Name>cboecsm_cfe_strat_level1</Name>
+        <Parameter>
+            <Name>FeedId</Name>
+            <Value>cfe_strat_level1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>ReferenceFeedId</Name>
+            <Value>cfe_strat_ref</Value>
+        </Parameter>
+        <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.65.120.66/64966</Value>
+            <Value>default2/233.65.120.194/64970</Value>
+        </Parameter>
+        <Parameter>
+             <Name>PlaybackSourceId</Name>
+             <Value>233.65.120.66/64966</Value>
+             <Value>233.65.120.194/64970</Value>
+        </Parameter>
+        <UseParameterGroup name="CboeCsmLiveParameter"/>
+    </Feed>
+
+      <Feed>   
+         <Name>cboecsm_csmi</Name>
+         <UseParameterGroup name="CboeCsmLiveParameter"/>
+         <Parameter>
+           <Name>WmwSource</Name>
+           <Value>CBOEMDE</Value>
+        </Parameter>
+
+         <Parameter>
+	      <Name>Listen</Name>
+              <Value>default1/224.0.131.168/30201</Value>
+              <Value>default2/233.130.124.168/30201</Value>
+         </Parameter>
+         <Parameter>
+              <Name>PlaybackSourceId</Name>
+              <Value>224.0.131.168</Value>
+              <Value>233.130.124.168</Value>
+              <Value>233.182.199.8</Value>
+              <Value>224.0.74.176</Value>
+         </Parameter>
+      </Feed>
+      <Feed>
+         <Name>csmi_dr</Name>
+         <UseParameterGroup name="CboeCsmLiveParameter"/>
+         <Parameter>
+            <Name>Listen</Name>
+            <Value>default1/233.182.199.8/31201</Value>
+         </Parameter>
+         <Parameter>
+            <Name>PlaybackSourceId</Name>
+            <Value>233.182.199.8</Value>
+         </Parameter>
+    </Feed>
+
+      <!-- msci -->
+     <Feed>
+            <Name>cboecsm_msci</Name>
+            <UseParameterGroup name="CboeCsmLiveParameter"/>
+            <Parameter>
+                <Name>Listen</Name>
+                <Value>default1/224.0.131.169/30201</Value>
+                <Value>default2/233.130.124.169/30201</Value>
+            </Parameter>
+            <Parameter>
+                <Name>PlaybackSourceId</Name>
+                <Value>224.0.131.169</Value>
+                <Value>233.130.124.169</Value>
+                <Value>233.182.199.9</Value>
+                <Value>224.0.74.177</Value>
+            </Parameter>
+      </Feed>
+
+      <Feed>
+            <Name>msci_dr</Name>
+            <UseParameterGroup name="CboeCsmLiveParameter"/>
+            <Parameter>
+                <Name>Listen</Name>
+                <Value>default1/233.182.199.9/31201</Value>
+            </Parameter>
+            <Parameter>
+                <Name>PlaybackSourceId</Name>
+                <Value>233.182.199.9</Value>
+            </Parameter>
+      </Feed>
+
+      <!-- ftse -->
+      <Feed>
+           <Name>cboecsm_ftse</Name>
+           <UseParameterGroup name="CboeCsmLiveParameter"/>
+           <Parameter>
+                <Name>Listen</Name>
+                <Value>default1/224.0.131.170/30201</Value>
+                <Value>default2/233.130.124.170/30201</Value>
+           </Parameter>
+           <Parameter>
+                <Name>PlaybackSourceId</Name>
+                <Value>224.0.131.170</Value>
+                <Value>233.130.124.170</Value>
+                <Value>233.182.199.10</Value>
+                <Value>224.0.74.178</Value>
+           </Parameter>
+        </Feed>
+
+        <Feed>
+            <Name>ftse_dr</Name>
+            <UseParameterGroup name="CboeCsmLiveParameter"/>
+            <Parameter>
+                <Name>Listen</Name>
+                <Value>default1/233.182.199.10/31201</Value>
+            </Parameter>
+            <Parameter>
+                <Name>PlaybackSourceId</Name>
+                <Value>233.182.199.10</Value>
+            </Parameter>
+        </Feed>
+
+
+        <!-- cccy -->
+        <Feed>
+           <Name>cboecsm_cccy</Name>
+           <UseParameterGroup name="CboeCsmLiveParameter"/>
+           <Parameter>
+                <Name>Listen</Name>
+                <Value>default1/224.0.131.171/30201</Value>
+                <Value>default2/233.130.124.171/30201</Value>
+           </Parameter>
+           <Parameter>
+                <Name>PlaybackSourceId</Name>
+                <Value>224.0.131.171</Value>
+                <Value>233.130.124.171</Value>
+                <Value>233.182.199.11</Value>
+                <Value>224.0.74.179</Value>
+           </Parameter>
+        </Feed>
+
+        <Feed>
+            <Name>cccy_dr</Name>
+            <UseParameterGroup name="CboeCsmLiveParameter"/>
+            <Parameter>
+                <Name>Listen</Name>
+                <Value>default1/233.182.199.11/31201</Value>
+            </Parameter>
+            <Parameter>
+                <Name>PlaybackSourceId</Name>
+                <Value>233.182.199.11</Value>
+            </Parameter>
+        </Feed>
+
+        <!-- inav -->
+        <Feed>
+           <Name>cboecsm_inav</Name>
+           <UseParameterGroup name="CboeCsmLiveParameter"/>
+           <Parameter>
+                <Name>Listen</Name>
+                <Value>default1/224.0.131.172/30201</Value>
+                <Value>default2/233.130.124.172/30201</Value>
+           </Parameter>
+           <Parameter>
+                <Name>PlaybackSourceId</Name>
+                <Value>224.0.131.172</Value>
+                <Value>233.130.124.172</Value>
+                <Value>233.182.199.12</Value>
+                <Value>224.0.74.180</Value>
+           </Parameter>
+        </Feed>
+        <Feed>
+            <Name>inav_dr</Name>
+            <UseParameterGroup name="CboeCsmLiveParameter"/>
+            <Parameter>
+                <Name>Listen</Name>
+                <Value>default1/233.182.199.12/31201</Value>
+            </Parameter>
+            <Parameter>
+                <Name>PlaybackSourceId</Name>
+                <Value>233.182.199.12</Value>
+            </Parameter>
+        </Feed>
+
+</config>

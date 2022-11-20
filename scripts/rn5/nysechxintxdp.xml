@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for the NYSE Chicago Integrated feed handler. See the Vela website for more information: https://tradevela.com/client-area--><!--The following configuration clauses are common to all xdp feed handlers-->
+   <!-- Site specific includes -->
+   <IncludeFile>nysechxintxdp_tport.xml</IncludeFile>
+   <IncludeFile>nysechxintxdp_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.superfeed.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+<!-- DFH-25257 - DBAC compatibility -->
+   <Parameter>
+      <Name>MamaUseDictionaryType</Name>
+      <Value>true</Value>
+   </Parameter>
+<!-- DFH-25257 end -->
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>CHXDOB</Value>
+   </Parameter>
+<!-- -->
+   <Parameter>
+      <Name>PublishNanoSecondFieldAsStr</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>XdpTrackTrades</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>XdpPublishExecutionAsTrade</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>TradeCalculateNetChange</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>TradeCalculatePctChange</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>TradeCalculateTick</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>TradeCalculateTickChange</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>TradeCalculateBlocks</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>TradeCalculateTotalVolume</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>TradeCalculateVwap</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>TradeCalculateStdDev</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>TradeCalculateMoneyFlow</Name>
+      <Value>true</Value>
+   </Parameter>   
+   <Parameter>
+      <Name>XdpApplyLotsToSize</Name>
+      <Value>false</Value>
+   </Parameter>
+<!-- -->
+    
+   <Parameter>
+      <Name>XdpMessageHandlerName</Name>
+      <Value>nysechxintxdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpProductName</Name>
+      <Value>NyseChicagoIntegratedXdpL1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpProductNameBook</Name>
+      <Value>NyseChicagoIntegratedXdpL2</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>xdp</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpSourceId</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpRefreshType</Name>
+      <Value>0</Value>
+   </Parameter>
+   <Parameter>
+      <Name>XdpMaxRefreshSpoolSize</Name>
+      <Value>1000000</Value>
+   </Parameter>
+   <Parameter>
+      <Name>XdpMaxRefreshAttempts</Name>
+      <Value>10</Value>
+   </Parameter>    
+   <Parameter>
+      <Name>XdpLogRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpWarnIfUOTUnavailable</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpProductId</Name>
+      <Value>209</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>UseUnitOfTrade</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpPublishExecutionAsTrade</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>XdpPublishExecutionAsGeneric</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RetransmissionMethod</Name>
+      <Value>0</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ZeroBookPriceIfClosed</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+<!-- Quote Fields Start -->    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>TopOfBookChangesHighLow</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishQuoteBidAskTimes</Name>
+      <Value>true</Value>
+   </Parameter>
+<!-- Quote Fields End -->    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>normal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_nysechxintxdp</Value>
+   </Parameter>
+    
+   <!--Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value>nysechxintxdp.sym</Value>
+   </Parameter-->
+    
+   <Parameter>
+      <Name>PublishOrderBooks</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>nyse2streetMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MessageRecoveryFile</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ParticipantQuoteCount</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoUseCurrentTimeAsLineTimeAndSrcTime</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InstrumentInfoAddPrefixOnSecurityStatusOrig</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineFilterDiscardForwardRetrans</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookUseUndecoratedSymbolName</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordHandlerAlwaysAppendProductSuffix</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NativeTimeZone</Name>
+      <Value>UTC</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsBloomberg</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsReferential</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsTradeOptional</Value>
+   </Parameter>
+    
+   <DefineParameterGroup>
+      <Name>NyseChxIntXdpLiveParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>LIVE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterInitialSeqNum</Name>
+         <Value>1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>true</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>NyseChxIntXdpRefreshParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>REFRESH</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InitialMode</Name>
+         <Value>normal</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MulticastConnectOnInit</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitTime</Name>
+         <Value>0.5</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterGapLimitSize</Name>
+         <Value>100</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseMessageHandler</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>NyseChxIntXdpRequestReqParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <Value>REFRESH_REQ</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseMessageHandler</Name>
+         <Value>false</Value>
+      </Parameter>
+   </DefineParameterGroup>
+    
+   <DefineParameterGroup>
+      <Name>NyseChxIntXdpStockSummaryParameter</Name>
+      <Parameter>
+         <Name>FeedRole</Name>
+         <!--Value>STOCK_SUMMARY</Value-->
+         <Value>LIVE</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorEnforceMonitorOff</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineMonitorInitState</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtSubFeedProcessLineStatus</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LiveFeedId</Name>
+         <Value>51</Value>
+      </Parameter>
+      <Parameter>
+         <Name>LineFilterRetransActive</Name>
+         <Value>false</Value>
+      </Parameter>
+<Parameter>
+   <Name>XdpRefreshType</Name>
+   <Value>3</Value>
+</Parameter>
+   </DefineParameterGroup>
+   <IncludeFile>nysechxintxdp_sec_status_mapping.xml</IncludeFile>
+   <IncludeFile>nysechxintxdp_quote_condition_mapping.xml</IncludeFile>
+   <IncludeFile>nysechxintxdp_trade_condition_mapping.xml</IncludeFile>
+   <IncludeFile>nysechxintxdp_prod.xml</IncludeFile>
+   <IncludeFile>nysechxintxdp_cert.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

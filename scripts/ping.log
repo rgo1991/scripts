@@ -1,0 +1,110 @@
+Website: google.com
+amazo is not available
+Website: .com
+ is not available
+Website: etflix.com
+facebook.com
+youtube.com
+amaso is not available
+Website: .com is not available
+PING google.com(2a00:1450:400b:c01::71 (2a00:1450:400b:c01::71)) 56 data bytes
+64 bytes from 2a00:1450:400b:c01::71 (2a00:1450:400b:c01::71): icmp_seq=1 ttl=110 time=10.6 ms
+64 bytes from 2a00:1450:400b:c01::71 (2a00:1450:400b:c01::71): icmp_seq=2 ttl=110 time=10.3 ms
+
+--- google.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 10.279/10.452/10.625/0.173 ms
+PING google.com(2a00:1450:400b:c01::66 (2a00:1450:400b:c01::66)) 56 data bytes
+64 bytes from 2a00:1450:400b:c01::66 (2a00:1450:400b:c01::66): icmp_seq=1 ttl=108 time=11.2 ms
+64 bytes from 2a00:1450:400b:c01::66 (2a00:1450:400b:c01::66): icmp_seq=2 ttl=108 time=8.67 ms
+
+--- google.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 8.667/9.938/11.209/1.271 ms
+PING google.com(2a00:1450:400b:c01::71 (2a00:1450:400b:c01::71)) 56 data bytes
+64 bytes from 2a00:1450:400b:c01::71 (2a00:1450:400b:c01::71): icmp_seq=1 ttl=110 time=9.34 ms
+64 bytes from 2a00:1450:400b:c01::71 (2a00:1450:400b:c01::71): icmp_seq=2 ttl=110 time=8.58 ms
+
+--- google.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 8.579/8.960/9.342/0.381 ms
+PING google.com(2a00:1450:400b:c01::71 (2a00:1450:400b:c01::71)) 56 data bytes
+64 bytes from 2a00:1450:400b:c01::71 (2a00:1450:400b:c01::71): icmp_seq=1 ttl=110 time=9.12 ms
+64 bytes from 2a00:1450:400b:c01::71 (2a00:1450:400b:c01::71): icmp_seq=2 ttl=110 time=9.71 ms
+
+--- google.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 9.115/9.413/9.711/0.298 ms
+PING amazon.com (205.251.242.103) 56(84) bytes of data.
+64 bytes from s3-console-us-standard.console.aws.amazon.com (205.251.242.103): icmp_seq=1 ttl=231 time=92.4 ms
+64 bytes from s3-console-us-standard.console.aws.amazon.com (205.251.242.103): icmp_seq=2 ttl=231 time=92.6 ms
+
+--- amazon.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1000ms
+rtt min/avg/max/mdev = 92.411/92.481/92.552/0.070 ms
+PING netflix.com(2a05:d018:76c:b685:e8ab:afd3:af51:3aed (2a05:d018:76c:b685:e8ab:afd3:af51:3aed)) 56 data bytes
+
+--- netflix.com ping statistics ---
+2 packets transmitted, 0 received, 100% packet loss, time 1003ms
+
+Website: netflix.com is not available
+PING facebook.com(edge-star-mini6-shv-01-dub4.facebook.com (2a03:2880:f132:83:face:b00c:0:25de)) 56 data bytes
+64 bytes from edge-star-mini6-shv-01-dub4.facebook.com (2a03:2880:f132:83:face:b00c:0:25de): icmp_seq=1 ttl=58 time=8.79 ms
+64 bytes from edge-star-mini6-shv-01-dub4.facebook.com (2a03:2880:f132:83:face:b00c:0:25de): icmp_seq=2 ttl=58 time=12.5 ms
+
+--- facebook.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1005ms
+rtt min/avg/max/mdev = 8.789/10.653/12.518/1.864 ms
+PING youtube.com(2a00:1450:400b:c01::5b (2a00:1450:400b:c01::5b)) 56 data bytes
+64 bytes from 2a00:1450:400b:c01::5b (2a00:1450:400b:c01::5b): icmp_seq=1 ttl=111 time=9.25 ms
+64 bytes from 2a00:1450:400b:c01::5b (2a00:1450:400b:c01::5b): icmp_seq=2 ttl=111 time=9.26 ms
+
+--- youtube.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 9.245/9.252/9.259/0.007 ms
+PING amason.com (185.53.179.7) 56(84) bytes of data.
+
+--- amason.com ping statistics ---
+2 packets transmitted, 0 received, 100% packet loss, time 1001ms
+
+Website: amason.com is not available
+PING google.com(2a00:1450:400b:c01::71 (2a00:1450:400b:c01::71)) 56 data bytes
+64 bytes from 2a00:1450:400b:c01::71 (2a00:1450:400b:c01::71): icmp_seq=1 ttl=110 time=9.32 ms
+64 bytes from 2a00:1450:400b:c01::71 (2a00:1450:400b:c01::71): icmp_seq=2 ttl=110 time=8.89 ms
+
+--- google.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1000ms
+rtt min/avg/max/mdev = 8.887/9.103/9.320/0.216 ms
+PING amazon.com (205.251.242.103) 56(84) bytes of data.
+64 bytes from s3-console-us-standard.console.aws.amazon.com (205.251.242.103): icmp_seq=1 ttl=231 time=92.5 ms
+64 bytes from s3-console-us-standard.console.aws.amazon.com (205.251.242.103): icmp_seq=2 ttl=231 time=91.6 ms
+
+--- amazon.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1002ms
+rtt min/avg/max/mdev = 91.617/92.083/92.549/0.466 ms
+PING netflix.com(2a05:d018:76c:b685:c898:aa3a:42c7:9d21 (2a05:d018:76c:b685:c898:aa3a:42c7:9d21)) 56 data bytes
+
+--- netflix.com ping statistics ---
+2 packets transmitted, 0 received, 100% packet loss, time 1000ms
+
+Website: netflix.com is not available
+PING facebook.com(edge-star-mini6-shv-01-dub4.facebook.com (2a03:2880:f132:83:face:b00c:0:25de)) 56 data bytes
+64 bytes from edge-star-mini6-shv-01-dub4.facebook.com (2a03:2880:f132:83:face:b00c:0:25de): icmp_seq=1 ttl=58 time=9.93 ms
+64 bytes from edge-star-mini6-shv-01-dub4.facebook.com (2a03:2880:f132:83:face:b00c:0:25de): icmp_seq=2 ttl=58 time=14.7 ms
+
+--- facebook.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1002ms
+rtt min/avg/max/mdev = 9.929/12.334/14.740/2.405 ms
+PING youtube.com(2a00:1450:400b:c01::5b (2a00:1450:400b:c01::5b)) 56 data bytes
+64 bytes from 2a00:1450:400b:c01::5b (2a00:1450:400b:c01::5b): icmp_seq=1 ttl=111 time=9.28 ms
+64 bytes from 2a00:1450:400b:c01::5b (2a00:1450:400b:c01::5b): icmp_seq=2 ttl=111 time=9.76 ms
+
+--- youtube.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 9.284/9.522/9.760/0.238 ms
+PING amason.com (185.53.179.7) 56(84) bytes of data.
+
+--- amason.com ping statistics ---
+2 packets transmitted, 0 received, 100% packet loss, time 1000ms
+
+Website: amason.com is not available

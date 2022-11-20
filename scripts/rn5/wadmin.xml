@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Site specific includes -->
+   <IncludeFile>wadmin_tport.xml</IncludeFile>
+   <IncludeFile>wadmin_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>LogFile</Name>
+      <Value>-</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>WadminTimeOut</Name>
+      <Value>3</Value>
+   </Parameter>
+    
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

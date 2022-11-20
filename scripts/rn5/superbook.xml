@@ -1,0 +1,1751 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+   <!-- Site specific includes -->
+   <IncludeFile>superbook_hosts.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>SharedObjects</Name>
+      <Value>papastats.so.2_99</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>MamaPublishAppDataType</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>SuperBookPassThroughTimeFields</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>MamaDefaultBridge</Name>
+      <Value>wmw</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UseNative</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>FtInitialWeight</Name>
+      <Value>medium</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>CreateMamaSubscriberInternalThread</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>MamaSubscriberDefaultBridge</Name>
+      <Value>wmw</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>MamaMsgTypeCompatibility</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>MamdaSubscriberRecord2BookStripRegExp</Name>
+      <Value>^[fs]\{0,1\}\(.*\)</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>PublishSummaryOrderBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <!-- Top of Book Configs -->
+   <Parameter>
+      <Name>SuperbookProductNameTop</Name>
+      <Value>SuperBookTop</Value>
+   </Parameter>
+   <Parameter>
+      <Name>MamaQuantityFieldFormat</Name>
+      <Value>I64</Value>
+   </Parameter>
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+   <Parameter>
+      <Name>TopOfBookDecimals</Name>
+      <Value>4</Value>
+   </Parameter>
+   <Parameter>
+      <Name>TopOfBookMultiPartIds</Name>
+      <Value>true</Value>
+      <Comment>Should be set to true so that the names of all Participants showing Best Bid and Offer will be published</Comment>
+   </Parameter>
+   <Parameter>
+      <Name>TopOfBookSizeLists</Name>
+      <Value>true</Value>
+      <Comment>Should be set to true so that the sizes of each Participants showing Best Bid and Offer will be published</Comment>
+   </Parameter>
+   <Parameter>
+      <Name>MamaUseBookFetchHandler</Name>
+      <Comment>Should be set to true when using PublishTopOfBook</Comment>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>MamaUseBookFetchHandlerCheck</Name>
+      <Comment>Should be set to true when using PublishTopOfBook</Comment>
+      <Value>true</Value>
+   </Parameter>
+   <!-- END - Top of Book Configs -->
+
+   <Parameter>
+      <Name>CreateMamaSourceManagerTransports</Name>
+      <Value>false</Value>
+      <Comment>Create all transports defined in MamaSources during start-up. Set to false if not using all transports defined, or remove unused MamaSource definitions.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>BookRecordsAddRefCount</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>BookRecordsAddBookCount</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>WadminQueueName</Name>
+      <Value>thread_superbook_single</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PapaStatsMamaQueueName</Name>
+      <Value>thread_superbook_single</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>MamaSymbolNamespace</Name>
+      <Value>SUPERBOOK</Value>
+   </Parameter>
+
+   <!-- Need to use local dictionary to enable delta-publishing - SFD-530 -->
+   <Parameter>
+      <Name>FetchMamaDict</Name>
+      <Value>false</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>MamaDictTransport</Name>
+      <Value>feeds</Value>
+      <Comment>Input data dictionary</Comment>
+   </Parameter>
+ 
+   <Parameter>
+      <Name>MamdaOrderBookEntryUseDisplayId</Name>
+      <Value>false</Value>
+   </Parameter>
+ 
+   <Parameter>
+      <Name>MamdaBookUseEntryIdManager</Name>
+      <Value>true</Value>
+      <Comment>May affect performance, depending upon the feeds.  This can be applied to individual subfeeds.</Comment>
+   </Parameter>
+ 
+   <Parameter>
+      <Name>MamdaCheckPapaBookSourceState</Name>
+      <Value>true</Value>
+      <Comment>This must be true if overlapping data sources are to be filtered.</Comment>
+   </Parameter>
+ 
+   <Parameter>
+      <Name>MamdaBookIsPapaBook</Name>
+      <Value>false</Value>
+      <Comment>Always false for SuperBook.</Comment>
+   </Parameter>
+ 
+   <Parameter>
+      <Name>MamaSourceConfigurationIsRequired</Name>
+      <Value>true</Value>
+      <Comment>This must be true for SuperBook and will enforce strict checking for source-related configuration errors.</Comment>
+   </Parameter>
+ 
+   <Parameter>
+      <Name>SuperBookComplexDeltasNeedBasicDeltas</Name>
+      <Value>true</Value>
+      <Comment>Should be false for standard operation of non-MAMA platforms.</Comment>
+   </Parameter>
+ 
+   <Parameter>
+      <Name>SuperbookProductNameOrderBook</Name>
+      <Value>SuperBook</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>OrderBookNotFoundAction</Name>
+      <Value>request</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordNotFoundAction</Name>
+      <Value>request</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>RecordSymbolFile</Name>
+      <Value/>
+   </Parameter>
+    
+   <!-- ParameterGroups for FT Settings -->
+   <DefineParameterGroup>
+      <Name>SuperBookFtPrimary</Name>
+      <Parameter>
+         <Name>FtWeightHigh</Name>
+         <Value>70</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtWeightMedium</Name>
+         <Value>50</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtWeightLow</Name>
+         <Value>30</Value>
+      </Parameter>
+   </DefineParameterGroup>
+
+   <DefineParameterGroup>
+      <Name>SuperBookFtSecondary</Name>
+      <Parameter>
+         <Name>FtWeightHigh</Name>
+         <Value>60</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtWeightMedium</Name>
+         <Value>40</Value>
+      </Parameter>
+      <Parameter>
+         <Name>FtWeightLow</Name>
+         <Value>20</Value>
+      </Parameter>
+   </DefineParameterGroup>
+   <!-- END - ParameterGroups for FT Settings -->
+ 
+   <Feed>
+      <Name>sb_utp</Name>
+      <Parameter>
+         <Name>SuperBookSourceType</Name>
+         <Value>multiple</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SuperBookSourceEntryIdFormat</Name>
+         <Value>%s3</Value>
+         <Comment>Output order book entry ID format</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>UTP</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberOrderBookSymbolFormat</Name>
+         <Value>b%s.UTP</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaBookHasUniqueEntryIds</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>sb_cta</Name>
+      <Parameter>
+         <Name>SuperBookSourceType</Name>
+         <Value>multiple</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SuperBookSourceEntryIdFormat</Name>
+         <Value>%s1</Value>
+         <Comment>Output order book entry ID format</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>CTA</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberOrderBookSymbolFormat</Name>
+         <Value>b%s.NYS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaBookHasUniqueEntryIds</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>sb_amex</Name>
+      <Parameter>
+         <Name>SuperBookSourceType</Name>
+         <Value>multiple</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SuperBookSourceEntryIdFormat</Name>
+         <Value>%s2</Value>
+         <Comment>Output order book entry ID format</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>AMEX</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberOrderBookSymbolFormat</Name>
+         <Value>b%s.AMX</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaBookHasUniqueEntryIds</Name>
+         <Value>false</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>sb_tvitch</Name>
+      <Parameter>
+         <Name>SuperBookSourceType</Name>
+         <Value>single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SuperBookSourcePartId</Name>
+         <Value>Q</Value>
+         <Comment>Output order book entry ID format</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>TVITCH</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberOrderBookSymbolFormat</Name>
+         <Value>b%s.NSDQ</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaBookHasUniqueEntryIds</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>sb_bats</Name>
+      <Parameter>
+         <Name>SuperBookSourceType</Name>
+         <Value>single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SuperBookSourcePartId</Name>
+         <Value>Z</Value>
+         <Comment>Output order book entry ID format</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>BATS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberOrderBookSymbolFormat</Name>
+         <Value>b%s.BATS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaBookHasUniqueEntryIds</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>sb_openbook</Name>
+      <Parameter>
+         <Name>SuperBookSourceType</Name>
+         <Value>single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SuperBookSourcePartId</Name>
+         <Value>N</Value>
+         <Comment>Output order book entry ID format</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>OPENBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberOrderBookSymbolFormat</Name>
+         <Value>b%s</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaBookHasUniqueEntryIds</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>sb_nysebbo</Name>
+      <Parameter>
+         <Name>SuperBookSourceType</Name>
+         <Value>single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SuperBookSourcePartId</Name>
+         <Value>N</Value>
+         <Comment>Output order book entry ID format</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>NYSEBBO</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberOrderBookSymbolFormat</Name>
+         <Value>b%s.BBOBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaBookHasUniqueEntryIds</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+   </Feed>
+<!--
+   <Feed>
+      <Name>sb_arca</Name>
+      <Parameter>
+         <Name>SuperBookSourceType</Name>
+         <Value>single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SuperBookSourcePartId</Name>
+         <Value>P</Value>
+         <Comment>Output order book entry ID format</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>ARCA</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberOrderBookSymbolFormat</Name>
+         <Value>b%s.ARCA</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaBookHasUniqueEntryIds</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+   </Feed>
+-->
+  <!-- SFD-1011 INSERTING ARCABBO INTO SUPERBOOk -->
+   <Feed>
+      <Name>sb_arcabbo</Name>
+      <Parameter>
+         <Name>SuperBookSourceType</Name>
+         <Value>single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SuperBookSourcePartId</Name>
+         <Value>P</Value>
+         <Comment>Output order book entry ID format</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>ARCABBO</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberOrderBookSymbolFormat</Name>
+         <Value>b%s.BBOBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaBookHasUniqueEntryIds</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>sb_amexdob</Name>
+      <Parameter>
+         <Name>SuperBookSourceType</Name>
+         <Value>single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SuperBookSourcePartId</Name>
+         <Value>A</Value>
+         <Comment>Output order book entry ID format</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>AMEXDOB</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberOrderBookSymbolFormat</Name>
+         <Value>b%s.AMEX</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaBookHasUniqueEntryIds</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>sb_amexbbo</Name>
+      <Parameter>
+         <Name>SuperBookSourceType</Name>
+         <Value>single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SuperBookSourcePartId</Name>
+         <Value>A</Value>
+         <Comment>Output order book entry ID format</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>AMEXBBO</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberOrderBookSymbolFormat</Name>
+         <Value>b%s.BBOBOOK</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaBookHasUniqueEntryIds</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>sb_edga</Name>
+      <Parameter>
+         <Name>SuperBookSourceType</Name>
+         <Value>single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SuperBookSourcePartId</Name>
+         <Value>J</Value>
+         <Comment>Output order book entry ID format</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>DEDGA</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberOrderBookSymbolFormat</Name>
+         <Value>b%s.EDGA</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaBookHasUniqueEntryIds</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>sb_edgx</Name>
+      <Parameter>
+         <Name>SuperBookSourceType</Name>
+         <Value>single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SuperBookSourcePartId</Name>
+         <Value>K</Value>
+         <Comment>Output order book entry ID format</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberSourceId</Name>
+         <Value>DEDGX</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberOrderBookSymbolFormat</Name>
+         <Value>b%s.EDGX</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaBookHasUniqueEntryIds</Name>
+         <Value>true</Value>
+      </Parameter>
+      <Parameter>
+         <Name>UseNamedThread</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>superbook_AAk</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>sb_tvitch</Value>
+         <Value>sb_utp</Value>
+         <Value>sb_cta</Value>
+         <Value>sb_amex</Value>
+<!--         <Value>sb_arca</Value> -->
+         <Value>sb_arcabbo</Value>
+         <Value>sb_bats</Value>
+         <Value>sb_nysebbo</Value>
+         <Value>sb_amexbbo</Value>
+         <Value>sb_edga</Value>
+         <Value>sb_edgx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.superbook_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(A$\|A[A-K]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(A$\|A[A-K]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(A$\|A[A-K]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(A$\|A[A-K]\)</Value>
+      </Parameter>
+      <!-- Explicity set the MamaSenderId -->
+      <pny2sffhr15a>
+         <UseParameterGroup name="SuperBookFtPrimary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>201</Value>
+         </Parameter>
+      </pny2sffhr15a>
+      <pny2sffhr15b>
+         <UseParameterGroup name="SuperBookFtSecondary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>301</Value>
+         </Parameter>
+      </pny2sffhr15b>
+   </Feed>
+
+   <Feed>
+      <Name>superbook_AlAz</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>sb_tvitch</Value>
+         <Value>sb_utp</Value>
+         <Value>sb_cta</Value>
+         <Value>sb_amex</Value>
+<!--         <Value>sb_arca</Value> -->
+         <Value>sb_arcabbo</Value>
+         <Value>sb_bats</Value>
+         <Value>sb_nysebbo</Value>
+         <Value>sb_amexbbo</Value>
+         <Value>sb_edga</Value>
+         <Value>sb_edgx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.superbook_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^A[^A-K]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^A[^A-K]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^A[^A-K]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^A[^A-K]</Value>
+      </Parameter>
+      <!-- Explicity set the MamaSenderId -->
+      <pny2sffhr15a>
+         <UseParameterGroup name="SuperBookFtPrimary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>202</Value>
+         </Parameter>
+      </pny2sffhr15a>
+      <pny2sffhr15b>
+         <UseParameterGroup name="SuperBookFtSecondary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>302</Value>
+         </Parameter>
+      </pny2sffhr15b>
+   </Feed>
+
+   <Feed>
+      <Name>superbook_BBr</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>sb_tvitch</Value>
+         <Value>sb_utp</Value>
+         <Value>sb_cta</Value>
+         <Value>sb_amex</Value>
+<!--         <Value>sb_arca</Value> -->
+         <Value>sb_arcabbo</Value>
+         <Value>sb_bats</Value>
+         <Value>sb_nysebbo</Value>
+         <Value>sb_amexbbo</Value>
+         <Value>sb_edga</Value>
+         <Value>sb_edgx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.superbook_feeds1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(B$\|B[A-R]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(B$\|B[A-R]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(B$\|B[A-R]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(B$\|B[A-R]\)</Value>
+      </Parameter>
+      <!-- Explicity set the MamaSenderId -->
+      <pny2sffhr15a>
+         <UseParameterGroup name="SuperBookFtPrimary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>203</Value>
+         </Parameter>
+      </pny2sffhr15a>
+      <pny2sffhr15b>
+         <UseParameterGroup name="SuperBookFtSecondary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>303</Value>
+         </Parameter>
+      </pny2sffhr15b>
+   </Feed>
+
+   <Feed>
+      <Name>superbook_BsCl</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>sb_tvitch</Value>
+         <Value>sb_utp</Value>
+         <Value>sb_cta</Value>
+         <Value>sb_amex</Value>
+<!--         <Value>sb_arca</Value> -->
+         <Value>sb_arcabbo</Value>
+         <Value>sb_bats</Value>
+         <Value>sb_nysebbo</Value>
+         <Value>sb_amexbbo</Value>
+         <Value>sb_edga</Value>
+         <Value>sb_edgx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.superbook_feeds1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(B[^A-R]\|C$\|C[A-L]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(B[^A-R]\|C$\|C[A-L]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(B[^A-R]\|C$\|C[A-L]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(B[^A-R]\|C$\|C[A-L]\)</Value>
+      </Parameter>
+      <!-- Explicity set the MamaSenderId -->
+      <pny2sffhr15a>
+         <UseParameterGroup name="SuperBookFtPrimary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>204</Value>
+         </Parameter>
+      </pny2sffhr15a>
+      <pny2sffhr15b>
+         <UseParameterGroup name="SuperBookFtSecondary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>304</Value>
+         </Parameter>
+      </pny2sffhr15b>
+   </Feed>
+
+   <Feed>
+      <Name>superbook_CmCx</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>sb_tvitch</Value>
+         <Value>sb_utp</Value>
+         <Value>sb_cta</Value>
+         <Value>sb_amex</Value>
+<!--         <Value>sb_arca</Value> -->
+         <Value>sb_arcabbo</Value>
+         <Value>sb_bats</Value>
+         <Value>sb_nysebbo</Value>
+         <Value>sb_amexbbo</Value>
+         <Value>sb_edga</Value>
+         <Value>sb_edgx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.superbook_feeds1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^C[M-X]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^C[M-X]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^C[M-X]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^C[M-X]</Value>
+      </Parameter>
+      <!-- Explicity set the MamaSenderId -->
+      <pny2sffhr15a>
+         <UseParameterGroup name="SuperBookFtPrimary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>205</Value>
+         </Parameter>
+      </pny2sffhr15a>
+      <pny2sffhr15b>
+         <UseParameterGroup name="SuperBookFtSecondary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>305</Value>
+         </Parameter>
+      </pny2sffhr15b>
+   </Feed>
+
+   <Feed>
+      <Name>superbook_CyEs</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>sb_tvitch</Value>
+         <Value>sb_utp</Value>
+         <Value>sb_cta</Value>
+         <Value>sb_amex</Value>
+<!--         <Value>sb_arca</Value> -->
+         <Value>sb_arcabbo</Value>
+         <Value>sb_bats</Value>
+         <Value>sb_nysebbo</Value>
+         <Value>sb_amexbbo</Value>
+         <Value>sb_edga</Value>
+         <Value>sb_edgx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.superbook_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(C[^A-X]\|D\|E$\|E[A-S]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(C[^A-X]\|D\|E$\|E[A-S]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(C[^A-X]\|D\|E$\|E[A-S]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(C[^A-X]\|D\|E$\|E[A-S]\)</Value>
+      </Parameter>
+      <!-- Explicity set the MamaSenderId -->
+      <pny2sffhr16a>
+         <UseParameterGroup name="SuperBookFtPrimary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>206</Value>
+         </Parameter>
+      </pny2sffhr16a>
+      <pny2sffhr16b>
+         <UseParameterGroup name="SuperBookFtSecondary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>306</Value>
+         </Parameter>
+      </pny2sffhr16b>
+   </Feed>
+
+   <Feed>
+      <Name>superbook_EtFs</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>sb_tvitch</Value>
+         <Value>sb_utp</Value>
+         <Value>sb_cta</Value>
+         <Value>sb_amex</Value>
+<!--         <Value>sb_arca</Value> -->
+         <Value>sb_arcabbo</Value>
+         <Value>sb_bats</Value>
+         <Value>sb_nysebbo</Value>
+         <Value>sb_amexbbo</Value>
+         <Value>sb_edga</Value>
+         <Value>sb_edgx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.superbook_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(E[^A-S]\|F$\|F[A-S]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(E[^A-S]\|F$\|F[A-S]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(E[^A-S]\|F$\|F[A-S]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(E[^A-S]\|F$\|F[A-S]\)</Value>
+      </Parameter>
+      <!-- Explicity set the MamaSenderId -->
+      <pny2sffhr16a>
+         <UseParameterGroup name="SuperBookFtPrimary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>207</Value>
+         </Parameter>
+      </pny2sffhr16a>
+      <pny2sffhr16b>
+         <UseParameterGroup name="SuperBookFtSecondary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>307</Value>
+         </Parameter>
+      </pny2sffhr16b>
+   </Feed>
+
+   <Feed>
+      <Name>superbook_FtGp</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>sb_tvitch</Value>
+         <Value>sb_utp</Value>
+         <Value>sb_cta</Value>
+         <Value>sb_amex</Value>
+<!--         <Value>sb_arca</Value>  -->
+         <Value>sb_arcabbo</Value>
+         <Value>sb_bats</Value>
+         <Value>sb_nysebbo</Value>
+         <Value>sb_amexbbo</Value>
+         <Value>sb_edga</Value>
+         <Value>sb_edgx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.superbook_feeds1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(F[^A-S]\|G$\|G[A-P]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(F[^A-S]\|G$\|G[A-P]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(F[^A-S]\|G$\|G[A-P]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(F[^A-S]\|G$\|G[A-P]\)</Value>
+      </Parameter>
+      <!-- Explicity set the MamaSenderId -->
+      <pny2sffhr16a>
+         <UseParameterGroup name="SuperBookFtPrimary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>208</Value>
+         </Parameter>
+      </pny2sffhr16a>
+      <pny2sffhr16b>
+         <UseParameterGroup name="SuperBookFtSecondary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>308</Value>
+         </Parameter>
+      </pny2sffhr16b>
+   </Feed>
+
+   <Feed>
+      <Name>superbook_GqIb</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>sb_tvitch</Value>
+         <Value>sb_utp</Value>
+         <Value>sb_cta</Value>
+         <Value>sb_amex</Value>
+<!--         <Value>sb_arca</Value> -->
+         <Value>sb_arcabbo</Value>
+         <Value>sb_bats</Value>
+         <Value>sb_nysebbo</Value>
+         <Value>sb_amexbbo</Value>
+         <Value>sb_edga</Value>
+         <Value>sb_edgx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.superbook_feeds1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(G[^A-P]\|H\|I$\|I[A-B]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(G[^A-P]\|H\|I$\|I[A-B]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(G[^A-P]\|H\|I$\|I[A-B]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(G[^A-P]\|H\|I$\|I[A-B]\)</Value>
+      </Parameter>
+      <!-- Explicity set the MamaSenderId -->
+      <pny2sffhr16a>
+         <UseParameterGroup name="SuperBookFtPrimary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>209</Value>
+         </Parameter>
+      </pny2sffhr16a>
+      <pny2sffhr16b>
+         <UseParameterGroup name="SuperBookFtSecondary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>309</Value>
+         </Parameter>
+      </pny2sffhr16b>
+   </Feed>
+
+   <Feed>
+      <Name>superbook_IcIy</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>sb_tvitch</Value>
+         <Value>sb_utp</Value>
+         <Value>sb_cta</Value>
+         <Value>sb_amex</Value>
+<!--         <Value>sb_arca</Value> -->
+         <Value>sb_arcabbo</Value>
+         <Value>sb_bats</Value>
+         <Value>sb_nysebbo</Value>
+         <Value>sb_amexbbo</Value>
+         <Value>sb_edga</Value>
+         <Value>sb_edgx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.superbook_feeds1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^I[C-Y]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^I[C-Y]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^I[C-Y]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^I[C-Y]</Value>
+      </Parameter>
+      <!-- Explicity set the MamaSenderId -->
+      <pny2sffhr16a>
+         <UseParameterGroup name="SuperBookFtPrimary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>210</Value>
+         </Parameter>
+      </pny2sffhr16a>
+      <pny2sffhr16b>
+         <UseParameterGroup name="SuperBookFtSecondary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>310</Value>
+         </Parameter>
+      </pny2sffhr16b>
+   </Feed>
+
+   <Feed>
+      <Name>superbook_IzLl</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>sb_tvitch</Value>
+         <Value>sb_utp</Value>
+         <Value>sb_cta</Value>
+         <Value>sb_amex</Value>
+<!--         <Value>sb_arca</Value> -->
+         <Value>sb_arcabbo</Value>
+         <Value>sb_bats</Value>
+         <Value>sb_nysebbo</Value>
+         <Value>sb_amexbbo</Value>
+         <Value>sb_edga</Value>
+         <Value>sb_edgx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.superbook_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(I[^A-Y]\|[J-K]\|L$\|L[A-L]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(I[^A-Y]\|[J-K]\|L$\|L[A-L]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(I[^A-Y]\|[J-K]\|L$\|L[A-L]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(I[^A-Y]\|[J-K]\|L$\|L[A-L]\)</Value>
+      </Parameter>
+      <!-- Explicity set the MamaSenderId -->
+      <pny2sffhr17a>
+         <UseParameterGroup name="SuperBookFtPrimary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>211</Value>
+         </Parameter>
+      </pny2sffhr17a>
+      <pny2sffhr17b>
+         <UseParameterGroup name="SuperBookFtSecondary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>311</Value>
+         </Parameter>
+      </pny2sffhr17b>
+   </Feed>
+
+   <Feed>
+      <Name>superbook_LmMh</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>sb_tvitch</Value>
+         <Value>sb_utp</Value>
+         <Value>sb_cta</Value>
+         <Value>sb_amex</Value>
+<!--         <Value>sb_arca</Value> -->
+         <Value>sb_arcabbo</Value>
+         <Value>sb_bats</Value>
+         <Value>sb_nysebbo</Value>
+         <Value>sb_amexbbo</Value>
+         <Value>sb_edga</Value>
+         <Value>sb_edgx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.superbook_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(L[^A-L]\|M$\|M[A-H]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(L[^A-L]\|M$\|M[A-H]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(L[^A-L]\|M$\|M[A-H]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(L[^A-L]\|M$\|M[A-H]\)</Value>
+      </Parameter>
+      <!-- Explicity set the MamaSenderId -->
+      <pny2sffhr17a>
+         <UseParameterGroup name="SuperBookFtPrimary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>212</Value>
+         </Parameter>
+      </pny2sffhr17a>
+      <pny2sffhr17b>
+         <UseParameterGroup name="SuperBookFtSecondary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>312</Value>
+         </Parameter>
+      </pny2sffhr17b>
+   </Feed>
+
+   <Feed>
+      <Name>superbook_MiOq</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>sb_tvitch</Value>
+         <Value>sb_utp</Value>
+         <Value>sb_cta</Value>
+         <Value>sb_amex</Value>
+<!--         <Value>sb_arca</Value> -->
+         <Value>sb_arcabbo</Value>
+         <Value>sb_bats</Value>
+         <Value>sb_nysebbo</Value>
+         <Value>sb_amexbbo</Value>
+         <Value>sb_edga</Value>
+         <Value>sb_edgx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.superbook_feeds1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(M[^A-H]\|N\|O$\|O[A-Q]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(M[^A-H]\|N\|O$\|O[A-Q]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(M[^A-H]\|N\|O$\|O[A-Q]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(M[^A-H]\|N\|O$\|O[A-Q]\)</Value>
+      </Parameter>
+      <!-- Explicity set the MamaSenderId -->
+      <pny2sffhr17a>
+         <UseParameterGroup name="SuperBookFtPrimary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>213</Value>
+         </Parameter>
+      </pny2sffhr17a>
+      <pny2sffhr17b>
+         <UseParameterGroup name="SuperBookFtSecondary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>313</Value>
+         </Parameter>
+      </pny2sffhr17b>
+   </Feed>
+
+   <Feed>
+      <Name>superbook_OrRt</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>sb_tvitch</Value>
+         <Value>sb_utp</Value>
+         <Value>sb_cta</Value>
+         <Value>sb_amex</Value>
+<!--         <Value>sb_arca</Value> -->
+         <Value>sb_arcabbo</Value>
+         <Value>sb_bats</Value>
+         <Value>sb_nysebbo</Value>
+         <Value>sb_amexbbo</Value>
+         <Value>sb_edga</Value>
+         <Value>sb_edgx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.superbook_feeds1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(O[^A-Q]\|[P-Q]\|R$\|R[A-T]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(O[^A-Q]\|[P-Q]\|R$\|R[A-T]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(O[^A-Q]\|[P-Q]\|R$\|R[A-T]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(O[^A-Q]\|[P-Q]\|R$\|R[A-T]\)</Value>
+      </Parameter>
+      <!-- Explicity set the MamaSenderId -->
+      <pny2sffhr17a>
+         <UseParameterGroup name="SuperBookFtPrimary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>214</Value>
+         </Parameter>
+      </pny2sffhr17a>
+      <pny2sffhr17b>
+         <UseParameterGroup name="SuperBookFtSecondary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>314</Value>
+         </Parameter>
+      </pny2sffhr17b>
+   </Feed>
+
+   <Feed>
+      <Name>superbook_RuSm</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>sb_tvitch</Value>
+         <Value>sb_utp</Value>
+         <Value>sb_cta</Value>
+         <Value>sb_amex</Value>
+<!--          <Value>sb_arca</Value> -->
+         <Value>sb_arcabbo</Value> 
+         <Value>sb_bats</Value>
+         <Value>sb_nysebbo</Value>
+         <Value>sb_amexbbo</Value>
+         <Value>sb_edga</Value>
+         <Value>sb_edgx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.superbook_feeds1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(R[^A-T]\|S$\|S[A-M]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(R[^A-T]\|S$\|S[A-M]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(R[^A-T]\|S$\|S[A-M]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(R[^A-T]\|S$\|S[A-M]\)</Value>
+      </Parameter>
+      <!-- Explicity set the MamaSenderId -->
+      <pny2sffhr17a>
+         <UseParameterGroup name="SuperBookFtPrimary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>215</Value>
+         </Parameter>
+      </pny2sffhr17a>
+      <pny2sffhr17b>
+         <UseParameterGroup name="SuperBookFtSecondary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>315</Value>
+         </Parameter>
+      </pny2sffhr17b>
+   </Feed>
+
+   <Feed>
+      <Name>superbook_SnTh</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>sb_tvitch</Value>
+         <Value>sb_utp</Value>
+         <Value>sb_cta</Value>
+         <Value>sb_amex</Value>
+<!--         <Value>sb_arca</Value> -->
+         <Value>sb_arcabbo</Value>
+         <Value>sb_bats</Value>
+         <Value>sb_nysebbo</Value>
+         <Value>sb_amexbbo</Value>
+         <Value>sb_edga</Value>
+         <Value>sb_edgx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.superbook_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(S[^A-M]\|T$\|T[A-H]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(S[^A-M]\|T$\|T[A-H]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(S[^A-M]\|T$\|T[A-H]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(S[^A-M]\|T$\|T[A-H]\)</Value>
+      </Parameter>
+      <!-- Explicity set the MamaSenderId -->
+      <pny2sffhr18a>
+         <UseParameterGroup name="SuperBookFtPrimary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>216</Value>
+         </Parameter>
+      </pny2sffhr18a>
+      <pny2sffhr18b>
+         <UseParameterGroup name="SuperBookFtSecondary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>316</Value>
+         </Parameter>
+      </pny2sffhr18b>
+   </Feed>
+
+   <Feed>
+      <Name>superbook_TiVz</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>sb_tvitch</Value>
+         <Value>sb_utp</Value>
+         <Value>sb_cta</Value>
+         <Value>sb_amex</Value>
+<!--         <Value>sb_arca</Value> -->
+         <Value>sb_arcabbo</Value>
+         <Value>sb_bats</Value>
+         <Value>sb_nysebbo</Value>
+         <Value>sb_amexbbo</Value>
+         <Value>sb_edga</Value>
+         <Value>sb_edgx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.superbook_feeds0</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^\(T[^A-H]\|[U-V]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^\(T[^A-H]\|[U-V]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^\(T[^A-H]\|[U-V]\)</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^\(T[^A-H]\|[U-V]\)</Value>
+      </Parameter>
+      <!-- Explicity set the MamaSenderId -->
+      <pny2sffhr18a>
+         <UseParameterGroup name="SuperBookFtPrimary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>217</Value>
+         </Parameter>
+      </pny2sffhr18a>
+      <pny2sffhr18b>
+         <UseParameterGroup name="SuperBookFtSecondary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>317</Value>
+         </Parameter>
+      </pny2sffhr18b>
+   </Feed>
+
+   <Feed>
+      <Name>superbook_WZ</Name>
+      <Parameter>
+         <Name>SubFeeds</Name>
+         <Value>sb_tvitch</Value>
+         <Value>sb_utp</Value>
+         <Value>sb_cta</Value>
+         <Value>sb_amex</Value>
+<!--        <Value>sb_arca</Value> -->
+         <Value>sb_arcabbo</Value>
+         <Value>sb_bats</Value>
+         <Value>sb_nysebbo</Value>
+         <Value>sb_amexbbo</Value>
+         <Value>sb_edga</Value>
+         <Value>sb_edgx</Value>
+      </Parameter>
+      <Parameter>
+         <Name>NamedThreads</Name>
+         <Value>thread_superbook_single</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPropertiesFileName</Name>
+         <Value>mama.properties.superbook_feeds1</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaPublisherTransportName</Name>
+         <Value>superbook</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookRegExpFilter</Name>
+         <Value>^[W-Z]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RecordRegExpFilter</Name>
+         <Value>^[W-Z]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamaSubscriberRegExpFilter</Name>
+         <Value>^[W-Z]</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MamdaSubscriberRegExpFilter</Name>
+         <Value>^[W-Z]</Value>
+      </Parameter>
+      <!-- Explicity set the MamaSenderId -->
+      <pny2sffhr18a>
+         <UseParameterGroup name="SuperBookFtPrimary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>218</Value>
+         </Parameter>
+      </pny2sffhr18a>
+      <pny2sffhr18b>
+         <UseParameterGroup name="SuperBookFtSecondary"/>
+         <Parameter>
+            <Name>MamaSenderId</Name>
+            <Value>318</Value>
+         </Parameter>
+      </pny2sffhr18b>
+   </Feed>
+
+   <Thread>
+      <Name>thread_superbook_single</Name>
+      <Parameter>
+         <Name>Enabled</Name>
+         <Value>true</Value>
+      </Parameter>
+   </Thread>
+
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderListLong</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsOrderListPartLong</Value>
+      <Value>FieldAttrsOrderListPart</Value>
+      <Value>FieldAttrsOrder</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+   </Parameter>
+
+   <IncludeFile>papastats_superbook.xml</IncludeFile>
+   <IncludeFile>superbook_sources.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>

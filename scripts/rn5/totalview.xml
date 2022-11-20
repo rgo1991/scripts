@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+      <!--This file contains configuration parameters for the ITCH feed handler over TCP, using the ITCH 3.0 or later data format.  See the Administrators Guide for more information:  http://wombatconsulting.com/feedhandlers/admin-guide.html-->
+   <!-- Site specific includes -->
+   <IncludeFile>totalview_tport.xml</IncludeFile>
+   <IncludeFile>totalview_hosts.xml</IncludeFile>
+   <IncludeFile>productdefs_superfeed.xml</IncludeFile>
+   <IncludeFile>papastats.2.17.xml</IncludeFile>
+   <!-- END Site specific includes -->
+
+   <Parameter>
+      <Name>WmwSource</Name>
+      <Value>ORDER</Value>
+   </Parameter>
+
+<!-- SFDCR-1423 Start -->
+      <Parameter>
+         <Name>MamaUseDictionaryType</Name>
+         <Value>true</Value>
+      </Parameter>
+<!--SFDCR-1423 End -->
+
+<!-- SFD-1113: Symbol Announce -->
+   <UseParameterGroup name="SymbolAnnounceParams"/>
+   <Parameter>
+      <Name>SymbolAnnounceSymbolFormat</Name>
+      <Value>_ANNOUNCE</Value>
+   </Parameter>
+<!-- SFD-1113: Symbol Announce -->
+
+<!-- order modifies only come with orderId not symbol so all splits will see them -->
+   <Parameter>
+      <Name>ItchReportUnknownOrderInterval</Name>
+      <Value>0</Value>
+   </Parameter>
+
+
+   <!-- Unix Domain Sockets - January 30, 2008 -->
+   <Parameter>
+      <Name>UseUnixDomainSocket</Name>
+      <Value>true</Value>
+   </Parameter>
+
+   <Parameter>
+      <Name>UnixDomainSocketPathName</Name>
+      <Value>/tmp/wombatsocket</Value>
+   </Parameter>
+   <!-- END - Unix Domain Sockets -->
+
+
+   <Parameter>
+      <Name>SoupVersion</Name>
+      <Value>3</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FeedVersion</Name>
+      <Value>5.0</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqFeedFormat</Name>
+      <Value>totalview</Value>
+      <Comment>Please do not change this without consulting Wombat Support</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TcpMessageSeparator</Name>
+      <Value>0x0A</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TcpIpAddress</Name>
+      <Value>192.168.187.6</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TcpPort</Name>
+      <Value>12345</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LoginUsername</Name>
+      <Value>womb01</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LoginPassword</Name>
+      <Value>openup</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LoginSession</Name>
+      <Value/>
+      <Comment>Leave empty for current session</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LoginSequenceNumber</Name>
+      <Value>0</Value>
+      <Comment>0=current; 1=start-of-day</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LoginHeartbeatInterval</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LoginResetTimeBegin</Name>
+      <Value>20:25</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LoginResetTimeEnd</Name>
+      <Value>03:02</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NativeTimeZone</Name>
+      <Value>US/Eastern</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>MessageRecoveryFile</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbolPrefixTopOfBook</Name>
+      <Value/>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookLotSize</Name>
+      <Value>1</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>TopOfBookDecimals</Name>
+      <Value>4</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqQuoteResumeChangesStatus</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>CalculateTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>PublishTopOfBook</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NormalizeSymbology</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SymbologyMapFuncName</Name>
+      <Value>itch2streetMap</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>InitialMode</Name>
+      <Value>recovery</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>SleepAtEndOfTransmission</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>LineDataFormat</Name>
+      <Value>basic</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqUseParticipantBooks</Name>
+      <Value>false</Value>
+      <Comment>Generate a separate book per participant per symbol</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqTvbinProductNameOrderBook</Name>
+      <Value>NasdaqTotalViewOrderBook</Value>
+      <Comment>Set to NasdaqOpenviewPlusPartBook when NasdaqUseParticipantBooks is set to true.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqTvbinProductNameTop</Name>
+      <Value>NasdaqTotalViewTop</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqTvbinProductNameImbalance</Name>
+      <Value>NasdaqTotalViewImbalance</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchProductNameTrade</Name>
+      <Value>NasdaqTotalView</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>OrderBookUpdateImpliesNormalStatus</Name>
+      <Value>false</Value>
+      <Comment>Needs to be false for EMC processing</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchTrackMatchNumbers</Name>
+      <Value>false</Value>
+      <Comment>Enables the 'Broken Trade' message to be processed, but may use significant amounts of memory</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchProcessNonPrintableAsRegular</Name>
+      <Value>true</Value>
+      <Comment>On the Order Executed with Price Message there is a field called Printable that takes on the value of Y or N. The executions flagged with an N are typically published later as part of a bulk print. So volume can end up being double counted. However these messages come sooner so they can be useful trading information!This parameter controls whether to include the non-printables as part of the regular trade volume. The default value is true which has been our behaviour for quite some time.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchProcessNonPrintableAsIrregular</Name>
+      <Value>false</Value>
+      <Comment>This parameter controls whether to include publish the non-printables as as irregular trade. The default value is false as it is a newly added feature.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchPublishTradeOrderRefAsNumber</Name>
+      <Value>false</Value>
+      <Comment>Should the order reference (for a trade) be published as wOrderRef (string) or wOrderId64 (numeric).</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchPublishImbalanceWithLotSize</Name>
+      <Value>false</Value>
+      <Comment>Enables/disables calculation and publishing of imbalance volumes with lot sizes.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>AggregateOrderBooks</Name>
+      <Value>false</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchAttributedOrderIds</Name>
+      <Value>true</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchAnonymousParticipantId</Name>
+      <Value>NSDQ</Value>
+      <Comment>If using attributed orders, this participant identifier is used for the anonymous orders within the Single Book.  NASDAQ recommend using a value 'NSDQ'.  An otherwise unattributed order would then appear to be from an MPID of 'NSDQ'.  Within NASDAQ, all participant identifiers should be four characters.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>IncludeGroupSymbol</Name>
+      <Value>false</Value>
+      <Comment>Set to true if using PublishLinkRecords / ChainParticipants</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchActiveOrderTuning</Name>
+      <Value>2097152</Value>
+      <Comment>This is a 'per message handler' parameter.  Set to a power of two (recommended) greater than the maximum expected number of active OrderIds from the ITCH feed that the message handler needs to process. As of June 2007 the peak active Orders was approx 1.3 million.  Remember to reduce this number if splitting the feed via either multithreading, ITCH Splitter or otherwise.  Too high will consume unnecessary memory.  Too low will (slightly) reduce performance for the first day of operation.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchShowTradeType</Name>
+      <Value>false</Value>
+      <Comment>Set to true to publish the trade type as one of 'E' 'C' 'P' or 'Q'. This is the same value as those specified in the itch v3.0 specification.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchDisableExecutedMessages</Name>
+      <Value>false</Value>
+      <Comment>Set to true to disable the publish of executed orders (Trade type 'E' and 'C').</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>NasdaqEmulateLegacyFeed</Name>
+      <Value>false</Value>
+      <Comment>Set to true to publish values according to the old nasdaq style. In this feed only the data in Market Maker Mode which is published on wQuoteType is affected. The old style value were 0, 1, 3, 4, 5 whereas now the values are N, P, S, R, and L. These mean Normal Default, Passive, Stabilizing/Syndicate, Pre-stabilizing, and Penalty.</Comment>
+   </Parameter>
+    
+   <Parameter>
+      <Name>ItchProcessParticipantPositions</Name>
+      <Value>true</Value>
+      <Comment>Set to false to suppress participant position messages.</Comment>
+   </Parameter>
+
+   <Parameter>
+      <Name>TopOfBookCheck</Name>
+      <Value>true</Value>
+   </Parameter>
+   <Parameter>
+      <Name>TopOfBookCheckLogCrossedOnly</Name>
+      <Value>true</Value>
+   </Parameter>
+
+    
+   <Parameter>
+      <Name>RecordAttrs</Name>
+      <Value>RecordAttrsNormal</Value>
+   </Parameter>
+    
+   <Parameter>
+      <Name>FieldAttrs</Name>
+      <Value>FieldAttrsCommon</Value>
+      <Value>FieldAttrsOrderBookMsg</Value>
+      <Value>FieldAttrsOrderBookWombatMsg</Value>
+      <Value>FieldAttrsOrderList</Value>
+      <Value>FieldAttrsOrder</Value>
+      <Value>FieldAttrsQuote</Value>
+      <Value>FieldAttrsTrade</Value>
+      <Value>FieldAttrsSecurityStatus</Value>
+      <Value>FieldAttrsStatus</Value>
+      <Value>FieldAttrsChain</Value>
+      <Value>FieldAttrsNasdaq</Value>
+      <Value>FieldAttrsReferential</Value>
+      <Value>FieldAttrsOrderImbalance</Value>
+   </Parameter><!--Use these next two feednames to process only symbols starting with A-M inclusive, or only symbols starting N-Z inclusive.  This is used when loadsharing over multiple processes.  Copy and update these feed parameters as required.-->
+    
+   <Feed>
+      <Name>totalview_am</Name>
+      <Parameter>
+         <Name>MessageHandlerRegExpFilter</Name>
+         <Value>^[A-M]</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>totalview_nz</Name>
+      <Parameter>
+         <Name>MessageHandlerRegExpFilter</Name>
+         <Value>^[^A-M]</Value>
+      </Parameter>
+      <Comment>This intentionally catches all symbols not caught by A-M, in case of unusual symbols</Comment>
+   </Feed>
+    
+   <Feed>
+      <Name>totalview_replay</Name>
+      <Parameter>
+         <Name>InputFile</Name>
+         <Value>/home/wombat/data/totalview.play</Value>
+      </Parameter>
+      <Parameter>
+         <Name>InputRate</Name>
+         <Value>100</Value>
+      </Parameter>
+      <Parameter>
+         <Name>RewindPlayback</Name>
+         <Value>true</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>totalviewproxy</Name>
+      <Parameter>
+         <Name>LogFile</Name>
+         <Value>-</Value>
+      </Parameter>
+      <Parameter>
+         <Name>TcpIpAddress</Name>
+         <Value>127.0.0.1</Value>
+         <Comment>Island host</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>26471</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MasqTcpIpAddress</Name>
+         <Value>192.168.187.6</Value>
+         <Comment>Local host interface</Comment>
+      </Parameter>
+      <Parameter>
+         <Name>MasqTcpPort</Name>
+         <Value>12345</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MasqLoginUsername</Name>
+         <Value>womb01</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MasqLoginPassword</Name>
+         <Value>openup</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MasqLoginTimeout</Name>
+         <Value>65</Value>
+      </Parameter>
+      <Parameter>
+         <Name>MessageRecoveryFile</Name>
+         <Value/>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>totalview_split_1</Name>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>29001</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>totalview_split_2</Name>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>29002</Value>
+      </Parameter>
+   </Feed>
+    
+   <Feed>
+      <Name>totalview_split_3</Name>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>29003</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>totalview_ab</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <UseParameterGroup name="TotalViewSecStatusParams"/>
+      <UseParameterGroup name="GlobalOrderImbalanceStatusParams"/>
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_tvitch_ab</Value>
+   </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>29001</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/totalview_ab.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>A_B_TVITCH_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderImbalanceGlobalSymbolFormat</Name>
+         <Value>A_B_TVITCH_IMBALANCE</Value>
+      </Parameter>
+   </Feed>
+
+   <Feed>
+      <Name>totalview_cd</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <UseParameterGroup name="TotalViewSecStatusParams"/>
+      <UseParameterGroup name="GlobalOrderImbalanceStatusParams"/>
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_tvitch_cd</Value>
+   </Parameter>
+     <Parameter>
+         <Name>TcpPort</Name>
+         <Value>29002</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/totalview_cd.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>C_D_TVITCH_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderImbalanceGlobalSymbolFormat</Name>
+         <Value>C_D_TVITCH_IMBALANCE</Value>
+      </Parameter>
+  </Feed>
+
+   <Feed>
+      <Name>totalview_ef</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector0NSD1"/>
+      <UseParameterGroup name="TotalViewSecStatusParams"/>
+      <UseParameterGroup name="GlobalOrderImbalanceStatusParams"/>
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_tvitch_ef</Value>
+   </Parameter>
+     <Parameter>
+         <Name>TcpPort</Name>
+         <Value>29003</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/totalview_ef.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>E_F_TVITCH_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderImbalanceGlobalSymbolFormat</Name>
+         <Value>E_F_TVITCH_IMBALANCE</Value>
+      </Parameter>
+  </Feed>
+
+   <Feed>
+      <Name>totalview_hi</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector1NSD1"/>
+      <UseParameterGroup name="TotalViewSecStatusParams"/>
+      <UseParameterGroup name="GlobalOrderImbalanceStatusParams"/>
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_tvitch_hi</Value>
+   </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>29004</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/totalview_hi.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>H_I_TVITCH_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderImbalanceGlobalSymbolFormat</Name>
+         <Value>H_I_TVITCH_IMBALANCE</Value>
+      </Parameter>
+  </Feed>
+
+   <Feed>
+      <Name>totalview_gjkl</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector1NSD1"/>
+      <UseParameterGroup name="TotalViewSecStatusParams"/>
+      <UseParameterGroup name="GlobalOrderImbalanceStatusParams"/>
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_tvitch_gjkl</Value>
+   </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>29005</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/totalview_gjkl.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>GJKL_TVITCH_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderImbalanceGlobalSymbolFormat</Name>
+         <Value>GJKL_TVITCH_IMBALANCE</Value>
+      </Parameter>
+  </Feed>
+
+   <Feed>
+      <Name>totalview_mno</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector2NSD1"/>
+      <UseParameterGroup name="TotalViewSecStatusParams"/>
+      <UseParameterGroup name="GlobalOrderImbalanceStatusParams"/>
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_tvitch_mno</Value>
+   </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>29006</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/totalview_mno.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>M_O_TVITCH_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderImbalanceGlobalSymbolFormat</Name>
+         <Value>M_O_TVITCH_IMBALANCE</Value>
+      </Parameter>
+  </Feed>
+
+   <Feed>
+      <Name>totalview_pqv</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector2NSD1"/>
+      <UseParameterGroup name="TotalViewSecStatusParams"/>
+      <UseParameterGroup name="GlobalOrderImbalanceStatusParams"/>
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_tvitch_pqv</Value>
+   </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>29007</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/totalview_pqv.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>PQV_TVITCH_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderImbalanceGlobalSymbolFormat</Name>
+         <Value>PQV_TVITCH_IMBALANCE</Value>
+      </Parameter>
+  </Feed>
+
+   <Feed>
+      <Name>totalview_s</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>
+      <UseParameterGroup name="TotalViewSecStatusParams"/>
+      <UseParameterGroup name="GlobalOrderImbalanceStatusParams"/>
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_tvitch_s</Value>
+   </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>29008</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/totalview_s.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>S_TVITCH_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderImbalanceGlobalSymbolFormat</Name>
+         <Value>S_TVITCH_IMBALANCE</Value>
+      </Parameter>
+
+   </Feed>
+
+   <Feed>
+      <Name>totalview_tu</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>
+      <UseParameterGroup name="TotalViewSecStatusParams"/>
+      <UseParameterGroup name="GlobalOrderImbalanceStatusParams"/>
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_tvitch_tu</Value>
+   </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>29009</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/totalview_tu.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>T_U_TVITCH_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderImbalanceGlobalSymbolFormat</Name>
+         <Value>T_U_TVITCH_IMBALANCE</Value>
+      </Parameter>
+  </Feed>
+
+   <Feed>
+      <Name>totalview_rwxyz</Name>
+      <UseParameterGroup name="WmwTransportPropertiesVector3NSD1"/>
+      <UseParameterGroup name="TotalViewSecStatusParams"/>
+      <UseParameterGroup name="GlobalOrderImbalanceStatusParams"/>
+   <Parameter>
+      <Name>FtGroupName</Name>
+      <Value>FT_tvitch_rwxyz</Value>
+   </Parameter>
+      <Parameter>
+         <Name>TcpPort</Name>
+         <Value>29010</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderBookSymbolFile</Name>
+         <Value>/opt/wombat/log/totalview_rwxyz.orderbook.sym</Value>
+      </Parameter>
+      <Parameter>
+         <Name>SecurityStatusGlobalSymbolFormat</Name>
+         <Value>RWXYZ_TVITCH_SECSTATUS</Value>
+      </Parameter>
+      <Parameter>
+         <Name>OrderImbalanceGlobalSymbolFormat</Name>
+         <Value>RWXYZ_TVITCH_IMBALANCE</Value>
+      </Parameter>
+  </Feed>
+
+   <IncludeFile>WOMBAT_FieldAttrs.xml</IncludeFile>
+   <IncludeFile>WOMBAT_RecordAttrs.xml</IncludeFile>
+</config>
