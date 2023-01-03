@@ -2,6 +2,8 @@
 
 import random
 import pprint
+import sys
+
 
 ashish = "ashish"
 reno  = "reno"
@@ -12,7 +14,7 @@ jarek = "jarek"
 conor = "conor"
 
 team = [ashish, reno, richard, barry, bruno, jarek, conor]
-monday = { "oncall" : "as" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"" }
+monday = { "oncall" : "" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"" }
 tuesday =  { "oncall" : "" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"" }
 wednesday = { "oncall" : "" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"" }
 thursday = { "oncall" : "" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"" }
@@ -33,8 +35,9 @@ def rota(day):
 		for m in range(7):
 			if team[m] in weekdays[count].values():
 				continue
-			if k == "oncall" and team[m] in oncall_list: #Skip if member has already been on call this week
-				continue
+			if k == "oncall":
+				if  team[m] in oncall_list: #Skip if member has already been on call this week
+					continue
 			else:
 				weekdays[count].update({k:team[m]})
 	oncall_list.append(weekdays[count]["oncall"])
@@ -42,10 +45,37 @@ def rota(day):
 	return weekdays[count]
 
 
-#print(oncall_list)
+weekend_1 = input("Who is on weekend (1):\n")
+weekend_2 = input("Who is on weekend (2):\n")
+def mon_fri(day):
+	if day == "mon":
+		count = 0
+	elif day == "fri":
+		count = 4
+	random.shuffle(team)
+	for k,v in weekdays[count].items():
+		for l in range(7):
+			if team[l] in weekdays[count].values():
+				continue
+			if count == 0 and team[l] == weekend_1:
+				continue
+			if count == 4  and team[l] == weekend_2:
+                                continue
+			else:
+				weekdays[count].update({k:team[l]})
+	return weekdays[count]
+
+
+print(oncall_list)
+print("Monday_rota")
+pprint.pprint(mon_fri("mon"))
 print("Tuesday rota:")
 pprint.pprint(rota("tue"))
 print("Wednesday rota:")
 pprint.pprint(rota("wed"))
+print(oncall_list)
+
 print("Thursday rota:")
 pprint.pprint(rota("thurs"))
+print("Friday_rota")
+pprint.pprint(mon_fri("fri"))
