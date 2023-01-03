@@ -1,0 +1,51 @@
+#!python3
+
+import random
+import pprint
+
+ashish = "ashish"
+reno  = "reno"
+richard = "richard"
+barry = "barry"
+bruno = "bruno"
+jarek = "jarek"
+conor = "conor"
+
+team = [ashish, reno, richard, barry, bruno, jarek, conor]
+monday = { "oncall" : "as" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"" }
+tuesday =  { "oncall" : "" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"" }
+wednesday = { "oncall" : "" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"" }
+thursday = { "oncall" : "" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"" }
+friday = { "oncall" : "" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"" }
+weekdays = [ monday, tuesday, wednesday, thursday, friday ]
+
+
+oncall_list = []
+def rota(day):
+	if day == "tue":
+		count = 1
+	elif day == "wed":
+		count = 2
+	elif day == "thurs":
+		count = 3
+	random.shuffle(team)
+	for k,v in weekdays[count].items():
+		for m in range(7):
+			if team[m] in weekdays[count].values():
+				continue
+			if k == "oncall" and team[m] in oncall_list: #Skip if member has already been on call this week
+				continue
+			else:
+				weekdays[count].update({k:team[m]})
+	oncall_list.append(weekdays[count]["oncall"])
+#	print(oncall_list)
+	return weekdays[count]
+
+
+#print(oncall_list)
+print("Tuesday rota:")
+pprint.pprint(rota("tue"))
+print("Wednesday rota:")
+pprint.pprint(rota("wed"))
+print("Thursday rota:")
+pprint.pprint(rota("thurs"))
