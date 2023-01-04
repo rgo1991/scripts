@@ -79,3 +79,16 @@ print("Thursday rota:")
 pprint.pprint(rota("thurs"))
 print("Friday_rota")
 pprint.pprint(mon_fri("fri"))
+
+monday_rota = mon_fri("mon")
+tuesday_rota = rota("tue")
+wednesday_rota = rota("wed")
+thursday_rota = rota("thurs")
+friday_rota = rota("fri")
+wfh = []
+
+monday_rota_wfh = list({val for key,val in monday_rota.items() if key == "emails1" or key == "emails2"})
+tuesday_rota_wfh = monday_rota_wfh.copy()
+wednesday_rota_wfh = list({val for key,val in wednesday_rota.items() if key == "chats1" or key == "chats2"})
+thursday_rota_wfh = list({val for key,val in thursday_rota.items() if key == "chats1" or key == "chats2" or key == "chats3"})
+friday_rota_wfh = list({val for key,val in friday_rota.items() if key == "chats3" or key == "wrapup" or key == "wrapup2"})
