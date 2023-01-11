@@ -6,23 +6,30 @@ import sys
 
 
 ashish = "ashish"
-reno  = "reno"
+reno = "reno"
 richard = "richard"
 barry = "barry"
 bruno = "bruno"
 jarek = "jarek"
 conor = "conor"
+vini = "vini"
 
-team = [ashish, reno, richard, barry, bruno, jarek, conor]
-monday = { "oncall" : "" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"" }
-tuesday =  { "oncall" : "" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"" }
-wednesday = { "oncall" : "" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"" }
-thursday = { "oncall" : "" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"" }
-friday = { "oncall" : "" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"" }
+team = [ashish, reno, richard, barry, bruno, jarek, conor, vini]
+
+monday = { "oncall" : "" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"",  "wrapup2":"" }
+tuesday = { "oncall" : "" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"",  "wrapup2":"" }
+wednesday = { "oncall" : "" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"",  "wrapup2":"" }
+thursday = { "oncall" : "" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"",  "wrapup2":"" }
+friday = { "oncall" : "" , "chats1" : "" , "chats2":"", "chats3":"" , "emails1":"" , "emails2":"" , "wrapup":"",  "wrapup2":"" }
+
 weekdays = [ monday, tuesday, wednesday, thursday, friday ]
 
-
 oncall_list = []
+
+weekend_1 = input("Who is on weekend (1):\n")
+weekend_2 = input("Who is on weekend (2):\n")
+
+
 def rota(day):
 	if day == "tue":
 		count = 1
@@ -32,21 +39,17 @@ def rota(day):
 		count = 3
 	random.shuffle(team)
 	for k,v in weekdays[count].items():
-		for m in range(7):
+		for m in range(8):
 			if team[m] in weekdays[count].values():
 				continue
-			if k == "oncall":
-				if  team[m] in oncall_list: #Skip if member has already been on call this week
-					continue
-			else:
-				weekdays[count].update({k:team[m]})
+			if k == "oncall" and team[m] in oncall_list: #Skip if member has already been on call this week
+				continue
+			weekdays[count].update({k:team[m]})
+
 	oncall_list.append(weekdays[count]["oncall"])
-#	print(oncall_list)
 	return weekdays[count]
 
 
-weekend_1 = input("Who is on weekend (1):\n")
-weekend_2 = input("Who is on weekend (2):\n")
 def mon_fri(day):
 	if day == "mon":
 		count = 0
@@ -54,41 +57,56 @@ def mon_fri(day):
 		count = 4
 	random.shuffle(team)
 	for k,v in weekdays[count].items():
-		for l in range(7):
+		for l in range(8):
 			if team[l] in weekdays[count].values():
 				continue
 			if count == 0 and team[l] == weekend_1:
 				continue
-			if count == 4  and team[l] == weekend_2:
-                                continue
-			else:
-				weekdays[count].update({k:team[l]})
+			if count == 4 and team[l] == weekend_2:
+				continue
+			weekdays[count].update({k: team[l]})
 	return weekdays[count]
 
 
-print(oncall_list)
-print("Monday_rota")
-pprint.pprint(mon_fri("mon"))
-print("Tuesday rota:")
-pprint.pprint(rota("tue"))
-print("Wednesday rota:")
-pprint.pprint(rota("wed"))
-print(oncall_list)
+def wfh_rota(alist,adict):
+	for h in alist:
+		for ey, al in adict.items():
+			if al == h:
+				adict[ey] = al + " wfh"
+	return adict
 
-print("Thursday rota:")
-pprint.pprint(rota("thurs"))
-print("Friday_rota")
-pprint.pprint(mon_fri("fri"))
 
 monday_rota = mon_fri("mon")
 tuesday_rota = rota("tue")
 wednesday_rota = rota("wed")
 thursday_rota = rota("thurs")
-friday_rota = rota("fri")
-wfh = []
+friday_rota = mon_fri("fri")
 
-monday_rota_wfh = list({val for key,val in monday_rota.items() if key == "emails1" or key == "emails2"})
+monday_rota_wfh = list({val for key,val in monday_rota.items() if key == "emails1" or key == "emails2" or key == "chats1"})
+
 tuesday_rota_wfh = monday_rota_wfh.copy()
-wednesday_rota_wfh = list({val for key,val in wednesday_rota.items() if key == "chats1" or key == "chats2"})
-thursday_rota_wfh = list({val for key,val in thursday_rota.items() if key == "chats1" or key == "chats2" or key == "chats3"})
-friday_rota_wfh = list({val for key,val in friday_rota.items() if key == "chats3" or key == "wrapup" or key == "wrapup2"})
+
+wednesday_rota_wfh = list({val for key,val in wednesday_rota.items() if val not in tuesday_rota_wfh and key != "oncall"})
+
+del wednesday_rota_wfh[len(wednesday_rota_wfh) - 1:]
+
+thursday_rota_wfh = list({val for key,val in thursday_rota.items() if val in wednesday_rota_wfh and key != "oncall"})
+
+for i in team:
+	if i not in monday_rota_wfh:
+		if i not in wednesday_rota_wfh:
+			thursday_rota_wfh.append(i)
+
+friday_rota_wfh = [thursday_rota_wfh[-1], thursday_rota_wfh[-2]]
+
+mon = wfh_rota(monday_rota_wfh, monday_rota)
+tue = wfh_rota(tuesday_rota_wfh, tuesday_rota)
+wed = wfh_rota(wednesday_rota_wfh, wednesday_rota)
+thu = wfh_rota(thursday_rota_wfh, thursday_rota)
+fri = wfh_rota(friday_rota_wfh, friday_rota)
+
+pprint.pprint(mon)
+pprint.pprint(tue)
+pprint.pprint(wed)
+pprint.pprint(thu)
+pprint.pprint(fri)
